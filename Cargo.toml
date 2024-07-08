@@ -1,9 +1,9 @@
 [package]
 name = "mimxrt685s-pac"
-version = "0.1.0"
+version = "0.1.1"
 authors = [ "Felipe Balbi <felipe@balbi.sh>" ]
 edition = "2021"
-license-file = "LICENSE"
+license = "MIT"
 description = "Peripheral Access Crate for MIMXRT685s devices"
 repository = "https://github.com/felipebalbi/mimxrt685s-pac"
 readme = "README.md"
