@@ -66,7 +66,7 @@ impl W {
         Rule5W::new(self, 20)
     }
 }
-#[doc = "Security access rules for HiFi 4 memory sectors (0x24000000--0x240FFFFF). Each sector is 32 Kbytes, there're 4 sectors in total.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pif_hifi4_x_mem_rule0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pif_hifi4_x_mem_rule0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Security access rules for HiFi 4 memory sectors (0x24000000--0x240FFFFF). Each sector is 32 Kbytes, there're 4 sectors in total.\n\nYou can [`read`](crate::Reg::read) this register and get [`pif_hifi4_x_mem_rule0::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pif_hifi4_x_mem_rule0::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PifHifi4XMemRule0Spec;
 impl crate::RegisterSpec for PifHifi4XMemRule0Spec {
     type Ux = u32;

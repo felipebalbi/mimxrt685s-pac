@@ -157,7 +157,7 @@ of the limit address are defined as 0x1F."]
         LaddrW::new(self, 5)
     }
 }
-#[doc = "Security Attribution Unit Region Limit Address Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rlar::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`rlar::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Security Attribution Unit Region Limit Address Register\n\nYou can [`read`](crate::Reg::read) this register and get [`rlar::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`rlar::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RlarSpec;
 impl crate::RegisterSpec for RlarSpec {
     type Ux = u32;

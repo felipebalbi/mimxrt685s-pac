@@ -49,7 +49,7 @@ impl R {
         ActR::new(self.bits)
     }
 }
-#[doc = "Channel Active status for all DMA channels.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`active0::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Channel Active status for all DMA channels.\n\nYou can [`read`](crate::Reg::read) this register and get [`active0::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Active0Spec;
 impl crate::RegisterSpec for Active0Spec {
     type Ux = u32;

@@ -50,7 +50,7 @@ impl R {
         MeasureInProgressR::new(((self.bits >> 31) & 1) != 0)
     }
 }
-#[doc = "Frequency Measurement (in Read mode)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`freqme_freqmectrl_r::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Frequency Measurement (in Read mode)\n\nYou can [`read`](crate::Reg::read) this register and get [`freqme_freqmectrl_r::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FreqmeFreqmectrlRSpec;
 impl crate::RegisterSpec for FreqmeFreqmectrlRSpec {
     type Ux = u32;

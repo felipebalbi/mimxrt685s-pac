@@ -10,7 +10,7 @@ impl W {
         KeymaskW::new(self, 0)
     }
 }
-#[doc = "Key Mask x\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`keymask::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Key Mask x\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`keymask::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct KeymaskSpec;
 impl crate::RegisterSpec for KeymaskSpec {
     type Ux = u32;

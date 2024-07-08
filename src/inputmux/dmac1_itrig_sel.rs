@@ -376,7 +376,7 @@ impl W {
         Dma1ItrigSelW::new(self, 0)
     }
 }
-#[doc = "DMAC1 Input Trigger Multiplexers N\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dmac1_itrig_sel::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dmac1_itrig_sel::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "DMAC1 Input Trigger Multiplexers N\n\nYou can [`read`](crate::Reg::read) this register and get [`dmac1_itrig_sel::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dmac1_itrig_sel::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Dmac1ItrigSelSpec;
 impl crate::RegisterSpec for Dmac1ItrigSelSpec {
     type Ux = u32;

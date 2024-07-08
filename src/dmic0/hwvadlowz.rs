@@ -9,7 +9,7 @@ impl R {
         LowzR::new((self.bits & 0xffff) as u16)
     }
 }
-#[doc = "HWVAD noise envelope estimator register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hwvadlowz::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "HWVAD noise envelope estimator register\n\nYou can [`read`](crate::Reg::read) this register and get [`hwvadlowz::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct HwvadlowzSpec;
 impl crate::RegisterSpec for HwvadlowzSpec {
     type Ux = u32;

@@ -16,7 +16,7 @@ impl R {
         ValidR::new(((self.bits >> 31) & 1) != 0)
     }
 }
-#[doc = "Capture register .\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cap::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Capture register .\n\nYou can [`read`](crate::Reg::read) this register and get [`cap::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CapSpec;
 impl crate::RegisterSpec for CapSpec {
     type Ux = u32;

@@ -9,7 +9,7 @@ impl R {
         ChanR::new(((self.bits >> 4) & 0x0f) as u8)
     }
 }
-#[doc = "Idle channel register. This register returns the number of the first idle channel.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`idle_ch::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Idle channel register. This register returns the number of the first idle channel.\n\nYou can [`read`](crate::Reg::read) this register and get [`idle_ch::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IdleChSpec;
 impl crate::RegisterSpec for IdleChSpec {
     type Ux = u32;

@@ -44,7 +44,7 @@ impl R {
         SotR::new(((self.bits >> 20) & 1) != 0)
     }
 }
-#[doc = "FIFO data read with no FIFO pop.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fifordnopop::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "FIFO data read with no FIFO pop.\n\nYou can [`read`](crate::Reg::read) this register and get [`fifordnopop::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FifordnopopSpec;
 impl crate::RegisterSpec for FifordnopopSpec {
     type Ux = u32;

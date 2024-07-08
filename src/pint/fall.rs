@@ -21,7 +21,7 @@ impl W {
         FdetW::new(self, 0)
     }
 }
-#[doc = "Pin interrupt falling edge register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fall::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fall::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Pin interrupt falling edge register\n\nYou can [`read`](crate::Reg::read) this register and get [`fall::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`fall::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FallSpec;
 impl crate::RegisterSpec for FallSpec {
     type Ux = u32;

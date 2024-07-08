@@ -486,7 +486,7 @@ impl W {
         Pio1Pin31SecMaskW::new(self, 31)
     }
 }
-#[doc = "Secure GPIO mask for port 1 pins.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sec_gpio_mask1::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`sec_gpio_mask1::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Secure GPIO mask for port 1 pins.\n\nYou can [`read`](crate::Reg::read) this register and get [`sec_gpio_mask1::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`sec_gpio_mask1::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SecGpioMask1Spec;
 impl crate::RegisterSpec for SecGpioMask1Spec {
     type Ux = u32;

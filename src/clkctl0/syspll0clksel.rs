@@ -103,7 +103,7 @@ impl W {
         SelW::new(self, 0)
     }
 }
-#[doc = "system pll0 clock selection\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`syspll0clksel::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`syspll0clksel::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "system pll0 clock selection\n\nYou can [`read`](crate::Reg::read) this register and get [`syspll0clksel::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`syspll0clksel::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Syspll0clkselSpec;
 impl crate::RegisterSpec for Syspll0clkselSpec {
     type Ux = u32;

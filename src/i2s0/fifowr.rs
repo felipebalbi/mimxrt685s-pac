@@ -10,7 +10,7 @@ impl W {
         TxdataW::new(self, 0)
     }
 }
-#[doc = "FIFO write data.\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fifowr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "FIFO write data.\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`fifowr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FifowrSpec;
 impl crate::RegisterSpec for FifowrSpec {
     type Ux = u32;

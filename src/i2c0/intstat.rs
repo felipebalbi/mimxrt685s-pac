@@ -79,7 +79,7 @@ impl R {
         ScltimeoutR::new(((self.bits >> 25) & 1) != 0)
     }
 }
-#[doc = "Interrupt Status register for Master, Slave, and Monitor functions.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`intstat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Interrupt Status register for Master, Slave, and Monitor functions.\n\nYou can [`read`](crate::Reg::read) this register and get [`intstat::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IntstatSpec;
 impl crate::RegisterSpec for IntstatSpec {
     type Ux = u32;

@@ -247,97 +247,97 @@ pub use self::w::W;
 #[doc = r"Cluster"]
 #[doc = "no description available"]
 pub mod w;
-#[doc = "DIR (rw) register accessor: Direction registers\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dir::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dir::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dir`]
+#[doc = "DIR (rw) register accessor: Direction registers\n\nYou can [`read`](crate::Reg::read) this register and get [`dir::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dir::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dir`]
 module"]
 #[doc(alias = "DIR")]
 pub type Dir = crate::Reg<dir::DirSpec>;
 #[doc = "Direction registers"]
 pub mod dir;
-#[doc = "MASK (rw) register accessor: Mask register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mask::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mask::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@mask`]
+#[doc = "MASK (rw) register accessor: Mask register\n\nYou can [`read`](crate::Reg::read) this register and get [`mask::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`mask::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@mask`]
 module"]
 #[doc(alias = "MASK")]
 pub type Mask = crate::Reg<mask::MaskSpec>;
 #[doc = "Mask register"]
 pub mod mask;
-#[doc = "PIN (rw) register accessor: Port pin register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pin::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pin::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pin`]
+#[doc = "PIN (rw) register accessor: Port pin register\n\nYou can [`read`](crate::Reg::read) this register and get [`pin::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pin::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pin`]
 module"]
 #[doc(alias = "PIN")]
 pub type Pin = crate::Reg<pin::PinSpec>;
 #[doc = "Port pin register"]
 pub mod pin;
-#[doc = "MPIN (rw) register accessor: Masked port register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mpin::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mpin::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@mpin`]
+#[doc = "MPIN (rw) register accessor: Masked port register\n\nYou can [`read`](crate::Reg::read) this register and get [`mpin::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`mpin::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@mpin`]
 module"]
 #[doc(alias = "MPIN")]
 pub type Mpin = crate::Reg<mpin::MpinSpec>;
 #[doc = "Masked port register"]
 pub mod mpin;
-#[doc = "SET (rw) register accessor: Write: Set register for port Read: output bits for port\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`set::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`set::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@set`]
+#[doc = "SET (rw) register accessor: Write: Set register for port Read: output bits for port\n\nYou can [`read`](crate::Reg::read) this register and get [`set::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`set::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@set`]
 module"]
 #[doc(alias = "SET")]
 pub type Set = crate::Reg<set::SetSpec>;
 #[doc = "Write: Set register for port Read: output bits for port"]
 pub mod set;
-#[doc = "CLR (w) register accessor: Clear port\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`clr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@clr`]
+#[doc = "CLR (w) register accessor: Clear port\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`clr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@clr`]
 module"]
 #[doc(alias = "CLR")]
 pub type Clr = crate::Reg<clr::ClrSpec>;
 #[doc = "Clear port"]
 pub mod clr;
-#[doc = "NOT (w) register accessor: Toggle port\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`not::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@not`]
+#[doc = "NOT (w) register accessor: Toggle port\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`not::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@not`]
 module"]
 #[doc(alias = "NOT")]
 pub type Not = crate::Reg<not::NotSpec>;
 #[doc = "Toggle port"]
 pub mod not;
-#[doc = "DIRSET (w) register accessor: Set pin direction bits for port\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dirset::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dirset`]
+#[doc = "DIRSET (w) register accessor: Set pin direction bits for port\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dirset::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dirset`]
 module"]
 #[doc(alias = "DIRSET")]
 pub type Dirset = crate::Reg<dirset::DirsetSpec>;
 #[doc = "Set pin direction bits for port"]
 pub mod dirset;
-#[doc = "DIRCLR (w) register accessor: Clear pin direction bits for port\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dirclr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dirclr`]
+#[doc = "DIRCLR (w) register accessor: Clear pin direction bits for port\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dirclr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dirclr`]
 module"]
 #[doc(alias = "DIRCLR")]
 pub type Dirclr = crate::Reg<dirclr::DirclrSpec>;
 #[doc = "Clear pin direction bits for port"]
 pub mod dirclr;
-#[doc = "DIRNOT (w) register accessor: Toggle pin direction bits for port\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dirnot::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dirnot`]
+#[doc = "DIRNOT (w) register accessor: Toggle pin direction bits for port\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dirnot::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dirnot`]
 module"]
 #[doc(alias = "DIRNOT")]
 pub type Dirnot = crate::Reg<dirnot::DirnotSpec>;
 #[doc = "Toggle pin direction bits for port"]
 pub mod dirnot;
-#[doc = "INTENA (rw) register accessor: interrupt A enable control register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`intena::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`intena::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@intena`]
+#[doc = "INTENA (rw) register accessor: interrupt A enable control register\n\nYou can [`read`](crate::Reg::read) this register and get [`intena::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`intena::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@intena`]
 module"]
 #[doc(alias = "INTENA")]
 pub type Intena = crate::Reg<intena::IntenaSpec>;
 #[doc = "interrupt A enable control register"]
 pub mod intena;
-#[doc = "INTENB (rw) register accessor: interrupt B enable control register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`intenb::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`intenb::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@intenb`]
+#[doc = "INTENB (rw) register accessor: interrupt B enable control register\n\nYou can [`read`](crate::Reg::read) this register and get [`intenb::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`intenb::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@intenb`]
 module"]
 #[doc(alias = "INTENB")]
 pub type Intenb = crate::Reg<intenb::IntenbSpec>;
 #[doc = "interrupt B enable control register"]
 pub mod intenb;
-#[doc = "INTPOL (rw) register accessor: interupt polarity control register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`intpol::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`intpol::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@intpol`]
+#[doc = "INTPOL (rw) register accessor: interupt polarity control register\n\nYou can [`read`](crate::Reg::read) this register and get [`intpol::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`intpol::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@intpol`]
 module"]
 #[doc(alias = "INTPOL")]
 pub type Intpol = crate::Reg<intpol::IntpolSpec>;
 #[doc = "interupt polarity control register"]
 pub mod intpol;
-#[doc = "INTEDG (rw) register accessor: choose edge or level for interrupt\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`intedg::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`intedg::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@intedg`]
+#[doc = "INTEDG (rw) register accessor: choose edge or level for interrupt\n\nYou can [`read`](crate::Reg::read) this register and get [`intedg::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`intedg::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@intedg`]
 module"]
 #[doc(alias = "INTEDG")]
 pub type Intedg = crate::Reg<intedg::IntedgSpec>;
 #[doc = "choose edge or level for interrupt"]
 pub mod intedg;
-#[doc = "INTSTATA (rw) register accessor: interrupt status for interrupt A\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`intstata::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`intstata::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@intstata`]
+#[doc = "INTSTATA (rw) register accessor: interrupt status for interrupt A\n\nYou can [`read`](crate::Reg::read) this register and get [`intstata::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`intstata::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@intstata`]
 module"]
 #[doc(alias = "INTSTATA")]
 pub type Intstata = crate::Reg<intstata::IntstataSpec>;
 #[doc = "interrupt status for interrupt A"]
 pub mod intstata;
-#[doc = "INTSTATB (rw) register accessor: interrupt status for interrupt B\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`intstatb::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`intstatb::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@intstatb`]
+#[doc = "INTSTATB (rw) register accessor: interrupt status for interrupt B\n\nYou can [`read`](crate::Reg::read) this register and get [`intstatb::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`intstatb::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@intstatb`]
 module"]
 #[doc(alias = "INTSTATB")]
 pub type Intstatb = crate::Reg<intstatb::IntstatbSpec>;

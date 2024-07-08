@@ -66,7 +66,7 @@ impl W {
         UsbHsPhyRuleW::new(self, 12)
     }
 }
-#[doc = "Security access rules for AIPS Bridge peripherals. Each AIPS bridge sector is 4 Kbytes, there're 16 sectors in total.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`aips_bridge1_mem_rule1::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`aips_bridge1_mem_rule1::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Security access rules for AIPS Bridge peripherals. Each AIPS bridge sector is 4 Kbytes, there're 16 sectors in total.\n\nYou can [`read`](crate::Reg::read) this register and get [`aips_bridge1_mem_rule1::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`aips_bridge1_mem_rule1::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct AipsBridge1MemRule1Spec;
 impl crate::RegisterSpec for AipsBridge1MemRule1Spec {
     type Ux = u32;

@@ -9,7 +9,7 @@ impl R {
         CaptureValueR::new(self.bits)
     }
 }
-#[doc = "Local Capture High Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`capture_h::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Local Capture High Register\n\nYou can [`read`](crate::Reg::read) this register and get [`capture_h::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CaptureHSpec;
 impl crate::RegisterSpec for CaptureHSpec {
     type Ux = u32;

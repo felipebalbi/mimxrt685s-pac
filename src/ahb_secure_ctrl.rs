@@ -648,409 +648,409 @@ impl RegisterBlock {
         &self.misc_ctrl_reg
     }
 }
-#[doc = "ROM_MEM_RULE (rw) register accessor: Memory ROM Rule(n) Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rom_mem_rule::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`rom_mem_rule::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rom_mem_rule`]
+#[doc = "ROM_MEM_RULE (rw) register accessor: Memory ROM Rule(n) Register\n\nYou can [`read`](crate::Reg::read) this register and get [`rom_mem_rule::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`rom_mem_rule::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rom_mem_rule`]
 module"]
 #[doc(alias = "ROM_MEM_RULE")]
 pub type RomMemRule = crate::Reg<rom_mem_rule::RomMemRuleSpec>;
 #[doc = "Memory ROM Rule(n) Register"]
 pub mod rom_mem_rule;
-#[doc = "FLEXSPI0_REGION0_RULE (rw) register accessor: FLEXSPI0 Region 0 Rule(n) Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`flexspi0_region0_rule::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`flexspi0_region0_rule::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@flexspi0_region0_rule`]
+#[doc = "FLEXSPI0_REGION0_RULE (rw) register accessor: FLEXSPI0 Region 0 Rule(n) Register\n\nYou can [`read`](crate::Reg::read) this register and get [`flexspi0_region0_rule::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`flexspi0_region0_rule::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@flexspi0_region0_rule`]
 module"]
 #[doc(alias = "FLEXSPI0_REGION0_RULE")]
 pub type Flexspi0Region0Rule = crate::Reg<flexspi0_region0_rule::Flexspi0Region0RuleSpec>;
 #[doc = "FLEXSPI0 Region 0 Rule(n) Register"]
 pub mod flexspi0_region0_rule;
-#[doc = "FLEXSPI0_REGION1_RULE0 (rw) register accessor: FLEXSPI0 Region 1 Rule 0 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`flexspi0_region1_rule0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`flexspi0_region1_rule0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@flexspi0_region1_rule0`]
+#[doc = "FLEXSPI0_REGION1_RULE0 (rw) register accessor: FLEXSPI0 Region 1 Rule 0 Register\n\nYou can [`read`](crate::Reg::read) this register and get [`flexspi0_region1_rule0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`flexspi0_region1_rule0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@flexspi0_region1_rule0`]
 module"]
 #[doc(alias = "FLEXSPI0_REGION1_RULE0")]
 pub type Flexspi0Region1Rule0 = crate::Reg<flexspi0_region1_rule0::Flexspi0Region1Rule0Spec>;
 #[doc = "FLEXSPI0 Region 1 Rule 0 Register"]
 pub mod flexspi0_region1_rule0;
-#[doc = "FLEXSPI0_REGION2_RULE0 (rw) register accessor: FLEXSPI0 Region 2 Rule 0 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`flexspi0_region2_rule0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`flexspi0_region2_rule0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@flexspi0_region2_rule0`]
+#[doc = "FLEXSPI0_REGION2_RULE0 (rw) register accessor: FLEXSPI0 Region 2 Rule 0 Register\n\nYou can [`read`](crate::Reg::read) this register and get [`flexspi0_region2_rule0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`flexspi0_region2_rule0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@flexspi0_region2_rule0`]
 module"]
 #[doc(alias = "FLEXSPI0_REGION2_RULE0")]
 pub type Flexspi0Region2Rule0 = crate::Reg<flexspi0_region2_rule0::Flexspi0Region2Rule0Spec>;
 #[doc = "FLEXSPI0 Region 2 Rule 0 Register"]
 pub mod flexspi0_region2_rule0;
-#[doc = "FLEXSPI0_REGION3_RULE0 (rw) register accessor: FLEXSPI0 Region 3 Rule 0 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`flexspi0_region3_rule0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`flexspi0_region3_rule0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@flexspi0_region3_rule0`]
+#[doc = "FLEXSPI0_REGION3_RULE0 (rw) register accessor: FLEXSPI0 Region 3 Rule 0 Register\n\nYou can [`read`](crate::Reg::read) this register and get [`flexspi0_region3_rule0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`flexspi0_region3_rule0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@flexspi0_region3_rule0`]
 module"]
 #[doc(alias = "FLEXSPI0_REGION3_RULE0")]
 pub type Flexspi0Region3Rule0 = crate::Reg<flexspi0_region3_rule0::Flexspi0Region3Rule0Spec>;
 #[doc = "FLEXSPI0 Region 3 Rule 0 Register"]
 pub mod flexspi0_region3_rule0;
-#[doc = "FLEXSPI0_REGION4_RULE0 (rw) register accessor: FLEXSPI0 Region 4 Rule 0 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`flexspi0_region4_rule0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`flexspi0_region4_rule0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@flexspi0_region4_rule0`]
+#[doc = "FLEXSPI0_REGION4_RULE0 (rw) register accessor: FLEXSPI0 Region 4 Rule 0 Register\n\nYou can [`read`](crate::Reg::read) this register and get [`flexspi0_region4_rule0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`flexspi0_region4_rule0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@flexspi0_region4_rule0`]
 module"]
 #[doc(alias = "FLEXSPI0_REGION4_RULE0")]
 pub type Flexspi0Region4Rule0 = crate::Reg<flexspi0_region4_rule0::Flexspi0Region4Rule0Spec>;
 #[doc = "FLEXSPI0 Region 4 Rule 0 Register"]
 pub mod flexspi0_region4_rule0;
-#[doc = "RAM00_RULE (rw) register accessor: SRAM Partition 00 Rule(n) Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ram00_rule::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ram00_rule::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram00_rule`]
+#[doc = "RAM00_RULE (rw) register accessor: SRAM Partition 00 Rule(n) Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ram00_rule::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ram00_rule::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram00_rule`]
 module"]
 #[doc(alias = "RAM00_RULE")]
 pub type Ram00Rule = crate::Reg<ram00_rule::Ram00RuleSpec>;
 #[doc = "SRAM Partition 00 Rule(n) Register"]
 pub mod ram00_rule;
-#[doc = "RAM01_RULE (rw) register accessor: SRAM Partition 01 Rule(n) Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ram01_rule::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ram01_rule::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram01_rule`]
+#[doc = "RAM01_RULE (rw) register accessor: SRAM Partition 01 Rule(n) Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ram01_rule::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ram01_rule::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram01_rule`]
 module"]
 #[doc(alias = "RAM01_RULE")]
 pub type Ram01Rule = crate::Reg<ram01_rule::Ram01RuleSpec>;
 #[doc = "SRAM Partition 01 Rule(n) Register"]
 pub mod ram01_rule;
-#[doc = "RAM02_RULE (rw) register accessor: SRAM Partition 02 Rule(n) Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ram02_rule::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ram02_rule::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram02_rule`]
+#[doc = "RAM02_RULE (rw) register accessor: SRAM Partition 02 Rule(n) Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ram02_rule::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ram02_rule::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram02_rule`]
 module"]
 #[doc(alias = "RAM02_RULE")]
 pub type Ram02Rule = crate::Reg<ram02_rule::Ram02RuleSpec>;
 #[doc = "SRAM Partition 02 Rule(n) Register"]
 pub mod ram02_rule;
-#[doc = "RAM03_RULE (rw) register accessor: SRAM Partition 03 Rule(n) Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ram03_rule::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ram03_rule::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram03_rule`]
+#[doc = "RAM03_RULE (rw) register accessor: SRAM Partition 03 Rule(n) Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ram03_rule::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ram03_rule::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram03_rule`]
 module"]
 #[doc(alias = "RAM03_RULE")]
 pub type Ram03Rule = crate::Reg<ram03_rule::Ram03RuleSpec>;
 #[doc = "SRAM Partition 03 Rule(n) Register"]
 pub mod ram03_rule;
-#[doc = "RAM04_RULE (rw) register accessor: SRAM Partition 04 Rule(n) Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ram04_rule::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ram04_rule::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram04_rule`]
+#[doc = "RAM04_RULE (rw) register accessor: SRAM Partition 04 Rule(n) Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ram04_rule::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ram04_rule::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram04_rule`]
 module"]
 #[doc(alias = "RAM04_RULE")]
 pub type Ram04Rule = crate::Reg<ram04_rule::Ram04RuleSpec>;
 #[doc = "SRAM Partition 04 Rule(n) Register"]
 pub mod ram04_rule;
-#[doc = "RAM05_RULE (rw) register accessor: SRAM Partition 05 Rule(n) Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ram05_rule::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ram05_rule::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram05_rule`]
+#[doc = "RAM05_RULE (rw) register accessor: SRAM Partition 05 Rule(n) Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ram05_rule::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ram05_rule::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram05_rule`]
 module"]
 #[doc(alias = "RAM05_RULE")]
 pub type Ram05Rule = crate::Reg<ram05_rule::Ram05RuleSpec>;
 #[doc = "SRAM Partition 05 Rule(n) Register"]
 pub mod ram05_rule;
-#[doc = "RAM06_RULE (rw) register accessor: SRAM Partition 06 Rule(n) Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ram06_rule::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ram06_rule::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram06_rule`]
+#[doc = "RAM06_RULE (rw) register accessor: SRAM Partition 06 Rule(n) Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ram06_rule::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ram06_rule::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram06_rule`]
 module"]
 #[doc(alias = "RAM06_RULE")]
 pub type Ram06Rule = crate::Reg<ram06_rule::Ram06RuleSpec>;
 #[doc = "SRAM Partition 06 Rule(n) Register"]
 pub mod ram06_rule;
-#[doc = "RAM07_RULE (rw) register accessor: SRAM Partition 07 Rule(n) Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ram07_rule::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ram07_rule::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram07_rule`]
+#[doc = "RAM07_RULE (rw) register accessor: SRAM Partition 07 Rule(n) Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ram07_rule::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ram07_rule::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram07_rule`]
 module"]
 #[doc(alias = "RAM07_RULE")]
 pub type Ram07Rule = crate::Reg<ram07_rule::Ram07RuleSpec>;
 #[doc = "SRAM Partition 07 Rule(n) Register"]
 pub mod ram07_rule;
-#[doc = "RAM08_RULE (rw) register accessor: SRAM Partition 08 Rule(n) Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ram08_rule::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ram08_rule::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram08_rule`]
+#[doc = "RAM08_RULE (rw) register accessor: SRAM Partition 08 Rule(n) Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ram08_rule::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ram08_rule::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram08_rule`]
 module"]
 #[doc(alias = "RAM08_RULE")]
 pub type Ram08Rule = crate::Reg<ram08_rule::Ram08RuleSpec>;
 #[doc = "SRAM Partition 08 Rule(n) Register"]
 pub mod ram08_rule;
-#[doc = "RAM09_RULE (rw) register accessor: SRAM Partition 09 Rule(n) Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ram09_rule::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ram09_rule::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram09_rule`]
+#[doc = "RAM09_RULE (rw) register accessor: SRAM Partition 09 Rule(n) Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ram09_rule::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ram09_rule::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram09_rule`]
 module"]
 #[doc(alias = "RAM09_RULE")]
 pub type Ram09Rule = crate::Reg<ram09_rule::Ram09RuleSpec>;
 #[doc = "SRAM Partition 09 Rule(n) Register"]
 pub mod ram09_rule;
-#[doc = "RAM10_RULE (rw) register accessor: SRAM Partition 10 Rule(n) Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ram10_rule::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ram10_rule::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram10_rule`]
+#[doc = "RAM10_RULE (rw) register accessor: SRAM Partition 10 Rule(n) Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ram10_rule::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ram10_rule::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram10_rule`]
 module"]
 #[doc(alias = "RAM10_RULE")]
 pub type Ram10Rule = crate::Reg<ram10_rule::Ram10RuleSpec>;
 #[doc = "SRAM Partition 10 Rule(n) Register"]
 pub mod ram10_rule;
-#[doc = "RAM11_RULE (rw) register accessor: SRAM Partition 11 Rule(n) Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ram11_rule::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ram11_rule::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram11_rule`]
+#[doc = "RAM11_RULE (rw) register accessor: SRAM Partition 11 Rule(n) Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ram11_rule::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ram11_rule::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram11_rule`]
 module"]
 #[doc(alias = "RAM11_RULE")]
 pub type Ram11Rule = crate::Reg<ram11_rule::Ram11RuleSpec>;
 #[doc = "SRAM Partition 11 Rule(n) Register"]
 pub mod ram11_rule;
-#[doc = "RAM12_RULE (rw) register accessor: SRAM Partition 12 Rule(n) Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ram12_rule::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ram12_rule::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram12_rule`]
+#[doc = "RAM12_RULE (rw) register accessor: SRAM Partition 12 Rule(n) Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ram12_rule::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ram12_rule::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram12_rule`]
 module"]
 #[doc(alias = "RAM12_RULE")]
 pub type Ram12Rule = crate::Reg<ram12_rule::Ram12RuleSpec>;
 #[doc = "SRAM Partition 12 Rule(n) Register"]
 pub mod ram12_rule;
-#[doc = "RAM13_RULE (rw) register accessor: SRAM Partition 13 Rule(n) Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ram13_rule::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ram13_rule::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram13_rule`]
+#[doc = "RAM13_RULE (rw) register accessor: SRAM Partition 13 Rule(n) Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ram13_rule::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ram13_rule::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram13_rule`]
 module"]
 #[doc(alias = "RAM13_RULE")]
 pub type Ram13Rule = crate::Reg<ram13_rule::Ram13RuleSpec>;
 #[doc = "SRAM Partition 13 Rule(n) Register"]
 pub mod ram13_rule;
-#[doc = "RAM14_RULE (rw) register accessor: SRAM Partition 14 Rule(n) Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ram14_rule::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ram14_rule::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram14_rule`]
+#[doc = "RAM14_RULE (rw) register accessor: SRAM Partition 14 Rule(n) Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ram14_rule::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ram14_rule::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram14_rule`]
 module"]
 #[doc(alias = "RAM14_RULE")]
 pub type Ram14Rule = crate::Reg<ram14_rule::Ram14RuleSpec>;
 #[doc = "SRAM Partition 14 Rule(n) Register"]
 pub mod ram14_rule;
-#[doc = "RAM15_RULE (rw) register accessor: SRAM Partition 15 Rule(n) Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ram15_rule::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ram15_rule::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram15_rule`]
+#[doc = "RAM15_RULE (rw) register accessor: SRAM Partition 15 Rule(n) Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ram15_rule::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ram15_rule::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram15_rule`]
 module"]
 #[doc(alias = "RAM15_RULE")]
 pub type Ram15Rule = crate::Reg<ram15_rule::Ram15RuleSpec>;
 #[doc = "SRAM Partition 15 Rule(n) Register"]
 pub mod ram15_rule;
-#[doc = "RAM16_RULE (rw) register accessor: SRAM Partition 16 Rule(n) Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ram16_rule::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ram16_rule::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram16_rule`]
+#[doc = "RAM16_RULE (rw) register accessor: SRAM Partition 16 Rule(n) Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ram16_rule::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ram16_rule::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram16_rule`]
 module"]
 #[doc(alias = "RAM16_RULE")]
 pub type Ram16Rule = crate::Reg<ram16_rule::Ram16RuleSpec>;
 #[doc = "SRAM Partition 16 Rule(n) Register"]
 pub mod ram16_rule;
-#[doc = "RAM17_RULE (rw) register accessor: SRAM Partition 17 Rule(n) Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ram17_rule::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ram17_rule::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram17_rule`]
+#[doc = "RAM17_RULE (rw) register accessor: SRAM Partition 17 Rule(n) Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ram17_rule::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ram17_rule::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram17_rule`]
 module"]
 #[doc(alias = "RAM17_RULE")]
 pub type Ram17Rule = crate::Reg<ram17_rule::Ram17RuleSpec>;
 #[doc = "SRAM Partition 17 Rule(n) Register"]
 pub mod ram17_rule;
-#[doc = "RAM18_RULE (rw) register accessor: SRAM Partition 18 Rule(n) Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ram18_rule::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ram18_rule::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram18_rule`]
+#[doc = "RAM18_RULE (rw) register accessor: SRAM Partition 18 Rule(n) Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ram18_rule::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ram18_rule::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram18_rule`]
 module"]
 #[doc(alias = "RAM18_RULE")]
 pub type Ram18Rule = crate::Reg<ram18_rule::Ram18RuleSpec>;
 #[doc = "SRAM Partition 18 Rule(n) Register"]
 pub mod ram18_rule;
-#[doc = "RAM19_RULE (rw) register accessor: SRAM Partition 19 Rule(n) Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ram19_rule::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ram19_rule::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram19_rule`]
+#[doc = "RAM19_RULE (rw) register accessor: SRAM Partition 19 Rule(n) Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ram19_rule::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ram19_rule::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram19_rule`]
 module"]
 #[doc(alias = "RAM19_RULE")]
 pub type Ram19Rule = crate::Reg<ram19_rule::Ram19RuleSpec>;
 #[doc = "SRAM Partition 19 Rule(n) Register"]
 pub mod ram19_rule;
-#[doc = "RAM20_RULE (rw) register accessor: SRAM Partition 20 Rule(n) Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ram20_rule::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ram20_rule::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram20_rule`]
+#[doc = "RAM20_RULE (rw) register accessor: SRAM Partition 20 Rule(n) Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ram20_rule::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ram20_rule::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram20_rule`]
 module"]
 #[doc(alias = "RAM20_RULE")]
 pub type Ram20Rule = crate::Reg<ram20_rule::Ram20RuleSpec>;
 #[doc = "SRAM Partition 20 Rule(n) Register"]
 pub mod ram20_rule;
-#[doc = "RAM21_RULE (rw) register accessor: SRAM Partition 21 Rule(n) Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ram21_rule::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ram21_rule::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram21_rule`]
+#[doc = "RAM21_RULE (rw) register accessor: SRAM Partition 21 Rule(n) Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ram21_rule::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ram21_rule::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram21_rule`]
 module"]
 #[doc(alias = "RAM21_RULE")]
 pub type Ram21Rule = crate::Reg<ram21_rule::Ram21RuleSpec>;
 #[doc = "SRAM Partition 21 Rule(n) Register"]
 pub mod ram21_rule;
-#[doc = "RAM22_RULE (rw) register accessor: SRAM Partition 22 Rule(n) Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ram22_rule::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ram22_rule::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram22_rule`]
+#[doc = "RAM22_RULE (rw) register accessor: SRAM Partition 22 Rule(n) Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ram22_rule::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ram22_rule::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram22_rule`]
 module"]
 #[doc(alias = "RAM22_RULE")]
 pub type Ram22Rule = crate::Reg<ram22_rule::Ram22RuleSpec>;
 #[doc = "SRAM Partition 22 Rule(n) Register"]
 pub mod ram22_rule;
-#[doc = "RAM23_RULE (rw) register accessor: SRAM Partition 23 Rule(n) Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ram23_rule::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ram23_rule::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram23_rule`]
+#[doc = "RAM23_RULE (rw) register accessor: SRAM Partition 23 Rule(n) Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ram23_rule::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ram23_rule::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram23_rule`]
 module"]
 #[doc(alias = "RAM23_RULE")]
 pub type Ram23Rule = crate::Reg<ram23_rule::Ram23RuleSpec>;
 #[doc = "SRAM Partition 23 Rule(n) Register"]
 pub mod ram23_rule;
-#[doc = "RAM24_RULE (rw) register accessor: SRAM Partition 24 Rule(n) Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ram24_rule::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ram24_rule::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram24_rule`]
+#[doc = "RAM24_RULE (rw) register accessor: SRAM Partition 24 Rule(n) Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ram24_rule::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ram24_rule::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram24_rule`]
 module"]
 #[doc(alias = "RAM24_RULE")]
 pub type Ram24Rule = crate::Reg<ram24_rule::Ram24RuleSpec>;
 #[doc = "SRAM Partition 24 Rule(n) Register"]
 pub mod ram24_rule;
-#[doc = "RAM25_RULE (rw) register accessor: SRAM Partition 25 Rule(n) Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ram25_rule::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ram25_rule::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram25_rule`]
+#[doc = "RAM25_RULE (rw) register accessor: SRAM Partition 25 Rule(n) Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ram25_rule::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ram25_rule::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram25_rule`]
 module"]
 #[doc(alias = "RAM25_RULE")]
 pub type Ram25Rule = crate::Reg<ram25_rule::Ram25RuleSpec>;
 #[doc = "SRAM Partition 25 Rule(n) Register"]
 pub mod ram25_rule;
-#[doc = "RAM26_RULE (rw) register accessor: SRAM Partition 26 Rule(n) Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ram26_rule::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ram26_rule::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram26_rule`]
+#[doc = "RAM26_RULE (rw) register accessor: SRAM Partition 26 Rule(n) Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ram26_rule::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ram26_rule::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram26_rule`]
 module"]
 #[doc(alias = "RAM26_RULE")]
 pub type Ram26Rule = crate::Reg<ram26_rule::Ram26RuleSpec>;
 #[doc = "SRAM Partition 26 Rule(n) Register"]
 pub mod ram26_rule;
-#[doc = "RAM27_RULE (rw) register accessor: SRAM Partition 27 Rule(n) Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ram27_rule::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ram27_rule::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram27_rule`]
+#[doc = "RAM27_RULE (rw) register accessor: SRAM Partition 27 Rule(n) Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ram27_rule::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ram27_rule::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram27_rule`]
 module"]
 #[doc(alias = "RAM27_RULE")]
 pub type Ram27Rule = crate::Reg<ram27_rule::Ram27RuleSpec>;
 #[doc = "SRAM Partition 27 Rule(n) Register"]
 pub mod ram27_rule;
-#[doc = "RAM28_RULE (rw) register accessor: SRAM Partition 28 Rule(n) Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ram28_rule::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ram28_rule::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram28_rule`]
+#[doc = "RAM28_RULE (rw) register accessor: SRAM Partition 28 Rule(n) Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ram28_rule::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ram28_rule::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram28_rule`]
 module"]
 #[doc(alias = "RAM28_RULE")]
 pub type Ram28Rule = crate::Reg<ram28_rule::Ram28RuleSpec>;
 #[doc = "SRAM Partition 28 Rule(n) Register"]
 pub mod ram28_rule;
-#[doc = "RAM29_RULE (rw) register accessor: SRAM Partition 29 Rule(n) Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ram29_rule::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ram29_rule::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram29_rule`]
+#[doc = "RAM29_RULE (rw) register accessor: SRAM Partition 29 Rule(n) Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ram29_rule::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ram29_rule::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ram29_rule`]
 module"]
 #[doc(alias = "RAM29_RULE")]
 pub type Ram29Rule = crate::Reg<ram29_rule::Ram29RuleSpec>;
 #[doc = "SRAM Partition 29 Rule(n) Register"]
 pub mod ram29_rule;
-#[doc = "PIF_HIFI4_X_MEM_RULE0 (rw) register accessor: Security access rules for HiFi 4 memory sectors (0x24000000--0x240FFFFF). Each sector is 32 Kbytes, there're 4 sectors in total.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pif_hifi4_x_mem_rule0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pif_hifi4_x_mem_rule0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pif_hifi4_x_mem_rule0`]
+#[doc = "PIF_HIFI4_X_MEM_RULE0 (rw) register accessor: Security access rules for HiFi 4 memory sectors (0x24000000--0x240FFFFF). Each sector is 32 Kbytes, there're 4 sectors in total.\n\nYou can [`read`](crate::Reg::read) this register and get [`pif_hifi4_x_mem_rule0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pif_hifi4_x_mem_rule0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pif_hifi4_x_mem_rule0`]
 module"]
 #[doc(alias = "PIF_HIFI4_X_MEM_RULE0")]
 pub type PifHifi4XMemRule0 = crate::Reg<pif_hifi4_x_mem_rule0::PifHifi4XMemRule0Spec>;
 #[doc = "Security access rules for HiFi 4 memory sectors (0x24000000--0x240FFFFF). Each sector is 32 Kbytes, there're 4 sectors in total."]
 pub mod pif_hifi4_x_mem_rule0;
-#[doc = "APB_GRP0_MEM_RULE0 (rw) register accessor: Security access rules for APB Bridge 0 peripherals. Each APB bridge sector is 4 Kbytes, there're 16 sectors in total.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`apb_grp0_mem_rule0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`apb_grp0_mem_rule0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@apb_grp0_mem_rule0`]
+#[doc = "APB_GRP0_MEM_RULE0 (rw) register accessor: Security access rules for APB Bridge 0 peripherals. Each APB bridge sector is 4 Kbytes, there're 16 sectors in total.\n\nYou can [`read`](crate::Reg::read) this register and get [`apb_grp0_mem_rule0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`apb_grp0_mem_rule0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@apb_grp0_mem_rule0`]
 module"]
 #[doc(alias = "APB_GRP0_MEM_RULE0")]
 pub type ApbGrp0MemRule0 = crate::Reg<apb_grp0_mem_rule0::ApbGrp0MemRule0Spec>;
 #[doc = "Security access rules for APB Bridge 0 peripherals. Each APB bridge sector is 4 Kbytes, there're 16 sectors in total."]
 pub mod apb_grp0_mem_rule0;
-#[doc = "APB_GRP0_MEM_RULE1 (rw) register accessor: Security access rules for APB Bridge 0 peripherals. Each APB bridge sector is 4 Kbytes, there're 16 sectors in total.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`apb_grp0_mem_rule1::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`apb_grp0_mem_rule1::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@apb_grp0_mem_rule1`]
+#[doc = "APB_GRP0_MEM_RULE1 (rw) register accessor: Security access rules for APB Bridge 0 peripherals. Each APB bridge sector is 4 Kbytes, there're 16 sectors in total.\n\nYou can [`read`](crate::Reg::read) this register and get [`apb_grp0_mem_rule1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`apb_grp0_mem_rule1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@apb_grp0_mem_rule1`]
 module"]
 #[doc(alias = "APB_GRP0_MEM_RULE1")]
 pub type ApbGrp0MemRule1 = crate::Reg<apb_grp0_mem_rule1::ApbGrp0MemRule1Spec>;
 #[doc = "Security access rules for APB Bridge 0 peripherals. Each APB bridge sector is 4 Kbytes, there're 16 sectors in total."]
 pub mod apb_grp0_mem_rule1;
-#[doc = "APB_GRP1_MEM_RULE0 (rw) register accessor: Security access rules for APB Bridge 1 peripherals. Each APB bridge sector is 4 Kbytes, there're 16 sectors in total.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`apb_grp1_mem_rule0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`apb_grp1_mem_rule0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@apb_grp1_mem_rule0`]
+#[doc = "APB_GRP1_MEM_RULE0 (rw) register accessor: Security access rules for APB Bridge 1 peripherals. Each APB bridge sector is 4 Kbytes, there're 16 sectors in total.\n\nYou can [`read`](crate::Reg::read) this register and get [`apb_grp1_mem_rule0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`apb_grp1_mem_rule0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@apb_grp1_mem_rule0`]
 module"]
 #[doc(alias = "APB_GRP1_MEM_RULE0")]
 pub type ApbGrp1MemRule0 = crate::Reg<apb_grp1_mem_rule0::ApbGrp1MemRule0Spec>;
 #[doc = "Security access rules for APB Bridge 1 peripherals. Each APB bridge sector is 4 Kbytes, there're 16 sectors in total."]
 pub mod apb_grp1_mem_rule0;
-#[doc = "APB_GRP1_MEM_RULE1 (rw) register accessor: Security access rules for APB Bridge 1 peripherals. Each APB bridge sector is 4 Kbytes, there're 16 sectors in total.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`apb_grp1_mem_rule1::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`apb_grp1_mem_rule1::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@apb_grp1_mem_rule1`]
+#[doc = "APB_GRP1_MEM_RULE1 (rw) register accessor: Security access rules for APB Bridge 1 peripherals. Each APB bridge sector is 4 Kbytes, there're 16 sectors in total.\n\nYou can [`read`](crate::Reg::read) this register and get [`apb_grp1_mem_rule1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`apb_grp1_mem_rule1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@apb_grp1_mem_rule1`]
 module"]
 #[doc(alias = "APB_GRP1_MEM_RULE1")]
 pub type ApbGrp1MemRule1 = crate::Reg<apb_grp1_mem_rule1::ApbGrp1MemRule1Spec>;
 #[doc = "Security access rules for APB Bridge 1 peripherals. Each APB bridge sector is 4 Kbytes, there're 16 sectors in total."]
 pub mod apb_grp1_mem_rule1;
-#[doc = "APB_GRP1_MEM_RULE2 (rw) register accessor: Security access rules for APB Bridge 1 peripherals. Each APB bridge sector is 4 Kbytes, there're 16 sectors in total.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`apb_grp1_mem_rule2::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`apb_grp1_mem_rule2::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@apb_grp1_mem_rule2`]
+#[doc = "APB_GRP1_MEM_RULE2 (rw) register accessor: Security access rules for APB Bridge 1 peripherals. Each APB bridge sector is 4 Kbytes, there're 16 sectors in total.\n\nYou can [`read`](crate::Reg::read) this register and get [`apb_grp1_mem_rule2::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`apb_grp1_mem_rule2::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@apb_grp1_mem_rule2`]
 module"]
 #[doc(alias = "APB_GRP1_MEM_RULE2")]
 pub type ApbGrp1MemRule2 = crate::Reg<apb_grp1_mem_rule2::ApbGrp1MemRule2Spec>;
 #[doc = "Security access rules for APB Bridge 1 peripherals. Each APB bridge sector is 4 Kbytes, there're 16 sectors in total."]
 pub mod apb_grp1_mem_rule2;
-#[doc = "AHB_PERIPH0_SLAVE_RULE0 (rw) register accessor: Security access rules for AHB peripheral slaves area 0x40100000--0x4010FFFF\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ahb_periph0_slave_rule0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ahb_periph0_slave_rule0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ahb_periph0_slave_rule0`]
+#[doc = "AHB_PERIPH0_SLAVE_RULE0 (rw) register accessor: Security access rules for AHB peripheral slaves area 0x40100000--0x4010FFFF\n\nYou can [`read`](crate::Reg::read) this register and get [`ahb_periph0_slave_rule0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ahb_periph0_slave_rule0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ahb_periph0_slave_rule0`]
 module"]
 #[doc(alias = "AHB_PERIPH0_SLAVE_RULE0")]
 pub type AhbPeriph0SlaveRule0 = crate::Reg<ahb_periph0_slave_rule0::AhbPeriph0SlaveRule0Spec>;
 #[doc = "Security access rules for AHB peripheral slaves area 0x40100000--0x4010FFFF"]
 pub mod ahb_periph0_slave_rule0;
-#[doc = "AIPS_BRIDGE0_MEM_RULE0 (rw) register accessor: 0x40110000--0x4011FFFF\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`aips_bridge0_mem_rule0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`aips_bridge0_mem_rule0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@aips_bridge0_mem_rule0`]
+#[doc = "AIPS_BRIDGE0_MEM_RULE0 (rw) register accessor: 0x40110000--0x4011FFFF\n\nYou can [`read`](crate::Reg::read) this register and get [`aips_bridge0_mem_rule0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`aips_bridge0_mem_rule0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@aips_bridge0_mem_rule0`]
 module"]
 #[doc(alias = "AIPS_BRIDGE0_MEM_RULE0")]
 pub type AipsBridge0MemRule0 = crate::Reg<aips_bridge0_mem_rule0::AipsBridge0MemRule0Spec>;
 #[doc = "0x40110000--0x4011FFFF"]
 pub mod aips_bridge0_mem_rule0;
-#[doc = "AHB_PERIPH1_SLAVE_RULE0 (rw) register accessor: the memory map is 0x40120000--0x40127FFF\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ahb_periph1_slave_rule0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ahb_periph1_slave_rule0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ahb_periph1_slave_rule0`]
+#[doc = "AHB_PERIPH1_SLAVE_RULE0 (rw) register accessor: the memory map is 0x40120000--0x40127FFF\n\nYou can [`read`](crate::Reg::read) this register and get [`ahb_periph1_slave_rule0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ahb_periph1_slave_rule0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ahb_periph1_slave_rule0`]
 module"]
 #[doc(alias = "AHB_PERIPH1_SLAVE_RULE0")]
 pub type AhbPeriph1SlaveRule0 = crate::Reg<ahb_periph1_slave_rule0::AhbPeriph1SlaveRule0Spec>;
 #[doc = "the memory map is 0x40120000--0x40127FFF"]
 pub mod ahb_periph1_slave_rule0;
-#[doc = "AIPS_BRIDGE1_MEM_RULE0 (rw) register accessor: Security access rules for AIPS Bridge peripherals. Each AIPS bridge sector is 4 Kbytes, there're 16 sectors in total.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`aips_bridge1_mem_rule0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`aips_bridge1_mem_rule0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@aips_bridge1_mem_rule0`]
+#[doc = "AIPS_BRIDGE1_MEM_RULE0 (rw) register accessor: Security access rules for AIPS Bridge peripherals. Each AIPS bridge sector is 4 Kbytes, there're 16 sectors in total.\n\nYou can [`read`](crate::Reg::read) this register and get [`aips_bridge1_mem_rule0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`aips_bridge1_mem_rule0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@aips_bridge1_mem_rule0`]
 module"]
 #[doc(alias = "AIPS_BRIDGE1_MEM_RULE0")]
 pub type AipsBridge1MemRule0 = crate::Reg<aips_bridge1_mem_rule0::AipsBridge1MemRule0Spec>;
 #[doc = "Security access rules for AIPS Bridge peripherals. Each AIPS bridge sector is 4 Kbytes, there're 16 sectors in total."]
 pub mod aips_bridge1_mem_rule0;
-#[doc = "AIPS_BRIDGE1_MEM_RULE1 (rw) register accessor: Security access rules for AIPS Bridge peripherals. Each AIPS bridge sector is 4 Kbytes, there're 16 sectors in total.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`aips_bridge1_mem_rule1::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`aips_bridge1_mem_rule1::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@aips_bridge1_mem_rule1`]
+#[doc = "AIPS_BRIDGE1_MEM_RULE1 (rw) register accessor: Security access rules for AIPS Bridge peripherals. Each AIPS bridge sector is 4 Kbytes, there're 16 sectors in total.\n\nYou can [`read`](crate::Reg::read) this register and get [`aips_bridge1_mem_rule1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`aips_bridge1_mem_rule1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@aips_bridge1_mem_rule1`]
 module"]
 #[doc(alias = "AIPS_BRIDGE1_MEM_RULE1")]
 pub type AipsBridge1MemRule1 = crate::Reg<aips_bridge1_mem_rule1::AipsBridge1MemRule1Spec>;
 #[doc = "Security access rules for AIPS Bridge peripherals. Each AIPS bridge sector is 4 Kbytes, there're 16 sectors in total."]
 pub mod aips_bridge1_mem_rule1;
-#[doc = "AHB_PERIPH2_SLAVE_RULE0 (rw) register accessor: Security access rules for AHB peripheral slaves area 0x40140000--0x4014BFFF\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ahb_periph2_slave_rule0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ahb_periph2_slave_rule0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ahb_periph2_slave_rule0`]
+#[doc = "AHB_PERIPH2_SLAVE_RULE0 (rw) register accessor: Security access rules for AHB peripheral slaves area 0x40140000--0x4014BFFF\n\nYou can [`read`](crate::Reg::read) this register and get [`ahb_periph2_slave_rule0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ahb_periph2_slave_rule0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ahb_periph2_slave_rule0`]
 module"]
 #[doc(alias = "AHB_PERIPH2_SLAVE_RULE0")]
 pub type AhbPeriph2SlaveRule0 = crate::Reg<ahb_periph2_slave_rule0::AhbPeriph2SlaveRule0Spec>;
 #[doc = "Security access rules for AHB peripheral slaves area 0x40140000--0x4014BFFF"]
 pub mod ahb_periph2_slave_rule0;
-#[doc = "SECURITY_CTRL_MEM_RULE0 (rw) register accessor: 0x40148000--0x4014BFFF\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`security_ctrl_mem_rule0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`security_ctrl_mem_rule0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@security_ctrl_mem_rule0`]
+#[doc = "SECURITY_CTRL_MEM_RULE0 (rw) register accessor: 0x40148000--0x4014BFFF\n\nYou can [`read`](crate::Reg::read) this register and get [`security_ctrl_mem_rule0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`security_ctrl_mem_rule0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@security_ctrl_mem_rule0`]
 module"]
 #[doc(alias = "SECURITY_CTRL_MEM_RULE0")]
 pub type SecurityCtrlMemRule0 = crate::Reg<security_ctrl_mem_rule0::SecurityCtrlMemRule0Spec>;
 #[doc = "0x40148000--0x4014BFFF"]
 pub mod security_ctrl_mem_rule0;
-#[doc = "AHB_PERIPH3_SLAVE_RULE0 (rw) register accessor: Security access rules for AHB peripheral slaves area 0x40150000--0x40158FFF\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ahb_periph3_slave_rule0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ahb_periph3_slave_rule0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ahb_periph3_slave_rule0`]
+#[doc = "AHB_PERIPH3_SLAVE_RULE0 (rw) register accessor: Security access rules for AHB peripheral slaves area 0x40150000--0x40158FFF\n\nYou can [`read`](crate::Reg::read) this register and get [`ahb_periph3_slave_rule0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ahb_periph3_slave_rule0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ahb_periph3_slave_rule0`]
 module"]
 #[doc(alias = "AHB_PERIPH3_SLAVE_RULE0")]
 pub type AhbPeriph3SlaveRule0 = crate::Reg<ahb_periph3_slave_rule0::AhbPeriph3SlaveRule0Spec>;
 #[doc = "Security access rules for AHB peripheral slaves area 0x40150000--0x40158FFF"]
 pub mod ahb_periph3_slave_rule0;
-#[doc = "SEC_VIO_ADDR (r) register accessor: most recent security violation address for AHB layer n\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sec_vio_addr::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sec_vio_addr`]
+#[doc = "SEC_VIO_ADDR (r) register accessor: most recent security violation address for AHB layer n\n\nYou can [`read`](crate::Reg::read) this register and get [`sec_vio_addr::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sec_vio_addr`]
 module"]
 #[doc(alias = "SEC_VIO_ADDR")]
 pub type SecVioAddr = crate::Reg<sec_vio_addr::SecVioAddrSpec>;
 #[doc = "most recent security violation address for AHB layer n"]
 pub mod sec_vio_addr;
-#[doc = "SEC_VIO_MISC_INFO (r) register accessor: most recent security violation miscellaneous information for AHB layer n\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sec_vio_misc_info::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sec_vio_misc_info`]
+#[doc = "SEC_VIO_MISC_INFO (r) register accessor: most recent security violation miscellaneous information for AHB layer n\n\nYou can [`read`](crate::Reg::read) this register and get [`sec_vio_misc_info::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sec_vio_misc_info`]
 module"]
 #[doc(alias = "SEC_VIO_MISC_INFO")]
 pub type SecVioMiscInfo = crate::Reg<sec_vio_misc_info::SecVioMiscInfoSpec>;
 #[doc = "most recent security violation miscellaneous information for AHB layer n"]
 pub mod sec_vio_misc_info;
-#[doc = "SEC_VIO_INFO_VALID (rw) register accessor: security violation address/information registers valid flags\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sec_vio_info_valid::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`sec_vio_info_valid::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sec_vio_info_valid`]
+#[doc = "SEC_VIO_INFO_VALID (rw) register accessor: security violation address/information registers valid flags\n\nYou can [`read`](crate::Reg::read) this register and get [`sec_vio_info_valid::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`sec_vio_info_valid::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sec_vio_info_valid`]
 module"]
 #[doc(alias = "SEC_VIO_INFO_VALID")]
 pub type SecVioInfoValid = crate::Reg<sec_vio_info_valid::SecVioInfoValidSpec>;
 #[doc = "security violation address/information registers valid flags"]
 pub mod sec_vio_info_valid;
-#[doc = "SEC_GPIO_MASK0 (rw) register accessor: Secure GPIO mask for port 0 pins. This register is used to block leakage of Secure interface (GPIOs, I2C, UART configured as secure peripherals) pin states to non-secure world.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sec_gpio_mask0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`sec_gpio_mask0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sec_gpio_mask0`]
+#[doc = "SEC_GPIO_MASK0 (rw) register accessor: Secure GPIO mask for port 0 pins. This register is used to block leakage of Secure interface (GPIOs, I2C, UART configured as secure peripherals) pin states to non-secure world.\n\nYou can [`read`](crate::Reg::read) this register and get [`sec_gpio_mask0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`sec_gpio_mask0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sec_gpio_mask0`]
 module"]
 #[doc(alias = "SEC_GPIO_MASK0")]
 pub type SecGpioMask0 = crate::Reg<sec_gpio_mask0::SecGpioMask0Spec>;
 #[doc = "Secure GPIO mask for port 0 pins. This register is used to block leakage of Secure interface (GPIOs, I2C, UART configured as secure peripherals) pin states to non-secure world."]
 pub mod sec_gpio_mask0;
-#[doc = "SEC_GPIO_MASK1 (rw) register accessor: Secure GPIO mask for port 1 pins.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sec_gpio_mask1::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`sec_gpio_mask1::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sec_gpio_mask1`]
+#[doc = "SEC_GPIO_MASK1 (rw) register accessor: Secure GPIO mask for port 1 pins.\n\nYou can [`read`](crate::Reg::read) this register and get [`sec_gpio_mask1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`sec_gpio_mask1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sec_gpio_mask1`]
 module"]
 #[doc(alias = "SEC_GPIO_MASK1")]
 pub type SecGpioMask1 = crate::Reg<sec_gpio_mask1::SecGpioMask1Spec>;
 #[doc = "Secure GPIO mask for port 1 pins."]
 pub mod sec_gpio_mask1;
-#[doc = "SEC_GPIO_MASK2 (rw) register accessor: Secure GPIO mask for port 2 pins.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sec_gpio_mask2::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`sec_gpio_mask2::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sec_gpio_mask2`]
+#[doc = "SEC_GPIO_MASK2 (rw) register accessor: Secure GPIO mask for port 2 pins.\n\nYou can [`read`](crate::Reg::read) this register and get [`sec_gpio_mask2::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`sec_gpio_mask2::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sec_gpio_mask2`]
 module"]
 #[doc(alias = "SEC_GPIO_MASK2")]
 pub type SecGpioMask2 = crate::Reg<sec_gpio_mask2::SecGpioMask2Spec>;
 #[doc = "Secure GPIO mask for port 2 pins."]
 pub mod sec_gpio_mask2;
-#[doc = "SEC_GPIO_MASK3 (rw) register accessor: Secure GPIO mask for port 3 pins.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sec_gpio_mask3::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`sec_gpio_mask3::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sec_gpio_mask3`]
+#[doc = "SEC_GPIO_MASK3 (rw) register accessor: Secure GPIO mask for port 3 pins.\n\nYou can [`read`](crate::Reg::read) this register and get [`sec_gpio_mask3::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`sec_gpio_mask3::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sec_gpio_mask3`]
 module"]
 #[doc(alias = "SEC_GPIO_MASK3")]
 pub type SecGpioMask3 = crate::Reg<sec_gpio_mask3::SecGpioMask3Spec>;
 #[doc = "Secure GPIO mask for port 3 pins."]
 pub mod sec_gpio_mask3;
-#[doc = "SEC_GPIO_MASK4 (rw) register accessor: Secure GPIO mask for port 4 pins.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sec_gpio_mask4::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`sec_gpio_mask4::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sec_gpio_mask4`]
+#[doc = "SEC_GPIO_MASK4 (rw) register accessor: Secure GPIO mask for port 4 pins.\n\nYou can [`read`](crate::Reg::read) this register and get [`sec_gpio_mask4::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`sec_gpio_mask4::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sec_gpio_mask4`]
 module"]
 #[doc(alias = "SEC_GPIO_MASK4")]
 pub type SecGpioMask4 = crate::Reg<sec_gpio_mask4::SecGpioMask4Spec>;
 #[doc = "Secure GPIO mask for port 4 pins."]
 pub mod sec_gpio_mask4;
-#[doc = "SEC_GPIO_MASK5 (rw) register accessor: Secure GPIO mask for port 5 pins.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sec_gpio_mask5::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`sec_gpio_mask5::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sec_gpio_mask5`]
+#[doc = "SEC_GPIO_MASK5 (rw) register accessor: Secure GPIO mask for port 5 pins.\n\nYou can [`read`](crate::Reg::read) this register and get [`sec_gpio_mask5::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`sec_gpio_mask5::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sec_gpio_mask5`]
 module"]
 #[doc(alias = "SEC_GPIO_MASK5")]
 pub type SecGpioMask5 = crate::Reg<sec_gpio_mask5::SecGpioMask5Spec>;
 #[doc = "Secure GPIO mask for port 5 pins."]
 pub mod sec_gpio_mask5;
-#[doc = "SEC_GPIO_MASK6 (rw) register accessor: Secure GPIO mask for port 6 pins.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sec_gpio_mask6::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`sec_gpio_mask6::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sec_gpio_mask6`]
+#[doc = "SEC_GPIO_MASK6 (rw) register accessor: Secure GPIO mask for port 6 pins.\n\nYou can [`read`](crate::Reg::read) this register and get [`sec_gpio_mask6::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`sec_gpio_mask6::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sec_gpio_mask6`]
 module"]
 #[doc(alias = "SEC_GPIO_MASK6")]
 pub type SecGpioMask6 = crate::Reg<sec_gpio_mask6::SecGpioMask6Spec>;
 #[doc = "Secure GPIO mask for port 6 pins."]
 pub mod sec_gpio_mask6;
-#[doc = "SEC_GPIO_MASK7 (rw) register accessor: Secure GPIO mask for port 7 pins.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sec_gpio_mask7::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`sec_gpio_mask7::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sec_gpio_mask7`]
+#[doc = "SEC_GPIO_MASK7 (rw) register accessor: Secure GPIO mask for port 7 pins.\n\nYou can [`read`](crate::Reg::read) this register and get [`sec_gpio_mask7::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`sec_gpio_mask7::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sec_gpio_mask7`]
 module"]
 #[doc(alias = "SEC_GPIO_MASK7")]
 pub type SecGpioMask7 = crate::Reg<sec_gpio_mask7::SecGpioMask7Spec>;
 #[doc = "Secure GPIO mask for port 7 pins."]
 pub mod sec_gpio_mask7;
-#[doc = "SEC_DSP_INT_MASK (rw) register accessor: secure general purpose register 8 used to mask interrupts to DSP for security purpose\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sec_dsp_int_mask::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`sec_dsp_int_mask::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sec_dsp_int_mask`]
+#[doc = "SEC_DSP_INT_MASK (rw) register accessor: secure general purpose register 8 used to mask interrupts to DSP for security purpose\n\nYou can [`read`](crate::Reg::read) this register and get [`sec_dsp_int_mask::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`sec_dsp_int_mask::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sec_dsp_int_mask`]
 module"]
 #[doc(alias = "SEC_DSP_INT_MASK")]
 pub type SecDspIntMask = crate::Reg<sec_dsp_int_mask::SecDspIntMaskSpec>;
 #[doc = "secure general purpose register 8 used to mask interrupts to DSP for security purpose"]
 pub mod sec_dsp_int_mask;
-#[doc = "SEC_MASK_LOCK (rw) register accessor: sec_gp_reg write-lock bits\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sec_mask_lock::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`sec_mask_lock::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sec_mask_lock`]
+#[doc = "SEC_MASK_LOCK (rw) register accessor: sec_gp_reg write-lock bits\n\nYou can [`read`](crate::Reg::read) this register and get [`sec_mask_lock::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`sec_mask_lock::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sec_mask_lock`]
 module"]
 #[doc(alias = "SEC_MASK_LOCK")]
 pub type SecMaskLock = crate::Reg<sec_mask_lock::SecMaskLockSpec>;
 #[doc = "sec_gp_reg write-lock bits"]
 pub mod sec_mask_lock;
-#[doc = "MASTER_SEC_LEVEL (rw) register accessor: master secure level register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`master_sec_level::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`master_sec_level::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@master_sec_level`]
+#[doc = "MASTER_SEC_LEVEL (rw) register accessor: master secure level register\n\nYou can [`read`](crate::Reg::read) this register and get [`master_sec_level::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`master_sec_level::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@master_sec_level`]
 module"]
 #[doc(alias = "MASTER_SEC_LEVEL")]
 pub type MasterSecLevel = crate::Reg<master_sec_level::MasterSecLevelSpec>;
 #[doc = "master secure level register"]
 pub mod master_sec_level;
-#[doc = "MASTER_SEC_LEVEL_ANTI_POL (rw) register accessor: master secure level anti-pole register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`master_sec_level_anti_pol::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`master_sec_level_anti_pol::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@master_sec_level_anti_pol`]
+#[doc = "MASTER_SEC_LEVEL_ANTI_POL (rw) register accessor: master secure level anti-pole register\n\nYou can [`read`](crate::Reg::read) this register and get [`master_sec_level_anti_pol::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`master_sec_level_anti_pol::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@master_sec_level_anti_pol`]
 module"]
 #[doc(alias = "MASTER_SEC_LEVEL_ANTI_POL")]
 pub type MasterSecLevelAntiPol = crate::Reg<master_sec_level_anti_pol::MasterSecLevelAntiPolSpec>;
 #[doc = "master secure level anti-pole register"]
 pub mod master_sec_level_anti_pol;
-#[doc = "CM33_LOCK_REG (rw) register accessor: m33 lock control register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cm33_lock_reg::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cm33_lock_reg::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cm33_lock_reg`]
+#[doc = "CM33_LOCK_REG (rw) register accessor: m33 lock control register\n\nYou can [`read`](crate::Reg::read) this register and get [`cm33_lock_reg::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cm33_lock_reg::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cm33_lock_reg`]
 module"]
 #[doc(alias = "CM33_LOCK_REG")]
 pub type Cm33LockReg = crate::Reg<cm33_lock_reg::Cm33LockRegSpec>;
 #[doc = "m33 lock control register"]
 pub mod cm33_lock_reg;
-#[doc = "MISC_CTRL_DP_REG (rw) register accessor: secure control duplicate register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`misc_ctrl_dp_reg::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`misc_ctrl_dp_reg::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@misc_ctrl_dp_reg`]
+#[doc = "MISC_CTRL_DP_REG (rw) register accessor: secure control duplicate register\n\nYou can [`read`](crate::Reg::read) this register and get [`misc_ctrl_dp_reg::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`misc_ctrl_dp_reg::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@misc_ctrl_dp_reg`]
 module"]
 #[doc(alias = "MISC_CTRL_DP_REG")]
 pub type MiscCtrlDpReg = crate::Reg<misc_ctrl_dp_reg::MiscCtrlDpRegSpec>;
 #[doc = "secure control duplicate register"]
 pub mod misc_ctrl_dp_reg;
-#[doc = "MISC_CTRL_REG (rw) register accessor: secure control register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`misc_ctrl_reg::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`misc_ctrl_reg::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@misc_ctrl_reg`]
+#[doc = "MISC_CTRL_REG (rw) register accessor: secure control register\n\nYou can [`read`](crate::Reg::read) this register and get [`misc_ctrl_reg::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`misc_ctrl_reg::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@misc_ctrl_reg`]
 module"]
 #[doc(alias = "MISC_CTRL_REG")]
 pub type MiscCtrlReg = crate::Reg<misc_ctrl_reg::MiscCtrlRegSpec>;

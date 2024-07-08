@@ -37,7 +37,7 @@ impl R {
         PerintR::new(((self.bits >> 4) & 1) != 0)
     }
 }
-#[doc = "FIFO interrupt status register.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fifointstat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "FIFO interrupt status register.\n\nYou can [`read`](crate::Reg::read) this register and get [`fifointstat::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FifointstatSpec;
 impl crate::RegisterSpec for FifointstatSpec {
     type Ux = u32;

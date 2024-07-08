@@ -29,25 +29,25 @@ impl RegisterBlock {
         &self.ccvr
     }
 }
-#[doc = "CCR (rw) register accessor: Cache control register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ccr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ccr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ccr`]
+#[doc = "CCR (rw) register accessor: Cache control register\n\nYou can [`read`](crate::Reg::read) this register and get [`ccr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ccr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ccr`]
 module"]
 #[doc(alias = "CCR")]
 pub type Ccr = crate::Reg<ccr::CcrSpec>;
 #[doc = "Cache control register"]
 pub mod ccr;
-#[doc = "CLCR (rw) register accessor: Cache line control register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`clcr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`clcr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@clcr`]
+#[doc = "CLCR (rw) register accessor: Cache line control register\n\nYou can [`read`](crate::Reg::read) this register and get [`clcr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`clcr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@clcr`]
 module"]
 #[doc(alias = "CLCR")]
 pub type Clcr = crate::Reg<clcr::ClcrSpec>;
 #[doc = "Cache line control register"]
 pub mod clcr;
-#[doc = "CSAR (rw) register accessor: Cache search address register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`csar::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`csar::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@csar`]
+#[doc = "CSAR (rw) register accessor: Cache search address register\n\nYou can [`read`](crate::Reg::read) this register and get [`csar::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`csar::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@csar`]
 module"]
 #[doc(alias = "CSAR")]
 pub type Csar = crate::Reg<csar::CsarSpec>;
 #[doc = "Cache search address register"]
 pub mod csar;
-#[doc = "CCVR (rw) register accessor: Cache read/write value register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ccvr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ccvr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ccvr`]
+#[doc = "CCVR (rw) register accessor: Cache read/write value register\n\nYou can [`read`](crate::Reg::read) this register and get [`ccvr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ccvr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ccvr`]
 module"]
 #[doc(alias = "CCVR")]
 pub type Ccvr = crate::Reg<ccvr::CcvrSpec>;

@@ -296,7 +296,7 @@ impl W {
         HaltW::new(self, 30)
     }
 }
-#[doc = "OTP clock divider register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`otp_clk_div::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`otp_clk_div::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "OTP clock divider register\n\nYou can [`read`](crate::Reg::read) this register and get [`otp_clk_div::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`otp_clk_div::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct OtpClkDivSpec;
 impl crate::RegisterSpec for OtpClkDivSpec {
     type Ux = u32;

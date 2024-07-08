@@ -79,7 +79,7 @@ impl R {
         EventR::new(((self.bits >> 18) & 1) != 0)
     }
 }
-#[doc = "Slave Interrupt Mask Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sintmasked::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Slave Interrupt Mask Register\n\nYou can [`read`](crate::Reg::read) this register and get [`sintmasked::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SintmaskedSpec;
 impl crate::RegisterSpec for SintmaskedSpec {
     type Ux = u32;

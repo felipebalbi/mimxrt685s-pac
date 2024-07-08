@@ -200,7 +200,7 @@ is write-1-clear(w1c)."]
         IpcmderrcodeR::new(((self.bits >> 24) & 0x0f) as u8)
     }
 }
-#[doc = "Status Register 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sts1::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Status Register 1\n\nYou can [`read`](crate::Reg::read) this register and get [`sts1::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Sts1Spec;
 impl crate::RegisterSpec for Sts1Spec {
     type Ux = u32;

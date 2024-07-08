@@ -30,7 +30,7 @@ impl R {
         AllowgetkeyR::new(((self.bits >> 3) & 1) != 0)
     }
 }
-#[doc = "PUF Allow\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`allow::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "PUF Allow\n\nYou can [`read`](crate::Reg::read) this register and get [`allow::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct AllowSpec;
 impl crate::RegisterSpec for AllowSpec {
     type Ux = u32;

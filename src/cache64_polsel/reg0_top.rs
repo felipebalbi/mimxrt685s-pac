@@ -21,7 +21,7 @@ impl W {
         Reg0TopW::new(self, 10)
     }
 }
-#[doc = "Region 0 Top Boundary\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`reg0_top::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`reg0_top::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Region 0 Top Boundary\n\nYou can [`read`](crate::Reg::read) this register and get [`reg0_top::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`reg0_top::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Reg0TopSpec;
 impl crate::RegisterSpec for Reg0TopSpec {
     type Ux = u32;

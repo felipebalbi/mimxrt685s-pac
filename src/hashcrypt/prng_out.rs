@@ -9,7 +9,7 @@ impl R {
         PrngOutR::new(self.bits)
     }
 }
-#[doc = "PRNG software-accessable random output value\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`prng_out::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "PRNG software-accessable random output value\n\nYou can [`read`](crate::Reg::read) this register and get [`prng_out::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PrngOutSpec;
 impl crate::RegisterSpec for PrngOutSpec {
     type Ux = u32;

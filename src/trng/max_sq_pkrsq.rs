@@ -9,7 +9,7 @@ impl R {
         PkrSqR::new(self.bits & 0x00ff_ffff)
     }
 }
-#[doc = "Poker Square Calculation Result Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`max_sq_pkrsq::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Poker Square Calculation Result Register\n\nYou can [`read`](crate::Reg::read) this register and get [`max_sq_pkrsq::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MaxSqPkrsqSpec;
 impl crate::RegisterSpec for MaxSqPkrsqSpec {
     type Ux = u32;

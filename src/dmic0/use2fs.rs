@@ -70,7 +70,7 @@ impl W {
         Use2fsW::new(self, 0)
     }
 }
-#[doc = "Use 2FS register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`use2fs::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`use2fs::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Use 2FS register\n\nYou can [`read`](crate::Reg::read) this register and get [`use2fs::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`use2fs::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Use2fsSpec;
 impl crate::RegisterSpec for Use2fsSpec {
     type Ux = u32;

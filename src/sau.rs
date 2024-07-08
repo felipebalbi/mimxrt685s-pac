@@ -47,43 +47,43 @@ impl RegisterBlock {
         &self.sfar
     }
 }
-#[doc = "CTRL (rw) register accessor: Security Attribution Unit Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ctrl::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ctrl::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ctrl`]
+#[doc = "CTRL (rw) register accessor: Security Attribution Unit Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ctrl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ctrl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ctrl`]
 module"]
 #[doc(alias = "CTRL")]
 pub type Ctrl = crate::Reg<ctrl::CtrlSpec>;
 #[doc = "Security Attribution Unit Control Register"]
 pub mod ctrl;
-#[doc = "TYPE (rw) register accessor: Security Attribution Unit Type Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`type_::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`type_::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@type_`]
+#[doc = "TYPE (rw) register accessor: Security Attribution Unit Type Register\n\nYou can [`read`](crate::Reg::read) this register and get [`type_::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`type_::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@type_`]
 module"]
 #[doc(alias = "TYPE")]
 pub type Type = crate::Reg<type_::TypeSpec>;
 #[doc = "Security Attribution Unit Type Register"]
 pub mod type_;
-#[doc = "RNR (rw) register accessor: Security Attribution Unit Region Number Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rnr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`rnr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rnr`]
+#[doc = "RNR (rw) register accessor: Security Attribution Unit Region Number Register\n\nYou can [`read`](crate::Reg::read) this register and get [`rnr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`rnr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rnr`]
 module"]
 #[doc(alias = "RNR")]
 pub type Rnr = crate::Reg<rnr::RnrSpec>;
 #[doc = "Security Attribution Unit Region Number Register"]
 pub mod rnr;
-#[doc = "RBAR (rw) register accessor: Security Attribution Unit Region Base Address Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rbar::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`rbar::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rbar`]
+#[doc = "RBAR (rw) register accessor: Security Attribution Unit Region Base Address Register\n\nYou can [`read`](crate::Reg::read) this register and get [`rbar::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`rbar::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rbar`]
 module"]
 #[doc(alias = "RBAR")]
 pub type Rbar = crate::Reg<rbar::RbarSpec>;
 #[doc = "Security Attribution Unit Region Base Address Register"]
 pub mod rbar;
-#[doc = "RLAR (rw) register accessor: Security Attribution Unit Region Limit Address Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rlar::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`rlar::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rlar`]
+#[doc = "RLAR (rw) register accessor: Security Attribution Unit Region Limit Address Register\n\nYou can [`read`](crate::Reg::read) this register and get [`rlar::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`rlar::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rlar`]
 module"]
 #[doc(alias = "RLAR")]
 pub type Rlar = crate::Reg<rlar::RlarSpec>;
 #[doc = "Security Attribution Unit Region Limit Address Register"]
 pub mod rlar;
-#[doc = "SFSR (rw) register accessor: Secure Fault Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sfsr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`sfsr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sfsr`]
+#[doc = "SFSR (rw) register accessor: Secure Fault Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`sfsr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`sfsr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sfsr`]
 module"]
 #[doc(alias = "SFSR")]
 pub type Sfsr = crate::Reg<sfsr::SfsrSpec>;
 #[doc = "Secure Fault Status Register"]
 pub mod sfsr;
-#[doc = "SFAR (rw) register accessor: Secure Fault Address Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sfar::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`sfar::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sfar`]
+#[doc = "SFAR (rw) register accessor: Secure Fault Address Register\n\nYou can [`read`](crate::Reg::read) this register and get [`sfar::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`sfar::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sfar`]
 module"]
 #[doc(alias = "SFAR")]
 pub type Sfar = crate::Reg<sfar::SfarSpec>;

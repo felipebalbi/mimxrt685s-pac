@@ -782,7 +782,7 @@ impl W {
         Rule7W::new(self, 28)
     }
 }
-#[doc = "FLEXSPI0 Region 0 Rule(n) Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`flexspi0_region0_rule::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`flexspi0_region0_rule::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "FLEXSPI0 Region 0 Rule(n) Register\n\nYou can [`read`](crate::Reg::read) this register and get [`flexspi0_region0_rule::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`flexspi0_region0_rule::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Flexspi0Region0RuleSpec;
 impl crate::RegisterSpec for Flexspi0Region0RuleSpec {
     type Ux = u32;

@@ -9,7 +9,7 @@ impl R {
         CapR::new(self.bits)
     }
 }
-#[doc = "Capture Register . CR is loaded with the value of TC when there is an event on the CAPn. input.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Capture Register . CR is loaded with the value of TC when there is an event on the CAPn. input.\n\nYou can [`read`](crate::Reg::read) this register and get [`cr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CrSpec;
 impl crate::RegisterSpec for CrSpec {
     type Ux = u32;

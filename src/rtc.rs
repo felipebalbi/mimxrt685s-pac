@@ -47,37 +47,37 @@ impl RegisterBlock {
         self.gpreg.iter()
     }
 }
-#[doc = "CTRL (rw) register accessor: RTC control register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ctrl::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ctrl::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ctrl`]
+#[doc = "CTRL (rw) register accessor: RTC control register\n\nYou can [`read`](crate::Reg::read) this register and get [`ctrl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ctrl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ctrl`]
 module"]
 #[doc(alias = "CTRL")]
 pub type Ctrl = crate::Reg<ctrl::CtrlSpec>;
 #[doc = "RTC control register"]
 pub mod ctrl;
-#[doc = "MATCH (rw) register accessor: RTC match register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`match_::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`match_::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@match_`]
+#[doc = "MATCH (rw) register accessor: RTC match register\n\nYou can [`read`](crate::Reg::read) this register and get [`match_::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`match_::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@match_`]
 module"]
 #[doc(alias = "MATCH")]
 pub type Match = crate::Reg<match_::MatchSpec>;
 #[doc = "RTC match register"]
 pub mod match_;
-#[doc = "COUNT (rw) register accessor: RTC counter register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`count::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`count::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@count`]
+#[doc = "COUNT (rw) register accessor: RTC counter register\n\nYou can [`read`](crate::Reg::read) this register and get [`count::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`count::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@count`]
 module"]
 #[doc(alias = "COUNT")]
 pub type Count = crate::Reg<count::CountSpec>;
 #[doc = "RTC counter register"]
 pub mod count;
-#[doc = "WAKE (rw) register accessor: High-resolution/wake-up timer control register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`wake::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`wake::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@wake`]
+#[doc = "WAKE (rw) register accessor: High-resolution/wake-up timer control register\n\nYou can [`read`](crate::Reg::read) this register and get [`wake::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`wake::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@wake`]
 module"]
 #[doc(alias = "WAKE")]
 pub type Wake = crate::Reg<wake::WakeSpec>;
 #[doc = "High-resolution/wake-up timer control register"]
 pub mod wake;
-#[doc = "SUBSEC (rw) register accessor: RTC Sub-second Counter register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`subsec::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`subsec::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@subsec`]
+#[doc = "SUBSEC (rw) register accessor: RTC Sub-second Counter register\n\nYou can [`read`](crate::Reg::read) this register and get [`subsec::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`subsec::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@subsec`]
 module"]
 #[doc(alias = "SUBSEC")]
 pub type Subsec = crate::Reg<subsec::SubsecSpec>;
 #[doc = "RTC Sub-second Counter register"]
 pub mod subsec;
-#[doc = "GPREG (rw) register accessor: General Purpose register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gpreg::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gpreg::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gpreg`]
+#[doc = "GPREG (rw) register accessor: General Purpose register\n\nYou can [`read`](crate::Reg::read) this register and get [`gpreg::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`gpreg::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@gpreg`]
 module"]
 #[doc(alias = "GPREG")]
 pub type Gpreg = crate::Reg<gpreg::GpregSpec>;

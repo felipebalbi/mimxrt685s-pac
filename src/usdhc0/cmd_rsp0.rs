@@ -9,7 +9,7 @@ impl R {
         Cmdrsp0R::new(self.bits)
     }
 }
-#[doc = "Command Response0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cmd_rsp0::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Command Response0\n\nYou can [`read`](crate::Reg::read) this register and get [`cmd_rsp0::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CmdRsp0Spec;
 impl crate::RegisterSpec for CmdRsp0Spec {
     type Ux = u32;

@@ -9,7 +9,7 @@ impl R {
         ReadDataR::new(self.bits)
     }
 }
-#[doc = "OTP read data register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`otp_read_data::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "OTP read data register\n\nYou can [`read`](crate::Reg::read) this register and get [`otp_read_data::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct OtpReadDataSpec;
 impl crate::RegisterSpec for OtpReadDataSpec {
     type Ux = u32;

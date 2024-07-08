@@ -1075,7 +1075,7 @@ impl W {
         RngW::new(self, 31)
     }
 }
-#[doc = "Start enable 0 clear\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`starten0_clr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Start enable 0 clear\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`starten0_clr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Starten0ClrSpec;
 impl crate::RegisterSpec for Starten0ClrSpec {
     type Ux = u32;

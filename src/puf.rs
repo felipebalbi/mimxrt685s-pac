@@ -162,144 +162,145 @@ impl RegisterBlock {
         &self.idxblk_l_dp
     }
 }
-#[doc = "CTRL (rw) register accessor: PUF Control\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ctrl::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ctrl::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ctrl`]
+#[doc = "CTRL (rw) register accessor: PUF Control\n\nYou can [`read`](crate::Reg::read) this register and get [`ctrl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ctrl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ctrl`]
 module"]
 #[doc(alias = "CTRL")]
 pub type Ctrl = crate::Reg<ctrl::CtrlSpec>;
 #[doc = "PUF Control"]
 pub mod ctrl;
-#[doc = "KEYINDEX (rw) register accessor: PUF Key Index\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`keyindex::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`keyindex::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@keyindex`]
+#[doc = "KEYINDEX (rw) register accessor: PUF Key Index\n\nYou can [`read`](crate::Reg::read) this register and get [`keyindex::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`keyindex::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@keyindex`]
 module"]
 #[doc(alias = "KEYINDEX")]
 pub type Keyindex = crate::Reg<keyindex::KeyindexSpec>;
 #[doc = "PUF Key Index"]
 pub mod keyindex;
-#[doc = "KEYSIZE (rw) register accessor: PUF Key Size\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`keysize::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`keysize::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@keysize`]
+#[doc = "KEYSIZE (rw) register accessor: PUF Key Size\n\nYou can [`read`](crate::Reg::read) this register and get [`keysize::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`keysize::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@keysize`]
 module"]
 #[doc(alias = "KEYSIZE")]
 pub type Keysize = crate::Reg<keysize::KeysizeSpec>;
 #[doc = "PUF Key Size"]
 pub mod keysize;
-#[doc = "STAT (r) register accessor: PUF Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`stat::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@stat`]
+#[doc = "STAT (r) register accessor: PUF Status\n\nYou can [`read`](crate::Reg::read) this register and get [`stat::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@stat`]
 module"]
 #[doc(alias = "STAT")]
 pub type Stat = crate::Reg<stat::StatSpec>;
 #[doc = "PUF Status"]
 pub mod stat;
-#[doc = "ALLOW (r) register accessor: PUF Allow\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`allow::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@allow`]
+#[doc = "ALLOW (r) register accessor: PUF Allow\n\nYou can [`read`](crate::Reg::read) this register and get [`allow::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@allow`]
 module"]
 #[doc(alias = "ALLOW")]
 pub type Allow = crate::Reg<allow::AllowSpec>;
 #[doc = "PUF Allow"]
 pub mod allow;
-#[doc = "KEYINPUT (w) register accessor: PUF Key Input\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`keyinput::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@keyinput`]
+#[doc = "KEYINPUT (w) register accessor: PUF Key Input\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`keyinput::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@keyinput`]
 module"]
 #[doc(alias = "KEYINPUT")]
 pub type Keyinput = crate::Reg<keyinput::KeyinputSpec>;
 #[doc = "PUF Key Input"]
 pub mod keyinput;
-#[doc = "CODEINPUT (w) register accessor: PUF Code Input\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`codeinput::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@codeinput`]
+#[doc = "CODEINPUT (w) register accessor: PUF Code Input\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`codeinput::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@codeinput`]
 module"]
 #[doc(alias = "CODEINPUT")]
 pub type Codeinput = crate::Reg<codeinput::CodeinputSpec>;
 #[doc = "PUF Code Input"]
 pub mod codeinput;
-#[doc = "CODEOUTPUT (r) register accessor: PUF Code Output\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`codeoutput::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@codeoutput`]
+#[doc = "CODEOUTPUT (r) register accessor: PUF Code Output\n\nYou can [`read`](crate::Reg::read) this register and get [`codeoutput::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@codeoutput`]
 module"]
 #[doc(alias = "CODEOUTPUT")]
 pub type Codeoutput = crate::Reg<codeoutput::CodeoutputSpec>;
 #[doc = "PUF Code Output"]
 pub mod codeoutput;
-#[doc = "KEYOUTINDEX (r) register accessor: PUF Key Output Index\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`keyoutindex::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@keyoutindex`]
+#[doc = "KEYOUTINDEX (r) register accessor: PUF Key Output Index\n\nYou can [`read`](crate::Reg::read) this register and get [`keyoutindex::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@keyoutindex`]
 module"]
 #[doc(alias = "KEYOUTINDEX")]
 pub type Keyoutindex = crate::Reg<keyoutindex::KeyoutindexSpec>;
 #[doc = "PUF Key Output Index"]
 pub mod keyoutindex;
-#[doc = "KEYOUTPUT (r) register accessor: PUF Key Output\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`keyoutput::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@keyoutput`]
+#[doc = "KEYOUTPUT (r) register accessor: PUF Key Output\n\nYou can [`read`](crate::Reg::read) this register and get [`keyoutput::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@keyoutput`]
 module"]
 #[doc(alias = "KEYOUTPUT")]
 pub type Keyoutput = crate::Reg<keyoutput::KeyoutputSpec>;
 #[doc = "PUF Key Output"]
 pub mod keyoutput;
-#[doc = "IFSTAT (rw) register accessor: PUF Interface Status and Clear\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ifstat::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ifstat::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ifstat`]
+#[doc = "IFSTAT (rw) register accessor: PUF Interface Status and Clear\n\nYou can [`read`](crate::Reg::read) this register and get [`ifstat::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ifstat::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ifstat`]
 module"]
 #[doc(alias = "IFSTAT")]
 pub type Ifstat = crate::Reg<ifstat::IfstatSpec>;
 #[doc = "PUF Interface Status and Clear"]
 pub mod ifstat;
-#[doc = "VERSION (r) register accessor: PUF Version\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`version::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@version`]
+#[doc = "VERSION (r) register accessor: PUF Version\n\nYou can [`read`](crate::Reg::read) this register and get [`version::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@version`]
 module"]
 #[doc(alias = "VERSION")]
 pub type Version = crate::Reg<version::VersionSpec>;
 #[doc = "PUF Version"]
 pub mod version;
-#[doc = "INTEN (rw) register accessor: PUF Interrupt Enable\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`inten::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`inten::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@inten`]
+#[doc = "INTEN (rw) register accessor: PUF Interrupt Enable\n\nYou can [`read`](crate::Reg::read) this register and get [`inten::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`inten::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@inten`]
 module"]
 #[doc(alias = "INTEN")]
 pub type Inten = crate::Reg<inten::IntenSpec>;
 #[doc = "PUF Interrupt Enable"]
 pub mod inten;
-#[doc = "INTSTAT (rw) register accessor: PUF Interrupt Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`intstat::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`intstat::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@intstat`]
+#[doc = "INTSTAT (rw) register accessor: PUF Interrupt Status\n\nYou can [`read`](crate::Reg::read) this register and get [`intstat::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`intstat::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@intstat`]
 module"]
 #[doc(alias = "INTSTAT")]
 pub type Intstat = crate::Reg<intstat::IntstatSpec>;
 #[doc = "PUF Interrupt Status"]
 pub mod intstat;
-#[doc = "PWRCTRL (rw) register accessor: PUF Power Control\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pwrctrl::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pwrctrl::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pwrctrl`]
+#[doc = "PWRCTRL (rw) register accessor: PUF Power Control\n\nYou can [`read`](crate::Reg::read) this register and get [`pwrctrl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pwrctrl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pwrctrl`]
 module"]
 #[doc(alias = "PWRCTRL")]
 pub type Pwrctrl = crate::Reg<pwrctrl::PwrctrlSpec>;
 #[doc = "PUF Power Control"]
 pub mod pwrctrl;
-#[doc = "CFG (rw) register accessor: PUF Configuration\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cfg::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cfg::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "CFG (rw) register accessor: PUF Configuration\n\nYou can [`read`](crate::Reg::read) this register and get [`cfg::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cfg::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cfg`]
+module"]
 #[doc(alias = "CFG")]
 pub type Cfg = crate::Reg<cfg::CfgSpec>;
 #[doc = "PUF Configuration"]
 pub mod cfg;
-#[doc = "KEYLOCK (rw) register accessor: Key Lock\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`keylock::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`keylock::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@keylock`]
+#[doc = "KEYLOCK (rw) register accessor: Key Lock\n\nYou can [`read`](crate::Reg::read) this register and get [`keylock::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`keylock::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@keylock`]
 module"]
 #[doc(alias = "KEYLOCK")]
 pub type Keylock = crate::Reg<keylock::KeylockSpec>;
 #[doc = "Key Lock"]
 pub mod keylock;
-#[doc = "KEYENABLE (rw) register accessor: Key Enable\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`keyenable::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`keyenable::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@keyenable`]
+#[doc = "KEYENABLE (rw) register accessor: Key Enable\n\nYou can [`read`](crate::Reg::read) this register and get [`keyenable::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`keyenable::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@keyenable`]
 module"]
 #[doc(alias = "KEYENABLE")]
 pub type Keyenable = crate::Reg<keyenable::KeyenableSpec>;
 #[doc = "Key Enable"]
 pub mod keyenable;
-#[doc = "KEYRESET (w) register accessor: Key Reset\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`keyreset::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@keyreset`]
+#[doc = "KEYRESET (w) register accessor: Key Reset\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`keyreset::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@keyreset`]
 module"]
 #[doc(alias = "KEYRESET")]
 pub type Keyreset = crate::Reg<keyreset::KeyresetSpec>;
 #[doc = "Key Reset"]
 pub mod keyreset;
-#[doc = "IDXBLK_L (rw) register accessor: Index Block Low\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`idxblk_l::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`idxblk_l::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@idxblk_l`]
+#[doc = "IDXBLK_L (rw) register accessor: Index Block Low\n\nYou can [`read`](crate::Reg::read) this register and get [`idxblk_l::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`idxblk_l::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@idxblk_l`]
 module"]
 #[doc(alias = "IDXBLK_L")]
 pub type IdxblkL = crate::Reg<idxblk_l::IdxblkLSpec>;
 #[doc = "Index Block Low"]
 pub mod idxblk_l;
-#[doc = "IDXBLK_H_DP (rw) register accessor: Index Block High Duplicate\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`idxblk_h_dp::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`idxblk_h_dp::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@idxblk_h_dp`]
+#[doc = "IDXBLK_H_DP (rw) register accessor: Index Block High Duplicate\n\nYou can [`read`](crate::Reg::read) this register and get [`idxblk_h_dp::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`idxblk_h_dp::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@idxblk_h_dp`]
 module"]
 #[doc(alias = "IDXBLK_H_DP")]
 pub type IdxblkHDp = crate::Reg<idxblk_h_dp::IdxblkHDpSpec>;
 #[doc = "Index Block High Duplicate"]
 pub mod idxblk_h_dp;
-#[doc = "KEYMASK (w) register accessor: Key Mask x\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`keymask::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@keymask`]
+#[doc = "KEYMASK (w) register accessor: Key Mask x\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`keymask::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@keymask`]
 module"]
 #[doc(alias = "KEYMASK")]
 pub type Keymask = crate::Reg<keymask::KeymaskSpec>;
 #[doc = "Key Mask x"]
 pub mod keymask;
-#[doc = "IDXBLK_H (rw) register accessor: Index Block High\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`idxblk_h::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`idxblk_h::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@idxblk_h`]
+#[doc = "IDXBLK_H (rw) register accessor: Index Block High\n\nYou can [`read`](crate::Reg::read) this register and get [`idxblk_h::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`idxblk_h::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@idxblk_h`]
 module"]
 #[doc(alias = "IDXBLK_H")]
 pub type IdxblkH = crate::Reg<idxblk_h::IdxblkHSpec>;
 #[doc = "Index Block High"]
 pub mod idxblk_h;
-#[doc = "IDXBLK_L_DP (rw) register accessor: Index Block Low Duplicate\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`idxblk_l_dp::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`idxblk_l_dp::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@idxblk_l_dp`]
+#[doc = "IDXBLK_L_DP (rw) register accessor: Index Block Low Duplicate\n\nYou can [`read`](crate::Reg::read) this register and get [`idxblk_l_dp::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`idxblk_l_dp::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@idxblk_l_dp`]
 module"]
 #[doc(alias = "IDXBLK_L_DP")]
 pub type IdxblkLDp = crate::Reg<idxblk_l_dp::IdxblkLDpSpec>;

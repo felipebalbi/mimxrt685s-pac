@@ -17,13 +17,13 @@ impl Ev {
         &self.ev_ctrl
     }
 }
-#[doc = "EV_STATE (rw) register accessor: SCT event state register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ev_state::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ev_state::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ev_state`]
+#[doc = "EV_STATE (rw) register accessor: SCT event state register 0\n\nYou can [`read`](crate::Reg::read) this register and get [`ev_state::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ev_state::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ev_state`]
 module"]
 #[doc(alias = "EV_STATE")]
 pub type EvState = crate::Reg<ev_state::EvStateSpec>;
 #[doc = "SCT event state register 0"]
 pub mod ev_state;
-#[doc = "EV_CTRL (rw) register accessor: SCT event control register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ev_ctrl::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ev_ctrl::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ev_ctrl`]
+#[doc = "EV_CTRL (rw) register accessor: SCT event control register 0\n\nYou can [`read`](crate::Reg::read) this register and get [`ev_ctrl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ev_ctrl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ev_ctrl`]
 module"]
 #[doc(alias = "EV_CTRL")]
 pub type EvCtrl = crate::Reg<ev_ctrl::EvCtrlSpec>;

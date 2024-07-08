@@ -23,7 +23,7 @@ impl R {
         PIndicatorR::new(((self.bits >> 16) & 1) != 0)
     }
 }
-#[doc = "Host Controller Structural Parameters\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hcsparams::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Host Controller Structural Parameters\n\nYou can [`read`](crate::Reg::read) this register and get [`hcsparams::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct HcsparamsSpec;
 impl crate::RegisterSpec for HcsparamsSpec {
     type Ux = u32;

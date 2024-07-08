@@ -16,7 +16,7 @@ impl R {
         WrcntrR::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
-#[doc = "IP TX FIFO Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`iptxfsts::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "IP TX FIFO Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`iptxfsts::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IptxfstsSpec;
 impl crate::RegisterSpec for IptxfstsSpec {
     type Ux = u32;

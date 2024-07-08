@@ -30,7 +30,7 @@ impl R {
         StrobeDllStsRefSelR::new(((self.bits >> 9) & 0x7f) as u8)
     }
 }
-#[doc = "Strobe DLL Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`strobe_dll_status::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Strobe DLL Status\n\nYou can [`read`](crate::Reg::read) this register and get [`strobe_dll_status::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct StrobeDllStatusSpec;
 impl crate::RegisterSpec for StrobeDllStatusSpec {
     type Ux = u32;

@@ -1,29 +1,29 @@
 #[repr(C)]
 #[doc = "Register block"]
 pub struct RegisterBlock {
-    _reserved_0_freqmectrl: [u8; 0x04],
+    _reserved_0_freqme_freqmectrl: [u8; 0x04],
 }
 impl RegisterBlock {
     #[doc = "0x00 - Freqeuncy Measurement (in Write mode)"]
     #[inline(always)]
-    pub const fn freqmectrl_w(&self) -> &FreqmectrlW {
+    pub const fn freqme_freqmectrl_w(&self) -> &FreqmeFreqmectrlW {
         unsafe { &*(self as *const Self).cast::<u8>().add(0).cast() }
     }
     #[doc = "0x00 - Frequency Measurement (in Read mode)"]
     #[inline(always)]
-    pub const fn freqmectrl_r(&self) -> &FreqmectrlR {
+    pub const fn freqme_freqmectrl_r(&self) -> &FreqmeFreqmectrlR {
         unsafe { &*(self as *const Self).cast::<u8>().add(0).cast() }
     }
 }
-#[doc = "FREQMECTRL_R (r) register accessor: Frequency Measurement (in Read mode)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`freqmectrl_r::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@freqmectrl_r`]
+#[doc = "FREQME_FREQMECTRL_R (r) register accessor: Frequency Measurement (in Read mode)\n\nYou can [`read`](crate::Reg::read) this register and get [`freqme_freqmectrl_r::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@freqme_freqmectrl_r`]
 module"]
-#[doc(alias = "FREQMECTRL_R")]
-pub type FreqmectrlR = crate::Reg<freqmectrl_r::FreqmectrlRSpec>;
+#[doc(alias = "FREQME_FREQMECTRL_R")]
+pub type FreqmeFreqmectrlR = crate::Reg<freqme_freqmectrl_r::FreqmeFreqmectrlRSpec>;
 #[doc = "Frequency Measurement (in Read mode)"]
-pub mod freqmectrl_r;
-#[doc = "FREQMECTRL_W (w) register accessor: Freqeuncy Measurement (in Write mode)\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`freqmectrl_w::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@freqmectrl_w`]
+pub mod freqme_freqmectrl_r;
+#[doc = "FREQME_FREQMECTRL_W (w) register accessor: Freqeuncy Measurement (in Write mode)\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`freqme_freqmectrl_w::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@freqme_freqmectrl_w`]
 module"]
-#[doc(alias = "FREQMECTRL_W")]
-pub type FreqmectrlW = crate::Reg<freqmectrl_w::FreqmectrlWSpec>;
+#[doc(alias = "FREQME_FREQMECTRL_W")]
+pub type FreqmeFreqmectrlW = crate::Reg<freqme_freqmectrl_w::FreqmeFreqmectrlWSpec>;
 #[doc = "Freqeuncy Measurement (in Write mode)"]
-pub mod freqmectrl_w;
+pub mod freqme_freqmectrl_w;

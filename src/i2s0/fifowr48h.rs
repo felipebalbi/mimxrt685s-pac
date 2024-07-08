@@ -10,7 +10,7 @@ impl W {
         TxdataW::new(self, 0)
     }
 }
-#[doc = "FIFO write data for upper data bits. May only be used if the I2S is configured for 2x 24-bit data and not using DMA.\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fifowr48h::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "FIFO write data for upper data bits. May only be used if the I2S is configured for 2x 24-bit data and not using DMA.\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`fifowr48h::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Fifowr48hSpec;
 impl crate::RegisterSpec for Fifowr48hSpec {
     type Ux = u32;

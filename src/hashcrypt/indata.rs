@@ -10,7 +10,7 @@ impl W {
         DataW::new(self, 0)
     }
 }
-#[doc = "Input of 16 words at a time to load up buffer.\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`indata::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Input of 16 words at a time to load up buffer.\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`indata::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IndataSpec;
 impl crate::RegisterSpec for IndataSpec {
     type Ux = u32;

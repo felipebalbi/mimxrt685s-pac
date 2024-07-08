@@ -30,7 +30,7 @@ impl R {
         MajrevR::new(((self.bits >> 24) & 0xff) as u8)
     }
 }
-#[doc = "USB Info register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`info::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "USB Info register\n\nYou can [`read`](crate::Reg::read) this register and get [`info::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct InfoSpec;
 impl crate::RegisterSpec for InfoSpec {
     type Ux = u32;

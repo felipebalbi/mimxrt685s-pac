@@ -10,7 +10,7 @@ impl W {
         SetenafW::new(self, 0)
     }
 }
-#[doc = "Pin interrupt active level or falling edge interrupt set register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`sienf::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Pin interrupt active level or falling edge interrupt set register\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`sienf::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SienfSpec;
 impl crate::RegisterSpec for SienfSpec {
     type Ux = u32;

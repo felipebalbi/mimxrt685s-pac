@@ -9,7 +9,7 @@ impl R {
         CrcSumR::new(self.bits)
     }
 }
-#[doc = "CRC checksum register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sum_wr_data_sum::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "CRC checksum register\n\nYou can [`read`](crate::Reg::read) this register and get [`sum_wr_data_sum::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SumWrDataSumSpec;
 impl crate::RegisterSpec for SumWrDataSumSpec {
     type Ux = u32;

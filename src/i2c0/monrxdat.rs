@@ -132,7 +132,7 @@ impl R {
         MonnackR::new(((self.bits >> 10) & 1) != 0)
     }
 }
-#[doc = "Monitor receiver data register.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`monrxdat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Monitor receiver data register.\n\nYou can [`read`](crate::Reg::read) this register and get [`monrxdat::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MonrxdatSpec;
 impl crate::RegisterSpec for MonrxdatSpec {
     type Ux = u32;

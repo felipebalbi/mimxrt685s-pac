@@ -9,7 +9,7 @@ impl R {
         EvtimerCountValueR::new(self.bits)
     }
 }
-#[doc = "EVTIMER High Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`evtimerh::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "EVTIMER High Register\n\nYou can [`read`](crate::Reg::read) this register and get [`evtimerh::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct EvtimerhSpec;
 impl crate::RegisterSpec for EvtimerhSpec {
     type Ux = u32;

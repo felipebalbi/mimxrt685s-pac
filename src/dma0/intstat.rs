@@ -84,7 +84,7 @@ impl R {
         ActiveerrintR::new(((self.bits >> 2) & 1) != 0)
     }
 }
-#[doc = "Interrupt status.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`intstat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Interrupt status.\n\nYou can [`read`](crate::Reg::read) this register and get [`intstat::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IntstatSpec;
 impl crate::RegisterSpec for IntstatSpec {
     type Ux = u32;

@@ -9,7 +9,7 @@ impl R {
         CodeoutR::new(self.bits)
     }
 }
-#[doc = "PUF Code Output\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`codeoutput::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "PUF Code Output\n\nYou can [`read`](crate::Reg::read) this register and get [`codeoutput::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CodeoutputSpec;
 impl crate::RegisterSpec for CodeoutputSpec {
     type Ux = u32;

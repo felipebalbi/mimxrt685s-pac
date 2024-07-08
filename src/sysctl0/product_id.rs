@@ -9,7 +9,7 @@ impl R {
         ProductIdR::new((self.bits & 0xffff) as u16)
     }
 }
-#[doc = "product ID\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`product_id::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "product ID\n\nYou can [`read`](crate::Reg::read) this register and get [`product_id::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct ProductIdSpec;
 impl crate::RegisterSpec for ProductIdSpec {
     type Ux = u32;

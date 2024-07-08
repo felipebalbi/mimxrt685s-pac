@@ -9,7 +9,7 @@ impl R {
         VersionR::new(self.bits)
     }
 }
-#[doc = "PUF Version\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`version::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "PUF Version\n\nYou can [`read`](crate::Reg::read) this register and get [`version::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct VersionSpec;
 impl crate::RegisterSpec for VersionSpec {
     type Ux = u32;

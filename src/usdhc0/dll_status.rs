@@ -30,7 +30,7 @@ impl R {
         DllStsRefSelR::new(((self.bits >> 9) & 0x7f) as u8)
     }
 }
-#[doc = "DLL Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dll_status::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "DLL Status\n\nYou can [`read`](crate::Reg::read) this register and get [`dll_status::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DllStatusSpec;
 impl crate::RegisterSpec for DllStatusSpec {
     type Ux = u32;

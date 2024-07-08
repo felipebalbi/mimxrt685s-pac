@@ -23,7 +23,7 @@ impl R {
         MajorVerR::new(((self.bits >> 24) & 0xff) as u8)
     }
 }
-#[doc = "VERSION ID register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`otp_version::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "VERSION ID register\n\nYou can [`read`](crate::Reg::read) this register and get [`otp_version::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct OtpVersionSpec;
 impl crate::RegisterSpec for OtpVersionSpec {
     type Ux = u32;

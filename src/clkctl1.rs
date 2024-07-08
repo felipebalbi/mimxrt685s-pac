@@ -319,127 +319,127 @@ impl RegisterBlock {
         &self.acmp0fclkdiv
     }
 }
-#[doc = "PSCCTL0 (rw) register accessor: clock control register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pscctl0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pscctl0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pscctl0`]
+#[doc = "PSCCTL0 (rw) register accessor: clock control register 0\n\nYou can [`read`](crate::Reg::read) this register and get [`pscctl0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pscctl0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pscctl0`]
 module"]
 #[doc(alias = "PSCCTL0")]
 pub type Pscctl0 = crate::Reg<pscctl0::Pscctl0Spec>;
 #[doc = "clock control register 0"]
 pub mod pscctl0;
-#[doc = "PSCCTL1 (rw) register accessor: clock control register 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pscctl1::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pscctl1::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pscctl1`]
+#[doc = "PSCCTL1 (rw) register accessor: clock control register 1\n\nYou can [`read`](crate::Reg::read) this register and get [`pscctl1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pscctl1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pscctl1`]
 module"]
 #[doc(alias = "PSCCTL1")]
 pub type Pscctl1 = crate::Reg<pscctl1::Pscctl1Spec>;
 #[doc = "clock control register 1"]
 pub mod pscctl1;
-#[doc = "PSCCTL2 (rw) register accessor: clock control register 2\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pscctl2::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pscctl2::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pscctl2`]
+#[doc = "PSCCTL2 (rw) register accessor: clock control register 2\n\nYou can [`read`](crate::Reg::read) this register and get [`pscctl2::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pscctl2::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pscctl2`]
 module"]
 #[doc(alias = "PSCCTL2")]
 pub type Pscctl2 = crate::Reg<pscctl2::Pscctl2Spec>;
 #[doc = "clock control register 2"]
 pub mod pscctl2;
-#[doc = "PSCCTL0_SET (w) register accessor: clock set register 0\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pscctl0_set::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pscctl0_set`]
+#[doc = "PSCCTL0_SET (w) register accessor: clock set register 0\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pscctl0_set::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pscctl0_set`]
 module"]
 #[doc(alias = "PSCCTL0_SET")]
 pub type Pscctl0Set = crate::Reg<pscctl0_set::Pscctl0SetSpec>;
 #[doc = "clock set register 0"]
 pub mod pscctl0_set;
-#[doc = "PSCCTL1_SET (w) register accessor: clock set register 1\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pscctl1_set::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pscctl1_set`]
+#[doc = "PSCCTL1_SET (w) register accessor: clock set register 1\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pscctl1_set::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pscctl1_set`]
 module"]
 #[doc(alias = "PSCCTL1_SET")]
 pub type Pscctl1Set = crate::Reg<pscctl1_set::Pscctl1SetSpec>;
 #[doc = "clock set register 1"]
 pub mod pscctl1_set;
-#[doc = "PSCCTL2_SET (w) register accessor: clock set register 2\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pscctl2_set::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pscctl2_set`]
+#[doc = "PSCCTL2_SET (w) register accessor: clock set register 2\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pscctl2_set::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pscctl2_set`]
 module"]
 #[doc(alias = "PSCCTL2_SET")]
 pub type Pscctl2Set = crate::Reg<pscctl2_set::Pscctl2SetSpec>;
 #[doc = "clock set register 2"]
 pub mod pscctl2_set;
-#[doc = "PSCCTL0_CLR (w) register accessor: clock clear register 0\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pscctl0_clr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pscctl0_clr`]
+#[doc = "PSCCTL0_CLR (w) register accessor: clock clear register 0\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pscctl0_clr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pscctl0_clr`]
 module"]
 #[doc(alias = "PSCCTL0_CLR")]
 pub type Pscctl0Clr = crate::Reg<pscctl0_clr::Pscctl0ClrSpec>;
 #[doc = "clock clear register 0"]
 pub mod pscctl0_clr;
-#[doc = "PSCCTL1_CLR (w) register accessor: clock clear register 1\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pscctl1_clr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pscctl1_clr`]
+#[doc = "PSCCTL1_CLR (w) register accessor: clock clear register 1\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pscctl1_clr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pscctl1_clr`]
 module"]
 #[doc(alias = "PSCCTL1_CLR")]
 pub type Pscctl1Clr = crate::Reg<pscctl1_clr::Pscctl1ClrSpec>;
 #[doc = "clock clear register 1"]
 pub mod pscctl1_clr;
-#[doc = "PSCCTL2_CLR (w) register accessor: clock clear register 2\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pscctl2_clr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pscctl2_clr`]
+#[doc = "PSCCTL2_CLR (w) register accessor: clock clear register 2\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pscctl2_clr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pscctl2_clr`]
 module"]
 #[doc(alias = "PSCCTL2_CLR")]
 pub type Pscctl2Clr = crate::Reg<pscctl2_clr::Pscctl2ClrSpec>;
 #[doc = "clock clear register 2"]
 pub mod pscctl2_clr;
-#[doc = "AUDIOPLL0CLKSEL (rw) register accessor: audio pll0 clock selection\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`audiopll0clksel::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`audiopll0clksel::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@audiopll0clksel`]
+#[doc = "AUDIOPLL0CLKSEL (rw) register accessor: audio pll0 clock selection\n\nYou can [`read`](crate::Reg::read) this register and get [`audiopll0clksel::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`audiopll0clksel::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@audiopll0clksel`]
 module"]
 #[doc(alias = "AUDIOPLL0CLKSEL")]
 pub type Audiopll0clksel = crate::Reg<audiopll0clksel::Audiopll0clkselSpec>;
 #[doc = "audio pll0 clock selection"]
 pub mod audiopll0clksel;
-#[doc = "AUDIOPLL0CTL0 (rw) register accessor: audio pll0 control0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`audiopll0ctl0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`audiopll0ctl0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@audiopll0ctl0`]
+#[doc = "AUDIOPLL0CTL0 (rw) register accessor: audio pll0 control0\n\nYou can [`read`](crate::Reg::read) this register and get [`audiopll0ctl0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`audiopll0ctl0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@audiopll0ctl0`]
 module"]
 #[doc(alias = "AUDIOPLL0CTL0")]
 pub type Audiopll0ctl0 = crate::Reg<audiopll0ctl0::Audiopll0ctl0Spec>;
 #[doc = "audio pll0 control0"]
 pub mod audiopll0ctl0;
-#[doc = "AUDIOPLL0LOCKTIMEDIV2 (rw) register accessor: audio pll0 lock time\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`audiopll0locktimediv2::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`audiopll0locktimediv2::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@audiopll0locktimediv2`]
+#[doc = "AUDIOPLL0LOCKTIMEDIV2 (rw) register accessor: audio pll0 lock time\n\nYou can [`read`](crate::Reg::read) this register and get [`audiopll0locktimediv2::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`audiopll0locktimediv2::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@audiopll0locktimediv2`]
 module"]
 #[doc(alias = "AUDIOPLL0LOCKTIMEDIV2")]
 pub type Audiopll0locktimediv2 = crate::Reg<audiopll0locktimediv2::Audiopll0locktimediv2Spec>;
 #[doc = "audio pll0 lock time"]
 pub mod audiopll0locktimediv2;
-#[doc = "AUDIOPLL0NUM (rw) register accessor: audio pll0 number\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`audiopll0num::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`audiopll0num::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@audiopll0num`]
+#[doc = "AUDIOPLL0NUM (rw) register accessor: audio pll0 number\n\nYou can [`read`](crate::Reg::read) this register and get [`audiopll0num::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`audiopll0num::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@audiopll0num`]
 module"]
 #[doc(alias = "AUDIOPLL0NUM")]
 pub type Audiopll0num = crate::Reg<audiopll0num::Audiopll0numSpec>;
 #[doc = "audio pll0 number"]
 pub mod audiopll0num;
-#[doc = "AUDIOPLL0DENOM (rw) register accessor: Audio pll0 denom\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`audiopll0denom::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`audiopll0denom::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@audiopll0denom`]
+#[doc = "AUDIOPLL0DENOM (rw) register accessor: Audio pll0 denom\n\nYou can [`read`](crate::Reg::read) this register and get [`audiopll0denom::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`audiopll0denom::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@audiopll0denom`]
 module"]
 #[doc(alias = "AUDIOPLL0DENOM")]
 pub type Audiopll0denom = crate::Reg<audiopll0denom::Audiopll0denomSpec>;
 #[doc = "Audio pll0 denom"]
 pub mod audiopll0denom;
-#[doc = "AUDIOPLL0PFD (rw) register accessor: audio pll0 PFD\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`audiopll0pfd::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`audiopll0pfd::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@audiopll0pfd`]
+#[doc = "AUDIOPLL0PFD (rw) register accessor: audio pll0 PFD\n\nYou can [`read`](crate::Reg::read) this register and get [`audiopll0pfd::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`audiopll0pfd::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@audiopll0pfd`]
 module"]
 #[doc(alias = "AUDIOPLL0PFD")]
 pub type Audiopll0pfd = crate::Reg<audiopll0pfd::Audiopll0pfdSpec>;
 #[doc = "audio pll0 PFD"]
 pub mod audiopll0pfd;
-#[doc = "AUDIOPLLCLKDIV (rw) register accessor: audio pll0 clock divider\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`audiopllclkdiv::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`audiopllclkdiv::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@audiopllclkdiv`]
+#[doc = "AUDIOPLLCLKDIV (rw) register accessor: audio pll0 clock divider\n\nYou can [`read`](crate::Reg::read) this register and get [`audiopllclkdiv::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`audiopllclkdiv::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@audiopllclkdiv`]
 module"]
 #[doc(alias = "AUDIOPLLCLKDIV")]
 pub type Audiopllclkdiv = crate::Reg<audiopllclkdiv::AudiopllclkdivSpec>;
 #[doc = "audio pll0 clock divider"]
 pub mod audiopllclkdiv;
-#[doc = "DSPCPUCLKDIV (rw) register accessor: DSP cpu clock divider\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dspcpuclkdiv::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dspcpuclkdiv::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dspcpuclkdiv`]
+#[doc = "DSPCPUCLKDIV (rw) register accessor: DSP cpu clock divider\n\nYou can [`read`](crate::Reg::read) this register and get [`dspcpuclkdiv::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dspcpuclkdiv::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dspcpuclkdiv`]
 module"]
 #[doc(alias = "DSPCPUCLKDIV")]
 pub type Dspcpuclkdiv = crate::Reg<dspcpuclkdiv::DspcpuclkdivSpec>;
 #[doc = "DSP cpu clock divider"]
 pub mod dspcpuclkdiv;
-#[doc = "DSPMAINRAMCLKDIV (rw) register accessor: DSP main ram clock divider\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dspmainramclkdiv::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dspmainramclkdiv::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dspmainramclkdiv`]
+#[doc = "DSPMAINRAMCLKDIV (rw) register accessor: DSP main ram clock divider\n\nYou can [`read`](crate::Reg::read) this register and get [`dspmainramclkdiv::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dspmainramclkdiv::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dspmainramclkdiv`]
 module"]
 #[doc(alias = "DSPMAINRAMCLKDIV")]
 pub type Dspmainramclkdiv = crate::Reg<dspmainramclkdiv::DspmainramclkdivSpec>;
 #[doc = "DSP main ram clock divider"]
 pub mod dspmainramclkdiv;
-#[doc = "DSPCPUCLKSELA (rw) register accessor: DSP clock selection A\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dspcpuclksela::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dspcpuclksela::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dspcpuclksela`]
+#[doc = "DSPCPUCLKSELA (rw) register accessor: DSP clock selection A\n\nYou can [`read`](crate::Reg::read) this register and get [`dspcpuclksela::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dspcpuclksela::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dspcpuclksela`]
 module"]
 #[doc(alias = "DSPCPUCLKSELA")]
 pub type Dspcpuclksela = crate::Reg<dspcpuclksela::DspcpuclkselaSpec>;
 #[doc = "DSP clock selection A"]
 pub mod dspcpuclksela;
-#[doc = "DSPCPUCLKSELB (rw) register accessor: DSP clock selection B\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dspcpuclkselb::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dspcpuclkselb::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dspcpuclkselb`]
+#[doc = "DSPCPUCLKSELB (rw) register accessor: DSP clock selection B\n\nYou can [`read`](crate::Reg::read) this register and get [`dspcpuclkselb::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dspcpuclkselb::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dspcpuclkselb`]
 module"]
 #[doc(alias = "DSPCPUCLKSELB")]
 pub type Dspcpuclkselb = crate::Reg<dspcpuclkselb::DspcpuclkselbSpec>;
 #[doc = "DSP clock selection B"]
 pub mod dspcpuclkselb;
-#[doc = "OSEVENTFCLKSEL (rw) register accessor: OS EVENT clock selection\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`oseventfclksel::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`oseventfclksel::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@oseventfclksel`]
+#[doc = "OSEVENTFCLKSEL (rw) register accessor: OS EVENT clock selection\n\nYou can [`read`](crate::Reg::read) this register and get [`oseventfclksel::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`oseventfclksel::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@oseventfclksel`]
 module"]
 #[doc(alias = "OSEVENTFCLKSEL")]
 pub type Oseventfclksel = crate::Reg<oseventfclksel::OseventfclkselSpec>;
@@ -450,139 +450,139 @@ pub use self::flexcomm::Flexcomm;
 #[doc = r"Cluster"]
 #[doc = "flexcomm clock controller"]
 pub mod flexcomm;
-#[doc = "FRG14CLKSEL (rw) register accessor: FRG clock selection register 14\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`frg14clksel::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`frg14clksel::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@frg14clksel`]
+#[doc = "FRG14CLKSEL (rw) register accessor: FRG clock selection register 14\n\nYou can [`read`](crate::Reg::read) this register and get [`frg14clksel::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`frg14clksel::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@frg14clksel`]
 module"]
 #[doc(alias = "FRG14CLKSEL")]
 pub type Frg14clksel = crate::Reg<frg14clksel::Frg14clkselSpec>;
 #[doc = "FRG clock selection register 14"]
 pub mod frg14clksel;
-#[doc = "FRG14CTL (rw) register accessor: FRG clock controller 14\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`frg14ctl::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`frg14ctl::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@frg14ctl`]
+#[doc = "FRG14CTL (rw) register accessor: FRG clock controller 14\n\nYou can [`read`](crate::Reg::read) this register and get [`frg14ctl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`frg14ctl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@frg14ctl`]
 module"]
 #[doc(alias = "FRG14CTL")]
 pub type Frg14ctl = crate::Reg<frg14ctl::Frg14ctlSpec>;
 #[doc = "FRG clock controller 14"]
 pub mod frg14ctl;
-#[doc = "FC14FCLKSEL (rw) register accessor: flexcomm14 clock selection\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc14fclksel::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc14fclksel::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@fc14fclksel`]
+#[doc = "FC14FCLKSEL (rw) register accessor: flexcomm14 clock selection\n\nYou can [`read`](crate::Reg::read) this register and get [`fc14fclksel::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`fc14fclksel::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@fc14fclksel`]
 module"]
 #[doc(alias = "FC14FCLKSEL")]
 pub type Fc14fclksel = crate::Reg<fc14fclksel::Fc14fclkselSpec>;
 #[doc = "flexcomm14 clock selection"]
 pub mod fc14fclksel;
-#[doc = "FRG15CLKSEL (rw) register accessor: FRG clock selection register 15\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`frg15clksel::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`frg15clksel::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@frg15clksel`]
+#[doc = "FRG15CLKSEL (rw) register accessor: FRG clock selection register 15\n\nYou can [`read`](crate::Reg::read) this register and get [`frg15clksel::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`frg15clksel::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@frg15clksel`]
 module"]
 #[doc(alias = "FRG15CLKSEL")]
 pub type Frg15clksel = crate::Reg<frg15clksel::Frg15clkselSpec>;
 #[doc = "FRG clock selection register 15"]
 pub mod frg15clksel;
-#[doc = "FRG15CTL (rw) register accessor: FRG clock controller 15\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`frg15ctl::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`frg15ctl::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@frg15ctl`]
+#[doc = "FRG15CTL (rw) register accessor: FRG clock controller 15\n\nYou can [`read`](crate::Reg::read) this register and get [`frg15ctl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`frg15ctl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@frg15ctl`]
 module"]
 #[doc(alias = "FRG15CTL")]
 pub type Frg15ctl = crate::Reg<frg15ctl::Frg15ctlSpec>;
 #[doc = "FRG clock controller 15"]
 pub mod frg15ctl;
-#[doc = "FC15FCLKSEL (rw) register accessor: flexcomm15 clock selection\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fc15fclksel::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fc15fclksel::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@fc15fclksel`]
+#[doc = "FC15FCLKSEL (rw) register accessor: flexcomm15 clock selection\n\nYou can [`read`](crate::Reg::read) this register and get [`fc15fclksel::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`fc15fclksel::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@fc15fclksel`]
 module"]
 #[doc(alias = "FC15FCLKSEL")]
 pub type Fc15fclksel = crate::Reg<fc15fclksel::Fc15fclkselSpec>;
 #[doc = "flexcomm15 clock selection"]
 pub mod fc15fclksel;
-#[doc = "FRGPLLCLKDIV (rw) register accessor: FRG pll clock divider\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`frgpllclkdiv::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`frgpllclkdiv::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@frgpllclkdiv`]
+#[doc = "FRGPLLCLKDIV (rw) register accessor: FRG pll clock divider\n\nYou can [`read`](crate::Reg::read) this register and get [`frgpllclkdiv::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`frgpllclkdiv::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@frgpllclkdiv`]
 module"]
 #[doc(alias = "FRGPLLCLKDIV")]
 pub type Frgpllclkdiv = crate::Reg<frgpllclkdiv::FrgpllclkdivSpec>;
 #[doc = "FRG pll clock divider"]
 pub mod frgpllclkdiv;
-#[doc = "DMIC0FCLKSEL (rw) register accessor: DMIC0 clk selection\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dmic0fclksel::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dmic0fclksel::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmic0fclksel`]
+#[doc = "DMIC0FCLKSEL (rw) register accessor: DMIC0 clk selection\n\nYou can [`read`](crate::Reg::read) this register and get [`dmic0fclksel::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dmic0fclksel::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmic0fclksel`]
 module"]
 #[doc(alias = "DMIC0FCLKSEL")]
 pub type Dmic0fclksel = crate::Reg<dmic0fclksel::Dmic0fclkselSpec>;
 #[doc = "DMIC0 clk selection"]
 pub mod dmic0fclksel;
-#[doc = "DMIC0FCLKDIV (rw) register accessor: DMIC clock clock divider\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dmic0fclkdiv::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dmic0fclkdiv::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmic0fclkdiv`]
+#[doc = "DMIC0FCLKDIV (rw) register accessor: DMIC clock clock divider\n\nYou can [`read`](crate::Reg::read) this register and get [`dmic0fclkdiv::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dmic0fclkdiv::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmic0fclkdiv`]
 module"]
 #[doc(alias = "DMIC0FCLKDIV")]
 pub type Dmic0fclkdiv = crate::Reg<dmic0fclkdiv::Dmic0fclkdivSpec>;
 #[doc = "DMIC clock clock divider"]
 pub mod dmic0fclkdiv;
-#[doc = "CT32BITFCLKSEL (rw) register accessor: ct32bit timer N clock selection\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ct32bitfclksel::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ct32bitfclksel::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ct32bitfclksel`]
+#[doc = "CT32BITFCLKSEL (rw) register accessor: ct32bit timer N clock selection\n\nYou can [`read`](crate::Reg::read) this register and get [`ct32bitfclksel::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ct32bitfclksel::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ct32bitfclksel`]
 module"]
 #[doc(alias = "CT32BITFCLKSEL")]
 pub type Ct32bitfclksel = crate::Reg<ct32bitfclksel::Ct32bitfclkselSpec>;
 #[doc = "ct32bit timer N clock selection"]
 pub mod ct32bitfclksel;
-#[doc = "AUDIOMCLKSEL (rw) register accessor: audio mclock selection\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`audiomclksel::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`audiomclksel::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@audiomclksel`]
+#[doc = "AUDIOMCLKSEL (rw) register accessor: audio mclock selection\n\nYou can [`read`](crate::Reg::read) this register and get [`audiomclksel::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`audiomclksel::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@audiomclksel`]
 module"]
 #[doc(alias = "AUDIOMCLKSEL")]
 pub type Audiomclksel = crate::Reg<audiomclksel::AudiomclkselSpec>;
 #[doc = "audio mclock selection"]
 pub mod audiomclksel;
-#[doc = "AUDIOMCLKDIV (rw) register accessor: audio mclock divider\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`audiomclkdiv::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`audiomclkdiv::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@audiomclkdiv`]
+#[doc = "AUDIOMCLKDIV (rw) register accessor: audio mclock divider\n\nYou can [`read`](crate::Reg::read) this register and get [`audiomclkdiv::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`audiomclkdiv::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@audiomclkdiv`]
 module"]
 #[doc(alias = "AUDIOMCLKDIV")]
 pub type Audiomclkdiv = crate::Reg<audiomclkdiv::AudiomclkdivSpec>;
 #[doc = "audio mclock divider"]
 pub mod audiomclkdiv;
-#[doc = "CLKOUTSEL0 (rw) register accessor: clock out selection 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`clkoutsel0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`clkoutsel0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@clkoutsel0`]
+#[doc = "CLKOUTSEL0 (rw) register accessor: clock out selection 0\n\nYou can [`read`](crate::Reg::read) this register and get [`clkoutsel0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`clkoutsel0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@clkoutsel0`]
 module"]
 #[doc(alias = "CLKOUTSEL0")]
 pub type Clkoutsel0 = crate::Reg<clkoutsel0::Clkoutsel0Spec>;
 #[doc = "clock out selection 0"]
 pub mod clkoutsel0;
-#[doc = "CLKOUTSEL1 (rw) register accessor: clock out selection 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`clkoutsel1::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`clkoutsel1::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@clkoutsel1`]
+#[doc = "CLKOUTSEL1 (rw) register accessor: clock out selection 1\n\nYou can [`read`](crate::Reg::read) this register and get [`clkoutsel1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`clkoutsel1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@clkoutsel1`]
 module"]
 #[doc(alias = "CLKOUTSEL1")]
 pub type Clkoutsel1 = crate::Reg<clkoutsel1::Clkoutsel1Spec>;
 #[doc = "clock out selection 1"]
 pub mod clkoutsel1;
-#[doc = "CLKOUTDIV (rw) register accessor: clock_out divider\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`clkoutdiv::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`clkoutdiv::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@clkoutdiv`]
+#[doc = "CLKOUTDIV (rw) register accessor: clock_out divider\n\nYou can [`read`](crate::Reg::read) this register and get [`clkoutdiv::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`clkoutdiv::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@clkoutdiv`]
 module"]
 #[doc(alias = "CLKOUTDIV")]
 pub type Clkoutdiv = crate::Reg<clkoutdiv::ClkoutdivSpec>;
 #[doc = "clock_out divider"]
 pub mod clkoutdiv;
-#[doc = "I3C0FCLKSEL (rw) register accessor: I3C0 fclk selection\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`i3c0fclksel::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`i3c0fclksel::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@i3c0fclksel`]
+#[doc = "I3C0FCLKSEL (rw) register accessor: I3C0 fclk selection\n\nYou can [`read`](crate::Reg::read) this register and get [`i3c0fclksel::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`i3c0fclksel::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@i3c0fclksel`]
 module"]
 #[doc(alias = "I3C0FCLKSEL")]
 pub type I3c0fclksel = crate::Reg<i3c0fclksel::I3c0fclkselSpec>;
 #[doc = "I3C0 fclk selection"]
 pub mod i3c0fclksel;
-#[doc = "I3C0FCLKSTCSEL (rw) register accessor: I3C0 fclk STC selection\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`i3c0fclkstcsel::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`i3c0fclkstcsel::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@i3c0fclkstcsel`]
+#[doc = "I3C0FCLKSTCSEL (rw) register accessor: I3C0 fclk STC selection\n\nYou can [`read`](crate::Reg::read) this register and get [`i3c0fclkstcsel::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`i3c0fclkstcsel::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@i3c0fclkstcsel`]
 module"]
 #[doc(alias = "I3C0FCLKSTCSEL")]
 pub type I3c0fclkstcsel = crate::Reg<i3c0fclkstcsel::I3c0fclkstcselSpec>;
 #[doc = "I3C0 fclk STC selection"]
 pub mod i3c0fclkstcsel;
-#[doc = "I3C0FCLKSTCDIV (rw) register accessor: I3C0 fclk STC divider\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`i3c0fclkstcdiv::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`i3c0fclkstcdiv::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@i3c0fclkstcdiv`]
+#[doc = "I3C0FCLKSTCDIV (rw) register accessor: I3C0 fclk STC divider\n\nYou can [`read`](crate::Reg::read) this register and get [`i3c0fclkstcdiv::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`i3c0fclkstcdiv::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@i3c0fclkstcdiv`]
 module"]
 #[doc(alias = "I3C0FCLKSTCDIV")]
 pub type I3c0fclkstcdiv = crate::Reg<i3c0fclkstcdiv::I3c0fclkstcdivSpec>;
 #[doc = "I3C0 fclk STC divider"]
 pub mod i3c0fclkstcdiv;
-#[doc = "I3C0FCLKSDIV (rw) register accessor: I3C0 fclks divider\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`i3c0fclksdiv::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`i3c0fclksdiv::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@i3c0fclksdiv`]
+#[doc = "I3C0FCLKSDIV (rw) register accessor: I3C0 fclks divider\n\nYou can [`read`](crate::Reg::read) this register and get [`i3c0fclksdiv::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`i3c0fclksdiv::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@i3c0fclksdiv`]
 module"]
 #[doc(alias = "I3C0FCLKSDIV")]
 pub type I3c0fclksdiv = crate::Reg<i3c0fclksdiv::I3c0fclksdivSpec>;
 #[doc = "I3C0 fclks divider"]
 pub mod i3c0fclksdiv;
-#[doc = "I3C0FCLKDIV (rw) register accessor: I3C0 fclk divider\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`i3c0fclkdiv::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`i3c0fclkdiv::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@i3c0fclkdiv`]
+#[doc = "I3C0FCLKDIV (rw) register accessor: I3C0 fclk divider\n\nYou can [`read`](crate::Reg::read) this register and get [`i3c0fclkdiv::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`i3c0fclkdiv::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@i3c0fclkdiv`]
 module"]
 #[doc(alias = "I3C0FCLKDIV")]
 pub type I3c0fclkdiv = crate::Reg<i3c0fclkdiv::I3c0fclkdivSpec>;
 #[doc = "I3C0 fclk divider"]
 pub mod i3c0fclkdiv;
-#[doc = "WDT1FCLKSEL (rw) register accessor: WDT1 clock selection\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`wdt1fclksel::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`wdt1fclksel::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@wdt1fclksel`]
+#[doc = "WDT1FCLKSEL (rw) register accessor: WDT1 clock selection\n\nYou can [`read`](crate::Reg::read) this register and get [`wdt1fclksel::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`wdt1fclksel::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@wdt1fclksel`]
 module"]
 #[doc(alias = "WDT1FCLKSEL")]
 pub type Wdt1fclksel = crate::Reg<wdt1fclksel::Wdt1fclkselSpec>;
 #[doc = "WDT1 clock selection"]
 pub mod wdt1fclksel;
-#[doc = "ACMP0FCLKSEL (rw) register accessor: acomparator 0 clock selection\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`acmp0fclksel::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`acmp0fclksel::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@acmp0fclksel`]
+#[doc = "ACMP0FCLKSEL (rw) register accessor: acomparator 0 clock selection\n\nYou can [`read`](crate::Reg::read) this register and get [`acmp0fclksel::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`acmp0fclksel::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@acmp0fclksel`]
 module"]
 #[doc(alias = "ACMP0FCLKSEL")]
 pub type Acmp0fclksel = crate::Reg<acmp0fclksel::Acmp0fclkselSpec>;
 #[doc = "acomparator 0 clock selection"]
 pub mod acmp0fclksel;
-#[doc = "ACMP0FCLKDIV (rw) register accessor: acomparator 0 fclk divider\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`acmp0fclkdiv::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`acmp0fclkdiv::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@acmp0fclkdiv`]
+#[doc = "ACMP0FCLKDIV (rw) register accessor: acomparator 0 fclk divider\n\nYou can [`read`](crate::Reg::read) this register and get [`acmp0fclkdiv::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`acmp0fclkdiv::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@acmp0fclkdiv`]
 module"]
 #[doc(alias = "ACMP0FCLKDIV")]
 pub type Acmp0fclkdiv = crate::Reg<acmp0fclkdiv::Acmp0fclkdivSpec>;

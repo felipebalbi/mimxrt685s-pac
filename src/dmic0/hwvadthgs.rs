@@ -21,7 +21,7 @@ impl W {
         ThgsW::new(self, 0)
     }
 }
-#[doc = "HWVAD signal estimator gain register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hwvadthgs::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hwvadthgs::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "HWVAD signal estimator gain register\n\nYou can [`read`](crate::Reg::read) this register and get [`hwvadthgs::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`hwvadthgs::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct HwvadthgsSpec;
 impl crate::RegisterSpec for HwvadthgsSpec {
     type Ux = u32;

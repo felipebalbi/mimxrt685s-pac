@@ -9,7 +9,7 @@ impl R {
         EntR::new(self.bits)
     }
 }
-#[doc = "Entropy Read Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ent::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Entropy Read Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ent::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct EntSpec;
 impl crate::RegisterSpec for EntSpec {
     type Ux = u32;

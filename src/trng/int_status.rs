@@ -125,7 +125,7 @@ impl R {
         FrqCtFailR::new(((self.bits >> 2) & 1) != 0)
     }
 }
-#[doc = "Interrupt Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`int_status::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Interrupt Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`int_status::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IntStatusSpec;
 impl crate::RegisterSpec for IntStatusSpec {
     type Ux = u32;

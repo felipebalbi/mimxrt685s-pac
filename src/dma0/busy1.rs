@@ -90,7 +90,7 @@ impl R {
         Busy63_33R::new((self.bits >> 1) & 0x7fff_ffff)
     }
 }
-#[doc = "Channel Busy status for all DMA channels.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`busy1::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Channel Busy status for all DMA channels.\n\nYou can [`read`](crate::Reg::read) this register and get [`busy1::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Busy1Spec;
 impl crate::RegisterSpec for Busy1Spec {
     type Ux = u32;

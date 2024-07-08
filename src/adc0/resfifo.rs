@@ -407,7 +407,7 @@ impl R {
         ValidR::new(((self.bits >> 31) & 1) != 0)
     }
 }
-#[doc = "ADC Data Result FIFO Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`resfifo::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "ADC Data Result FIFO Register\n\nYou can [`read`](crate::Reg::read) this register and get [`resfifo::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct ResfifoSpec;
 impl crate::RegisterSpec for ResfifoSpec {
     type Ux = u32;

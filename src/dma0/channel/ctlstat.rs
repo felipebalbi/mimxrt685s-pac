@@ -84,7 +84,7 @@ impl R {
         TrigR::new(((self.bits >> 2) & 1) != 0)
     }
 }
-#[doc = "Control and status register for DMA channel .\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ctlstat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Control and status register for DMA channel .\n\nYou can [`read`](crate::Reg::read) this register and get [`ctlstat::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CtlstatSpec;
 impl crate::RegisterSpec for CtlstatSpec {
     type Ux = u32;

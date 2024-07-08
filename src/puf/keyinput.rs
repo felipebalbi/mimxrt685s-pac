@@ -10,7 +10,7 @@ impl W {
         KeyinW::new(self, 0)
     }
 }
-#[doc = "PUF Key Input\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`keyinput::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "PUF Key Input\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`keyinput::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct KeyinputSpec;
 impl crate::RegisterSpec for KeyinputSpec {
     type Ux = u32;

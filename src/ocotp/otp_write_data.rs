@@ -9,7 +9,7 @@ impl R {
         WriteDataR::new(self.bits)
     }
 }
-#[doc = "OTP programming data register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`otp_write_data::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "OTP programming data register\n\nYou can [`read`](crate::Reg::read) this register and get [`otp_write_data::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct OtpWriteDataSpec;
 impl crate::RegisterSpec for OtpWriteDataSpec {
     type Ux = u32;

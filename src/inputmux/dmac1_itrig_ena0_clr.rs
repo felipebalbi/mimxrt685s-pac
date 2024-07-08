@@ -1157,7 +1157,7 @@ impl W {
         Dmac1ItrigInmux31W::new(self, 31)
     }
 }
-#[doc = "DMAC1 input trigger enable clear 0\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dmac1_itrig_ena0_clr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "DMAC1 input trigger enable clear 0\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dmac1_itrig_ena0_clr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Dmac1ItrigEna0ClrSpec;
 impl crate::RegisterSpec for Dmac1ItrigEna0ClrSpec {
     type Ux = u32;

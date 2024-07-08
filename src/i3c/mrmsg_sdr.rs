@@ -9,7 +9,7 @@ impl R {
         DataR::new((self.bits & 0xffff) as u16)
     }
 }
-#[doc = "Master Read Message in SDR mode\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mrmsg_sdr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Master Read Message in SDR mode\n\nYou can [`read`](crate::Reg::read) this register and get [`mrmsg_sdr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MrmsgSdrSpec;
 impl crate::RegisterSpec for MrmsgSdrSpec {
     type Ux = u32;

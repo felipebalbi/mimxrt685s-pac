@@ -9,7 +9,7 @@ impl R {
         ToggleR::new(self.bits & 0x3fff_ffff)
     }
 }
-#[doc = "USB Endpoint toggle register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`eptoggle::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "USB Endpoint toggle register\n\nYou can [`read`](crate::Reg::read) this register and get [`eptoggle::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct EptoggleSpec;
 impl crate::RegisterSpec for EptoggleSpec {
     type Ux = u32;

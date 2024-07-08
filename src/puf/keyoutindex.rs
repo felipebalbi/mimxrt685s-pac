@@ -9,7 +9,7 @@ impl R {
         KeyoutidxR::new((self.bits & 0x0f) as u8)
     }
 }
-#[doc = "PUF Key Output Index\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`keyoutindex::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "PUF Key Output Index\n\nYou can [`read`](crate::Reg::read) this register and get [`keyoutindex::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct KeyoutindexSpec;
 impl crate::RegisterSpec for KeyoutindexSpec {
     type Ux = u32;

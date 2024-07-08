@@ -70,7 +70,7 @@ impl W {
         Ena32khzW::new(self, 0)
     }
 }
-#[doc = "32k oscillator control0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`osc32khzctl0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`osc32khzctl0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "32k oscillator control0\n\nYou can [`read`](crate::Reg::read) this register and get [`osc32khzctl0::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`osc32khzctl0::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Osc32khzctl0Spec;
 impl crate::RegisterSpec for Osc32khzctl0Spec {
     type Ux = u32;

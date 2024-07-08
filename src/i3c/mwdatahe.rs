@@ -18,7 +18,7 @@ impl W {
         Data1W::new(self, 8)
     }
 }
-#[doc = "Master Write Data Byte End Register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mwdatahe::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Master Write Data Byte End Register\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`mwdatahe::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MwdataheSpec;
 impl crate::RegisterSpec for MwdataheSpec {
     type Ux = u32;

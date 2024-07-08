@@ -23,7 +23,7 @@ impl R {
         Maplastm2R::new(((self.bits >> 16) & 0x0f) as u8)
     }
 }
-#[doc = "Slave Message-Mapped Address Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`smsgmapaddr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Slave Message-Mapped Address Register\n\nYou can [`read`](crate::Reg::read) this register and get [`smsgmapaddr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SmsgmapaddrSpec;
 impl crate::RegisterSpec for SmsgmapaddrSpec {
     type Ux = u32;

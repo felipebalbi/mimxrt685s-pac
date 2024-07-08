@@ -9,7 +9,7 @@ impl R {
         MonoCtR::new((self.bits & 0xffff) as u16)
     }
 }
-#[doc = "Statistical Check Monobit Count Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`scml_mc_scmc::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Statistical Check Monobit Count Register\n\nYou can [`read`](crate::Reg::read) this register and get [`scml_mc_scmc::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct ScmlMcScmcSpec;
 impl crate::RegisterSpec for ScmlMcScmcSpec {
     type Ux = u32;

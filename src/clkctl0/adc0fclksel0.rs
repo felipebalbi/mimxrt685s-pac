@@ -116,7 +116,7 @@ impl W {
         SelW::new(self, 0)
     }
 }
-#[doc = "ADC0 fclk selection 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`adc0fclksel0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`adc0fclksel0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "ADC0 fclk selection 0\n\nYou can [`read`](crate::Reg::read) this register and get [`adc0fclksel0::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`adc0fclksel0::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Adc0fclksel0Spec;
 impl crate::RegisterSpec for Adc0fclksel0Spec {
     type Ux = u32;

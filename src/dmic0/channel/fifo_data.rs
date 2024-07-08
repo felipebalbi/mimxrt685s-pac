@@ -9,7 +9,7 @@ impl R {
         DataR::new(self.bits & 0x00ff_ffff)
     }
 }
-#[doc = "FIFO Data\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fifo_data::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "FIFO Data\n\nYou can [`read`](crate::Reg::read) this register and get [`fifo_data::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FifoDataSpec;
 impl crate::RegisterSpec for FifoDataSpec {
     type Ux = u32;

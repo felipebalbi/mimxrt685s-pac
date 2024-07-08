@@ -30,7 +30,7 @@ impl R {
         VernumR::new(((self.bits >> 28) & 0x0f) as u8)
     }
 }
-#[doc = "jtag ID\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`jtag_id::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "jtag ID\n\nYou can [`read`](crate::Reg::read) this register and get [`jtag_id::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct JtagIdSpec;
 impl crate::RegisterSpec for JtagIdSpec {
     type Ux = u32;

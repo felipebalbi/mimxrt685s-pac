@@ -771,7 +771,7 @@ impl W {
         IienaW::new(self, 11)
     }
 }
-#[doc = "iop pad control register for port0 to port5\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pio0_6::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pio0_6::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "iop pad control register for port0 to port5\n\nYou can [`read`](crate::Reg::read) this register and get [`pio0_6::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pio0_6::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Pio0_6Spec;
 impl crate::RegisterSpec for Pio0_6Spec {
     type Ux = u32;

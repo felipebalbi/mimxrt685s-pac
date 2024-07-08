@@ -55,37 +55,37 @@ impl RegisterBlock {
         &self.cr
     }
 }
-#[doc = "VER (r) register accessor: Version ID Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ver::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ver`]
+#[doc = "VER (r) register accessor: Version ID Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ver::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ver`]
 module"]
 #[doc(alias = "VER")]
 pub type Ver = crate::Reg<ver::VerSpec>;
 #[doc = "Version ID Register"]
 pub mod ver;
-#[doc = "PAR (r) register accessor: Use Parameter register to determine the parameter settings of MUA.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`par::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@par`]
+#[doc = "PAR (r) register accessor: Use Parameter register to determine the parameter settings of MUA.\n\nYou can [`read`](crate::Reg::read) this register and get [`par::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@par`]
 module"]
 #[doc(alias = "PAR")]
 pub type Par = crate::Reg<par::ParSpec>;
 #[doc = "Use Parameter register to determine the parameter settings of MUA."]
 pub mod par;
-#[doc = "TR (rw) register accessor: Transmit Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`tr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`tr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@tr`]
+#[doc = "TR (rw) register accessor: Transmit Register\n\nYou can [`read`](crate::Reg::read) this register and get [`tr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`tr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@tr`]
 module"]
 #[doc(alias = "TR")]
 pub type Tr = crate::Reg<tr::TrSpec>;
 #[doc = "Transmit Register"]
 pub mod tr;
-#[doc = "RR (rw) register accessor: Receive Register.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`rr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rr`]
+#[doc = "RR (rw) register accessor: Receive Register.\n\nYou can [`read`](crate::Reg::read) this register and get [`rr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`rr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rr`]
 module"]
 #[doc(alias = "RR")]
 pub type Rr = crate::Reg<rr::RrSpec>;
 #[doc = "Receive Register."]
 pub mod rr;
-#[doc = "SR (rw) register accessor: Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`sr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sr`]
+#[doc = "SR (rw) register accessor: Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`sr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`sr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sr`]
 module"]
 #[doc(alias = "SR")]
 pub type Sr = crate::Reg<sr::SrSpec>;
 #[doc = "Status Register"]
 pub mod sr;
-#[doc = "CR (rw) register accessor: Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cr`]
+#[doc = "CR (rw) register accessor: Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cr`]
 module"]
 #[doc(alias = "CR")]
 pub type Cr = crate::Reg<cr::CrSpec>;

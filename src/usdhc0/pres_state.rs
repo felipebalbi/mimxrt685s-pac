@@ -804,7 +804,7 @@ Line Signal Level"]
         DlslR::new(((self.bits >> 24) & 0xff) as u8)
     }
 }
-#[doc = "Present State\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pres_state::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Present State\n\nYou can [`read`](crate::Reg::read) this register and get [`pres_state::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PresStateSpec;
 impl crate::RegisterSpec for PresStateSpec {
     type Ux = u32;

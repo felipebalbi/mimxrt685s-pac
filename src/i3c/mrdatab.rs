@@ -9,7 +9,7 @@ impl R {
         ValueR::new((self.bits & 0xff) as u8)
     }
 }
-#[doc = "Master Read Data Byte Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mrdatab::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Master Read Data Byte Register\n\nYou can [`read`](crate::Reg::read) this register and get [`mrdatab::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MrdatabSpec;
 impl crate::RegisterSpec for MrdatabSpec {
     type Ux = u32;

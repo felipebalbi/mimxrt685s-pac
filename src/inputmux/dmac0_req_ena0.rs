@@ -1862,7 +1862,7 @@ impl W {
         HashcryptW::new(self, 30)
     }
 }
-#[doc = "DMAC0 request enable 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dmac0_req_ena0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dmac0_req_ena0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "DMAC0 request enable 0\n\nYou can [`read`](crate::Reg::read) this register and get [`dmac0_req_ena0::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dmac0_req_ena0::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Dmac0ReqEna0Spec;
 impl crate::RegisterSpec for Dmac0ReqEna0Spec {
     type Ux = u32;

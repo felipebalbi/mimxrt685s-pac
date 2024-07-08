@@ -102,7 +102,7 @@ impl R {
         CmdNumR::new(((self.bits >> 24) & 0xff) as u8)
     }
 }
-#[doc = "Parameter Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`param::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Parameter Register\n\nYou can [`read`](crate::Reg::read) this register and get [`param::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct ParamSpec;
 impl crate::RegisterSpec for ParamSpec {
     type Ux = u32;

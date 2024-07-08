@@ -21,7 +21,7 @@ impl W {
         AutowktimeW::new(self, 0)
     }
 }
-#[doc = "Automatic wakeup from deepsleep / deep powerdown modes\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`autowkup::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`autowkup::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Automatic wakeup from deepsleep / deep powerdown modes\n\nYou can [`read`](crate::Reg::read) this register and get [`autowkup::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`autowkup::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct AutowkupSpec;
 impl crate::RegisterSpec for AutowkupSpec {
     type Ux = u32;

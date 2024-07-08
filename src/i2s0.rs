@@ -146,7 +146,7 @@ impl RegisterBlock {
         &self.id
     }
 }
-#[doc = "CFG1 (rw) register accessor: Configuration register 1 for the primary channel pair.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cfg1::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cfg1::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cfg1`]
+#[doc = "CFG1 (rw) register accessor: Configuration register 1 for the primary channel pair.\n\nYou can [`read`](crate::Reg::read) this register and get [`cfg1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cfg1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cfg1`]
 module"]
 #[doc(alias = "CFG1")]
 pub type Cfg1 = crate::Reg<cfg1::Cfg1Spec>;
@@ -157,103 +157,103 @@ pub use self::secchannel::Secchannel;
 #[doc = r"Cluster"]
 #[doc = "no description available"]
 pub mod secchannel;
-#[doc = "CFG2 (rw) register accessor: Configuration register 2 for the primary channel pair.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cfg2::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cfg2::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cfg2`]
+#[doc = "CFG2 (rw) register accessor: Configuration register 2 for the primary channel pair.\n\nYou can [`read`](crate::Reg::read) this register and get [`cfg2::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cfg2::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cfg2`]
 module"]
 #[doc(alias = "CFG2")]
 pub type Cfg2 = crate::Reg<cfg2::Cfg2Spec>;
 #[doc = "Configuration register 2 for the primary channel pair."]
 pub mod cfg2;
-#[doc = "STAT (rw) register accessor: Status register for the primary channel pair.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`stat::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`stat::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@stat`]
+#[doc = "STAT (rw) register accessor: Status register for the primary channel pair.\n\nYou can [`read`](crate::Reg::read) this register and get [`stat::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`stat::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@stat`]
 module"]
 #[doc(alias = "STAT")]
 pub type Stat = crate::Reg<stat::StatSpec>;
 #[doc = "Status register for the primary channel pair."]
 pub mod stat;
-#[doc = "DIV (rw) register accessor: Clock divider, used by all channel pairs.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`div::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`div::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@div`]
+#[doc = "DIV (rw) register accessor: Clock divider, used by all channel pairs.\n\nYou can [`read`](crate::Reg::read) this register and get [`div::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`div::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@div`]
 module"]
 #[doc(alias = "DIV")]
 pub type Div = crate::Reg<div::DivSpec>;
 #[doc = "Clock divider, used by all channel pairs."]
 pub mod div;
-#[doc = "FIFOCFG (rw) register accessor: FIFO configuration and enable register.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fifocfg::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fifocfg::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@fifocfg`]
+#[doc = "FIFOCFG (rw) register accessor: FIFO configuration and enable register.\n\nYou can [`read`](crate::Reg::read) this register and get [`fifocfg::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`fifocfg::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@fifocfg`]
 module"]
 #[doc(alias = "FIFOCFG")]
 pub type Fifocfg = crate::Reg<fifocfg::FifocfgSpec>;
 #[doc = "FIFO configuration and enable register."]
 pub mod fifocfg;
-#[doc = "FIFOSTAT (rw) register accessor: FIFO status register.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fifostat::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fifostat::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@fifostat`]
+#[doc = "FIFOSTAT (rw) register accessor: FIFO status register.\n\nYou can [`read`](crate::Reg::read) this register and get [`fifostat::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`fifostat::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@fifostat`]
 module"]
 #[doc(alias = "FIFOSTAT")]
 pub type Fifostat = crate::Reg<fifostat::FifostatSpec>;
 #[doc = "FIFO status register."]
 pub mod fifostat;
-#[doc = "FIFOTRIG (rw) register accessor: FIFO trigger settings for interrupt and DMA request.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fifotrig::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fifotrig::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@fifotrig`]
+#[doc = "FIFOTRIG (rw) register accessor: FIFO trigger settings for interrupt and DMA request.\n\nYou can [`read`](crate::Reg::read) this register and get [`fifotrig::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`fifotrig::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@fifotrig`]
 module"]
 #[doc(alias = "FIFOTRIG")]
 pub type Fifotrig = crate::Reg<fifotrig::FifotrigSpec>;
 #[doc = "FIFO trigger settings for interrupt and DMA request."]
 pub mod fifotrig;
-#[doc = "FIFOINTENSET (rw) register accessor: FIFO interrupt enable set (enable) and read register.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fifointenset::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fifointenset::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@fifointenset`]
+#[doc = "FIFOINTENSET (rw) register accessor: FIFO interrupt enable set (enable) and read register.\n\nYou can [`read`](crate::Reg::read) this register and get [`fifointenset::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`fifointenset::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@fifointenset`]
 module"]
 #[doc(alias = "FIFOINTENSET")]
 pub type Fifointenset = crate::Reg<fifointenset::FifointensetSpec>;
 #[doc = "FIFO interrupt enable set (enable) and read register."]
 pub mod fifointenset;
-#[doc = "FIFOINTENCLR (rw) register accessor: FIFO interrupt enable clear (disable) and read register.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fifointenclr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fifointenclr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@fifointenclr`]
+#[doc = "FIFOINTENCLR (rw) register accessor: FIFO interrupt enable clear (disable) and read register.\n\nYou can [`read`](crate::Reg::read) this register and get [`fifointenclr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`fifointenclr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@fifointenclr`]
 module"]
 #[doc(alias = "FIFOINTENCLR")]
 pub type Fifointenclr = crate::Reg<fifointenclr::FifointenclrSpec>;
 #[doc = "FIFO interrupt enable clear (disable) and read register."]
 pub mod fifointenclr;
-#[doc = "FIFOINTSTAT (r) register accessor: FIFO interrupt status register.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fifointstat::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@fifointstat`]
+#[doc = "FIFOINTSTAT (r) register accessor: FIFO interrupt status register.\n\nYou can [`read`](crate::Reg::read) this register and get [`fifointstat::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@fifointstat`]
 module"]
 #[doc(alias = "FIFOINTSTAT")]
 pub type Fifointstat = crate::Reg<fifointstat::FifointstatSpec>;
 #[doc = "FIFO interrupt status register."]
 pub mod fifointstat;
-#[doc = "FIFOWR (w) register accessor: FIFO write data.\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fifowr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@fifowr`]
+#[doc = "FIFOWR (w) register accessor: FIFO write data.\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`fifowr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@fifowr`]
 module"]
 #[doc(alias = "FIFOWR")]
 pub type Fifowr = crate::Reg<fifowr::FifowrSpec>;
 #[doc = "FIFO write data."]
 pub mod fifowr;
-#[doc = "FIFOWR48H (w) register accessor: FIFO write data for upper data bits. May only be used if the I2S is configured for 2x 24-bit data and not using DMA.\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fifowr48h::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@fifowr48h`]
+#[doc = "FIFOWR48H (w) register accessor: FIFO write data for upper data bits. May only be used if the I2S is configured for 2x 24-bit data and not using DMA.\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`fifowr48h::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@fifowr48h`]
 module"]
 #[doc(alias = "FIFOWR48H")]
 pub type Fifowr48h = crate::Reg<fifowr48h::Fifowr48hSpec>;
 #[doc = "FIFO write data for upper data bits. May only be used if the I2S is configured for 2x 24-bit data and not using DMA."]
 pub mod fifowr48h;
-#[doc = "FIFORD (r) register accessor: FIFO read data.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fiford::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@fiford`]
+#[doc = "FIFORD (r) register accessor: FIFO read data.\n\nYou can [`read`](crate::Reg::read) this register and get [`fiford::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@fiford`]
 module"]
 #[doc(alias = "FIFORD")]
 pub type Fiford = crate::Reg<fiford::FifordSpec>;
 #[doc = "FIFO read data."]
 pub mod fiford;
-#[doc = "FIFORD48H (r) register accessor: FIFO read data for upper data bits. May only be used if the I2S is configured for 2x 24-bit data and not using DMA.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fiford48h::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@fiford48h`]
+#[doc = "FIFORD48H (r) register accessor: FIFO read data for upper data bits. May only be used if the I2S is configured for 2x 24-bit data and not using DMA.\n\nYou can [`read`](crate::Reg::read) this register and get [`fiford48h::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@fiford48h`]
 module"]
 #[doc(alias = "FIFORD48H")]
 pub type Fiford48h = crate::Reg<fiford48h::Fiford48hSpec>;
 #[doc = "FIFO read data for upper data bits. May only be used if the I2S is configured for 2x 24-bit data and not using DMA."]
 pub mod fiford48h;
-#[doc = "FIFORDNOPOP (r) register accessor: FIFO data read with no FIFO pop.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fifordnopop::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@fifordnopop`]
+#[doc = "FIFORDNOPOP (r) register accessor: FIFO data read with no FIFO pop.\n\nYou can [`read`](crate::Reg::read) this register and get [`fifordnopop::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@fifordnopop`]
 module"]
 #[doc(alias = "FIFORDNOPOP")]
 pub type Fifordnopop = crate::Reg<fifordnopop::FifordnopopSpec>;
 #[doc = "FIFO data read with no FIFO pop."]
 pub mod fifordnopop;
-#[doc = "FIFORD48HNOPOP (r) register accessor: FIFO data read for upper data bits with no FIFO pop. May only be used if the I2S is configured for 2x 24-bit data and not using DMA.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fiford48hnopop::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@fiford48hnopop`]
+#[doc = "FIFORD48HNOPOP (r) register accessor: FIFO data read for upper data bits with no FIFO pop. May only be used if the I2S is configured for 2x 24-bit data and not using DMA.\n\nYou can [`read`](crate::Reg::read) this register and get [`fiford48hnopop::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@fiford48hnopop`]
 module"]
 #[doc(alias = "FIFORD48HNOPOP")]
 pub type Fiford48hnopop = crate::Reg<fiford48hnopop::Fiford48hnopopSpec>;
 #[doc = "FIFO data read for upper data bits with no FIFO pop. May only be used if the I2S is configured for 2x 24-bit data and not using DMA."]
 pub mod fiford48hnopop;
-#[doc = "FIFOSIZE (rw) register accessor: FIFO size register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fifosize::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fifosize::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@fifosize`]
+#[doc = "FIFOSIZE (rw) register accessor: FIFO size register\n\nYou can [`read`](crate::Reg::read) this register and get [`fifosize::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`fifosize::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@fifosize`]
 module"]
 #[doc(alias = "FIFOSIZE")]
 pub type Fifosize = crate::Reg<fifosize::FifosizeSpec>;
 #[doc = "FIFO size register"]
 pub mod fifosize;
-#[doc = "ID (r) register accessor: I2S Module identification\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`id::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@id`]
+#[doc = "ID (r) register accessor: I2S Module identification\n\nYou can [`read`](crate::Reg::read) this register and get [`id::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@id`]
 module"]
 #[doc(alias = "ID")]
 pub type Id = crate::Reg<id::IdSpec>;

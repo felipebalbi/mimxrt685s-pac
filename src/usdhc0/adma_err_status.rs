@@ -91,7 +91,7 @@ impl R {
         AdmadceR::new(((self.bits >> 3) & 1) != 0)
     }
 }
-#[doc = "ADMA Error Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`adma_err_status::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "ADMA Error Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`adma_err_status::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct AdmaErrStatusSpec;
 impl crate::RegisterSpec for AdmaErrStatusSpec {
     type Ux = u32;

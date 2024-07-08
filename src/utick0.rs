@@ -40,30 +40,31 @@ impl RegisterBlock {
         self.cap.iter()
     }
 }
-#[doc = "CTRL (rw) register accessor: Control register.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ctrl::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ctrl::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ctrl`]
+#[doc = "CTRL (rw) register accessor: Control register.\n\nYou can [`read`](crate::Reg::read) this register and get [`ctrl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ctrl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ctrl`]
 module"]
 #[doc(alias = "CTRL")]
 pub type Ctrl = crate::Reg<ctrl::CtrlSpec>;
 #[doc = "Control register."]
 pub mod ctrl;
-#[doc = "STAT (rw) register accessor: Status register.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`stat::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`stat::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@stat`]
+#[doc = "STAT (rw) register accessor: Status register.\n\nYou can [`read`](crate::Reg::read) this register and get [`stat::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`stat::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@stat`]
 module"]
 #[doc(alias = "STAT")]
 pub type Stat = crate::Reg<stat::StatSpec>;
 #[doc = "Status register."]
 pub mod stat;
-#[doc = "CFG (rw) register accessor: Capture configuration register.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cfg::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cfg::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "CFG (rw) register accessor: Capture configuration register.\n\nYou can [`read`](crate::Reg::read) this register and get [`cfg::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cfg::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cfg`]
+module"]
 #[doc(alias = "CFG")]
 pub type Cfg = crate::Reg<cfg::CfgSpec>;
 #[doc = "Capture configuration register."]
 pub mod cfg;
-#[doc = "CAPCLR (w) register accessor: Capture clear register.\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`capclr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@capclr`]
+#[doc = "CAPCLR (w) register accessor: Capture clear register.\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`capclr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@capclr`]
 module"]
 #[doc(alias = "CAPCLR")]
 pub type Capclr = crate::Reg<capclr::CapclrSpec>;
 #[doc = "Capture clear register."]
 pub mod capclr;
-#[doc = "CAP (r) register accessor: Capture register .\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cap::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cap`]
+#[doc = "CAP (r) register accessor: Capture register .\n\nYou can [`read`](crate::Reg::read) this register and get [`cap::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cap`]
 module"]
 #[doc(alias = "CAP")]
 pub type Cap = crate::Reg<cap::CapSpec>;

@@ -58,7 +58,7 @@ impl R {
         NowmasterR::new(((self.bits >> 19) & 1) != 0)
     }
 }
-#[doc = "Master Interrupt Mask Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mintmasked::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Master Interrupt Mask Register\n\nYou can [`read`](crate::Reg::read) this register and get [`mintmasked::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MintmaskedSpec;
 impl crate::RegisterSpec for MintmaskedSpec {
     type Ux = u32;

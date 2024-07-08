@@ -9,7 +9,7 @@ impl R {
         CountR::new(self.bits & 0x00ff_ffff)
     }
 }
-#[doc = "Watchdog timer value register. This 24-bit register reads out the current value of the Watchdog timer.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`tv::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Watchdog timer value register. This 24-bit register reads out the current value of the Watchdog timer.\n\nYou can [`read`](crate::Reg::read) this register and get [`tv::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TvSpec;
 impl crate::RegisterSpec for TvSpec {
     type Ux = u32;

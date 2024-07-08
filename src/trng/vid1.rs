@@ -119,7 +119,7 @@ impl R {
         IpIdR::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
-#[doc = "Version ID Register (MS)\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`vid1::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Version ID Register (MS)\n\nYou can [`read`](crate::Reg::read) this register and get [`vid1::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Vid1Spec;
 impl crate::RegisterSpec for Vid1Spec {
     type Ux = u32;

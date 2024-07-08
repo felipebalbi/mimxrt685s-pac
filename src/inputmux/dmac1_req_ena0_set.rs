@@ -1075,7 +1075,7 @@ impl W {
         HashcryptW::new(self, 30)
     }
 }
-#[doc = "DMAC1 request enable set 0\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dmac1_req_ena0_set::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "DMAC1 request enable set 0\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dmac1_req_ena0_set::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Dmac1ReqEna0SetSpec;
 impl crate::RegisterSpec for Dmac1ReqEna0SetSpec {
     type Ux = u32;

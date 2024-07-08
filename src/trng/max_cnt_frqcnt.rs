@@ -9,7 +9,7 @@ impl R {
         FrqCtR::new(self.bits & 0x003f_ffff)
     }
 }
-#[doc = "Frequency Count Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`max_cnt_frqcnt::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Frequency Count Register\n\nYou can [`read`](crate::Reg::read) this register and get [`max_cnt_frqcnt::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MaxCntFrqcntSpec;
 impl crate::RegisterSpec for MaxCntFrqcntSpec {
     type Ux = u32;

@@ -485,7 +485,7 @@ impl R {
         DmaR::new(((self.bits >> 31) & 1) != 0)
     }
 }
-#[doc = "Slave Capabilities Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`scapabilities::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Slave Capabilities Register\n\nYou can [`read`](crate::Reg::read) this register and get [`scapabilities::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct ScapabilitiesSpec;
 impl crate::RegisterSpec for ScapabilitiesSpec {
     type Ux = u32;

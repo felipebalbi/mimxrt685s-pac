@@ -170,7 +170,7 @@ impl W {
         MeasureInProgressW::new(self, 31)
     }
 }
-#[doc = "Freqeuncy Measurement (in Write mode)\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`freqme_freqmectrl_w::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Freqeuncy Measurement (in Write mode)\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`freqme_freqmectrl_w::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FreqmeFreqmectrlWSpec;
 impl crate::RegisterSpec for FreqmeFreqmectrlWSpec {
     type Ux = u32;

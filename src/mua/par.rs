@@ -9,7 +9,7 @@ impl R {
         ParameterR::new(self.bits)
     }
 }
-#[doc = "Use Parameter register to determine the parameter settings of MUA.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`par::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Use Parameter register to determine the parameter settings of MUA.\n\nYou can [`read`](crate::Reg::read) this register and get [`par::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct ParSpec;
 impl crate::RegisterSpec for ParSpec {
     type Ux = u32;

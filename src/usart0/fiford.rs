@@ -30,7 +30,7 @@ impl R {
         RxnoiseR::new(((self.bits >> 15) & 1) != 0)
     }
 }
-#[doc = "FIFO read data.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fiford::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "FIFO read data.\n\nYou can [`read`](crate::Reg::read) this register and get [`fiford::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FifordSpec;
 impl crate::RegisterSpec for FifordSpec {
     type Ux = u32;

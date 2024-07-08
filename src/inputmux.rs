@@ -204,43 +204,43 @@ impl RegisterBlock {
         &self.dmac1_itrig_ena0_clr
     }
 }
-#[doc = "SCT0_IN_SEL (rw) register accessor: SCT Peripheral Input Multiplexers N\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sct0_in_sel::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`sct0_in_sel::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sct0_in_sel`]
+#[doc = "SCT0_IN_SEL (rw) register accessor: SCT Peripheral Input Multiplexers N\n\nYou can [`read`](crate::Reg::read) this register and get [`sct0_in_sel::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`sct0_in_sel::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sct0_in_sel`]
 module"]
 #[doc(alias = "SCT0_IN_SEL")]
 pub type Sct0InSel = crate::Reg<sct0_in_sel::Sct0InSelSpec>;
 #[doc = "SCT Peripheral Input Multiplexers N"]
 pub mod sct0_in_sel;
-#[doc = "PINT_SEL (rw) register accessor: GPIO Pin Input Multiplexer N\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pint_sel::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pint_sel::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pint_sel`]
+#[doc = "PINT_SEL (rw) register accessor: GPIO Pin Input Multiplexer N\n\nYou can [`read`](crate::Reg::read) this register and get [`pint_sel::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pint_sel::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pint_sel`]
 module"]
 #[doc(alias = "PINT_SEL")]
 pub type PintSel = crate::Reg<pint_sel::PintSelSpec>;
 #[doc = "GPIO Pin Input Multiplexer N"]
 pub mod pint_sel;
-#[doc = "DSP_INT_SEL (rw) register accessor: DSP Interrupt Input Multiplexers N\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dsp_int_sel::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dsp_int_sel::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dsp_int_sel`]
+#[doc = "DSP_INT_SEL (rw) register accessor: DSP Interrupt Input Multiplexers N\n\nYou can [`read`](crate::Reg::read) this register and get [`dsp_int_sel::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dsp_int_sel::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dsp_int_sel`]
 module"]
 #[doc(alias = "DSP_INT_SEL")]
 pub type DspIntSel = crate::Reg<dsp_int_sel::DspIntSelSpec>;
 #[doc = "DSP Interrupt Input Multiplexers N"]
 pub mod dsp_int_sel;
-#[doc = "DMAC0_ITRIG_SEL (rw) register accessor: DMAC0 Input Trigger Multiplexers N\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dmac0_itrig_sel::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dmac0_itrig_sel::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac0_itrig_sel`]
+#[doc = "DMAC0_ITRIG_SEL (rw) register accessor: DMAC0 Input Trigger Multiplexers N\n\nYou can [`read`](crate::Reg::read) this register and get [`dmac0_itrig_sel::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dmac0_itrig_sel::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac0_itrig_sel`]
 module"]
 #[doc(alias = "DMAC0_ITRIG_SEL")]
 pub type Dmac0ItrigSel = crate::Reg<dmac0_itrig_sel::Dmac0ItrigSelSpec>;
 #[doc = "DMAC0 Input Trigger Multiplexers N"]
 pub mod dmac0_itrig_sel;
-#[doc = "DMAC0_OTRIG_SEL (rw) register accessor: DMAC0 Output Trigger Multiplexers N\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dmac0_otrig_sel::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dmac0_otrig_sel::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac0_otrig_sel`]
+#[doc = "DMAC0_OTRIG_SEL (rw) register accessor: DMAC0 Output Trigger Multiplexers N\n\nYou can [`read`](crate::Reg::read) this register and get [`dmac0_otrig_sel::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dmac0_otrig_sel::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac0_otrig_sel`]
 module"]
 #[doc(alias = "DMAC0_OTRIG_SEL")]
 pub type Dmac0OtrigSel = crate::Reg<dmac0_otrig_sel::Dmac0OtrigSelSpec>;
 #[doc = "DMAC0 Output Trigger Multiplexers N"]
 pub mod dmac0_otrig_sel;
-#[doc = "DMAC1_ITRIG_SEL (rw) register accessor: DMAC1 Input Trigger Multiplexers N\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dmac1_itrig_sel::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dmac1_itrig_sel::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac1_itrig_sel`]
+#[doc = "DMAC1_ITRIG_SEL (rw) register accessor: DMAC1 Input Trigger Multiplexers N\n\nYou can [`read`](crate::Reg::read) this register and get [`dmac1_itrig_sel::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dmac1_itrig_sel::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac1_itrig_sel`]
 module"]
 #[doc(alias = "DMAC1_ITRIG_SEL")]
 pub type Dmac1ItrigSel = crate::Reg<dmac1_itrig_sel::Dmac1ItrigSelSpec>;
 #[doc = "DMAC1 Input Trigger Multiplexers N"]
 pub mod dmac1_itrig_sel;
-#[doc = "DMAC1_OTRIG_SEL (rw) register accessor: DMAC1 Output Trigger Multiplexers N\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dmac1_otrig_sel::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dmac1_otrig_sel::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac1_otrig_sel`]
+#[doc = "DMAC1_OTRIG_SEL (rw) register accessor: DMAC1 Output Trigger Multiplexers N\n\nYou can [`read`](crate::Reg::read) this register and get [`dmac1_otrig_sel::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dmac1_otrig_sel::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac1_otrig_sel`]
 module"]
 #[doc(alias = "DMAC1_OTRIG_SEL")]
 pub type Dmac1OtrigSel = crate::Reg<dmac1_otrig_sel::Dmac1OtrigSelSpec>;
@@ -251,79 +251,79 @@ pub use self::ct32bit_cap::Ct32bitCap;
 #[doc = r"Cluster"]
 #[doc = "CT32BITn Counter Timer Capture Trigger Multiplexers"]
 pub mod ct32bit_cap;
-#[doc = "FMEASURE_CH_SEL (rw) register accessor: Frequency Measurement Input Channel Multiplexers\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fmeasure_ch_sel::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fmeasure_ch_sel::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@fmeasure_ch_sel`]
+#[doc = "FMEASURE_CH_SEL (rw) register accessor: Frequency Measurement Input Channel Multiplexers\n\nYou can [`read`](crate::Reg::read) this register and get [`fmeasure_ch_sel::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`fmeasure_ch_sel::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@fmeasure_ch_sel`]
 module"]
 #[doc(alias = "FMEASURE_CH_SEL")]
 pub type FmeasureChSel = crate::Reg<fmeasure_ch_sel::FmeasureChSelSpec>;
 #[doc = "Frequency Measurement Input Channel Multiplexers"]
 pub mod fmeasure_ch_sel;
-#[doc = "DMAC0_REQ_ENA0 (rw) register accessor: DMAC0 request enable 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dmac0_req_ena0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dmac0_req_ena0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac0_req_ena0`]
+#[doc = "DMAC0_REQ_ENA0 (rw) register accessor: DMAC0 request enable 0\n\nYou can [`read`](crate::Reg::read) this register and get [`dmac0_req_ena0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dmac0_req_ena0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac0_req_ena0`]
 module"]
 #[doc(alias = "DMAC0_REQ_ENA0")]
 pub type Dmac0ReqEna0 = crate::Reg<dmac0_req_ena0::Dmac0ReqEna0Spec>;
 #[doc = "DMAC0 request enable 0"]
 pub mod dmac0_req_ena0;
-#[doc = "DMAC0_REQ_ENA0_SET (w) register accessor: DMAC0 request enable set 0\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dmac0_req_ena0_set::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac0_req_ena0_set`]
+#[doc = "DMAC0_REQ_ENA0_SET (w) register accessor: DMAC0 request enable set 0\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dmac0_req_ena0_set::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac0_req_ena0_set`]
 module"]
 #[doc(alias = "DMAC0_REQ_ENA0_SET")]
 pub type Dmac0ReqEna0Set = crate::Reg<dmac0_req_ena0_set::Dmac0ReqEna0SetSpec>;
 #[doc = "DMAC0 request enable set 0"]
 pub mod dmac0_req_ena0_set;
-#[doc = "DMAC0_REQ_ENA0_CLR (w) register accessor: DMAC0 request enable clear 0\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dmac0_req_ena0_clr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac0_req_ena0_clr`]
+#[doc = "DMAC0_REQ_ENA0_CLR (w) register accessor: DMAC0 request enable clear 0\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dmac0_req_ena0_clr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac0_req_ena0_clr`]
 module"]
 #[doc(alias = "DMAC0_REQ_ENA0_CLR")]
 pub type Dmac0ReqEna0Clr = crate::Reg<dmac0_req_ena0_clr::Dmac0ReqEna0ClrSpec>;
 #[doc = "DMAC0 request enable clear 0"]
 pub mod dmac0_req_ena0_clr;
-#[doc = "DMAC1_REQ_ENA0 (rw) register accessor: DMAC1 request enable 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dmac1_req_ena0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dmac1_req_ena0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac1_req_ena0`]
+#[doc = "DMAC1_REQ_ENA0 (rw) register accessor: DMAC1 request enable 0\n\nYou can [`read`](crate::Reg::read) this register and get [`dmac1_req_ena0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dmac1_req_ena0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac1_req_ena0`]
 module"]
 #[doc(alias = "DMAC1_REQ_ENA0")]
 pub type Dmac1ReqEna0 = crate::Reg<dmac1_req_ena0::Dmac1ReqEna0Spec>;
 #[doc = "DMAC1 request enable 0"]
 pub mod dmac1_req_ena0;
-#[doc = "DMAC1_REQ_ENA0_SET (w) register accessor: DMAC1 request enable set 0\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dmac1_req_ena0_set::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac1_req_ena0_set`]
+#[doc = "DMAC1_REQ_ENA0_SET (w) register accessor: DMAC1 request enable set 0\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dmac1_req_ena0_set::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac1_req_ena0_set`]
 module"]
 #[doc(alias = "DMAC1_REQ_ENA0_SET")]
 pub type Dmac1ReqEna0Set = crate::Reg<dmac1_req_ena0_set::Dmac1ReqEna0SetSpec>;
 #[doc = "DMAC1 request enable set 0"]
 pub mod dmac1_req_ena0_set;
-#[doc = "DMAC1_REQ_ENA0_CLR (w) register accessor: DMAC1 request enable clear 0\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dmac1_req_ena0_clr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac1_req_ena0_clr`]
+#[doc = "DMAC1_REQ_ENA0_CLR (w) register accessor: DMAC1 request enable clear 0\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dmac1_req_ena0_clr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac1_req_ena0_clr`]
 module"]
 #[doc(alias = "DMAC1_REQ_ENA0_CLR")]
 pub type Dmac1ReqEna0Clr = crate::Reg<dmac1_req_ena0_clr::Dmac1ReqEna0ClrSpec>;
 #[doc = "DMAC1 request enable clear 0"]
 pub mod dmac1_req_ena0_clr;
-#[doc = "DMAC0_ITRIG_ENA0 (rw) register accessor: DMAC0 input trigger enable 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dmac0_itrig_ena0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dmac0_itrig_ena0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac0_itrig_ena0`]
+#[doc = "DMAC0_ITRIG_ENA0 (rw) register accessor: DMAC0 input trigger enable 0\n\nYou can [`read`](crate::Reg::read) this register and get [`dmac0_itrig_ena0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dmac0_itrig_ena0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac0_itrig_ena0`]
 module"]
 #[doc(alias = "DMAC0_ITRIG_ENA0")]
 pub type Dmac0ItrigEna0 = crate::Reg<dmac0_itrig_ena0::Dmac0ItrigEna0Spec>;
 #[doc = "DMAC0 input trigger enable 0"]
 pub mod dmac0_itrig_ena0;
-#[doc = "DMAC0_ITRIG_ENA0_SET (w) register accessor: DMAC0 input trigger enable set 0\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dmac0_itrig_ena0_set::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac0_itrig_ena0_set`]
+#[doc = "DMAC0_ITRIG_ENA0_SET (w) register accessor: DMAC0 input trigger enable set 0\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dmac0_itrig_ena0_set::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac0_itrig_ena0_set`]
 module"]
 #[doc(alias = "DMAC0_ITRIG_ENA0_SET")]
 pub type Dmac0ItrigEna0Set = crate::Reg<dmac0_itrig_ena0_set::Dmac0ItrigEna0SetSpec>;
 #[doc = "DMAC0 input trigger enable set 0"]
 pub mod dmac0_itrig_ena0_set;
-#[doc = "DMAC0_ITRIG_ENA0_CLR (w) register accessor: DMAC0 input trigger enable clear 0\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dmac0_itrig_ena0_clr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac0_itrig_ena0_clr`]
+#[doc = "DMAC0_ITRIG_ENA0_CLR (w) register accessor: DMAC0 input trigger enable clear 0\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dmac0_itrig_ena0_clr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac0_itrig_ena0_clr`]
 module"]
 #[doc(alias = "DMAC0_ITRIG_ENA0_CLR")]
 pub type Dmac0ItrigEna0Clr = crate::Reg<dmac0_itrig_ena0_clr::Dmac0ItrigEna0ClrSpec>;
 #[doc = "DMAC0 input trigger enable clear 0"]
 pub mod dmac0_itrig_ena0_clr;
-#[doc = "DMAC1_ITRIG_ENA0 (rw) register accessor: DMAC1 input trigger enable 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dmac1_itrig_ena0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dmac1_itrig_ena0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac1_itrig_ena0`]
+#[doc = "DMAC1_ITRIG_ENA0 (rw) register accessor: DMAC1 input trigger enable 0\n\nYou can [`read`](crate::Reg::read) this register and get [`dmac1_itrig_ena0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dmac1_itrig_ena0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac1_itrig_ena0`]
 module"]
 #[doc(alias = "DMAC1_ITRIG_ENA0")]
 pub type Dmac1ItrigEna0 = crate::Reg<dmac1_itrig_ena0::Dmac1ItrigEna0Spec>;
 #[doc = "DMAC1 input trigger enable 0"]
 pub mod dmac1_itrig_ena0;
-#[doc = "DMAC1_ITRIG_ENA0_SET (w) register accessor: DMAC1 input trigger enable set 0\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dmac1_itrig_ena0_set::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac1_itrig_ena0_set`]
+#[doc = "DMAC1_ITRIG_ENA0_SET (w) register accessor: DMAC1 input trigger enable set 0\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dmac1_itrig_ena0_set::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac1_itrig_ena0_set`]
 module"]
 #[doc(alias = "DMAC1_ITRIG_ENA0_SET")]
 pub type Dmac1ItrigEna0Set = crate::Reg<dmac1_itrig_ena0_set::Dmac1ItrigEna0SetSpec>;
 #[doc = "DMAC1 input trigger enable set 0"]
 pub mod dmac1_itrig_ena0_set;
-#[doc = "DMAC1_ITRIG_ENA0_CLR (w) register accessor: DMAC1 input trigger enable clear 0\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dmac1_itrig_ena0_clr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac1_itrig_ena0_clr`]
+#[doc = "DMAC1_ITRIG_ENA0_CLR (w) register accessor: DMAC1 input trigger enable clear 0\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dmac1_itrig_ena0_clr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@dmac1_itrig_ena0_clr`]
 module"]
 #[doc(alias = "DMAC1_ITRIG_ENA0_CLR")]
 pub type Dmac1ItrigEna0Clr = crate::Reg<dmac1_itrig_ena0_clr::Dmac1ItrigEna0ClrSpec>;

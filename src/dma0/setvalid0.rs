@@ -45,7 +45,7 @@ impl W {
         SvW::new(self, 0)
     }
 }
-#[doc = "Set ValidPending control bits for all DMA channels.\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`setvalid0::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Set ValidPending control bits for all DMA channels.\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`setvalid0::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Setvalid0Spec;
 impl crate::RegisterSpec for Setvalid0Spec {
     type Ux = u32;

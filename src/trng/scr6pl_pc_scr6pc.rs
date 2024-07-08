@@ -16,7 +16,7 @@ impl R {
         R6p1CtR::new(((self.bits >> 16) & 0x07ff) as u16)
     }
 }
-#[doc = "Statistical Check Run Length 6+ Count Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`scr6pl_pc_scr6pc::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Statistical Check Run Length 6+ Count Register\n\nYou can [`read`](crate::Reg::read) this register and get [`scr6pl_pc_scr6pc::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Scr6plPcScr6pcSpec;
 impl crate::RegisterSpec for Scr6plPcScr6pcSpec {
     type Ux = u32;

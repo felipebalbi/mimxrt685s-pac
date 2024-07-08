@@ -126,7 +126,7 @@ impl W {
         DebugMailboxRuleW::new(self, 28)
     }
 }
-#[doc = "Security access rules for AHB peripheral slaves area 0x40100000--0x4010FFFF\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ahb_periph0_slave_rule0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ahb_periph0_slave_rule0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Security access rules for AHB peripheral slaves area 0x40100000--0x4010FFFF\n\nYou can [`read`](crate::Reg::read) this register and get [`ahb_periph0_slave_rule0::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ahb_periph0_slave_rule0::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct AhbPeriph0SlaveRule0Spec;
 impl crate::RegisterSpec for AhbPeriph0SlaveRule0Spec {
     type Ux = u32;

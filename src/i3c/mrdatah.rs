@@ -16,7 +16,7 @@ impl R {
         MsbR::new(((self.bits >> 8) & 0xff) as u8)
     }
 }
-#[doc = "Master Read Data Half-word Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mrdatah::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Master Read Data Half-word Register\n\nYou can [`read`](crate::Reg::read) this register and get [`mrdatah::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MrdatahSpec;
 impl crate::RegisterSpec for MrdatahSpec {
     type Ux = u32;

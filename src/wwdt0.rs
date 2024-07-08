@@ -41,37 +41,37 @@ impl RegisterBlock {
         &self.window
     }
 }
-#[doc = "MOD (rw) register accessor: Watchdog mode register. This register contains the basic mode and status of the Watchdog Timer.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mod_::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mod_::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@mod_`]
+#[doc = "MOD (rw) register accessor: Watchdog mode register. This register contains the basic mode and status of the Watchdog Timer.\n\nYou can [`read`](crate::Reg::read) this register and get [`mod_::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`mod_::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@mod_`]
 module"]
 #[doc(alias = "MOD")]
 pub type Mod = crate::Reg<mod_::ModSpec>;
 #[doc = "Watchdog mode register. This register contains the basic mode and status of the Watchdog Timer."]
 pub mod mod_;
-#[doc = "TC (rw) register accessor: Watchdog timer constant register. This 24-bit register determines the time-out value.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`tc::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`tc::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@tc`]
+#[doc = "TC (rw) register accessor: Watchdog timer constant register. This 24-bit register determines the time-out value.\n\nYou can [`read`](crate::Reg::read) this register and get [`tc::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`tc::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@tc`]
 module"]
 #[doc(alias = "TC")]
 pub type Tc = crate::Reg<tc::TcSpec>;
 #[doc = "Watchdog timer constant register. This 24-bit register determines the time-out value."]
 pub mod tc;
-#[doc = "FEED (w) register accessor: Watchdog feed sequence register. Writing 0xAA followed by 0x55 to this register reloads the Watchdog timer with the value contained in TC.\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`feed::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@feed`]
+#[doc = "FEED (w) register accessor: Watchdog feed sequence register. Writing 0xAA followed by 0x55 to this register reloads the Watchdog timer with the value contained in TC.\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`feed::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@feed`]
 module"]
 #[doc(alias = "FEED")]
 pub type Feed = crate::Reg<feed::FeedSpec>;
 #[doc = "Watchdog feed sequence register. Writing 0xAA followed by 0x55 to this register reloads the Watchdog timer with the value contained in TC."]
 pub mod feed;
-#[doc = "TV (r) register accessor: Watchdog timer value register. This 24-bit register reads out the current value of the Watchdog timer.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`tv::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@tv`]
+#[doc = "TV (r) register accessor: Watchdog timer value register. This 24-bit register reads out the current value of the Watchdog timer.\n\nYou can [`read`](crate::Reg::read) this register and get [`tv::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@tv`]
 module"]
 #[doc(alias = "TV")]
 pub type Tv = crate::Reg<tv::TvSpec>;
 #[doc = "Watchdog timer value register. This 24-bit register reads out the current value of the Watchdog timer."]
 pub mod tv;
-#[doc = "WARNINT (rw) register accessor: Watchdog Warning Interrupt compare value.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`warnint::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`warnint::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@warnint`]
+#[doc = "WARNINT (rw) register accessor: Watchdog Warning Interrupt compare value.\n\nYou can [`read`](crate::Reg::read) this register and get [`warnint::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`warnint::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@warnint`]
 module"]
 #[doc(alias = "WARNINT")]
 pub type Warnint = crate::Reg<warnint::WarnintSpec>;
 #[doc = "Watchdog Warning Interrupt compare value."]
 pub mod warnint;
-#[doc = "WINDOW (rw) register accessor: Watchdog Window compare value.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`window::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`window::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@window`]
+#[doc = "WINDOW (rw) register accessor: Watchdog Window compare value.\n\nYou can [`read`](crate::Reg::read) this register and get [`window::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`window::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@window`]
 module"]
 #[doc(alias = "WINDOW")]
 pub type Window = crate::Reg<window::WindowSpec>;

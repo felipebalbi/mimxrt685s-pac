@@ -58,7 +58,7 @@ impl R {
         BrefselR::new(((self.bits >> 24) & 0x3f) as u8)
     }
 }
-#[doc = "Status Register 2\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sts2::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Status Register 2\n\nYou can [`read`](crate::Reg::read) this register and get [`sts2::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Sts2Spec;
 impl crate::RegisterSpec for Sts2Spec {
     type Ux = u32;

@@ -16,7 +16,7 @@ impl R {
         PkrBCtR::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
-#[doc = "Statistical Check Poker Count B and A Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pkrcntba::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Statistical Check Poker Count B and A Register\n\nYou can [`read`](crate::Reg::read) this register and get [`pkrcntba::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PkrcntbaSpec;
 impl crate::RegisterSpec for PkrcntbaSpec {
     type Ux = u32;

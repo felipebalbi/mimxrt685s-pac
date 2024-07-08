@@ -9,7 +9,7 @@ impl R {
         ValueR::new(self.bits & 0x00ff_ffff)
     }
 }
-#[doc = "MRT Timer register. This register reads the value of the down-counter.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`timer::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "MRT Timer register. This register reads the value of the down-counter.\n\nYou can [`read`](crate::Reg::read) this register and get [`timer::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TimerSpec;
 impl crate::RegisterSpec for TimerSpec {
     type Ux = u32;

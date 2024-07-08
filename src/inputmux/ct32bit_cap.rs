@@ -17,7 +17,7 @@ impl Ct32bitCap {
         self.ct32bit_cap_sel.iter()
     }
 }
-#[doc = "CT32BIT_CAP_SEL (rw) register accessor: CT32BIT N Counter Timer Capture Trigger Multiplexers M\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ct32bit_cap_sel::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ct32bit_cap_sel::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ct32bit_cap_sel`]
+#[doc = "CT32BIT_CAP_SEL (rw) register accessor: CT32BIT N Counter Timer Capture Trigger Multiplexers M\n\nYou can [`read`](crate::Reg::read) this register and get [`ct32bit_cap_sel::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ct32bit_cap_sel::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ct32bit_cap_sel`]
 module"]
 #[doc(alias = "CT32BIT_CAP_SEL")]
 pub type Ct32bitCapSel = crate::Reg<ct32bit_cap_sel::Ct32bitCapSelSpec>;

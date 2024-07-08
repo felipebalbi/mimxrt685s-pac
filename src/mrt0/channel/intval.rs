@@ -85,7 +85,7 @@ impl W {
         LoadW::new(self, 31)
     }
 }
-#[doc = "MRT Time interval value register. This value is loaded into the TIMER register.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`intval::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`intval::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "MRT Time interval value register. This value is loaded into the TIMER register.\n\nYou can [`read`](crate::Reg::read) this register and get [`intval::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`intval::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IntvalSpec;
 impl crate::RegisterSpec for IntvalSpec {
     type Ux = u32;

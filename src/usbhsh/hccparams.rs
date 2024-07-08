@@ -9,7 +9,7 @@ impl R {
         LpmcR::new(((self.bits >> 17) & 1) != 0)
     }
 }
-#[doc = "Host Controller Capability Parameters\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hccparams::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Host Controller Capability Parameters\n\nYou can [`read`](crate::Reg::read) this register and get [`hccparams::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct HccparamsSpec;
 impl crate::RegisterSpec for HccparamsSpec {
     type Ux = u32;

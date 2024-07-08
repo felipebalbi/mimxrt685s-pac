@@ -36,7 +36,7 @@ impl W {
         CapconnHW::new(self, 16)
     }
 }
-#[doc = "SCT capture control register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`capctrl_matchrel_capctrl1::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`capctrl_matchrel_capctrl1::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "SCT capture control register\n\nYou can [`read`](crate::Reg::read) this register and get [`capctrl_matchrel_capctrl1::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`capctrl_matchrel_capctrl1::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CapctrlMatchrelCapctrl1Spec;
 impl crate::RegisterSpec for CapctrlMatchrelCapctrl1Spec {
     type Ux = u32;

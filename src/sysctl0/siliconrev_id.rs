@@ -16,7 +16,7 @@ impl R {
         MajorR::new(((self.bits >> 16) & 0x0f) as u8)
     }
 }
-#[doc = "SILICONREV ID\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`siliconrev_id::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "SILICONREV ID\n\nYou can [`read`](crate::Reg::read) this register and get [`siliconrev_id::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SiliconrevIdSpec;
 impl crate::RegisterSpec for SiliconrevIdSpec {
     type Ux = u32;

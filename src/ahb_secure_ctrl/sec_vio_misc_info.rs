@@ -30,7 +30,7 @@ impl R {
         SecVioInfoMasterR::new(((self.bits >> 8) & 0x0f) as u8)
     }
 }
-#[doc = "most recent security violation miscellaneous information for AHB layer n\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sec_vio_misc_info::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "most recent security violation miscellaneous information for AHB layer n\n\nYou can [`read`](crate::Reg::read) this register and get [`sec_vio_misc_info::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SecVioMiscInfoSpec;
 impl crate::RegisterSpec for SecVioMiscInfoSpec {
     type Ux = u32;

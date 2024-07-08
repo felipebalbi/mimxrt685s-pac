@@ -67,61 +67,61 @@ impl RegisterBlock {
         &self.prstctl2_clr
     }
 }
-#[doc = "SYSRSTSTAT (rw) register accessor: system reset status register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sysrststat::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`sysrststat::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sysrststat`]
+#[doc = "SYSRSTSTAT (rw) register accessor: system reset status register\n\nYou can [`read`](crate::Reg::read) this register and get [`sysrststat::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`sysrststat::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sysrststat`]
 module"]
 #[doc(alias = "SYSRSTSTAT")]
 pub type Sysrststat = crate::Reg<sysrststat::SysrststatSpec>;
 #[doc = "system reset status register"]
 pub mod sysrststat;
-#[doc = "PRSTCTL0 (rw) register accessor: peripheral reset control register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`prstctl0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`prstctl0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@prstctl0`]
+#[doc = "PRSTCTL0 (rw) register accessor: peripheral reset control register 0\n\nYou can [`read`](crate::Reg::read) this register and get [`prstctl0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`prstctl0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@prstctl0`]
 module"]
 #[doc(alias = "PRSTCTL0")]
 pub type Prstctl0 = crate::Reg<prstctl0::Prstctl0Spec>;
 #[doc = "peripheral reset control register 0"]
 pub mod prstctl0;
-#[doc = "PRSTCTL1 (rw) register accessor: peripheral reset control register 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`prstctl1::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`prstctl1::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@prstctl1`]
+#[doc = "PRSTCTL1 (rw) register accessor: peripheral reset control register 1\n\nYou can [`read`](crate::Reg::read) this register and get [`prstctl1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`prstctl1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@prstctl1`]
 module"]
 #[doc(alias = "PRSTCTL1")]
 pub type Prstctl1 = crate::Reg<prstctl1::Prstctl1Spec>;
 #[doc = "peripheral reset control register 1"]
 pub mod prstctl1;
-#[doc = "PRSTCTL2 (rw) register accessor: peripheral reset control register 2\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`prstctl2::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`prstctl2::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@prstctl2`]
+#[doc = "PRSTCTL2 (rw) register accessor: peripheral reset control register 2\n\nYou can [`read`](crate::Reg::read) this register and get [`prstctl2::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`prstctl2::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@prstctl2`]
 module"]
 #[doc(alias = "PRSTCTL2")]
 pub type Prstctl2 = crate::Reg<prstctl2::Prstctl2Spec>;
 #[doc = "peripheral reset control register 2"]
 pub mod prstctl2;
-#[doc = "PRSTCTL0_SET (w) register accessor: peripheral reset set register 0\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`prstctl0_set::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@prstctl0_set`]
+#[doc = "PRSTCTL0_SET (w) register accessor: peripheral reset set register 0\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`prstctl0_set::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@prstctl0_set`]
 module"]
 #[doc(alias = "PRSTCTL0_SET")]
 pub type Prstctl0Set = crate::Reg<prstctl0_set::Prstctl0SetSpec>;
 #[doc = "peripheral reset set register 0"]
 pub mod prstctl0_set;
-#[doc = "PRSTCTL1_SET (w) register accessor: peripheral reset set register 1\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`prstctl1_set::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@prstctl1_set`]
+#[doc = "PRSTCTL1_SET (w) register accessor: peripheral reset set register 1\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`prstctl1_set::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@prstctl1_set`]
 module"]
 #[doc(alias = "PRSTCTL1_SET")]
 pub type Prstctl1Set = crate::Reg<prstctl1_set::Prstctl1SetSpec>;
 #[doc = "peripheral reset set register 1"]
 pub mod prstctl1_set;
-#[doc = "PRSTCTL2_SET (w) register accessor: peripheral reset set register 2\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`prstctl2_set::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@prstctl2_set`]
+#[doc = "PRSTCTL2_SET (w) register accessor: peripheral reset set register 2\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`prstctl2_set::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@prstctl2_set`]
 module"]
 #[doc(alias = "PRSTCTL2_SET")]
 pub type Prstctl2Set = crate::Reg<prstctl2_set::Prstctl2SetSpec>;
 #[doc = "peripheral reset set register 2"]
 pub mod prstctl2_set;
-#[doc = "PRSTCTL0_CLR (w) register accessor: peripheral reset clear register 0\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`prstctl0_clr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@prstctl0_clr`]
+#[doc = "PRSTCTL0_CLR (w) register accessor: peripheral reset clear register 0\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`prstctl0_clr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@prstctl0_clr`]
 module"]
 #[doc(alias = "PRSTCTL0_CLR")]
 pub type Prstctl0Clr = crate::Reg<prstctl0_clr::Prstctl0ClrSpec>;
 #[doc = "peripheral reset clear register 0"]
 pub mod prstctl0_clr;
-#[doc = "PRSTCTL1_CLR (w) register accessor: peripheral reset clear register 1\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`prstctl1_clr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@prstctl1_clr`]
+#[doc = "PRSTCTL1_CLR (w) register accessor: peripheral reset clear register 1\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`prstctl1_clr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@prstctl1_clr`]
 module"]
 #[doc(alias = "PRSTCTL1_CLR")]
 pub type Prstctl1Clr = crate::Reg<prstctl1_clr::Prstctl1ClrSpec>;
 #[doc = "peripheral reset clear register 1"]
 pub mod prstctl1_clr;
-#[doc = "PRSTCTL2_CLR (w) register accessor: peripheral reset clear register 2\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`prstctl2_clr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@prstctl2_clr`]
+#[doc = "PRSTCTL2_CLR (w) register accessor: peripheral reset clear register 2\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`prstctl2_clr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@prstctl2_clr`]
 module"]
 #[doc(alias = "PRSTCTL2_CLR")]
 pub type Prstctl2Clr = crate::Reg<prstctl2_clr::Prstctl2ClrSpec>;

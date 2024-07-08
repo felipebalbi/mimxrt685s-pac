@@ -90,7 +90,7 @@ impl W {
         ScltimeoutclrW::new(self, 25)
     }
 }
-#[doc = "Interrupt Enable Clear register.\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`intenclr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Interrupt Enable Clear register.\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`intenclr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IntenclrSpec;
 impl crate::RegisterSpec for IntenclrSpec {
     type Ux = u32;

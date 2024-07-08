@@ -41,25 +41,25 @@ impl Ctx {
         &self.ctx_rgd_w1
     }
 }
-#[doc = "CTX_KEY (rw) register accessor: AES Key Word\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ctx_key::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ctx_key::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ctx_key`]
+#[doc = "CTX_KEY (rw) register accessor: AES Key Word\n\nYou can [`read`](crate::Reg::read) this register and get [`ctx_key::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ctx_key::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ctx_key`]
 module"]
 #[doc(alias = "CTX_KEY")]
 pub type CtxKey = crate::Reg<ctx_key::CtxKeySpec>;
 #[doc = "AES Key Word"]
 pub mod ctx_key;
-#[doc = "CTX_CTR (rw) register accessor: AES Counter Word\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ctx_ctr::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ctx_ctr::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ctx_ctr`]
+#[doc = "CTX_CTR (rw) register accessor: AES Counter Word\n\nYou can [`read`](crate::Reg::read) this register and get [`ctx_ctr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ctx_ctr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ctx_ctr`]
 module"]
 #[doc(alias = "CTX_CTR")]
 pub type CtxCtr = crate::Reg<ctx_ctr::CtxCtrSpec>;
 #[doc = "AES Counter Word"]
 pub mod ctx_ctr;
-#[doc = "CTX_RGD_W0 (rw) register accessor: AES Region Descriptor Word0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ctx_rgd_w0::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ctx_rgd_w0::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ctx_rgd_w0`]
+#[doc = "CTX_RGD_W0 (rw) register accessor: AES Region Descriptor Word0\n\nYou can [`read`](crate::Reg::read) this register and get [`ctx_rgd_w0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ctx_rgd_w0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ctx_rgd_w0`]
 module"]
 #[doc(alias = "CTX_RGD_W0")]
 pub type CtxRgdW0 = crate::Reg<ctx_rgd_w0::CtxRgdW0Spec>;
 #[doc = "AES Region Descriptor Word0"]
 pub mod ctx_rgd_w0;
-#[doc = "CTX_RGD_W1 (rw) register accessor: AES Region Descriptor Word1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ctx_rgd_w1::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ctx_rgd_w1::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ctx_rgd_w1`]
+#[doc = "CTX_RGD_W1 (rw) register accessor: AES Region Descriptor Word1\n\nYou can [`read`](crate::Reg::read) this register and get [`ctx_rgd_w1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ctx_rgd_w1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ctx_rgd_w1`]
 module"]
 #[doc(alias = "CTX_RGD_W1")]
 pub type CtxRgdW1 = crate::Reg<ctx_rgd_w1::CtxRgdW1Spec>;

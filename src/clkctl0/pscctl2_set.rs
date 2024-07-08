@@ -76,7 +76,7 @@ impl W {
         Wwdt0ClkW::new(self, 1)
     }
 }
-#[doc = "clock set register 2\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pscctl2_set::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "clock set register 2\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pscctl2_set::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Pscctl2SetSpec;
 impl crate::RegisterSpec for Pscctl2SetSpec {
     type Ux = u32;

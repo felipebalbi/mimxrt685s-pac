@@ -16,7 +16,7 @@ impl R {
         Pkr9CtR::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
-#[doc = "Statistical Check Poker Count 9 and 8 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pkrcnt98::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Statistical Check Poker Count 9 and 8 Register\n\nYou can [`read`](crate::Reg::read) this register and get [`pkrcnt98::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Pkrcnt98Spec;
 impl crate::RegisterSpec for Pkrcnt98Spec {
     type Ux = u32;

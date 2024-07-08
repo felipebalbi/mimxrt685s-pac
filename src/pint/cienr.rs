@@ -10,7 +10,7 @@ impl W {
         CenrlW::new(self, 0)
     }
 }
-#[doc = "Pin interrupt level (rising edge interrupt) clear register\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cienr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Pin interrupt level (rising edge interrupt) clear register\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cienr::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CienrSpec;
 impl crate::RegisterSpec for CienrSpec {
     type Ux = u32;

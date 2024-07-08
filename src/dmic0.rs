@@ -110,73 +110,73 @@ pub use self::channel::Channel;
 #[doc = r"Cluster"]
 #[doc = "no description available"]
 pub mod channel;
-#[doc = "CHANEN (rw) register accessor: Channel Enable register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`chanen::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`chanen::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@chanen`]
+#[doc = "CHANEN (rw) register accessor: Channel Enable register\n\nYou can [`read`](crate::Reg::read) this register and get [`chanen::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`chanen::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@chanen`]
 module"]
 #[doc(alias = "CHANEN")]
 pub type Chanen = crate::Reg<chanen::ChanenSpec>;
 #[doc = "Channel Enable register"]
 pub mod chanen;
-#[doc = "USE2FS (rw) register accessor: Use 2FS register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`use2fs::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`use2fs::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@use2fs`]
+#[doc = "USE2FS (rw) register accessor: Use 2FS register\n\nYou can [`read`](crate::Reg::read) this register and get [`use2fs::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`use2fs::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@use2fs`]
 module"]
 #[doc(alias = "USE2FS")]
 pub type Use2fs = crate::Reg<use2fs::Use2fsSpec>;
 #[doc = "Use 2FS register"]
 pub mod use2fs;
-#[doc = "GLOBAL_SYNC_EN (rw) register accessor: global sync enable\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`global_sync_en::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`global_sync_en::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@global_sync_en`]
+#[doc = "GLOBAL_SYNC_EN (rw) register accessor: global sync enable\n\nYou can [`read`](crate::Reg::read) this register and get [`global_sync_en::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`global_sync_en::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@global_sync_en`]
 module"]
 #[doc(alias = "GLOBAL_SYNC_EN")]
 pub type GlobalSyncEn = crate::Reg<global_sync_en::GlobalSyncEnSpec>;
 #[doc = "global sync enable"]
 pub mod global_sync_en;
-#[doc = "GLOBAL_COUNT_VAL (rw) register accessor: no description available\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`global_count_val::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`global_count_val::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@global_count_val`]
+#[doc = "GLOBAL_COUNT_VAL (rw) register accessor: no description available\n\nYou can [`read`](crate::Reg::read) this register and get [`global_count_val::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`global_count_val::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@global_count_val`]
 module"]
 #[doc(alias = "GLOBAL_COUNT_VAL")]
 pub type GlobalCountVal = crate::Reg<global_count_val::GlobalCountValSpec>;
 #[doc = "no description available"]
 pub mod global_count_val;
-#[doc = "DECRESET (rw) register accessor: no description available\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`decreset::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`decreset::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@decreset`]
+#[doc = "DECRESET (rw) register accessor: no description available\n\nYou can [`read`](crate::Reg::read) this register and get [`decreset::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`decreset::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@decreset`]
 module"]
 #[doc(alias = "DECRESET")]
 pub type Decreset = crate::Reg<decreset::DecresetSpec>;
 #[doc = "no description available"]
 pub mod decreset;
-#[doc = "HWVADGAIN (rw) register accessor: HWVAD input gain register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hwvadgain::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hwvadgain::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@hwvadgain`]
+#[doc = "HWVADGAIN (rw) register accessor: HWVAD input gain register\n\nYou can [`read`](crate::Reg::read) this register and get [`hwvadgain::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`hwvadgain::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@hwvadgain`]
 module"]
 #[doc(alias = "HWVADGAIN")]
 pub type Hwvadgain = crate::Reg<hwvadgain::HwvadgainSpec>;
 #[doc = "HWVAD input gain register"]
 pub mod hwvadgain;
-#[doc = "HWVADHPFS (rw) register accessor: HWVAD filter control register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hwvadhpfs::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hwvadhpfs::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@hwvadhpfs`]
+#[doc = "HWVADHPFS (rw) register accessor: HWVAD filter control register\n\nYou can [`read`](crate::Reg::read) this register and get [`hwvadhpfs::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`hwvadhpfs::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@hwvadhpfs`]
 module"]
 #[doc(alias = "HWVADHPFS")]
 pub type Hwvadhpfs = crate::Reg<hwvadhpfs::HwvadhpfsSpec>;
 #[doc = "HWVAD filter control register"]
 pub mod hwvadhpfs;
-#[doc = "HWVADST10 (rw) register accessor: HWVAD control register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hwvadst10::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hwvadst10::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@hwvadst10`]
+#[doc = "HWVADST10 (rw) register accessor: HWVAD control register\n\nYou can [`read`](crate::Reg::read) this register and get [`hwvadst10::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`hwvadst10::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@hwvadst10`]
 module"]
 #[doc(alias = "HWVADST10")]
 pub type Hwvadst10 = crate::Reg<hwvadst10::Hwvadst10Spec>;
 #[doc = "HWVAD control register"]
 pub mod hwvadst10;
-#[doc = "HWVADRSTT (rw) register accessor: HWVAD filter reset register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hwvadrstt::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hwvadrstt::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@hwvadrstt`]
+#[doc = "HWVADRSTT (rw) register accessor: HWVAD filter reset register\n\nYou can [`read`](crate::Reg::read) this register and get [`hwvadrstt::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`hwvadrstt::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@hwvadrstt`]
 module"]
 #[doc(alias = "HWVADRSTT")]
 pub type Hwvadrstt = crate::Reg<hwvadrstt::HwvadrsttSpec>;
 #[doc = "HWVAD filter reset register"]
 pub mod hwvadrstt;
-#[doc = "HWVADTHGN (rw) register accessor: HWVAD noise estimator gain register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hwvadthgn::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hwvadthgn::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@hwvadthgn`]
+#[doc = "HWVADTHGN (rw) register accessor: HWVAD noise estimator gain register\n\nYou can [`read`](crate::Reg::read) this register and get [`hwvadthgn::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`hwvadthgn::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@hwvadthgn`]
 module"]
 #[doc(alias = "HWVADTHGN")]
 pub type Hwvadthgn = crate::Reg<hwvadthgn::HwvadthgnSpec>;
 #[doc = "HWVAD noise estimator gain register"]
 pub mod hwvadthgn;
-#[doc = "HWVADTHGS (rw) register accessor: HWVAD signal estimator gain register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hwvadthgs::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hwvadthgs::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@hwvadthgs`]
+#[doc = "HWVADTHGS (rw) register accessor: HWVAD signal estimator gain register\n\nYou can [`read`](crate::Reg::read) this register and get [`hwvadthgs::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`hwvadthgs::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@hwvadthgs`]
 module"]
 #[doc(alias = "HWVADTHGS")]
 pub type Hwvadthgs = crate::Reg<hwvadthgs::HwvadthgsSpec>;
 #[doc = "HWVAD signal estimator gain register"]
 pub mod hwvadthgs;
-#[doc = "HWVADLOWZ (r) register accessor: HWVAD noise envelope estimator register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hwvadlowz::R`].  See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@hwvadlowz`]
+#[doc = "HWVADLOWZ (r) register accessor: HWVAD noise envelope estimator register\n\nYou can [`read`](crate::Reg::read) this register and get [`hwvadlowz::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@hwvadlowz`]
 module"]
 #[doc(alias = "HWVADLOWZ")]
 pub type Hwvadlowz = crate::Reg<hwvadlowz::HwvadlowzSpec>;

@@ -10,7 +10,7 @@ impl W {
         ClrW::new(self, 0)
     }
 }
-#[doc = "Interrupt Enable Clear for all DMA channels.\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`intenclr0::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Interrupt Enable Clear for all DMA channels.\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`intenclr0::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Intenclr0Spec;
 impl crate::RegisterSpec for Intenclr0Spec {
     type Ux = u32;

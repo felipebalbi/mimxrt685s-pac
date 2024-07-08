@@ -93,7 +93,7 @@ impl R {
         DatalearnphasebR::new(((self.bits >> 8) & 0x0f) as u8)
     }
 }
-#[doc = "Status Register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sts0::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Status Register 0\n\nYou can [`read`](crate::Reg::read) this register and get [`sts0::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Sts0Spec;
 impl crate::RegisterSpec for Sts0Spec {
     type Ux = u32;
