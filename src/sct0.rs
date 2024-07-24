@@ -22,39 +22,39 @@ pub struct RegisterBlock {
     evflag: Evflag,
     conen: Conen,
     conflag: Conflag,
-    _reserved_19_cap_match: [u8; 0x04],
-    _reserved_20_cap_match: [u8; 0x04],
-    _reserved_21_cap_match: [u8; 0x04],
-    _reserved_22_cap_match: [u8; 0x04],
-    _reserved_23_cap_match: [u8; 0x04],
-    _reserved_24_cap_match: [u8; 0x04],
-    _reserved_25_cap_match: [u8; 0x04],
-    _reserved_26_cap_match: [u8; 0x04],
-    _reserved_27_cap_match: [u8; 0x04],
-    _reserved_28_cap_match: [u8; 0x04],
-    _reserved_29_cap_match: [u8; 0x04],
-    _reserved_30_cap_match: [u8; 0x04],
-    _reserved_31_cap_match: [u8; 0x04],
-    _reserved_32_cap_match: [u8; 0x04],
-    _reserved_33_cap_match: [u8; 0x04],
-    _reserved_34_cap_match: [u8; 0x04],
+    _reserved_19_cap0: [u8; 0x04],
+    _reserved_20_cap1: [u8; 0x04],
+    _reserved_21_cap2: [u8; 0x04],
+    _reserved_22_cap3: [u8; 0x04],
+    _reserved_23_cap4: [u8; 0x04],
+    _reserved_24_cap5: [u8; 0x04],
+    _reserved_25_cap6: [u8; 0x04],
+    _reserved_26_cap7: [u8; 0x04],
+    _reserved_27_cap8: [u8; 0x04],
+    _reserved_28_cap9: [u8; 0x04],
+    _reserved_29_cap10: [u8; 0x04],
+    _reserved_30_cap11: [u8; 0x04],
+    _reserved_31_cap12: [u8; 0x04],
+    _reserved_32_cap13: [u8; 0x04],
+    _reserved_33_cap14: [u8; 0x04],
+    _reserved_34_cap15: [u8; 0x04],
     _reserved35: [u8; 0xc0],
-    _reserved_35_capctrl_matchrel: [u8; 0x04],
-    _reserved_36_capctrl_matchrel: [u8; 0x04],
-    _reserved_37_capctrl_matchrel: [u8; 0x04],
-    _reserved_38_capctrl_matchrel: [u8; 0x04],
-    _reserved_39_capctrl_matchrel: [u8; 0x04],
-    _reserved_40_capctrl_matchrel: [u8; 0x04],
-    _reserved_41_capctrl_matchrel: [u8; 0x04],
-    _reserved_42_capctrl_matchrel: [u8; 0x04],
-    _reserved_43_capctrl_matchrel: [u8; 0x04],
-    _reserved_44_capctrl_matchrel: [u8; 0x04],
-    _reserved_45_capctrl_matchrel: [u8; 0x04],
-    _reserved_46_capctrl_matchrel: [u8; 0x04],
-    _reserved_47_capctrl_matchrel: [u8; 0x04],
-    _reserved_48_capctrl_matchrel: [u8; 0x04],
-    _reserved_49_capctrl_matchrel: [u8; 0x04],
-    _reserved_50_capctrl_matchrel: [u8; 0x04],
+    _reserved_35_capctrl0: [u8; 0x04],
+    _reserved_36_capctrl1: [u8; 0x04],
+    _reserved_37_capctrl2: [u8; 0x04],
+    _reserved_38_capctrl3: [u8; 0x04],
+    _reserved_39_capctrl4: [u8; 0x04],
+    _reserved_40_capctrl5: [u8; 0x04],
+    _reserved_41_capctrl6: [u8; 0x04],
+    _reserved_42_capctrl7: [u8; 0x04],
+    _reserved_43_capctrl8: [u8; 0x04],
+    _reserved_44_capctrl9: [u8; 0x04],
+    _reserved_45_capctrl10: [u8; 0x04],
+    _reserved_46_capctrl11: [u8; 0x04],
+    _reserved_47_capctrl12: [u8; 0x04],
+    _reserved_48_capctrl13: [u8; 0x04],
+    _reserved_49_capctrl14: [u8; 0x04],
+    _reserved_50_capctrl15: [u8; 0x04],
     _reserved51: [u8; 0xc0],
     ev: [Ev; 16],
     _reserved52: [u8; 0x0180],
@@ -158,322 +158,322 @@ impl RegisterBlock {
     }
     #[doc = "0x100 - SCT match value register of match channels"]
     #[inline(always)]
-    pub const fn cap_match_match0(&self) -> &CapMatchMatch0 {
+    pub const fn match0(&self) -> &Match0 {
         unsafe { &*(self as *const Self).cast::<u8>().add(256).cast() }
     }
     #[doc = "0x100 - SCT capture register of capture channel"]
     #[inline(always)]
-    pub const fn cap_match_cap0(&self) -> &CapMatchCap0 {
+    pub const fn cap0(&self) -> &Cap0 {
         unsafe { &*(self as *const Self).cast::<u8>().add(256).cast() }
     }
     #[doc = "0x104 - SCT match value register of match channels"]
     #[inline(always)]
-    pub const fn cap_match_match1(&self) -> &CapMatchMatch1 {
+    pub const fn match1(&self) -> &Match1 {
         unsafe { &*(self as *const Self).cast::<u8>().add(260).cast() }
     }
     #[doc = "0x104 - SCT capture register of capture channel"]
     #[inline(always)]
-    pub const fn cap_match_cap1(&self) -> &CapMatchCap1 {
+    pub const fn cap1(&self) -> &Cap1 {
         unsafe { &*(self as *const Self).cast::<u8>().add(260).cast() }
     }
     #[doc = "0x108 - SCT match value register of match channels"]
     #[inline(always)]
-    pub const fn cap_match_match2(&self) -> &CapMatchMatch2 {
+    pub const fn match2(&self) -> &Match2 {
         unsafe { &*(self as *const Self).cast::<u8>().add(264).cast() }
     }
     #[doc = "0x108 - SCT capture register of capture channel"]
     #[inline(always)]
-    pub const fn cap_match_cap2(&self) -> &CapMatchCap2 {
+    pub const fn cap2(&self) -> &Cap2 {
         unsafe { &*(self as *const Self).cast::<u8>().add(264).cast() }
     }
     #[doc = "0x10c - SCT match value register of match channels"]
     #[inline(always)]
-    pub const fn cap_match_match3(&self) -> &CapMatchMatch3 {
+    pub const fn match3(&self) -> &Match3 {
         unsafe { &*(self as *const Self).cast::<u8>().add(268).cast() }
     }
     #[doc = "0x10c - SCT capture register of capture channel"]
     #[inline(always)]
-    pub const fn cap_match_cap3(&self) -> &CapMatchCap3 {
+    pub const fn cap3(&self) -> &Cap3 {
         unsafe { &*(self as *const Self).cast::<u8>().add(268).cast() }
     }
     #[doc = "0x110 - SCT match value register of match channels"]
     #[inline(always)]
-    pub const fn cap_match_match4(&self) -> &CapMatchMatch4 {
+    pub const fn match4(&self) -> &Match4 {
         unsafe { &*(self as *const Self).cast::<u8>().add(272).cast() }
     }
     #[doc = "0x110 - SCT capture register of capture channel"]
     #[inline(always)]
-    pub const fn cap_match_cap4(&self) -> &CapMatchCap4 {
+    pub const fn cap4(&self) -> &Cap4 {
         unsafe { &*(self as *const Self).cast::<u8>().add(272).cast() }
     }
     #[doc = "0x114 - SCT match value register of match channels"]
     #[inline(always)]
-    pub const fn cap_match_match5(&self) -> &CapMatchMatch5 {
+    pub const fn match5(&self) -> &Match5 {
         unsafe { &*(self as *const Self).cast::<u8>().add(276).cast() }
     }
     #[doc = "0x114 - SCT capture register of capture channel"]
     #[inline(always)]
-    pub const fn cap_match_cap5(&self) -> &CapMatchCap5 {
+    pub const fn cap5(&self) -> &Cap5 {
         unsafe { &*(self as *const Self).cast::<u8>().add(276).cast() }
     }
     #[doc = "0x118 - SCT match value register of match channels"]
     #[inline(always)]
-    pub const fn cap_match_match6(&self) -> &CapMatchMatch6 {
+    pub const fn match6(&self) -> &Match6 {
         unsafe { &*(self as *const Self).cast::<u8>().add(280).cast() }
     }
     #[doc = "0x118 - SCT capture register of capture channel"]
     #[inline(always)]
-    pub const fn cap_match_cap6(&self) -> &CapMatchCap6 {
+    pub const fn cap6(&self) -> &Cap6 {
         unsafe { &*(self as *const Self).cast::<u8>().add(280).cast() }
     }
     #[doc = "0x11c - SCT match value register of match channels"]
     #[inline(always)]
-    pub const fn cap_match_match7(&self) -> &CapMatchMatch7 {
+    pub const fn match7(&self) -> &Match7 {
         unsafe { &*(self as *const Self).cast::<u8>().add(284).cast() }
     }
     #[doc = "0x11c - SCT capture register of capture channel"]
     #[inline(always)]
-    pub const fn cap_match_cap7(&self) -> &CapMatchCap7 {
+    pub const fn cap7(&self) -> &Cap7 {
         unsafe { &*(self as *const Self).cast::<u8>().add(284).cast() }
     }
     #[doc = "0x120 - SCT match value register of match channels"]
     #[inline(always)]
-    pub const fn cap_match_match8(&self) -> &CapMatchMatch8 {
+    pub const fn match8(&self) -> &Match8 {
         unsafe { &*(self as *const Self).cast::<u8>().add(288).cast() }
     }
     #[doc = "0x120 - SCT capture register of capture channel"]
     #[inline(always)]
-    pub const fn cap_match_cap8(&self) -> &CapMatchCap8 {
+    pub const fn cap8(&self) -> &Cap8 {
         unsafe { &*(self as *const Self).cast::<u8>().add(288).cast() }
     }
     #[doc = "0x124 - SCT match value register of match channels"]
     #[inline(always)]
-    pub const fn cap_match_match9(&self) -> &CapMatchMatch9 {
+    pub const fn match9(&self) -> &Match9 {
         unsafe { &*(self as *const Self).cast::<u8>().add(292).cast() }
     }
     #[doc = "0x124 - SCT capture register of capture channel"]
     #[inline(always)]
-    pub const fn cap_match_cap9(&self) -> &CapMatchCap9 {
+    pub const fn cap9(&self) -> &Cap9 {
         unsafe { &*(self as *const Self).cast::<u8>().add(292).cast() }
     }
     #[doc = "0x128 - SCT match value register of match channels"]
     #[inline(always)]
-    pub const fn cap_match_match10(&self) -> &CapMatchMatch10 {
+    pub const fn match10(&self) -> &Match10 {
         unsafe { &*(self as *const Self).cast::<u8>().add(296).cast() }
     }
     #[doc = "0x128 - SCT capture register of capture channel"]
     #[inline(always)]
-    pub const fn cap_match_cap10(&self) -> &CapMatchCap10 {
+    pub const fn cap10(&self) -> &Cap10 {
         unsafe { &*(self as *const Self).cast::<u8>().add(296).cast() }
     }
     #[doc = "0x12c - SCT match value register of match channels"]
     #[inline(always)]
-    pub const fn cap_match_match11(&self) -> &CapMatchMatch11 {
+    pub const fn match11(&self) -> &Match11 {
         unsafe { &*(self as *const Self).cast::<u8>().add(300).cast() }
     }
     #[doc = "0x12c - SCT capture register of capture channel"]
     #[inline(always)]
-    pub const fn cap_match_cap11(&self) -> &CapMatchCap11 {
+    pub const fn cap11(&self) -> &Cap11 {
         unsafe { &*(self as *const Self).cast::<u8>().add(300).cast() }
     }
     #[doc = "0x130 - SCT match value register of match channels"]
     #[inline(always)]
-    pub const fn cap_match_match12(&self) -> &CapMatchMatch12 {
+    pub const fn match12(&self) -> &Match12 {
         unsafe { &*(self as *const Self).cast::<u8>().add(304).cast() }
     }
     #[doc = "0x130 - SCT capture register of capture channel"]
     #[inline(always)]
-    pub const fn cap_match_cap12(&self) -> &CapMatchCap12 {
+    pub const fn cap12(&self) -> &Cap12 {
         unsafe { &*(self as *const Self).cast::<u8>().add(304).cast() }
     }
     #[doc = "0x134 - SCT match value register of match channels"]
     #[inline(always)]
-    pub const fn cap_match_match13(&self) -> &CapMatchMatch13 {
+    pub const fn match13(&self) -> &Match13 {
         unsafe { &*(self as *const Self).cast::<u8>().add(308).cast() }
     }
     #[doc = "0x134 - SCT capture register of capture channel"]
     #[inline(always)]
-    pub const fn cap_match_cap13(&self) -> &CapMatchCap13 {
+    pub const fn cap13(&self) -> &Cap13 {
         unsafe { &*(self as *const Self).cast::<u8>().add(308).cast() }
     }
     #[doc = "0x138 - SCT match value register of match channels"]
     #[inline(always)]
-    pub const fn cap_match_match14(&self) -> &CapMatchMatch14 {
+    pub const fn match14(&self) -> &Match14 {
         unsafe { &*(self as *const Self).cast::<u8>().add(312).cast() }
     }
     #[doc = "0x138 - SCT capture register of capture channel"]
     #[inline(always)]
-    pub const fn cap_match_cap14(&self) -> &CapMatchCap14 {
+    pub const fn cap14(&self) -> &Cap14 {
         unsafe { &*(self as *const Self).cast::<u8>().add(312).cast() }
     }
     #[doc = "0x13c - SCT match value register of match channels"]
     #[inline(always)]
-    pub const fn cap_match_match15(&self) -> &CapMatchMatch15 {
+    pub const fn match15(&self) -> &Match15 {
         unsafe { &*(self as *const Self).cast::<u8>().add(316).cast() }
     }
     #[doc = "0x13c - SCT capture register of capture channel"]
     #[inline(always)]
-    pub const fn cap_match_cap15(&self) -> &CapMatchCap15 {
+    pub const fn cap15(&self) -> &Cap15 {
         unsafe { &*(self as *const Self).cast::<u8>().add(316).cast() }
     }
     #[doc = "0x200 - SCT match reload value register"]
     #[inline(always)]
-    pub const fn capctrl_matchrel_matchrel0(&self) -> &CapctrlMatchrelMatchrel0 {
+    pub const fn matchrel0(&self) -> &Matchrel0 {
         unsafe { &*(self as *const Self).cast::<u8>().add(512).cast() }
     }
     #[doc = "0x200 - SCT capture control register"]
     #[inline(always)]
-    pub const fn capctrl_matchrel_capctrl0(&self) -> &CapctrlMatchrelCapctrl0 {
+    pub const fn capctrl0(&self) -> &Capctrl0 {
         unsafe { &*(self as *const Self).cast::<u8>().add(512).cast() }
     }
     #[doc = "0x204 - SCT match reload value register"]
     #[inline(always)]
-    pub const fn capctrl_matchrel_matchrel1(&self) -> &CapctrlMatchrelMatchrel1 {
+    pub const fn matchrel1(&self) -> &Matchrel1 {
         unsafe { &*(self as *const Self).cast::<u8>().add(516).cast() }
     }
     #[doc = "0x204 - SCT capture control register"]
     #[inline(always)]
-    pub const fn capctrl_matchrel_capctrl1(&self) -> &CapctrlMatchrelCapctrl1 {
+    pub const fn capctrl1(&self) -> &Capctrl1 {
         unsafe { &*(self as *const Self).cast::<u8>().add(516).cast() }
     }
     #[doc = "0x208 - SCT match reload value register"]
     #[inline(always)]
-    pub const fn capctrl_matchrel_matchrel2(&self) -> &CapctrlMatchrelMatchrel2 {
+    pub const fn matchrel2(&self) -> &Matchrel2 {
         unsafe { &*(self as *const Self).cast::<u8>().add(520).cast() }
     }
     #[doc = "0x208 - SCT capture control register"]
     #[inline(always)]
-    pub const fn capctrl_matchrel_capctrl2(&self) -> &CapctrlMatchrelCapctrl2 {
+    pub const fn capctrl2(&self) -> &Capctrl2 {
         unsafe { &*(self as *const Self).cast::<u8>().add(520).cast() }
     }
     #[doc = "0x20c - SCT match reload value register"]
     #[inline(always)]
-    pub const fn capctrl_matchrel_matchrel3(&self) -> &CapctrlMatchrelMatchrel3 {
+    pub const fn matchrel3(&self) -> &Matchrel3 {
         unsafe { &*(self as *const Self).cast::<u8>().add(524).cast() }
     }
     #[doc = "0x20c - SCT capture control register"]
     #[inline(always)]
-    pub const fn capctrl_matchrel_capctrl3(&self) -> &CapctrlMatchrelCapctrl3 {
+    pub const fn capctrl3(&self) -> &Capctrl3 {
         unsafe { &*(self as *const Self).cast::<u8>().add(524).cast() }
     }
     #[doc = "0x210 - SCT match reload value register"]
     #[inline(always)]
-    pub const fn capctrl_matchrel_matchrel4(&self) -> &CapctrlMatchrelMatchrel4 {
+    pub const fn matchrel4(&self) -> &Matchrel4 {
         unsafe { &*(self as *const Self).cast::<u8>().add(528).cast() }
     }
     #[doc = "0x210 - SCT capture control register"]
     #[inline(always)]
-    pub const fn capctrl_matchrel_capctrl4(&self) -> &CapctrlMatchrelCapctrl4 {
+    pub const fn capctrl4(&self) -> &Capctrl4 {
         unsafe { &*(self as *const Self).cast::<u8>().add(528).cast() }
     }
     #[doc = "0x214 - SCT match reload value register"]
     #[inline(always)]
-    pub const fn capctrl_matchrel_matchrel5(&self) -> &CapctrlMatchrelMatchrel5 {
+    pub const fn matchrel5(&self) -> &Matchrel5 {
         unsafe { &*(self as *const Self).cast::<u8>().add(532).cast() }
     }
     #[doc = "0x214 - SCT capture control register"]
     #[inline(always)]
-    pub const fn capctrl_matchrel_capctrl5(&self) -> &CapctrlMatchrelCapctrl5 {
+    pub const fn capctrl5(&self) -> &Capctrl5 {
         unsafe { &*(self as *const Self).cast::<u8>().add(532).cast() }
     }
     #[doc = "0x218 - SCT match reload value register"]
     #[inline(always)]
-    pub const fn capctrl_matchrel_matchrel6(&self) -> &CapctrlMatchrelMatchrel6 {
+    pub const fn matchrel6(&self) -> &Matchrel6 {
         unsafe { &*(self as *const Self).cast::<u8>().add(536).cast() }
     }
     #[doc = "0x218 - SCT capture control register"]
     #[inline(always)]
-    pub const fn capctrl_matchrel_capctrl6(&self) -> &CapctrlMatchrelCapctrl6 {
+    pub const fn capctrl6(&self) -> &Capctrl6 {
         unsafe { &*(self as *const Self).cast::<u8>().add(536).cast() }
     }
     #[doc = "0x21c - SCT match reload value register"]
     #[inline(always)]
-    pub const fn capctrl_matchrel_matchrel7(&self) -> &CapctrlMatchrelMatchrel7 {
+    pub const fn matchrel7(&self) -> &Matchrel7 {
         unsafe { &*(self as *const Self).cast::<u8>().add(540).cast() }
     }
     #[doc = "0x21c - SCT capture control register"]
     #[inline(always)]
-    pub const fn capctrl_matchrel_capctrl7(&self) -> &CapctrlMatchrelCapctrl7 {
+    pub const fn capctrl7(&self) -> &Capctrl7 {
         unsafe { &*(self as *const Self).cast::<u8>().add(540).cast() }
     }
     #[doc = "0x220 - SCT match reload value register"]
     #[inline(always)]
-    pub const fn capctrl_matchrel_matchrel8(&self) -> &CapctrlMatchrelMatchrel8 {
+    pub const fn matchrel8(&self) -> &Matchrel8 {
         unsafe { &*(self as *const Self).cast::<u8>().add(544).cast() }
     }
     #[doc = "0x220 - SCT capture control register"]
     #[inline(always)]
-    pub const fn capctrl_matchrel_capctrl8(&self) -> &CapctrlMatchrelCapctrl8 {
+    pub const fn capctrl8(&self) -> &Capctrl8 {
         unsafe { &*(self as *const Self).cast::<u8>().add(544).cast() }
     }
     #[doc = "0x224 - SCT match reload value register"]
     #[inline(always)]
-    pub const fn capctrl_matchrel_matchrel9(&self) -> &CapctrlMatchrelMatchrel9 {
+    pub const fn matchrel9(&self) -> &Matchrel9 {
         unsafe { &*(self as *const Self).cast::<u8>().add(548).cast() }
     }
     #[doc = "0x224 - SCT capture control register"]
     #[inline(always)]
-    pub const fn capctrl_matchrel_capctrl9(&self) -> &CapctrlMatchrelCapctrl9 {
+    pub const fn capctrl9(&self) -> &Capctrl9 {
         unsafe { &*(self as *const Self).cast::<u8>().add(548).cast() }
     }
     #[doc = "0x228 - SCT match reload value register"]
     #[inline(always)]
-    pub const fn capctrl_matchrel_matchrel10(&self) -> &CapctrlMatchrelMatchrel10 {
+    pub const fn matchrel10(&self) -> &Matchrel10 {
         unsafe { &*(self as *const Self).cast::<u8>().add(552).cast() }
     }
     #[doc = "0x228 - SCT capture control register"]
     #[inline(always)]
-    pub const fn capctrl_matchrel_capctrl10(&self) -> &CapctrlMatchrelCapctrl10 {
+    pub const fn capctrl10(&self) -> &Capctrl10 {
         unsafe { &*(self as *const Self).cast::<u8>().add(552).cast() }
     }
     #[doc = "0x22c - SCT match reload value register"]
     #[inline(always)]
-    pub const fn capctrl_matchrel_matchrel11(&self) -> &CapctrlMatchrelMatchrel11 {
+    pub const fn matchrel11(&self) -> &Matchrel11 {
         unsafe { &*(self as *const Self).cast::<u8>().add(556).cast() }
     }
     #[doc = "0x22c - SCT capture control register"]
     #[inline(always)]
-    pub const fn capctrl_matchrel_capctrl11(&self) -> &CapctrlMatchrelCapctrl11 {
+    pub const fn capctrl11(&self) -> &Capctrl11 {
         unsafe { &*(self as *const Self).cast::<u8>().add(556).cast() }
     }
     #[doc = "0x230 - SCT match reload value register"]
     #[inline(always)]
-    pub const fn capctrl_matchrel_matchrel12(&self) -> &CapctrlMatchrelMatchrel12 {
+    pub const fn matchrel12(&self) -> &Matchrel12 {
         unsafe { &*(self as *const Self).cast::<u8>().add(560).cast() }
     }
     #[doc = "0x230 - SCT capture control register"]
     #[inline(always)]
-    pub const fn capctrl_matchrel_capctrl12(&self) -> &CapctrlMatchrelCapctrl12 {
+    pub const fn capctrl12(&self) -> &Capctrl12 {
         unsafe { &*(self as *const Self).cast::<u8>().add(560).cast() }
     }
     #[doc = "0x234 - SCT match reload value register"]
     #[inline(always)]
-    pub const fn capctrl_matchrel_matchrel13(&self) -> &CapctrlMatchrelMatchrel13 {
+    pub const fn matchrel13(&self) -> &Matchrel13 {
         unsafe { &*(self as *const Self).cast::<u8>().add(564).cast() }
     }
     #[doc = "0x234 - SCT capture control register"]
     #[inline(always)]
-    pub const fn capctrl_matchrel_capctrl13(&self) -> &CapctrlMatchrelCapctrl13 {
+    pub const fn capctrl13(&self) -> &Capctrl13 {
         unsafe { &*(self as *const Self).cast::<u8>().add(564).cast() }
     }
     #[doc = "0x238 - SCT match reload value register"]
     #[inline(always)]
-    pub const fn capctrl_matchrel_matchrel14(&self) -> &CapctrlMatchrelMatchrel14 {
+    pub const fn matchrel14(&self) -> &Matchrel14 {
         unsafe { &*(self as *const Self).cast::<u8>().add(568).cast() }
     }
     #[doc = "0x238 - SCT capture control register"]
     #[inline(always)]
-    pub const fn capctrl_matchrel_capctrl14(&self) -> &CapctrlMatchrelCapctrl14 {
+    pub const fn capctrl14(&self) -> &Capctrl14 {
         unsafe { &*(self as *const Self).cast::<u8>().add(568).cast() }
     }
     #[doc = "0x23c - SCT match reload value register"]
     #[inline(always)]
-    pub const fn capctrl_matchrel_matchrel15(&self) -> &CapctrlMatchrelMatchrel15 {
+    pub const fn matchrel15(&self) -> &Matchrel15 {
         unsafe { &*(self as *const Self).cast::<u8>().add(572).cast() }
     }
     #[doc = "0x23c - SCT capture control register"]
     #[inline(always)]
-    pub const fn capctrl_matchrel_capctrl15(&self) -> &CapctrlMatchrelCapctrl15 {
+    pub const fn capctrl15(&self) -> &Capctrl15 {
         unsafe { &*(self as *const Self).cast::<u8>().add(572).cast() }
     }
     #[doc = "0x300..0x380 - no description available"]
@@ -613,422 +613,390 @@ module"]
 pub type Conflag = crate::Reg<conflag::ConflagSpec>;
 #[doc = "SCT conflict flag register"]
 pub mod conflag;
-#[doc = "CAP_MATCH_CAP0 (rw) register accessor: SCT capture register of capture channel\n\nYou can [`read`](crate::Reg::read) this register and get [`cap_match_cap0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cap_match_cap0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cap_match_cap0`]
+#[doc = "CAP0 (rw) register accessor: SCT capture register of capture channel\n\nYou can [`read`](crate::Reg::read) this register and get [`cap0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cap0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cap0`]
 module"]
-#[doc(alias = "CAP_MATCH_CAP0")]
-pub type CapMatchCap0 = crate::Reg<cap_match_cap0::CapMatchCap0Spec>;
+#[doc(alias = "CAP0")]
+pub type Cap0 = crate::Reg<cap0::Cap0Spec>;
 #[doc = "SCT capture register of capture channel"]
-pub mod cap_match_cap0;
-#[doc = "CAP_MATCH_MATCH0 (rw) register accessor: SCT match value register of match channels\n\nYou can [`read`](crate::Reg::read) this register and get [`cap_match_match0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cap_match_match0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cap_match_match0`]
+pub mod cap0;
+#[doc = "MATCH0 (rw) register accessor: SCT match value register of match channels\n\nYou can [`read`](crate::Reg::read) this register and get [`match0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`match0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@match0`]
 module"]
-#[doc(alias = "CAP_MATCH_MATCH0")]
-pub type CapMatchMatch0 = crate::Reg<cap_match_match0::CapMatchMatch0Spec>;
+#[doc(alias = "MATCH0")]
+pub type Match0 = crate::Reg<match0::Match0Spec>;
 #[doc = "SCT match value register of match channels"]
-pub mod cap_match_match0;
-#[doc = "CAP_MATCH_CAP1 (rw) register accessor: SCT capture register of capture channel\n\nYou can [`read`](crate::Reg::read) this register and get [`cap_match_cap1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cap_match_cap1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cap_match_cap1`]
+pub mod match0;
+#[doc = "CAP1 (rw) register accessor: SCT capture register of capture channel\n\nYou can [`read`](crate::Reg::read) this register and get [`cap1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cap1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cap1`]
 module"]
-#[doc(alias = "CAP_MATCH_CAP1")]
-pub type CapMatchCap1 = crate::Reg<cap_match_cap1::CapMatchCap1Spec>;
+#[doc(alias = "CAP1")]
+pub type Cap1 = crate::Reg<cap1::Cap1Spec>;
 #[doc = "SCT capture register of capture channel"]
-pub mod cap_match_cap1;
-#[doc = "CAP_MATCH_MATCH1 (rw) register accessor: SCT match value register of match channels\n\nYou can [`read`](crate::Reg::read) this register and get [`cap_match_match1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cap_match_match1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cap_match_match1`]
+pub mod cap1;
+#[doc = "MATCH1 (rw) register accessor: SCT match value register of match channels\n\nYou can [`read`](crate::Reg::read) this register and get [`match1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`match1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@match1`]
 module"]
-#[doc(alias = "CAP_MATCH_MATCH1")]
-pub type CapMatchMatch1 = crate::Reg<cap_match_match1::CapMatchMatch1Spec>;
+#[doc(alias = "MATCH1")]
+pub type Match1 = crate::Reg<match1::Match1Spec>;
 #[doc = "SCT match value register of match channels"]
-pub mod cap_match_match1;
-#[doc = "CAP_MATCH_CAP2 (rw) register accessor: SCT capture register of capture channel\n\nYou can [`read`](crate::Reg::read) this register and get [`cap_match_cap2::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cap_match_cap2::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cap_match_cap2`]
+pub mod match1;
+#[doc = "CAP2 (rw) register accessor: SCT capture register of capture channel\n\nYou can [`read`](crate::Reg::read) this register and get [`cap2::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cap2::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cap2`]
 module"]
-#[doc(alias = "CAP_MATCH_CAP2")]
-pub type CapMatchCap2 = crate::Reg<cap_match_cap2::CapMatchCap2Spec>;
+#[doc(alias = "CAP2")]
+pub type Cap2 = crate::Reg<cap2::Cap2Spec>;
 #[doc = "SCT capture register of capture channel"]
-pub mod cap_match_cap2;
-#[doc = "CAP_MATCH_MATCH2 (rw) register accessor: SCT match value register of match channels\n\nYou can [`read`](crate::Reg::read) this register and get [`cap_match_match2::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cap_match_match2::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cap_match_match2`]
+pub mod cap2;
+#[doc = "MATCH2 (rw) register accessor: SCT match value register of match channels\n\nYou can [`read`](crate::Reg::read) this register and get [`match2::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`match2::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@match2`]
 module"]
-#[doc(alias = "CAP_MATCH_MATCH2")]
-pub type CapMatchMatch2 = crate::Reg<cap_match_match2::CapMatchMatch2Spec>;
+#[doc(alias = "MATCH2")]
+pub type Match2 = crate::Reg<match2::Match2Spec>;
 #[doc = "SCT match value register of match channels"]
-pub mod cap_match_match2;
-#[doc = "CAP_MATCH_CAP3 (rw) register accessor: SCT capture register of capture channel\n\nYou can [`read`](crate::Reg::read) this register and get [`cap_match_cap3::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cap_match_cap3::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cap_match_cap3`]
+pub mod match2;
+#[doc = "CAP3 (rw) register accessor: SCT capture register of capture channel\n\nYou can [`read`](crate::Reg::read) this register and get [`cap3::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cap3::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cap3`]
 module"]
-#[doc(alias = "CAP_MATCH_CAP3")]
-pub type CapMatchCap3 = crate::Reg<cap_match_cap3::CapMatchCap3Spec>;
+#[doc(alias = "CAP3")]
+pub type Cap3 = crate::Reg<cap3::Cap3Spec>;
 #[doc = "SCT capture register of capture channel"]
-pub mod cap_match_cap3;
-#[doc = "CAP_MATCH_MATCH3 (rw) register accessor: SCT match value register of match channels\n\nYou can [`read`](crate::Reg::read) this register and get [`cap_match_match3::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cap_match_match3::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cap_match_match3`]
+pub mod cap3;
+#[doc = "MATCH3 (rw) register accessor: SCT match value register of match channels\n\nYou can [`read`](crate::Reg::read) this register and get [`match3::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`match3::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@match3`]
 module"]
-#[doc(alias = "CAP_MATCH_MATCH3")]
-pub type CapMatchMatch3 = crate::Reg<cap_match_match3::CapMatchMatch3Spec>;
+#[doc(alias = "MATCH3")]
+pub type Match3 = crate::Reg<match3::Match3Spec>;
 #[doc = "SCT match value register of match channels"]
-pub mod cap_match_match3;
-#[doc = "CAP_MATCH_CAP4 (rw) register accessor: SCT capture register of capture channel\n\nYou can [`read`](crate::Reg::read) this register and get [`cap_match_cap4::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cap_match_cap4::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cap_match_cap4`]
+pub mod match3;
+#[doc = "CAP4 (rw) register accessor: SCT capture register of capture channel\n\nYou can [`read`](crate::Reg::read) this register and get [`cap4::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cap4::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cap4`]
 module"]
-#[doc(alias = "CAP_MATCH_CAP4")]
-pub type CapMatchCap4 = crate::Reg<cap_match_cap4::CapMatchCap4Spec>;
+#[doc(alias = "CAP4")]
+pub type Cap4 = crate::Reg<cap4::Cap4Spec>;
 #[doc = "SCT capture register of capture channel"]
-pub mod cap_match_cap4;
-#[doc = "CAP_MATCH_MATCH4 (rw) register accessor: SCT match value register of match channels\n\nYou can [`read`](crate::Reg::read) this register and get [`cap_match_match4::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cap_match_match4::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cap_match_match4`]
+pub mod cap4;
+#[doc = "MATCH4 (rw) register accessor: SCT match value register of match channels\n\nYou can [`read`](crate::Reg::read) this register and get [`match4::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`match4::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@match4`]
 module"]
-#[doc(alias = "CAP_MATCH_MATCH4")]
-pub type CapMatchMatch4 = crate::Reg<cap_match_match4::CapMatchMatch4Spec>;
+#[doc(alias = "MATCH4")]
+pub type Match4 = crate::Reg<match4::Match4Spec>;
 #[doc = "SCT match value register of match channels"]
-pub mod cap_match_match4;
-#[doc = "CAP_MATCH_CAP5 (rw) register accessor: SCT capture register of capture channel\n\nYou can [`read`](crate::Reg::read) this register and get [`cap_match_cap5::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cap_match_cap5::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cap_match_cap5`]
+pub mod match4;
+#[doc = "CAP5 (rw) register accessor: SCT capture register of capture channel\n\nYou can [`read`](crate::Reg::read) this register and get [`cap5::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cap5::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cap5`]
 module"]
-#[doc(alias = "CAP_MATCH_CAP5")]
-pub type CapMatchCap5 = crate::Reg<cap_match_cap5::CapMatchCap5Spec>;
+#[doc(alias = "CAP5")]
+pub type Cap5 = crate::Reg<cap5::Cap5Spec>;
 #[doc = "SCT capture register of capture channel"]
-pub mod cap_match_cap5;
-#[doc = "CAP_MATCH_MATCH5 (rw) register accessor: SCT match value register of match channels\n\nYou can [`read`](crate::Reg::read) this register and get [`cap_match_match5::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cap_match_match5::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cap_match_match5`]
+pub mod cap5;
+#[doc = "MATCH5 (rw) register accessor: SCT match value register of match channels\n\nYou can [`read`](crate::Reg::read) this register and get [`match5::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`match5::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@match5`]
 module"]
-#[doc(alias = "CAP_MATCH_MATCH5")]
-pub type CapMatchMatch5 = crate::Reg<cap_match_match5::CapMatchMatch5Spec>;
+#[doc(alias = "MATCH5")]
+pub type Match5 = crate::Reg<match5::Match5Spec>;
 #[doc = "SCT match value register of match channels"]
-pub mod cap_match_match5;
-#[doc = "CAP_MATCH_CAP6 (rw) register accessor: SCT capture register of capture channel\n\nYou can [`read`](crate::Reg::read) this register and get [`cap_match_cap6::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cap_match_cap6::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cap_match_cap6`]
+pub mod match5;
+#[doc = "CAP6 (rw) register accessor: SCT capture register of capture channel\n\nYou can [`read`](crate::Reg::read) this register and get [`cap6::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cap6::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cap6`]
 module"]
-#[doc(alias = "CAP_MATCH_CAP6")]
-pub type CapMatchCap6 = crate::Reg<cap_match_cap6::CapMatchCap6Spec>;
+#[doc(alias = "CAP6")]
+pub type Cap6 = crate::Reg<cap6::Cap6Spec>;
 #[doc = "SCT capture register of capture channel"]
-pub mod cap_match_cap6;
-#[doc = "CAP_MATCH_MATCH6 (rw) register accessor: SCT match value register of match channels\n\nYou can [`read`](crate::Reg::read) this register and get [`cap_match_match6::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cap_match_match6::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cap_match_match6`]
+pub mod cap6;
+#[doc = "MATCH6 (rw) register accessor: SCT match value register of match channels\n\nYou can [`read`](crate::Reg::read) this register and get [`match6::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`match6::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@match6`]
 module"]
-#[doc(alias = "CAP_MATCH_MATCH6")]
-pub type CapMatchMatch6 = crate::Reg<cap_match_match6::CapMatchMatch6Spec>;
+#[doc(alias = "MATCH6")]
+pub type Match6 = crate::Reg<match6::Match6Spec>;
 #[doc = "SCT match value register of match channels"]
-pub mod cap_match_match6;
-#[doc = "CAP_MATCH_CAP7 (rw) register accessor: SCT capture register of capture channel\n\nYou can [`read`](crate::Reg::read) this register and get [`cap_match_cap7::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cap_match_cap7::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cap_match_cap7`]
+pub mod match6;
+#[doc = "CAP7 (rw) register accessor: SCT capture register of capture channel\n\nYou can [`read`](crate::Reg::read) this register and get [`cap7::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cap7::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cap7`]
 module"]
-#[doc(alias = "CAP_MATCH_CAP7")]
-pub type CapMatchCap7 = crate::Reg<cap_match_cap7::CapMatchCap7Spec>;
+#[doc(alias = "CAP7")]
+pub type Cap7 = crate::Reg<cap7::Cap7Spec>;
 #[doc = "SCT capture register of capture channel"]
-pub mod cap_match_cap7;
-#[doc = "CAP_MATCH_MATCH7 (rw) register accessor: SCT match value register of match channels\n\nYou can [`read`](crate::Reg::read) this register and get [`cap_match_match7::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cap_match_match7::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cap_match_match7`]
+pub mod cap7;
+#[doc = "MATCH7 (rw) register accessor: SCT match value register of match channels\n\nYou can [`read`](crate::Reg::read) this register and get [`match7::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`match7::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@match7`]
 module"]
-#[doc(alias = "CAP_MATCH_MATCH7")]
-pub type CapMatchMatch7 = crate::Reg<cap_match_match7::CapMatchMatch7Spec>;
+#[doc(alias = "MATCH7")]
+pub type Match7 = crate::Reg<match7::Match7Spec>;
 #[doc = "SCT match value register of match channels"]
-pub mod cap_match_match7;
-#[doc = "CAP_MATCH_CAP8 (rw) register accessor: SCT capture register of capture channel\n\nYou can [`read`](crate::Reg::read) this register and get [`cap_match_cap8::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cap_match_cap8::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cap_match_cap8`]
+pub mod match7;
+#[doc = "CAP8 (rw) register accessor: SCT capture register of capture channel\n\nYou can [`read`](crate::Reg::read) this register and get [`cap8::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cap8::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cap8`]
 module"]
-#[doc(alias = "CAP_MATCH_CAP8")]
-pub type CapMatchCap8 = crate::Reg<cap_match_cap8::CapMatchCap8Spec>;
+#[doc(alias = "CAP8")]
+pub type Cap8 = crate::Reg<cap8::Cap8Spec>;
 #[doc = "SCT capture register of capture channel"]
-pub mod cap_match_cap8;
-#[doc = "CAP_MATCH_MATCH8 (rw) register accessor: SCT match value register of match channels\n\nYou can [`read`](crate::Reg::read) this register and get [`cap_match_match8::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cap_match_match8::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cap_match_match8`]
+pub mod cap8;
+#[doc = "MATCH8 (rw) register accessor: SCT match value register of match channels\n\nYou can [`read`](crate::Reg::read) this register and get [`match8::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`match8::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@match8`]
 module"]
-#[doc(alias = "CAP_MATCH_MATCH8")]
-pub type CapMatchMatch8 = crate::Reg<cap_match_match8::CapMatchMatch8Spec>;
+#[doc(alias = "MATCH8")]
+pub type Match8 = crate::Reg<match8::Match8Spec>;
 #[doc = "SCT match value register of match channels"]
-pub mod cap_match_match8;
-#[doc = "CAP_MATCH_CAP9 (rw) register accessor: SCT capture register of capture channel\n\nYou can [`read`](crate::Reg::read) this register and get [`cap_match_cap9::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cap_match_cap9::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cap_match_cap9`]
+pub mod match8;
+#[doc = "CAP9 (rw) register accessor: SCT capture register of capture channel\n\nYou can [`read`](crate::Reg::read) this register and get [`cap9::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cap9::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cap9`]
 module"]
-#[doc(alias = "CAP_MATCH_CAP9")]
-pub type CapMatchCap9 = crate::Reg<cap_match_cap9::CapMatchCap9Spec>;
+#[doc(alias = "CAP9")]
+pub type Cap9 = crate::Reg<cap9::Cap9Spec>;
 #[doc = "SCT capture register of capture channel"]
-pub mod cap_match_cap9;
-#[doc = "CAP_MATCH_MATCH9 (rw) register accessor: SCT match value register of match channels\n\nYou can [`read`](crate::Reg::read) this register and get [`cap_match_match9::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cap_match_match9::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cap_match_match9`]
+pub mod cap9;
+#[doc = "MATCH9 (rw) register accessor: SCT match value register of match channels\n\nYou can [`read`](crate::Reg::read) this register and get [`match9::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`match9::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@match9`]
 module"]
-#[doc(alias = "CAP_MATCH_MATCH9")]
-pub type CapMatchMatch9 = crate::Reg<cap_match_match9::CapMatchMatch9Spec>;
+#[doc(alias = "MATCH9")]
+pub type Match9 = crate::Reg<match9::Match9Spec>;
 #[doc = "SCT match value register of match channels"]
-pub mod cap_match_match9;
-#[doc = "CAP_MATCH_CAP10 (rw) register accessor: SCT capture register of capture channel\n\nYou can [`read`](crate::Reg::read) this register and get [`cap_match_cap10::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cap_match_cap10::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cap_match_cap10`]
+pub mod match9;
+#[doc = "CAP10 (rw) register accessor: SCT capture register of capture channel\n\nYou can [`read`](crate::Reg::read) this register and get [`cap10::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cap10::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cap10`]
 module"]
-#[doc(alias = "CAP_MATCH_CAP10")]
-pub type CapMatchCap10 = crate::Reg<cap_match_cap10::CapMatchCap10Spec>;
+#[doc(alias = "CAP10")]
+pub type Cap10 = crate::Reg<cap10::Cap10Spec>;
 #[doc = "SCT capture register of capture channel"]
-pub mod cap_match_cap10;
-#[doc = "CAP_MATCH_MATCH10 (rw) register accessor: SCT match value register of match channels\n\nYou can [`read`](crate::Reg::read) this register and get [`cap_match_match10::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cap_match_match10::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cap_match_match10`]
+pub mod cap10;
+#[doc = "MATCH10 (rw) register accessor: SCT match value register of match channels\n\nYou can [`read`](crate::Reg::read) this register and get [`match10::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`match10::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@match10`]
 module"]
-#[doc(alias = "CAP_MATCH_MATCH10")]
-pub type CapMatchMatch10 = crate::Reg<cap_match_match10::CapMatchMatch10Spec>;
+#[doc(alias = "MATCH10")]
+pub type Match10 = crate::Reg<match10::Match10Spec>;
 #[doc = "SCT match value register of match channels"]
-pub mod cap_match_match10;
-#[doc = "CAP_MATCH_CAP11 (rw) register accessor: SCT capture register of capture channel\n\nYou can [`read`](crate::Reg::read) this register and get [`cap_match_cap11::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cap_match_cap11::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cap_match_cap11`]
+pub mod match10;
+#[doc = "CAP11 (rw) register accessor: SCT capture register of capture channel\n\nYou can [`read`](crate::Reg::read) this register and get [`cap11::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cap11::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cap11`]
 module"]
-#[doc(alias = "CAP_MATCH_CAP11")]
-pub type CapMatchCap11 = crate::Reg<cap_match_cap11::CapMatchCap11Spec>;
+#[doc(alias = "CAP11")]
+pub type Cap11 = crate::Reg<cap11::Cap11Spec>;
 #[doc = "SCT capture register of capture channel"]
-pub mod cap_match_cap11;
-#[doc = "CAP_MATCH_MATCH11 (rw) register accessor: SCT match value register of match channels\n\nYou can [`read`](crate::Reg::read) this register and get [`cap_match_match11::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cap_match_match11::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cap_match_match11`]
+pub mod cap11;
+#[doc = "MATCH11 (rw) register accessor: SCT match value register of match channels\n\nYou can [`read`](crate::Reg::read) this register and get [`match11::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`match11::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@match11`]
 module"]
-#[doc(alias = "CAP_MATCH_MATCH11")]
-pub type CapMatchMatch11 = crate::Reg<cap_match_match11::CapMatchMatch11Spec>;
+#[doc(alias = "MATCH11")]
+pub type Match11 = crate::Reg<match11::Match11Spec>;
 #[doc = "SCT match value register of match channels"]
-pub mod cap_match_match11;
-#[doc = "CAP_MATCH_CAP12 (rw) register accessor: SCT capture register of capture channel\n\nYou can [`read`](crate::Reg::read) this register and get [`cap_match_cap12::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cap_match_cap12::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cap_match_cap12`]
+pub mod match11;
+#[doc = "CAP12 (rw) register accessor: SCT capture register of capture channel\n\nYou can [`read`](crate::Reg::read) this register and get [`cap12::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cap12::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cap12`]
 module"]
-#[doc(alias = "CAP_MATCH_CAP12")]
-pub type CapMatchCap12 = crate::Reg<cap_match_cap12::CapMatchCap12Spec>;
+#[doc(alias = "CAP12")]
+pub type Cap12 = crate::Reg<cap12::Cap12Spec>;
 #[doc = "SCT capture register of capture channel"]
-pub mod cap_match_cap12;
-#[doc = "CAP_MATCH_MATCH12 (rw) register accessor: SCT match value register of match channels\n\nYou can [`read`](crate::Reg::read) this register and get [`cap_match_match12::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cap_match_match12::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cap_match_match12`]
+pub mod cap12;
+#[doc = "MATCH12 (rw) register accessor: SCT match value register of match channels\n\nYou can [`read`](crate::Reg::read) this register and get [`match12::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`match12::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@match12`]
 module"]
-#[doc(alias = "CAP_MATCH_MATCH12")]
-pub type CapMatchMatch12 = crate::Reg<cap_match_match12::CapMatchMatch12Spec>;
+#[doc(alias = "MATCH12")]
+pub type Match12 = crate::Reg<match12::Match12Spec>;
 #[doc = "SCT match value register of match channels"]
-pub mod cap_match_match12;
-#[doc = "CAP_MATCH_CAP13 (rw) register accessor: SCT capture register of capture channel\n\nYou can [`read`](crate::Reg::read) this register and get [`cap_match_cap13::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cap_match_cap13::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cap_match_cap13`]
+pub mod match12;
+#[doc = "CAP13 (rw) register accessor: SCT capture register of capture channel\n\nYou can [`read`](crate::Reg::read) this register and get [`cap13::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cap13::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cap13`]
 module"]
-#[doc(alias = "CAP_MATCH_CAP13")]
-pub type CapMatchCap13 = crate::Reg<cap_match_cap13::CapMatchCap13Spec>;
+#[doc(alias = "CAP13")]
+pub type Cap13 = crate::Reg<cap13::Cap13Spec>;
 #[doc = "SCT capture register of capture channel"]
-pub mod cap_match_cap13;
-#[doc = "CAP_MATCH_MATCH13 (rw) register accessor: SCT match value register of match channels\n\nYou can [`read`](crate::Reg::read) this register and get [`cap_match_match13::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cap_match_match13::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cap_match_match13`]
+pub mod cap13;
+#[doc = "MATCH13 (rw) register accessor: SCT match value register of match channels\n\nYou can [`read`](crate::Reg::read) this register and get [`match13::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`match13::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@match13`]
 module"]
-#[doc(alias = "CAP_MATCH_MATCH13")]
-pub type CapMatchMatch13 = crate::Reg<cap_match_match13::CapMatchMatch13Spec>;
+#[doc(alias = "MATCH13")]
+pub type Match13 = crate::Reg<match13::Match13Spec>;
 #[doc = "SCT match value register of match channels"]
-pub mod cap_match_match13;
-#[doc = "CAP_MATCH_CAP14 (rw) register accessor: SCT capture register of capture channel\n\nYou can [`read`](crate::Reg::read) this register and get [`cap_match_cap14::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cap_match_cap14::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cap_match_cap14`]
+pub mod match13;
+#[doc = "CAP14 (rw) register accessor: SCT capture register of capture channel\n\nYou can [`read`](crate::Reg::read) this register and get [`cap14::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cap14::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cap14`]
 module"]
-#[doc(alias = "CAP_MATCH_CAP14")]
-pub type CapMatchCap14 = crate::Reg<cap_match_cap14::CapMatchCap14Spec>;
+#[doc(alias = "CAP14")]
+pub type Cap14 = crate::Reg<cap14::Cap14Spec>;
 #[doc = "SCT capture register of capture channel"]
-pub mod cap_match_cap14;
-#[doc = "CAP_MATCH_MATCH14 (rw) register accessor: SCT match value register of match channels\n\nYou can [`read`](crate::Reg::read) this register and get [`cap_match_match14::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cap_match_match14::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cap_match_match14`]
+pub mod cap14;
+#[doc = "MATCH14 (rw) register accessor: SCT match value register of match channels\n\nYou can [`read`](crate::Reg::read) this register and get [`match14::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`match14::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@match14`]
 module"]
-#[doc(alias = "CAP_MATCH_MATCH14")]
-pub type CapMatchMatch14 = crate::Reg<cap_match_match14::CapMatchMatch14Spec>;
+#[doc(alias = "MATCH14")]
+pub type Match14 = crate::Reg<match14::Match14Spec>;
 #[doc = "SCT match value register of match channels"]
-pub mod cap_match_match14;
-#[doc = "CAP_MATCH_CAP15 (rw) register accessor: SCT capture register of capture channel\n\nYou can [`read`](crate::Reg::read) this register and get [`cap_match_cap15::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cap_match_cap15::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cap_match_cap15`]
+pub mod match14;
+#[doc = "CAP15 (rw) register accessor: SCT capture register of capture channel\n\nYou can [`read`](crate::Reg::read) this register and get [`cap15::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cap15::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cap15`]
 module"]
-#[doc(alias = "CAP_MATCH_CAP15")]
-pub type CapMatchCap15 = crate::Reg<cap_match_cap15::CapMatchCap15Spec>;
+#[doc(alias = "CAP15")]
+pub type Cap15 = crate::Reg<cap15::Cap15Spec>;
 #[doc = "SCT capture register of capture channel"]
-pub mod cap_match_cap15;
-#[doc = "CAP_MATCH_MATCH15 (rw) register accessor: SCT match value register of match channels\n\nYou can [`read`](crate::Reg::read) this register and get [`cap_match_match15::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cap_match_match15::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cap_match_match15`]
+pub mod cap15;
+#[doc = "MATCH15 (rw) register accessor: SCT match value register of match channels\n\nYou can [`read`](crate::Reg::read) this register and get [`match15::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`match15::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@match15`]
 module"]
-#[doc(alias = "CAP_MATCH_MATCH15")]
-pub type CapMatchMatch15 = crate::Reg<cap_match_match15::CapMatchMatch15Spec>;
+#[doc(alias = "MATCH15")]
+pub type Match15 = crate::Reg<match15::Match15Spec>;
 #[doc = "SCT match value register of match channels"]
-pub mod cap_match_match15;
-#[doc = "CAPCTRL_MATCHREL_CAPCTRL0 (rw) register accessor: SCT capture control register\n\nYou can [`read`](crate::Reg::read) this register and get [`capctrl_matchrel_capctrl0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`capctrl_matchrel_capctrl0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@capctrl_matchrel_capctrl0`]
+pub mod match15;
+#[doc = "CAPCTRL0 (rw) register accessor: SCT capture control register\n\nYou can [`read`](crate::Reg::read) this register and get [`capctrl0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`capctrl0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@capctrl0`]
 module"]
-#[doc(alias = "CAPCTRL_MATCHREL_CAPCTRL0")]
-pub type CapctrlMatchrelCapctrl0 =
-    crate::Reg<capctrl_matchrel_capctrl0::CapctrlMatchrelCapctrl0Spec>;
+#[doc(alias = "CAPCTRL0")]
+pub type Capctrl0 = crate::Reg<capctrl0::Capctrl0Spec>;
 #[doc = "SCT capture control register"]
-pub mod capctrl_matchrel_capctrl0;
-#[doc = "CAPCTRL_MATCHREL_MATCHREL0 (rw) register accessor: SCT match reload value register\n\nYou can [`read`](crate::Reg::read) this register and get [`capctrl_matchrel_matchrel0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`capctrl_matchrel_matchrel0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@capctrl_matchrel_matchrel0`]
+pub mod capctrl0;
+#[doc = "MATCHREL0 (rw) register accessor: SCT match reload value register\n\nYou can [`read`](crate::Reg::read) this register and get [`matchrel0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`matchrel0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@matchrel0`]
 module"]
-#[doc(alias = "CAPCTRL_MATCHREL_MATCHREL0")]
-pub type CapctrlMatchrelMatchrel0 =
-    crate::Reg<capctrl_matchrel_matchrel0::CapctrlMatchrelMatchrel0Spec>;
+#[doc(alias = "MATCHREL0")]
+pub type Matchrel0 = crate::Reg<matchrel0::Matchrel0Spec>;
 #[doc = "SCT match reload value register"]
-pub mod capctrl_matchrel_matchrel0;
-#[doc = "CAPCTRL_MATCHREL_CAPCTRL1 (rw) register accessor: SCT capture control register\n\nYou can [`read`](crate::Reg::read) this register and get [`capctrl_matchrel_capctrl1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`capctrl_matchrel_capctrl1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@capctrl_matchrel_capctrl1`]
+pub mod matchrel0;
+#[doc = "CAPCTRL1 (rw) register accessor: SCT capture control register\n\nYou can [`read`](crate::Reg::read) this register and get [`capctrl1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`capctrl1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@capctrl1`]
 module"]
-#[doc(alias = "CAPCTRL_MATCHREL_CAPCTRL1")]
-pub type CapctrlMatchrelCapctrl1 =
-    crate::Reg<capctrl_matchrel_capctrl1::CapctrlMatchrelCapctrl1Spec>;
+#[doc(alias = "CAPCTRL1")]
+pub type Capctrl1 = crate::Reg<capctrl1::Capctrl1Spec>;
 #[doc = "SCT capture control register"]
-pub mod capctrl_matchrel_capctrl1;
-#[doc = "CAPCTRL_MATCHREL_MATCHREL1 (rw) register accessor: SCT match reload value register\n\nYou can [`read`](crate::Reg::read) this register and get [`capctrl_matchrel_matchrel1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`capctrl_matchrel_matchrel1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@capctrl_matchrel_matchrel1`]
+pub mod capctrl1;
+#[doc = "MATCHREL1 (rw) register accessor: SCT match reload value register\n\nYou can [`read`](crate::Reg::read) this register and get [`matchrel1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`matchrel1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@matchrel1`]
 module"]
-#[doc(alias = "CAPCTRL_MATCHREL_MATCHREL1")]
-pub type CapctrlMatchrelMatchrel1 =
-    crate::Reg<capctrl_matchrel_matchrel1::CapctrlMatchrelMatchrel1Spec>;
+#[doc(alias = "MATCHREL1")]
+pub type Matchrel1 = crate::Reg<matchrel1::Matchrel1Spec>;
 #[doc = "SCT match reload value register"]
-pub mod capctrl_matchrel_matchrel1;
-#[doc = "CAPCTRL_MATCHREL_CAPCTRL2 (rw) register accessor: SCT capture control register\n\nYou can [`read`](crate::Reg::read) this register and get [`capctrl_matchrel_capctrl2::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`capctrl_matchrel_capctrl2::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@capctrl_matchrel_capctrl2`]
+pub mod matchrel1;
+#[doc = "CAPCTRL2 (rw) register accessor: SCT capture control register\n\nYou can [`read`](crate::Reg::read) this register and get [`capctrl2::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`capctrl2::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@capctrl2`]
 module"]
-#[doc(alias = "CAPCTRL_MATCHREL_CAPCTRL2")]
-pub type CapctrlMatchrelCapctrl2 =
-    crate::Reg<capctrl_matchrel_capctrl2::CapctrlMatchrelCapctrl2Spec>;
+#[doc(alias = "CAPCTRL2")]
+pub type Capctrl2 = crate::Reg<capctrl2::Capctrl2Spec>;
 #[doc = "SCT capture control register"]
-pub mod capctrl_matchrel_capctrl2;
-#[doc = "CAPCTRL_MATCHREL_MATCHREL2 (rw) register accessor: SCT match reload value register\n\nYou can [`read`](crate::Reg::read) this register and get [`capctrl_matchrel_matchrel2::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`capctrl_matchrel_matchrel2::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@capctrl_matchrel_matchrel2`]
+pub mod capctrl2;
+#[doc = "MATCHREL2 (rw) register accessor: SCT match reload value register\n\nYou can [`read`](crate::Reg::read) this register and get [`matchrel2::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`matchrel2::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@matchrel2`]
 module"]
-#[doc(alias = "CAPCTRL_MATCHREL_MATCHREL2")]
-pub type CapctrlMatchrelMatchrel2 =
-    crate::Reg<capctrl_matchrel_matchrel2::CapctrlMatchrelMatchrel2Spec>;
+#[doc(alias = "MATCHREL2")]
+pub type Matchrel2 = crate::Reg<matchrel2::Matchrel2Spec>;
 #[doc = "SCT match reload value register"]
-pub mod capctrl_matchrel_matchrel2;
-#[doc = "CAPCTRL_MATCHREL_CAPCTRL3 (rw) register accessor: SCT capture control register\n\nYou can [`read`](crate::Reg::read) this register and get [`capctrl_matchrel_capctrl3::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`capctrl_matchrel_capctrl3::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@capctrl_matchrel_capctrl3`]
+pub mod matchrel2;
+#[doc = "CAPCTRL3 (rw) register accessor: SCT capture control register\n\nYou can [`read`](crate::Reg::read) this register and get [`capctrl3::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`capctrl3::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@capctrl3`]
 module"]
-#[doc(alias = "CAPCTRL_MATCHREL_CAPCTRL3")]
-pub type CapctrlMatchrelCapctrl3 =
-    crate::Reg<capctrl_matchrel_capctrl3::CapctrlMatchrelCapctrl3Spec>;
+#[doc(alias = "CAPCTRL3")]
+pub type Capctrl3 = crate::Reg<capctrl3::Capctrl3Spec>;
 #[doc = "SCT capture control register"]
-pub mod capctrl_matchrel_capctrl3;
-#[doc = "CAPCTRL_MATCHREL_MATCHREL3 (rw) register accessor: SCT match reload value register\n\nYou can [`read`](crate::Reg::read) this register and get [`capctrl_matchrel_matchrel3::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`capctrl_matchrel_matchrel3::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@capctrl_matchrel_matchrel3`]
+pub mod capctrl3;
+#[doc = "MATCHREL3 (rw) register accessor: SCT match reload value register\n\nYou can [`read`](crate::Reg::read) this register and get [`matchrel3::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`matchrel3::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@matchrel3`]
 module"]
-#[doc(alias = "CAPCTRL_MATCHREL_MATCHREL3")]
-pub type CapctrlMatchrelMatchrel3 =
-    crate::Reg<capctrl_matchrel_matchrel3::CapctrlMatchrelMatchrel3Spec>;
+#[doc(alias = "MATCHREL3")]
+pub type Matchrel3 = crate::Reg<matchrel3::Matchrel3Spec>;
 #[doc = "SCT match reload value register"]
-pub mod capctrl_matchrel_matchrel3;
-#[doc = "CAPCTRL_MATCHREL_CAPCTRL4 (rw) register accessor: SCT capture control register\n\nYou can [`read`](crate::Reg::read) this register and get [`capctrl_matchrel_capctrl4::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`capctrl_matchrel_capctrl4::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@capctrl_matchrel_capctrl4`]
+pub mod matchrel3;
+#[doc = "CAPCTRL4 (rw) register accessor: SCT capture control register\n\nYou can [`read`](crate::Reg::read) this register and get [`capctrl4::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`capctrl4::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@capctrl4`]
 module"]
-#[doc(alias = "CAPCTRL_MATCHREL_CAPCTRL4")]
-pub type CapctrlMatchrelCapctrl4 =
-    crate::Reg<capctrl_matchrel_capctrl4::CapctrlMatchrelCapctrl4Spec>;
+#[doc(alias = "CAPCTRL4")]
+pub type Capctrl4 = crate::Reg<capctrl4::Capctrl4Spec>;
 #[doc = "SCT capture control register"]
-pub mod capctrl_matchrel_capctrl4;
-#[doc = "CAPCTRL_MATCHREL_MATCHREL4 (rw) register accessor: SCT match reload value register\n\nYou can [`read`](crate::Reg::read) this register and get [`capctrl_matchrel_matchrel4::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`capctrl_matchrel_matchrel4::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@capctrl_matchrel_matchrel4`]
+pub mod capctrl4;
+#[doc = "MATCHREL4 (rw) register accessor: SCT match reload value register\n\nYou can [`read`](crate::Reg::read) this register and get [`matchrel4::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`matchrel4::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@matchrel4`]
 module"]
-#[doc(alias = "CAPCTRL_MATCHREL_MATCHREL4")]
-pub type CapctrlMatchrelMatchrel4 =
-    crate::Reg<capctrl_matchrel_matchrel4::CapctrlMatchrelMatchrel4Spec>;
+#[doc(alias = "MATCHREL4")]
+pub type Matchrel4 = crate::Reg<matchrel4::Matchrel4Spec>;
 #[doc = "SCT match reload value register"]
-pub mod capctrl_matchrel_matchrel4;
-#[doc = "CAPCTRL_MATCHREL_CAPCTRL5 (rw) register accessor: SCT capture control register\n\nYou can [`read`](crate::Reg::read) this register and get [`capctrl_matchrel_capctrl5::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`capctrl_matchrel_capctrl5::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@capctrl_matchrel_capctrl5`]
+pub mod matchrel4;
+#[doc = "CAPCTRL5 (rw) register accessor: SCT capture control register\n\nYou can [`read`](crate::Reg::read) this register and get [`capctrl5::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`capctrl5::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@capctrl5`]
 module"]
-#[doc(alias = "CAPCTRL_MATCHREL_CAPCTRL5")]
-pub type CapctrlMatchrelCapctrl5 =
-    crate::Reg<capctrl_matchrel_capctrl5::CapctrlMatchrelCapctrl5Spec>;
+#[doc(alias = "CAPCTRL5")]
+pub type Capctrl5 = crate::Reg<capctrl5::Capctrl5Spec>;
 #[doc = "SCT capture control register"]
-pub mod capctrl_matchrel_capctrl5;
-#[doc = "CAPCTRL_MATCHREL_MATCHREL5 (rw) register accessor: SCT match reload value register\n\nYou can [`read`](crate::Reg::read) this register and get [`capctrl_matchrel_matchrel5::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`capctrl_matchrel_matchrel5::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@capctrl_matchrel_matchrel5`]
+pub mod capctrl5;
+#[doc = "MATCHREL5 (rw) register accessor: SCT match reload value register\n\nYou can [`read`](crate::Reg::read) this register and get [`matchrel5::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`matchrel5::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@matchrel5`]
 module"]
-#[doc(alias = "CAPCTRL_MATCHREL_MATCHREL5")]
-pub type CapctrlMatchrelMatchrel5 =
-    crate::Reg<capctrl_matchrel_matchrel5::CapctrlMatchrelMatchrel5Spec>;
+#[doc(alias = "MATCHREL5")]
+pub type Matchrel5 = crate::Reg<matchrel5::Matchrel5Spec>;
 #[doc = "SCT match reload value register"]
-pub mod capctrl_matchrel_matchrel5;
-#[doc = "CAPCTRL_MATCHREL_CAPCTRL6 (rw) register accessor: SCT capture control register\n\nYou can [`read`](crate::Reg::read) this register and get [`capctrl_matchrel_capctrl6::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`capctrl_matchrel_capctrl6::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@capctrl_matchrel_capctrl6`]
+pub mod matchrel5;
+#[doc = "CAPCTRL6 (rw) register accessor: SCT capture control register\n\nYou can [`read`](crate::Reg::read) this register and get [`capctrl6::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`capctrl6::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@capctrl6`]
 module"]
-#[doc(alias = "CAPCTRL_MATCHREL_CAPCTRL6")]
-pub type CapctrlMatchrelCapctrl6 =
-    crate::Reg<capctrl_matchrel_capctrl6::CapctrlMatchrelCapctrl6Spec>;
+#[doc(alias = "CAPCTRL6")]
+pub type Capctrl6 = crate::Reg<capctrl6::Capctrl6Spec>;
 #[doc = "SCT capture control register"]
-pub mod capctrl_matchrel_capctrl6;
-#[doc = "CAPCTRL_MATCHREL_MATCHREL6 (rw) register accessor: SCT match reload value register\n\nYou can [`read`](crate::Reg::read) this register and get [`capctrl_matchrel_matchrel6::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`capctrl_matchrel_matchrel6::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@capctrl_matchrel_matchrel6`]
+pub mod capctrl6;
+#[doc = "MATCHREL6 (rw) register accessor: SCT match reload value register\n\nYou can [`read`](crate::Reg::read) this register and get [`matchrel6::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`matchrel6::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@matchrel6`]
 module"]
-#[doc(alias = "CAPCTRL_MATCHREL_MATCHREL6")]
-pub type CapctrlMatchrelMatchrel6 =
-    crate::Reg<capctrl_matchrel_matchrel6::CapctrlMatchrelMatchrel6Spec>;
+#[doc(alias = "MATCHREL6")]
+pub type Matchrel6 = crate::Reg<matchrel6::Matchrel6Spec>;
 #[doc = "SCT match reload value register"]
-pub mod capctrl_matchrel_matchrel6;
-#[doc = "CAPCTRL_MATCHREL_CAPCTRL7 (rw) register accessor: SCT capture control register\n\nYou can [`read`](crate::Reg::read) this register and get [`capctrl_matchrel_capctrl7::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`capctrl_matchrel_capctrl7::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@capctrl_matchrel_capctrl7`]
+pub mod matchrel6;
+#[doc = "CAPCTRL7 (rw) register accessor: SCT capture control register\n\nYou can [`read`](crate::Reg::read) this register and get [`capctrl7::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`capctrl7::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@capctrl7`]
 module"]
-#[doc(alias = "CAPCTRL_MATCHREL_CAPCTRL7")]
-pub type CapctrlMatchrelCapctrl7 =
-    crate::Reg<capctrl_matchrel_capctrl7::CapctrlMatchrelCapctrl7Spec>;
+#[doc(alias = "CAPCTRL7")]
+pub type Capctrl7 = crate::Reg<capctrl7::Capctrl7Spec>;
 #[doc = "SCT capture control register"]
-pub mod capctrl_matchrel_capctrl7;
-#[doc = "CAPCTRL_MATCHREL_MATCHREL7 (rw) register accessor: SCT match reload value register\n\nYou can [`read`](crate::Reg::read) this register and get [`capctrl_matchrel_matchrel7::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`capctrl_matchrel_matchrel7::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@capctrl_matchrel_matchrel7`]
+pub mod capctrl7;
+#[doc = "MATCHREL7 (rw) register accessor: SCT match reload value register\n\nYou can [`read`](crate::Reg::read) this register and get [`matchrel7::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`matchrel7::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@matchrel7`]
 module"]
-#[doc(alias = "CAPCTRL_MATCHREL_MATCHREL7")]
-pub type CapctrlMatchrelMatchrel7 =
-    crate::Reg<capctrl_matchrel_matchrel7::CapctrlMatchrelMatchrel7Spec>;
+#[doc(alias = "MATCHREL7")]
+pub type Matchrel7 = crate::Reg<matchrel7::Matchrel7Spec>;
 #[doc = "SCT match reload value register"]
-pub mod capctrl_matchrel_matchrel7;
-#[doc = "CAPCTRL_MATCHREL_CAPCTRL8 (rw) register accessor: SCT capture control register\n\nYou can [`read`](crate::Reg::read) this register and get [`capctrl_matchrel_capctrl8::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`capctrl_matchrel_capctrl8::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@capctrl_matchrel_capctrl8`]
+pub mod matchrel7;
+#[doc = "CAPCTRL8 (rw) register accessor: SCT capture control register\n\nYou can [`read`](crate::Reg::read) this register and get [`capctrl8::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`capctrl8::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@capctrl8`]
 module"]
-#[doc(alias = "CAPCTRL_MATCHREL_CAPCTRL8")]
-pub type CapctrlMatchrelCapctrl8 =
-    crate::Reg<capctrl_matchrel_capctrl8::CapctrlMatchrelCapctrl8Spec>;
+#[doc(alias = "CAPCTRL8")]
+pub type Capctrl8 = crate::Reg<capctrl8::Capctrl8Spec>;
 #[doc = "SCT capture control register"]
-pub mod capctrl_matchrel_capctrl8;
-#[doc = "CAPCTRL_MATCHREL_MATCHREL8 (rw) register accessor: SCT match reload value register\n\nYou can [`read`](crate::Reg::read) this register and get [`capctrl_matchrel_matchrel8::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`capctrl_matchrel_matchrel8::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@capctrl_matchrel_matchrel8`]
+pub mod capctrl8;
+#[doc = "MATCHREL8 (rw) register accessor: SCT match reload value register\n\nYou can [`read`](crate::Reg::read) this register and get [`matchrel8::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`matchrel8::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@matchrel8`]
 module"]
-#[doc(alias = "CAPCTRL_MATCHREL_MATCHREL8")]
-pub type CapctrlMatchrelMatchrel8 =
-    crate::Reg<capctrl_matchrel_matchrel8::CapctrlMatchrelMatchrel8Spec>;
+#[doc(alias = "MATCHREL8")]
+pub type Matchrel8 = crate::Reg<matchrel8::Matchrel8Spec>;
 #[doc = "SCT match reload value register"]
-pub mod capctrl_matchrel_matchrel8;
-#[doc = "CAPCTRL_MATCHREL_CAPCTRL9 (rw) register accessor: SCT capture control register\n\nYou can [`read`](crate::Reg::read) this register and get [`capctrl_matchrel_capctrl9::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`capctrl_matchrel_capctrl9::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@capctrl_matchrel_capctrl9`]
+pub mod matchrel8;
+#[doc = "CAPCTRL9 (rw) register accessor: SCT capture control register\n\nYou can [`read`](crate::Reg::read) this register and get [`capctrl9::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`capctrl9::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@capctrl9`]
 module"]
-#[doc(alias = "CAPCTRL_MATCHREL_CAPCTRL9")]
-pub type CapctrlMatchrelCapctrl9 =
-    crate::Reg<capctrl_matchrel_capctrl9::CapctrlMatchrelCapctrl9Spec>;
+#[doc(alias = "CAPCTRL9")]
+pub type Capctrl9 = crate::Reg<capctrl9::Capctrl9Spec>;
 #[doc = "SCT capture control register"]
-pub mod capctrl_matchrel_capctrl9;
-#[doc = "CAPCTRL_MATCHREL_MATCHREL9 (rw) register accessor: SCT match reload value register\n\nYou can [`read`](crate::Reg::read) this register and get [`capctrl_matchrel_matchrel9::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`capctrl_matchrel_matchrel9::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@capctrl_matchrel_matchrel9`]
+pub mod capctrl9;
+#[doc = "MATCHREL9 (rw) register accessor: SCT match reload value register\n\nYou can [`read`](crate::Reg::read) this register and get [`matchrel9::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`matchrel9::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@matchrel9`]
 module"]
-#[doc(alias = "CAPCTRL_MATCHREL_MATCHREL9")]
-pub type CapctrlMatchrelMatchrel9 =
-    crate::Reg<capctrl_matchrel_matchrel9::CapctrlMatchrelMatchrel9Spec>;
+#[doc(alias = "MATCHREL9")]
+pub type Matchrel9 = crate::Reg<matchrel9::Matchrel9Spec>;
 #[doc = "SCT match reload value register"]
-pub mod capctrl_matchrel_matchrel9;
-#[doc = "CAPCTRL_MATCHREL_CAPCTRL10 (rw) register accessor: SCT capture control register\n\nYou can [`read`](crate::Reg::read) this register and get [`capctrl_matchrel_capctrl10::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`capctrl_matchrel_capctrl10::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@capctrl_matchrel_capctrl10`]
+pub mod matchrel9;
+#[doc = "CAPCTRL10 (rw) register accessor: SCT capture control register\n\nYou can [`read`](crate::Reg::read) this register and get [`capctrl10::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`capctrl10::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@capctrl10`]
 module"]
-#[doc(alias = "CAPCTRL_MATCHREL_CAPCTRL10")]
-pub type CapctrlMatchrelCapctrl10 =
-    crate::Reg<capctrl_matchrel_capctrl10::CapctrlMatchrelCapctrl10Spec>;
+#[doc(alias = "CAPCTRL10")]
+pub type Capctrl10 = crate::Reg<capctrl10::Capctrl10Spec>;
 #[doc = "SCT capture control register"]
-pub mod capctrl_matchrel_capctrl10;
-#[doc = "CAPCTRL_MATCHREL_MATCHREL10 (rw) register accessor: SCT match reload value register\n\nYou can [`read`](crate::Reg::read) this register and get [`capctrl_matchrel_matchrel10::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`capctrl_matchrel_matchrel10::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@capctrl_matchrel_matchrel10`]
+pub mod capctrl10;
+#[doc = "MATCHREL10 (rw) register accessor: SCT match reload value register\n\nYou can [`read`](crate::Reg::read) this register and get [`matchrel10::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`matchrel10::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@matchrel10`]
 module"]
-#[doc(alias = "CAPCTRL_MATCHREL_MATCHREL10")]
-pub type CapctrlMatchrelMatchrel10 =
-    crate::Reg<capctrl_matchrel_matchrel10::CapctrlMatchrelMatchrel10Spec>;
+#[doc(alias = "MATCHREL10")]
+pub type Matchrel10 = crate::Reg<matchrel10::Matchrel10Spec>;
 #[doc = "SCT match reload value register"]
-pub mod capctrl_matchrel_matchrel10;
-#[doc = "CAPCTRL_MATCHREL_CAPCTRL11 (rw) register accessor: SCT capture control register\n\nYou can [`read`](crate::Reg::read) this register and get [`capctrl_matchrel_capctrl11::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`capctrl_matchrel_capctrl11::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@capctrl_matchrel_capctrl11`]
+pub mod matchrel10;
+#[doc = "CAPCTRL11 (rw) register accessor: SCT capture control register\n\nYou can [`read`](crate::Reg::read) this register and get [`capctrl11::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`capctrl11::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@capctrl11`]
 module"]
-#[doc(alias = "CAPCTRL_MATCHREL_CAPCTRL11")]
-pub type CapctrlMatchrelCapctrl11 =
-    crate::Reg<capctrl_matchrel_capctrl11::CapctrlMatchrelCapctrl11Spec>;
+#[doc(alias = "CAPCTRL11")]
+pub type Capctrl11 = crate::Reg<capctrl11::Capctrl11Spec>;
 #[doc = "SCT capture control register"]
-pub mod capctrl_matchrel_capctrl11;
-#[doc = "CAPCTRL_MATCHREL_MATCHREL11 (rw) register accessor: SCT match reload value register\n\nYou can [`read`](crate::Reg::read) this register and get [`capctrl_matchrel_matchrel11::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`capctrl_matchrel_matchrel11::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@capctrl_matchrel_matchrel11`]
+pub mod capctrl11;
+#[doc = "MATCHREL11 (rw) register accessor: SCT match reload value register\n\nYou can [`read`](crate::Reg::read) this register and get [`matchrel11::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`matchrel11::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@matchrel11`]
 module"]
-#[doc(alias = "CAPCTRL_MATCHREL_MATCHREL11")]
-pub type CapctrlMatchrelMatchrel11 =
-    crate::Reg<capctrl_matchrel_matchrel11::CapctrlMatchrelMatchrel11Spec>;
+#[doc(alias = "MATCHREL11")]
+pub type Matchrel11 = crate::Reg<matchrel11::Matchrel11Spec>;
 #[doc = "SCT match reload value register"]
-pub mod capctrl_matchrel_matchrel11;
-#[doc = "CAPCTRL_MATCHREL_CAPCTRL12 (rw) register accessor: SCT capture control register\n\nYou can [`read`](crate::Reg::read) this register and get [`capctrl_matchrel_capctrl12::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`capctrl_matchrel_capctrl12::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@capctrl_matchrel_capctrl12`]
+pub mod matchrel11;
+#[doc = "CAPCTRL12 (rw) register accessor: SCT capture control register\n\nYou can [`read`](crate::Reg::read) this register and get [`capctrl12::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`capctrl12::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@capctrl12`]
 module"]
-#[doc(alias = "CAPCTRL_MATCHREL_CAPCTRL12")]
-pub type CapctrlMatchrelCapctrl12 =
-    crate::Reg<capctrl_matchrel_capctrl12::CapctrlMatchrelCapctrl12Spec>;
+#[doc(alias = "CAPCTRL12")]
+pub type Capctrl12 = crate::Reg<capctrl12::Capctrl12Spec>;
 #[doc = "SCT capture control register"]
-pub mod capctrl_matchrel_capctrl12;
-#[doc = "CAPCTRL_MATCHREL_MATCHREL12 (rw) register accessor: SCT match reload value register\n\nYou can [`read`](crate::Reg::read) this register and get [`capctrl_matchrel_matchrel12::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`capctrl_matchrel_matchrel12::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@capctrl_matchrel_matchrel12`]
+pub mod capctrl12;
+#[doc = "MATCHREL12 (rw) register accessor: SCT match reload value register\n\nYou can [`read`](crate::Reg::read) this register and get [`matchrel12::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`matchrel12::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@matchrel12`]
 module"]
-#[doc(alias = "CAPCTRL_MATCHREL_MATCHREL12")]
-pub type CapctrlMatchrelMatchrel12 =
-    crate::Reg<capctrl_matchrel_matchrel12::CapctrlMatchrelMatchrel12Spec>;
+#[doc(alias = "MATCHREL12")]
+pub type Matchrel12 = crate::Reg<matchrel12::Matchrel12Spec>;
 #[doc = "SCT match reload value register"]
-pub mod capctrl_matchrel_matchrel12;
-#[doc = "CAPCTRL_MATCHREL_CAPCTRL13 (rw) register accessor: SCT capture control register\n\nYou can [`read`](crate::Reg::read) this register and get [`capctrl_matchrel_capctrl13::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`capctrl_matchrel_capctrl13::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@capctrl_matchrel_capctrl13`]
+pub mod matchrel12;
+#[doc = "CAPCTRL13 (rw) register accessor: SCT capture control register\n\nYou can [`read`](crate::Reg::read) this register and get [`capctrl13::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`capctrl13::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@capctrl13`]
 module"]
-#[doc(alias = "CAPCTRL_MATCHREL_CAPCTRL13")]
-pub type CapctrlMatchrelCapctrl13 =
-    crate::Reg<capctrl_matchrel_capctrl13::CapctrlMatchrelCapctrl13Spec>;
+#[doc(alias = "CAPCTRL13")]
+pub type Capctrl13 = crate::Reg<capctrl13::Capctrl13Spec>;
 #[doc = "SCT capture control register"]
-pub mod capctrl_matchrel_capctrl13;
-#[doc = "CAPCTRL_MATCHREL_MATCHREL13 (rw) register accessor: SCT match reload value register\n\nYou can [`read`](crate::Reg::read) this register and get [`capctrl_matchrel_matchrel13::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`capctrl_matchrel_matchrel13::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@capctrl_matchrel_matchrel13`]
+pub mod capctrl13;
+#[doc = "MATCHREL13 (rw) register accessor: SCT match reload value register\n\nYou can [`read`](crate::Reg::read) this register and get [`matchrel13::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`matchrel13::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@matchrel13`]
 module"]
-#[doc(alias = "CAPCTRL_MATCHREL_MATCHREL13")]
-pub type CapctrlMatchrelMatchrel13 =
-    crate::Reg<capctrl_matchrel_matchrel13::CapctrlMatchrelMatchrel13Spec>;
+#[doc(alias = "MATCHREL13")]
+pub type Matchrel13 = crate::Reg<matchrel13::Matchrel13Spec>;
 #[doc = "SCT match reload value register"]
-pub mod capctrl_matchrel_matchrel13;
-#[doc = "CAPCTRL_MATCHREL_CAPCTRL14 (rw) register accessor: SCT capture control register\n\nYou can [`read`](crate::Reg::read) this register and get [`capctrl_matchrel_capctrl14::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`capctrl_matchrel_capctrl14::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@capctrl_matchrel_capctrl14`]
+pub mod matchrel13;
+#[doc = "CAPCTRL14 (rw) register accessor: SCT capture control register\n\nYou can [`read`](crate::Reg::read) this register and get [`capctrl14::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`capctrl14::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@capctrl14`]
 module"]
-#[doc(alias = "CAPCTRL_MATCHREL_CAPCTRL14")]
-pub type CapctrlMatchrelCapctrl14 =
-    crate::Reg<capctrl_matchrel_capctrl14::CapctrlMatchrelCapctrl14Spec>;
+#[doc(alias = "CAPCTRL14")]
+pub type Capctrl14 = crate::Reg<capctrl14::Capctrl14Spec>;
 #[doc = "SCT capture control register"]
-pub mod capctrl_matchrel_capctrl14;
-#[doc = "CAPCTRL_MATCHREL_MATCHREL14 (rw) register accessor: SCT match reload value register\n\nYou can [`read`](crate::Reg::read) this register and get [`capctrl_matchrel_matchrel14::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`capctrl_matchrel_matchrel14::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@capctrl_matchrel_matchrel14`]
+pub mod capctrl14;
+#[doc = "MATCHREL14 (rw) register accessor: SCT match reload value register\n\nYou can [`read`](crate::Reg::read) this register and get [`matchrel14::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`matchrel14::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@matchrel14`]
 module"]
-#[doc(alias = "CAPCTRL_MATCHREL_MATCHREL14")]
-pub type CapctrlMatchrelMatchrel14 =
-    crate::Reg<capctrl_matchrel_matchrel14::CapctrlMatchrelMatchrel14Spec>;
+#[doc(alias = "MATCHREL14")]
+pub type Matchrel14 = crate::Reg<matchrel14::Matchrel14Spec>;
 #[doc = "SCT match reload value register"]
-pub mod capctrl_matchrel_matchrel14;
-#[doc = "CAPCTRL_MATCHREL_CAPCTRL15 (rw) register accessor: SCT capture control register\n\nYou can [`read`](crate::Reg::read) this register and get [`capctrl_matchrel_capctrl15::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`capctrl_matchrel_capctrl15::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@capctrl_matchrel_capctrl15`]
+pub mod matchrel14;
+#[doc = "CAPCTRL15 (rw) register accessor: SCT capture control register\n\nYou can [`read`](crate::Reg::read) this register and get [`capctrl15::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`capctrl15::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@capctrl15`]
 module"]
-#[doc(alias = "CAPCTRL_MATCHREL_CAPCTRL15")]
-pub type CapctrlMatchrelCapctrl15 =
-    crate::Reg<capctrl_matchrel_capctrl15::CapctrlMatchrelCapctrl15Spec>;
+#[doc(alias = "CAPCTRL15")]
+pub type Capctrl15 = crate::Reg<capctrl15::Capctrl15Spec>;
 #[doc = "SCT capture control register"]
-pub mod capctrl_matchrel_capctrl15;
-#[doc = "CAPCTRL_MATCHREL_MATCHREL15 (rw) register accessor: SCT match reload value register\n\nYou can [`read`](crate::Reg::read) this register and get [`capctrl_matchrel_matchrel15::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`capctrl_matchrel_matchrel15::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@capctrl_matchrel_matchrel15`]
+pub mod capctrl15;
+#[doc = "MATCHREL15 (rw) register accessor: SCT match reload value register\n\nYou can [`read`](crate::Reg::read) this register and get [`matchrel15::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`matchrel15::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@matchrel15`]
 module"]
-#[doc(alias = "CAPCTRL_MATCHREL_MATCHREL15")]
-pub type CapctrlMatchrelMatchrel15 =
-    crate::Reg<capctrl_matchrel_matchrel15::CapctrlMatchrelMatchrel15Spec>;
+#[doc(alias = "MATCHREL15")]
+pub type Matchrel15 = crate::Reg<matchrel15::Matchrel15Spec>;
 #[doc = "SCT match reload value register"]
-pub mod capctrl_matchrel_matchrel15;
+pub mod matchrel15;
 #[doc = "no description available"]
 pub use self::ev::Ev;
 #[doc = r"Cluster"]

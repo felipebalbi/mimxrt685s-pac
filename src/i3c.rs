@@ -47,9 +47,9 @@ pub struct RegisterBlock {
     _reserved38: [u8; 0x04],
     mrdatah: Mrdatah,
     _reserved39: [u8; 0x04],
-    _reserved_39_mwmsg_sdr_mwmsg_sdr: [u8; 0x04],
+    _reserved_39_mwmsg_sdr: [u8; 0x04],
     mrmsg_sdr: MrmsgSdr,
-    _reserved_41_mwmsg_ddr_mwmsg_ddr: [u8; 0x04],
+    _reserved_41_mwmsg_ddr: [u8; 0x04],
     mrmsg_ddr: MrmsgDdr,
     _reserved43: [u8; 0x04],
     mdynaddr: Mdynaddr,
@@ -254,12 +254,12 @@ impl RegisterBlock {
     }
     #[doc = "0xd0 - Master Write Message Data in SDR mode"]
     #[inline(always)]
-    pub const fn mwmsg_sdr_mwmsg_sdr_data(&self) -> &MwmsgSdrMwmsgSdrData {
+    pub const fn mwmsg_sdr_data(&self) -> &MwmsgSdrData {
         unsafe { &*(self as *const Self).cast::<u8>().add(208).cast() }
     }
     #[doc = "0xd0 - Master Write Message in SDR mode"]
     #[inline(always)]
-    pub const fn mwmsg_sdr_mwmsg_sdr_control(&self) -> &MwmsgSdrMwmsgSdrControl {
+    pub const fn mwmsg_sdr_control(&self) -> &MwmsgSdrControl {
         unsafe { &*(self as *const Self).cast::<u8>().add(208).cast() }
     }
     #[doc = "0xd4 - Master Read Message in SDR mode"]
@@ -269,12 +269,12 @@ impl RegisterBlock {
     }
     #[doc = "0xd8 - Master Write Message Data in DDR mode"]
     #[inline(always)]
-    pub const fn mwmsg_ddr_mwmsg_ddr_data(&self) -> &MwmsgDdrMwmsgDdrData {
+    pub const fn mwmsg_ddr_data(&self) -> &MwmsgDdrData {
         unsafe { &*(self as *const Self).cast::<u8>().add(216).cast() }
     }
     #[doc = "0xd8 - Master Write Message in DDR mode"]
     #[inline(always)]
-    pub const fn mwmsg_ddr_mwmsg_ddr_control(&self) -> &MwmsgDdrMwmsgDdrControl {
+    pub const fn mwmsg_ddr_control(&self) -> &MwmsgDdrControl {
         unsafe { &*(self as *const Self).cast::<u8>().add(216).cast() }
     }
     #[doc = "0xdc - Master Read Message in DDR mode"]
@@ -527,38 +527,36 @@ module"]
 pub type Mrdatah = crate::Reg<mrdatah::MrdatahSpec>;
 #[doc = "Master Read Data Half-word Register"]
 pub mod mrdatah;
-#[doc = "MWMSG_SDR_MWMSG_SDR_CONTROL (w) register accessor: Master Write Message in SDR mode\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`mwmsg_sdr_mwmsg_sdr_control::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@mwmsg_sdr_mwmsg_sdr_control`]
+#[doc = "MWMSG_SDR_CONTROL (w) register accessor: Master Write Message in SDR mode\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`mwmsg_sdr_control::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@mwmsg_sdr_control`]
 module"]
-#[doc(alias = "MWMSG_SDR_MWMSG_SDR_CONTROL")]
-pub type MwmsgSdrMwmsgSdrControl =
-    crate::Reg<mwmsg_sdr_mwmsg_sdr_control::MwmsgSdrMwmsgSdrControlSpec>;
+#[doc(alias = "MWMSG_SDR_CONTROL")]
+pub type MwmsgSdrControl = crate::Reg<mwmsg_sdr_control::MwmsgSdrControlSpec>;
 #[doc = "Master Write Message in SDR mode"]
-pub mod mwmsg_sdr_mwmsg_sdr_control;
-#[doc = "MWMSG_SDR_MWMSG_SDR_DATA (w) register accessor: Master Write Message Data in SDR mode\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`mwmsg_sdr_mwmsg_sdr_data::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@mwmsg_sdr_mwmsg_sdr_data`]
+pub mod mwmsg_sdr_control;
+#[doc = "MWMSG_SDR_DATA (w) register accessor: Master Write Message Data in SDR mode\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`mwmsg_sdr_data::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@mwmsg_sdr_data`]
 module"]
-#[doc(alias = "MWMSG_SDR_MWMSG_SDR_DATA")]
-pub type MwmsgSdrMwmsgSdrData = crate::Reg<mwmsg_sdr_mwmsg_sdr_data::MwmsgSdrMwmsgSdrDataSpec>;
+#[doc(alias = "MWMSG_SDR_DATA")]
+pub type MwmsgSdrData = crate::Reg<mwmsg_sdr_data::MwmsgSdrDataSpec>;
 #[doc = "Master Write Message Data in SDR mode"]
-pub mod mwmsg_sdr_mwmsg_sdr_data;
+pub mod mwmsg_sdr_data;
 #[doc = "MRMSG_SDR (r) register accessor: Master Read Message in SDR mode\n\nYou can [`read`](crate::Reg::read) this register and get [`mrmsg_sdr::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@mrmsg_sdr`]
 module"]
 #[doc(alias = "MRMSG_SDR")]
 pub type MrmsgSdr = crate::Reg<mrmsg_sdr::MrmsgSdrSpec>;
 #[doc = "Master Read Message in SDR mode"]
 pub mod mrmsg_sdr;
-#[doc = "MWMSG_DDR_MWMSG_DDR_CONTROL (w) register accessor: Master Write Message in DDR mode\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`mwmsg_ddr_mwmsg_ddr_control::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@mwmsg_ddr_mwmsg_ddr_control`]
+#[doc = "MWMSG_DDR_CONTROL (w) register accessor: Master Write Message in DDR mode\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`mwmsg_ddr_control::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@mwmsg_ddr_control`]
 module"]
-#[doc(alias = "MWMSG_DDR_MWMSG_DDR_CONTROL")]
-pub type MwmsgDdrMwmsgDdrControl =
-    crate::Reg<mwmsg_ddr_mwmsg_ddr_control::MwmsgDdrMwmsgDdrControlSpec>;
+#[doc(alias = "MWMSG_DDR_CONTROL")]
+pub type MwmsgDdrControl = crate::Reg<mwmsg_ddr_control::MwmsgDdrControlSpec>;
 #[doc = "Master Write Message in DDR mode"]
-pub mod mwmsg_ddr_mwmsg_ddr_control;
-#[doc = "MWMSG_DDR_MWMSG_DDR_DATA (w) register accessor: Master Write Message Data in DDR mode\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`mwmsg_ddr_mwmsg_ddr_data::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@mwmsg_ddr_mwmsg_ddr_data`]
+pub mod mwmsg_ddr_control;
+#[doc = "MWMSG_DDR_DATA (w) register accessor: Master Write Message Data in DDR mode\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`mwmsg_ddr_data::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@mwmsg_ddr_data`]
 module"]
-#[doc(alias = "MWMSG_DDR_MWMSG_DDR_DATA")]
-pub type MwmsgDdrMwmsgDdrData = crate::Reg<mwmsg_ddr_mwmsg_ddr_data::MwmsgDdrMwmsgDdrDataSpec>;
+#[doc(alias = "MWMSG_DDR_DATA")]
+pub type MwmsgDdrData = crate::Reg<mwmsg_ddr_data::MwmsgDdrDataSpec>;
 #[doc = "Master Write Message Data in DDR mode"]
-pub mod mwmsg_ddr_mwmsg_ddr_data;
+pub mod mwmsg_ddr_data;
 #[doc = "MRMSG_DDR (rw) register accessor: Master Read Message in DDR mode\n\nYou can [`read`](crate::Reg::read) this register and get [`mrmsg_ddr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`mrmsg_ddr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@mrmsg_ddr`]
 module"]
 #[doc(alias = "MRMSG_DDR")]

@@ -4,18 +4,18 @@ pub struct RegisterBlock {
     mctl: Mctl,
     scmisc: Scmisc,
     pkrrng: Pkrrng,
-    _reserved_3_max_sq: [u8; 0x04],
+    _reserved_3_pkrsq: [u8; 0x04],
     sdctl: Sdctl,
-    _reserved_5_sblim_totsam: [u8; 0x04],
+    _reserved_5_sblim: [u8; 0x04],
     frqmin: Frqmin,
-    _reserved_7_max_cnt: [u8; 0x04],
-    _reserved_8_scml_mc: [u8; 0x04],
-    _reserved_9_scr1l_1c_scr: [u8; 0x04],
-    _reserved_10_scr2l_2c_scr: [u8; 0x04],
-    _reserved_11_scr3l_3c_scr: [u8; 0x04],
-    _reserved_12_scr4l_4c_scr: [u8; 0x04],
-    _reserved_13_scr5l_5c_scr: [u8; 0x04],
-    _reserved_14_scr6pl_pc_scr: [u8; 0x04],
+    _reserved_7_frqcnt: [u8; 0x04],
+    _reserved_8_scmc: [u8; 0x04],
+    _reserved_9_scr: [u8; 0x04],
+    _reserved_10_scr: [u8; 0x04],
+    _reserved_11_scr: [u8; 0x04],
+    _reserved_12_scr: [u8; 0x04],
+    _reserved_13_scr: [u8; 0x04],
+    _reserved_14_scr: [u8; 0x04],
     status: Status,
     ent: [Ent; 16],
     pkrcnt10: Pkrcnt10,
@@ -52,12 +52,12 @@ impl RegisterBlock {
     }
     #[doc = "0x0c - Poker Square Calculation Result Register"]
     #[inline(always)]
-    pub const fn max_sq_pkrsq(&self) -> &MaxSqPkrsq {
+    pub const fn pkrsq(&self) -> &Pkrsq {
         unsafe { &*(self as *const Self).cast::<u8>().add(12).cast() }
     }
     #[doc = "0x0c - Poker Maximum Limit Register"]
     #[inline(always)]
-    pub const fn max_sq_pkrmax(&self) -> &MaxSqPkrmax {
+    pub const fn pkrmax(&self) -> &Pkrmax {
         unsafe { &*(self as *const Self).cast::<u8>().add(12).cast() }
     }
     #[doc = "0x10 - Seed Control Register"]
@@ -67,12 +67,12 @@ impl RegisterBlock {
     }
     #[doc = "0x14 - Total Samples Register"]
     #[inline(always)]
-    pub const fn sblim_totsam_totsam(&self) -> &SblimTotsamTotsam {
+    pub const fn totsam(&self) -> &Totsam {
         unsafe { &*(self as *const Self).cast::<u8>().add(20).cast() }
     }
     #[doc = "0x14 - Sparse Bit Limit Register"]
     #[inline(always)]
-    pub const fn sblim_totsam_sblim(&self) -> &SblimTotsamSblim {
+    pub const fn sblim(&self) -> &Sblim {
         unsafe { &*(self as *const Self).cast::<u8>().add(20).cast() }
     }
     #[doc = "0x18 - Frequency Count Minimum Limit Register"]
@@ -82,82 +82,82 @@ impl RegisterBlock {
     }
     #[doc = "0x1c - Frequency Count Maximum Limit Register"]
     #[inline(always)]
-    pub const fn max_cnt_frqmax(&self) -> &MaxCntFrqmax {
+    pub const fn frqmax(&self) -> &Frqmax {
         unsafe { &*(self as *const Self).cast::<u8>().add(28).cast() }
     }
     #[doc = "0x1c - Frequency Count Register"]
     #[inline(always)]
-    pub const fn max_cnt_frqcnt(&self) -> &MaxCntFrqcnt {
+    pub const fn frqcnt(&self) -> &Frqcnt {
         unsafe { &*(self as *const Self).cast::<u8>().add(28).cast() }
     }
     #[doc = "0x20 - Statistical Check Monobit Limit Register"]
     #[inline(always)]
-    pub const fn scml_mc_scml(&self) -> &ScmlMcScml {
+    pub const fn scml(&self) -> &Scml {
         unsafe { &*(self as *const Self).cast::<u8>().add(32).cast() }
     }
     #[doc = "0x20 - Statistical Check Monobit Count Register"]
     #[inline(always)]
-    pub const fn scml_mc_scmc(&self) -> &ScmlMcScmc {
+    pub const fn scmc(&self) -> &Scmc {
         unsafe { &*(self as *const Self).cast::<u8>().add(32).cast() }
     }
     #[doc = "0x24 - Statistical Check Run Length 1 Limit Register"]
     #[inline(always)]
-    pub const fn scr1l_1c_scr1l(&self) -> &Scr1l1cScr1l {
+    pub const fn scr1l(&self) -> &Scr1l {
         unsafe { &*(self as *const Self).cast::<u8>().add(36).cast() }
     }
     #[doc = "0x24 - Statistical Check Run Length 1 Count Register"]
     #[inline(always)]
-    pub const fn scr1l_1c_scr1c(&self) -> &Scr1l1cScr1c {
+    pub const fn scr1c(&self) -> &Scr1c {
         unsafe { &*(self as *const Self).cast::<u8>().add(36).cast() }
     }
     #[doc = "0x28 - Statistical Check Run Length 2 Limit Register"]
     #[inline(always)]
-    pub const fn scr2l_2c_scr2l(&self) -> &Scr2l2cScr2l {
+    pub const fn scr2l(&self) -> &Scr2l {
         unsafe { &*(self as *const Self).cast::<u8>().add(40).cast() }
     }
     #[doc = "0x28 - Statistical Check Run Length 2 Count Register"]
     #[inline(always)]
-    pub const fn scr2l_2c_scr2c(&self) -> &Scr2l2cScr2c {
+    pub const fn scr2c(&self) -> &Scr2c {
         unsafe { &*(self as *const Self).cast::<u8>().add(40).cast() }
     }
     #[doc = "0x2c - Statistical Check Run Length 3 Limit Register"]
     #[inline(always)]
-    pub const fn scr3l_3c_scr3l(&self) -> &Scr3l3cScr3l {
+    pub const fn scr3l(&self) -> &Scr3l {
         unsafe { &*(self as *const Self).cast::<u8>().add(44).cast() }
     }
     #[doc = "0x2c - Statistical Check Run Length 3 Count Register"]
     #[inline(always)]
-    pub const fn scr3l_3c_scr3c(&self) -> &Scr3l3cScr3c {
+    pub const fn scr3c(&self) -> &Scr3c {
         unsafe { &*(self as *const Self).cast::<u8>().add(44).cast() }
     }
     #[doc = "0x30 - Statistical Check Run Length 4 Limit Register"]
     #[inline(always)]
-    pub const fn scr4l_4c_scr4l(&self) -> &Scr4l4cScr4l {
+    pub const fn scr4l(&self) -> &Scr4l {
         unsafe { &*(self as *const Self).cast::<u8>().add(48).cast() }
     }
     #[doc = "0x30 - Statistical Check Run Length 4 Count Register"]
     #[inline(always)]
-    pub const fn scr4l_4c_scr4c(&self) -> &Scr4l4cScr4c {
+    pub const fn scr4c(&self) -> &Scr4c {
         unsafe { &*(self as *const Self).cast::<u8>().add(48).cast() }
     }
     #[doc = "0x34 - Statistical Check Run Length 5 Limit Register"]
     #[inline(always)]
-    pub const fn scr5l_5c_scr5l(&self) -> &Scr5l5cScr5l {
+    pub const fn scr5l(&self) -> &Scr5l {
         unsafe { &*(self as *const Self).cast::<u8>().add(52).cast() }
     }
     #[doc = "0x34 - Statistical Check Run Length 5 Count Register"]
     #[inline(always)]
-    pub const fn scr5l_5c_scr5c(&self) -> &Scr5l5cScr5c {
+    pub const fn scr5c(&self) -> &Scr5c {
         unsafe { &*(self as *const Self).cast::<u8>().add(52).cast() }
     }
     #[doc = "0x38 - Statistical Check Run Length 6+ Limit Register"]
     #[inline(always)]
-    pub const fn scr6pl_pc_scr6pl(&self) -> &Scr6plPcScr6pl {
+    pub const fn scr6pl(&self) -> &Scr6pl {
         unsafe { &*(self as *const Self).cast::<u8>().add(56).cast() }
     }
     #[doc = "0x38 - Statistical Check Run Length 6+ Count Register"]
     #[inline(always)]
-    pub const fn scr6pl_pc_scr6pc(&self) -> &Scr6plPcScr6pc {
+    pub const fn scr6pc(&self) -> &Scr6pc {
         unsafe { &*(self as *const Self).cast::<u8>().add(56).cast() }
     }
     #[doc = "0x3c - Status Register"]
@@ -265,138 +265,138 @@ module"]
 pub type Pkrrng = crate::Reg<pkrrng::PkrrngSpec>;
 #[doc = "Poker Range Register"]
 pub mod pkrrng;
-#[doc = "MAX_SQ_PKRMAX (rw) register accessor: Poker Maximum Limit Register\n\nYou can [`read`](crate::Reg::read) this register and get [`max_sq_pkrmax::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`max_sq_pkrmax::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@max_sq_pkrmax`]
+#[doc = "PKRMAX (rw) register accessor: Poker Maximum Limit Register\n\nYou can [`read`](crate::Reg::read) this register and get [`pkrmax::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pkrmax::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pkrmax`]
 module"]
-#[doc(alias = "MAX_SQ_PKRMAX")]
-pub type MaxSqPkrmax = crate::Reg<max_sq_pkrmax::MaxSqPkrmaxSpec>;
+#[doc(alias = "PKRMAX")]
+pub type Pkrmax = crate::Reg<pkrmax::PkrmaxSpec>;
 #[doc = "Poker Maximum Limit Register"]
-pub mod max_sq_pkrmax;
-#[doc = "MAX_SQ_PKRSQ (r) register accessor: Poker Square Calculation Result Register\n\nYou can [`read`](crate::Reg::read) this register and get [`max_sq_pkrsq::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@max_sq_pkrsq`]
+pub mod pkrmax;
+#[doc = "PKRSQ (r) register accessor: Poker Square Calculation Result Register\n\nYou can [`read`](crate::Reg::read) this register and get [`pkrsq::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pkrsq`]
 module"]
-#[doc(alias = "MAX_SQ_PKRSQ")]
-pub type MaxSqPkrsq = crate::Reg<max_sq_pkrsq::MaxSqPkrsqSpec>;
+#[doc(alias = "PKRSQ")]
+pub type Pkrsq = crate::Reg<pkrsq::PkrsqSpec>;
 #[doc = "Poker Square Calculation Result Register"]
-pub mod max_sq_pkrsq;
+pub mod pkrsq;
 #[doc = "SDCTL (rw) register accessor: Seed Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`sdctl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`sdctl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sdctl`]
 module"]
 #[doc(alias = "SDCTL")]
 pub type Sdctl = crate::Reg<sdctl::SdctlSpec>;
 #[doc = "Seed Control Register"]
 pub mod sdctl;
-#[doc = "SBLIM_TOTSAM_SBLIM (rw) register accessor: Sparse Bit Limit Register\n\nYou can [`read`](crate::Reg::read) this register and get [`sblim_totsam_sblim::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`sblim_totsam_sblim::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sblim_totsam_sblim`]
+#[doc = "SBLIM (rw) register accessor: Sparse Bit Limit Register\n\nYou can [`read`](crate::Reg::read) this register and get [`sblim::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`sblim::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sblim`]
 module"]
-#[doc(alias = "SBLIM_TOTSAM_SBLIM")]
-pub type SblimTotsamSblim = crate::Reg<sblim_totsam_sblim::SblimTotsamSblimSpec>;
+#[doc(alias = "SBLIM")]
+pub type Sblim = crate::Reg<sblim::SblimSpec>;
 #[doc = "Sparse Bit Limit Register"]
-pub mod sblim_totsam_sblim;
-#[doc = "SBLIM_TOTSAM_TOTSAM (r) register accessor: Total Samples Register\n\nYou can [`read`](crate::Reg::read) this register and get [`sblim_totsam_totsam::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sblim_totsam_totsam`]
+pub mod sblim;
+#[doc = "TOTSAM (r) register accessor: Total Samples Register\n\nYou can [`read`](crate::Reg::read) this register and get [`totsam::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@totsam`]
 module"]
-#[doc(alias = "SBLIM_TOTSAM_TOTSAM")]
-pub type SblimTotsamTotsam = crate::Reg<sblim_totsam_totsam::SblimTotsamTotsamSpec>;
+#[doc(alias = "TOTSAM")]
+pub type Totsam = crate::Reg<totsam::TotsamSpec>;
 #[doc = "Total Samples Register"]
-pub mod sblim_totsam_totsam;
+pub mod totsam;
 #[doc = "FRQMIN (rw) register accessor: Frequency Count Minimum Limit Register\n\nYou can [`read`](crate::Reg::read) this register and get [`frqmin::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`frqmin::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@frqmin`]
 module"]
 #[doc(alias = "FRQMIN")]
 pub type Frqmin = crate::Reg<frqmin::FrqminSpec>;
 #[doc = "Frequency Count Minimum Limit Register"]
 pub mod frqmin;
-#[doc = "MAX_CNT_FRQCNT (r) register accessor: Frequency Count Register\n\nYou can [`read`](crate::Reg::read) this register and get [`max_cnt_frqcnt::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@max_cnt_frqcnt`]
+#[doc = "FRQCNT (r) register accessor: Frequency Count Register\n\nYou can [`read`](crate::Reg::read) this register and get [`frqcnt::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@frqcnt`]
 module"]
-#[doc(alias = "MAX_CNT_FRQCNT")]
-pub type MaxCntFrqcnt = crate::Reg<max_cnt_frqcnt::MaxCntFrqcntSpec>;
+#[doc(alias = "FRQCNT")]
+pub type Frqcnt = crate::Reg<frqcnt::FrqcntSpec>;
 #[doc = "Frequency Count Register"]
-pub mod max_cnt_frqcnt;
-#[doc = "MAX_CNT_FRQMAX (rw) register accessor: Frequency Count Maximum Limit Register\n\nYou can [`read`](crate::Reg::read) this register and get [`max_cnt_frqmax::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`max_cnt_frqmax::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@max_cnt_frqmax`]
+pub mod frqcnt;
+#[doc = "FRQMAX (rw) register accessor: Frequency Count Maximum Limit Register\n\nYou can [`read`](crate::Reg::read) this register and get [`frqmax::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`frqmax::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@frqmax`]
 module"]
-#[doc(alias = "MAX_CNT_FRQMAX")]
-pub type MaxCntFrqmax = crate::Reg<max_cnt_frqmax::MaxCntFrqmaxSpec>;
+#[doc(alias = "FRQMAX")]
+pub type Frqmax = crate::Reg<frqmax::FrqmaxSpec>;
 #[doc = "Frequency Count Maximum Limit Register"]
-pub mod max_cnt_frqmax;
-#[doc = "SCML_MC_SCMC (r) register accessor: Statistical Check Monobit Count Register\n\nYou can [`read`](crate::Reg::read) this register and get [`scml_mc_scmc::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@scml_mc_scmc`]
+pub mod frqmax;
+#[doc = "SCMC (r) register accessor: Statistical Check Monobit Count Register\n\nYou can [`read`](crate::Reg::read) this register and get [`scmc::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@scmc`]
 module"]
-#[doc(alias = "SCML_MC_SCMC")]
-pub type ScmlMcScmc = crate::Reg<scml_mc_scmc::ScmlMcScmcSpec>;
+#[doc(alias = "SCMC")]
+pub type Scmc = crate::Reg<scmc::ScmcSpec>;
 #[doc = "Statistical Check Monobit Count Register"]
-pub mod scml_mc_scmc;
-#[doc = "SCML_MC_SCML (rw) register accessor: Statistical Check Monobit Limit Register\n\nYou can [`read`](crate::Reg::read) this register and get [`scml_mc_scml::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`scml_mc_scml::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@scml_mc_scml`]
+pub mod scmc;
+#[doc = "SCML (rw) register accessor: Statistical Check Monobit Limit Register\n\nYou can [`read`](crate::Reg::read) this register and get [`scml::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`scml::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@scml`]
 module"]
-#[doc(alias = "SCML_MC_SCML")]
-pub type ScmlMcScml = crate::Reg<scml_mc_scml::ScmlMcScmlSpec>;
+#[doc(alias = "SCML")]
+pub type Scml = crate::Reg<scml::ScmlSpec>;
 #[doc = "Statistical Check Monobit Limit Register"]
-pub mod scml_mc_scml;
-#[doc = "SCR1L_1C_SCR1C (r) register accessor: Statistical Check Run Length 1 Count Register\n\nYou can [`read`](crate::Reg::read) this register and get [`scr1l_1c_scr1c::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@scr1l_1c_scr1c`]
+pub mod scml;
+#[doc = "SCR1C (r) register accessor: Statistical Check Run Length 1 Count Register\n\nYou can [`read`](crate::Reg::read) this register and get [`scr1c::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@scr1c`]
 module"]
-#[doc(alias = "SCR1L_1C_SCR1C")]
-pub type Scr1l1cScr1c = crate::Reg<scr1l_1c_scr1c::Scr1l1cScr1cSpec>;
+#[doc(alias = "SCR1C")]
+pub type Scr1c = crate::Reg<scr1c::Scr1cSpec>;
 #[doc = "Statistical Check Run Length 1 Count Register"]
-pub mod scr1l_1c_scr1c;
-#[doc = "SCR1L_1C_SCR1L (rw) register accessor: Statistical Check Run Length 1 Limit Register\n\nYou can [`read`](crate::Reg::read) this register and get [`scr1l_1c_scr1l::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`scr1l_1c_scr1l::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@scr1l_1c_scr1l`]
+pub mod scr1c;
+#[doc = "SCR1L (rw) register accessor: Statistical Check Run Length 1 Limit Register\n\nYou can [`read`](crate::Reg::read) this register and get [`scr1l::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`scr1l::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@scr1l`]
 module"]
-#[doc(alias = "SCR1L_1C_SCR1L")]
-pub type Scr1l1cScr1l = crate::Reg<scr1l_1c_scr1l::Scr1l1cScr1lSpec>;
+#[doc(alias = "SCR1L")]
+pub type Scr1l = crate::Reg<scr1l::Scr1lSpec>;
 #[doc = "Statistical Check Run Length 1 Limit Register"]
-pub mod scr1l_1c_scr1l;
-#[doc = "SCR2L_2C_SCR2C (r) register accessor: Statistical Check Run Length 2 Count Register\n\nYou can [`read`](crate::Reg::read) this register and get [`scr2l_2c_scr2c::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@scr2l_2c_scr2c`]
+pub mod scr1l;
+#[doc = "SCR2C (r) register accessor: Statistical Check Run Length 2 Count Register\n\nYou can [`read`](crate::Reg::read) this register and get [`scr2c::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@scr2c`]
 module"]
-#[doc(alias = "SCR2L_2C_SCR2C")]
-pub type Scr2l2cScr2c = crate::Reg<scr2l_2c_scr2c::Scr2l2cScr2cSpec>;
+#[doc(alias = "SCR2C")]
+pub type Scr2c = crate::Reg<scr2c::Scr2cSpec>;
 #[doc = "Statistical Check Run Length 2 Count Register"]
-pub mod scr2l_2c_scr2c;
-#[doc = "SCR2L_2C_SCR2L (rw) register accessor: Statistical Check Run Length 2 Limit Register\n\nYou can [`read`](crate::Reg::read) this register and get [`scr2l_2c_scr2l::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`scr2l_2c_scr2l::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@scr2l_2c_scr2l`]
+pub mod scr2c;
+#[doc = "SCR2L (rw) register accessor: Statistical Check Run Length 2 Limit Register\n\nYou can [`read`](crate::Reg::read) this register and get [`scr2l::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`scr2l::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@scr2l`]
 module"]
-#[doc(alias = "SCR2L_2C_SCR2L")]
-pub type Scr2l2cScr2l = crate::Reg<scr2l_2c_scr2l::Scr2l2cScr2lSpec>;
+#[doc(alias = "SCR2L")]
+pub type Scr2l = crate::Reg<scr2l::Scr2lSpec>;
 #[doc = "Statistical Check Run Length 2 Limit Register"]
-pub mod scr2l_2c_scr2l;
-#[doc = "SCR3L_3C_SCR3C (r) register accessor: Statistical Check Run Length 3 Count Register\n\nYou can [`read`](crate::Reg::read) this register and get [`scr3l_3c_scr3c::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@scr3l_3c_scr3c`]
+pub mod scr2l;
+#[doc = "SCR3C (r) register accessor: Statistical Check Run Length 3 Count Register\n\nYou can [`read`](crate::Reg::read) this register and get [`scr3c::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@scr3c`]
 module"]
-#[doc(alias = "SCR3L_3C_SCR3C")]
-pub type Scr3l3cScr3c = crate::Reg<scr3l_3c_scr3c::Scr3l3cScr3cSpec>;
+#[doc(alias = "SCR3C")]
+pub type Scr3c = crate::Reg<scr3c::Scr3cSpec>;
 #[doc = "Statistical Check Run Length 3 Count Register"]
-pub mod scr3l_3c_scr3c;
-#[doc = "SCR3L_3C_SCR3L (rw) register accessor: Statistical Check Run Length 3 Limit Register\n\nYou can [`read`](crate::Reg::read) this register and get [`scr3l_3c_scr3l::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`scr3l_3c_scr3l::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@scr3l_3c_scr3l`]
+pub mod scr3c;
+#[doc = "SCR3L (rw) register accessor: Statistical Check Run Length 3 Limit Register\n\nYou can [`read`](crate::Reg::read) this register and get [`scr3l::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`scr3l::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@scr3l`]
 module"]
-#[doc(alias = "SCR3L_3C_SCR3L")]
-pub type Scr3l3cScr3l = crate::Reg<scr3l_3c_scr3l::Scr3l3cScr3lSpec>;
+#[doc(alias = "SCR3L")]
+pub type Scr3l = crate::Reg<scr3l::Scr3lSpec>;
 #[doc = "Statistical Check Run Length 3 Limit Register"]
-pub mod scr3l_3c_scr3l;
-#[doc = "SCR4L_4C_SCR4C (r) register accessor: Statistical Check Run Length 4 Count Register\n\nYou can [`read`](crate::Reg::read) this register and get [`scr4l_4c_scr4c::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@scr4l_4c_scr4c`]
+pub mod scr3l;
+#[doc = "SCR4C (r) register accessor: Statistical Check Run Length 4 Count Register\n\nYou can [`read`](crate::Reg::read) this register and get [`scr4c::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@scr4c`]
 module"]
-#[doc(alias = "SCR4L_4C_SCR4C")]
-pub type Scr4l4cScr4c = crate::Reg<scr4l_4c_scr4c::Scr4l4cScr4cSpec>;
+#[doc(alias = "SCR4C")]
+pub type Scr4c = crate::Reg<scr4c::Scr4cSpec>;
 #[doc = "Statistical Check Run Length 4 Count Register"]
-pub mod scr4l_4c_scr4c;
-#[doc = "SCR4L_4C_SCR4L (rw) register accessor: Statistical Check Run Length 4 Limit Register\n\nYou can [`read`](crate::Reg::read) this register and get [`scr4l_4c_scr4l::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`scr4l_4c_scr4l::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@scr4l_4c_scr4l`]
+pub mod scr4c;
+#[doc = "SCR4L (rw) register accessor: Statistical Check Run Length 4 Limit Register\n\nYou can [`read`](crate::Reg::read) this register and get [`scr4l::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`scr4l::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@scr4l`]
 module"]
-#[doc(alias = "SCR4L_4C_SCR4L")]
-pub type Scr4l4cScr4l = crate::Reg<scr4l_4c_scr4l::Scr4l4cScr4lSpec>;
+#[doc(alias = "SCR4L")]
+pub type Scr4l = crate::Reg<scr4l::Scr4lSpec>;
 #[doc = "Statistical Check Run Length 4 Limit Register"]
-pub mod scr4l_4c_scr4l;
-#[doc = "SCR5L_5C_SCR5C (r) register accessor: Statistical Check Run Length 5 Count Register\n\nYou can [`read`](crate::Reg::read) this register and get [`scr5l_5c_scr5c::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@scr5l_5c_scr5c`]
+pub mod scr4l;
+#[doc = "SCR5C (r) register accessor: Statistical Check Run Length 5 Count Register\n\nYou can [`read`](crate::Reg::read) this register and get [`scr5c::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@scr5c`]
 module"]
-#[doc(alias = "SCR5L_5C_SCR5C")]
-pub type Scr5l5cScr5c = crate::Reg<scr5l_5c_scr5c::Scr5l5cScr5cSpec>;
+#[doc(alias = "SCR5C")]
+pub type Scr5c = crate::Reg<scr5c::Scr5cSpec>;
 #[doc = "Statistical Check Run Length 5 Count Register"]
-pub mod scr5l_5c_scr5c;
-#[doc = "SCR5L_5C_SCR5L (rw) register accessor: Statistical Check Run Length 5 Limit Register\n\nYou can [`read`](crate::Reg::read) this register and get [`scr5l_5c_scr5l::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`scr5l_5c_scr5l::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@scr5l_5c_scr5l`]
+pub mod scr5c;
+#[doc = "SCR5L (rw) register accessor: Statistical Check Run Length 5 Limit Register\n\nYou can [`read`](crate::Reg::read) this register and get [`scr5l::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`scr5l::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@scr5l`]
 module"]
-#[doc(alias = "SCR5L_5C_SCR5L")]
-pub type Scr5l5cScr5l = crate::Reg<scr5l_5c_scr5l::Scr5l5cScr5lSpec>;
+#[doc(alias = "SCR5L")]
+pub type Scr5l = crate::Reg<scr5l::Scr5lSpec>;
 #[doc = "Statistical Check Run Length 5 Limit Register"]
-pub mod scr5l_5c_scr5l;
-#[doc = "SCR6PL_PC_SCR6PC (r) register accessor: Statistical Check Run Length 6+ Count Register\n\nYou can [`read`](crate::Reg::read) this register and get [`scr6pl_pc_scr6pc::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@scr6pl_pc_scr6pc`]
+pub mod scr5l;
+#[doc = "SCR6PC (r) register accessor: Statistical Check Run Length 6+ Count Register\n\nYou can [`read`](crate::Reg::read) this register and get [`scr6pc::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@scr6pc`]
 module"]
-#[doc(alias = "SCR6PL_PC_SCR6PC")]
-pub type Scr6plPcScr6pc = crate::Reg<scr6pl_pc_scr6pc::Scr6plPcScr6pcSpec>;
+#[doc(alias = "SCR6PC")]
+pub type Scr6pc = crate::Reg<scr6pc::Scr6pcSpec>;
 #[doc = "Statistical Check Run Length 6+ Count Register"]
-pub mod scr6pl_pc_scr6pc;
-#[doc = "SCR6PL_PC_SCR6PL (rw) register accessor: Statistical Check Run Length 6+ Limit Register\n\nYou can [`read`](crate::Reg::read) this register and get [`scr6pl_pc_scr6pl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`scr6pl_pc_scr6pl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@scr6pl_pc_scr6pl`]
+pub mod scr6pc;
+#[doc = "SCR6PL (rw) register accessor: Statistical Check Run Length 6+ Limit Register\n\nYou can [`read`](crate::Reg::read) this register and get [`scr6pl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`scr6pl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@scr6pl`]
 module"]
-#[doc(alias = "SCR6PL_PC_SCR6PL")]
-pub type Scr6plPcScr6pl = crate::Reg<scr6pl_pc_scr6pl::Scr6plPcScr6plSpec>;
+#[doc(alias = "SCR6PL")]
+pub type Scr6pl = crate::Reg<scr6pl::Scr6plSpec>;
 #[doc = "Statistical Check Run Length 6+ Limit Register"]
-pub mod scr6pl_pc_scr6pl;
+pub mod scr6pl;
 #[doc = "STATUS (r) register accessor: Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`status::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@status`]
 module"]
 #[doc(alias = "STATUS")]

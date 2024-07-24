@@ -9,7 +9,7 @@ impl R {
         TotSamR::new(self.bits & 0x000f_ffff)
     }
 }
-#[doc = "Total Samples Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`totsam::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Total Samples Register\n\nYou can [`read`](crate::Reg::read) this register and get [`totsam::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TotsamSpec;
 impl crate::RegisterSpec for TotsamSpec {
     type Ux = u32;

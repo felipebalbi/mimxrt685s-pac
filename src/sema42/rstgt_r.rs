@@ -86,7 +86,7 @@ impl R {
         RozR::new(((self.bits >> 14) & 3) as u8)
     }
 }
-#[doc = "Reset Gate Read\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rstgt_r::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Reset Gate Read\n\nYou can [`read`](crate::Reg::read) this register and get [`rstgt_r::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RstgtRSpec;
 impl crate::RegisterSpec for RstgtRSpec {
     type Ux = u16;

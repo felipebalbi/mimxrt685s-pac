@@ -3,7 +3,7 @@
 pub struct RegisterBlock {
     mode: Mode,
     seed: Seed,
-    _reserved_2_sum_wr_data: [u8; 0x04],
+    _reserved_2_sum: [u8; 0x04],
 }
 impl RegisterBlock {
     #[doc = "0x00 - CRC mode register"]
@@ -18,12 +18,12 @@ impl RegisterBlock {
     }
     #[doc = "0x08 - CRC data register"]
     #[inline(always)]
-    pub const fn sum_wr_data_wr_data(&self) -> &SumWrDataWrData {
+    pub const fn wr_data(&self) -> &WrData {
         unsafe { &*(self as *const Self).cast::<u8>().add(8).cast() }
     }
     #[doc = "0x08 - CRC checksum register"]
     #[inline(always)]
-    pub const fn sum_wr_data_sum(&self) -> &SumWrDataSum {
+    pub const fn sum(&self) -> &Sum {
         unsafe { &*(self as *const Self).cast::<u8>().add(8).cast() }
     }
 }
@@ -39,15 +39,15 @@ module"]
 pub type Seed = crate::Reg<seed::SeedSpec>;
 #[doc = "CRC seed register"]
 pub mod seed;
-#[doc = "SUM_WR_DATA_SUM (r) register accessor: CRC checksum register\n\nYou can [`read`](crate::Reg::read) this register and get [`sum_wr_data_sum::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sum_wr_data_sum`]
+#[doc = "SUM (r) register accessor: CRC checksum register\n\nYou can [`read`](crate::Reg::read) this register and get [`sum::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sum`]
 module"]
-#[doc(alias = "SUM_WR_DATA_SUM")]
-pub type SumWrDataSum = crate::Reg<sum_wr_data_sum::SumWrDataSumSpec>;
+#[doc(alias = "SUM")]
+pub type Sum = crate::Reg<sum::SumSpec>;
 #[doc = "CRC checksum register"]
-pub mod sum_wr_data_sum;
-#[doc = "SUM_WR_DATA_WR_DATA (w) register accessor: CRC data register\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`sum_wr_data_wr_data::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sum_wr_data_wr_data`]
+pub mod sum;
+#[doc = "WR_DATA (w) register accessor: CRC data register\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`wr_data::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@wr_data`]
 module"]
-#[doc(alias = "SUM_WR_DATA_WR_DATA")]
-pub type SumWrDataWrData = crate::Reg<sum_wr_data_wr_data::SumWrDataWrDataSpec>;
+#[doc(alias = "WR_DATA")]
+pub type WrData = crate::Reg<wr_data::WrDataSpec>;
 #[doc = "CRC data register"]
-pub mod sum_wr_data_wr_data;
+pub mod wr_data;

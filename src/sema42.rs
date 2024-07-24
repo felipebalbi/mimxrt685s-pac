@@ -3,7 +3,7 @@
 pub struct RegisterBlock {
     gate: [Gate; 16],
     _reserved1: [u8; 0x32],
-    _reserved_1_rstgt_rstgt: [u8; 0x02],
+    _reserved_1_rstgt: [u8; 0x02],
 }
 impl RegisterBlock {
     #[doc = "0x00..0x10 - Semphores2 Gate n"]
@@ -99,12 +99,12 @@ impl RegisterBlock {
     }
     #[doc = "0x42 - Reset Gate Write"]
     #[inline(always)]
-    pub const fn rstgt_rstgt_w(&self) -> &RstgtRstgtW {
+    pub const fn rstgt_w(&self) -> &RstgtW {
         unsafe { &*(self as *const Self).cast::<u8>().add(66).cast() }
     }
     #[doc = "0x42 - Reset Gate Read"]
     #[inline(always)]
-    pub const fn rstgt_rstgt_r(&self) -> &RstgtRstgtR {
+    pub const fn rstgt_r(&self) -> &RstgtR {
         unsafe { &*(self as *const Self).cast::<u8>().add(66).cast() }
     }
 }
@@ -114,15 +114,15 @@ module"]
 pub type Gate = crate::Reg<gate::GateSpec>;
 #[doc = "Semphores2 Gate n"]
 pub mod gate;
-#[doc = "RSTGT_RSTGT_R (r) register accessor: Reset Gate Read\n\nYou can [`read`](crate::Reg::read) this register and get [`rstgt_rstgt_r::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rstgt_rstgt_r`]
+#[doc = "RSTGT_R (r) register accessor: Reset Gate Read\n\nYou can [`read`](crate::Reg::read) this register and get [`rstgt_r::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rstgt_r`]
 module"]
-#[doc(alias = "RSTGT_RSTGT_R")]
-pub type RstgtRstgtR = crate::Reg<rstgt_rstgt_r::RstgtRstgtRSpec>;
+#[doc(alias = "RSTGT_R")]
+pub type RstgtR = crate::Reg<rstgt_r::RstgtRSpec>;
 #[doc = "Reset Gate Read"]
-pub mod rstgt_rstgt_r;
-#[doc = "RSTGT_RSTGT_W (w) register accessor: Reset Gate Write\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`rstgt_rstgt_w::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rstgt_rstgt_w`]
+pub mod rstgt_r;
+#[doc = "RSTGT_W (w) register accessor: Reset Gate Write\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`rstgt_w::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rstgt_w`]
 module"]
-#[doc(alias = "RSTGT_RSTGT_W")]
-pub type RstgtRstgtW = crate::Reg<rstgt_rstgt_w::RstgtRstgtWSpec>;
+#[doc(alias = "RSTGT_W")]
+pub type RstgtW = crate::Reg<rstgt_w::RstgtWSpec>;
 #[doc = "Reset Gate Write"]
-pub mod rstgt_rstgt_w;
+pub mod rstgt_w;

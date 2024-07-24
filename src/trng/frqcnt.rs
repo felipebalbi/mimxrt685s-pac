@@ -9,7 +9,7 @@ impl R {
         FrqCtR::new(self.bits & 0x003f_ffff)
     }
 }
-#[doc = "Frequency Count Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`frqcnt::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Frequency Count Register\n\nYou can [`read`](crate::Reg::read) this register and get [`frqcnt::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FrqcntSpec;
 impl crate::RegisterSpec for FrqcntSpec {
     type Ux = u32;
