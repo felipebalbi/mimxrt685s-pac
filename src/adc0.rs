@@ -15,39 +15,12 @@ pub struct RegisterBlock {
     swtrig: Swtrig,
     _reserved10: [u8; 0x88],
     tctrl: [Tctrl; 16],
-    cmdl1: Cmdl1,
-    cmdh1: Cmdh1,
-    cmdl2: Cmdl2,
-    cmdh2: Cmdh2,
-    cmdl3: Cmdl3,
-    cmdh3: Cmdh3,
-    cmdl4: Cmdl4,
-    cmdh4: Cmdh4,
-    cmdl5: Cmdl5,
-    cmdh5: Cmdh5,
-    cmdl6: Cmdl6,
-    cmdh6: Cmdh6,
-    cmdl7: Cmdl7,
-    cmdh7: Cmdh7,
-    cmdl8: Cmdl8,
-    cmdh8: Cmdh8,
-    cmdl9: Cmdl9,
-    cmdh9: Cmdh9,
-    cmdl10: Cmdl10,
-    cmdh10: Cmdh10,
-    cmdl11: Cmdl11,
-    cmdh11: Cmdh11,
-    cmdl12: Cmdl12,
-    cmdh12: Cmdh12,
-    cmdl13: Cmdl13,
-    cmdh13: Cmdh13,
-    cmdl14: Cmdl14,
-    cmdh14: Cmdh14,
-    cmdl15: Cmdl15,
-    cmdh15: Cmdh15,
-    _reserved41: [u8; 0x88],
+    cmdl: (),
+    _reserved12: [u8; 0x04],
+    cmdh: (),
+    _reserved13: [u8; 0xfc],
     cv: [Cv; 4],
-    _reserved42: [u8; 0xf0],
+    _reserved14: [u8; 0xf0],
     resfifo: Resfifo,
 }
 impl RegisterBlock {
@@ -112,155 +85,205 @@ impl RegisterBlock {
     pub fn tctrl_iter(&self) -> impl Iterator<Item = &Tctrl> {
         self.tctrl.iter()
     }
+    #[doc = "0x100..0x13c - ADC Command Low Buffer Register"]
+    #[inline(always)]
+    pub const fn cmdl(&self, n: usize) -> &Cmdl {
+        #[allow(clippy::no_effect)]
+        [(); 15][n];
+        unsafe {
+            &*(self as *const Self)
+                .cast::<u8>()
+                .add(256)
+                .add(8 * n)
+                .cast()
+        }
+    }
+    #[doc = "Iterator for array of:"]
+    #[doc = "0x100..0x13c - ADC Command Low Buffer Register"]
+    #[inline(always)]
+    pub fn cmdl_iter(&self) -> impl Iterator<Item = &Cmdl> {
+        (0..15).map(move |n| unsafe {
+            &*(self as *const Self)
+                .cast::<u8>()
+                .add(256)
+                .add(8 * n)
+                .cast()
+        })
+    }
     #[doc = "0x100 - ADC Command Low Buffer Register"]
     #[inline(always)]
-    pub const fn cmdl1(&self) -> &Cmdl1 {
-        &self.cmdl1
-    }
-    #[doc = "0x104 - ADC Command High Buffer Register"]
-    #[inline(always)]
-    pub const fn cmdh1(&self) -> &Cmdh1 {
-        &self.cmdh1
+    pub const fn cmdl1(&self) -> &Cmdl {
+        self.cmdl(0)
     }
     #[doc = "0x108 - ADC Command Low Buffer Register"]
     #[inline(always)]
-    pub const fn cmdl2(&self) -> &Cmdl2 {
-        &self.cmdl2
-    }
-    #[doc = "0x10c - ADC Command High Buffer Register"]
-    #[inline(always)]
-    pub const fn cmdh2(&self) -> &Cmdh2 {
-        &self.cmdh2
+    pub const fn cmdl2(&self) -> &Cmdl {
+        self.cmdl(1)
     }
     #[doc = "0x110 - ADC Command Low Buffer Register"]
     #[inline(always)]
-    pub const fn cmdl3(&self) -> &Cmdl3 {
-        &self.cmdl3
-    }
-    #[doc = "0x114 - ADC Command High Buffer Register"]
-    #[inline(always)]
-    pub const fn cmdh3(&self) -> &Cmdh3 {
-        &self.cmdh3
+    pub const fn cmdl3(&self) -> &Cmdl {
+        self.cmdl(2)
     }
     #[doc = "0x118 - ADC Command Low Buffer Register"]
     #[inline(always)]
-    pub const fn cmdl4(&self) -> &Cmdl4 {
-        &self.cmdl4
-    }
-    #[doc = "0x11c - ADC Command High Buffer Register"]
-    #[inline(always)]
-    pub const fn cmdh4(&self) -> &Cmdh4 {
-        &self.cmdh4
+    pub const fn cmdl4(&self) -> &Cmdl {
+        self.cmdl(3)
     }
     #[doc = "0x120 - ADC Command Low Buffer Register"]
     #[inline(always)]
-    pub const fn cmdl5(&self) -> &Cmdl5 {
-        &self.cmdl5
-    }
-    #[doc = "0x124 - ADC Command High Buffer Register"]
-    #[inline(always)]
-    pub const fn cmdh5(&self) -> &Cmdh5 {
-        &self.cmdh5
+    pub const fn cmdl5(&self) -> &Cmdl {
+        self.cmdl(4)
     }
     #[doc = "0x128 - ADC Command Low Buffer Register"]
     #[inline(always)]
-    pub const fn cmdl6(&self) -> &Cmdl6 {
-        &self.cmdl6
-    }
-    #[doc = "0x12c - ADC Command High Buffer Register"]
-    #[inline(always)]
-    pub const fn cmdh6(&self) -> &Cmdh6 {
-        &self.cmdh6
+    pub const fn cmdl6(&self) -> &Cmdl {
+        self.cmdl(5)
     }
     #[doc = "0x130 - ADC Command Low Buffer Register"]
     #[inline(always)]
-    pub const fn cmdl7(&self) -> &Cmdl7 {
-        &self.cmdl7
-    }
-    #[doc = "0x134 - ADC Command High Buffer Register"]
-    #[inline(always)]
-    pub const fn cmdh7(&self) -> &Cmdh7 {
-        &self.cmdh7
+    pub const fn cmdl7(&self) -> &Cmdl {
+        self.cmdl(6)
     }
     #[doc = "0x138 - ADC Command Low Buffer Register"]
     #[inline(always)]
-    pub const fn cmdl8(&self) -> &Cmdl8 {
-        &self.cmdl8
-    }
-    #[doc = "0x13c - ADC Command High Buffer Register"]
-    #[inline(always)]
-    pub const fn cmdh8(&self) -> &Cmdh8 {
-        &self.cmdh8
+    pub const fn cmdl8(&self) -> &Cmdl {
+        self.cmdl(7)
     }
     #[doc = "0x140 - ADC Command Low Buffer Register"]
     #[inline(always)]
-    pub const fn cmdl9(&self) -> &Cmdl9 {
-        &self.cmdl9
-    }
-    #[doc = "0x144 - ADC Command High Buffer Register"]
-    #[inline(always)]
-    pub const fn cmdh9(&self) -> &Cmdh9 {
-        &self.cmdh9
+    pub const fn cmdl9(&self) -> &Cmdl {
+        self.cmdl(8)
     }
     #[doc = "0x148 - ADC Command Low Buffer Register"]
     #[inline(always)]
-    pub const fn cmdl10(&self) -> &Cmdl10 {
-        &self.cmdl10
-    }
-    #[doc = "0x14c - ADC Command High Buffer Register"]
-    #[inline(always)]
-    pub const fn cmdh10(&self) -> &Cmdh10 {
-        &self.cmdh10
+    pub const fn cmdl10(&self) -> &Cmdl {
+        self.cmdl(9)
     }
     #[doc = "0x150 - ADC Command Low Buffer Register"]
     #[inline(always)]
-    pub const fn cmdl11(&self) -> &Cmdl11 {
-        &self.cmdl11
-    }
-    #[doc = "0x154 - ADC Command High Buffer Register"]
-    #[inline(always)]
-    pub const fn cmdh11(&self) -> &Cmdh11 {
-        &self.cmdh11
+    pub const fn cmdl11(&self) -> &Cmdl {
+        self.cmdl(10)
     }
     #[doc = "0x158 - ADC Command Low Buffer Register"]
     #[inline(always)]
-    pub const fn cmdl12(&self) -> &Cmdl12 {
-        &self.cmdl12
-    }
-    #[doc = "0x15c - ADC Command High Buffer Register"]
-    #[inline(always)]
-    pub const fn cmdh12(&self) -> &Cmdh12 {
-        &self.cmdh12
+    pub const fn cmdl12(&self) -> &Cmdl {
+        self.cmdl(11)
     }
     #[doc = "0x160 - ADC Command Low Buffer Register"]
     #[inline(always)]
-    pub const fn cmdl13(&self) -> &Cmdl13 {
-        &self.cmdl13
-    }
-    #[doc = "0x164 - ADC Command High Buffer Register"]
-    #[inline(always)]
-    pub const fn cmdh13(&self) -> &Cmdh13 {
-        &self.cmdh13
+    pub const fn cmdl13(&self) -> &Cmdl {
+        self.cmdl(12)
     }
     #[doc = "0x168 - ADC Command Low Buffer Register"]
     #[inline(always)]
-    pub const fn cmdl14(&self) -> &Cmdl14 {
-        &self.cmdl14
-    }
-    #[doc = "0x16c - ADC Command High Buffer Register"]
-    #[inline(always)]
-    pub const fn cmdh14(&self) -> &Cmdh14 {
-        &self.cmdh14
+    pub const fn cmdl14(&self) -> &Cmdl {
+        self.cmdl(13)
     }
     #[doc = "0x170 - ADC Command Low Buffer Register"]
     #[inline(always)]
-    pub const fn cmdl15(&self) -> &Cmdl15 {
-        &self.cmdl15
+    pub const fn cmdl15(&self) -> &Cmdl {
+        self.cmdl(14)
+    }
+    #[doc = "0x104..0x140 - ADC Command High Buffer Register"]
+    #[inline(always)]
+    pub const fn cmdh(&self, n: usize) -> &Cmdh {
+        #[allow(clippy::no_effect)]
+        [(); 15][n];
+        unsafe {
+            &*(self as *const Self)
+                .cast::<u8>()
+                .add(260)
+                .add(8 * n)
+                .cast()
+        }
+    }
+    #[doc = "Iterator for array of:"]
+    #[doc = "0x104..0x140 - ADC Command High Buffer Register"]
+    #[inline(always)]
+    pub fn cmdh_iter(&self) -> impl Iterator<Item = &Cmdh> {
+        (0..15).map(move |n| unsafe {
+            &*(self as *const Self)
+                .cast::<u8>()
+                .add(260)
+                .add(8 * n)
+                .cast()
+        })
+    }
+    #[doc = "0x104 - ADC Command High Buffer Register"]
+    #[inline(always)]
+    pub const fn cmdh1(&self) -> &Cmdh {
+        self.cmdh(0)
+    }
+    #[doc = "0x10c - ADC Command High Buffer Register"]
+    #[inline(always)]
+    pub const fn cmdh2(&self) -> &Cmdh {
+        self.cmdh(1)
+    }
+    #[doc = "0x114 - ADC Command High Buffer Register"]
+    #[inline(always)]
+    pub const fn cmdh3(&self) -> &Cmdh {
+        self.cmdh(2)
+    }
+    #[doc = "0x11c - ADC Command High Buffer Register"]
+    #[inline(always)]
+    pub const fn cmdh4(&self) -> &Cmdh {
+        self.cmdh(3)
+    }
+    #[doc = "0x124 - ADC Command High Buffer Register"]
+    #[inline(always)]
+    pub const fn cmdh5(&self) -> &Cmdh {
+        self.cmdh(4)
+    }
+    #[doc = "0x12c - ADC Command High Buffer Register"]
+    #[inline(always)]
+    pub const fn cmdh6(&self) -> &Cmdh {
+        self.cmdh(5)
+    }
+    #[doc = "0x134 - ADC Command High Buffer Register"]
+    #[inline(always)]
+    pub const fn cmdh7(&self) -> &Cmdh {
+        self.cmdh(6)
+    }
+    #[doc = "0x13c - ADC Command High Buffer Register"]
+    #[inline(always)]
+    pub const fn cmdh8(&self) -> &Cmdh {
+        self.cmdh(7)
+    }
+    #[doc = "0x144 - ADC Command High Buffer Register"]
+    #[inline(always)]
+    pub const fn cmdh9(&self) -> &Cmdh {
+        self.cmdh(8)
+    }
+    #[doc = "0x14c - ADC Command High Buffer Register"]
+    #[inline(always)]
+    pub const fn cmdh10(&self) -> &Cmdh {
+        self.cmdh(9)
+    }
+    #[doc = "0x154 - ADC Command High Buffer Register"]
+    #[inline(always)]
+    pub const fn cmdh11(&self) -> &Cmdh {
+        self.cmdh(10)
+    }
+    #[doc = "0x15c - ADC Command High Buffer Register"]
+    #[inline(always)]
+    pub const fn cmdh12(&self) -> &Cmdh {
+        self.cmdh(11)
+    }
+    #[doc = "0x164 - ADC Command High Buffer Register"]
+    #[inline(always)]
+    pub const fn cmdh13(&self) -> &Cmdh {
+        self.cmdh(12)
+    }
+    #[doc = "0x16c - ADC Command High Buffer Register"]
+    #[inline(always)]
+    pub const fn cmdh14(&self) -> &Cmdh {
+        self.cmdh(13)
     }
     #[doc = "0x174 - ADC Command High Buffer Register"]
     #[inline(always)]
-    pub const fn cmdh15(&self) -> &Cmdh15 {
-        &self.cmdh15
+    pub const fn cmdh15(&self) -> &Cmdh {
+        self.cmdh(14)
     }
     #[doc = "0x200..0x210 - Compare Value Register"]
     #[inline(always)]
@@ -365,186 +388,18 @@ module"]
 pub type Tctrl = crate::Reg<tctrl::TctrlSpec>;
 #[doc = "Trigger Control Register"]
 pub mod tctrl;
-#[doc = "CMDL1 (rw) register accessor: ADC Command Low Buffer Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cmdl1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cmdl1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cmdl1`]
+#[doc = "CMDL (rw) register accessor: ADC Command Low Buffer Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cmdl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cmdl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cmdl`]
 module"]
-#[doc(alias = "CMDL1")]
-pub type Cmdl1 = crate::Reg<cmdl1::Cmdl1Spec>;
+#[doc(alias = "CMDL")]
+pub type Cmdl = crate::Reg<cmdl::CmdlSpec>;
 #[doc = "ADC Command Low Buffer Register"]
-pub mod cmdl1;
-#[doc = "CMDH1 (rw) register accessor: ADC Command High Buffer Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cmdh1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cmdh1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cmdh1`]
+pub mod cmdl;
+#[doc = "CMDH (rw) register accessor: ADC Command High Buffer Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cmdh::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cmdh::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cmdh`]
 module"]
-#[doc(alias = "CMDH1")]
-pub type Cmdh1 = crate::Reg<cmdh1::Cmdh1Spec>;
+#[doc(alias = "CMDH")]
+pub type Cmdh = crate::Reg<cmdh::CmdhSpec>;
 #[doc = "ADC Command High Buffer Register"]
-pub mod cmdh1;
-#[doc = "CMDL2 (rw) register accessor: ADC Command Low Buffer Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cmdl2::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cmdl2::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cmdl2`]
-module"]
-#[doc(alias = "CMDL2")]
-pub type Cmdl2 = crate::Reg<cmdl2::Cmdl2Spec>;
-#[doc = "ADC Command Low Buffer Register"]
-pub mod cmdl2;
-#[doc = "CMDH2 (rw) register accessor: ADC Command High Buffer Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cmdh2::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cmdh2::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cmdh2`]
-module"]
-#[doc(alias = "CMDH2")]
-pub type Cmdh2 = crate::Reg<cmdh2::Cmdh2Spec>;
-#[doc = "ADC Command High Buffer Register"]
-pub mod cmdh2;
-#[doc = "CMDL3 (rw) register accessor: ADC Command Low Buffer Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cmdl3::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cmdl3::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cmdl3`]
-module"]
-#[doc(alias = "CMDL3")]
-pub type Cmdl3 = crate::Reg<cmdl3::Cmdl3Spec>;
-#[doc = "ADC Command Low Buffer Register"]
-pub mod cmdl3;
-#[doc = "CMDH3 (rw) register accessor: ADC Command High Buffer Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cmdh3::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cmdh3::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cmdh3`]
-module"]
-#[doc(alias = "CMDH3")]
-pub type Cmdh3 = crate::Reg<cmdh3::Cmdh3Spec>;
-#[doc = "ADC Command High Buffer Register"]
-pub mod cmdh3;
-#[doc = "CMDL4 (rw) register accessor: ADC Command Low Buffer Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cmdl4::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cmdl4::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cmdl4`]
-module"]
-#[doc(alias = "CMDL4")]
-pub type Cmdl4 = crate::Reg<cmdl4::Cmdl4Spec>;
-#[doc = "ADC Command Low Buffer Register"]
-pub mod cmdl4;
-#[doc = "CMDH4 (rw) register accessor: ADC Command High Buffer Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cmdh4::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cmdh4::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cmdh4`]
-module"]
-#[doc(alias = "CMDH4")]
-pub type Cmdh4 = crate::Reg<cmdh4::Cmdh4Spec>;
-#[doc = "ADC Command High Buffer Register"]
-pub mod cmdh4;
-#[doc = "CMDL5 (rw) register accessor: ADC Command Low Buffer Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cmdl5::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cmdl5::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cmdl5`]
-module"]
-#[doc(alias = "CMDL5")]
-pub type Cmdl5 = crate::Reg<cmdl5::Cmdl5Spec>;
-#[doc = "ADC Command Low Buffer Register"]
-pub mod cmdl5;
-#[doc = "CMDH5 (rw) register accessor: ADC Command High Buffer Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cmdh5::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cmdh5::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cmdh5`]
-module"]
-#[doc(alias = "CMDH5")]
-pub type Cmdh5 = crate::Reg<cmdh5::Cmdh5Spec>;
-#[doc = "ADC Command High Buffer Register"]
-pub mod cmdh5;
-#[doc = "CMDL6 (rw) register accessor: ADC Command Low Buffer Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cmdl6::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cmdl6::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cmdl6`]
-module"]
-#[doc(alias = "CMDL6")]
-pub type Cmdl6 = crate::Reg<cmdl6::Cmdl6Spec>;
-#[doc = "ADC Command Low Buffer Register"]
-pub mod cmdl6;
-#[doc = "CMDH6 (rw) register accessor: ADC Command High Buffer Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cmdh6::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cmdh6::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cmdh6`]
-module"]
-#[doc(alias = "CMDH6")]
-pub type Cmdh6 = crate::Reg<cmdh6::Cmdh6Spec>;
-#[doc = "ADC Command High Buffer Register"]
-pub mod cmdh6;
-#[doc = "CMDL7 (rw) register accessor: ADC Command Low Buffer Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cmdl7::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cmdl7::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cmdl7`]
-module"]
-#[doc(alias = "CMDL7")]
-pub type Cmdl7 = crate::Reg<cmdl7::Cmdl7Spec>;
-#[doc = "ADC Command Low Buffer Register"]
-pub mod cmdl7;
-#[doc = "CMDH7 (rw) register accessor: ADC Command High Buffer Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cmdh7::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cmdh7::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cmdh7`]
-module"]
-#[doc(alias = "CMDH7")]
-pub type Cmdh7 = crate::Reg<cmdh7::Cmdh7Spec>;
-#[doc = "ADC Command High Buffer Register"]
-pub mod cmdh7;
-#[doc = "CMDL8 (rw) register accessor: ADC Command Low Buffer Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cmdl8::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cmdl8::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cmdl8`]
-module"]
-#[doc(alias = "CMDL8")]
-pub type Cmdl8 = crate::Reg<cmdl8::Cmdl8Spec>;
-#[doc = "ADC Command Low Buffer Register"]
-pub mod cmdl8;
-#[doc = "CMDH8 (rw) register accessor: ADC Command High Buffer Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cmdh8::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cmdh8::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cmdh8`]
-module"]
-#[doc(alias = "CMDH8")]
-pub type Cmdh8 = crate::Reg<cmdh8::Cmdh8Spec>;
-#[doc = "ADC Command High Buffer Register"]
-pub mod cmdh8;
-#[doc = "CMDL9 (rw) register accessor: ADC Command Low Buffer Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cmdl9::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cmdl9::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cmdl9`]
-module"]
-#[doc(alias = "CMDL9")]
-pub type Cmdl9 = crate::Reg<cmdl9::Cmdl9Spec>;
-#[doc = "ADC Command Low Buffer Register"]
-pub mod cmdl9;
-#[doc = "CMDH9 (rw) register accessor: ADC Command High Buffer Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cmdh9::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cmdh9::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cmdh9`]
-module"]
-#[doc(alias = "CMDH9")]
-pub type Cmdh9 = crate::Reg<cmdh9::Cmdh9Spec>;
-#[doc = "ADC Command High Buffer Register"]
-pub mod cmdh9;
-#[doc = "CMDL10 (rw) register accessor: ADC Command Low Buffer Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cmdl10::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cmdl10::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cmdl10`]
-module"]
-#[doc(alias = "CMDL10")]
-pub type Cmdl10 = crate::Reg<cmdl10::Cmdl10Spec>;
-#[doc = "ADC Command Low Buffer Register"]
-pub mod cmdl10;
-#[doc = "CMDH10 (rw) register accessor: ADC Command High Buffer Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cmdh10::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cmdh10::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cmdh10`]
-module"]
-#[doc(alias = "CMDH10")]
-pub type Cmdh10 = crate::Reg<cmdh10::Cmdh10Spec>;
-#[doc = "ADC Command High Buffer Register"]
-pub mod cmdh10;
-#[doc = "CMDL11 (rw) register accessor: ADC Command Low Buffer Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cmdl11::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cmdl11::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cmdl11`]
-module"]
-#[doc(alias = "CMDL11")]
-pub type Cmdl11 = crate::Reg<cmdl11::Cmdl11Spec>;
-#[doc = "ADC Command Low Buffer Register"]
-pub mod cmdl11;
-#[doc = "CMDH11 (rw) register accessor: ADC Command High Buffer Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cmdh11::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cmdh11::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cmdh11`]
-module"]
-#[doc(alias = "CMDH11")]
-pub type Cmdh11 = crate::Reg<cmdh11::Cmdh11Spec>;
-#[doc = "ADC Command High Buffer Register"]
-pub mod cmdh11;
-#[doc = "CMDL12 (rw) register accessor: ADC Command Low Buffer Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cmdl12::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cmdl12::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cmdl12`]
-module"]
-#[doc(alias = "CMDL12")]
-pub type Cmdl12 = crate::Reg<cmdl12::Cmdl12Spec>;
-#[doc = "ADC Command Low Buffer Register"]
-pub mod cmdl12;
-#[doc = "CMDH12 (rw) register accessor: ADC Command High Buffer Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cmdh12::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cmdh12::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cmdh12`]
-module"]
-#[doc(alias = "CMDH12")]
-pub type Cmdh12 = crate::Reg<cmdh12::Cmdh12Spec>;
-#[doc = "ADC Command High Buffer Register"]
-pub mod cmdh12;
-#[doc = "CMDL13 (rw) register accessor: ADC Command Low Buffer Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cmdl13::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cmdl13::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cmdl13`]
-module"]
-#[doc(alias = "CMDL13")]
-pub type Cmdl13 = crate::Reg<cmdl13::Cmdl13Spec>;
-#[doc = "ADC Command Low Buffer Register"]
-pub mod cmdl13;
-#[doc = "CMDH13 (rw) register accessor: ADC Command High Buffer Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cmdh13::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cmdh13::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cmdh13`]
-module"]
-#[doc(alias = "CMDH13")]
-pub type Cmdh13 = crate::Reg<cmdh13::Cmdh13Spec>;
-#[doc = "ADC Command High Buffer Register"]
-pub mod cmdh13;
-#[doc = "CMDL14 (rw) register accessor: ADC Command Low Buffer Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cmdl14::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cmdl14::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cmdl14`]
-module"]
-#[doc(alias = "CMDL14")]
-pub type Cmdl14 = crate::Reg<cmdl14::Cmdl14Spec>;
-#[doc = "ADC Command Low Buffer Register"]
-pub mod cmdl14;
-#[doc = "CMDH14 (rw) register accessor: ADC Command High Buffer Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cmdh14::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cmdh14::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cmdh14`]
-module"]
-#[doc(alias = "CMDH14")]
-pub type Cmdh14 = crate::Reg<cmdh14::Cmdh14Spec>;
-#[doc = "ADC Command High Buffer Register"]
-pub mod cmdh14;
-#[doc = "CMDL15 (rw) register accessor: ADC Command Low Buffer Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cmdl15::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cmdl15::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cmdl15`]
-module"]
-#[doc(alias = "CMDL15")]
-pub type Cmdl15 = crate::Reg<cmdl15::Cmdl15Spec>;
-#[doc = "ADC Command Low Buffer Register"]
-pub mod cmdl15;
-#[doc = "CMDH15 (rw) register accessor: ADC Command High Buffer Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cmdh15::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cmdh15::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cmdh15`]
-module"]
-#[doc(alias = "CMDH15")]
-pub type Cmdh15 = crate::Reg<cmdh15::Cmdh15Spec>;
-#[doc = "ADC Command High Buffer Register"]
-pub mod cmdh15;
+pub mod cmdh;
 #[doc = "CV (rw) register accessor: Compare Value Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cv::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cv::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cv`]
 module"]
 #[doc(alias = "CV")]

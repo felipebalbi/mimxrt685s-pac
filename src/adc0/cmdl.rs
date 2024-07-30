@@ -1,7 +1,7 @@
-#[doc = "Register `CMDL5` reader"]
-pub type R = crate::R<Cmdl5Spec>;
-#[doc = "Register `CMDL5` writer"]
-pub type W = crate::W<Cmdl5Spec>;
+#[doc = "Register `CMDL%s` reader"]
+pub type R = crate::R<CmdlSpec>;
+#[doc = "Register `CMDL%s` writer"]
+pub type W = crate::W<CmdlSpec>;
 #[doc = "Input channel select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -377,42 +377,42 @@ impl W {
     #[doc = "Bits 0:4 - Input channel select"]
     #[inline(always)]
     #[must_use]
-    pub fn adch(&mut self) -> AdchW<Cmdl5Spec> {
+    pub fn adch(&mut self) -> AdchW<CmdlSpec> {
         AdchW::new(self, 0)
     }
     #[doc = "Bit 5 - A-side vs. B-side Select"]
     #[inline(always)]
     #[must_use]
-    pub fn absel(&mut self) -> AbselW<Cmdl5Spec> {
+    pub fn absel(&mut self) -> AbselW<CmdlSpec> {
         AbselW::new(self, 5)
     }
     #[doc = "Bit 6 - Differential Mode Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn diff(&mut self) -> DiffW<Cmdl5Spec> {
+    pub fn diff(&mut self) -> DiffW<CmdlSpec> {
         DiffW::new(self, 6)
     }
     #[doc = "Bit 13 - Channel Scale"]
     #[inline(always)]
     #[must_use]
-    pub fn cscale(&mut self) -> CscaleW<Cmdl5Spec> {
+    pub fn cscale(&mut self) -> CscaleW<CmdlSpec> {
         CscaleW::new(self, 13)
     }
 }
-#[doc = "ADC Command Low Buffer Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cmdl5::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cmdl5::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct Cmdl5Spec;
-impl crate::RegisterSpec for Cmdl5Spec {
+#[doc = "ADC Command Low Buffer Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cmdl::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cmdl::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct CmdlSpec;
+impl crate::RegisterSpec for CmdlSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [`cmdl5::R`](R) reader structure"]
-impl crate::Readable for Cmdl5Spec {}
-#[doc = "`write(|w| ..)` method takes [`cmdl5::W`](W) writer structure"]
-impl crate::Writable for Cmdl5Spec {
+#[doc = "`read()` method returns [`cmdl::R`](R) reader structure"]
+impl crate::Readable for CmdlSpec {}
+#[doc = "`write(|w| ..)` method takes [`cmdl::W`](W) writer structure"]
+impl crate::Writable for CmdlSpec {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
-#[doc = "`reset()` method sets CMDL5 to value 0x2000"]
-impl crate::Resettable for Cmdl5Spec {
+#[doc = "`reset()` method sets CMDL%s to value 0x2000"]
+impl crate::Resettable for CmdlSpec {
     const RESET_VALUE: u32 = 0x2000;
 }
