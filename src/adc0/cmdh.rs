@@ -1,7 +1,80 @@
-#[doc = "Register `CMDH11` reader"]
-pub type R = crate::R<Cmdh11Spec>;
-#[doc = "Register `CMDH11` writer"]
-pub type W = crate::W<Cmdh11Spec>;
+#[doc = "Register `CMDH%s` reader"]
+pub type R = crate::R<CmdhSpec>;
+#[doc = "Register `CMDH%s` writer"]
+pub type W = crate::W<CmdhSpec>;
+#[doc = "Compare Function Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+#[repr(u8)]
+pub enum Cmpen {
+    #[doc = "0: Compare disabled."]
+    Cmpen0 = 0,
+    #[doc = "2: Compare enabled. Store on true."]
+    Cmpen2 = 2,
+    #[doc = "3: Compare enabled. Repeat channel acquisition (sample/convert/compare) until true."]
+    Cmpen3 = 3,
+}
+impl From<Cmpen> for u8 {
+    #[inline(always)]
+    fn from(variant: Cmpen) -> Self {
+        variant as _
+    }
+}
+impl crate::FieldSpec for Cmpen {
+    type Ux = u8;
+}
+impl crate::IsEnum for Cmpen {}
+#[doc = "Field `CMPEN` reader - Compare Function Enable"]
+pub type CmpenR = crate::FieldReader<Cmpen>;
+impl CmpenR {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub const fn variant(&self) -> Option<Cmpen> {
+        match self.bits {
+            0 => Some(Cmpen::Cmpen0),
+            2 => Some(Cmpen::Cmpen2),
+            3 => Some(Cmpen::Cmpen3),
+            _ => None,
+        }
+    }
+    #[doc = "Compare disabled."]
+    #[inline(always)]
+    pub fn is_cmpen_0(&self) -> bool {
+        *self == Cmpen::Cmpen0
+    }
+    #[doc = "Compare enabled. Store on true."]
+    #[inline(always)]
+    pub fn is_cmpen_2(&self) -> bool {
+        *self == Cmpen::Cmpen2
+    }
+    #[doc = "Compare enabled. Repeat channel acquisition (sample/convert/compare) until true."]
+    #[inline(always)]
+    pub fn is_cmpen_3(&self) -> bool {
+        *self == Cmpen::Cmpen3
+    }
+}
+#[doc = "Field `CMPEN` writer - Compare Function Enable"]
+pub type CmpenW<'a, REG> = crate::FieldWriter<'a, REG, 2, Cmpen>;
+impl<'a, REG> CmpenW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
+    #[doc = "Compare disabled."]
+    #[inline(always)]
+    pub fn cmpen_0(self) -> &'a mut crate::W<REG> {
+        self.variant(Cmpen::Cmpen0)
+    }
+    #[doc = "Compare enabled. Store on true."]
+    #[inline(always)]
+    pub fn cmpen_2(self) -> &'a mut crate::W<REG> {
+        self.variant(Cmpen::Cmpen2)
+    }
+    #[doc = "Compare enabled. Repeat channel acquisition (sample/convert/compare) until true."]
+    #[inline(always)]
+    pub fn cmpen_3(self) -> &'a mut crate::W<REG> {
+        self.variant(Cmpen::Cmpen3)
+    }
+}
 #[doc = "Loop with Increment\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Lwi {
@@ -686,6 +759,11 @@ where
     }
 }
 impl R {
+    #[doc = "Bits 0:1 - Compare Function Enable"]
+    #[inline(always)]
+    pub fn cmpen(&self) -> CmpenR {
+        CmpenR::new((self.bits & 3) as u8)
+    }
     #[doc = "Bit 7 - Loop with Increment"]
     #[inline(always)]
     pub fn lwi(&self) -> LwiR {
@@ -713,51 +791,57 @@ impl R {
     }
 }
 impl W {
+    #[doc = "Bits 0:1 - Compare Function Enable"]
+    #[inline(always)]
+    #[must_use]
+    pub fn cmpen(&mut self) -> CmpenW<CmdhSpec> {
+        CmpenW::new(self, 0)
+    }
     #[doc = "Bit 7 - Loop with Increment"]
     #[inline(always)]
     #[must_use]
-    pub fn lwi(&mut self) -> LwiW<Cmdh11Spec> {
+    pub fn lwi(&mut self) -> LwiW<CmdhSpec> {
         LwiW::new(self, 7)
     }
     #[doc = "Bits 8:10 - Sample Time Select"]
     #[inline(always)]
     #[must_use]
-    pub fn sts(&mut self) -> StsW<Cmdh11Spec> {
+    pub fn sts(&mut self) -> StsW<CmdhSpec> {
         StsW::new(self, 8)
     }
     #[doc = "Bits 12:14 - Hardware Average Select"]
     #[inline(always)]
     #[must_use]
-    pub fn avgs(&mut self) -> AvgsW<Cmdh11Spec> {
+    pub fn avgs(&mut self) -> AvgsW<CmdhSpec> {
         AvgsW::new(self, 12)
     }
     #[doc = "Bits 16:19 - Loop Count Select"]
     #[inline(always)]
     #[must_use]
-    pub fn loop_(&mut self) -> LoopW<Cmdh11Spec> {
+    pub fn loop_(&mut self) -> LoopW<CmdhSpec> {
         LoopW::new(self, 16)
     }
     #[doc = "Bits 24:27 - Next Command Select"]
     #[inline(always)]
     #[must_use]
-    pub fn next(&mut self) -> NextW<Cmdh11Spec> {
+    pub fn next(&mut self) -> NextW<CmdhSpec> {
         NextW::new(self, 24)
     }
 }
-#[doc = "ADC Command High Buffer Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cmdh11::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cmdh11::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct Cmdh11Spec;
-impl crate::RegisterSpec for Cmdh11Spec {
+#[doc = "ADC Command High Buffer Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cmdh::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cmdh::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct CmdhSpec;
+impl crate::RegisterSpec for CmdhSpec {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [`cmdh11::R`](R) reader structure"]
-impl crate::Readable for Cmdh11Spec {}
-#[doc = "`write(|w| ..)` method takes [`cmdh11::W`](W) writer structure"]
-impl crate::Writable for Cmdh11Spec {
+#[doc = "`read()` method returns [`cmdh::R`](R) reader structure"]
+impl crate::Readable for CmdhSpec {}
+#[doc = "`write(|w| ..)` method takes [`cmdh::W`](W) writer structure"]
+impl crate::Writable for CmdhSpec {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
-#[doc = "`reset()` method sets CMDH11 to value 0"]
-impl crate::Resettable for Cmdh11Spec {
+#[doc = "`reset()` method sets CMDH%s to value 0"]
+impl crate::Resettable for CmdhSpec {
     const RESET_VALUE: u32 = 0;
 }
