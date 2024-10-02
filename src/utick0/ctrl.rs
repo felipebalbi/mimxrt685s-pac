@@ -22,6 +22,15 @@ impl R {
         RepeatR::new(((self.bits >> 31) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CTRL")
+            .field("delayval", &self.delayval())
+            .field("repeat", &self.repeat())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:30 - Tick interval value. The delay will be equal to DELAYVAL + 1 periods of the timer clock. The minimum usable value is 1, for a delay of 2 timer clocks. A value of 0 stops the timer."]
     #[inline(always)]

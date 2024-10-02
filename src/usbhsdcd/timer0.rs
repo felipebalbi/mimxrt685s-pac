@@ -20,6 +20,15 @@ impl R {
         TseqInitR::new(((self.bits >> 16) & 0x03ff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("TIMER0")
+            .field("tunitcon", &self.tunitcon())
+            .field("tseq_init", &self.tseq_init())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 16:25 - Sequence Initiation Time"]
     #[inline(always)]

@@ -3,6 +3,7 @@ pub type R = crate::R<Pio6_20Spec>;
 #[doc = "Register `PIO6_20` writer"]
 pub type W = crate::W<Pio6_20Spec>;
 #[doc = "Function Selector. . .(FSELs Sources can be found in the next several pages.)\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Fsel {
@@ -245,6 +246,7 @@ where
     }
 }
 #[doc = "Pullup / Pulldown Enable. . .\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Pupdena {
     #[doc = "0: Disable."]
@@ -298,6 +300,7 @@ where
     }
 }
 #[doc = "Pullup or Pulldown Selector. . .\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Pupdsel {
     #[doc = "0: Pull-down."]
@@ -351,6 +354,7 @@ where
     }
 }
 #[doc = "Input Buffer Enable. .\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ibena {
     #[doc = "0: Disable."]
@@ -404,6 +408,7 @@ where
     }
 }
 #[doc = "Slew Rate Control. . .\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Slewrate {
     #[doc = "0: Slew Rate is Normal."]
@@ -457,6 +462,7 @@ where
     }
 }
 #[doc = "Drive Selector. . .\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Fulldrive {
     #[doc = "0: Normal Drive."]
@@ -510,6 +516,7 @@ where
     }
 }
 #[doc = "Analog Mux Enable. . .\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Amena {
     #[doc = "0: Disable."]
@@ -563,6 +570,7 @@ where
     }
 }
 #[doc = "Pseudo Output Drain Enable. . .\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Odena {
     #[doc = "0: Disable."]
@@ -616,6 +624,7 @@ where
     }
 }
 #[doc = "Input Invert Enable. . .\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Iiena {
     #[doc = "0: Disable."]
@@ -713,6 +722,22 @@ impl R {
     #[inline(always)]
     pub fn iiena(&self) -> IienaR {
         IienaR::new(((self.bits >> 11) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PIO6_20")
+            .field("fsel", &self.fsel())
+            .field("pupdena", &self.pupdena())
+            .field("pupdsel", &self.pupdsel())
+            .field("ibena", &self.ibena())
+            .field("slewrate", &self.slewrate())
+            .field("fulldrive", &self.fulldrive())
+            .field("amena", &self.amena())
+            .field("odena", &self.odena())
+            .field("iiena", &self.iiena())
+            .finish()
     }
 }
 impl W {

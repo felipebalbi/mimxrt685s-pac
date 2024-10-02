@@ -7,6 +7,7 @@ pub type NmisrcselR = crate::FieldReader;
 #[doc = "Field `NMISRCSEL` writer - Selects one of the M33 interrupt sources as the NMI source. See M33 Interrupt Slot Table for Interrupt Slot Numers."]
 pub type NmisrcselW<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "NMI interrupt enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Nmien {
     #[doc = "0: Disable NMI Interrupt"]
@@ -69,6 +70,15 @@ impl R {
     #[inline(always)]
     pub fn nmien(&self) -> NmienR {
         NmienR::new(((self.bits >> 31) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("M33NMISRCSEL")
+            .field("nmisrcsel", &self.nmisrcsel())
+            .field("nmien", &self.nmien())
+            .finish()
     }
 }
 impl W {

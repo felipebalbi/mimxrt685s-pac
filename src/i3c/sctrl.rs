@@ -3,6 +3,7 @@ pub type R = crate::R<SctrlSpec>;
 #[doc = "Register `SCTRL` writer"]
 pub type W = crate::W<SctrlSpec>;
 #[doc = "EVENT\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Event {
@@ -129,6 +130,18 @@ impl R {
     #[inline(always)]
     pub fn vendinfo(&self) -> VendinfoR {
         VendinfoR::new(((self.bits >> 24) & 0xff) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SCTRL")
+            .field("event", &self.event())
+            .field("ibidata", &self.ibidata())
+            .field("pendint", &self.pendint())
+            .field("actstate", &self.actstate())
+            .field("vendinfo", &self.vendinfo())
+            .finish()
     }
 }
 impl W {

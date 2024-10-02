@@ -30,6 +30,17 @@ impl R {
         VernumR::new(((self.bits >> 28) & 0x0f) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("JTAG_ID")
+            .field("fixbit", &self.fixbit())
+            .field("manu", &self.manu())
+            .field("partnum", &self.partnum())
+            .field("vernum", &self.vernum())
+            .finish()
+    }
+}
 #[doc = "jtag ID\n\nYou can [`read`](crate::Reg::read) this register and get [`jtag_id::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct JtagIdSpec;
 impl crate::RegisterSpec for JtagIdSpec {

@@ -22,6 +22,15 @@ impl R {
         TvdpsrcConR::new(((self.bits >> 16) & 0x03ff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("TIMER2_BC11")
+            .field("check_dm", &self.check_dm())
+            .field("tvdpsrc_con", &self.tvdpsrc_con())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:3 - Time Before Check of D- Line"]
     #[inline(always)]

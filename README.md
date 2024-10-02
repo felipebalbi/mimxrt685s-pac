@@ -9,7 +9,7 @@ peripherals. The API is generated using
 On a unix-style OS, all you need are these commands:
 
 ```console
-$ svd2rust -i svd/MIMXRT685S_cm33.svd --reexport-interrupt --ignore-groups
+$ svd2rust.exe -i svd/MIMXRT685S_cm33.svd --reexport-interrupt --ignore-groups --impl-defmt defmt --impl-debug --impl-debug-feature debug
 $ rm -r src/*
 $ form -i lib.rs -o src
 $ rm lib.rs
@@ -21,7 +21,7 @@ On windows you need to replace the `/` with `\` and additionally run
 `dos2unix` to convert the line endings, like so:
 
 ```console
-$ svd2rust -i svd\MIMXRT685S_cm33.svd --reexport-interrupt --ignore-groups
+$ svd2rust.exe -i svd\MIMXRT685S_cm33.svd --reexport-interrupt --ignore-groups --impl-defmt defmt --impl-debug --impl-debug-feature debug
 $ rm -r src\*
 $ form -i lib.rs -o src
 $ rm lib.rs

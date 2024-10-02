@@ -3,6 +3,7 @@ pub type R = crate::R<IntstatSpec>;
 #[doc = "Register `INTSTAT` writer"]
 pub type W = crate::W<IntstatSpec>;
 #[doc = "If set, interrupt is caused by accelerator being done.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Done {
     #[doc = "0: Not caused by accelerator being done"]
@@ -43,6 +44,14 @@ impl R {
     #[inline(always)]
     pub fn done(&self) -> DoneR {
         DoneR::new((self.bits & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("INTSTAT")
+            .field("done", &self.done())
+            .finish()
     }
 }
 impl W {}

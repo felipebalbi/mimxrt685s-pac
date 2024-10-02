@@ -13,6 +13,14 @@ impl R {
         SrtaddrR::new((self.bits >> 10) & 0x003f_ffff)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CTX_RGD_W0")
+            .field("srtaddr", &self.srtaddr())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 10:31 - Start Address"]
     #[inline(always)]

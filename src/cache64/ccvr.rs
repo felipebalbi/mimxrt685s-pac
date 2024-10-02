@@ -13,6 +13,12 @@ impl R {
         DataR::new(self.bits)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CCVR").field("data", &self.data()).finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:31 - Cache read/write Data"]
     #[inline(always)]

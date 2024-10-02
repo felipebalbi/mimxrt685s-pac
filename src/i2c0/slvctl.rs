@@ -3,6 +3,7 @@ pub type R = crate::R<SlvctlSpec>;
 #[doc = "Register `SLVCTL` writer"]
 pub type W = crate::W<SlvctlSpec>;
 #[doc = "Slave Continue.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Slvcontinue {
     #[doc = "0: No effect."]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Slave NACK.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Slvnack {
     #[doc = "0: No effect."]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "Slave DMA enable.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Slvdma {
     #[doc = "0: Disabled. No DMA requests are issued for Slave mode operation."]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "Automatic Acknowledge.When this bit is set, it will cause an I2C header which matches SLVADR0 and the direction set by AUTOMATCHREAD to be ACKed immediately; this is used with DMA to allow processing of the data without intervention. If this bit is clear and a header matches SLVADR0, the behavior is controlled by AUTONACK in the SLVADR0 register: allowing NACK or interrupt.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Autoack {
     #[doc = "0: Normal, non-automatic operation. If AUTONACK = 0, an SlvPending interrupt is generated when a matching address is received. If AUTONACK = 1, received addresses are NACKed (ignored)."]
@@ -215,6 +219,7 @@ where
     }
 }
 #[doc = "When AUTOACK is set, this bit controls whether it matches a read or write request on the next header with an address matching SLVADR0. Since DMA needs to be configured to match the transfer direction, the direction needs to be specified. This bit allows a direction to be chosen for the next operation.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Automatchread {
     #[doc = "0: The expected next operation in Automatic Mode is an I2C write."]
@@ -292,6 +297,18 @@ impl R {
     #[inline(always)]
     pub fn automatchread(&self) -> AutomatchreadR {
         AutomatchreadR::new(((self.bits >> 9) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SLVCTL")
+            .field("slvcontinue", &self.slvcontinue())
+            .field("slvnack", &self.slvnack())
+            .field("slvdma", &self.slvdma())
+            .field("autoack", &self.autoack())
+            .field("automatchread", &self.automatchread())
+            .finish()
     }
 }
 impl W {

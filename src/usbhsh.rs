@@ -1,4 +1,5 @@
 #[repr(C)]
+#[cfg_attr(feature = "debug", derive(Debug))]
 #[doc = "Register block"]
 pub struct RegisterBlock {
     caplength_chipid: CaplengthChipid,

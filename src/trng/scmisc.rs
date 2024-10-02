@@ -22,6 +22,15 @@ impl R {
         RtyCtR::new(((self.bits >> 16) & 0x0f) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SCMISC")
+            .field("lrun_max", &self.lrun_max())
+            .field("rty_ct", &self.rty_ct())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:7 - LONG RUN MAX LIMIT"]
     #[inline(always)]

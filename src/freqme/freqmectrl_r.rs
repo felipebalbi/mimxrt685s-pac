@@ -3,6 +3,7 @@ pub type R = crate::R<FreqmectrlRSpec>;
 #[doc = "Field `RESULT` reader - Result"]
 pub type ResultR = crate::FieldReader<u32>;
 #[doc = "Measure in Progress\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MeasureInProgress {
     #[doc = "0: Process complete. Measurement cycle is complete. The results are ready in the RESULT field."]
@@ -48,6 +49,15 @@ impl R {
     #[inline(always)]
     pub fn measure_in_progress(&self) -> MeasureInProgressR {
         MeasureInProgressR::new(((self.bits >> 31) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("FREQMECTRL_R")
+            .field("result", &self.result())
+            .field("measure_in_progress", &self.measure_in_progress())
+            .finish()
     }
 }
 #[doc = "Frequency Measurement (in Read mode)\n\nYou can [`read`](crate::Reg::read) this register and get [`freqmectrl_r::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

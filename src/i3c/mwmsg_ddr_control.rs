@@ -4,6 +4,12 @@ pub type W = crate::W<MwmsgDdrControlSpec>;
 pub type LenW<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
 #[doc = "Field `END` writer - End of message"]
 pub type EndW<'a, REG> = crate::BitWriter<'a, REG>;
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for crate::generic::Reg<MwmsgDdrControlSpec> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
+    }
+}
 impl W {
     #[doc = "Bits 0:9 - Length of message"]
     #[inline(always)]

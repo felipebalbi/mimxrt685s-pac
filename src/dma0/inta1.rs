@@ -3,6 +3,7 @@ pub type R = crate::R<Inta1Spec>;
 #[doc = "Register `INTA1` writer"]
 pub type W = crate::W<Inta1Spec>;
 #[doc = "Interrupt A status for DMA channel 32.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Inta32 {
     #[doc = "0: The DMAchannel 32 interrupt A is not active."]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Additional Interrupt A status bits for remaining DMA channels in the range 63 to 33. Any bits above the actually implemented channels are reserved.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u32)]
 pub enum Inta63_33 {
@@ -125,6 +127,15 @@ impl R {
     #[inline(always)]
     pub fn inta63_33(&self) -> Inta63_33R {
         Inta63_33R::new((self.bits >> 1) & 0x7fff_ffff)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("INTA1")
+            .field("inta32", &self.inta32())
+            .field("inta63_33", &self.inta63_33())
+            .finish()
     }
 }
 impl W {

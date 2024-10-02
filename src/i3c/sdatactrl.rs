@@ -9,6 +9,7 @@ pub type FlushfbW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `UNLOCK` writer - Unlock"]
 pub type UnlockW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Trigger level for TX FIFO emptiness\n\nValue on reset: 3"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Txtrig {
@@ -95,6 +96,7 @@ where
     }
 }
 #[doc = "Trigger level for RX FIFO fullness\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Rxtrig {
@@ -185,6 +187,7 @@ pub type TxcountR = crate::FieldReader;
 #[doc = "Field `RXCOUNT` reader - Count of bytes in RX"]
 pub type RxcountR = crate::FieldReader;
 #[doc = "TX is full\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Txfull {
     #[doc = "0: TX is not full"]
@@ -221,6 +224,7 @@ impl TxfullR {
     }
 }
 #[doc = "RX is empty\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rxempty {
     #[doc = "0: RX is not empty"]
@@ -286,6 +290,19 @@ impl R {
     #[inline(always)]
     pub fn rxempty(&self) -> RxemptyR {
         RxemptyR::new(((self.bits >> 31) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SDATACTRL")
+            .field("txtrig", &self.txtrig())
+            .field("rxtrig", &self.rxtrig())
+            .field("txcount", &self.txcount())
+            .field("rxcount", &self.rxcount())
+            .field("txfull", &self.txfull())
+            .field("rxempty", &self.rxempty())
+            .finish()
     }
 }
 impl W {

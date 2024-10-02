@@ -11,6 +11,14 @@ impl R {
         RtcSubsecR::new((self.bits & 0x7fff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SUBSEC")
+            .field("rtc_subsec", &self.rtc_subsec())
+            .finish()
+    }
+}
 impl W {}
 #[doc = "RTC Sub-second Counter register\n\nYou can [`read`](crate::Reg::read) this register and get [`subsec::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`subsec::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SubsecSpec;

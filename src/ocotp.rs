@@ -1,4 +1,5 @@
 #[repr(C)]
+#[cfg_attr(feature = "debug", derive(Debug))]
 #[doc = "Register block"]
 pub struct RegisterBlock {
     otp_shadow: [OtpShadow; 496],

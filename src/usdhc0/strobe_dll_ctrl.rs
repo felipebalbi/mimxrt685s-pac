@@ -94,6 +94,47 @@ impl R {
         StrobeDllCtrlRefUpdateIntR::new(((self.bits >> 28) & 0x0f) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("STROBE_DLL_CTRL")
+            .field("strobe_dll_ctrl_enable", &self.strobe_dll_ctrl_enable())
+            .field("strobe_dll_ctrl_reset", &self.strobe_dll_ctrl_reset())
+            .field(
+                "strobe_dll_ctrl_slv_force_upd",
+                &self.strobe_dll_ctrl_slv_force_upd(),
+            )
+            .field(
+                "strobe_dll_ctrl_slv_dly_target",
+                &self.strobe_dll_ctrl_slv_dly_target(),
+            )
+            .field(
+                "strobe_dll_ctrl_gate_update_0",
+                &self.strobe_dll_ctrl_gate_update_0(),
+            )
+            .field(
+                "strobe_dll_ctrl_gate_update_1",
+                &self.strobe_dll_ctrl_gate_update_1(),
+            )
+            .field(
+                "strobe_dll_ctrl_slv_override",
+                &self.strobe_dll_ctrl_slv_override(),
+            )
+            .field(
+                "strobe_dll_ctrl_slv_override_val",
+                &self.strobe_dll_ctrl_slv_override_val(),
+            )
+            .field(
+                "strobe_dll_ctrl_slv_update_int",
+                &self.strobe_dll_ctrl_slv_update_int(),
+            )
+            .field(
+                "strobe_dll_ctrl_ref_update_int",
+                &self.strobe_dll_ctrl_ref_update_int(),
+            )
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Strobe DLL Control Enable"]
     #[inline(always)]

@@ -3,6 +3,7 @@ pub type R = crate::R<CtrlSpec>;
 #[doc = "Register `CTRL` writer"]
 pub type W = crate::W<CtrlSpec>;
 #[doc = "Enable. Enables the SAU. This bit is RAZ/WI when the Security Extension is implemented without an SAU region.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Enable {
     #[doc = "0: The SAU is disabled."]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "All Non-secure.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Allns {
     #[doc = "0: Memory is marked as Secure and is not Non-secure callable."]
@@ -118,6 +120,15 @@ impl R {
     #[inline(always)]
     pub fn allns(&self) -> AllnsR {
         AllnsR::new(((self.bits >> 1) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CTRL")
+            .field("enable", &self.enable())
+            .field("allns", &self.allns())
+            .finish()
     }
 }
 impl W {

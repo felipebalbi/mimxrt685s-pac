@@ -49,6 +49,18 @@ impl R {
         PeriphInputMuxRuleR::new(((self.bits >> 24) & 3) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("APB_GRP1_MEM_RULE0")
+            .field("rstctl1_rule", &self.rstctl1_rule())
+            .field("clkctl1_rule", &self.clkctl1_rule())
+            .field("sysctl1_rule", &self.sysctl1_rule())
+            .field("gpio_intr_ctrl_rule", &self.gpio_intr_ctrl_rule())
+            .field("periph_input_mux_rule", &self.periph_input_mux_rule())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:1 - 0x4002 0000--0x4002 0FFF"]
     #[inline(always)]

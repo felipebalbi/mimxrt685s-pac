@@ -3,6 +3,7 @@ pub type R = crate::R<Dmac0OtrigSelSpec>;
 #[doc = "Register `DMAC0_OTRIG_SEL%s` writer"]
 pub type W = crate::W<Dmac0OtrigSelSpec>;
 #[doc = "DMAC0 Output Triggers Select for A, B, C, D IE.,DMAC0_OTRIG_A, DMAC0_OTRIG_B, DMAC0_OTRIG_C, DMAC0_OTRIG_D DMA0 Output Triggers(n) Selection. 32:1 Selection for each. . .\n\nValue on reset: 63"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Dmac0OtrigSel {
@@ -470,6 +471,14 @@ impl R {
     #[inline(always)]
     pub fn dmac0_otrig_sel(&self) -> Dmac0OtrigSelR {
         Dmac0OtrigSelR::new((self.bits & 0x3f) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DMAC0_OTRIG_SEL")
+            .field("dmac0_otrig_sel", &self.dmac0_otrig_sel())
+            .finish()
     }
 }
 impl W {

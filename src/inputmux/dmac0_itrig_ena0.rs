@@ -3,6 +3,7 @@ pub type R = crate::R<Dmac0ItrigEna0Spec>;
 #[doc = "Register `DMAC0_ITRIG_ENA0` writer"]
 pub type W = crate::W<Dmac0ItrigEna0Spec>;
 #[doc = "DMAC0 input trigger inmux 0 enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux0 {
     #[doc = "0: disable"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 1 enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux1 {
     #[doc = "0: disable"]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 2 enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux2 {
     #[doc = "0: disable"]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 3 enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux3 {
     #[doc = "0: disable"]
@@ -215,6 +219,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 4 enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux4 {
     #[doc = "0: disable"]
@@ -268,6 +273,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 5 enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux5 {
     #[doc = "0: disable"]
@@ -321,6 +327,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 6 enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux6 {
     #[doc = "0: disable"]
@@ -374,6 +381,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 7 enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux7 {
     #[doc = "0: disable"]
@@ -427,6 +435,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 8 enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux8 {
     #[doc = "0: disable"]
@@ -480,6 +489,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 9 enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux9 {
     #[doc = "0: disable"]
@@ -533,6 +543,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 10 enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux10 {
     #[doc = "0: disable"]
@@ -586,6 +597,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 11 enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux11 {
     #[doc = "0: disable"]
@@ -639,6 +651,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 12 enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux12 {
     #[doc = "0: disable"]
@@ -692,6 +705,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 13 enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux13 {
     #[doc = "0: disable"]
@@ -745,6 +759,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 14 enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux14 {
     #[doc = "0: disable"]
@@ -798,6 +813,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 15 enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux15 {
     #[doc = "0: disable"]
@@ -851,6 +867,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 16 enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux16 {
     #[doc = "0: disable"]
@@ -904,6 +921,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 17 enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux17 {
     #[doc = "0: disable"]
@@ -957,6 +975,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 18 enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux18 {
     #[doc = "0: disable"]
@@ -1010,6 +1029,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 19 enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux19 {
     #[doc = "0: disable"]
@@ -1063,6 +1083,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 20 enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux20 {
     #[doc = "0: disable"]
@@ -1116,6 +1137,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 21 enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux21 {
     #[doc = "0: disable"]
@@ -1169,6 +1191,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 22 enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux22 {
     #[doc = "0: disable"]
@@ -1222,6 +1245,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 23 enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux23 {
     #[doc = "0: disable"]
@@ -1275,6 +1299,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 24 enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux24 {
     #[doc = "0: disable"]
@@ -1328,6 +1353,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 25 enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux25 {
     #[doc = "0: disable"]
@@ -1381,6 +1407,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 26 enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux26 {
     #[doc = "0: disable"]
@@ -1434,6 +1461,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 27 enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux27 {
     #[doc = "0: disable"]
@@ -1487,6 +1515,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 28 enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux28 {
     #[doc = "0: disable"]
@@ -1540,6 +1569,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 29 enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux29 {
     #[doc = "0: disable"]
@@ -1593,6 +1623,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 30 enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux30 {
     #[doc = "0: disable"]
@@ -1646,6 +1677,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 31 enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux31 {
     #[doc = "0: disable"]
@@ -1858,6 +1890,45 @@ impl R {
     #[inline(always)]
     pub fn dmac0_itrig_inmux31(&self) -> Dmac0ItrigInmux31R {
         Dmac0ItrigInmux31R::new(((self.bits >> 31) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DMAC0_ITRIG_ENA0")
+            .field("dmac0_itrig_inmux0", &self.dmac0_itrig_inmux0())
+            .field("dmac0_itrig_inmux1", &self.dmac0_itrig_inmux1())
+            .field("dmac0_itrig_inmux2", &self.dmac0_itrig_inmux2())
+            .field("dmac0_itrig_inmux3", &self.dmac0_itrig_inmux3())
+            .field("dmac0_itrig_inmux4", &self.dmac0_itrig_inmux4())
+            .field("dmac0_itrig_inmux5", &self.dmac0_itrig_inmux5())
+            .field("dmac0_itrig_inmux6", &self.dmac0_itrig_inmux6())
+            .field("dmac0_itrig_inmux7", &self.dmac0_itrig_inmux7())
+            .field("dmac0_itrig_inmux8", &self.dmac0_itrig_inmux8())
+            .field("dmac0_itrig_inmux9", &self.dmac0_itrig_inmux9())
+            .field("dmac0_itrig_inmux10", &self.dmac0_itrig_inmux10())
+            .field("dmac0_itrig_inmux11", &self.dmac0_itrig_inmux11())
+            .field("dmac0_itrig_inmux12", &self.dmac0_itrig_inmux12())
+            .field("dmac0_itrig_inmux13", &self.dmac0_itrig_inmux13())
+            .field("dmac0_itrig_inmux14", &self.dmac0_itrig_inmux14())
+            .field("dmac0_itrig_inmux15", &self.dmac0_itrig_inmux15())
+            .field("dmac0_itrig_inmux16", &self.dmac0_itrig_inmux16())
+            .field("dmac0_itrig_inmux17", &self.dmac0_itrig_inmux17())
+            .field("dmac0_itrig_inmux18", &self.dmac0_itrig_inmux18())
+            .field("dmac0_itrig_inmux19", &self.dmac0_itrig_inmux19())
+            .field("dmac0_itrig_inmux20", &self.dmac0_itrig_inmux20())
+            .field("dmac0_itrig_inmux21", &self.dmac0_itrig_inmux21())
+            .field("dmac0_itrig_inmux22", &self.dmac0_itrig_inmux22())
+            .field("dmac0_itrig_inmux23", &self.dmac0_itrig_inmux23())
+            .field("dmac0_itrig_inmux24", &self.dmac0_itrig_inmux24())
+            .field("dmac0_itrig_inmux25", &self.dmac0_itrig_inmux25())
+            .field("dmac0_itrig_inmux26", &self.dmac0_itrig_inmux26())
+            .field("dmac0_itrig_inmux27", &self.dmac0_itrig_inmux27())
+            .field("dmac0_itrig_inmux28", &self.dmac0_itrig_inmux28())
+            .field("dmac0_itrig_inmux29", &self.dmac0_itrig_inmux29())
+            .field("dmac0_itrig_inmux30", &self.dmac0_itrig_inmux30())
+            .field("dmac0_itrig_inmux31", &self.dmac0_itrig_inmux31())
+            .finish()
     }
 }
 impl W {

@@ -13,6 +13,14 @@ impl R {
         OsrvalR::new((self.bits & 0x0f) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("OSR")
+            .field("osrval", &self.osrval())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:3 - Oversample Selection Value. 0 to 3 = not supported 0x4 = 5 function clocks are used to transmit and receive each data bit. 0x5 = 6 function clocks are used to transmit and receive each data bit. 0xF= 16 function clocks are used to transmit and receive each data bit."]
     #[inline(always)]

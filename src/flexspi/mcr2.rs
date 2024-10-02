@@ -3,6 +3,7 @@ pub type R = crate::R<Mcr2Spec>;
 #[doc = "Register `MCR2` writer"]
 pub type W = crate::W<Mcr2Spec>;
 #[doc = "This bit determines whether AHB RX Buffer and AHB TX Buffer will be cleaned automatically when FlexSPI returns STOP mode ACK. Software should set this bit if AHB RX Buffer or AHB TX Buffer will be powered off in STOP mode. Otherwise AHB read access after exiting STOP mode may hit AHB RX Buffer or AHB TX Buffer but their data entries are invalid.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Clrahbbufopt {
     #[doc = "0: AHB RX/TX Buffer will not be cleaned automatically when FlexSPI return Stop mode ACK."]
@@ -60,6 +61,7 @@ pub type ClrlearnphaseR = crate::BitReader;
 #[doc = "Field `CLRLEARNPHASE` writer - The sampling clock phase selection will be reset to phase 0 when this bit is written with 0x1. This bit will be auto-cleared immediately."]
 pub type ClrlearnphaseW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "All external devices are same devices (both in types and size) for A1/A2/B1/B2.\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Samedeviceen {
     #[doc = "0: In Individual mode, FLSHA1CRx/FLSHA2CRx/FLSHB1CRx/FLSHB2CRx register setting will be applied to Flash A1/A2/B1/B2 separately. In Parallel mode, FLSHA1CRx register setting will be applied to Flash A1 and B1, FLSHA2CRx register setting will be applied to Flash A2 and B2. FLSHB1CRx/FLSHB2CRx register settings will be ignored."]
@@ -114,6 +116,7 @@ where
 }
 #[doc = "B_SCLK pad can be used as A_SCLK differential clock output (inverted clock to A_SCLK). In this case, port B flash access is not available. After changing the value of this field, MCR0\\[SWRESET\\]
 should be set.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sckbdiffopt {
     #[doc = "0: B_SCLK pad is used as port B SCLK clock output. Port B flash access is available."]
@@ -198,6 +201,18 @@ should be set."]
     #[inline(always)]
     pub fn resumewait(&self) -> ResumewaitR {
         ResumewaitR::new(((self.bits >> 24) & 0xff) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("MCR2")
+            .field("clrahbbufopt", &self.clrahbbufopt())
+            .field("clrlearnphase", &self.clrlearnphase())
+            .field("samedeviceen", &self.samedeviceen())
+            .field("sckbdiffopt", &self.sckbdiffopt())
+            .field("resumewait", &self.resumewait())
+            .finish()
     }
 }
 impl W {

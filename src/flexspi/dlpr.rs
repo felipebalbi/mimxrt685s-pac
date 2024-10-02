@@ -13,6 +13,12 @@ impl R {
         DlpR::new(self.bits)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DLPR").field("dlp", &self.dlp()).finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:31 - Data Learning Pattern."]
     #[inline(always)]

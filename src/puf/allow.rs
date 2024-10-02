@@ -30,6 +30,17 @@ impl R {
         AllowgetkeyR::new(((self.bits >> 3) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ALLOW")
+            .field("allowenroll", &self.allowenroll())
+            .field("allowstart", &self.allowstart())
+            .field("allowsetkey", &self.allowsetkey())
+            .field("allowgetkey", &self.allowgetkey())
+            .finish()
+    }
+}
 #[doc = "PUF Allow\n\nYou can [`read`](crate::Reg::read) this register and get [`allow::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct AllowSpec;
 impl crate::RegisterSpec for AllowSpec {

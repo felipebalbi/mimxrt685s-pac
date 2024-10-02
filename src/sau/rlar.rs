@@ -3,6 +3,7 @@ pub type R = crate::R<RlarSpec>;
 #[doc = "Register `RLAR` writer"]
 pub type W = crate::W<RlarSpec>;
 #[doc = "Enable. SAU region enable.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Enable {
     #[doc = "0: SAU region is enabled."]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Non-secure callable. Controls whether Non-secure state is permitted to execute an SG instruction from this region.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Nsc {
     #[doc = "0: Region is not Non-secure callable."]
@@ -133,6 +135,16 @@ of the limit address are defined as 0x1F."]
     #[inline(always)]
     pub fn laddr(&self) -> LaddrR {
         LaddrR::new((self.bits >> 5) & 0x07ff_ffff)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("RLAR")
+            .field("enable", &self.enable())
+            .field("nsc", &self.nsc())
+            .field("laddr", &self.laddr())
+            .finish()
     }
 }
 impl W {

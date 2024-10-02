@@ -9,6 +9,14 @@ impl R {
         LowzR::new((self.bits & 0xffff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("HWVADLOWZ")
+            .field("lowz", &self.lowz())
+            .finish()
+    }
+}
 #[doc = "HWVAD noise envelope estimator register\n\nYou can [`read`](crate::Reg::read) this register and get [`hwvadlowz::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct HwvadlowzSpec;
 impl crate::RegisterSpec for HwvadlowzSpec {

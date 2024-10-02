@@ -3,6 +3,7 @@ pub type R = crate::R<AnactrlTogSpec>;
 #[doc = "Register `ANACTRL_TOG` writer"]
 pub type W = crate::W<AnactrlTogSpec>;
 #[doc = "Setting this field to 1'b1 will enable the 15kohm pulldown resistors on both USB_DP and USB_DM pins\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DevPulldown {
     #[doc = "0: The 15kohm nominal pulldowns on the USB_DP and USB_DM pinsare disabled in device mode."]
@@ -60,6 +61,14 @@ impl R {
     #[inline(always)]
     pub fn dev_pulldown(&self) -> DevPulldownR {
         DevPulldownR::new(((self.bits >> 10) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ANACTRL_TOG")
+            .field("dev_pulldown", &self.dev_pulldown())
+            .finish()
     }
 }
 impl W {

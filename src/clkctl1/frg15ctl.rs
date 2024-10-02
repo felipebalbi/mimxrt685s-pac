@@ -22,6 +22,15 @@ impl R {
         MultR::new(((self.bits >> 8) & 0xff) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("FRG15CTL")
+            .field("div", &self.div())
+            .field("mult", &self.mult())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:7 - Denominator of the fractional divider. DIV is equal to the programmed value +1. Always set to 0xFF to use with the fractional baud rate generator."]
     #[inline(always)]

@@ -31,6 +31,16 @@ impl R {
         UnderrunR::new(((self.bits >> 2) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("FIFO_STATUS")
+            .field("int", &self.int())
+            .field("overrun", &self.overrun())
+            .field("underrun", &self.underrun())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Status of Interrupt (write 1 to clear)"]
     #[inline(always)]

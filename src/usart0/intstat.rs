@@ -65,6 +65,22 @@ impl R {
         AberrintR::new(((self.bits >> 16) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("INTSTAT")
+            .field("txidle", &self.txidle())
+            .field("deltacts", &self.deltacts())
+            .field("txdisint", &self.txdisint())
+            .field("deltarxbrk", &self.deltarxbrk())
+            .field("start", &self.start())
+            .field("framerrint", &self.framerrint())
+            .field("parityerrint", &self.parityerrint())
+            .field("rxnoiseint", &self.rxnoiseint())
+            .field("aberrint", &self.aberrint())
+            .finish()
+    }
+}
 #[doc = "Interrupt status register. Reflects interrupts that are currently enabled.\n\nYou can [`read`](crate::Reg::read) this register and get [`intstat::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IntstatSpec;
 impl crate::RegisterSpec for IntstatSpec {

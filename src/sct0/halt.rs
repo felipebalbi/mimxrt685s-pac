@@ -22,6 +22,15 @@ impl R {
         HaltmskHR::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("HALT")
+            .field("haltmsk_l", &self.haltmsk_l())
+            .field("haltmsk_h", &self.haltmsk_h())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:15 - If bit n is one, event n sets the HALT_L bit in the CTRL register (event 0 = bit 0, event 1 = bit 1, etc.). The number of bits = number of events in this SCT."]
     #[inline(always)]

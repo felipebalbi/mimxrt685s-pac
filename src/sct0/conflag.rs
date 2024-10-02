@@ -31,6 +31,16 @@ impl R {
         BuserrhR::new(((self.bits >> 31) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CONFLAG")
+            .field("ncflag", &self.ncflag())
+            .field("buserrl", &self.buserrl())
+            .field("buserrh", &self.buserrh())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:15 - Bit n is one if a no-change conflict event occurred on output n since reset or a 1 was last written to this bit (output 0 = bit 0, output 1 = bit 1, etc.). The number of bits = number of outputs in this SCT."]
     #[inline(always)]

@@ -38,6 +38,17 @@ impl R {
         DatapausedR::new(((self.bits >> 3) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PSTAT")
+            .field("busy", &self.busy())
+            .field("slvfrmerr", &self.slvfrmerr())
+            .field("lr", &self.lr())
+            .field("datapaused", &self.datapaused())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Busy status for this channel pair."]
     #[inline(always)]

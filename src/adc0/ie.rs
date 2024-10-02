@@ -3,6 +3,7 @@ pub type R = crate::R<IeSpec>;
 #[doc = "Register `IE` writer"]
 pub type W = crate::W<IeSpec>;
 #[doc = "FIFO Watermark Interrupt Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Fwmie {
     #[doc = "0: FIFO watermark interrupts are not enabled."]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Result FIFO Overflow Interrupt Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Fofie {
     #[doc = "0: FIFO overflow interrupts are not enabled."]
@@ -118,6 +120,15 @@ impl R {
     #[inline(always)]
     pub fn fofie(&self) -> FofieR {
         FofieR::new(((self.bits >> 1) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IE")
+            .field("fwmie", &self.fwmie())
+            .field("fofie", &self.fofie())
+            .finish()
     }
 }
 impl W {

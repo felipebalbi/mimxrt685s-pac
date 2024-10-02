@@ -13,6 +13,14 @@ impl R {
         CorelvlR::new((self.bits & 0x3f) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("RUNCTRL")
+            .field("corelvl", &self.corelvl())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:5 - Vddcore voltage value when SYSCTL is in run mode"]
     #[inline(always)]

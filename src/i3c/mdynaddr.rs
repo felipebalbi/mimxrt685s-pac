@@ -22,6 +22,15 @@ impl R {
         DaddrR::new(((self.bits >> 1) & 0x7f) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("MDYNADDR")
+            .field("davalid", &self.davalid())
+            .field("daddr", &self.daddr())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Dynamic address valid"]
     #[inline(always)]

@@ -13,6 +13,14 @@ impl R {
         ChSyncEnR::new((self.bits & 0xff) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("GLOBAL_SYNC_EN")
+            .field("ch_sync_en", &self.ch_sync_en())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:7 - Choose which channels to sync to global sync (7:0) corresponds to the 8 channels"]
     #[inline(always)]

@@ -9,6 +9,14 @@ impl R {
         WriteDataR::new(self.bits)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("OTP_WRITE_DATA")
+            .field("write_data", &self.write_data())
+            .finish()
+    }
+}
 #[doc = "OTP programming data register\n\nYou can [`read`](crate::Reg::read) this register and get [`otp_write_data::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct OtpWriteDataSpec;
 impl crate::RegisterSpec for OtpWriteDataSpec {

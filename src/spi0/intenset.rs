@@ -3,6 +3,7 @@ pub type R = crate::R<IntensetSpec>;
 #[doc = "Register `INTENSET` writer"]
 pub type W = crate::W<IntensetSpec>;
 #[doc = "Slave select assert interrupt enable. Determines whether an interrupt occurs when the Slave Select is asserted.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ssaen {
     #[doc = "0: Disabled. No interrupt will be generated when any Slave Select transitions from deasserted to asserted."]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Slave select deassert interrupt enable. Determines whether an interrupt occurs when the Slave Select is deasserted.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ssden {
     #[doc = "0: Disabled. No interrupt will be generated when all asserted Slave Selects transition to deasserted."]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "Master idle interrupt enable.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Mstidleen {
     #[doc = "0: No interrupt will be generated when the SPI master function is idle."]
@@ -176,6 +179,16 @@ impl R {
     #[inline(always)]
     pub fn mstidleen(&self) -> MstidleenR {
         MstidleenR::new(((self.bits >> 8) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("INTENSET")
+            .field("ssaen", &self.ssaen())
+            .field("ssden", &self.ssden())
+            .field("mstidleen", &self.mstidleen())
+            .finish()
     }
 }
 impl W {

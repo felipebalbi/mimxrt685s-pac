@@ -7,6 +7,7 @@ pub type PausedlyR = crate::FieldReader<u16>;
 #[doc = "Field `PAUSEDLY` writer - Pause Delay"]
 pub type PausedlyW<'a, REG> = crate::FieldWriter<'a, REG, 9, u16>;
 #[doc = "PAUSE Option Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Pauseen {
     #[doc = "0: Pause operation disabled"]
@@ -69,6 +70,15 @@ impl R {
     #[inline(always)]
     pub fn pauseen(&self) -> PauseenR {
         PauseenR::new(((self.bits >> 31) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PAUSE")
+            .field("pausedly", &self.pausedly())
+            .field("pauseen", &self.pauseen())
+            .finish()
     }
 }
 impl W {

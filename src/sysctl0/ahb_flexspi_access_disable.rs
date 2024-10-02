@@ -3,6 +3,7 @@ pub type R = crate::R<AhbFlexspiAccessDisableSpec>;
 #[doc = "Register `AHB_FLEXSPI_ACCESS_DISABLE` writer"]
 pub type W = crate::W<AhbFlexspiAccessDisableSpec>;
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AhbFlexspiAccessDisable {
     #[doc = "0: Enable AHB access to FLEXSPI"]
@@ -60,6 +61,17 @@ impl R {
     #[inline(always)]
     pub fn ahb_flexspi_access_disable(&self) -> AhbFlexspiAccessDisableR {
         AhbFlexspiAccessDisableR::new((self.bits & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("AHB_FLEXSPI_ACCESS_DISABLE")
+            .field(
+                "ahb_flexspi_access_disable",
+                &self.ahb_flexspi_access_disable(),
+            )
+            .finish()
     }
 }
 impl W {

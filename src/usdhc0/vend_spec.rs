@@ -3,6 +3,7 @@ pub type R = crate::R<VendSpecSpec>;
 #[doc = "Register `VEND_SPEC` writer"]
 pub type W = crate::W<VendSpecSpec>;
 #[doc = "Voltage selection\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Vselect {
     #[doc = "0: Change the voltage to high voltage range, around 3.0 V"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Check busy enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ac12WrChkbusyEn {
     #[doc = "0: Do not check busy after auto CMD12 for write data packet"]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "Force CLK\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FrcSdclkOn {
     #[doc = "0: CLK active or inactive is fully controlled by the hardware."]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "CRC Check Disable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CrcChkDis {
     #[doc = "0: Check CRC16 for every read data packet and check CRC bits for every write data packet"]
@@ -215,6 +219,7 @@ where
     }
 }
 #[doc = "Byte access\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CmdByteEn {
     #[doc = "0: Disable"]
@@ -292,6 +297,18 @@ impl R {
     #[inline(always)]
     pub fn cmd_byte_en(&self) -> CmdByteEnR {
         CmdByteEnR::new(((self.bits >> 31) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("VEND_SPEC")
+            .field("vselect", &self.vselect())
+            .field("ac12_wr_chkbusy_en", &self.ac12_wr_chkbusy_en())
+            .field("frc_sdclk_on", &self.frc_sdclk_on())
+            .field("crc_chk_dis", &self.crc_chk_dis())
+            .field("cmd_byte_en", &self.cmd_byte_en())
+            .finish()
     }
 }
 impl W {

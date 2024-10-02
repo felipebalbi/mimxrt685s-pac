@@ -3,6 +3,7 @@ pub type R = crate::R<Cfg1Spec>;
 #[doc = "Register `CFG1` writer"]
 pub type W = crate::W<Cfg1Spec>;
 #[doc = "Main enable for I 2S function in this Flexcomm\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Mainenable {
     #[doc = "0: All I 2S channel pairs in this Flexcomm are disabled and the internal state machines, counters, and flags are reset. No other channel pairs can be enabled."]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Data flow Pause. Allows pausing data flow between the I2S serializer/deserializer and the FIFO. This could be done in order to change streams, or while restarting after a data underflow or overflow. When paused, FIFO operations can be done without corrupting data that is in the process of being sent or received. Once a data pause has been requested, the interface may need to complete sending data that was in progress before interrupting the flow of data. Software must check that the pause is actually in effect before taking action. This is done by monitoring the DATAPAUSED flag in the STAT register. When DATAPAUSE is cleared, data transfer will resume at the beginning of the next frame.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Datapause {
     #[doc = "0: Normal operation, or resuming normal operation at the next frame if the I2S has already been paused."]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "Provides the number of I2S channel pairs in this Flexcomm This is a read-only field whose value may be different in other Flexcomms. 00 = there is 1 I2S channel pair in this Flexcomm. 01 = there are 2 I2S channel pairs in this Flexcomm. 10 = there are 3 I2S channel pairs in this Flexcomm. 11 = there are 4 I2S channel pairs in this Flexcomm.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Paircount {
@@ -195,6 +198,7 @@ where
     }
 }
 #[doc = "Master / slave configuration selection, determining how SCK and WS are used by all channel pairs in this Flexcomm.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Mstslvcfg {
@@ -281,6 +285,7 @@ where
     }
 }
 #[doc = "Selects the basic I2S operating mode. Other configurations modify this to obtain all supported cases. See Formats and modes for examples.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Mode {
@@ -367,6 +372,7 @@ where
     }
 }
 #[doc = "Right channel data is in the Low portion of FIFO data. Essentially, this swaps left and right channel data as it is transferred to or from the FIFO. This bit is not used if the data width is greater than 24 bits or if PDMDATA = 1. Note that if the ONECHANNEL field (bit 10 of this register) = 1, the one channel to be used is the nominally the left channel. POSITION can still place that data in the frame where right channel data is normally located. if all enabled channel pairs have ONECHANNEL = 1, then RIGHTLOW = 1 is not allowed.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rightlow {
     #[doc = "0: The right channel is taken from the high part of the FIFO data. For example, when data is 16 bits, FIFO bits 31:16 are used for the right channel."]
@@ -420,6 +426,7 @@ where
     }
 }
 #[doc = "Left Justify data.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Leftjust {
     #[doc = "0: Data is transferred between the FIFO and the I2S serializer/deserializer right justified, i.e. starting from bit 0 and continuing to the position defined by DATALEN. This would correspond to right justified data in the stream on the data bus."]
@@ -473,6 +480,7 @@ where
     }
 }
 #[doc = "Single channel mode. Applies to both transmit and receive. This configuration bit applies only to the first I2S channel pair. Other channel pairs may select this mode independently in their separate CFG1 registers.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Onechannel {
     #[doc = "0: I2S data for this channel pair is treated as left and right channels."]
@@ -526,6 +534,7 @@ where
     }
 }
 #[doc = "PDM Data selection. This bit controls the data source for I2S transmit, and cannot be set in Rx mode. This bit only has an effect if the device the Flexcomm resides in includes a D-Mic subsystem. For the LPC5411x, this bit applies only to Flexcomm 7.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Pdmdata {
     #[doc = "0: Normal operation, data is transferred to or from the Flexcomm FIFO."]
@@ -579,6 +588,7 @@ where
     }
 }
 #[doc = "SCK polarity.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SckPol {
     #[doc = "0: Data is launched on SCK falling edges and sampled on SCK rising edges (standard for I2S)."]
@@ -632,6 +642,7 @@ where
     }
 }
 #[doc = "WS polarity.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WsPol {
     #[doc = "0: Data frames begin at a falling edge of WS (standard for classic I2S)."]
@@ -748,6 +759,25 @@ impl R {
     #[inline(always)]
     pub fn datalen(&self) -> DatalenR {
         DatalenR::new(((self.bits >> 16) & 0x1f) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CFG1")
+            .field("mainenable", &self.mainenable())
+            .field("datapause", &self.datapause())
+            .field("paircount", &self.paircount())
+            .field("mstslvcfg", &self.mstslvcfg())
+            .field("mode", &self.mode())
+            .field("rightlow", &self.rightlow())
+            .field("leftjust", &self.leftjust())
+            .field("onechannel", &self.onechannel())
+            .field("pdmdata", &self.pdmdata())
+            .field("sck_pol", &self.sck_pol())
+            .field("ws_pol", &self.ws_pol())
+            .field("datalen", &self.datalen())
+            .finish()
     }
 }
 impl W {

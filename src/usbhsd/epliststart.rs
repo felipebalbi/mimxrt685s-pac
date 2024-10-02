@@ -20,6 +20,15 @@ impl R {
         EpListFixedR::new(((self.bits >> 20) & 0x0fff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("EPLISTSTART")
+            .field("ep_list_prg", &self.ep_list_prg())
+            .field("ep_list_fixed", &self.ep_list_fixed())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 8:19 - Programmable portion of the USB EP Command/Status List address."]
     #[inline(always)]

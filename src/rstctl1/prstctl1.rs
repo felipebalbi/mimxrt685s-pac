@@ -3,6 +3,7 @@ pub type R = crate::R<Prstctl1Spec>;
 #[doc = "Register `PRSTCTL1` writer"]
 pub type W = crate::W<Prstctl1Spec>;
 #[doc = "HSGPIO0 reset control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hsgpio0Rst {
     #[doc = "0: clear reset"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "HSGPIO1 reset control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hsgpio1Rst {
     #[doc = "0: clear reset"]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "HSGPIO2 reset control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hsgpio2Rst {
     #[doc = "0: clear reset"]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "HSGPIO3 reset control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hsgpio3Rst {
     #[doc = "0: clear reset"]
@@ -215,6 +219,7 @@ where
     }
 }
 #[doc = "HSGPIO4 reset control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hsgpio4Rst {
     #[doc = "0: clear reset"]
@@ -268,6 +273,7 @@ where
     }
 }
 #[doc = "HSGPIO5 reset control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hsgpio5Rst {
     #[doc = "0: clear reset"]
@@ -321,6 +327,7 @@ where
     }
 }
 #[doc = "HSGPIO6 reset control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hsgpio6Rst {
     #[doc = "0: clear reset"]
@@ -374,6 +381,7 @@ where
     }
 }
 #[doc = "HSGPIO7 reset control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hsgpio7Rst {
     #[doc = "0: clear reset"]
@@ -427,6 +435,7 @@ where
     }
 }
 #[doc = "CRC reset control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CrcRst {
     #[doc = "0: clear reset"]
@@ -480,6 +489,7 @@ where
     }
 }
 #[doc = "DMAC0 reset control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0Rst {
     #[doc = "0: clear reset"]
@@ -533,6 +543,7 @@ where
     }
 }
 #[doc = "DMAC1 reset control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac1Rst {
     #[doc = "0: clear reset"]
@@ -586,6 +597,7 @@ where
     }
 }
 #[doc = "MU reset control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MuRst {
     #[doc = "0: clear reset"]
@@ -639,6 +651,7 @@ where
     }
 }
 #[doc = "SEMA reset control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SemaRst {
     #[doc = "0: clear reset"]
@@ -692,6 +705,7 @@ where
     }
 }
 #[doc = "FREQME reset control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FreqmeRst {
     #[doc = "0: clear reset"]
@@ -814,6 +828,27 @@ impl R {
     #[inline(always)]
     pub fn freqme_rst(&self) -> FreqmeRstR {
         FreqmeRstR::new(((self.bits >> 31) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PRSTCTL1")
+            .field("hsgpio0_rst", &self.hsgpio0_rst())
+            .field("hsgpio1_rst", &self.hsgpio1_rst())
+            .field("hsgpio2_rst", &self.hsgpio2_rst())
+            .field("hsgpio3_rst", &self.hsgpio3_rst())
+            .field("hsgpio4_rst", &self.hsgpio4_rst())
+            .field("hsgpio5_rst", &self.hsgpio5_rst())
+            .field("hsgpio6_rst", &self.hsgpio6_rst())
+            .field("hsgpio7_rst", &self.hsgpio7_rst())
+            .field("crc_rst", &self.crc_rst())
+            .field("dmac0_rst", &self.dmac0_rst())
+            .field("dmac1_rst", &self.dmac1_rst())
+            .field("mu_rst", &self.mu_rst())
+            .field("sema_rst", &self.sema_rst())
+            .field("freqme_rst", &self.freqme_rst())
+            .finish()
     }
 }
 impl W {

@@ -13,6 +13,14 @@ impl R {
         CrcSeedR::new(self.bits)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SEED")
+            .field("crc_seed", &self.crc_seed())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:31 - A write access to this register will load CRC seed value to CRC_SUM register with selected bit order and 1's complement pre-processes. A write access to this register will overrule the CRC calculation in progresses."]
     #[inline(always)]

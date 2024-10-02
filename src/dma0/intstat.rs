@@ -1,6 +1,7 @@
 #[doc = "Register `INTSTAT` reader"]
 pub type R = crate::R<IntstatSpec>;
 #[doc = "Summarizes whether any enabled interrupts (other than error interrupts) are pending.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Activeint {
     #[doc = "0: Not pending. No enabled interrupts are pending."]
@@ -37,6 +38,7 @@ impl ActiveintR {
     }
 }
 #[doc = "Summarizes whether any error interrupts are pending.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Activeerrint {
     #[doc = "0: Not pending. No error interrupts are pending."]
@@ -82,6 +84,15 @@ impl R {
     #[inline(always)]
     pub fn activeerrint(&self) -> ActiveerrintR {
         ActiveerrintR::new(((self.bits >> 2) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("INTSTAT")
+            .field("activeint", &self.activeint())
+            .field("activeerrint", &self.activeerrint())
+            .finish()
     }
 }
 #[doc = "Interrupt status.\n\nYou can [`read`](crate::Reg::read) this register and get [`intstat::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

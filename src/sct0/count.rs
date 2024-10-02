@@ -22,6 +22,15 @@ impl R {
         CtrHR::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("COUNT")
+            .field("ctr_l", &self.ctr_l())
+            .field("ctr_h", &self.ctr_h())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:15 - When UNIFY = 0, read or write the 16-bit L counter value. When UNIFY = 1, read or write the lower 16 bits of the 32-bit unified counter."]
     #[inline(always)]

@@ -22,6 +22,12 @@ pub type MonidleclrW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type EventtimeoutclrW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SCLTIMEOUTCLR` writer - SCL time-out interrupt clear."]
 pub type ScltimeoutclrW<'a, REG> = crate::BitWriter<'a, REG>;
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for crate::generic::Reg<IntenclrSpec> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
+    }
+}
 impl W {
     #[doc = "Bit 0 - Master Pending interrupt clear. Writing 1 to this bit clears the corresponding bit in the INTENSET register if implemented."]
     #[inline(always)]

@@ -31,6 +31,16 @@ impl R {
         MstidleR::new(((self.bits >> 8) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("INTENCLR")
+            .field("ssaen", &self.ssaen())
+            .field("ssden", &self.ssden())
+            .field("mstidle", &self.mstidle())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 4 - Writing 1 clears the corresponding bit in the INTENSET register."]
     #[inline(always)]

@@ -3,6 +3,7 @@ pub type R = crate::R<Prstctl0Spec>;
 #[doc = "Register `PRSTCTL0` writer"]
 pub type W = crate::W<Prstctl0Spec>;
 #[doc = "FLEXCOMM0 reset control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Flexcomm0Rst {
     #[doc = "0: clear reset"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "FLEXCOMM1 reset control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Flexcomm1Rst {
     #[doc = "0: clear reset"]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "FLEXCOMM2 reset control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Flexcomm2Rst {
     #[doc = "0: clear reset"]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "FLEXCOMM3 reset control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Flexcomm3Rst {
     #[doc = "0: clear reset"]
@@ -215,6 +219,7 @@ where
     }
 }
 #[doc = "FLEXCOMM4 reset control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Flexcomm4Rst {
     #[doc = "0: clear reset"]
@@ -268,6 +273,7 @@ where
     }
 }
 #[doc = "FLEXCOMM5 reset control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Flexcomm5Rst {
     #[doc = "0: clear reset"]
@@ -321,6 +327,7 @@ where
     }
 }
 #[doc = "FLEXCOMM6 reset control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Flexcomm6Rst {
     #[doc = "0: clear reset"]
@@ -374,6 +381,7 @@ where
     }
 }
 #[doc = "FLEXCOMM7 reset control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Flexcomm7Rst {
     #[doc = "0: clear reset"]
@@ -427,6 +435,7 @@ where
     }
 }
 #[doc = "FLEXCOMM14 SPI reset control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Flexcomm14SpiRst {
     #[doc = "0: clear reset"]
@@ -480,6 +489,7 @@ where
     }
 }
 #[doc = "FLEXCOMM15 I2C reset control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Flexcomm15I2cRst {
     #[doc = "0: clear reset"]
@@ -533,6 +543,7 @@ where
     }
 }
 #[doc = "DMIC0 reset control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmic0Rst {
     #[doc = "0: clear reset"]
@@ -586,6 +597,7 @@ where
     }
 }
 #[doc = "osevent timer reset control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum OsevtTimerRst {
     #[doc = "0: clear reset"]
@@ -698,6 +710,25 @@ impl R {
     #[inline(always)]
     pub fn osevt_timer_rst(&self) -> OsevtTimerRstR {
         OsevtTimerRstR::new(((self.bits >> 27) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PRSTCTL0")
+            .field("flexcomm0_rst", &self.flexcomm0_rst())
+            .field("flexcomm1_rst", &self.flexcomm1_rst())
+            .field("flexcomm2_rst", &self.flexcomm2_rst())
+            .field("flexcomm3_rst", &self.flexcomm3_rst())
+            .field("flexcomm4_rst", &self.flexcomm4_rst())
+            .field("flexcomm5_rst", &self.flexcomm5_rst())
+            .field("flexcomm6_rst", &self.flexcomm6_rst())
+            .field("flexcomm7_rst", &self.flexcomm7_rst())
+            .field("flexcomm14_spi_rst", &self.flexcomm14_spi_rst())
+            .field("flexcomm15_i2c_rst", &self.flexcomm15_i2c_rst())
+            .field("dmic0_rst", &self.dmic0_rst())
+            .field("osevt_timer_rst", &self.osevt_timer_rst())
+            .finish()
     }
 }
 impl W {

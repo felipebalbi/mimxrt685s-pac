@@ -22,6 +22,15 @@ impl R {
         UtickRuleR::new(((self.bits >> 28) & 3) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("APB_GRP0_MEM_RULE1")
+            .field("wwdt0_rule", &self.wwdt0_rule())
+            .field("utick_rule", &self.utick_rule())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 24:25 - 0x4000 E000--0x4000 EFFF"]
     #[inline(always)]

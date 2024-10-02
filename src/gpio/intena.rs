@@ -13,6 +13,14 @@ impl R {
         IntEnR::new(self.bits)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("INTENA")
+            .field("int_en", &self.int_en())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:31 - interrupt enable control for each pin(bit 0 for pion_0, bin 1 for pion_1, etc)"]
     #[inline(always)]

@@ -11,6 +11,7 @@ pub type NobR = crate::FieldReader;
 #[doc = "Field `NOB` writer - Identifies the number of timer bits in this MRT. (24 bits wide on this device.)"]
 pub type NobW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Selects the operating mode for the INUSE flags and the IDLE_CH register.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Multitask {
     #[doc = "0: Hardware status mode. In this mode, the INUSE(n) flags for all channels are reset."]
@@ -78,6 +79,16 @@ impl R {
     #[inline(always)]
     pub fn multitask(&self) -> MultitaskR {
         MultitaskR::new(((self.bits >> 31) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("MODCFG")
+            .field("noc", &self.noc())
+            .field("nob", &self.nob())
+            .field("multitask", &self.multitask())
+            .finish()
     }
 }
 impl W {

@@ -13,6 +13,14 @@ impl R {
         CcountvalR::new(self.bits)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("GLOBAL_COUNT_VAL")
+            .field("ccountval", &self.ccountval())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:31 - 32bit value, global sync counter will trigger a pulse whenever count reaches GCOUNTVAL"]
     #[inline(always)]

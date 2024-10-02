@@ -76,6 +76,21 @@ impl R {
         DebugMailboxRuleR::new(((self.bits >> 28) & 3) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("AHB_PERIPH0_SLAVE_RULE0")
+            .field("hsgpio_rule", &self.hsgpio_rule())
+            .field("dma0_rule", &self.dma0_rule())
+            .field("dma1_rule", &self.dma1_rule())
+            .field("flexcomm0_rule", &self.flexcomm0_rule())
+            .field("flexcomm1_rule", &self.flexcomm1_rule())
+            .field("flexcomm2_rule", &self.flexcomm2_rule())
+            .field("flexcomm3_rule", &self.flexcomm3_rule())
+            .field("debug_mailbox_rule", &self.debug_mailbox_rule())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:1 - 0x40100000--0x40103FFF"]
     #[inline(always)]

@@ -9,6 +9,14 @@ impl R {
         RxdataR::new(self.bits)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("RFDR")
+            .field("rxdata", &self.rxdata())
+            .finish()
+    }
+}
 #[doc = "IP RX FIFO Data Register x\n\nYou can [`read`](crate::Reg::read) this register and get [`rfdr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RfdrSpec;
 impl crate::RegisterSpec for RfdrSpec {

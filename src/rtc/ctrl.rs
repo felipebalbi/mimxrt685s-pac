@@ -3,6 +3,7 @@ pub type R = crate::R<CtrlSpec>;
 #[doc = "Register `CTRL` writer"]
 pub type W = crate::W<CtrlSpec>;
 #[doc = "Software reset control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Swreset {
     #[doc = "0: Not in reset. The RTC is not held in reset. This bit must be cleared prior to configuring or initiating any operation of the RTC."]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "RTC 1 Hz timer alarm flag status.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Alarm1hz {
     #[doc = "0: No match. No match has occurred on the 1 Hz RTC timer. Writing a 0 has no effect."]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "RTC 1 kHz timer wake-up flag status.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Wake1khz {
     #[doc = "0: Run. The RTC 1 kHz timer is running. Writing a 0 has no effect."]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "RTC 1 Hz timer alarm enable for Deep power-down.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AlarmdpdEn {
     #[doc = "0: Disable. A match on the 1 Hz RTC timer will not bring the part out of Deep power-down mode."]
@@ -215,6 +219,7 @@ where
     }
 }
 #[doc = "RTC 1 kHz timer wake-up enable for Deep power-down.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WakedpdEn {
     #[doc = "0: Disable. A match on the 1 kHz RTC timer will not bring the part out of Deep power-down mode."]
@@ -268,6 +273,7 @@ where
     }
 }
 #[doc = "RTC 1 kHz clock enable. This bit can be set to 0 to conserve power if the 1 kHz timer is not used. This bit has no effect when the RTC is disabled (bit 7 of this register is 0).\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rtc1khzEn {
     #[doc = "0: Disable. A match on the 1 kHz RTC timer will not bring the part out of Deep power-down mode."]
@@ -321,6 +327,7 @@ where
     }
 }
 #[doc = "RTC enable.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RtcEn {
     #[doc = "0: Disable. The RTC 1 Hz and 1 kHz clocks are shut down and the RTC operation is disabled. This bit should be 0 when writing to load a value in the RTC counter register."]
@@ -374,6 +381,7 @@ where
     }
 }
 #[doc = "The RTC oscillator enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RtcOscPd {
     #[doc = "0: The RTC oscillator is enabled. This bit must be cleared in order for the RTC module to function"]
@@ -427,6 +435,7 @@ where
     }
 }
 #[doc = "The 32 KHz sub-second counter enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RtcSubsecEna {
     #[doc = "0: The sub-second counter (if implemented) is disabled. This bit is cleared by a system-level POR or BOD reset as well as a by the RTC_ENA bit (bit 7 in this register). On modules not equipped with a sub-second counter, this bit will always read-back as a '0'"]
@@ -533,6 +542,23 @@ impl R {
     #[inline(always)]
     pub fn rtc_osc_loadcap(&self) -> RtcOscLoadcapR {
         RtcOscLoadcapR::new(((self.bits >> 28) & 0x0f) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CTRL")
+            .field("swreset", &self.swreset())
+            .field("alarm1hz", &self.alarm1hz())
+            .field("wake1khz", &self.wake1khz())
+            .field("alarmdpd_en", &self.alarmdpd_en())
+            .field("wakedpd_en", &self.wakedpd_en())
+            .field("rtc1khz_en", &self.rtc1khz_en())
+            .field("rtc_en", &self.rtc_en())
+            .field("rtc_osc_pd", &self.rtc_osc_pd())
+            .field("rtc_subsec_ena", &self.rtc_subsec_ena())
+            .field("rtc_osc_loadcap", &self.rtc_osc_loadcap())
+            .finish()
     }
 }
 impl W {

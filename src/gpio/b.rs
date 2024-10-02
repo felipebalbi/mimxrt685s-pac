@@ -1,4 +1,5 @@
 #[repr(C)]
+#[cfg_attr(feature = "debug", derive(Debug))]
 #[doc = "no description available"]
 pub struct B {
     b_: [B_; 32],

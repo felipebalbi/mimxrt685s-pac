@@ -25,6 +25,16 @@ impl R {
         IdR::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PID")
+            .field("minor_rev", &self.minor_rev())
+            .field("major_rev", &self.major_rev())
+            .field("id", &self.id())
+            .finish()
+    }
+}
 impl W {}
 #[doc = "Peripheral identification register.\n\nYou can [`read`](crate::Reg::read) this register and get [`pid::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pid::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PidSpec;

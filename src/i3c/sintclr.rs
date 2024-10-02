@@ -103,6 +103,24 @@ impl R {
         EventR::new(((self.bits >> 18) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SINTCLR")
+            .field("start", &self.start())
+            .field("matched", &self.matched())
+            .field("stop", &self.stop())
+            .field("rxpend", &self.rxpend())
+            .field("txsend", &self.txsend())
+            .field("dachg", &self.dachg())
+            .field("ccc", &self.ccc())
+            .field("errwarn", &self.errwarn())
+            .field("ddrmatched", &self.ddrmatched())
+            .field("chandled", &self.chandled())
+            .field("event", &self.event())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 8 - START interrupt enable clear"]
     #[inline(always)]

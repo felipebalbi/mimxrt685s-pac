@@ -7,6 +7,7 @@ pub type VoselR = crate::FieldReader;
 #[doc = "Field `VOSEL` writer - DAC Output Voltage Select"]
 pub type VoselW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "DAC Mode Selection\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmode {
     #[doc = "0: DAC is selected to work in low speed and low power mode."]
@@ -60,6 +61,7 @@ where
     }
 }
 #[doc = "Supply Voltage Reference Source Select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Vrsel {
     #[doc = "0: Vin1 is selected as resistor ladder network supply reference Vin. Vin1 is from internal PMC."]
@@ -113,6 +115,7 @@ where
     }
 }
 #[doc = "DAC Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dacen {
     #[doc = "0: DAC is disabled."]
@@ -190,6 +193,7 @@ pub type Chn5R = crate::BitReader;
 #[doc = "Field `CHN5` writer - Channel 5 input enable"]
 pub type Chn5W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Minus Input MUX Control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Msel {
@@ -328,6 +332,7 @@ where
     }
 }
 #[doc = "Plus Input MUX Control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Psel {
@@ -525,6 +530,25 @@ impl R {
     #[inline(always)]
     pub fn psel(&self) -> PselR {
         PselR::new(((self.bits >> 28) & 7) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("C1")
+            .field("vosel", &self.vosel())
+            .field("dmode", &self.dmode())
+            .field("vrsel", &self.vrsel())
+            .field("dacen", &self.dacen())
+            .field("chn0", &self.chn0())
+            .field("chn1", &self.chn1())
+            .field("chn2", &self.chn2())
+            .field("chn3", &self.chn3())
+            .field("chn4", &self.chn4())
+            .field("chn5", &self.chn5())
+            .field("msel", &self.msel())
+            .field("psel", &self.psel())
+            .finish()
     }
 }
 impl W {

@@ -13,6 +13,14 @@ impl R {
         PmodeR::new((self.bits & 0xff) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ISEL")
+            .field("pmode", &self.pmode())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:7 - Selects the interrupt mode for each pin interrupt. Bit n configures the pin interrupt selected in PINTSELn. 0 = Edge sensitive 1 = Level sensitive"]
     #[inline(always)]

@@ -22,6 +22,15 @@ impl R {
         LimmskHR::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("LIMIT")
+            .field("limmsk_l", &self.limmsk_l())
+            .field("limmsk_h", &self.limmsk_h())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:15 - If bit n is one, event n is used as a counter limit for the L or unified counter (event 0 = bit 0, event 1 = bit 1, etc.). The number of bits = number of events in this SCT."]
     #[inline(always)]

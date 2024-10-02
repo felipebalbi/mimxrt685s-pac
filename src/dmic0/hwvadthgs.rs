@@ -13,6 +13,14 @@ impl R {
         ThgsR::new((self.bits & 0x0f) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("HWVADTHGS")
+            .field("thgs", &self.thgs())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:3 - Signal Gain factor - use a postive number to make current signal stand out more over longer term average"]
     #[inline(always)]

@@ -1,4 +1,5 @@
 #[repr(C)]
+#[cfg_attr(feature = "debug", derive(Debug))]
 #[doc = "CT32BITn Counter Timer Capture Trigger Multiplexers"]
 #[doc(alias = "CT32BIT_CAP")]
 pub struct Ct32bitCap {

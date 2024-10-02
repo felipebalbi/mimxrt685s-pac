@@ -3,6 +3,7 @@ pub type R = crate::R<FlagsSpec>;
 #[doc = "Register `FLAGS` writer"]
 pub type W = crate::W<FlagsSpec>;
 #[doc = "vddcore POR Flag\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Porcoref {
     #[doc = "0: vddcore POR was not tripped since the last cleared."]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "vdd1v8 power on reset flag\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Por1v8f {
     #[doc = "0: No vdd1v8 power on event detected since last cleared."]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "vdd_ao18 power on reset flag\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Porao18f {
     #[doc = "0: No vdd_ao18 power on event detected since last cleared."]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "vddcore Low-Voltage Detector Flag This flag is set when a low voltage event was detected by the vddcore LVD monitor and it is enabled for interrupt or reset\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Lvdcoref {
     #[doc = "0: vddcore LVD has not triggered an interrupt or reset since last clear"]
@@ -215,6 +219,7 @@ where
     }
 }
 #[doc = "vddcore High-Voltage Detector Flag This flag is set when a high-voltage event was detected by the vddcore HVD monitor and it is enabled for interrupt or reset\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hvdcoref {
     #[doc = "0: vddcore HVD has not triggered an interrupt or reset since last clear"]
@@ -268,6 +273,7 @@ where
     }
 }
 #[doc = "vdd1v8 High-Voltage Detector Flag This flag is set when a high-voltage event was detected by the vdd1v8 HVD monitor and it is enabled for interrupt or reset\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hvd1v8f {
     #[doc = "0: vdd1v8 HVD has not triggered an interrupt or reset since last clear"]
@@ -321,6 +327,7 @@ where
     }
 }
 #[doc = "RTC Wakeup from deep powerdown mode flag.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rtcf {
     #[doc = "0: No RTC wakeup detected since last time flag was cleared."]
@@ -374,6 +381,7 @@ where
     }
 }
 #[doc = "PMC Auto Wakeup Interrupt flag.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Autowkf {
     #[doc = "0: No PMC Auto Wakeup Interrupt detected since last time cleared."]
@@ -427,6 +435,7 @@ where
     }
 }
 #[doc = "PMIC interrupt pin flag\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Intnpadf {
     #[doc = "0: No interrupt detected since flag last cleared."]
@@ -480,6 +489,7 @@ where
     }
 }
 #[doc = "Reset pad flag\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Resetnpadf {
     #[doc = "0: No reset detected since last time this flag was cleared."]
@@ -533,6 +543,7 @@ where
     }
 }
 #[doc = "Deep powerdown wakeup flag\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Deeppdf {
     #[doc = "0: No deep powerdown wakeup since last time flag was cleared."]
@@ -640,6 +651,24 @@ impl R {
     #[inline(always)]
     pub fn deeppdf(&self) -> DeeppdfR {
         DeeppdfR::new(((self.bits >> 31) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("FLAGS")
+            .field("porcoref", &self.porcoref())
+            .field("por1v8f", &self.por1v8f())
+            .field("porao18f", &self.porao18f())
+            .field("lvdcoref", &self.lvdcoref())
+            .field("hvdcoref", &self.hvdcoref())
+            .field("hvd1v8f", &self.hvd1v8f())
+            .field("rtcf", &self.rtcf())
+            .field("autowkf", &self.autowkf())
+            .field("intnpadf", &self.intnpadf())
+            .field("resetnpadf", &self.resetnpadf())
+            .field("deeppdf", &self.deeppdf())
+            .finish()
     }
 }
 impl W {

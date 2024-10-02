@@ -3,6 +3,7 @@ pub type R = crate::R<Enableset1Spec>;
 #[doc = "Register `ENABLESET1` writer"]
 pub type W = crate::W<Enableset1Spec>;
 #[doc = "Enable for DMA channel 32\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Enable32 {
     #[doc = "0: DMAchannel 32 is disabled."]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Additional enables for remaining DMA channels in the range 63 to 33.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u32)]
 pub enum Enable63_33 {
@@ -125,6 +127,15 @@ impl R {
     #[inline(always)]
     pub fn enable63_33(&self) -> Enable63_33R {
         Enable63_33R::new((self.bits >> 1) & 0x7fff_ffff)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ENABLESET1")
+            .field("enable32", &self.enable32())
+            .field("enable63_33", &self.enable63_33())
+            .finish()
     }
 }
 impl W {

@@ -22,6 +22,15 @@ impl R {
         I3c0RuleR::new(((self.bits >> 24) & 3) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("APB_GRP1_MEM_RULE2")
+            .field("rtc_rule", &self.rtc_rule())
+            .field("i3c0_rule", &self.i3c0_rule())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:1 - 0x4003 0000--0x4003 0FFF"]
     #[inline(always)]

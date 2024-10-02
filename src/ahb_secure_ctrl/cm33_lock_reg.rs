@@ -3,6 +3,7 @@ pub type R = crate::R<Cm33LockRegSpec>;
 #[doc = "Register `CM33_LOCK_REG` writer"]
 pub type W = crate::W<Cm33LockRegSpec>;
 #[doc = "m33 LOCKNSVTOR write-lock.\n\nValue on reset: 2"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LockNsVtor {
@@ -63,6 +64,7 @@ where
     }
 }
 #[doc = "m33 LOCKNSMPU write-lock.\n\nValue on reset: 2"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LockNsMpu {
@@ -123,6 +125,7 @@ where
     }
 }
 #[doc = "m33 LOCKSVTOR write-lock.\n\nValue on reset: 2"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LockSVtor {
@@ -183,6 +186,7 @@ where
     }
 }
 #[doc = "m33 LOCKSMPU write-lock.\n\nValue on reset: 2"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LockSMpu {
@@ -243,6 +247,7 @@ where
     }
 }
 #[doc = "m33 LOCKSAU write-lock.\n\nValue on reset: 2"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LockSau {
@@ -303,6 +308,7 @@ where
     }
 }
 #[doc = "CM33_LOCK_REG_LOCK write-lock.\n\nValue on reset: 2"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Cm33LockRegLock {
@@ -392,6 +398,19 @@ impl R {
     #[inline(always)]
     pub fn cm33_lock_reg_lock(&self) -> Cm33LockRegLockR {
         Cm33LockRegLockR::new(((self.bits >> 30) & 3) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CM33_LOCK_REG")
+            .field("lock_ns_vtor", &self.lock_ns_vtor())
+            .field("lock_ns_mpu", &self.lock_ns_mpu())
+            .field("lock_s_vtor", &self.lock_s_vtor())
+            .field("lock_s_mpu", &self.lock_s_mpu())
+            .field("lock_sau", &self.lock_sau())
+            .field("cm33_lock_reg_lock", &self.cm33_lock_reg_lock())
+            .finish()
     }
 }
 impl W {

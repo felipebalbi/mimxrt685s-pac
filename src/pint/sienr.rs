@@ -2,6 +2,12 @@
 pub type W = crate::W<SienrSpec>;
 #[doc = "Field `SETENRL` writer - Ones written to this address set bits in the IENR, thus enabling interrupts. Bit n sets bit n in the IENR register. 0 = No operation. 1 = Enable rising edge or level interrupt."]
 pub type SetenrlW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for crate::generic::Reg<SienrSpec> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
+    }
+}
 impl W {
     #[doc = "Bits 0:7 - Ones written to this address set bits in the IENR, thus enabling interrupts. Bit n sets bit n in the IENR register. 0 = No operation. 1 = Enable rising edge or level interrupt."]
     #[inline(always)]

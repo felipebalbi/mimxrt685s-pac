@@ -3,6 +3,7 @@ pub type R = crate::R<FifotrigSpec>;
 #[doc = "Register `FIFOTRIG` writer"]
 pub type W = crate::W<FifotrigSpec>;
 #[doc = "Transmit FIFO level trigger enable. This trigger will become an interrupt if enabled in FIFOINTENSET, or a DMA trigger if DMATX in FIFOCFG is set.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Txlvlena {
     #[doc = "0: Transmit FIFO level does not generate a FIFO level trigger."]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Receive FIFO level trigger enable. This trigger will become an interrupt if enabled in FIFOINTENSET, or a DMA trigger if DMARX in FIFOCFG is set.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rxlvlena {
     #[doc = "0: Receive FIFO level does not generate a FIFO level trigger."]
@@ -136,6 +138,17 @@ impl R {
     #[inline(always)]
     pub fn rxlvl(&self) -> RxlvlR {
         RxlvlR::new(((self.bits >> 16) & 0x0f) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("FIFOTRIG")
+            .field("txlvlena", &self.txlvlena())
+            .field("rxlvlena", &self.rxlvlena())
+            .field("txlvl", &self.txlvl())
+            .field("rxlvl", &self.rxlvl())
+            .finish()
     }
 }
 impl W {

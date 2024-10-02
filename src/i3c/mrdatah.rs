@@ -16,6 +16,15 @@ impl R {
         MsbR::new(((self.bits >> 8) & 0xff) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("MRDATAH")
+            .field("lsb", &self.lsb())
+            .field("msb", &self.msb())
+            .finish()
+    }
+}
 #[doc = "Master Read Data Half-word Register\n\nYou can [`read`](crate::Reg::read) this register and get [`mrdatah::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MrdatahSpec;
 impl crate::RegisterSpec for MrdatahSpec {

@@ -9,6 +9,14 @@ impl R {
         ToggleR::new(self.bits & 0x3fff_ffff)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("EPTOGGLE")
+            .field("toggle", &self.toggle())
+            .finish()
+    }
+}
 #[doc = "USB Endpoint toggle register\n\nYou can [`read`](crate::Reg::read) this register and get [`eptoggle::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct EptoggleSpec;
 impl crate::RegisterSpec for EptoggleSpec {

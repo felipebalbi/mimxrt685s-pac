@@ -3,6 +3,7 @@ pub type R = crate::R<MonrxdatSpec>;
 #[doc = "Field `MONRXDAT` reader - Monitor function Receiver Data. This reflects every data byte that passes on the I2C pins."]
 pub type MonrxdatR = crate::FieldReader;
 #[doc = "Monitor Received Start.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Monstart {
     #[doc = "0: No start detected. The Monitor function has not detected a Start event on the I2C bus."]
@@ -39,6 +40,7 @@ impl MonstartR {
     }
 }
 #[doc = "Monitor Received Repeated Start.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Monrestart {
     #[doc = "0: No repeated start detected. The Monitor function has not detected a Repeated Start event on the I2C bus."]
@@ -75,6 +77,7 @@ impl MonrestartR {
     }
 }
 #[doc = "Monitor Received NACK.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Monnack {
     #[doc = "0: Acknowledged. The data currently being provided by the Monitor function was acknowledged by at least one master or slave receiver."]
@@ -130,6 +133,17 @@ impl R {
     #[inline(always)]
     pub fn monnack(&self) -> MonnackR {
         MonnackR::new(((self.bits >> 10) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("MONRXDAT")
+            .field("monrxdat", &self.monrxdat())
+            .field("monstart", &self.monstart())
+            .field("monrestart", &self.monrestart())
+            .field("monnack", &self.monnack())
+            .finish()
     }
 }
 #[doc = "Monitor receiver data register.\n\nYou can [`read`](crate::Reg::read) this register and get [`monrxdat::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

@@ -58,6 +58,19 @@ impl R {
         SofIrqR::new(((self.bits >> 19) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("USBSTS")
+            .field("pcd", &self.pcd())
+            .field("flr", &self.flr())
+            .field("atl_irq", &self.atl_irq())
+            .field("iso_irq", &self.iso_irq())
+            .field("int_irq", &self.int_irq())
+            .field("sof_irq", &self.sof_irq())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 2 - Port Change Detect: The host controller sets this bit to logic 1 when any port has a change bit transition from a 0 to a one or a Force Port Resume bit transition from a 0 to a 1 as a result of a J-K transition detected on a suspended port. or - the ID pin value changes or - an LPM token has been transmitted to enter LPM L1 suspend state.. Software must write a one to clear the bit"]
     #[inline(always)]

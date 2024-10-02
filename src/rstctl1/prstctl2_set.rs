@@ -1,6 +1,7 @@
 #[doc = "Register `PRSTCTL2_SET` writer"]
 pub type W = crate::W<Prstctl2SetSpec>;
 #[doc = "CT32BIT0 reset set\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ct32bit0RstSet {
     #[doc = "0: No Effect"]
@@ -32,6 +33,7 @@ where
     }
 }
 #[doc = "CT32BIT1 reset set\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ct32bit1RstSet {
     #[doc = "0: No Effect"]
@@ -63,6 +65,7 @@ where
     }
 }
 #[doc = "CT32BIT2 reset set\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ct32bit2RstSet {
     #[doc = "0: No Effect"]
@@ -94,6 +97,7 @@ where
     }
 }
 #[doc = "CT32BIT3 reset set\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ct32bit3RstSet {
     #[doc = "0: No Effect"]
@@ -125,6 +129,7 @@ where
     }
 }
 #[doc = "CT32BIT4 reset set\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ct32bit4RstSet {
     #[doc = "0: No Effect"]
@@ -156,6 +161,7 @@ where
     }
 }
 #[doc = "MRT0 reset set\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Mrt0RstSet {
     #[doc = "0: No Effect"]
@@ -187,6 +193,7 @@ where
     }
 }
 #[doc = "WWDT1 reset set\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Wwdt1RstSet {
     #[doc = "0: No Effect"]
@@ -218,6 +225,7 @@ where
     }
 }
 #[doc = "I3C0 reset set\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum I3c0RstSet {
     #[doc = "0: No Effect"]
@@ -249,6 +257,7 @@ where
     }
 }
 #[doc = "GPIOINTCTL reset set\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum GpiointctlRstSet {
     #[doc = "0: No Effect"]
@@ -280,6 +289,7 @@ where
     }
 }
 #[doc = "PMC reset set\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PimctlRstSet {
     #[doc = "0: No Effect"]
@@ -308,6 +318,12 @@ where
     #[inline(always)]
     pub fn set_reset(self) -> &'a mut crate::W<REG> {
         self.variant(PimctlRstSet::SetReset)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for crate::generic::Reg<Prstctl2SetSpec> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
     }
 }
 impl W {

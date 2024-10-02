@@ -13,6 +13,14 @@ impl R {
         IntDoneR::new(self.bits)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("INTPTDD")
+            .field("int_done", &self.int_done())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:31 - The bit corresponding to a certain PTD will be set to logic 1 as soon as that PTD execution is completed."]
     #[inline(always)]

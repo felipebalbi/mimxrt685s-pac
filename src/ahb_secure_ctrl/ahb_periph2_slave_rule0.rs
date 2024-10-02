@@ -40,6 +40,17 @@ impl R {
         SctRuleR::new(((self.bits >> 12) & 3) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("AHB_PERIPH2_SLAVE_RULE0")
+            .field("usb_hs_ram_rule", &self.usb_hs_ram_rule())
+            .field("usb_hs_dev_rule", &self.usb_hs_dev_rule())
+            .field("usb_hs_host_rule", &self.usb_hs_host_rule())
+            .field("sct_rule", &self.sct_rule())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:1 - 0x40140000--0x40143FFF"]
     #[inline(always)]

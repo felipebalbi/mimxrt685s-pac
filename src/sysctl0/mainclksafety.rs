@@ -13,6 +13,14 @@ impl R {
         DelayR::new((self.bits & 0xffff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("MAINCLKSAFETY")
+            .field("delay", &self.delay())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:15 - Main Clock turn on delay for Deep Sleep wake up"]
     #[inline(always)]

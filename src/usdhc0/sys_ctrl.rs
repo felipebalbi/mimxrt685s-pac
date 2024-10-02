@@ -3,6 +3,7 @@ pub type R = crate::R<SysCtrlSpec>;
 #[doc = "Register `SYS_CTRL` writer"]
 pub type W = crate::W<SysCtrlSpec>;
 #[doc = "Divisor\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Dvs {
@@ -93,6 +94,7 @@ pub type SdclkfsR = crate::FieldReader;
 #[doc = "Field `SDCLKFS` writer - SDCLK Frequency Select"]
 pub type SdclkfsW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Data Timeout Counter Value\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Dtocv {
@@ -196,6 +198,7 @@ pub type IppRstNR = crate::BitReader;
 #[doc = "Field `IPP_RST_N` writer - IPP_RST_N"]
 pub type IppRstNW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Software Reset For ALL\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rsta {
     #[doc = "0: No Reset"]
@@ -249,6 +252,7 @@ where
     }
 }
 #[doc = "Software Reset For CMD Line\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rstc {
     #[doc = "0: No Reset"]
@@ -302,6 +306,7 @@ where
     }
 }
 #[doc = "Software Reset For DATA Line\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rstd {
     #[doc = "0: No Reset"]
@@ -407,6 +412,22 @@ impl R {
     #[inline(always)]
     pub fn rstt(&self) -> RsttR {
         RsttR::new(((self.bits >> 28) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SYS_CTRL")
+            .field("dvs", &self.dvs())
+            .field("sdclkfs", &self.sdclkfs())
+            .field("dtocv", &self.dtocv())
+            .field("ipp_rst_n", &self.ipp_rst_n())
+            .field("rsta", &self.rsta())
+            .field("rstc", &self.rstc())
+            .field("rstd", &self.rstd())
+            .field("inita", &self.inita())
+            .field("rstt", &self.rstt())
+            .finish()
     }
 }
 impl W {

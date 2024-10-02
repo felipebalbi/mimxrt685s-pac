@@ -13,6 +13,14 @@ impl R {
         WarnintR::new((self.bits & 0x03ff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("WARNINT")
+            .field("warnint", &self.warnint())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:9 - Watchdog warning interrupt compare value."]
     #[inline(always)]

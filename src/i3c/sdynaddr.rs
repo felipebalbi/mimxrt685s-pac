@@ -3,6 +3,7 @@ pub type R = crate::R<SdynaddrSpec>;
 #[doc = "Register `SDYNADDR` writer"]
 pub type W = crate::W<SdynaddrSpec>;
 #[doc = "DAVALID\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Davalid {
     #[doc = "0: DANOTASSIGNED: a Dynamic Address is not assigned"]
@@ -82,6 +83,16 @@ impl R {
     #[inline(always)]
     pub fn key(&self) -> KeyR {
         KeyR::new(((self.bits >> 16) & 0xffff) as u16)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SDYNADDR")
+            .field("davalid", &self.davalid())
+            .field("daddr", &self.daddr())
+            .field("key", &self.key())
+            .finish()
     }
 }
 impl W {

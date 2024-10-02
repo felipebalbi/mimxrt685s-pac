@@ -13,6 +13,14 @@ impl R {
         ClkrdyR::new(((self.bits >> 31) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("LPOSCCTL0")
+            .field("clkrdy", &self.clkrdy())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 31 - Clock ready flag status. LPOSC clock ready takes 64uS."]
     #[inline(always)]

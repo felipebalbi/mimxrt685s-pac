@@ -13,6 +13,14 @@ impl R {
         IntrStatR::new((self.bits & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("INTRSTAT")
+            .field("intr_stat", &self.intr_stat())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Intr status ( 1 bit to indicate interrupt captured, 0 means no new interrupt), write any value will clear this bit"]
     #[inline(always)]

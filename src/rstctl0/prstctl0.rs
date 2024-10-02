@@ -3,6 +3,7 @@ pub type R = crate::R<Prstctl0Spec>;
 #[doc = "Register `PRSTCTL0` writer"]
 pub type W = crate::W<Prstctl0Spec>;
 #[doc = "HIFI DSP reset control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HifiDsp {
     #[doc = "0: clear reset"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "powerquad reset control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Powerquad {
     #[doc = "0: clear reset"]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "CAPSER reset control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Casper {
     #[doc = "0: clear reset"]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "HASHCRYPT reset control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hashcrypt {
     #[doc = "0: clear reset"]
@@ -215,6 +219,7 @@ where
     }
 }
 #[doc = "PUF reset control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Puf {
     #[doc = "0: clear reset"]
@@ -268,6 +273,7 @@ where
     }
 }
 #[doc = "RNG reset control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rng {
     #[doc = "0: clear reset"]
@@ -321,6 +327,7 @@ where
     }
 }
 #[doc = "FLEXSPI reset control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FlexspiOtfad {
     #[doc = "0: clear reset"]
@@ -374,6 +381,7 @@ where
     }
 }
 #[doc = "USB PHY reset control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UsbhsPhy {
     #[doc = "0: clear reset"]
@@ -427,6 +435,7 @@ where
     }
 }
 #[doc = "USB DEVICE reset control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UsbhsDevice {
     #[doc = "0: clear reset"]
@@ -480,6 +489,7 @@ where
     }
 }
 #[doc = "USB HOST reset control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UsbhsHost {
     #[doc = "0: clear reset"]
@@ -533,6 +543,7 @@ where
     }
 }
 #[doc = "USBHS RAM reset control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UsbhsSram {
     #[doc = "0: clear reset"]
@@ -586,6 +597,7 @@ where
     }
 }
 #[doc = "SCT reset control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sct {
     #[doc = "0: clear reset"]
@@ -698,6 +710,25 @@ impl R {
     #[inline(always)]
     pub fn sct(&self) -> SctR {
         SctR::new(((self.bits >> 24) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PRSTCTL0")
+            .field("hifi_dsp", &self.hifi_dsp())
+            .field("powerquad", &self.powerquad())
+            .field("casper", &self.casper())
+            .field("hashcrypt", &self.hashcrypt())
+            .field("puf", &self.puf())
+            .field("rng", &self.rng())
+            .field("flexspi_otfad", &self.flexspi_otfad())
+            .field("usbhs_phy", &self.usbhs_phy())
+            .field("usbhs_device", &self.usbhs_device())
+            .field("usbhs_host", &self.usbhs_host())
+            .field("usbhs_sram", &self.usbhs_sram())
+            .field("sct", &self.sct())
+            .finish()
     }
 }
 impl W {

@@ -1,6 +1,7 @@
 #[doc = "Register `STARTEN1_SET` writer"]
 pub type W = crate::W<Starten1SetSpec>;
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RtcLite0AlarmOrWakeup {
     #[doc = "0: No effect"]
@@ -32,6 +33,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Mu {
     #[doc = "0: No effect"]
@@ -63,6 +65,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum GpioInt0Irq4 {
     #[doc = "0: No effect"]
@@ -94,6 +97,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum GpioInt0Irq5 {
     #[doc = "0: No effect"]
@@ -125,6 +129,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum GpioInt0Irq6 {
     #[doc = "0: No effect"]
@@ -156,6 +161,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum GpioInt0Irq7 {
     #[doc = "0: No effect"]
@@ -187,6 +193,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ct32bit2 {
     #[doc = "0: No effect"]
@@ -218,6 +225,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ct32bit4 {
     #[doc = "0: No effect"]
@@ -249,6 +257,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum OsEventTimerWu {
     #[doc = "0: No effect"]
@@ -280,6 +289,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Flexspi {
     #[doc = "0: No effect"]
@@ -311,6 +321,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Flexcomm6 {
     #[doc = "0: No effect"]
@@ -342,6 +353,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Flexcomm7 {
     #[doc = "0: No effect"]
@@ -373,6 +385,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sdio0 {
     #[doc = "0: No effect"]
@@ -404,6 +417,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sdio1 {
     #[doc = "0: No effect"]
@@ -435,6 +449,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ShsgpioInt0 {
     #[doc = "0: No effect"]
@@ -466,6 +481,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ShsgpioInt1 {
     #[doc = "0: No effect"]
@@ -497,6 +513,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum I3c0 {
     #[doc = "0: No effect"]
@@ -528,6 +545,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UsbIrq {
     #[doc = "0: No effect"]
@@ -559,6 +577,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UsbNeedclk {
     #[doc = "0: No effect"]
@@ -590,6 +609,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac1 {
     #[doc = "0: No effect"]
@@ -621,6 +641,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Puf {
     #[doc = "0: No effect"]
@@ -652,6 +673,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Powerquad {
     #[doc = "0: No effect"]
@@ -683,6 +705,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Casper {
     #[doc = "0: No effect"]
@@ -714,6 +737,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Pmic {
     #[doc = "0: No effect"]
@@ -745,6 +769,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sha {
     #[doc = "0: No effect"]
@@ -773,6 +798,12 @@ where
     #[inline(always)]
     pub fn set_start_en1(self) -> &'a mut crate::W<REG> {
         self.variant(Sha::SetStartEn1)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for crate::generic::Reg<Starten1SetSpec> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
     }
 }
 impl W {

@@ -3,6 +3,7 @@ pub type R = crate::R<PdwakecfgSpec>;
 #[doc = "Register `PDWAKECFG` writer"]
 pub type W = crate::W<PdwakecfgSpec>;
 #[doc = "RBB mode on wakeup\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rbbkeepst {
     #[doc = "0: Use value of RBB_PD in PDRUNCFG on wakeup."]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "FBB mode on wakeup\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Fbbkeepst {
     #[doc = "0: Use value of FBB_PD in PDRUNCFG on wakeup"]
@@ -118,6 +120,15 @@ impl R {
     #[inline(always)]
     pub fn fbbkeepst(&self) -> FbbkeepstR {
         FbbkeepstR::new(((self.bits >> 1) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PDWAKECFG")
+            .field("rbbkeepst", &self.rbbkeepst())
+            .field("fbbkeepst", &self.fbbkeepst())
+            .finish()
     }
 }
 impl W {

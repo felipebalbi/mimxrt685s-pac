@@ -13,6 +13,7 @@ pub type TimeCountRetuningR = crate::FieldReader;
 #[doc = "Field `TIME_COUNT_RETUNING` writer - Time Counter for Retuning"]
 pub type TimeCountRetuningW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Use Tuning for SDR50\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UseTuningSdr50 {
     #[doc = "0: SDR does not require tuning"]
@@ -66,6 +67,7 @@ where
     }
 }
 #[doc = "Retuning Mode\n\nValue on reset: 2"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RetuningMode {
@@ -116,6 +118,7 @@ impl RetuningModeR {
     }
 }
 #[doc = "Max Block Length\n\nValue on reset: 3"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Mbl {
@@ -174,6 +177,7 @@ impl MblR {
     }
 }
 #[doc = "ADMA Support\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Admas {
     #[doc = "0: Advanced DMA Not supported"]
@@ -210,6 +214,7 @@ impl AdmasR {
     }
 }
 #[doc = "High Speed Support\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hss {
     #[doc = "0: High Speed Not Supported"]
@@ -246,6 +251,7 @@ impl HssR {
     }
 }
 #[doc = "DMA Support\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmas {
     #[doc = "0: DMA not supported"]
@@ -282,6 +288,7 @@ impl DmasR {
     }
 }
 #[doc = "Suspend / Resume Support\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Srs {
     #[doc = "0: Not supported"]
@@ -318,6 +325,7 @@ impl SrsR {
     }
 }
 #[doc = "Voltage Support 3.3V\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Vs33 {
     #[doc = "0: 3.3V not supported"]
@@ -354,6 +362,7 @@ impl Vs33R {
     }
 }
 #[doc = "Voltage Support 3.0 V\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Vs30 {
     #[doc = "0: 3.0V not supported"]
@@ -390,6 +399,7 @@ impl Vs30R {
     }
 }
 #[doc = "Voltage Support 1.8 V\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Vs18 {
     #[doc = "0: 1.8V not supported"]
@@ -495,6 +505,27 @@ impl R {
     #[inline(always)]
     pub fn vs18(&self) -> Vs18R {
         Vs18R::new(((self.bits >> 26) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("HOST_CTRL_CAP")
+            .field("sdr50_support", &self.sdr50_support())
+            .field("sdr104_support", &self.sdr104_support())
+            .field("ddr50_support", &self.ddr50_support())
+            .field("time_count_retuning", &self.time_count_retuning())
+            .field("use_tuning_sdr50", &self.use_tuning_sdr50())
+            .field("retuning_mode", &self.retuning_mode())
+            .field("mbl", &self.mbl())
+            .field("admas", &self.admas())
+            .field("hss", &self.hss())
+            .field("dmas", &self.dmas())
+            .field("srs", &self.srs())
+            .field("vs33", &self.vs33())
+            .field("vs30", &self.vs30())
+            .field("vs18", &self.vs18())
+            .finish()
     }
 }
 impl W {

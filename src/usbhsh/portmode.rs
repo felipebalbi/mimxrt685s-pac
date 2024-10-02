@@ -13,6 +13,14 @@ impl R {
         DevEnableR::new(((self.bits >> 16) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PORTMODE")
+            .field("dev_enable", &self.dev_enable())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 16 - If this bit is set to one, the port will behave as a USB device. If this bit is set to zero, the port will be controlled by the USB host block."]
     #[inline(always)]

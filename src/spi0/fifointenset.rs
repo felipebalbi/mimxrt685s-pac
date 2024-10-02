@@ -3,6 +3,7 @@ pub type R = crate::R<FifointensetSpec>;
 #[doc = "Register `FIFOINTENSET` writer"]
 pub type W = crate::W<FifointensetSpec>;
 #[doc = "Determines whether an interrupt occurs when a transmit error occurs, based on the TXERR flag in the FIFOSTAT register.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Txerr {
     #[doc = "0: No interrupt will be generated for a transmit error."]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Determines whether an interrupt occurs when a receive error occurs, based on the RXERR flag in the FIFOSTAT register.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rxerr {
     #[doc = "0: No interrupt will be generated for a receive error."]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "Determines whether an interrupt occurs when a the transmit FIFO reaches the level specified by the TXLVL field in the FIFOTRIG register.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Txlvl {
     #[doc = "0: No interrupt will be generated based on the TX FIFO level."]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "Determines whether an interrupt occurs when a the receive FIFO reaches the level specified by the TXLVL field in the FIFOTRIG register.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rxlvl {
     #[doc = "0: No interrupt will be generated based on the RX FIFO level."]
@@ -234,6 +238,17 @@ impl R {
     #[inline(always)]
     pub fn rxlvl(&self) -> RxlvlR {
         RxlvlR::new(((self.bits >> 3) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("FIFOINTENSET")
+            .field("txerr", &self.txerr())
+            .field("rxerr", &self.rxerr())
+            .field("txlvl", &self.txlvl())
+            .field("rxlvl", &self.rxlvl())
+            .finish()
     }
 }
 impl W {

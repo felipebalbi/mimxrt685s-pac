@@ -3,6 +3,7 @@ pub type R = crate::R<Pscctl0Spec>;
 #[doc = "Register `PSCCTL0` writer"]
 pub type W = crate::W<Pscctl0Spec>;
 #[doc = "flexcomm 0 clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Fc0Clk {
     #[doc = "0: Disable Clock"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "flexcomm 1 clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Fc1Clk {
     #[doc = "0: Disable Clock"]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "flexcomm 2 clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Fc2Clk {
     #[doc = "0: Disable Clock"]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "flexcomm 3 clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Fc3Clk {
     #[doc = "0: Disable Clock"]
@@ -215,6 +219,7 @@ where
     }
 }
 #[doc = "flexcomm 4 clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Fc4Clk {
     #[doc = "0: Disable Clock"]
@@ -268,6 +273,7 @@ where
     }
 }
 #[doc = "flexcomm 5 clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Fc5Clk {
     #[doc = "0: Disable Clock"]
@@ -321,6 +327,7 @@ where
     }
 }
 #[doc = "flexcomm 6 clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Fc6Clk {
     #[doc = "0: Disable Clock"]
@@ -374,6 +381,7 @@ where
     }
 }
 #[doc = "flexcomm 7 clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Fc7Clk {
     #[doc = "0: Disable Clock"]
@@ -427,6 +435,7 @@ where
     }
 }
 #[doc = "flexcomm 14 spi clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Fc14SpiClk {
     #[doc = "0: Disable Clock"]
@@ -480,6 +489,7 @@ where
     }
 }
 #[doc = "flexcomm 15 i2c clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Fc15I2cClk {
     #[doc = "0: Disable Clock"]
@@ -533,6 +543,7 @@ where
     }
 }
 #[doc = "DMIC0 clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmic0Clk {
     #[doc = "0: Disable Clock"]
@@ -586,6 +597,7 @@ where
     }
 }
 #[doc = "OS event timer clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum OseventTimerClk {
     #[doc = "0: Disable Clock"]
@@ -698,6 +710,25 @@ impl R {
     #[inline(always)]
     pub fn osevent_timer_clk(&self) -> OseventTimerClkR {
         OseventTimerClkR::new(((self.bits >> 27) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PSCCTL0")
+            .field("fc0_clk", &self.fc0_clk())
+            .field("fc1_clk", &self.fc1_clk())
+            .field("fc2_clk", &self.fc2_clk())
+            .field("fc3_clk", &self.fc3_clk())
+            .field("fc4_clk", &self.fc4_clk())
+            .field("fc5_clk", &self.fc5_clk())
+            .field("fc6_clk", &self.fc6_clk())
+            .field("fc7_clk", &self.fc7_clk())
+            .field("fc14_spi_clk", &self.fc14_spi_clk())
+            .field("fc15_i2c_clk", &self.fc15_i2c_clk())
+            .field("dmic0_clk", &self.dmic0_clk())
+            .field("osevent_timer_clk", &self.osevent_timer_clk())
+            .finish()
     }
 }
 impl W {

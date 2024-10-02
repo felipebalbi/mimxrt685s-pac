@@ -3,6 +3,7 @@ pub type R = crate::R<SwtrigSpec>;
 #[doc = "Register `SWTRIG` writer"]
 pub type W = crate::W<SwtrigSpec>;
 #[doc = "Software trigger 0 event\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Swt0 {
     #[doc = "0: No trigger 0 event generated."]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Software trigger 1 event\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Swt1 {
     #[doc = "0: No trigger 1 event generated."]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "Software trigger 2 event\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Swt2 {
     #[doc = "0: No trigger 2 event generated."]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "Software trigger 3 event\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Swt3 {
     #[doc = "0: No trigger 3 event generated."]
@@ -215,6 +219,7 @@ where
     }
 }
 #[doc = "Software trigger 4 event\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Swt4 {
     #[doc = "0: No trigger 4 event generated."]
@@ -268,6 +273,7 @@ where
     }
 }
 #[doc = "Software trigger 5 event\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Swt5 {
     #[doc = "0: No trigger 5 event generated."]
@@ -321,6 +327,7 @@ where
     }
 }
 #[doc = "Software trigger 6 event\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Swt6 {
     #[doc = "0: No trigger 6 event generated."]
@@ -374,6 +381,7 @@ where
     }
 }
 #[doc = "Software trigger 7 event\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Swt7 {
     #[doc = "0: No trigger 7 event generated."]
@@ -427,6 +435,7 @@ where
     }
 }
 #[doc = "Software trigger 8 event\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Swt8 {
     #[doc = "0: No trigger 8 event generated."]
@@ -480,6 +489,7 @@ where
     }
 }
 #[doc = "Software trigger 9 event\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Swt9 {
     #[doc = "0: No trigger 9 event generated."]
@@ -533,6 +543,7 @@ where
     }
 }
 #[doc = "Software trigger 10 event\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Swt10 {
     #[doc = "0: No trigger 10 event generated."]
@@ -586,6 +597,7 @@ where
     }
 }
 #[doc = "Software trigger 11 event\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Swt11 {
     #[doc = "0: No trigger 11 event generated."]
@@ -639,6 +651,7 @@ where
     }
 }
 #[doc = "Software trigger 12 event\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Swt12 {
     #[doc = "0: No trigger 12 event generated."]
@@ -692,6 +705,7 @@ where
     }
 }
 #[doc = "Software trigger 13 event\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Swt13 {
     #[doc = "0: No trigger 13 event generated."]
@@ -745,6 +759,7 @@ where
     }
 }
 #[doc = "Software trigger 14 event\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Swt14 {
     #[doc = "0: No trigger 14 event generated."]
@@ -798,6 +813,7 @@ where
     }
 }
 #[doc = "Software trigger 15 event\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Swt15 {
     #[doc = "0: No trigger 15 event generated."]
@@ -930,6 +946,29 @@ impl R {
     #[inline(always)]
     pub fn swt15(&self) -> Swt15R {
         Swt15R::new(((self.bits >> 15) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SWTRIG")
+            .field("swt0", &self.swt0())
+            .field("swt1", &self.swt1())
+            .field("swt2", &self.swt2())
+            .field("swt3", &self.swt3())
+            .field("swt4", &self.swt4())
+            .field("swt5", &self.swt5())
+            .field("swt6", &self.swt6())
+            .field("swt7", &self.swt7())
+            .field("swt8", &self.swt8())
+            .field("swt9", &self.swt9())
+            .field("swt10", &self.swt10())
+            .field("swt11", &self.swt11())
+            .field("swt12", &self.swt12())
+            .field("swt13", &self.swt13())
+            .field("swt14", &self.swt14())
+            .field("swt15", &self.swt15())
+            .finish()
     }
 }
 impl W {

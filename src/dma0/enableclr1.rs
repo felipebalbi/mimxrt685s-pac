@@ -2,6 +2,12 @@
 pub type W = crate::W<Enableclr1Spec>;
 #[doc = "Field `CLR` writer - Writing ones to this register clears the corresponding bits in ENABLESET1."]
 pub type ClrW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for crate::generic::Reg<Enableclr1Spec> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
+    }
+}
 impl W {
     #[doc = "Bits 0:31 - Writing ones to this register clears the corresponding bits in ENABLESET1."]
     #[inline(always)]

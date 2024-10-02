@@ -22,6 +22,15 @@ impl R {
         MonoRngR::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SCML")
+            .field("mono_max", &self.mono_max())
+            .field("mono_rng", &self.mono_rng())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:15 - Monobit Maximum Limit"]
     #[inline(always)]

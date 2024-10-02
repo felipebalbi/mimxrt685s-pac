@@ -13,6 +13,14 @@ impl R {
         FlagR::new((self.bits & 0xffff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("EVFLAG")
+            .field("flag", &self.flag())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:15 - Bit n is one if event n has occurred since reset or a 1 was last written to this bit (event 0 = bit 0, event 1 = bit 1, etc.). The number of bits = number of events in this SCT."]
     #[inline(always)]

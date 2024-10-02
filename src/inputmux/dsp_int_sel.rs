@@ -3,6 +3,7 @@ pub type R = crate::R<DspIntSelSpec>;
 #[doc = "Register `DSP_INT_SEL[%s]` writer"]
 pub type W = crate::W<DspIntSelSpec>;
 #[doc = "DSP Input(n) Selection. 34:1 Selection for each. . .\n\nValue on reset: 63"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DspIntSel {
@@ -496,6 +497,14 @@ impl R {
     #[inline(always)]
     pub fn dsp_int_sel(&self) -> DspIntSelR {
         DspIntSelR::new((self.bits & 0x3f) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DSP_INT_SEL")
+            .field("dsp_int_sel", &self.dsp_int_sel())
+            .finish()
     }
 }
 impl W {

@@ -9,6 +9,14 @@ impl R {
         KeyoutidxR::new((self.bits & 0x0f) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("KEYOUTINDEX")
+            .field("keyoutidx", &self.keyoutidx())
+            .finish()
+    }
+}
 #[doc = "PUF Key Output Index\n\nYou can [`read`](crate::Reg::read) this register and get [`keyoutindex::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct KeyoutindexSpec;
 impl crate::RegisterSpec for KeyoutindexSpec {

@@ -13,6 +13,14 @@ impl R {
         DatcontR::new(self.bits)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DATA_BUFF_ACC_PORT")
+            .field("datcont", &self.datcont())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:31 - Data Content"]
     #[inline(always)]

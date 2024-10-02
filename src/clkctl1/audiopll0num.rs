@@ -13,6 +13,14 @@ impl R {
         NumR::new(self.bits & 0x3fff_ffff)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("AUDIOPLL0NUM")
+            .field("num", &self.num())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:29 - This field contains the numerator of the AUDIOPLL0 fractional loop divider. NOTES: 1. The value of numerator must always be configured to be less than the value of the denominator. 2. The AUDIOPLL0NUM register can only be changed when the AUDIOPLL0 is disabled."]
     #[inline(always)]

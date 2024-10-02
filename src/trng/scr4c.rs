@@ -16,6 +16,15 @@ impl R {
         R4_1CtR::new(((self.bits >> 16) & 0x0fff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SCR4C")
+            .field("r4_0_ct", &self.r4_0_ct())
+            .field("r4_1_ct", &self.r4_1_ct())
+            .finish()
+    }
+}
 #[doc = "Statistical Check Run Length 4 Count Register\n\nYou can [`read`](crate::Reg::read) this register and get [`scr4c::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Scr4cSpec;
 impl crate::RegisterSpec for Scr4cSpec {

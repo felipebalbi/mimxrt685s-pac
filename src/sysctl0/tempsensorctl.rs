@@ -3,6 +3,7 @@ pub type R = crate::R<TempsensorctlSpec>;
 #[doc = "Register `TEMPSENSORCTL` writer"]
 pub type W = crate::W<TempsensorctlSpec>;
 #[doc = "Temperature Sensor Source. . .\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Tssrc {
     #[doc = "0: ADC Built-in Temperature Sensor."]
@@ -48,6 +49,14 @@ impl R {
     #[inline(always)]
     pub fn tssrc(&self) -> TssrcR {
         TssrcR::new((self.bits & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("TEMPSENSORCTL")
+            .field("tssrc", &self.tssrc())
+            .finish()
     }
 }
 impl W {

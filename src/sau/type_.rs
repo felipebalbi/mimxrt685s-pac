@@ -13,6 +13,14 @@ impl R {
         SregionR::new((self.bits & 0xff) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("TYPE")
+            .field("sregion", &self.sregion())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:7 - SAU regions. The number of implemented SAU regions."]
     #[inline(always)]

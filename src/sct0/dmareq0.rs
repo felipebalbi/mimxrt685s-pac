@@ -31,6 +31,16 @@ impl R {
         Drq0R::new(((self.bits >> 31) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DMAREQ0")
+            .field("dev_0", &self.dev_0())
+            .field("drl0", &self.drl0())
+            .field("drq0", &self.drq0())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:15 - If bit n is one, event n triggers DMA request 0 (event 0 = bit 0, event 1 = bit 1, etc.). The number of bits = number of events in this SCT."]
     #[inline(always)]

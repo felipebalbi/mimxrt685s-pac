@@ -3,6 +3,7 @@ pub type R = crate::R<ClockSpec>;
 #[doc = "Register `CLOCK` writer"]
 pub type W = crate::W<ClockSpec>;
 #[doc = "Unit of Measurement Encoding for Clock Speed\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ClockUnit {
     #[doc = "0: kHz Speed (between 1 kHz and 1023 kHz)"]
@@ -69,6 +70,15 @@ impl R {
     #[inline(always)]
     pub fn clock_speed(&self) -> ClockSpeedR {
         ClockSpeedR::new(((self.bits >> 2) & 0x03ff) as u16)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CLOCK")
+            .field("clock_unit", &self.clock_unit())
+            .field("clock_speed", &self.clock_speed())
+            .finish()
     }
 }
 impl W {

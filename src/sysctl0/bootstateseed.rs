@@ -13,6 +13,14 @@ impl R {
         BootstateseedR::new(self.bits)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("BOOTSTATESEED")
+            .field("bootstateseed", &self.bootstateseed())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:31 - A 256-bit random number set by boot ROM on each restart"]
     #[inline(always)]

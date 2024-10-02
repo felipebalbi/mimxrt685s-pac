@@ -3,6 +3,7 @@ pub type R = crate::R<Pscctl1Spec>;
 #[doc = "Register `PSCCTL1` writer"]
 pub type W = crate::W<Pscctl1Spec>;
 #[doc = "SDIO0 clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sdio0Clk {
     #[doc = "0: Disable Clock"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "SDIO1 clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sdio1Clk {
     #[doc = "0: Disable Clock"]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "Analog comparator clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Acmp0Clk {
     #[doc = "0: Disable Clock"]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "ADC clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Adc0Clk {
     #[doc = "0: Disable Clock"]
@@ -215,6 +219,7 @@ where
     }
 }
 #[doc = "SHSGPIO0 clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Shsgpio0Clk {
     #[doc = "0: Disable Clock"]
@@ -292,6 +297,18 @@ impl R {
     #[inline(always)]
     pub fn shsgpio0_clk(&self) -> Shsgpio0ClkR {
         Shsgpio0ClkR::new(((self.bits >> 24) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PSCCTL1")
+            .field("sdio0_clk", &self.sdio0_clk())
+            .field("sdio1_clk", &self.sdio1_clk())
+            .field("acmp0_clk", &self.acmp0_clk())
+            .field("adc0_clk", &self.adc0_clk())
+            .field("shsgpio0_clk", &self.shsgpio0_clk())
+            .finish()
     }
 }
 impl W {

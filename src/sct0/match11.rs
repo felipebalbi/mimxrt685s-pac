@@ -22,6 +22,15 @@ impl R {
         MatchnHR::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("MATCH11")
+            .field("matchn_l", &self.matchn_l())
+            .field("matchn_h", &self.matchn_h())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:15 - When UNIFY = 0, read or write the 16-bit value to be compared to the L counter. When UNIFY = 1, read or write the lower 16 bits of the 32-bit value to be compared to the unified counter."]
     #[inline(always)]

@@ -9,6 +9,14 @@ impl R {
         ProductIdR::new((self.bits & 0xffff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PRODUCT_ID")
+            .field("product_id", &self.product_id())
+            .finish()
+    }
+}
 #[doc = "product ID\n\nYou can [`read`](crate::Reg::read) this register and get [`product_id::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct ProductIdSpec;
 impl crate::RegisterSpec for ProductIdSpec {

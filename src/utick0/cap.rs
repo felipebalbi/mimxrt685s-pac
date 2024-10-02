@@ -16,6 +16,15 @@ impl R {
         ValidR::new(((self.bits >> 31) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CAP")
+            .field("cap_value", &self.cap_value())
+            .field("valid", &self.valid())
+            .finish()
+    }
+}
 #[doc = "Capture register .\n\nYou can [`read`](crate::Reg::read) this register and get [`cap::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CapSpec;
 impl crate::RegisterSpec for CapSpec {

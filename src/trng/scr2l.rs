@@ -22,6 +22,15 @@ impl R {
         Run2RngR::new(((self.bits >> 16) & 0x3fff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SCR2L")
+            .field("run2_max", &self.run2_max())
+            .field("run2_rng", &self.run2_rng())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:13 - Run Length 2 Maximum Limit"]
     #[inline(always)]

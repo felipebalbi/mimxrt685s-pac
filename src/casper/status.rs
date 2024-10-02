@@ -3,6 +3,7 @@ pub type R = crate::R<StatusSpec>;
 #[doc = "Register `STATUS` writer"]
 pub type W = crate::W<StatusSpec>;
 #[doc = "Indicates if the accelerator has finished an operation. Write 1 to clear, or write CTRL1 to clear.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Done {
     #[doc = "0: Busy or just cleared"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Last carry value if operation produced a carry bit\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Carry {
     #[doc = "0: Carry was 0 or no carry"]
@@ -92,6 +94,7 @@ impl CarryR {
     }
 }
 #[doc = "Indicates if the accelerator is busy performing an operation\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Busy {
     #[doc = "0: Not busy - is idle"]
@@ -142,6 +145,16 @@ impl R {
     #[inline(always)]
     pub fn busy(&self) -> BusyR {
         BusyR::new(((self.bits >> 5) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("STATUS")
+            .field("done", &self.done())
+            .field("carry", &self.carry())
+            .field("busy", &self.busy())
+            .finish()
     }
 }
 impl W {

@@ -112,6 +112,25 @@ impl R {
         SeqtimeoutR::new(((self.bits >> 11) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("INTR")
+            .field("ipcmddone", &self.ipcmddone())
+            .field("ipcmdge", &self.ipcmdge())
+            .field("ahbcmdge", &self.ahbcmdge())
+            .field("ipcmderr", &self.ipcmderr())
+            .field("ahbcmderr", &self.ahbcmderr())
+            .field("iprxwa", &self.iprxwa())
+            .field("iptxwe", &self.iptxwe())
+            .field("datalearnfail", &self.datalearnfail())
+            .field("sckstopbyrd", &self.sckstopbyrd())
+            .field("sckstopbywr", &self.sckstopbywr())
+            .field("ahbbustimeout", &self.ahbbustimeout())
+            .field("seqtimeout", &self.seqtimeout())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - IP triggered Command Sequences Execution finished interrupt. This interrupt is also generated when there is IPCMDGE or IPCMDERR interrupt generated."]
     #[inline(always)]

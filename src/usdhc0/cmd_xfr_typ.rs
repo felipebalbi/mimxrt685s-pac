@@ -3,6 +3,7 @@ pub type R = crate::R<CmdXfrTypSpec>;
 #[doc = "Register `CMD_XFR_TYP` writer"]
 pub type W = crate::W<CmdXfrTypSpec>;
 #[doc = "Response Type Select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Rsptyp {
@@ -89,6 +90,7 @@ where
     }
 }
 #[doc = "Command CRC Check Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cccen {
     #[doc = "0: Disable"]
@@ -142,6 +144,7 @@ where
     }
 }
 #[doc = "Command Index Check Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cicen {
     #[doc = "0: Disable"]
@@ -195,6 +198,7 @@ where
     }
 }
 #[doc = "Data Present Select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dpsel {
     #[doc = "0: No Data Present"]
@@ -248,6 +252,7 @@ where
     }
 }
 #[doc = "Command Type\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Cmdtyp {
@@ -367,6 +372,19 @@ impl R {
     #[inline(always)]
     pub fn cmdinx(&self) -> CmdinxR {
         CmdinxR::new(((self.bits >> 24) & 0x3f) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CMD_XFR_TYP")
+            .field("rsptyp", &self.rsptyp())
+            .field("cccen", &self.cccen())
+            .field("cicen", &self.cicen())
+            .field("dpsel", &self.dpsel())
+            .field("cmdtyp", &self.cmdtyp())
+            .field("cmdinx", &self.cmdinx())
+            .finish()
     }
 }
 impl W {

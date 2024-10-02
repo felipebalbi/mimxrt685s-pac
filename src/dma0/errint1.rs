@@ -3,6 +3,7 @@ pub type R = crate::R<Errint1Spec>;
 #[doc = "Register `ERRINT1` writer"]
 pub type W = crate::W<Errint1Spec>;
 #[doc = "Error Interrupt flag for DMA channel 32.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Err32 {
     #[doc = "0: The Error Interrupt is not active for DMA channel 32."]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Additional error Interrupt flags for remaining DMA channels in the range 63 to 33. Any bits above the actually implemented channels are reserved.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u32)]
 pub enum Err63_33 {
@@ -125,6 +127,15 @@ impl R {
     #[inline(always)]
     pub fn err63_33(&self) -> Err63_33R {
         Err63_33R::new((self.bits >> 1) & 0x7fff_ffff)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ERRINT1")
+            .field("err32", &self.err32())
+            .field("err63_33", &self.err63_33())
+            .finish()
     }
 }
 impl W {

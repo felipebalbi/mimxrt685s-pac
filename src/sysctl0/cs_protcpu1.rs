@@ -13,6 +13,14 @@ impl R {
         CsProtcpu1R::new(self.bits)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CS_PROTCPU1")
+            .field("cs_protcpu1", &self.cs_protcpu1())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:31 - Controls HIFI4 AP Enable. Magic Value: 0x1234 5678"]
     #[inline(always)]

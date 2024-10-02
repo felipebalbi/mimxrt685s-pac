@@ -9,6 +9,14 @@ impl R {
         RxdataR::new(self.bits)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("FIFORD")
+            .field("rxdata", &self.rxdata())
+            .finish()
+    }
+}
 #[doc = "FIFO read data.\n\nYou can [`read`](crate::Reg::read) this register and get [`fiford::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FifordSpec;
 impl crate::RegisterSpec for FifordSpec {

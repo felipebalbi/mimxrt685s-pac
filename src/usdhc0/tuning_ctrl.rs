@@ -49,6 +49,18 @@ impl R {
         StdTuningEnR::new(((self.bits >> 24) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("TUNING_CTRL")
+            .field("tuning_start_tap", &self.tuning_start_tap())
+            .field("tuning_counter", &self.tuning_counter())
+            .field("tuning_step", &self.tuning_step())
+            .field("tuning_window", &self.tuning_window())
+            .field("std_tuning_en", &self.std_tuning_en())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:7 - TUNING_START_TAP"]
     #[inline(always)]

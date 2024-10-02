@@ -3,6 +3,7 @@ pub type R = crate::R<MainclkselbSpec>;
 #[doc = "Register `MAINCLKSELB` writer"]
 pub type W = crate::W<MainclkselbSpec>;
 #[doc = "Main Clock Source Selection. . .\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Sel {
@@ -93,6 +94,14 @@ impl R {
     #[inline(always)]
     pub fn sel(&self) -> SelR {
         SelR::new((self.bits & 3) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("MAINCLKSELB")
+            .field("sel", &self.sel())
+            .finish()
     }
 }
 impl W {

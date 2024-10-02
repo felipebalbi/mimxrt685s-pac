@@ -160,6 +160,29 @@ will be set to 0 if MR3 matches the TC. 0 = disabled. 1 = enabled."]
         Mr3rlR::new(((self.bits >> 27) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("MCR")
+            .field("mr0i", &self.mr0i())
+            .field("mr0r", &self.mr0r())
+            .field("mr0s", &self.mr0s())
+            .field("mr1i", &self.mr1i())
+            .field("mr1r", &self.mr1r())
+            .field("mr1s", &self.mr1s())
+            .field("mr2i", &self.mr2i())
+            .field("mr2r", &self.mr2r())
+            .field("mr2s", &self.mr2s())
+            .field("mr3i", &self.mr3i())
+            .field("mr3r", &self.mr3r())
+            .field("mr3s", &self.mr3s())
+            .field("mr0rl", &self.mr0rl())
+            .field("mr1rl", &self.mr1rl())
+            .field("mr2rl", &self.mr2rl())
+            .field("mr3rl", &self.mr3rl())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Interrupt on MR0: an interrupt is generated when MR0 matches the value in the TC. 0 = disabled. 1 = enabled."]
     #[inline(always)]

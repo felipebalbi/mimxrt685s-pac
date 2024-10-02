@@ -85,6 +85,22 @@ impl R {
         SaddrR::new(((self.bits >> 25) & 0x7f) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SCONFIG")
+            .field("slvena", &self.slvena())
+            .field("nack", &self.nack())
+            .field("matchss", &self.matchss())
+            .field("s0ignore", &self.s0ignore())
+            .field("ddrok", &self.ddrok())
+            .field("idrand", &self.idrand())
+            .field("offline", &self.offline())
+            .field("bamatch", &self.bamatch())
+            .field("saddr", &self.saddr())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Slave enable"]
     #[inline(always)]

@@ -3,6 +3,7 @@ pub type R = crate::R<Pscctl0Spec>;
 #[doc = "Register `PSCCTL0` writer"]
 pub type W = crate::W<Pscctl0Spec>;
 #[doc = "128KB ROM control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RomCtl128kb {
     #[doc = "0: Disable Clock"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "powerquad clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PowerquadClk {
     #[doc = "0: Disable Clock"]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "CAPSER clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CasperClk {
     #[doc = "0: Disable Clock"]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "HASHCRYPT clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HashcryptClk {
     #[doc = "0: Disable Clock"]
@@ -215,6 +219,7 @@ where
     }
 }
 #[doc = "PUF clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PufClk {
     #[doc = "0: Disable Clock"]
@@ -268,6 +273,7 @@ where
     }
 }
 #[doc = "RNG clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RngClk {
     #[doc = "0: Disable Clock"]
@@ -321,6 +327,7 @@ where
     }
 }
 #[doc = "FLEXSPI clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FlexspiOtfadClk {
     #[doc = "0: Disable Clock"]
@@ -374,6 +381,7 @@ where
     }
 }
 #[doc = "OTP clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum OtpClk {
     #[doc = "0: Disable Clock"]
@@ -427,6 +435,7 @@ where
     }
 }
 #[doc = "USB PHY clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UsbhsPhyClk {
     #[doc = "0: Disable Clock"]
@@ -480,6 +489,7 @@ where
     }
 }
 #[doc = "USB DEVICE clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UsbhsDeviceClk {
     #[doc = "0: Disable Clock"]
@@ -533,6 +543,7 @@ where
     }
 }
 #[doc = "USB HOST clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UsbhsHostClk {
     #[doc = "0: Disable Clock"]
@@ -586,6 +597,7 @@ where
     }
 }
 #[doc = "USBHS RAM clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UsbhsSramClk {
     #[doc = "0: Disable Clock"]
@@ -639,6 +651,7 @@ where
     }
 }
 #[doc = "SCT clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SctClk {
     #[doc = "0: Disable Clock"]
@@ -756,6 +769,26 @@ impl R {
     #[inline(always)]
     pub fn sct_clk(&self) -> SctClkR {
         SctClkR::new(((self.bits >> 24) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PSCCTL0")
+            .field("rom_ctl_128kb", &self.rom_ctl_128kb())
+            .field("powerquad_clk", &self.powerquad_clk())
+            .field("casper_clk", &self.casper_clk())
+            .field("hashcrypt_clk", &self.hashcrypt_clk())
+            .field("puf_clk", &self.puf_clk())
+            .field("rng_clk", &self.rng_clk())
+            .field("flexspi_otfad_clk", &self.flexspi_otfad_clk())
+            .field("otp_clk", &self.otp_clk())
+            .field("usbhs_phy_clk", &self.usbhs_phy_clk())
+            .field("usbhs_device_clk", &self.usbhs_device_clk())
+            .field("usbhs_host_clk", &self.usbhs_host_clk())
+            .field("usbhs_sram_clk", &self.usbhs_sram_clk())
+            .field("sct_clk", &self.sct_clk())
+            .finish()
     }
 }
 impl W {

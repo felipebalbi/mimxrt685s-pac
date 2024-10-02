@@ -3,6 +3,7 @@ pub type R = crate::R<FifocfgSpec>;
 #[doc = "Register `FIFOCFG` writer"]
 pub type W = crate::W<FifocfgSpec>;
 #[doc = "Enable the transmit FIFO.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Enabletx {
     #[doc = "0: The transmit FIFO is not enabled."]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Enable the receive FIFO.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Enablerx {
     #[doc = "0: The receive FIFO is not enabled."]
@@ -111,6 +113,7 @@ where
 #[doc = "Field `SIZE` reader - FIFO size configuration. This is a read-only field. 0x0 = FIFO is configured as 16 entries of 8 bits. 0x1, 0x2, 0x3 = not applicable to USART."]
 pub type SizeR = crate::FieldReader;
 #[doc = "DMA configuration for transmit.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmatx {
     #[doc = "0: DMA is not used for the transmit function."]
@@ -164,6 +167,7 @@ where
     }
 }
 #[doc = "DMA configuration for receive.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmarx {
     #[doc = "0: DMA is not used for the receive function."]
@@ -217,6 +221,7 @@ where
     }
 }
 #[doc = "Wake-up for transmit FIFO level. This allows the device to be woken from reduced power modes (up to power-down, as long as the peripheral function works in that power mode) without enabling the TXLVL interrupt. Only DMA wakes up, processes data, and goes back to sleep. The CPU will remain stopped until woken by another cause, such as DMA completion. See Hardware Wake-up control register.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Waketx {
     #[doc = "0: Only enabled interrupts will wake up the device form reduced power modes."]
@@ -270,6 +275,7 @@ where
     }
 }
 #[doc = "Wake-up for receive FIFO level. This allows the device to be woken from reduced power modes (up to power-down, as long as the peripheral function works in that power mode) without enabling the TXLVL interrupt. Only DMA wakes up, processes data, and goes back to sleep. The CPU will remain stopped until woken by another cause, such as DMA completion. See Hardware Wake-up control register.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Wakerx {
     #[doc = "0: Only enabled interrupts will wake up the device form reduced power modes."]
@@ -375,6 +381,22 @@ impl R {
     #[inline(always)]
     pub fn emptyrx(&self) -> EmptyrxR {
         EmptyrxR::new(((self.bits >> 17) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("FIFOCFG")
+            .field("enabletx", &self.enabletx())
+            .field("enablerx", &self.enablerx())
+            .field("size", &self.size())
+            .field("dmatx", &self.dmatx())
+            .field("dmarx", &self.dmarx())
+            .field("waketx", &self.waketx())
+            .field("wakerx", &self.wakerx())
+            .field("emptytx", &self.emptytx())
+            .field("emptyrx", &self.emptyrx())
+            .finish()
     }
 }
 impl W {

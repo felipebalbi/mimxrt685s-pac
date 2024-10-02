@@ -3,6 +3,7 @@ pub type R = crate::R<IntenclrSpec>;
 #[doc = "Register `INTENCLR` writer"]
 pub type W = crate::W<IntenclrSpec>;
 #[doc = "Written to clear an interrupt set with INTENSET.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Done {
     #[doc = "0: If written 0, ignored"]
@@ -60,6 +61,14 @@ impl R {
     #[inline(always)]
     pub fn done(&self) -> DoneR {
         DoneR::new((self.bits & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("INTENCLR")
+            .field("done", &self.done())
+            .finish()
     }
 }
 impl W {

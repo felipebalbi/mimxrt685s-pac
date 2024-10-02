@@ -13,6 +13,14 @@ impl R {
         Reg1TopR::new((self.bits >> 10) & 0x0001_ffff)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("REG1_TOP")
+            .field("reg1_top", &self.reg1_top())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 10:26 - Upper limit of Region 1"]
     #[inline(always)]

@@ -9,6 +9,14 @@ impl R {
         SecVioAddrR::new(self.bits)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SEC_VIO_ADDR")
+            .field("sec_vio_addr", &self.sec_vio_addr())
+            .finish()
+    }
+}
 #[doc = "most recent security violation address for AHB layer n\n\nYou can [`read`](crate::Reg::read) this register and get [`sec_vio_addr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SecVioAddrSpec;
 impl crate::RegisterSpec for SecVioAddrSpec {

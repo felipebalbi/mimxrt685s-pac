@@ -3,6 +3,7 @@ pub type R = crate::R<MixCtrlSpec>;
 #[doc = "Register `MIX_CTRL` writer"]
 pub type W = crate::W<MixCtrlSpec>;
 #[doc = "DMA Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmaen {
     #[doc = "0: Disable"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Block Count Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Bcen {
     #[doc = "0: Disable"]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "Auto CMD12 Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ac12en {
     #[doc = "0: Disable"]
@@ -166,6 +169,7 @@ pub type DdrEnR = crate::BitReader;
 #[doc = "Field `DDR_EN` writer - Dual Data Rate mode selection"]
 pub type DdrEnW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Data Transfer Direction Select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dtdsel {
     #[doc = "0: Write (Host to Card)"]
@@ -219,6 +223,7 @@ where
     }
 }
 #[doc = "Multi / Single Block Select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Msbsel {
     #[doc = "0: Single Block"]
@@ -280,6 +285,7 @@ pub type Ac23enR = crate::BitReader;
 #[doc = "Field `AC23EN` writer - Auto CMD23 Enable"]
 pub type Ac23enW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Execute Tuning: (Only used for SD3.0, SDR104 mode and EMMC HS200 mode)\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ExeTune {
     #[doc = "0: Not Tuned or Tuning Completed"]
@@ -333,6 +339,7 @@ where
     }
 }
 #[doc = "SMP_CLK_SEL\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SmpClkSel {
     #[doc = "0: Fixed clock is used to sample data / cmd"]
@@ -386,6 +393,7 @@ where
     }
 }
 #[doc = "Auto Tuning Enable (Only used for SD3.0, SDR104 mode and and EMMC HS200 mode)\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AutoTuneEn {
     #[doc = "0: Disable auto tuning"]
@@ -439,6 +447,7 @@ where
     }
 }
 #[doc = "Feedback Clock Source Selection (Only used for SD3.0, SDR104 mode and EMMC HS200 mode)\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FbclkSel {
     #[doc = "0: Feedback clock comes from the loopback CLK"]
@@ -560,6 +569,26 @@ impl R {
     #[inline(always)]
     pub fn hs400_mode(&self) -> Hs400ModeR {
         Hs400ModeR::new(((self.bits >> 26) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("MIX_CTRL")
+            .field("dmaen", &self.dmaen())
+            .field("bcen", &self.bcen())
+            .field("ac12en", &self.ac12en())
+            .field("ddr_en", &self.ddr_en())
+            .field("dtdsel", &self.dtdsel())
+            .field("msbsel", &self.msbsel())
+            .field("nibble_pos", &self.nibble_pos())
+            .field("ac23en", &self.ac23en())
+            .field("exe_tune", &self.exe_tune())
+            .field("smp_clk_sel", &self.smp_clk_sel())
+            .field("auto_tune_en", &self.auto_tune_en())
+            .field("fbclk_sel", &self.fbclk_sel())
+            .field("hs400_mode", &self.hs400_mode())
+            .finish()
     }
 }
 impl W {

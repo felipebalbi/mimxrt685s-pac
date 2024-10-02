@@ -67,6 +67,20 @@ impl R {
         Sdio1RuleR::new(((self.bits >> 28) & 3) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("AIPS_BRIDGE1_MEM_RULE0")
+            .field("otp_rule0", &self.otp_rule0())
+            .field("otp_rule1", &self.otp_rule1())
+            .field("otp_rule2", &self.otp_rule2())
+            .field("otp_rule3", &self.otp_rule3())
+            .field("flexspi_and_otfad_rule", &self.flexspi_and_otfad_rule())
+            .field("sdio0_rule", &self.sdio0_rule())
+            .field("sdio1_rule", &self.sdio1_rule())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:1 - 0x4013 0000--0x4013 0FFF"]
     #[inline(always)]

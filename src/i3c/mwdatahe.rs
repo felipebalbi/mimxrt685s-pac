@@ -4,6 +4,12 @@ pub type W = crate::W<MwdataheSpec>;
 pub type Data0W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `DATA1` writer - DATA 1"]
 pub type Data1W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for crate::generic::Reg<MwdataheSpec> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
+    }
+}
 impl W {
     #[doc = "Bits 0:7 - DATA 0"]
     #[inline(always)]

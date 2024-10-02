@@ -13,6 +13,14 @@ impl R {
         DivvalR::new((self.bits & 0xffff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CLKDIV")
+            .field("divval", &self.divval())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:15 - This field controls how the Flexcomm clock (FCLK) is used by the I2C functions that need an internal clock in order to operate. 0x0000 = FCLK is used directly by the I2C. 0x0001 = FCLK is divided by 2 before use. 0x0002 = FCLK is divided by 3 before use. 0xFFFF = FCLK is divided by 65,536 before use."]
     #[inline(always)]

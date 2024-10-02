@@ -3,6 +3,7 @@ pub type R = crate::R<Pdruncfg0Spec>;
 #[doc = "Register `PDRUNCFG0` writer"]
 pub type W = crate::W<Pdruncfg0Spec>;
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PmicMode0 {
     #[doc = "0: Set Mode0 to 0."]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PmicMode1 {
     #[doc = "0: Set Mode1 to 0."]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VddcoreregLp {
     #[doc = "0: VDDCOREREG HP Mode"]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PmcrefLp {
     #[doc = "0: PMCREF HP Mode"]
@@ -215,6 +219,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hvd1v8Pd {
     #[doc = "0: enabled"]
@@ -268,6 +273,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PorcoreLp {
     #[doc = "0: LVD0V6 HP Mode"]
@@ -321,6 +327,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LvdcoreLp {
     #[doc = "0: LVD0V85 HP Mode"]
@@ -374,6 +381,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HvdcorePd {
     #[doc = "0: enabled"]
@@ -427,6 +435,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SysxtalPd {
     #[doc = "0: enabled"]
@@ -480,6 +489,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LposcPd {
     #[doc = "0: enabled"]
@@ -533,6 +543,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SfroPd {
     #[doc = "0: enabled"]
@@ -586,6 +597,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FfroPd {
     #[doc = "0: enabled"]
@@ -639,6 +651,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SyspllldoPd {
     #[doc = "0: enabled"]
@@ -692,6 +705,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SyspllanaPd {
     #[doc = "0: enabled"]
@@ -745,6 +759,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AudpllldoPd {
     #[doc = "0: enabled"]
@@ -798,6 +813,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AudpllanaPd {
     #[doc = "0: enabled"]
@@ -851,6 +867,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AdcPd {
     #[doc = "0: enabled"]
@@ -904,6 +921,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AdcLp {
     #[doc = "0: enabled"]
@@ -957,6 +975,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AdctempsnsPd {
     #[doc = "0: enabled"]
@@ -1010,6 +1029,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AcmpPd {
     #[doc = "0: enabled"]
@@ -1063,6 +1083,7 @@ where
     }
 }
 #[doc = "High Speed Pad vdde0 voltage detect block\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hspad0VdetLp {
     #[doc = "0: High Speed Pad VDET in Normal Mode"]
@@ -1116,6 +1137,7 @@ where
     }
 }
 #[doc = "High speed Pad vdde0 reference blocks\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hspad0RefPd {
     #[doc = "0: High Speed Pad VREF Enabled"]
@@ -1169,6 +1191,7 @@ where
     }
 }
 #[doc = "High Speed Pad vdde2 voltage detect block\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hspad2VdetLp {
     #[doc = "0: High Speed Pad VDET in Normal Mode"]
@@ -1222,6 +1245,7 @@ where
     }
 }
 #[doc = "High speed Pad vdde2 reference blocks\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hspad2RefPd {
     #[doc = "0: High Speed Pad VREF Enabled"]
@@ -1394,6 +1418,37 @@ impl R {
     #[inline(always)]
     pub fn hspad2_ref_pd(&self) -> Hspad2RefPdR {
         Hspad2RefPdR::new(((self.bits >> 29) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PDRUNCFG0")
+            .field("pmic_mode0", &self.pmic_mode0())
+            .field("pmic_mode1", &self.pmic_mode1())
+            .field("vddcorereg_lp", &self.vddcorereg_lp())
+            .field("pmcref_lp", &self.pmcref_lp())
+            .field("hvd1v8_pd", &self.hvd1v8_pd())
+            .field("porcore_lp", &self.porcore_lp())
+            .field("lvdcore_lp", &self.lvdcore_lp())
+            .field("hvdcore_pd", &self.hvdcore_pd())
+            .field("sysxtal_pd", &self.sysxtal_pd())
+            .field("lposc_pd", &self.lposc_pd())
+            .field("sfro_pd", &self.sfro_pd())
+            .field("ffro_pd", &self.ffro_pd())
+            .field("syspllldo_pd", &self.syspllldo_pd())
+            .field("syspllana_pd", &self.syspllana_pd())
+            .field("audpllldo_pd", &self.audpllldo_pd())
+            .field("audpllana_pd", &self.audpllana_pd())
+            .field("adc_pd", &self.adc_pd())
+            .field("adc_lp", &self.adc_lp())
+            .field("adctempsns_pd", &self.adctempsns_pd())
+            .field("acmp_pd", &self.acmp_pd())
+            .field("hspad0_vdet_lp", &self.hspad0_vdet_lp())
+            .field("hspad0_ref_pd", &self.hspad0_ref_pd())
+            .field("hspad2_vdet_lp", &self.hspad2_vdet_lp())
+            .field("hspad2_ref_pd", &self.hspad2_ref_pd())
+            .finish()
     }
 }
 impl W {

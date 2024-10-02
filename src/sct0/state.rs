@@ -22,6 +22,15 @@ impl R {
         StateHR::new(((self.bits >> 16) & 0x1f) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("STATE")
+            .field("state_l", &self.state_l())
+            .field("state_h", &self.state_h())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:4 - State variable."]
     #[inline(always)]

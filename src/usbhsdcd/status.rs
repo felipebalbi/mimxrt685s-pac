@@ -1,6 +1,7 @@
 #[doc = "Register `STATUS` reader"]
 pub type R = crate::R<StatusSpec>;
 #[doc = "Charger Detection Sequence Results\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SeqRes {
@@ -59,6 +60,7 @@ impl SeqResR {
     }
 }
 #[doc = "Charger Detection Sequence Status\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SeqStat {
@@ -117,6 +119,7 @@ impl SeqStatR {
     }
 }
 #[doc = "Error Flag\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Err {
     #[doc = "0: No sequence errors."]
@@ -153,6 +156,7 @@ impl ErrR {
     }
 }
 #[doc = "Timeout Flag\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum To {
     #[doc = "0: The detection sequence has not been running for over 1 s."]
@@ -189,6 +193,7 @@ impl ToR {
     }
 }
 #[doc = "Active Status Indicator\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Active {
     #[doc = "0: The sequence is not running."]
@@ -249,6 +254,18 @@ impl R {
     #[inline(always)]
     pub fn active(&self) -> ActiveR {
         ActiveR::new(((self.bits >> 22) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("STATUS")
+            .field("seq_res", &self.seq_res())
+            .field("seq_stat", &self.seq_stat())
+            .field("err", &self.err())
+            .field("to", &self.to())
+            .field("active", &self.active())
+            .finish()
     }
 }
 #[doc = "Status register\n\nYou can [`read`](crate::Reg::read) this register and get [`status::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

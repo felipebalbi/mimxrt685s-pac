@@ -67,6 +67,20 @@ impl R {
         NobyteR::new(((self.bits >> 31) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("MIBIRULES")
+            .field("addr0", &self.addr0())
+            .field("addr1", &self.addr1())
+            .field("addr2", &self.addr2())
+            .field("addr3", &self.addr3())
+            .field("addr4", &self.addr4())
+            .field("msb0", &self.msb0())
+            .field("nobyte", &self.nobyte())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:5 - ADDR0"]
     #[inline(always)]

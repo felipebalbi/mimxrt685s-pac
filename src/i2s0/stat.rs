@@ -3,6 +3,7 @@ pub type R = crate::R<StatSpec>;
 #[doc = "Register `STAT` writer"]
 pub type W = crate::W<StatSpec>;
 #[doc = "Busy status for the primary channel pair. Other BUSY flags may be found in the STAT register for each channel pair.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Busy {
     #[doc = "0: The transmitter/receiver for channel pair is currently idle."]
@@ -39,6 +40,7 @@ impl BusyR {
     }
 }
 #[doc = "Slave Frame Error flag. This applies when at least one channel pair is operating as a slave. An error indicates that the incoming WS signal did not transition as expected due to a mismatch between FRAMELEN and the actual incoming I2S stream.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Slvfrmerr {
     #[doc = "0: No error has been recorded."]
@@ -70,6 +72,7 @@ where
     }
 }
 #[doc = "Left/Right indication. This flag is considered to be a debugging aid and is not expected to be used by an I2S driver. Valid when one channel pair is busy. Indicates left or right data being processed for the currently busy channel pair.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Lr {
     #[doc = "0: Left channel."]
@@ -106,6 +109,7 @@ impl LrR {
     }
 }
 #[doc = "Data Paused status flag. Applies to all I2S channels\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Datapaused {
     #[doc = "0: Data is not currently paused. A data pause may have been requested but is not yet in force, waiting for an allowed pause point. Refer to the description of the DATAPAUSE control bit in the CFG1 register."]
@@ -156,6 +160,16 @@ impl R {
     #[inline(always)]
     pub fn datapaused(&self) -> DatapausedR {
         DatapausedR::new(((self.bits >> 3) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("STAT")
+            .field("busy", &self.busy())
+            .field("lr", &self.lr())
+            .field("datapaused", &self.datapaused())
+            .finish()
     }
 }
 impl W {

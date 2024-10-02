@@ -1,6 +1,7 @@
 #[doc = "Register `PSCCTL1_SET` writer"]
 pub type W = crate::W<Pscctl1SetSpec>;
 #[doc = "HSGPIO0 clock set\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hsgpio0ClkSet {
     #[doc = "0: No Effect"]
@@ -32,6 +33,7 @@ where
     }
 }
 #[doc = "HSGPIO1 clock set\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hsgpio1ClkSet {
     #[doc = "0: No Effect"]
@@ -63,6 +65,7 @@ where
     }
 }
 #[doc = "HSGPIO2 clock set\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hsgpio2ClkSet {
     #[doc = "0: No Effect"]
@@ -94,6 +97,7 @@ where
     }
 }
 #[doc = "HSGPIO3 clock set\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hsgpio3ClkSet {
     #[doc = "0: No Effect"]
@@ -125,6 +129,7 @@ where
     }
 }
 #[doc = "HSGPIO4 clock set\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hsgpio4ClkSet {
     #[doc = "0: No Effect"]
@@ -156,6 +161,7 @@ where
     }
 }
 #[doc = "HSGPIO5 clock set\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hsgpio5ClkSet {
     #[doc = "0: No Effect"]
@@ -187,6 +193,7 @@ where
     }
 }
 #[doc = "HSGPIO6 clock set\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hsgpio6ClkSet {
     #[doc = "0: No Effect"]
@@ -218,6 +225,7 @@ where
     }
 }
 #[doc = "HSGPIO7 clock set\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hsgpio7ClkSet {
     #[doc = "0: No Effect"]
@@ -249,6 +257,7 @@ where
     }
 }
 #[doc = "CRC clock set\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CrcClkSet {
     #[doc = "0: No Effect"]
@@ -280,6 +289,7 @@ where
     }
 }
 #[doc = "DMAC0 clock set\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ClkSet {
     #[doc = "0: No Effect"]
@@ -311,6 +321,7 @@ where
     }
 }
 #[doc = "DMAC1 clock set\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac1ClkSet {
     #[doc = "0: No Effect"]
@@ -342,6 +353,7 @@ where
     }
 }
 #[doc = "MU clock set\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MuClkSet {
     #[doc = "0: No Effect"]
@@ -373,6 +385,7 @@ where
     }
 }
 #[doc = "SEMA clock set\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SemaClkSet {
     #[doc = "0: No Effect"]
@@ -404,6 +417,7 @@ where
     }
 }
 #[doc = "FREQME clock set\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FreqmeClkSet {
     #[doc = "0: No Effect"]
@@ -432,6 +446,12 @@ where
     #[inline(always)]
     pub fn set_clock(self) -> &'a mut crate::W<REG> {
         self.variant(FreqmeClkSet::SetClock)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for crate::generic::Reg<Pscctl1SetSpec> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
     }
 }
 impl W {

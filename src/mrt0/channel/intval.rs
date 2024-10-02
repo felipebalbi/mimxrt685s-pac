@@ -7,6 +7,7 @@ pub type IvalueR = crate::FieldReader<u32>;
 #[doc = "Field `IVALUE` writer - Time interval load value. This value is loaded into the TIMERn register and the MRT channel n starts counting down from IVALUE -1. If the timer is idle, writing a non-zero value to this bit field starts the timer immediately. If the timer is running, writing a zero to this bit field does the following: If LOAD = 1, the timer stops immediately. If LOAD = 0, the timer stops at the end of the time interval."]
 pub type IvalueW<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
 #[doc = "Determines how the timer interval value IVALUE -1 is loaded into the TIMERn register. This bit is write-only. Reading this bit always returns 0.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Load {
     #[doc = "0: No force load. The load from the INTVALn register to the TIMERn register is processed at the end of the time interval if the repeat mode is selected."]
@@ -69,6 +70,15 @@ impl R {
     #[inline(always)]
     pub fn load(&self) -> LoadR {
         LoadR::new(((self.bits >> 31) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("INTVAL")
+            .field("ivalue", &self.ivalue())
+            .field("load", &self.load())
+            .finish()
     }
 }
 impl W {

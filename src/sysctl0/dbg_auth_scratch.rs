@@ -13,6 +13,14 @@ impl R {
         DbgAuthScratchR::new(self.bits)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DBG_AUTH_SCRATCH")
+            .field("dbg_auth_scratch", &self.dbg_auth_scratch())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:31 - Debug authorization scratch register for S/W."]
     #[inline(always)]

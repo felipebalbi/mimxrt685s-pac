@@ -66,6 +66,21 @@ impl R {
         PreErrR::new(((self.bits >> 31) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CLK_TUNE_CTRL_STATUS")
+            .field("dly_cell_set_post", &self.dly_cell_set_post())
+            .field("dly_cell_set_out", &self.dly_cell_set_out())
+            .field("dly_cell_set_pre", &self.dly_cell_set_pre())
+            .field("nxt_err", &self.nxt_err())
+            .field("tap_sel_post", &self.tap_sel_post())
+            .field("tap_sel_out", &self.tap_sel_out())
+            .field("tap_sel_pre", &self.tap_sel_pre())
+            .field("pre_err", &self.pre_err())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:3 - DLY_CELL_SET_POST"]
     #[inline(always)]

@@ -3,6 +3,7 @@ pub type R = crate::R<FifoCtrlSpec>;
 #[doc = "Register `FIFO_CTRL` writer"]
 pub type W = crate::W<FifoCtrlSpec>;
 #[doc = "FIFO enable.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Enable {
     #[doc = "0: FIFO is not enabled. Enabling a DMIC channel with the FIFO disabled could be useful while data is being streamed to the I2S, or in order to avoid a filter settling delay when a channel is re-enabled after a period when the data was not needed."]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "FIFO reset.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Resetn {
     #[doc = "0: Reset the FIFO."]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "Interrupt enable.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Inten {
     #[doc = "0: FIFO level interrupts are not enabled."]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "DMA enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmaen {
     #[doc = "0: DMA requests are not enabled."]
@@ -243,6 +247,18 @@ impl R {
     #[inline(always)]
     pub fn triglvl(&self) -> TriglvlR {
         TriglvlR::new(((self.bits >> 16) & 0x1f) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("FIFO_CTRL")
+            .field("enable", &self.enable())
+            .field("resetn", &self.resetn())
+            .field("inten", &self.inten())
+            .field("dmaen", &self.dmaen())
+            .field("triglvl", &self.triglvl())
+            .finish()
     }
 }
 impl W {

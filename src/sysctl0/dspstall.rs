@@ -3,6 +3,7 @@ pub type R = crate::R<DspstallSpec>;
 #[doc = "Register `DSPSTALL` writer"]
 pub type W = crate::W<DspstallSpec>;
 #[doc = "Run / Stall Register. . .\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dspstall {
     #[doc = "0: Run (Normal) Mode."]
@@ -60,6 +61,14 @@ impl R {
     #[inline(always)]
     pub fn dspstall(&self) -> DspstallR {
         DspstallR::new((self.bits & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DSPSTALL")
+            .field("dspstall", &self.dspstall())
+            .finish()
     }
 }
 impl W {

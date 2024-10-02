@@ -3,6 +3,7 @@ pub type R = crate::R<Ctrl0Spec>;
 #[doc = "Register `CTRL0` writer"]
 pub type W = crate::W<Ctrl0Spec>;
 #[doc = "Which bank-pair the offset ABOFF is within. This must be 0 if only 2-up\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Abbpair {
     #[doc = "0: Bank-pair 0 (1st)"]
@@ -60,6 +61,7 @@ pub type AboffR = crate::BitReader;
 #[doc = "Field `ABOFF` writer - Word or DWord Offset of AB values, with B at \\[2\\]=0 and A at \\[2\\]=1 as far as the code sees (normally will be an interleaved bank so only sequential to AHB). Word offset only allowed if 32 bit operation. Ideally not in the same RAM as the CD values if 4-up"]
 pub type AboffW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Which bank-pair the offset CDOFF is within. This must be 0 if only 2-up\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cdbpair {
     #[doc = "0: Bank-pair 0 (1st)"]
@@ -136,6 +138,17 @@ impl R {
     #[inline(always)]
     pub fn cdoff(&self) -> CdoffR {
         CdoffR::new(((self.bits >> 18) & 0x07ff) as u16)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CTRL0")
+            .field("abbpair", &self.abbpair())
+            .field("aboff", &self.aboff())
+            .field("cdbpair", &self.cdbpair())
+            .field("cdoff", &self.cdoff())
+            .finish()
     }
 }
 impl W {

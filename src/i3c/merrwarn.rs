@@ -94,6 +94,23 @@ impl R {
         TimeoutR::new(((self.bits >> 20) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("MERRWARN")
+            .field("nack", &self.nack())
+            .field("wrabt", &self.wrabt())
+            .field("term", &self.term())
+            .field("hpar", &self.hpar())
+            .field("hcrc", &self.hcrc())
+            .field("oread", &self.oread())
+            .field("owrite", &self.owrite())
+            .field("msgerr", &self.msgerr())
+            .field("invreq", &self.invreq())
+            .field("timeout", &self.timeout())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 2 - Not acknowledge (NACK) error"]
     #[inline(always)]

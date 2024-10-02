@@ -40,6 +40,17 @@ impl R {
         WrBrstLenR::new(((self.bits >> 24) & 0x1f) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("WTMK_LVL")
+            .field("rd_wml", &self.rd_wml())
+            .field("rd_brst_len", &self.rd_brst_len())
+            .field("wr_wml", &self.wr_wml())
+            .field("wr_brst_len", &self.wr_brst_len())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:7 - Read Watermark Level"]
     #[inline(always)]

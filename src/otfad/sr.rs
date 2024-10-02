@@ -3,6 +3,7 @@ pub type R = crate::R<SrSpec>;
 #[doc = "Field `MDPCP` reader - MDPC Present"]
 pub type MdpcpR = crate::BitReader;
 #[doc = "Operating Mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Mode {
@@ -65,6 +66,7 @@ pub type NctxR = crate::FieldReader;
 #[doc = "Field `HRL` reader - Hardware Revision Level"]
 pub type HrlR = crate::FieldReader;
 #[doc = "Restricted Register Access Mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rram {
     #[doc = "0: Register access is fully enabled. The OTFAD programming model registers can be accessed \"normally\"."]
@@ -101,6 +103,7 @@ impl RramR {
     }
 }
 #[doc = "Global Enable Mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Gem {
     #[doc = "0: OTFAD is disabled. All data fetched by the FLEXSPI bypasses OTFAD processing."]
@@ -166,6 +169,19 @@ impl R {
     #[inline(always)]
     pub fn gem(&self) -> GemR {
         GemR::new(((self.bits >> 29) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SR")
+            .field("mdpcp", &self.mdpcp())
+            .field("mode", &self.mode())
+            .field("nctx", &self.nctx())
+            .field("hrl", &self.hrl())
+            .field("rram", &self.rram())
+            .field("gem", &self.gem())
+            .finish()
     }
 }
 #[doc = "Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`sr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

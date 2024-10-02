@@ -53,6 +53,20 @@ impl R {
         IcbR::new(((self.bits >> 11) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CONFIG")
+            .field("dual", &self.dual())
+            .field("dma", &self.dma())
+            .field("ahb", &self.ahb())
+            .field("aes", &self.aes())
+            .field("aeskey", &self.aeskey())
+            .field("secret", &self.secret())
+            .field("icb", &self.icb())
+            .finish()
+    }
+}
 impl W {}
 #[doc = "Returns the configuration of this block in this chip - indicates what services are available.\n\nYou can [`read`](crate::Reg::read) this register and get [`config::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`config::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct ConfigSpec;

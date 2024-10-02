@@ -22,6 +22,15 @@ impl R {
         ReloadnHR::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("MATCHREL7")
+            .field("reloadn_l", &self.reloadn_l())
+            .field("reloadn_h", &self.reloadn_h())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:15 - When UNIFY = 0, specifies the 16-bit value to be loaded into the MATCHn_L register. When UNIFY = 1, specifies the lower 16 bits of the 32-bit value to be loaded into the MATCHn register."]
     #[inline(always)]

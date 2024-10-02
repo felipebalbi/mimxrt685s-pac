@@ -76,6 +76,21 @@ impl R {
         EnCh7R::new(((self.bits >> 7) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CHANEN")
+            .field("en_ch0", &self.en_ch0())
+            .field("en_ch1", &self.en_ch1())
+            .field("en_ch2", &self.en_ch2())
+            .field("en_ch3", &self.en_ch3())
+            .field("en_ch4", &self.en_ch4())
+            .field("en_ch5", &self.en_ch5())
+            .field("en_ch6", &self.en_ch6())
+            .field("en_ch7", &self.en_ch7())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Enable channel 0. When 1, PDM channel 0 is enabled."]
     #[inline(always)]

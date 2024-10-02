@@ -2,6 +2,12 @@
 pub type W = crate::W<WrDataSpec>;
 #[doc = "Field `CRC_WR_DATA` writer - Data written to this register will be taken to perform CRC calculation with selected bit order and 1's complement pre-process. Any write size 8, 16 or 32-bit are allowed and accept back-to-back transactions."]
 pub type CrcWrDataW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for crate::generic::Reg<WrDataSpec> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
+    }
+}
 impl W {
     #[doc = "Bits 0:31 - Data written to this register will be taken to perform CRC calculation with selected bit order and 1's complement pre-process. Any write size 8, 16 or 32-bit are allowed and accept back-to-back transactions."]
     #[inline(always)]

@@ -16,6 +16,12 @@ pub type IbiwonW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type ErrwarnW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `NOWMASTER` writer - NOWMASTER interrupt enable clear"]
 pub type NowmasterW<'a, REG> = crate::BitWriter<'a, REG>;
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for crate::generic::Reg<MintclrSpec> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
+    }
+}
 impl W {
     #[doc = "Bit 8 - SLVSTART interrupt enable clear"]
     #[inline(always)]

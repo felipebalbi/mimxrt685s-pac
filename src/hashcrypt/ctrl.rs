@@ -3,6 +3,7 @@ pub type R = crate::R<CtrlSpec>;
 #[doc = "Register `CTRL` writer"]
 pub type W = crate::W<CtrlSpec>;
 #[doc = "The operational mode to use, or 0 if none. Note that the CONFIG register will indicate if specific modes beyond SHA1 and SHA2-256 are available.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Mode {
@@ -102,6 +103,7 @@ where
     }
 }
 #[doc = "Written with 1 when starting a new Hash/Crypto. It self clears. Note that the WAITING Status bit will clear for a cycle during the initialization from New=1.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum NewHash {
     #[doc = "1: Starts a new Hash/Crypto and initializes the Digest/Result."]
@@ -126,6 +128,7 @@ where
     }
 }
 #[doc = "If 1, allows the SHA RELOAD registers to be used. This is used to save a partial Hash Digest (e.g. when need to run AES) and then reload it later for continuation.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Reload {
     #[doc = "1: Allow RELOAD registers to be used."]
@@ -167,6 +170,7 @@ where
     }
 }
 #[doc = "Written with 1 to use DMA to fill INDATA. If Hash, will request from DMA for 16 words and then will process the Hash. If Cryptographic, it will load as many words as needed, including key if not already loaded. It will then request again. Normal model is that the DMA interrupts the processor when its length expires. Note that if the processor will write the key and optionally IV, it should not enable this until it has done so. Otherwise, the DMA will be expected to load those for the 1st block (when needed).\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DmaI {
     #[doc = "0: DMA is not used. Processor writes the necessary words when WAITING is set (interrupts), unless AHB Master is used."]
@@ -220,6 +224,7 @@ where
     }
 }
 #[doc = "Written to 1 to use DMA to drain the digest/output. If both DMA_I and DMA_O are set, the DMA has to know to switch direction and the locations. This can be used for crypto uses.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DmaO {
     #[doc = "0: DMA is not used. Processor reads the digest/output in response to DIGEST interrupt."]
@@ -289,6 +294,18 @@ impl R {
     #[inline(always)]
     pub fn hashswpb(&self) -> HashswpbR {
         HashswpbR::new(((self.bits >> 12) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CTRL")
+            .field("mode", &self.mode())
+            .field("reload", &self.reload())
+            .field("dma_i", &self.dma_i())
+            .field("dma_o", &self.dma_o())
+            .field("hashswpb", &self.hashswpb())
+            .finish()
     }
 }
 impl W {

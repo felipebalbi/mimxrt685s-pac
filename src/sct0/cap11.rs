@@ -22,6 +22,15 @@ impl R {
         CapnHR::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CAP11")
+            .field("capn_l", &self.capn_l())
+            .field("capn_h", &self.capn_h())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:15 - When UNIFY = 0, read the 16-bit counter value at which this register was last captured. When UNIFY = 1, read the lower 16 bits of the 32-bit value at which this register was last captured."]
     #[inline(always)]

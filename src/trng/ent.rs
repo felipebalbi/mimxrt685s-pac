@@ -9,6 +9,12 @@ impl R {
         EntR::new(self.bits)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ENT").field("ent", &self.ent()).finish()
+    }
+}
 #[doc = "Entropy Read Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ent::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct EntSpec;
 impl crate::RegisterSpec for EntSpec {

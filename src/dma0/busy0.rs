@@ -1,6 +1,7 @@
 #[doc = "Register `BUSY0` reader"]
 pub type R = crate::R<Busy0Spec>;
 #[doc = "Busy flag for DMA channel 0.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u32)]
 pub enum Bsy {
@@ -47,6 +48,12 @@ impl R {
     #[inline(always)]
     pub fn bsy(&self) -> BsyR {
         BsyR::new(self.bits)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("BUSY0").field("bsy", &self.bsy()).finish()
     }
 }
 #[doc = "Channel Busy status for all DMA channels.\n\nYou can [`read`](crate::Reg::read) this register and get [`busy0::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

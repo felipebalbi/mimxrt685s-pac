@@ -3,6 +3,7 @@ pub type R = crate::R<Osc32khzctl0Spec>;
 #[doc = "Register `OSC32KHZCTL0` writer"]
 pub type W = crate::W<Osc32khzctl0Spec>;
 #[doc = "32KHz Enable.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ena32khz {
     #[doc = "0: disable"]
@@ -60,6 +61,14 @@ impl R {
     #[inline(always)]
     pub fn ena32khz(&self) -> Ena32khzR {
         Ena32khzR::new((self.bits & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("OSC32KHZCTL0")
+            .field("ena32khz", &self.ena32khz())
+            .finish()
     }
 }
 impl W {

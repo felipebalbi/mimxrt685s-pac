@@ -3,6 +3,7 @@ pub type R = crate::R<MiscCtrlRegSpec>;
 #[doc = "Register `MISC_CTRL_REG` writer"]
 pub type W = crate::W<MiscCtrlRegSpec>;
 #[doc = "Write lock.\n\nValue on reset: 2"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum WriteLock {
@@ -63,6 +64,7 @@ where
     }
 }
 #[doc = "AHB bus matrix enable secure checking.\n\nValue on reset: 2"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum EnableSecureChecking {
@@ -123,6 +125,7 @@ where
     }
 }
 #[doc = "AHB bus matrix enable secure privilege check.\n\nValue on reset: 2"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum EnableSPrivCheck {
@@ -183,6 +186,7 @@ where
     }
 }
 #[doc = "AHB bus matrix enable non-secure privilege check.\n\nValue on reset: 2"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum EnableNsPrivCheck {
@@ -243,6 +247,7 @@ where
     }
 }
 #[doc = "Disable secure violation abort.\n\nValue on reset: 2"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DisableViolationAbort {
@@ -303,6 +308,7 @@ where
     }
 }
 #[doc = "Disable simple master strict mode.\n\nValue on reset: 2"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DisableSimpleMasterStrictMode {
@@ -364,6 +370,7 @@ where
     }
 }
 #[doc = "Disable smart master strict mode.\n\nValue on reset: 2"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DisableSmartMasterStrictMode {
@@ -425,6 +432,7 @@ where
     }
 }
 #[doc = "Disable IDAU.\n\nValue on reset: 2"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum IdauAllNs {
@@ -524,6 +532,27 @@ impl R {
     #[inline(always)]
     pub fn idau_all_ns(&self) -> IdauAllNsR {
         IdauAllNsR::new(((self.bits >> 14) & 3) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("MISC_CTRL_REG")
+            .field("write_lock", &self.write_lock())
+            .field("enable_secure_checking", &self.enable_secure_checking())
+            .field("enable_s_priv_check", &self.enable_s_priv_check())
+            .field("enable_ns_priv_check", &self.enable_ns_priv_check())
+            .field("disable_violation_abort", &self.disable_violation_abort())
+            .field(
+                "disable_simple_master_strict_mode",
+                &self.disable_simple_master_strict_mode(),
+            )
+            .field(
+                "disable_smart_master_strict_mode",
+                &self.disable_smart_master_strict_mode(),
+            )
+            .field("idau_all_ns", &self.idau_all_ns())
+            .finish()
     }
 }
 impl W {

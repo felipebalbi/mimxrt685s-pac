@@ -31,6 +31,16 @@ impl R {
         DevIntEnR::new(((self.bits >> 31) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("INTEN")
+            .field("ep_int_en", &self.ep_int_en())
+            .field("frame_int_en", &self.frame_int_en())
+            .field("dev_int_en", &self.dev_int_en())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:11 - If this bit is set and the corresponding USB interrupt status bit is set, a HW interrupt is generated on the interrupt line."]
     #[inline(always)]

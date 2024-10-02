@@ -2,6 +2,12 @@
 pub type W = crate::W<KeyinputSpec>;
 #[doc = "Field `KEYIN` writer - Key Input Data"]
 pub type KeyinW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for crate::generic::Reg<KeyinputSpec> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
+    }
+}
 impl W {
     #[doc = "Bits 0:31 - Key Input Data"]
     #[inline(always)]

@@ -1,6 +1,7 @@
 #[doc = "Register `ACTIVE1` reader"]
 pub type R = crate::R<Active1Spec>;
 #[doc = "Active flag for DMA channel 32.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Active32 {
     #[doc = "0: DMAchannel 32 is not active."]
@@ -37,6 +38,7 @@ impl Active32R {
     }
 }
 #[doc = "Additional Active flags for remaining DMA channels in the range 63 to 33. Any bits above the actually implemented channels are reserved.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u32)]
 pub enum Active63_33 {
@@ -88,6 +90,15 @@ impl R {
     #[inline(always)]
     pub fn active63_33(&self) -> Active63_33R {
         Active63_33R::new((self.bits >> 1) & 0x7fff_ffff)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ACTIVE1")
+            .field("active32", &self.active32())
+            .field("active63_33", &self.active63_33())
+            .finish()
     }
 }
 #[doc = "Channel Active status for all DMA channels.\n\nYou can [`read`](crate::Reg::read) this register and get [`active1::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

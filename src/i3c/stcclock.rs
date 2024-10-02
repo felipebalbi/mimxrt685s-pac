@@ -22,6 +22,15 @@ impl R {
         FreqR::new(((self.bits >> 8) & 0xff) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("STCCLOCK")
+            .field("accuracy", &self.accuracy())
+            .field("freq", &self.freq())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:7 - Clock accuracy"]
     #[inline(always)]

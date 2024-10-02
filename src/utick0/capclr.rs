@@ -8,6 +8,12 @@ pub type Capclr1W<'a, REG> = crate::BitWriter<'a, REG>;
 pub type Capclr2W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CAPCLR3` writer - Clear capture 3. Writing 1 to this bit clears the CAP3 register value."]
 pub type Capclr3W<'a, REG> = crate::BitWriter<'a, REG>;
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for crate::generic::Reg<CapclrSpec> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
+    }
+}
 impl W {
     #[doc = "Bit 0 - Clear capture 0. Writing 1 to this bit clears the CAP0 register value."]
     #[inline(always)]

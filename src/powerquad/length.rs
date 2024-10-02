@@ -22,6 +22,14 @@ impl R {
         InstLengthR::new(self.bits)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("LENGTH")
+            .field("inst_length", &self.inst_length())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:31 - Length register. When FIR : fir_xlength = inst_length\\[15:0\\]
 , fir_tlength = inst_len\\[31:16\\]. When MTX : rows_a = inst_length\\[4:0\\]

@@ -1,6 +1,7 @@
 #[doc = "Register `ABORT0` writer"]
 pub type W = crate::W<Abort0Spec>;
 #[doc = "Abort control for DMA channel 0.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u32)]
 pub enum Abortctrl {
@@ -35,6 +36,12 @@ where
     #[inline(always)]
     pub fn effect(self) -> &'a mut crate::W<REG> {
         self.variant(Abortctrl::Effect)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for crate::generic::Reg<Abort0Spec> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
     }
 }
 impl W {

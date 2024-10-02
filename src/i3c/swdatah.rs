@@ -6,6 +6,12 @@ pub type Data0W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 pub type Data1W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `END` writer - End of message"]
 pub type EndW<'a, REG> = crate::BitWriter<'a, REG>;
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for crate::generic::Reg<SwdatahSpec> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
+    }
+}
 impl W {
     #[doc = "Bits 0:7 - The 1st byte to send to the master"]
     #[inline(always)]

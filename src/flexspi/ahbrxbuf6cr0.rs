@@ -40,6 +40,17 @@ impl R {
         PrefetchenR::new(((self.bits >> 31) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("AHBRXBUF6CR0")
+            .field("bufsz", &self.bufsz())
+            .field("mstrid", &self.mstrid())
+            .field("priority", &self.priority())
+            .field("prefetchen", &self.prefetchen())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:8 - AHB RX Buffer Size in 64 bits."]
     #[inline(always)]

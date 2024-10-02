@@ -3,6 +3,7 @@ pub type R = crate::R<CtlSpec>;
 #[doc = "Register `CTL` writer"]
 pub type W = crate::W<CtlSpec>;
 #[doc = "Break Enable.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Txbrken {
     #[doc = "0: Normal operation."]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Enable address detect mode.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Addrdet {
     #[doc = "0: Disabled. The USART presents all incoming data."]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "Transmit Disable.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Txdis {
     #[doc = "0: Not disabled. USART transmitter is not disabled."]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "Continuous Clock generation. By default, SCLK is only output while data is being transmitted in synchronous mode.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cc {
     #[doc = "0: Clock on character. In synchronous mode, SCLK cycles only when characters are being sent on Un_TXD or to complete a character that is being received."]
@@ -215,6 +219,7 @@ where
     }
 }
 #[doc = "Clear Continuous Clock.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Clrcconrx {
     #[doc = "0: No effect. No effect on the CC bit."]
@@ -268,6 +273,7 @@ where
     }
 }
 #[doc = "Autobaud enable.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Autobaud {
     #[doc = "0: Disabled. USART is in normal operating mode."]
@@ -350,6 +356,19 @@ impl R {
     #[inline(always)]
     pub fn autobaud(&self) -> AutobaudR {
         AutobaudR::new(((self.bits >> 16) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CTL")
+            .field("txbrken", &self.txbrken())
+            .field("addrdet", &self.addrdet())
+            .field("txdis", &self.txdis())
+            .field("cc", &self.cc())
+            .field("clrcconrx", &self.clrcconrx())
+            .field("autobaud", &self.autobaud())
+            .finish()
     }
 }
 impl W {

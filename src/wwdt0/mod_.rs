@@ -3,6 +3,7 @@ pub type R = crate::R<ModSpec>;
 #[doc = "Register `MOD` writer"]
 pub type W = crate::W<ModSpec>;
 #[doc = "Watchdog enable bit. Once this bit is set to one and a watchdog feed is performed, the watchdog timer will run permanently.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Wden {
     #[doc = "0: Stop. The watchdog timer is stopped."]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Watchdog reset enable bit. Once this bit has been written with a 1 it cannot be re-written with a 0.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Wdreset {
     #[doc = "0: Interrupt. A watchdog time-out will not cause a chip reset."]
@@ -117,6 +119,7 @@ pub type WdintR = crate::BitReader;
 #[doc = "Field `WDINT` writer - Warning interrupt flag. Set when the timer is at or below the value in WDWARNINT. Cleared by software writing a 1 to this bit position. Note that this bit cannot be cleared while the WARNINT value is equal to the value of the TV register. This can occur if the value of WARNINT is 0 and the WDRESET bit is 0 when TV decrements to 0."]
 pub type WdintW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Watchdog update mode. This bit can be set once by software and is only cleared by a reset.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Wdprotect {
     #[doc = "0: Flexible. The watchdog time-out value (TC) can be changed at any time."]
@@ -203,6 +206,19 @@ impl R {
     #[inline(always)]
     pub fn lock(&self) -> LockR {
         LockR::new(((self.bits >> 5) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("MOD")
+            .field("wden", &self.wden())
+            .field("wdreset", &self.wdreset())
+            .field("wdtof", &self.wdtof())
+            .field("wdint", &self.wdint())
+            .field("wdprotect", &self.wdprotect())
+            .field("lock", &self.lock())
+            .finish()
     }
 }
 impl W {

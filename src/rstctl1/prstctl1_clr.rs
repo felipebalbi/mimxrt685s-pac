@@ -1,6 +1,7 @@
 #[doc = "Register `PRSTCTL1_CLR` writer"]
 pub type W = crate::W<Prstctl1ClrSpec>;
 #[doc = "HSGPIO0 reset clear\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hsgpio0RstClr {
     #[doc = "0: No Effect"]
@@ -32,6 +33,7 @@ where
     }
 }
 #[doc = "HSGPIO1 reset clear\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hsgpio1RstClr {
     #[doc = "0: No Effect"]
@@ -63,6 +65,7 @@ where
     }
 }
 #[doc = "HSGPIO2 reset clear\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hsgpio2RstClr {
     #[doc = "0: No Effect"]
@@ -94,6 +97,7 @@ where
     }
 }
 #[doc = "HSGPIO3 reset clear\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hsgpio3RstClr {
     #[doc = "0: No Effect"]
@@ -125,6 +129,7 @@ where
     }
 }
 #[doc = "HSGPIO4 reset clear\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hsgpio4RstClr {
     #[doc = "0: No Effect"]
@@ -156,6 +161,7 @@ where
     }
 }
 #[doc = "HSGPIO5 reset clear\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hsgpio5RstClr {
     #[doc = "0: No Effect"]
@@ -187,6 +193,7 @@ where
     }
 }
 #[doc = "HSGPIO6 reset clear\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hsgpio6RstClr {
     #[doc = "0: No Effect"]
@@ -218,6 +225,7 @@ where
     }
 }
 #[doc = "HSGPIO7 reset clear\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hsgpio7RstClr {
     #[doc = "0: No Effect"]
@@ -249,6 +257,7 @@ where
     }
 }
 #[doc = "CRC reset clear\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CrcRstClr {
     #[doc = "0: No Effect"]
@@ -280,6 +289,7 @@ where
     }
 }
 #[doc = "DMAC0 reset clear\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0RstClr {
     #[doc = "0: No Effect"]
@@ -311,6 +321,7 @@ where
     }
 }
 #[doc = "DMAC1 reset clear\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac1RstClr {
     #[doc = "0: No Effect"]
@@ -342,6 +353,7 @@ where
     }
 }
 #[doc = "MU reset clear\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MuRstClr {
     #[doc = "0: No Effect"]
@@ -373,6 +385,7 @@ where
     }
 }
 #[doc = "SEMA reset clear\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SemaRstClr {
     #[doc = "0: No Effect"]
@@ -404,6 +417,7 @@ where
     }
 }
 #[doc = "FREQME reset clear\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FreqmeRstClr {
     #[doc = "0: No Effect"]
@@ -432,6 +446,12 @@ where
     #[inline(always)]
     pub fn clr_reset(self) -> &'a mut crate::W<REG> {
         self.variant(FreqmeRstClr::ClrReset)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for crate::generic::Reg<Prstctl1ClrSpec> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
     }
 }
 impl W {

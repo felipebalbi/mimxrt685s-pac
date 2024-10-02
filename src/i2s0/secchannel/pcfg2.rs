@@ -13,6 +13,14 @@ impl R {
         PositionR::new(((self.bits >> 16) & 0x01ff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PCFG2")
+            .field("position", &self.position())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 16:24 - Data Position."]
     #[inline(always)]

@@ -3,6 +3,7 @@ pub type R = crate::R<Autocmd12ErrStatusSpec>;
 #[doc = "Register `AUTOCMD12_ERR_STATUS` writer"]
 pub type W = crate::W<Autocmd12ErrStatusSpec>;
 #[doc = "Auto CMD12 Not Executed\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ac12ne {
     #[doc = "0: Executed"]
@@ -39,6 +40,7 @@ impl Ac12neR {
     }
 }
 #[doc = "Auto CMD12 / 23 Timeout Error\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ac12toe {
     #[doc = "0: No error"]
@@ -75,6 +77,7 @@ impl Ac12toeR {
     }
 }
 #[doc = "Auto CMD12 / 23 End Bit Error\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ac12ebe {
     #[doc = "0: No error"]
@@ -111,6 +114,7 @@ impl Ac12ebeR {
     }
 }
 #[doc = "Auto CMD12 / 23 CRC Error\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ac12ce {
     #[doc = "0: No CRC error"]
@@ -147,6 +151,7 @@ impl Ac12ceR {
     }
 }
 #[doc = "Auto CMD12 / 23 Index Error\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ac12ie {
     #[doc = "0: No error"]
@@ -183,6 +188,7 @@ impl Ac12ieR {
     }
 }
 #[doc = "Command Not Issued By Auto CMD12 Error\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cnibac12e {
     #[doc = "0: No error"]
@@ -223,6 +229,7 @@ pub type ExecuteTuningR = crate::BitReader;
 #[doc = "Field `EXECUTE_TUNING` writer - Execute Tuning"]
 pub type ExecuteTuningW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Sample Clock Select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SmpClkSel {
     #[doc = "0: Fixed clock is used to sample data"]
@@ -315,6 +322,21 @@ impl R {
     #[inline(always)]
     pub fn smp_clk_sel(&self) -> SmpClkSelR {
         SmpClkSelR::new(((self.bits >> 23) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("AUTOCMD12_ERR_STATUS")
+            .field("ac12ne", &self.ac12ne())
+            .field("ac12toe", &self.ac12toe())
+            .field("ac12ebe", &self.ac12ebe())
+            .field("ac12ce", &self.ac12ce())
+            .field("ac12ie", &self.ac12ie())
+            .field("cnibac12e", &self.cnibac12e())
+            .field("execute_tuning", &self.execute_tuning())
+            .field("smp_clk_sel", &self.smp_clk_sel())
+            .finish()
     }
 }
 impl W {

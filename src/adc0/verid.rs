@@ -1,6 +1,7 @@
 #[doc = "Register `VERID` reader"]
 pub type R = crate::R<VeridSpec>;
 #[doc = "Resolution\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Res {
     #[doc = "0: Up to 13-bit differential/12-bit single ended resolution supported."]
@@ -37,6 +38,7 @@ impl ResR {
     }
 }
 #[doc = "Differential Supported\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Diffen {
     #[doc = "0: Differential operation not supported."]
@@ -77,6 +79,7 @@ control fields implemented."]
     }
 }
 #[doc = "Multi Vref Implemented\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Mvi {
     #[doc = "0: Single voltage reference high (VREFH) input supported."]
@@ -113,6 +116,7 @@ impl MviR {
     }
 }
 #[doc = "Channel Scale Width\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Csw {
@@ -163,6 +167,7 @@ impl CswR {
     }
 }
 #[doc = "Voltage Reference 1 Range Control Bit Implemented\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Vr1rngi {
     #[doc = "0: Range control not required. CFG\\[VREF1RNG\\]
@@ -203,6 +208,7 @@ is implemented."]
     }
 }
 #[doc = "Internal ADC Clock implemented\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Iadcki {
     #[doc = "0: Internal clock source not implemented."]
@@ -239,6 +245,7 @@ impl IadckiR {
     }
 }
 #[doc = "Calibration Offset Function Implemented\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Calofsi {
     #[doc = "0: Offset calibration and offset trimming not implemented."]
@@ -323,6 +330,22 @@ impl R {
     #[inline(always)]
     pub fn major(&self) -> MajorR {
         MajorR::new(((self.bits >> 24) & 0xff) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("VERID")
+            .field("res", &self.res())
+            .field("diffen", &self.diffen())
+            .field("mvi", &self.mvi())
+            .field("csw", &self.csw())
+            .field("vr1rngi", &self.vr1rngi())
+            .field("iadcki", &self.iadcki())
+            .field("calofsi", &self.calofsi())
+            .field("minor", &self.minor())
+            .field("major", &self.major())
+            .finish()
     }
 }
 #[doc = "Version ID Register\n\nYou can [`read`](crate::Reg::read) this register and get [`verid::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

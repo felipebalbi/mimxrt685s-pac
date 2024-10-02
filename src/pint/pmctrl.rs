@@ -3,6 +3,7 @@ pub type R = crate::R<PmctrlSpec>;
 #[doc = "Register `PMCTRL` writer"]
 pub type W = crate::W<PmctrlSpec>;
 #[doc = "Specifies whether the 8 pin interrupts are controlled by the pin interrupt function or by the pattern match function.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SelPmatch {
     #[doc = "0: Pin interrupt. Interrupts are driven in response to the standard pin interrupt function."]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Enables the RXEV output to the CPU and/or to a GPIO output when the specified boolean expression evaluates to true.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum EnaRxev {
     #[doc = "0: Disabled. RXEV output to the CPU is disabled."]
@@ -127,6 +129,16 @@ impl R {
     #[inline(always)]
     pub fn pmat(&self) -> PmatR {
         PmatR::new(((self.bits >> 24) & 0xff) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PMCTRL")
+            .field("sel_pmatch", &self.sel_pmatch())
+            .field("ena_rxev", &self.ena_rxev())
+            .field("pmat", &self.pmat())
+            .finish()
     }
 }
 impl W {

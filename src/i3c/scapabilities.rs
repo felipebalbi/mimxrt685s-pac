@@ -1,6 +1,7 @@
 #[doc = "Register `SCAPABILITIES` reader"]
 pub type R = crate::R<ScapabilitiesSpec>;
 #[doc = "ID 48b handler\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Idena {
@@ -63,6 +64,7 @@ pub type IdregR = crate::FieldReader;
 #[doc = "Field `HDRSUPP` reader - HDR support"]
 pub type HdrsuppR = crate::FieldReader;
 #[doc = "Master\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Master {
     #[doc = "0: MASTERNOTSUPPORTED: master capability is not supported."]
@@ -99,6 +101,7 @@ impl MasterR {
     }
 }
 #[doc = "Static address\n\nValue on reset: 3"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Saddr {
@@ -161,6 +164,7 @@ pub type CcchandleR = crate::FieldReader;
 #[doc = "Field `IBI_MR_HJ` reader - In-Band Interrupts, Master Requests, Hot Join events"]
 pub type IbiMrHjR = crate::FieldReader;
 #[doc = "Time control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Timectrl {
     #[doc = "0: NO_TIME_CONTROL_TYPE: No time control is enabled"]
@@ -197,6 +201,7 @@ impl TimectrlR {
     }
 }
 #[doc = "External FIFO\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Extfifo {
@@ -231,6 +236,7 @@ impl ExtfifoR {
     }
 }
 #[doc = "FIFO transmit\n\nValue on reset: 2"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Fifotx {
@@ -289,6 +295,7 @@ impl FifotxR {
     }
 }
 #[doc = "FIFO receive\n\nValue on reset: 2"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Fiforx {
@@ -347,6 +354,7 @@ impl FiforxR {
     }
 }
 #[doc = "INT\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Int {
     #[doc = "0: Interrupts are not supported"]
@@ -383,6 +391,7 @@ impl IntR {
     }
 }
 #[doc = "DMA\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dma {
     #[doc = "0: DMA is not supported"]
@@ -483,6 +492,26 @@ impl R {
     #[inline(always)]
     pub fn dma(&self) -> DmaR {
         DmaR::new(((self.bits >> 31) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SCAPABILITIES")
+            .field("idena", &self.idena())
+            .field("idreg", &self.idreg())
+            .field("hdrsupp", &self.hdrsupp())
+            .field("master", &self.master())
+            .field("saddr", &self.saddr())
+            .field("ccchandle", &self.ccchandle())
+            .field("ibi_mr_hj", &self.ibi_mr_hj())
+            .field("timectrl", &self.timectrl())
+            .field("extfifo", &self.extfifo())
+            .field("fifotx", &self.fifotx())
+            .field("fiforx", &self.fiforx())
+            .field("int", &self.int())
+            .field("dma", &self.dma())
+            .finish()
     }
 }
 #[doc = "Slave Capabilities Register\n\nYou can [`read`](crate::Reg::read) this register and get [`scapabilities::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

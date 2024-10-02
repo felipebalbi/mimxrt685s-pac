@@ -178,6 +178,33 @@ impl R {
         PhyTestModeR::new(((self.bits >> 29) & 7) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DEVCMDSTAT")
+            .field("dev_addr", &self.dev_addr())
+            .field("dev_en", &self.dev_en())
+            .field("setup", &self.setup())
+            .field("force_needclk", &self.force_needclk())
+            .field("force_vbus", &self.force_vbus())
+            .field("lpm_sup", &self.lpm_sup())
+            .field("intonnak_ao", &self.intonnak_ao())
+            .field("intonnak_ai", &self.intonnak_ai())
+            .field("intonnak_co", &self.intonnak_co())
+            .field("intonnak_ci", &self.intonnak_ci())
+            .field("dcon", &self.dcon())
+            .field("dsus", &self.dsus())
+            .field("lpm_sus", &self.lpm_sus())
+            .field("lpm_rewp", &self.lpm_rewp())
+            .field("speed", &self.speed())
+            .field("dcon_c", &self.dcon_c())
+            .field("dsus_c", &self.dsus_c())
+            .field("dres_c", &self.dres_c())
+            .field("vbus_debounced", &self.vbus_debounced())
+            .field("phy_test_mode", &self.phy_test_mode())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:6 - USB device address."]
     #[inline(always)]

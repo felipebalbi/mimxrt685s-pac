@@ -13,6 +13,14 @@ impl R {
         DatBaseR::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DATAPAYLOAD")
+            .field("dat_base", &self.dat_base())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 16:31 - Base address to be used by the hardware to find the start of the data payload section."]
     #[inline(always)]

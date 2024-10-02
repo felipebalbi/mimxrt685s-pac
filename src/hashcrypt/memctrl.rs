@@ -3,6 +3,7 @@ pub type R = crate::R<MemctrlSpec>;
 #[doc = "Register `MEMCTRL` writer"]
 pub type W = crate::W<MemctrlSpec>;
 #[doc = "Enables mastering.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Master {
     #[doc = "0: Mastering is not used and the normal DMA or Interrupt based model is used with INDATA."]
@@ -69,6 +70,15 @@ impl R {
     #[inline(always)]
     pub fn count(&self) -> CountR {
         CountR::new(((self.bits >> 16) & 0x07ff) as u16)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("MEMCTRL")
+            .field("master", &self.master())
+            .field("count", &self.count())
+            .finish()
     }
 }
 impl W {

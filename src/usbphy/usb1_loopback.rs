@@ -103,6 +103,24 @@ impl R {
         TstpktR::new(((self.bits >> 16) & 0xff) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("USB1_LOOPBACK")
+            .field("utmi_teststart", &self.utmi_teststart())
+            .field("utmi_dig_tst0", &self.utmi_dig_tst0())
+            .field("utmi_dig_tst1", &self.utmi_dig_tst1())
+            .field("tsti_tx_hs_mode", &self.tsti_tx_hs_mode())
+            .field("tsti_tx_ls_mode", &self.tsti_tx_ls_mode())
+            .field("tsti_tx_en", &self.tsti_tx_en())
+            .field("tsti_tx_hiz", &self.tsti_tx_hiz())
+            .field("utmo_dig_tst0", &self.utmo_dig_tst0())
+            .field("utmo_dig_tst1", &self.utmo_dig_tst1())
+            .field("tsti_hsfs_mode_en", &self.tsti_hsfs_mode_en())
+            .field("tstpkt", &self.tstpkt())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - This bit enables the USB loopback test."]
     #[inline(always)]

@@ -20,6 +20,15 @@ impl R {
         ChipidR::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CAPLENGTH_CHIPID")
+            .field("caplength", &self.caplength())
+            .field("chipid", &self.chipid())
+            .finish()
+    }
+}
 #[doc = "This register contains the offset value towards the start of the operational register space and the version number of the IP block\n\nYou can [`read`](crate::Reg::read) this register and get [`caplength_chipid::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CaplengthChipidSpec;
 impl crate::RegisterSpec for CaplengthChipidSpec {

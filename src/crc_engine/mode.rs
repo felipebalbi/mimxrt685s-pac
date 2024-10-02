@@ -49,6 +49,18 @@ impl R {
         CmplSumR::new(((self.bits >> 5) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("MODE")
+            .field("crc_poly", &self.crc_poly())
+            .field("bit_rvs_wr", &self.bit_rvs_wr())
+            .field("cmpl_wr", &self.cmpl_wr())
+            .field("bit_rvs_sum", &self.bit_rvs_sum())
+            .field("cmpl_sum", &self.cmpl_sum())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:1 - CRC polynomial: 1X = CRC-32 polynomial 01 = CRC-16 polynomial 00 = CRC-CCITT polynomial"]
     #[inline(always)]

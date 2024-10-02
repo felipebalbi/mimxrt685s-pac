@@ -3,6 +3,7 @@ pub type R = crate::R<CcrSpec>;
 #[doc = "Register `CCR` writer"]
 pub type W = crate::W<CcrSpec>;
 #[doc = "Cache enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Encache {
     #[doc = "0: Cache disabled"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Enable Write Buffer\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Enwrbuf {
     #[doc = "0: Write buffer disabled"]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "Invalidate Way 0\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Invw0 {
     #[doc = "0: No operation"]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "Push Way 0\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Pushw0 {
     #[doc = "0: No operation"]
@@ -215,6 +219,7 @@ where
     }
 }
 #[doc = "Invalidate Way 1\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Invw1 {
     #[doc = "0: No operation"]
@@ -268,6 +273,7 @@ where
     }
 }
 #[doc = "Push Way 1\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Pushw1 {
     #[doc = "0: No operation"]
@@ -321,6 +327,7 @@ where
     }
 }
 #[doc = "Initiate Cache Command\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Go {
     #[doc = "0: Write: no effect. Read: no cache command active."]
@@ -408,6 +415,20 @@ impl R {
     #[inline(always)]
     pub fn go(&self) -> GoR {
         GoR::new(((self.bits >> 31) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CCR")
+            .field("encache", &self.encache())
+            .field("enwrbuf", &self.enwrbuf())
+            .field("invw0", &self.invw0())
+            .field("pushw0", &self.pushw0())
+            .field("invw1", &self.invw1())
+            .field("pushw1", &self.pushw1())
+            .field("go", &self.go())
+            .finish()
     }
 }
 impl W {

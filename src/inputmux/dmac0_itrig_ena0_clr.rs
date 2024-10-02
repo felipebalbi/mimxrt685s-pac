@@ -1,6 +1,7 @@
 #[doc = "Register `DMAC0_ITRIG_ENA0_CLR` writer"]
 pub type W = crate::W<Dmac0ItrigEna0ClrSpec>;
 #[doc = "DMAC0 input trigger inmux 0 enable clear\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux0 {
     #[doc = "0: No Effect"]
@@ -32,6 +33,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 1 enable clear\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux1 {
     #[doc = "0: No Effect"]
@@ -65,6 +67,7 @@ where
 #[doc = "Field `DMAC0_ITRIG_INMUX2` writer - DMAC0 input trigger inmux 2 enable clear"]
 pub type Dmac0ItrigInmux2W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "DMAC0 input trigger inmux 3 enable clear\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux3 {
     #[doc = "0: No Effect"]
@@ -96,6 +99,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 4 enable clear\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux4 {
     #[doc = "0: No Effect"]
@@ -127,6 +131,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 5 enable clear\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux5 {
     #[doc = "0: No Effect"]
@@ -158,6 +163,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 6 enable clear\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux6 {
     #[doc = "0: No Effect"]
@@ -189,6 +195,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 7 enable clear\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux7 {
     #[doc = "0: No Effect"]
@@ -220,6 +227,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 8 enable clear\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux8 {
     #[doc = "0: No Effect"]
@@ -251,6 +259,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 9 enable clear\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux9 {
     #[doc = "0: No Effect"]
@@ -282,6 +291,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 10 enable clear\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux10 {
     #[doc = "0: No Effect"]
@@ -313,6 +323,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 11 enable clear\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux11 {
     #[doc = "0: No Effect"]
@@ -344,6 +355,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 12 enable clear\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux12 {
     #[doc = "0: No Effect"]
@@ -375,6 +387,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 13 enable clear\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux13 {
     #[doc = "0: No Effect"]
@@ -406,6 +419,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 14 enable clear\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux14 {
     #[doc = "0: No Effect"]
@@ -437,6 +451,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 15 enable clear\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux15 {
     #[doc = "0: No Effect"]
@@ -468,6 +483,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 16 enable clear\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux16 {
     #[doc = "0: No Effect"]
@@ -499,6 +515,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 17 enable clear\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux17 {
     #[doc = "0: No Effect"]
@@ -530,6 +547,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 18 enable clear\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux18 {
     #[doc = "0: No Effect"]
@@ -561,6 +579,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 19 enable clear\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux19 {
     #[doc = "0: No Effect"]
@@ -592,6 +611,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 20 enable clear\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux20 {
     #[doc = "0: No Effect"]
@@ -623,6 +643,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 21 enable clear\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux21 {
     #[doc = "0: No Effect"]
@@ -654,6 +675,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 22 enable clear\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux22 {
     #[doc = "0: No Effect"]
@@ -685,6 +707,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 23 enable clear\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux23 {
     #[doc = "0: No Effect"]
@@ -716,6 +739,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 24 enable clear\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux24 {
     #[doc = "0: No Effect"]
@@ -747,6 +771,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 25 enable clear\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux25 {
     #[doc = "0: No Effect"]
@@ -778,6 +803,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 26 enable clear\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux26 {
     #[doc = "0: No Effect"]
@@ -809,6 +835,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 27 enable clear\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux27 {
     #[doc = "0: No Effect"]
@@ -840,6 +867,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 28 enable clear\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux28 {
     #[doc = "0: No Effect"]
@@ -871,6 +899,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 29 enable clear\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux29 {
     #[doc = "0: No Effect"]
@@ -902,6 +931,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 30 enable clear\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux30 {
     #[doc = "0: No Effect"]
@@ -933,6 +963,7 @@ where
     }
 }
 #[doc = "DMAC0 input trigger inmux 31 enable clear\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0ItrigInmux31 {
     #[doc = "0: No Effect"]
@@ -961,6 +992,12 @@ where
     #[inline(always)]
     pub fn clr_ena0_bit(self) -> &'a mut crate::W<REG> {
         self.variant(Dmac0ItrigInmux31::ClrEna0Bit)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for crate::generic::Reg<Dmac0ItrigEna0ClrSpec> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
     }
 }
 impl W {

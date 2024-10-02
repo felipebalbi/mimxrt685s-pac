@@ -1,6 +1,7 @@
 #[doc = "Register `PRSTCTL1_SET` writer"]
 pub type W = crate::W<Prstctl1SetSpec>;
 #[doc = "SDIO0 reset set\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sdio0 {
     #[doc = "0: No Effect"]
@@ -32,6 +33,7 @@ where
     }
 }
 #[doc = "SDIO1 reset set\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sdio1 {
     #[doc = "0: No Effect"]
@@ -63,6 +65,7 @@ where
     }
 }
 #[doc = "Analog comparator reset set\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Acmp0 {
     #[doc = "0: No Effect"]
@@ -94,6 +97,7 @@ where
     }
 }
 #[doc = "ADC reset set\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Adc0 {
     #[doc = "0: No Effect"]
@@ -125,6 +129,7 @@ where
     }
 }
 #[doc = "SHSGPIO0 reset set\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Shsgpio0 {
     #[doc = "0: No Effect"]
@@ -153,6 +158,12 @@ where
     #[inline(always)]
     pub fn set_reset(self) -> &'a mut crate::W<REG> {
         self.variant(Shsgpio0::SetReset)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for crate::generic::Reg<Prstctl1SetSpec> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
     }
 }
 impl W {

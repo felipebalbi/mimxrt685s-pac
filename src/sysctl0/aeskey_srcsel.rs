@@ -13,6 +13,14 @@ impl R {
         AeskeySrcselR::new((self.bits & 3) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("AESKEY_SRCSEL")
+            .field("aeskey_srcsel", &self.aeskey_srcsel())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:1 - AES Key Source Select:"]
     #[inline(always)]

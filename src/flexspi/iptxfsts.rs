@@ -16,6 +16,15 @@ impl R {
         WrcntrR::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IPTXFSTS")
+            .field("fill", &self.fill())
+            .field("wrcntr", &self.wrcntr())
+            .finish()
+    }
+}
 #[doc = "IP TX FIFO Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`iptxfsts::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IptxfstsSpec;
 impl crate::RegisterSpec for IptxfstsSpec {

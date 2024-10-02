@@ -49,6 +49,18 @@ impl R {
         PufctrlRuleR::new(((self.bits >> 24) & 3) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("APB_GRP0_MEM_RULE0")
+            .field("rstctl0_rule", &self.rstctl0_rule())
+            .field("clkctl0_rule", &self.clkctl0_rule())
+            .field("sysctl0_rule", &self.sysctl0_rule())
+            .field("iopctl_rule", &self.iopctl_rule())
+            .field("pufctrl_rule", &self.pufctrl_rule())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:1 - 0x4000 0000--0x4000 0FFF"]
     #[inline(always)]

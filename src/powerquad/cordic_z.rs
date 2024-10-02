@@ -13,6 +13,14 @@ impl R {
         CordicZR::new(self.bits)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CORDIC_Z")
+            .field("cordic_z", &self.cordic_z())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:31 - Cordic input z"]
     #[inline(always)]

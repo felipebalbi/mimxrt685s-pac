@@ -76,6 +76,21 @@ impl R {
         Cappol3R::new(((self.bits >> 11) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CFG")
+            .field("capen0", &self.capen0())
+            .field("capen1", &self.capen1())
+            .field("capen2", &self.capen2())
+            .field("capen3", &self.capen3())
+            .field("cappol0", &self.cappol0())
+            .field("cappol1", &self.cappol1())
+            .field("cappol2", &self.cappol2())
+            .field("cappol3", &self.cappol3())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Enable Capture 0. 1 = Enabled, 0 = Disabled."]
     #[inline(always)]

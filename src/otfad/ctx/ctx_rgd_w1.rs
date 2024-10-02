@@ -3,6 +3,7 @@ pub type R = crate::R<CtxRgdW1Spec>;
 #[doc = "Register `CTX_RGD_W1` writer"]
 pub type W = crate::W<CtxRgdW1Spec>;
 #[doc = "Valid\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Vld {
     #[doc = "0: Context is invalid."]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "AES Decryption Enable.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ade {
     #[doc = "0: Bypass the fetched data."]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "Read-Only\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ro {
     #[doc = "0: The context registers can be accessed normally (as defined by SR\\[RRAM\\])."]
@@ -185,6 +188,17 @@ impl R {
     #[inline(always)]
     pub fn endaddr(&self) -> EndaddrR {
         EndaddrR::new((self.bits >> 10) & 0x003f_ffff)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CTX_RGD_W1")
+            .field("vld", &self.vld())
+            .field("ade", &self.ade())
+            .field("ro", &self.ro())
+            .field("endaddr", &self.endaddr())
+            .finish()
     }
 }
 impl W {

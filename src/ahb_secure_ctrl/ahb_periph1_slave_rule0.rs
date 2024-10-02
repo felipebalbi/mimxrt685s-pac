@@ -76,6 +76,21 @@ impl R {
         Flexcomm15RuleR::new(((self.bits >> 28) & 3) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("AHB_PERIPH1_SLAVE_RULE0")
+            .field("crc_rule", &self.crc_rule())
+            .field("dmic_rule", &self.dmic_rule())
+            .field("flexcomm4_rule", &self.flexcomm4_rule())
+            .field("flexcomm5_rule", &self.flexcomm5_rule())
+            .field("flexcomm6_rule", &self.flexcomm6_rule())
+            .field("flexcomm7_rule", &self.flexcomm7_rule())
+            .field("flexcomm14_rule", &self.flexcomm14_rule())
+            .field("flexcomm15_rule", &self.flexcomm15_rule())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:1 - Security access rules for AHB peripheral slaves area 0x40120000--0x40120FFF"]
     #[inline(always)]

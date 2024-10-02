@@ -1,6 +1,7 @@
 #[doc = "Register `PDRUNCFG0_SET` writer"]
 pub type W = crate::W<Pdruncfg0SetSpec>;
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PmicMode0 {
     #[doc = "0: No effect"]
@@ -32,6 +33,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PmicMode1 {
     #[doc = "0: No effect"]
@@ -63,6 +65,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VddcoreregLp {
     #[doc = "0: No effect"]
@@ -94,6 +97,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PmcrefLp {
     #[doc = "0: No effect"]
@@ -125,6 +129,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hvd1v8Pd {
     #[doc = "0: No effect"]
@@ -156,6 +161,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PorcoreLp {
     #[doc = "0: No effect"]
@@ -187,6 +193,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LvdcoreLp {
     #[doc = "0: No effect"]
@@ -218,6 +225,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HvdcorePd {
     #[doc = "0: No effect"]
@@ -249,6 +257,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RbbPd {
     #[doc = "0: No effect"]
@@ -280,6 +289,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FbbPd {
     #[doc = "0: No effect"]
@@ -311,6 +321,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SysxtalPd {
     #[doc = "0: No effect"]
@@ -342,6 +353,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LposcPd {
     #[doc = "0: No effect"]
@@ -373,6 +385,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SfroPd {
     #[doc = "0: No effect"]
@@ -404,6 +417,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FfroPd {
     #[doc = "0: No effect"]
@@ -435,6 +449,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SyspllldoPd {
     #[doc = "0: No effect"]
@@ -466,6 +481,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SyspllanaPd {
     #[doc = "0: No effect"]
@@ -497,6 +513,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AudpllldoPd {
     #[doc = "0: No effect"]
@@ -528,6 +545,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AudpllanaPd {
     #[doc = "0: No effect"]
@@ -559,6 +577,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AdcPd {
     #[doc = "0: No effect"]
@@ -590,6 +609,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AdcLp {
     #[doc = "0: No effect"]
@@ -621,6 +641,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AdctempsnsPd {
     #[doc = "0: No effect"]
@@ -652,6 +673,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AcmpPd {
     #[doc = "0: No effect"]
@@ -683,6 +705,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hspad0VdetLp {
     #[doc = "0: No effect"]
@@ -714,6 +737,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hspad0RefPd {
     #[doc = "0: No effect"]
@@ -745,6 +769,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hspad2VdetLp {
     #[doc = "0: No effect"]
@@ -776,6 +801,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hspad2RefPd {
     #[doc = "0: No effect"]
@@ -804,6 +830,12 @@ where
     #[inline(always)]
     pub fn set_pdruncfg0(self) -> &'a mut crate::W<REG> {
         self.variant(Hspad2RefPd::SetPdruncfg0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for crate::generic::Reg<Pdruncfg0SetSpec> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
     }
 }
 impl W {

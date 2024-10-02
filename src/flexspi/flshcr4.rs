@@ -3,6 +3,7 @@ pub type R = crate::R<Flshcr4Spec>;
 #[doc = "Register `FLSHCR4` writer"]
 pub type W = crate::W<Flshcr4Spec>;
 #[doc = "Write mask option bit 1. This option bit could be used to remove AHB write burst start address alignment limitation.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Wmopt1 {
     #[doc = "0: DQS pin will be used as Write Mask when writing to external device. There is no limitation on AHB write burst start address alignment when flash is accessed in individual mode."]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Write mask enable bit for flash device on port A. When write mask function is needed for memory device on port A, this bit must be set.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Wmena {
     #[doc = "0: Write mask is disabled, DQS(RWDS) pin will be un-driven when writing to external device."]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "Write mask enable bit for flash device on port B. When write mask function is needed for memory device on port B, this bit must be set.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Wmenb {
     #[doc = "0: Write mask is disabled, DQS(RWDS) pin will be un-driven when writing to external device."]
@@ -176,6 +179,16 @@ impl R {
     #[inline(always)]
     pub fn wmenb(&self) -> WmenbR {
         WmenbR::new(((self.bits >> 3) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("FLSHCR4")
+            .field("wmopt1", &self.wmopt1())
+            .field("wmena", &self.wmena())
+            .field("wmenb", &self.wmenb())
+            .finish()
     }
 }
 impl W {

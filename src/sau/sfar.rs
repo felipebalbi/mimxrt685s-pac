@@ -13,6 +13,14 @@ impl R {
         AddressR::new(self.bits)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SFAR")
+            .field("address", &self.address())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:31 - When the SFARVALID bit of the SFSR is set to 1, this field holds the address of an access that caused an SAU violation."]
     #[inline(always)]

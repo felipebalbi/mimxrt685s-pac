@@ -79,6 +79,24 @@ impl R {
         ScltimeoutR::new(((self.bits >> 25) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("INTSTAT")
+            .field("mstpending", &self.mstpending())
+            .field("mstarbloss", &self.mstarbloss())
+            .field("mstststperr", &self.mstststperr())
+            .field("slvpending", &self.slvpending())
+            .field("slvnotstr", &self.slvnotstr())
+            .field("slvdesel", &self.slvdesel())
+            .field("monrdy", &self.monrdy())
+            .field("monov", &self.monov())
+            .field("monidle", &self.monidle())
+            .field("eventtimeout", &self.eventtimeout())
+            .field("scltimeout", &self.scltimeout())
+            .finish()
+    }
+}
 #[doc = "Interrupt Status register for Master, Slave, and Monitor functions.\n\nYou can [`read`](crate::Reg::read) this register and get [`intstat::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IntstatSpec;
 impl crate::RegisterSpec for IntstatSpec {

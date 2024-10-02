@@ -3,6 +3,7 @@ pub type R = crate::R<Ffroctl1Spec>;
 #[doc = "Register `FFROCTL1` writer"]
 pub type W = crate::W<Ffroctl1Spec>;
 #[doc = "Update Safe Mode Control. In order to change any of the TRIM values, the user first needs to set the update safe mode bit, then proceed to change the respective TRIM values needed, followed by clearing the update safe mode bit.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Update {
     #[doc = "0: Normal Mode."]
@@ -60,6 +61,14 @@ impl R {
     #[inline(always)]
     pub fn update(&self) -> UpdateR {
         UpdateR::new((self.bits & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("FFROCTL1")
+            .field("update", &self.update())
+            .finish()
     }
 }
 impl W {

@@ -30,6 +30,17 @@ impl R {
         DllStsRefSelR::new(((self.bits >> 9) & 0x7f) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DLL_STATUS")
+            .field("dll_sts_slv_lock", &self.dll_sts_slv_lock())
+            .field("dll_sts_ref_lock", &self.dll_sts_ref_lock())
+            .field("dll_sts_slv_sel", &self.dll_sts_slv_sel())
+            .field("dll_sts_ref_sel", &self.dll_sts_ref_sel())
+            .finish()
+    }
+}
 #[doc = "DLL Status\n\nYou can [`read`](crate::Reg::read) this register and get [`dll_status::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DllStatusSpec;
 impl crate::RegisterSpec for DllStatusSpec {

@@ -3,6 +3,7 @@ pub type R = crate::R<CtrlSpec>;
 #[doc = "Register `CTRL` writer"]
 pub type W = crate::W<CtrlSpec>;
 #[doc = "ADC Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Adcen {
     #[doc = "0: ADC is disabled."]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Software Reset\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rst {
     #[doc = "0: ADC logic is not reset."]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "Doze Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dozen {
     #[doc = "0: ADC is enabled in Doze mode."]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "Reset FIFO\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rstfifo {
     #[doc = "0: No effect."]
@@ -234,6 +238,17 @@ impl R {
     #[inline(always)]
     pub fn rstfifo(&self) -> RstfifoR {
         RstfifoR::new(((self.bits >> 8) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CTRL")
+            .field("adcen", &self.adcen())
+            .field("rst", &self.rst())
+            .field("dozen", &self.dozen())
+            .field("rstfifo", &self.rstfifo())
+            .finish()
     }
 }
 impl W {

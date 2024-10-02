@@ -22,6 +22,15 @@ impl R {
         TwaitAfterPrdR::new(((self.bits >> 16) & 0x03ff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("TIMER2_BC12")
+            .field("tvdmsrc_on", &self.tvdmsrc_on())
+            .field("twait_after_prd", &self.twait_after_prd())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:9 - TVDMSRC_ON"]
     #[inline(always)]

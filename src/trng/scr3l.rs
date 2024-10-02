@@ -22,6 +22,15 @@ impl R {
         Run3RngR::new(((self.bits >> 16) & 0x1fff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SCR3L")
+            .field("run3_max", &self.run3_max())
+            .field("run3_rng", &self.run3_rng())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:12 - Run Length 3 Maximum Limit"]
     #[inline(always)]

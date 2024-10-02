@@ -9,6 +9,14 @@ impl R {
         Cmdrsp3R::new(self.bits)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CMD_RSP3")
+            .field("cmdrsp3", &self.cmdrsp3())
+            .finish()
+    }
+}
 #[doc = "Command Response3\n\nYou can [`read`](crate::Reg::read) this register and get [`cmd_rsp3::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CmdRsp3Spec;
 impl crate::RegisterSpec for CmdRsp3Spec {

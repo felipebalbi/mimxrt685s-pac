@@ -3,6 +3,7 @@ pub type R = crate::R<CtrlSpec>;
 #[doc = "Register `CTRL` writer"]
 pub type W = crate::W<CtrlSpec>;
 #[doc = "DMA controller master enable.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Enable {
     #[doc = "0: Disabled. The DMA controller is disabled. This clears any triggers that were asserted at the point when disabled, but does not prevent re-triggering when the DMA controller is re-enabled."]
@@ -60,6 +61,14 @@ impl R {
     #[inline(always)]
     pub fn enable(&self) -> EnableR {
         EnableR::new((self.bits & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CTRL")
+            .field("enable", &self.enable())
+            .finish()
     }
 }
 impl W {

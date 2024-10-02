@@ -3,6 +3,7 @@ pub type R = crate::R<SdmactrlSpec>;
 #[doc = "Register `SDMACTRL` writer"]
 pub type W = crate::W<SdmactrlSpec>;
 #[doc = "DMA Read (From-bus) trigger\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Dmafb {
@@ -76,6 +77,7 @@ where
     }
 }
 #[doc = "DMA Write (To-bus) trigger\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Dmatb {
@@ -149,6 +151,7 @@ where
     }
 }
 #[doc = "Width of DMA operations\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Dmawidth {
@@ -236,6 +239,16 @@ impl R {
     #[inline(always)]
     pub fn dmawidth(&self) -> DmawidthR {
         DmawidthR::new(((self.bits >> 4) & 3) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SDMACTRL")
+            .field("dmafb", &self.dmafb())
+            .field("dmatb", &self.dmatb())
+            .field("dmawidth", &self.dmawidth())
+            .finish()
     }
 }
 impl W {

@@ -76,6 +76,21 @@ impl R {
         Idx7R::new(((self.bits >> 14) & 3) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IDXBLK_L_DP")
+            .field("idx0", &self.idx0())
+            .field("idx1", &self.idx1())
+            .field("idx2", &self.idx2())
+            .field("idx3", &self.idx3())
+            .field("idx4", &self.idx4())
+            .field("idx5", &self.idx5())
+            .field("idx6", &self.idx6())
+            .field("idx7", &self.idx7())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:1 - Index 0"]
     #[inline(always)]

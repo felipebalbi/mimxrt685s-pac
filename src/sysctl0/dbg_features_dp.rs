@@ -3,6 +3,7 @@ pub type R = crate::R<DbgFeaturesDpSpec>;
 #[doc = "Register `DBG_FEATURES_DP` writer"]
 pub type W = crate::W<DbgFeaturesDpSpec>;
 #[doc = "CM33 Debug Enable Control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Dbgen {
@@ -89,6 +90,7 @@ where
     }
 }
 #[doc = "CM33 NID Enable Control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Niden {
@@ -175,6 +177,7 @@ where
     }
 }
 #[doc = "CM33 SPID Enable Control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Spiden {
@@ -261,6 +264,7 @@ where
     }
 }
 #[doc = "CM33 SPNIDEN Enable Control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Spniden {
@@ -366,6 +370,17 @@ impl R {
     #[inline(always)]
     pub fn spniden(&self) -> SpnidenR {
         SpnidenR::new(((self.bits >> 6) & 3) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DBG_FEATURES_DP")
+            .field("dbgen", &self.dbgen())
+            .field("niden", &self.niden())
+            .field("spiden", &self.spiden())
+            .field("spniden", &self.spniden())
+            .finish()
     }
 }
 impl W {

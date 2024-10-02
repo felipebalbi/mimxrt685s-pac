@@ -3,6 +3,7 @@ pub type R = crate::R<C3Spec>;
 #[doc = "Register `C3` writer"]
 pub type W = crate::W<C3Spec>;
 #[doc = "Analog Comparator Phase2 Timing Control.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Acph2tc {
@@ -141,6 +142,7 @@ where
     }
 }
 #[doc = "Analog Comparator Phase1 Timing Control.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Acph1tc {
@@ -279,6 +281,7 @@ where
     }
 }
 #[doc = "Analog Comparator Sampling Time control.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Acsat {
@@ -417,6 +420,7 @@ where
     }
 }
 #[doc = "Discrete Mode Clock Selection\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmcs {
     #[doc = "0: Slow clock is selected for the timing generation."]
@@ -470,6 +474,7 @@ where
     }
 }
 #[doc = "Resistor Divider Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rdive {
     #[doc = "0: The resistor is not enabled even when either NCHEN or PCHEN is set to1 but the actual input is in the range of 0 - 1.8v."]
@@ -523,6 +528,7 @@ where
     }
 }
 #[doc = "Negative Channel Continuous Mode Enable.\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Nchcten {
     #[doc = "0: Negative channel is in Discrete Mode and special timing needs to be configured."]
@@ -576,6 +582,7 @@ where
     }
 }
 #[doc = "Positive Channel Continuous Mode Enable.\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Pchcten {
     #[doc = "0: Positive channel is in Discrete Mode and special timing needs to be configured."]
@@ -663,6 +670,20 @@ impl R {
     #[inline(always)]
     pub fn pchcten(&self) -> PchctenR {
         PchctenR::new(((self.bits >> 28) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("C3")
+            .field("acph2tc", &self.acph2tc())
+            .field("acph1tc", &self.acph1tc())
+            .field("acsat", &self.acsat())
+            .field("dmcs", &self.dmcs())
+            .field("rdive", &self.rdive())
+            .field("nchcten", &self.nchcten())
+            .field("pchcten", &self.pchcten())
+            .finish()
     }
 }
 impl W {

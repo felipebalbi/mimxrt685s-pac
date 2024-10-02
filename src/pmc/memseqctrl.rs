@@ -13,6 +13,14 @@ impl R {
         MemseqnumR::new((self.bits & 0x3f) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("MEMSEQCTRL")
+            .field("memseqnum", &self.memseqnum())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:5 - Number of memories to turn on/off at a time."]
     #[inline(always)]

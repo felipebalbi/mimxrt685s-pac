@@ -30,6 +30,17 @@ impl R {
         IdR::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ID")
+            .field("aperture", &self.aperture())
+            .field("minor_rev", &self.minor_rev())
+            .field("major_rev", &self.major_rev())
+            .field("id", &self.id())
+            .finish()
+    }
+}
 #[doc = "I2S Module identification\n\nYou can [`read`](crate::Reg::read) this register and get [`id::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IdSpec;
 impl crate::RegisterSpec for IdSpec {

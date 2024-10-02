@@ -3,6 +3,7 @@ pub type R = crate::R<Hwvadst10Spec>;
 #[doc = "Register `HWVADST10` writer"]
 pub type W = crate::W<Hwvadst10Spec>;
 #[doc = "1' means enter stage 1 of VAD, ie a sound change has been detected and the HWVAD is being allowed to settle. Use 0 when changing back to detection mode. Allow several milliseconds in stage 1 for settling.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum St10 {
     #[doc = "0: Normal operation, waiting for HWVAD trigger event (stage 0)."]
@@ -60,6 +61,14 @@ impl R {
     #[inline(always)]
     pub fn st10(&self) -> St10R {
         St10R::new((self.bits & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("HWVADST10")
+            .field("st10", &self.st10())
+            .finish()
     }
 }
 impl W {

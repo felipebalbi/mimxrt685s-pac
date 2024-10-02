@@ -76,6 +76,21 @@ impl R {
         Cr3intR::new(((self.bits >> 7) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IR")
+            .field("mr0int", &self.mr0int())
+            .field("mr1int", &self.mr1int())
+            .field("mr2int", &self.mr2int())
+            .field("mr3int", &self.mr3int())
+            .field("cr0int", &self.cr0int())
+            .field("cr1int", &self.cr1int())
+            .field("cr2int", &self.cr2int())
+            .field("cr3int", &self.cr3int())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Interrupt flag for match channel 0."]
     #[inline(always)]

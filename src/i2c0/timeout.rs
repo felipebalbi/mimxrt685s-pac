@@ -22,6 +22,15 @@ impl R {
         ToR::new(((self.bits >> 4) & 0x0fff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("TIMEOUT")
+            .field("tomin", &self.tomin())
+            .field("to", &self.to())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:3 - Time-out time value, bottom four bits. These are hard-wired to 0xF. This gives a minimum time-out of 16 I2C function clocks and also a time-out resolution of 16 I2C function clocks."]
     #[inline(always)]

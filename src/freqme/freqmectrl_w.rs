@@ -1,6 +1,7 @@
 #[doc = "Register `FREQMECTRL_W` writer"]
 pub type W = crate::W<FreqmectrlWSpec>;
 #[doc = "Reference Clock Scaling Factor\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RefScale {
@@ -52,6 +53,7 @@ where
     }
 }
 #[doc = "Pulse Width Measurement mode select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PulseMode {
     #[doc = "0: Frequency Measurement Mode. FREQMECTRL works in a Frequency Measurement mode. Once the measurement starts (real count start is aligned at rising edge arrival on reference clock), the target counter increments by the target clock until the reference counter running by the reference clock reaches the count end point selected by REF_SCALE."]
@@ -83,6 +85,7 @@ where
     }
 }
 #[doc = "Pulse Polarity\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PulsePol {
     #[doc = "0: High Period. High period of reference clock is measured in Pulse Width Measurement mode triggered by the rising edge on the reference clock input."]
@@ -114,6 +117,7 @@ where
     }
 }
 #[doc = "Measure in Progress\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MeasureInProgress {
     #[doc = "0: Force Terminate. Forces the termination of any measurement cycle currently in progress and resets RESULT or just resets RESULT if in idle."]
@@ -142,6 +146,12 @@ where
     #[inline(always)]
     pub fn initiate_a_freqme_cycle(self) -> &'a mut crate::W<REG> {
         self.variant(MeasureInProgress::InitiateAFreqmeCycle)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for crate::generic::Reg<FreqmectrlWSpec> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
     }
 }
 impl W {

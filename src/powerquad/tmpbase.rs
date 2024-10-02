@@ -13,6 +13,14 @@ impl R {
         TmpbaseR::new(self.bits)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("TMPBASE")
+            .field("tmpbase", &self.tmpbase())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:31 - Base address register for the temporary region"]
     #[inline(always)]

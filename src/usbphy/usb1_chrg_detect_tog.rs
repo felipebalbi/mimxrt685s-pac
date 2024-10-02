@@ -7,6 +7,7 @@ pub type PullupDpR = crate::BitReader;
 #[doc = "Field `PULLUP_DP` writer - This bit is used to pull up DP, for digital charge detect."]
 pub type PullupDpW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "USB charge detector bias current reference This bit determines the reference for the bias current of the USB charge detector\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BgrIbias {
     #[doc = "0: Bias current is derived from the USB PHY internal current generator."]
@@ -69,6 +70,15 @@ impl R {
     #[inline(always)]
     pub fn bgr_ibias(&self) -> BgrIbiasR {
         BgrIbiasR::new(((self.bits >> 23) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("USB1_CHRG_DETECT_TOG")
+            .field("pullup_dp", &self.pullup_dp())
+            .field("bgr_ibias", &self.bgr_ibias())
+            .finish()
     }
 }
 impl W {

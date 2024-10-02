@@ -3,6 +3,7 @@ pub type R = crate::R<CtcrSpec>;
 #[doc = "Register `CTCR` writer"]
 pub type W = crate::W<CtcrSpec>;
 #[doc = "Counter/Timer Mode This field selects which rising APB bus clock edges can increment Timer's Prescale Counter (PC), or clear PC and increment Timer Counter (TC). Timer Mode: the TC is incremented when the Prescale Counter matches the Prescale Register.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Ctmode {
@@ -89,6 +90,7 @@ where
     }
 }
 #[doc = "Count Input Select When bits 1:0 in this register are not 00, these bits select which CAP pin is sampled for clocking. Note: If Counter mode is selected for a particular CAPn input in the CTCR, the 3 bits for that input in the Capture Control Register (CCR) must be programmed as 000. However, capture and/or interrupt can be selected for the other 3 CAPn inputs in the same timer.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Cinsel {
@@ -179,6 +181,7 @@ pub type EnccR = crate::BitReader;
 #[doc = "Field `ENCC` writer - Setting this bit to 1 enables clearing of the timer and the prescaler when the capture-edge event specified in bits 7:5 occurs."]
 pub type EnccW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Edge select. When bit 4 is 1, these bits select which capture input edge will cause the timer and prescaler to be cleared. These bits have no effect when bit 4 is low. Values 0x2 to 0x3 and 0x6 to 0x7 are reserved.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Selcc {
@@ -310,6 +313,17 @@ impl R {
     #[inline(always)]
     pub fn selcc(&self) -> SelccR {
         SelccR::new(((self.bits >> 5) & 7) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CTCR")
+            .field("ctmode", &self.ctmode())
+            .field("cinsel", &self.cinsel())
+            .field("encc", &self.encc())
+            .field("selcc", &self.selcc())
+            .finish()
     }
 }
 impl W {

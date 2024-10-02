@@ -16,6 +16,15 @@ impl R {
         R3_1CtR::new(((self.bits >> 16) & 0x1fff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SCR3C")
+            .field("r3_0_ct", &self.r3_0_ct())
+            .field("r3_1_ct", &self.r3_1_ct())
+            .finish()
+    }
+}
 #[doc = "Statistical Check Run Length 3 Count Register\n\nYou can [`read`](crate::Reg::read) this register and get [`scr3c::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Scr3cSpec;
 impl crate::RegisterSpec for Scr3cSpec {

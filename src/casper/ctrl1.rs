@@ -11,6 +11,7 @@ pub type ModeR = crate::FieldReader;
 #[doc = "Field `MODE` writer - Operation mode to perform. write 0 means Accelerator is inactive. write others means accelerator is active."]
 pub type ModeW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Which bank-pair the offset RESOFF is within. This must be 0 if only 2-up. Ideally this is not the same bank as ABBPAIR (when 4-up supported)\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Resbpair {
     #[doc = "0: Bank-pair 0 (1st)"]
@@ -68,6 +69,7 @@ pub type ResoffR = crate::FieldReader<u16>;
 #[doc = "Field `RESOFF` writer - Word or DWord Offset of result. Word offset only allowed if 32 bit operation. Ideally not in the same RAM as the AB and CD values"]
 pub type ResoffW<'a, REG> = crate::FieldWriter<'a, REG, 11, u16>;
 #[doc = "Skip rules on Carry if needed. This operation will be skipped based on Carry value (from previous operation) if not 0:\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Cskip {
@@ -178,6 +180,18 @@ impl R {
     #[inline(always)]
     pub fn cskip(&self) -> CskipR {
         CskipR::new(((self.bits >> 30) & 3) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CTRL1")
+            .field("iter", &self.iter())
+            .field("mode", &self.mode())
+            .field("resbpair", &self.resbpair())
+            .field("resoff", &self.resoff())
+            .field("cskip", &self.cskip())
+            .finish()
     }
 }
 impl W {

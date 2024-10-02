@@ -1,6 +1,7 @@
 #[doc = "Register `PRSTCTL2_CLR` writer"]
 pub type W = crate::W<Prstctl2ClrSpec>;
 #[doc = "utick reset clear\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Utick0 {
     #[doc = "0: No Effect"]
@@ -32,6 +33,7 @@ where
     }
 }
 #[doc = "wdt reset clear\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Wwdt0 {
     #[doc = "0: No Effect"]
@@ -60,6 +62,12 @@ where
     #[inline(always)]
     pub fn clr_reset(self) -> &'a mut crate::W<REG> {
         self.variant(Wwdt0::ClrReset)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for crate::generic::Reg<Prstctl2ClrSpec> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
     }
 }
 impl W {

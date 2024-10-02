@@ -7,6 +7,7 @@ pub type ClriprxfR = crate::BitReader;
 #[doc = "Field `CLRIPRXF` writer - Clear all valid data entries in IP RX FIFO."]
 pub type ClriprxfW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "IP RX FIFO reading by DMA enabled.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rxdmaen {
     #[doc = "0: IP RX FIFO would be read by processor."]
@@ -78,6 +79,16 @@ impl R {
     #[inline(always)]
     pub fn rxwmrk(&self) -> RxwmrkR {
         RxwmrkR::new(((self.bits >> 2) & 0x3f) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IPRXFCR")
+            .field("clriprxf", &self.clriprxf())
+            .field("rxdmaen", &self.rxdmaen())
+            .field("rxwmrk", &self.rxwmrk())
+            .finish()
     }
 }
 impl W {

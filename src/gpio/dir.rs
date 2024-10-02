@@ -13,6 +13,12 @@ impl R {
         DirpR::new(self.bits)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DIR").field("dirp", &self.dirp()).finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:31 - Selects pin direction for pin PIOm_n (bit 0 = PIOn_0, bit 1 = PIOn_1, etc.). Supported pins depends on the specific device and package. 0 = input. 1 = output."]
     #[inline(always)]

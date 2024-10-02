@@ -1,6 +1,7 @@
 #[doc = "Register `MWMSG_SDR_CONTROL` writer"]
 pub type W = crate::W<MwmsgSdrControlSpec>;
 #[doc = "Direction\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dir {
     #[doc = "0: Write"]
@@ -36,6 +37,7 @@ pub type AddrW<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "Field `END` writer - End of SDR message"]
 pub type EndW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "I2C\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum I2c {
     #[doc = "0: I3C message"]
@@ -68,6 +70,12 @@ where
 }
 #[doc = "Field `LEN` writer - Length"]
 pub type LenW<'a, REG> = crate::FieldWriter<'a, REG, 5>;
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for crate::generic::Reg<MwmsgSdrControlSpec> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
+    }
+}
 impl W {
     #[doc = "Bit 0 - Direction"]
     #[inline(always)]

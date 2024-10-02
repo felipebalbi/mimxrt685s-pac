@@ -49,6 +49,18 @@ impl R {
         WrUnlockR::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("OTP_CTRL")
+            .field("addr", &self.addr())
+            .field("reload_shadows", &self.reload_shadows())
+            .field("crc_test", &self.crc_test())
+            .field("wordlock", &self.wordlock())
+            .field("wr_unlock", &self.wr_unlock())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:8 - OTP word address for read/programming"]
     #[inline(always)]

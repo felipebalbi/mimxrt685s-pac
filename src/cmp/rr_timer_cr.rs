@@ -22,6 +22,15 @@ impl R {
         RrTimerEnaR::new(((self.bits >> 31) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("RR_TIMER_CR")
+            .field("rr_timer_reload", &self.rr_timer_reload())
+            .field("rr_timer_ena", &self.rr_timer_ena())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:27 - This field establishes the repetitive count rate for the timer. Each time the timer counts down to zero it is reloaded with this value. The rr_trig signal will be generated at a rate of (rr_timer_reload + 1) times the rr_clock period (typically 30.6 uS)"]
     #[inline(always)]

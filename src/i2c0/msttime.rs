@@ -3,6 +3,7 @@ pub type R = crate::R<MsttimeSpec>;
 #[doc = "Register `MSTTIME` writer"]
 pub type W = crate::W<MsttimeSpec>;
 #[doc = "Master SCL Low time. Specifies the minimum low time that will be asserted by this master on SCL. Other devices on the bus (masters or slaves) could lengthen this time. This corresponds to the parameter t LOW in the I2C bus specification. I2C bus specification parameters tBUF and tSU;STA have the same values and are also controlled by MSTSCLLOW.\n\nValue on reset: 7"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Mstscllow {
@@ -141,6 +142,7 @@ where
     }
 }
 #[doc = "Master SCL High time. Specifies the minimum high time that will be asserted by this master on SCL. Other masters in a multi-master system could shorten this time. This corresponds to the parameter tHIGH in the I2C bus specification. I2C bus specification parameters tSU;STO and tHD;STA have the same values and are also controlled by MSTSCLHIGH.\n\nValue on reset: 7"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Mstsclhigh {
@@ -288,6 +290,15 @@ impl R {
     #[inline(always)]
     pub fn mstsclhigh(&self) -> MstsclhighR {
         MstsclhighR::new(((self.bits >> 4) & 7) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("MSTTIME")
+            .field("mstscllow", &self.mstscllow())
+            .field("mstsclhigh", &self.mstsclhigh())
+            .finish()
     }
 }
 impl W {

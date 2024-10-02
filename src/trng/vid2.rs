@@ -1,6 +1,7 @@
 #[doc = "Register `VID2` reader"]
 pub type R = crate::R<Vid2Spec>;
 #[doc = "Shows the IP's Configuaration options for the TRNG.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ConfigOpt {
@@ -35,6 +36,7 @@ impl ConfigOptR {
     }
 }
 #[doc = "Shows the IP's ECO revision of the TRNG.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum EcoRev {
@@ -69,6 +71,7 @@ impl EcoRevR {
     }
 }
 #[doc = "Shows the integration options for the TRNG.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum IntgOpt {
@@ -103,6 +106,7 @@ impl IntgOptR {
     }
 }
 #[doc = "Shows the compile options for the TRNG.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Era {
@@ -156,6 +160,17 @@ impl R {
     #[inline(always)]
     pub fn era(&self) -> EraR {
         EraR::new(((self.bits >> 24) & 0xff) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("VID2")
+            .field("config_opt", &self.config_opt())
+            .field("eco_rev", &self.eco_rev())
+            .field("intg_opt", &self.intg_opt())
+            .field("era", &self.era())
+            .finish()
     }
 }
 #[doc = "Version ID Register (LS)\n\nYou can [`read`](crate::Reg::read) this register and get [`vid2::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

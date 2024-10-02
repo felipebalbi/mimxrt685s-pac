@@ -13,6 +13,14 @@ impl R {
         RegValueR::new(self.bits)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DREG")
+            .field("reg_value", &self.reg_value())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:31 - Register to be fed into Multiplier. Is not normally written or read by application, but is available when accelerator not busy."]
     #[inline(always)]

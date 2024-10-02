@@ -85,6 +85,22 @@ impl R {
         M8R::new(((self.bits >> 16) & 3) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("AHBMATRIXPRIOR")
+            .field("m0", &self.m0())
+            .field("m1", &self.m1())
+            .field("m2", &self.m2())
+            .field("m3", &self.m3())
+            .field("m4", &self.m4())
+            .field("m5", &self.m5())
+            .field("m6", &self.m6())
+            .field("m7", &self.m7())
+            .field("m8", &self.m8())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:1 - Master 0 Priority. . . 0: 0, 1: 1, 2: 2, 3: 3. (0 High)"]
     #[inline(always)]

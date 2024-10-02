@@ -3,6 +3,7 @@ pub type R = crate::R<CrSpec>;
 #[doc = "Register `CR` writer"]
 pub type W = crate::W<CrSpec>;
 #[doc = "Force Logically Disabled Mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Fldm {
     #[doc = "0: No effect on the operating mode."]
@@ -59,6 +60,7 @@ signals the operating mode."]
     }
 }
 #[doc = "Restricted Register Access Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rrae {
     #[doc = "0: Register access is fully enabled. The OTFAD programming model registers can be accessed \"normally\"."]
@@ -112,6 +114,7 @@ where
     }
 }
 #[doc = "Global OTFAD Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ge {
     #[doc = "0: OTFAD has decryption disabled. All data fetched by the FLEXSPI bypasses OTFAD processing."]
@@ -179,6 +182,16 @@ impl R {
     #[inline(always)]
     pub fn ge(&self) -> GeR {
         GeR::new(((self.bits >> 31) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CR")
+            .field("fldm", &self.fldm())
+            .field("rrae", &self.rrae())
+            .field("ge", &self.ge())
+            .finish()
     }
 }
 impl W {

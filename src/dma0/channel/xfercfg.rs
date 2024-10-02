@@ -3,6 +3,7 @@ pub type R = crate::R<XfercfgSpec>;
 #[doc = "Register `XFERCFG` writer"]
 pub type W = crate::W<XfercfgSpec>;
 #[doc = "Configuration Valid flag. This bit indicates whether the current channel descriptor is valid and can potentially be acted upon, if all other activation criteria are fulfilled.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cfgvalid {
     #[doc = "0: Not valid. The channel descriptor is not considered valid until validated by an associated SETVALID0 setting."]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Indicates whether the channel's control structure will be reloaded when the current descriptor is exhausted. Reloading allows ping-pong and linked transfers.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Reload {
     #[doc = "0: Disabled. Do not reload the channels' control structure when the current descriptor is exhausted."]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "Software Trigger.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Swtrig {
     #[doc = "0: Not set. When written by software, the trigger for this channel is not set. A new trigger, as defined by the HWTRIGEN, TRIGPOL, and TRIGTYPE will be needed to start the channel."]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "Clear Trigger.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Clrtrig {
     #[doc = "0: Not cleared. The trigger is not cleared when this descriptor is exhausted. If there is a reload, the next descriptor will be started."]
@@ -215,6 +219,7 @@ where
     }
 }
 #[doc = "Set Interrupt flag A for this channel. There is no hardware distinction between interrupt A and B. They can be used by software to assist with more complex descriptor usage. By convention, interrupt A may be used when only one interrupt flag is needed.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Setinta {
     #[doc = "0: No effect."]
@@ -268,6 +273,7 @@ where
     }
 }
 #[doc = "Set Interrupt flag B for this channel. There is no hardware distinction between interrupt A and B. They can be used by software to assist with more complex descriptor usage. By convention, interrupt A may be used when only one interrupt flag is needed.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Setintb {
     #[doc = "0: No effect."]
@@ -321,6 +327,7 @@ where
     }
 }
 #[doc = "Transfer width used for this DMA channel.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Width {
@@ -394,6 +401,7 @@ where
     }
 }
 #[doc = "Determines whether the source address is incremented for each DMA transfer.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Srcinc {
@@ -480,6 +488,7 @@ where
     }
 }
 #[doc = "Determines whether the destination address is incremented for each DMA transfer.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Dstinc {
@@ -619,6 +628,23 @@ impl R {
     #[inline(always)]
     pub fn xfercount(&self) -> XfercountR {
         XfercountR::new(((self.bits >> 16) & 0x03ff) as u16)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("XFERCFG")
+            .field("cfgvalid", &self.cfgvalid())
+            .field("reload", &self.reload())
+            .field("swtrig", &self.swtrig())
+            .field("clrtrig", &self.clrtrig())
+            .field("setinta", &self.setinta())
+            .field("setintb", &self.setintb())
+            .field("width", &self.width())
+            .field("srcinc", &self.srcinc())
+            .field("dstinc", &self.dstinc())
+            .field("xfercount", &self.xfercount())
+            .finish()
     }
 }
 impl W {

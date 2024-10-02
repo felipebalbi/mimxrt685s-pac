@@ -3,6 +3,7 @@ pub type R = crate::R<CfgSpec>;
 #[doc = "Register `CFG` writer"]
 pub type W = crate::W<CfgSpec>;
 #[doc = "SPI enable.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Enable {
     #[doc = "0: Disabled. The SPI is disabled and the internal state machine and counters are reset."]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Master mode select.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Master {
     #[doc = "0: Slave mode. The SPI will operate in slave mode. SCK, MOSI, and the SSEL signals are inputs, MISO is an output."]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "LSB First mode enable.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Lsbf {
     #[doc = "0: Standard. Data is transmitted and received in standard MSB first order."]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "Clock Phase select.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cpha {
     #[doc = "0: Change. The SPI captures serial data on the first clock transition of the transfer (when the clock changes away from the rest state). Data is changed on the following edge."]
@@ -215,6 +219,7 @@ where
     }
 }
 #[doc = "Clock Polarity select.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cpol {
     #[doc = "0: Low. The rest state of the clock (between transfers) is low."]
@@ -268,6 +273,7 @@ where
     }
 }
 #[doc = "Loopback mode enable. Loopback mode applies only to Master mode, and connects transmit and receive data connected together to allow simple software testing.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Loop {
     #[doc = "0: Disabled."]
@@ -321,6 +327,7 @@ where
     }
 }
 #[doc = "SSEL0 Polarity select.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Spol0 {
     #[doc = "0: Low. The SSEL0 pin is active low."]
@@ -374,6 +381,7 @@ where
     }
 }
 #[doc = "SSEL1 Polarity select.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Spol1 {
     #[doc = "0: Low. The SSEL1 pin is active low."]
@@ -427,6 +435,7 @@ where
     }
 }
 #[doc = "SSEL2 Polarity select.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Spol2 {
     #[doc = "0: Low. The SSEL2 pin is active low."]
@@ -480,6 +489,7 @@ where
     }
 }
 #[doc = "SSEL3 Polarity select.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Spol3 {
     #[doc = "0: Low. The SSEL3 pin is active low."]
@@ -582,6 +592,23 @@ impl R {
     #[inline(always)]
     pub fn spol3(&self) -> Spol3R {
         Spol3R::new(((self.bits >> 11) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CFG")
+            .field("enable", &self.enable())
+            .field("master", &self.master())
+            .field("lsbf", &self.lsbf())
+            .field("cpha", &self.cpha())
+            .field("cpol", &self.cpol())
+            .field("loop_", &self.loop_())
+            .field("spol0", &self.spol0())
+            .field("spol1", &self.spol1())
+            .field("spol2", &self.spol2())
+            .field("spol3", &self.spol3())
+            .finish()
     }
 }
 impl W {

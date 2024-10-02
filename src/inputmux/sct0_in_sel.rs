@@ -3,6 +3,7 @@ pub type R = crate::R<Sct0InSelSpec>;
 #[doc = "Register `SCT0_IN_SEL%s` writer"]
 pub type W = crate::W<Sct0InSelSpec>;
 #[doc = "SCT0 Input(n) Selection. 24:1 Selection for each. . .\n\nValue on reset: 31"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SctInSel {
@@ -353,6 +354,14 @@ impl R {
     #[inline(always)]
     pub fn sct_in_sel(&self) -> SctInSelR {
         SctInSelR::new((self.bits & 0x1f) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SCT0_IN_SEL")
+            .field("sct_in_sel", &self.sct_in_sel())
+            .finish()
     }
 }
 impl W {

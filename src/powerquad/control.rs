@@ -29,6 +29,16 @@ impl R {
         InstBusyR::new(((self.bits >> 31) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CONTROL")
+            .field("decode_opcode", &self.decode_opcode())
+            .field("decode_machine", &self.decode_machine())
+            .field("inst_busy", &self.inst_busy())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:3 - opcode specific to decode_machine"]
     #[inline(always)]

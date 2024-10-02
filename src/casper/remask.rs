@@ -13,6 +13,14 @@ impl R {
         MaskR::new(self.bits)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("REMASK")
+            .field("mask", &self.mask())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:31 - Mask to apply as side channel countermeasure. 0: No mask to be used. N: Mask to XOR onto values"]
     #[inline(always)]

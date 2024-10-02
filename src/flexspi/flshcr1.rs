@@ -19,6 +19,7 @@ pub type CasR = crate::FieldReader;
 #[doc = "Field `CAS` writer - Column Address Size."]
 pub type CasW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "CS interval unit\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Csintervalunit {
     #[doc = "0: The CS interval unit is 1 serial clock cycle"]
@@ -105,6 +106,19 @@ impl R {
     #[inline(always)]
     pub fn csinterval(&self) -> CsintervalR {
         CsintervalR::new(((self.bits >> 16) & 0xffff) as u16)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("FLSHCR1")
+            .field("tcss", &self.tcss())
+            .field("tcsh", &self.tcsh())
+            .field("wa", &self.wa())
+            .field("cas", &self.cas())
+            .field("csintervalunit", &self.csintervalunit())
+            .field("csinterval", &self.csinterval())
+            .finish()
     }
 }
 impl W {

@@ -58,6 +58,19 @@ impl R {
         Opcode1R::new(((self.bits >> 26) & 0x3f) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("LUT")
+            .field("operand0", &self.operand0())
+            .field("num_pads0", &self.num_pads0())
+            .field("opcode0", &self.opcode0())
+            .field("operand1", &self.operand1())
+            .field("num_pads1", &self.num_pads1())
+            .field("opcode1", &self.opcode1())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:7 - OPERAND0"]
     #[inline(always)]

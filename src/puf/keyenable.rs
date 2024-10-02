@@ -3,6 +3,7 @@ pub type R = crate::R<KeyenableSpec>;
 #[doc = "Register `KEYENABLE` writer"]
 pub type W = crate::W<KeyenableSpec>;
 #[doc = "Key 0\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Key0 {
@@ -89,6 +90,7 @@ where
     }
 }
 #[doc = "Key 1\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Key1 {
@@ -175,6 +177,7 @@ where
     }
 }
 #[doc = "Key 2\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Key2 {
@@ -261,6 +264,7 @@ where
     }
 }
 #[doc = "Key 3\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Key3 {
@@ -366,6 +370,17 @@ impl R {
     #[inline(always)]
     pub fn key3(&self) -> Key3R {
         Key3R::new(((self.bits >> 6) & 3) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("KEYENABLE")
+            .field("key0", &self.key0())
+            .field("key1", &self.key1())
+            .field("key2", &self.key2())
+            .field("key3", &self.key3())
+            .finish()
     }
 }
 impl W {

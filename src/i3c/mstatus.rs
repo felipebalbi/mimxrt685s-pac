@@ -3,6 +3,7 @@ pub type R = crate::R<MstatusSpec>;
 #[doc = "Register `MSTATUS` writer"]
 pub type W = crate::W<MstatusSpec>;
 #[doc = "State of the master\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum State {
@@ -97,6 +98,7 @@ pub type BetweenR = crate::BitReader;
 #[doc = "Field `NACKED` reader - Not acknowledged"]
 pub type NackedR = crate::BitReader;
 #[doc = "In-Band Interrupt (IBI) type\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Ibitype {
@@ -247,6 +249,26 @@ impl R {
     #[inline(always)]
     pub fn ibiaddr(&self) -> IbiaddrR {
         IbiaddrR::new(((self.bits >> 24) & 0x7f) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("MSTATUS")
+            .field("state", &self.state())
+            .field("between", &self.between())
+            .field("nacked", &self.nacked())
+            .field("ibitype", &self.ibitype())
+            .field("slvstart", &self.slvstart())
+            .field("mctrldone", &self.mctrldone())
+            .field("complete", &self.complete())
+            .field("rxpend", &self.rxpend())
+            .field("txnotfull", &self.txnotfull())
+            .field("ibiwon", &self.ibiwon())
+            .field("errwarn", &self.errwarn())
+            .field("nowmaster", &self.nowmaster())
+            .field("ibiaddr", &self.ibiaddr())
+            .finish()
     }
 }
 impl W {

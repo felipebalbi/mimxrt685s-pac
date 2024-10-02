@@ -9,6 +9,14 @@ impl R {
         VersionR::new(self.bits)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("VERSION")
+            .field("version", &self.version())
+            .finish()
+    }
+}
 #[doc = "PUF Version\n\nYou can [`read`](crate::Reg::read) this register and get [`version::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct VersionSpec;
 impl crate::RegisterSpec for VersionSpec {

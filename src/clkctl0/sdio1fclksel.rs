@@ -3,6 +3,7 @@ pub type R = crate::R<Sdio1fclkselSpec>;
 #[doc = "Register `SDIO1FCLKSEL` writer"]
 pub type W = crate::W<Sdio1fclkselSpec>;
 #[doc = "SDIO1 Functional Clock Source Selection. .\n\nValue on reset: 7"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Sel {
@@ -119,6 +120,14 @@ impl R {
     #[inline(always)]
     pub fn sel(&self) -> SelR {
         SelR::new((self.bits & 7) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SDIO1FCLKSEL")
+            .field("sel", &self.sel())
+            .finish()
     }
 }
 impl W {

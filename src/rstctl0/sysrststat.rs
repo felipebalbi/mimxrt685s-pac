@@ -3,6 +3,7 @@ pub type R = crate::R<SysrststatSpec>;
 #[doc = "Register `SYSRSTSTAT` writer"]
 pub type W = crate::W<SysrststatSpec>;
 #[doc = "VDD POR Event Detected:\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VddPor {
     #[doc = "0: No event detected."]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "PAD RESET Event Detected:\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PadReset {
     #[doc = "0: No EVENT Detected."]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "ARM RESET Event Detected:\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ArmApdReset {
     #[doc = "0: No event detected."]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "WDT0 RESET Event Detected:\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Wdt0Reset {
     #[doc = "0: No EVENT Detected."]
@@ -215,6 +219,7 @@ where
     }
 }
 #[doc = "WDT1 RESET Event Detected:\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Wdt1Reset {
     #[doc = "0: No EVENT Detected."]
@@ -292,6 +297,18 @@ impl R {
     #[inline(always)]
     pub fn wdt1_reset(&self) -> Wdt1ResetR {
         Wdt1ResetR::new(((self.bits >> 7) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SYSRSTSTAT")
+            .field("vdd_por", &self.vdd_por())
+            .field("pad_reset", &self.pad_reset())
+            .field("arm_apd_reset", &self.arm_apd_reset())
+            .field("wdt0_reset", &self.wdt0_reset())
+            .field("wdt1_reset", &self.wdt1_reset())
+            .finish()
     }
 }
 impl W {

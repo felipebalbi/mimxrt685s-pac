@@ -18,6 +18,12 @@ pub type ParityerrclrW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type RxnoiseclrW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ABERRCLR` writer - Writing 1 clears the corresponding bit in the INTENSET register."]
 pub type AberrclrW<'a, REG> = crate::BitWriter<'a, REG>;
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for crate::generic::Reg<IntenclrSpec> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
+    }
+}
 impl W {
     #[doc = "Bit 3 - Writing 1 clears the corresponding bit in the INTENSET register."]
     #[inline(always)]

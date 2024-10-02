@@ -22,6 +22,15 @@ impl R {
         AtlBaseR::new((self.bits >> 9) & 0x007f_ffff)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ATLPTD")
+            .field("atl_cur", &self.atl_cur())
+            .field("atl_base", &self.atl_base())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 4:8 - This indicates the current PTD that is used by the hardware when it is processing the ATL list."]
     #[inline(always)]

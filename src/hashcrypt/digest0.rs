@@ -9,6 +9,14 @@ impl R {
         DigestR::new(self.bits)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DIGEST0")
+            .field("digest", &self.digest())
+            .finish()
+    }
+}
 #[doc = "no description available\n\nYou can [`read`](crate::Reg::read) this register and get [`digest0::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Digest0Spec;
 impl crate::RegisterSpec for Digest0Spec {

@@ -2,6 +2,12 @@
 pub type W = crate::W<SienfSpec>;
 #[doc = "Field `SETENAF` writer - Ones written to this address set bits in the IENF, thus enabling interrupts. Bit n sets bit n in the IENF register. 0 = No operation. 1 = Select HIGH-active interrupt or enable falling edge interrupt."]
 pub type SetenafW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for crate::generic::Reg<SienfSpec> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
+    }
+}
 impl W {
     #[doc = "Bits 0:7 - Ones written to this address set bits in the IENF, thus enabling interrupts. Bit n sets bit n in the IENF register. 0 = No operation. 1 = Select HIGH-active interrupt or enable falling edge interrupt."]
     #[inline(always)]

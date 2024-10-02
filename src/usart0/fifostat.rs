@@ -71,6 +71,22 @@ impl R {
         RxlvlR::new(((self.bits >> 16) & 0x1f) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("FIFOSTAT")
+            .field("txerr", &self.txerr())
+            .field("rxerr", &self.rxerr())
+            .field("perint", &self.perint())
+            .field("txempty", &self.txempty())
+            .field("txnotfull", &self.txnotfull())
+            .field("rxnotempty", &self.rxnotempty())
+            .field("rxfull", &self.rxfull())
+            .field("txlvl", &self.txlvl())
+            .field("rxlvl", &self.rxlvl())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - TX FIFO error. Will be set if a transmit FIFO error occurs. This could be an overflow caused by pushing data into a full FIFO, or by an underflow if the FIFO is empty when data is needed. Cleared by writing a 1 to this bit."]
     #[inline(always)]

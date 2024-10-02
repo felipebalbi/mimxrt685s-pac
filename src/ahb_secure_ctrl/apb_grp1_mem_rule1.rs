@@ -76,6 +76,21 @@ impl R {
         FreqmeRuleR::new(((self.bits >> 28) & 3) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("APB_GRP1_MEM_RULE1")
+            .field("ct32bit0_rule", &self.ct32bit0_rule())
+            .field("ct32bit1_rule", &self.ct32bit1_rule())
+            .field("ct32bit2_rule", &self.ct32bit2_rule())
+            .field("ct32bit3_rule", &self.ct32bit3_rule())
+            .field("ct32bit4_rule", &self.ct32bit4_rule())
+            .field("mrt_rule", &self.mrt_rule())
+            .field("wwdt1_rule", &self.wwdt1_rule())
+            .field("freqme_rule", &self.freqme_rule())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:1 - 0x4002 8000--0x4002 8FFF"]
     #[inline(always)]

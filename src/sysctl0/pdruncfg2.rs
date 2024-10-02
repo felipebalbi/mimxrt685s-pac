@@ -3,6 +3,7 @@ pub type R = crate::R<Pdruncfg2Spec>;
 #[doc = "Register `PDRUNCFG2` writer"]
 pub type W = crate::W<Pdruncfg2Spec>;
 #[doc = "Array Power\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf0Apd {
     #[doc = "0: enable"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Array Power\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf1Apd {
     #[doc = "0: enable"]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "Array Power\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf2Apd {
     #[doc = "0: enable"]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "Array Power\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf3Apd {
     #[doc = "0: enable"]
@@ -215,6 +219,7 @@ where
     }
 }
 #[doc = "Array Power\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf4Apd {
     #[doc = "0: enable"]
@@ -268,6 +273,7 @@ where
     }
 }
 #[doc = "Array Power\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf5Apd {
     #[doc = "0: enable"]
@@ -321,6 +327,7 @@ where
     }
 }
 #[doc = "Array Power\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf6Apd {
     #[doc = "0: enable"]
@@ -374,6 +381,7 @@ where
     }
 }
 #[doc = "Array Power\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf7Apd {
     #[doc = "0: enable"]
@@ -427,6 +435,7 @@ where
     }
 }
 #[doc = "Array Power\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf8Apd {
     #[doc = "0: enable"]
@@ -480,6 +489,7 @@ where
     }
 }
 #[doc = "Array Power\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf9Apd {
     #[doc = "0: enable"]
@@ -533,6 +543,7 @@ where
     }
 }
 #[doc = "Array Power\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf10Apd {
     #[doc = "0: enable"]
@@ -586,6 +597,7 @@ where
     }
 }
 #[doc = "Array Power\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf11Apd {
     #[doc = "0: enable"]
@@ -639,6 +651,7 @@ where
     }
 }
 #[doc = "Array Power\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf12Apd {
     #[doc = "0: enable"]
@@ -692,6 +705,7 @@ where
     }
 }
 #[doc = "Array Power\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf13Apd {
     #[doc = "0: enable"]
@@ -745,6 +759,7 @@ where
     }
 }
 #[doc = "Array Power\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf14Apd {
     #[doc = "0: enable"]
@@ -798,6 +813,7 @@ where
     }
 }
 #[doc = "Array Power\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf15Apd {
     #[doc = "0: enable"]
@@ -851,6 +867,7 @@ where
     }
 }
 #[doc = "Array Power\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf16Apd {
     #[doc = "0: enable"]
@@ -904,6 +921,7 @@ where
     }
 }
 #[doc = "Array Power\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf17Apd {
     #[doc = "0: enable"]
@@ -957,6 +975,7 @@ where
     }
 }
 #[doc = "Array Power\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf18Apd {
     #[doc = "0: enable"]
@@ -1010,6 +1029,7 @@ where
     }
 }
 #[doc = "Array Power\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf19Apd {
     #[doc = "0: enable"]
@@ -1063,6 +1083,7 @@ where
     }
 }
 #[doc = "Array Power\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf20Apd {
     #[doc = "0: enable"]
@@ -1116,6 +1137,7 @@ where
     }
 }
 #[doc = "Array Power\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf21Apd {
     #[doc = "0: enable"]
@@ -1169,6 +1191,7 @@ where
     }
 }
 #[doc = "Array Power\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf22Apd {
     #[doc = "0: enable"]
@@ -1222,6 +1245,7 @@ where
     }
 }
 #[doc = "Array Power\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf23Apd {
     #[doc = "0: enable"]
@@ -1275,6 +1299,7 @@ where
     }
 }
 #[doc = "Array Power\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf24Apd {
     #[doc = "0: enable"]
@@ -1328,6 +1353,7 @@ where
     }
 }
 #[doc = "Array Power\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf25Apd {
     #[doc = "0: enable"]
@@ -1381,6 +1407,7 @@ where
     }
 }
 #[doc = "Array Power\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf26Apd {
     #[doc = "0: enable"]
@@ -1434,6 +1461,7 @@ where
     }
 }
 #[doc = "Array Power\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf27Apd {
     #[doc = "0: enable"]
@@ -1487,6 +1515,7 @@ where
     }
 }
 #[doc = "Array Power\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf28Apd {
     #[doc = "0: enable"]
@@ -1540,6 +1569,7 @@ where
     }
 }
 #[doc = "Array Power\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf29Apd {
     #[doc = "0: enable"]
@@ -1742,6 +1772,43 @@ impl R {
     #[inline(always)]
     pub fn sram_if29_apd(&self) -> SramIf29ApdR {
         SramIf29ApdR::new(((self.bits >> 29) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PDRUNCFG2")
+            .field("sram_if0_apd", &self.sram_if0_apd())
+            .field("sram_if1_apd", &self.sram_if1_apd())
+            .field("sram_if2_apd", &self.sram_if2_apd())
+            .field("sram_if3_apd", &self.sram_if3_apd())
+            .field("sram_if4_apd", &self.sram_if4_apd())
+            .field("sram_if5_apd", &self.sram_if5_apd())
+            .field("sram_if6_apd", &self.sram_if6_apd())
+            .field("sram_if7_apd", &self.sram_if7_apd())
+            .field("sram_if8_apd", &self.sram_if8_apd())
+            .field("sram_if9_apd", &self.sram_if9_apd())
+            .field("sram_if10_apd", &self.sram_if10_apd())
+            .field("sram_if11_apd", &self.sram_if11_apd())
+            .field("sram_if12_apd", &self.sram_if12_apd())
+            .field("sram_if13_apd", &self.sram_if13_apd())
+            .field("sram_if14_apd", &self.sram_if14_apd())
+            .field("sram_if15_apd", &self.sram_if15_apd())
+            .field("sram_if16_apd", &self.sram_if16_apd())
+            .field("sram_if17_apd", &self.sram_if17_apd())
+            .field("sram_if18_apd", &self.sram_if18_apd())
+            .field("sram_if19_apd", &self.sram_if19_apd())
+            .field("sram_if20_apd", &self.sram_if20_apd())
+            .field("sram_if21_apd", &self.sram_if21_apd())
+            .field("sram_if22_apd", &self.sram_if22_apd())
+            .field("sram_if23_apd", &self.sram_if23_apd())
+            .field("sram_if24_apd", &self.sram_if24_apd())
+            .field("sram_if25_apd", &self.sram_if25_apd())
+            .field("sram_if26_apd", &self.sram_if26_apd())
+            .field("sram_if27_apd", &self.sram_if27_apd())
+            .field("sram_if28_apd", &self.sram_if28_apd())
+            .field("sram_if29_apd", &self.sram_if29_apd())
+            .finish()
     }
 }
 impl W {

@@ -104,6 +104,25 @@ impl R {
         FuseLatchedR::new(((self.bits >> 25) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("OTP_STATUS")
+            .field("sec", &self.sec())
+            .field("ded", &self.ded())
+            .field("locked", &self.locked())
+            .field("progfail", &self.progfail())
+            .field("ack", &self.ack())
+            .field("pwok", &self.pwok())
+            .field("sec_reload", &self.sec_reload())
+            .field("ded_reload", &self.ded_reload())
+            .field("busy", &self.busy())
+            .field("error", &self.error())
+            .field("crc_fail", &self.crc_fail())
+            .field("fuse_latched", &self.fuse_latched())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 9 - OTP Single Error Corrected status of ECC during read operation. Write 1 to clear."]
     #[inline(always)]

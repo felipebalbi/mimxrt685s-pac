@@ -1,6 +1,7 @@
 #[doc = "Register `PSCCTL0_SET` writer"]
 pub type W = crate::W<Pscctl0SetSpec>;
 #[doc = "128KB ROM controller clock set\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RomCtl128kbClk {
     #[doc = "0: No Effect"]
@@ -32,6 +33,7 @@ where
     }
 }
 #[doc = "powerquad clock set\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PowerquadClk {
     #[doc = "0: No Effect"]
@@ -63,6 +65,7 @@ where
     }
 }
 #[doc = "CAPSER clock set\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CasperClk {
     #[doc = "0: No Effect"]
@@ -94,6 +97,7 @@ where
     }
 }
 #[doc = "HASHCRYPT clock set\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HashcryptClk {
     #[doc = "0: No Effect"]
@@ -125,6 +129,7 @@ where
     }
 }
 #[doc = "PUF clock set\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PufClk {
     #[doc = "0: No Effect"]
@@ -156,6 +161,7 @@ where
     }
 }
 #[doc = "RNG clock set\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RngClk {
     #[doc = "0: No Effect"]
@@ -187,6 +193,7 @@ where
     }
 }
 #[doc = "FLEXSPI clock set\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FlexspiOtfadClk {
     #[doc = "0: No Effect"]
@@ -218,6 +225,7 @@ where
     }
 }
 #[doc = "OTP clock set\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum OtpClk {
     #[doc = "0: No Effect"]
@@ -249,6 +257,7 @@ where
     }
 }
 #[doc = "USB PHY clock set\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UsbhsPhyClk {
     #[doc = "0: No Effect"]
@@ -280,6 +289,7 @@ where
     }
 }
 #[doc = "USB DEVICE clock set\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UsbhsDeviceClk {
     #[doc = "0: No Effect"]
@@ -311,6 +321,7 @@ where
     }
 }
 #[doc = "USB HOST clock set\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UsbhsHostClk {
     #[doc = "0: No Effect"]
@@ -342,6 +353,7 @@ where
     }
 }
 #[doc = "USBHS RAM clock set\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UsbhsSramClk {
     #[doc = "0: No Effect"]
@@ -373,6 +385,7 @@ where
     }
 }
 #[doc = "SCT clock set\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SctClk {
     #[doc = "0: No Effect"]
@@ -401,6 +414,12 @@ where
     #[inline(always)]
     pub fn set_clock(self) -> &'a mut crate::W<REG> {
         self.variant(SctClk::SetClock)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for crate::generic::Reg<Pscctl0SetSpec> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
     }
 }
 impl W {

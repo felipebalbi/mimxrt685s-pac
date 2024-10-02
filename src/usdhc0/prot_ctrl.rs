@@ -3,6 +3,7 @@ pub type R = crate::R<ProtCtrlSpec>;
 #[doc = "Register `PROT_CTRL` writer"]
 pub type W = crate::W<ProtCtrlSpec>;
 #[doc = "Data Transfer Width\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Dtw {
@@ -76,6 +77,7 @@ where
     }
 }
 #[doc = "DATA3 as Card Detection Pin\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum D3cd {
     #[doc = "0: DATA3 does not monitor Card Insertion"]
@@ -129,6 +131,7 @@ where
     }
 }
 #[doc = "Endian Mode\n\nValue on reset: 2"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Emode {
@@ -202,6 +205,7 @@ where
     }
 }
 #[doc = "Card Detect Test Level\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cdtl {
     #[doc = "0: Card Detect Test Level is 0, no card inserted"]
@@ -255,6 +259,7 @@ where
     }
 }
 #[doc = "Card Detect Signal Selection\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cdss {
     #[doc = "0: Card Detection Level is selected (for normal purpose)."]
@@ -308,6 +313,7 @@ where
     }
 }
 #[doc = "DMA Select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Dmasel {
@@ -381,6 +387,7 @@ where
     }
 }
 #[doc = "Stop At Block Gap Request\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sabgreq {
     #[doc = "0: Transfer"]
@@ -434,6 +441,7 @@ where
     }
 }
 #[doc = "Continue Request\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Creq {
     #[doc = "0: No effect"]
@@ -487,6 +495,7 @@ where
     }
 }
 #[doc = "Read Wait Control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rwctl {
     #[doc = "0: Disable Read Wait Control, and stop SD Clock at block gap when SABGREQ bit is set"]
@@ -540,6 +549,7 @@ where
     }
 }
 #[doc = "Interrupt At Block Gap\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Iabg {
     #[doc = "0: Disabled"]
@@ -601,6 +611,7 @@ pub type RdWaitPointR = crate::FieldReader;
 #[doc = "Field `RD_WAIT_POINT` writer - Read wait point"]
 pub type RdWaitPointW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Wakeup Event Enable On Card Interrupt\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Wecint {
     #[doc = "0: Disable"]
@@ -654,6 +665,7 @@ where
     }
 }
 #[doc = "Wakeup Event Enable On SD Card Insertion\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Wecins {
     #[doc = "0: Disable"]
@@ -707,6 +719,7 @@ where
     }
 }
 #[doc = "Wakeup Event Enable On SD Card Removal\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Wecrm {
     #[doc = "0: Disable"]
@@ -760,6 +773,7 @@ where
     }
 }
 #[doc = "BURST length enable for INCR, INCR4 / INCR8 / INCR16, INCR4-WRAP / INCR8-WRAP / INCR16-WRAP\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum BurstLenEn {
@@ -807,6 +821,7 @@ where
     }
 }
 #[doc = "NON_EXACT_BLK_RD\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum NonExactBlkRd {
     #[doc = "0: The block read is exact block read. Host driver doesn't need to issue abort command to terminate this multi-block read."]
@@ -860,6 +875,7 @@ where
     }
 }
 #[doc = "RD_NO8CLK_EN\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RdNo8clkEn {
     #[doc = "0: Disable S/W RD_DONE_NO_8CLK, uSHDC determines if 8 clocks are needed automatically."]
@@ -1002,6 +1018,31 @@ impl R {
     #[inline(always)]
     pub fn rd_no8clk_en(&self) -> RdNo8clkEnR {
         RdNo8clkEnR::new(((self.bits >> 31) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PROT_CTRL")
+            .field("dtw", &self.dtw())
+            .field("d3cd", &self.d3cd())
+            .field("emode", &self.emode())
+            .field("cdtl", &self.cdtl())
+            .field("cdss", &self.cdss())
+            .field("dmasel", &self.dmasel())
+            .field("sabgreq", &self.sabgreq())
+            .field("creq", &self.creq())
+            .field("rwctl", &self.rwctl())
+            .field("iabg", &self.iabg())
+            .field("rd_done_no_8clk", &self.rd_done_no_8clk())
+            .field("rd_wait_point", &self.rd_wait_point())
+            .field("wecint", &self.wecint())
+            .field("wecins", &self.wecins())
+            .field("wecrm", &self.wecrm())
+            .field("burst_len_en", &self.burst_len_en())
+            .field("non_exact_blk_rd", &self.non_exact_blk_rd())
+            .field("rd_no8clk_en", &self.rd_no8clk_en())
+            .finish()
     }
 }
 impl W {

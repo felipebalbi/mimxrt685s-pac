@@ -3,6 +3,7 @@ pub type R = crate::R<PwrctrlSpec>;
 #[doc = "Register `PWRCTRL` writer"]
 pub type W = crate::W<PwrctrlSpec>;
 #[doc = "RAM Power On\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RamOn {
     #[doc = "0: Power Off"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "PUF Clock control.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CkDis {
     #[doc = "0: PUF RAM clock is disabled."]
@@ -118,6 +120,15 @@ impl R {
     #[inline(always)]
     pub fn ck_dis(&self) -> CkDisR {
         CkDisR::new(((self.bits >> 2) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PWRCTRL")
+            .field("ram_on", &self.ram_on())
+            .field("ck_dis", &self.ck_dis())
+            .finish()
     }
 }
 impl W {

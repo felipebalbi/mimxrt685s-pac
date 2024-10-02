@@ -3,6 +3,7 @@ pub type R = crate::R<ConfigSpec>;
 #[doc = "Register `CONFIG` writer"]
 pub type W = crate::W<ConfigSpec>;
 #[doc = "SCT operation\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Unify {
     #[doc = "0: The SCT operates as two 16-bit counters named COUNTER_L and COUNTER_H."]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "SCT clock mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Clkmode {
@@ -142,6 +144,7 @@ where
     }
 }
 #[doc = "SCT clock select. The specific functionality of the designated input/edge is dependent on the CLKMODE bit selection in this register.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Cksel {
@@ -443,6 +446,21 @@ impl R {
     #[inline(always)]
     pub fn autolimit_h(&self) -> AutolimitHR {
         AutolimitHR::new(((self.bits >> 18) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CONFIG")
+            .field("unify", &self.unify())
+            .field("clkmode", &self.clkmode())
+            .field("cksel", &self.cksel())
+            .field("noreload_l", &self.noreload_l())
+            .field("noreload_h", &self.noreload_h())
+            .field("insync", &self.insync())
+            .field("autolimit_l", &self.autolimit_l())
+            .field("autolimit_h", &self.autolimit_h())
+            .finish()
     }
 }
 impl W {

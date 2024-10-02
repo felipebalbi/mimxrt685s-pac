@@ -3,6 +3,7 @@ pub type R = crate::R<StatSpec>;
 #[doc = "Register `STAT` writer"]
 pub type W = crate::W<StatSpec>;
 #[doc = "Monitors the interrupt flag.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Intflag {
     #[doc = "0: No pending interrupt. Writing a zero is equivalent to no operation."]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Indicates the state of TIMERn. This bit is read-only.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Run {
     #[doc = "0: Idle state. TIMERn is stopped."]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "Channel In Use flag. Operating details depend on the MULTITASK bit in the MODCFG register, and affects the use of IDLE_CH. See Idle channel register for details of the two operating modes.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Inuse {
     #[doc = "0: This channel is not in use."]
@@ -176,6 +179,16 @@ impl R {
     #[inline(always)]
     pub fn inuse(&self) -> InuseR {
         InuseR::new(((self.bits >> 2) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("STAT")
+            .field("intflag", &self.intflag())
+            .field("run", &self.run())
+            .field("inuse", &self.inuse())
+            .finish()
     }
 }
 impl W {

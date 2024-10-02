@@ -79,6 +79,24 @@ impl R {
         EventR::new(((self.bits >> 18) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SINTMASKED")
+            .field("start", &self.start())
+            .field("matched", &self.matched())
+            .field("stop", &self.stop())
+            .field("rxpend", &self.rxpend())
+            .field("txsend", &self.txsend())
+            .field("dachg", &self.dachg())
+            .field("ccc", &self.ccc())
+            .field("errwarn", &self.errwarn())
+            .field("ddrmatched", &self.ddrmatched())
+            .field("chandled", &self.chandled())
+            .field("event", &self.event())
+            .finish()
+    }
+}
 #[doc = "Slave Interrupt Mask Register\n\nYou can [`read`](crate::Reg::read) this register and get [`sintmasked::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SintmaskedSpec;
 impl crate::RegisterSpec for SintmaskedSpec {

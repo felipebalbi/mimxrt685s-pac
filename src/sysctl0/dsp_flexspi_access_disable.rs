@@ -3,6 +3,7 @@ pub type R = crate::R<DspFlexspiAccessDisableSpec>;
 #[doc = "Register `DSP_FLEXSPI_ACCESS_DISABLE` writer"]
 pub type W = crate::W<DspFlexspiAccessDisableSpec>;
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DspFlexspiAccessDisable {
     #[doc = "0: Enable DSP access to FLEXSPI"]
@@ -60,6 +61,17 @@ impl R {
     #[inline(always)]
     pub fn dsp_flexspi_access_disable(&self) -> DspFlexspiAccessDisableR {
         DspFlexspiAccessDisableR::new((self.bits & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DSP_FLEXSPI_ACCESS_DISABLE")
+            .field(
+                "dsp_flexspi_access_disable",
+                &self.dsp_flexspi_access_disable(),
+            )
+            .finish()
     }
 }
 impl W {

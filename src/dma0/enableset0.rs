@@ -3,6 +3,7 @@ pub type R = crate::R<Enableset0Spec>;
 #[doc = "Register `ENABLESET0` writer"]
 pub type W = crate::W<Enableset0Spec>;
 #[doc = "Enable for DMA channel 0\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u32)]
 pub enum Ena {
@@ -67,6 +68,14 @@ impl R {
     #[inline(always)]
     pub fn ena(&self) -> EnaR {
         EnaR::new(self.bits)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ENABLESET0")
+            .field("ena", &self.ena())
+            .finish()
     }
 }
 impl W {

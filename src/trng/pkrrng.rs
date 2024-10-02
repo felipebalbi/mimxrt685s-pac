@@ -13,6 +13,14 @@ impl R {
         PkrRngR::new((self.bits & 0xffff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PKRRNG")
+            .field("pkr_rng", &self.pkr_rng())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:15 - Poker Range"]
     #[inline(always)]

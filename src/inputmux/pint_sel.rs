@@ -13,6 +13,14 @@ impl R {
         PintSelR::new((self.bits & 0xff) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PINT_SEL")
+            .field("pint_sel", &self.pint_sel())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:7 - Port Input (PIOx.y) 64 to 8 Mux Select. . . Pin number select for pin interrupt or pattern match engine input. (For PIOx_y: INTPIN = (x * 32) + y. PIO0_0 to PIO1_31 correspond to numbers 0 to 63."]
     #[inline(always)]

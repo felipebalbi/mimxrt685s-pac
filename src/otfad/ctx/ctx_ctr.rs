@@ -13,6 +13,12 @@ impl R {
         CtrR::new(self.bits)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CTX_CTR").field("ctr", &self.ctr()).finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:31 - AES Counter"]
     #[inline(always)]

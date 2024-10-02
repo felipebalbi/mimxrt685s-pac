@@ -3,6 +3,7 @@ pub type R = crate::R<IntMaskSpec>;
 #[doc = "Register `INT_MASK` writer"]
 pub type W = crate::W<IntMaskSpec>;
 #[doc = "Bit position that can be cleared if corresponding bit of INT_STATUS has been asserted.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HwErr {
     #[doc = "0: Corresponding interrupt of INT_STATUS is masked."]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Same behavior as bit 0 above.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum EntVal {
     #[doc = "0: Same behavior as bit 0 above."]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "Same behavior as bit 0 above.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FrqCtFail {
     #[doc = "0: Same behavior as bit 0 above."]
@@ -176,6 +179,16 @@ impl R {
     #[inline(always)]
     pub fn frq_ct_fail(&self) -> FrqCtFailR {
         FrqCtFailR::new(((self.bits >> 2) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("INT_MASK")
+            .field("hw_err", &self.hw_err())
+            .field("ent_val", &self.ent_val())
+            .field("frq_ct_fail", &self.frq_ct_fail())
+            .finish()
     }
 }
 impl W {

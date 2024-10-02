@@ -22,6 +22,15 @@ impl R {
         ActiveR::new(((self.bits >> 1) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("STAT")
+            .field("intr", &self.intr())
+            .field("active", &self.active())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Interrupt flag. 0 = No interrupt is pending. 1 = An interrupt is pending. A write of any value to this register clears this flag."]
     #[inline(always)]

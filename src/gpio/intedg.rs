@@ -3,6 +3,7 @@ pub type R = crate::R<IntedgSpec>;
 #[doc = "Register `INTEDG[%s]` writer"]
 pub type W = crate::W<IntedgSpec>;
 #[doc = "choose level or edge based detection for each pin(bit0 for pion_0, bit1 for pion_1, etc)\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u32)]
 pub enum Edge {
@@ -67,6 +68,14 @@ impl R {
     #[inline(always)]
     pub fn edge(&self) -> EdgeR {
         EdgeR::new(self.bits)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("INTEDG")
+            .field("edge", &self.edge())
+            .finish()
     }
 }
 impl W {

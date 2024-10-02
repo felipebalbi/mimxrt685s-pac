@@ -3,6 +3,7 @@ pub type R = crate::R<PackerenableSpec>;
 #[doc = "Register `PACKERENABLE` writer"]
 pub type W = crate::W<PackerenableSpec>;
 #[doc = "Write Packer Enable.\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Wrpenable {
     #[doc = "0: disabled"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Read Packer Enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rdpenable {
     #[doc = "0: disabled"]
@@ -118,6 +120,15 @@ impl R {
     #[inline(always)]
     pub fn rdpenable(&self) -> RdpenableR {
         RdpenableR::new(((self.bits >> 1) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PACKERENABLE")
+            .field("wrpenable", &self.wrpenable())
+            .field("rdpenable", &self.rdpenable())
+            .finish()
     }
 }
 impl W {

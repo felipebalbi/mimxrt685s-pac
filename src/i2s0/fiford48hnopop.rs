@@ -9,6 +9,14 @@ impl R {
         RxdataR::new(self.bits & 0x00ff_ffff)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("FIFORD48HNOPOP")
+            .field("rxdata", &self.rxdata())
+            .finish()
+    }
+}
 #[doc = "FIFO data read for upper data bits with no FIFO pop. May only be used if the I2S is configured for 2x 24-bit data and not using DMA.\n\nYou can [`read`](crate::Reg::read) this register and get [`fiford48hnopop::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Fiford48hnopopSpec;
 impl crate::RegisterSpec for Fiford48hnopopSpec {

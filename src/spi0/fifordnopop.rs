@@ -44,6 +44,19 @@ impl R {
         SotR::new(((self.bits >> 20) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("FIFORDNOPOP")
+            .field("rxdata", &self.rxdata())
+            .field("rxssel0_n", &self.rxssel0_n())
+            .field("rxssel1_n", &self.rxssel1_n())
+            .field("rxssel2_n", &self.rxssel2_n())
+            .field("rxssel3_n", &self.rxssel3_n())
+            .field("sot", &self.sot())
+            .finish()
+    }
+}
 #[doc = "FIFO data read with no FIFO pop.\n\nYou can [`read`](crate::Reg::read) this register and get [`fifordnopop::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FifordnopopSpec;
 impl crate::RegisterSpec for FifordnopopSpec {

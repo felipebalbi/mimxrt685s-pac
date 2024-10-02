@@ -31,6 +31,16 @@ impl R {
         MstidleR::new(((self.bits >> 8) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("STAT")
+            .field("stalled", &self.stalled())
+            .field("endtransfer", &self.endtransfer())
+            .field("mstidle", &self.mstidle())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 4 - Slave Select Assert. This flag is set whenever any slave select transitions from deasserted to asserted, in both master and slave modes. This allows determining when the SPI transmit/receive functions become busy, and allows waking up the device from reduced power modes when a slave mode access begins. This flag is cleared by software."]
     #[inline(always)]

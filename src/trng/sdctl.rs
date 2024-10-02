@@ -22,6 +22,15 @@ impl R {
         EntDlyR::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SDCTL")
+            .field("samp_size", &self.samp_size())
+            .field("ent_dly", &self.ent_dly())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:15 - Sample Size"]
     #[inline(always)]

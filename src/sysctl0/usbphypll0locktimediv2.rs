@@ -13,6 +13,14 @@ impl R {
         Locktimediv2R::new((self.bits & 0xffff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("USBPHYPLL0LOCKTIMEDIV2")
+            .field("locktimediv2", &self.locktimediv2())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:15 - USBPHYPLL0 Lock Time: Programmed lock time is in uS (micro-seconds) and is programmed as half the actual lock time value"]
     #[inline(always)]

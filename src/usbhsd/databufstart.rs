@@ -20,6 +20,15 @@ impl R {
         DaBufR::new(((self.bits >> 18) & 0x3fff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DATABUFSTART")
+            .field("da_buf_fixed", &self.da_buf_fixed())
+            .field("da_buf", &self.da_buf())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 18:31 - Programmable portion of the data buffer start address."]
     #[inline(always)]

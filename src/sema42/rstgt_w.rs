@@ -4,6 +4,12 @@ pub type W = crate::W<RstgtWSpec>;
 pub type RstgtnW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `RSTGDP` writer - RSTGDP"]
 pub type RstgdpW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for crate::generic::Reg<RstgtWSpec> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
+    }
+}
 impl W {
     #[doc = "Bits 0:7 - RSTGTN"]
     #[inline(always)]

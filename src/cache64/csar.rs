@@ -3,6 +3,7 @@ pub type R = crate::R<CsarSpec>;
 #[doc = "Register `CSAR` writer"]
 pub type W = crate::W<CsarSpec>;
 #[doc = "Initiate Cache Line Command\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Lgo {
     #[doc = "0: Write: no effect. Read: no line command active."]
@@ -78,6 +79,16 @@ impl R {
     #[inline(always)]
     pub fn phyaddr31_29(&self) -> Phyaddr31_29R {
         Phyaddr31_29R::new(((self.bits >> 29) & 7) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CSAR")
+            .field("lgo", &self.lgo())
+            .field("phyaddr27_1", &self.phyaddr27_1())
+            .field("phyaddr31_29", &self.phyaddr31_29())
+            .finish()
     }
 }
 impl W {

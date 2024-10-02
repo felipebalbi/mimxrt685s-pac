@@ -9,6 +9,14 @@ impl R {
         CrcSumR::new(self.bits)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SUM")
+            .field("crc_sum", &self.crc_sum())
+            .finish()
+    }
+}
 #[doc = "CRC checksum register\n\nYou can [`read`](crate::Reg::read) this register and get [`sum::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SumSpec;
 impl crate::RegisterSpec for SumSpec {

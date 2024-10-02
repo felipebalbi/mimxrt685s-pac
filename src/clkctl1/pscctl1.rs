@@ -3,6 +3,7 @@ pub type R = crate::R<Pscctl1Spec>;
 #[doc = "Register `PSCCTL1` writer"]
 pub type W = crate::W<Pscctl1Spec>;
 #[doc = "HSGPIO0 clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hsgpio0Clk {
     #[doc = "0: Disable Clock"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "HSGPIO1 clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hsgpio1Clk {
     #[doc = "0: Disable Clock"]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "HSGPIO2 clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hsgpio2Clk {
     #[doc = "0: Disable Clock"]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "HSGPIO3 clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hsgpio3Clk {
     #[doc = "0: Disable Clock"]
@@ -215,6 +219,7 @@ where
     }
 }
 #[doc = "HSGPIO4 clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hsgpio4Clk {
     #[doc = "0: Disable Clock"]
@@ -268,6 +273,7 @@ where
     }
 }
 #[doc = "HSGPIO5 clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hsgpio5Clk {
     #[doc = "0: Disable Clock"]
@@ -321,6 +327,7 @@ where
     }
 }
 #[doc = "HSGPIO6 clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hsgpio6Clk {
     #[doc = "0: Disable Clock"]
@@ -374,6 +381,7 @@ where
     }
 }
 #[doc = "HSGPIO7 clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hsgpio7Clk {
     #[doc = "0: Disable Clock"]
@@ -427,6 +435,7 @@ where
     }
 }
 #[doc = "CRC clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CrcClk {
     #[doc = "0: Disable Clock"]
@@ -480,6 +489,7 @@ where
     }
 }
 #[doc = "DMAC0 clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0Clk {
     #[doc = "0: Disable Clock"]
@@ -533,6 +543,7 @@ where
     }
 }
 #[doc = "DMAC1 clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac1Clk {
     #[doc = "0: Disable Clock"]
@@ -586,6 +597,7 @@ where
     }
 }
 #[doc = "MU clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MuClk {
     #[doc = "0: Disable Clock"]
@@ -639,6 +651,7 @@ where
     }
 }
 #[doc = "SEMA clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SemaClk {
     #[doc = "0: Disable Clock"]
@@ -692,6 +705,7 @@ where
     }
 }
 #[doc = "FREQME clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FreqmeClk {
     #[doc = "0: Disable Clock"]
@@ -814,6 +828,27 @@ impl R {
     #[inline(always)]
     pub fn freqme_clk(&self) -> FreqmeClkR {
         FreqmeClkR::new(((self.bits >> 31) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PSCCTL1")
+            .field("hsgpio0_clk", &self.hsgpio0_clk())
+            .field("hsgpio1_clk", &self.hsgpio1_clk())
+            .field("hsgpio2_clk", &self.hsgpio2_clk())
+            .field("hsgpio3_clk", &self.hsgpio3_clk())
+            .field("hsgpio4_clk", &self.hsgpio4_clk())
+            .field("hsgpio5_clk", &self.hsgpio5_clk())
+            .field("hsgpio6_clk", &self.hsgpio6_clk())
+            .field("hsgpio7_clk", &self.hsgpio7_clk())
+            .field("crc_clk", &self.crc_clk())
+            .field("dmac0_clk", &self.dmac0_clk())
+            .field("dmac1_clk", &self.dmac1_clk())
+            .field("mu_clk", &self.mu_clk())
+            .field("sema_clk", &self.sema_clk())
+            .field("freqme_clk", &self.freqme_clk())
+            .finish()
     }
 }
 impl W {

@@ -3,6 +3,7 @@ pub type R = crate::R<RxClrSpec>;
 #[doc = "Register `RX_CLR` writer"]
 pub type W = crate::W<RxClrSpec>;
 #[doc = "The ENVADJ field adjusts the trip point for the envelope detector\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Envadj {
@@ -89,6 +90,7 @@ where
     }
 }
 #[doc = "The DISCONADJ field adjusts the trip point for the disconnect detector.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Disconadj {
@@ -175,6 +177,7 @@ where
     }
 }
 #[doc = "This test mode is intended for lab use only, replace FS differential receiver with DP single ended receiver\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rxdbypass {
     #[doc = "0: Normal operation."]
@@ -242,6 +245,16 @@ impl R {
     #[inline(always)]
     pub fn rxdbypass(&self) -> RxdbypassR {
         RxdbypassR::new(((self.bits >> 22) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("RX_CLR")
+            .field("envadj", &self.envadj())
+            .field("disconadj", &self.disconadj())
+            .field("rxdbypass", &self.rxdbypass())
+            .finish()
     }
 }
 impl W {

@@ -13,6 +13,12 @@ impl R {
         ValR::new((self.bits & 0xffff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("WAKE").field("val", &self.val()).finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:15 - A read reflects the current value of the high-resolution/wake-up timer. A write pre-loads a start count value into the wake-up timer and initializes a count-down sequence. Do not write to this register while counting is in progress."]
     #[inline(always)]

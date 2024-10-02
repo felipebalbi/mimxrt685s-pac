@@ -3,6 +3,7 @@ pub type R = crate::R<CmdlSpec>;
 #[doc = "Register `CMDL%s` writer"]
 pub type W = crate::W<CmdlSpec>;
 #[doc = "Input channel select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Adch {
@@ -193,6 +194,7 @@ where
     }
 }
 #[doc = "A-side vs. B-side Select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Absel {
     #[doc = "0: When DIFF=0b0, the associated A-side channel is converted as single-ended. When DIFF=0b1, the ADC result is (CHnA-CHnB)."]
@@ -246,6 +248,7 @@ where
     }
 }
 #[doc = "Differential Mode Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Diff {
     #[doc = "0: Single-ended mode."]
@@ -299,6 +302,7 @@ where
     }
 }
 #[doc = "Channel Scale\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cscale {
     #[doc = "0: Scale selected analog channel (Factor of 30/64)"]
@@ -371,6 +375,17 @@ impl R {
     #[inline(always)]
     pub fn cscale(&self) -> CscaleR {
         CscaleR::new(((self.bits >> 13) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CMDL")
+            .field("adch", &self.adch())
+            .field("absel", &self.absel())
+            .field("diff", &self.diff())
+            .field("cscale", &self.cscale())
+            .finish()
     }
 }
 impl W {

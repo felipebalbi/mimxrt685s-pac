@@ -3,6 +3,7 @@ pub type R = crate::R<CrSpec>;
 #[doc = "Register `CR` writer"]
 pub type W = crate::W<CrSpec>;
 #[doc = "Fn\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Fn {
@@ -63,6 +64,7 @@ where
     }
 }
 #[doc = "MUR\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Mur {
     #[doc = "0: N/A. Self clearing bit (default)."]
@@ -116,6 +118,7 @@ where
     }
 }
 #[doc = "BRDIE\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rdie {
     #[doc = "0: Disables Processor A General Purpose Interrupt 3 request due to Processor B reset de-assertion."]
@@ -169,6 +172,7 @@ where
     }
 }
 #[doc = "RAIE\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Raie {
     #[doc = "0: Disables Processor A General Purpose Interrupt 3 request due to Processor B reset assertion."]
@@ -222,6 +226,7 @@ where
     }
 }
 #[doc = "GIRn\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Girn {
@@ -282,6 +287,7 @@ where
     }
 }
 #[doc = "TIEn\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Tien {
@@ -342,6 +348,7 @@ where
     }
 }
 #[doc = "RIEn\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Rien {
@@ -402,6 +409,7 @@ where
     }
 }
 #[doc = "GIEn\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Gien {
@@ -501,6 +509,21 @@ impl R {
     #[inline(always)]
     pub fn gien(&self) -> GienR {
         GienR::new(((self.bits >> 28) & 0x0f) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CR")
+            .field("fn_", &self.fn_())
+            .field("mur", &self.mur())
+            .field("rdie", &self.rdie())
+            .field("raie", &self.raie())
+            .field("girn", &self.girn())
+            .field("tien", &self.tien())
+            .field("rien", &self.rien())
+            .field("gien", &self.gien())
+            .finish()
     }
 }
 impl W {

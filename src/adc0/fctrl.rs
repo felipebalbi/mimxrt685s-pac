@@ -20,6 +20,15 @@ impl R {
         FwmarkR::new(((self.bits >> 16) & 0x0f) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("FCTRL")
+            .field("fcount", &self.fcount())
+            .field("fwmark", &self.fwmark())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 16:19 - Watermark level selection"]
     #[inline(always)]

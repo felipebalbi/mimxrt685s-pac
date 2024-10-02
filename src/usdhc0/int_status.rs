@@ -3,6 +3,7 @@ pub type R = crate::R<IntStatusSpec>;
 #[doc = "Register `INT_STATUS` writer"]
 pub type W = crate::W<IntStatusSpec>;
 #[doc = "Command Complete\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cc {
     #[doc = "0: Command not complete"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Transfer Complete\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Tc {
     #[doc = "0: Transfer not complete"]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "Block Gap Event\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Bge {
     #[doc = "0: No block gap event"]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "DMA Interrupt\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dint {
     #[doc = "0: No DMA Interrupt"]
@@ -215,6 +219,7 @@ where
     }
 }
 #[doc = "Buffer Write Ready\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Bwr {
     #[doc = "0: Not ready to write buffer"]
@@ -268,6 +273,7 @@ where
     }
 }
 #[doc = "Buffer Read Ready\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Brr {
     #[doc = "0: Not ready to read buffer"]
@@ -321,6 +327,7 @@ where
     }
 }
 #[doc = "Card Insertion\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cins {
     #[doc = "0: Card state unstable or removed"]
@@ -374,6 +381,7 @@ where
     }
 }
 #[doc = "Card Removal\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Crm {
     #[doc = "0: Card state unstable or inserted"]
@@ -427,6 +435,7 @@ where
     }
 }
 #[doc = "Card Interrupt\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cint {
     #[doc = "0: No Card Interrupt"]
@@ -480,6 +489,7 @@ where
     }
 }
 #[doc = "Re-Tuning Event: (only for SD3.0 SDR104 mode and EMMC HS200 mode)\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rte {
     #[doc = "0: Re-Tuning is not required"]
@@ -537,6 +547,7 @@ pub type TpR = crate::BitReader;
 #[doc = "Field `TP` writer - Tuning Pass:(only for SD3.0 SDR104 mode and EMMC HS200 mode)"]
 pub type TpW<'a, REG> = crate::BitWriter1C<'a, REG>;
 #[doc = "Command Timeout Error\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ctoe {
     #[doc = "0: No Error"]
@@ -590,6 +601,7 @@ where
     }
 }
 #[doc = "Command CRC Error\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cce {
     #[doc = "0: No Error"]
@@ -643,6 +655,7 @@ where
     }
 }
 #[doc = "Command End Bit Error\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cebe {
     #[doc = "0: No Error"]
@@ -696,6 +709,7 @@ where
     }
 }
 #[doc = "Command Index Error\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cie {
     #[doc = "0: No Error"]
@@ -749,6 +763,7 @@ where
     }
 }
 #[doc = "Data Timeout Error\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dtoe {
     #[doc = "0: No Error"]
@@ -802,6 +817,7 @@ where
     }
 }
 #[doc = "Data CRC Error\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dce {
     #[doc = "0: No Error"]
@@ -855,6 +871,7 @@ where
     }
 }
 #[doc = "Data End Bit Error\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Debe {
     #[doc = "0: No Error"]
@@ -908,6 +925,7 @@ where
     }
 }
 #[doc = "Auto CMD12 Error\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ac12e {
     #[doc = "0: No Error"]
@@ -965,6 +983,7 @@ pub type TneR = crate::BitReader;
 #[doc = "Field `TNE` writer - Tuning Error: (only for SD3.0 SDR104 mode and EMMC HS200 mode)"]
 pub type TneW<'a, REG> = crate::BitWriter1C<'a, REG>;
 #[doc = "DMA Error\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmae {
     #[doc = "0: No Error"]
@@ -1122,6 +1141,34 @@ impl R {
     #[inline(always)]
     pub fn dmae(&self) -> DmaeR {
         DmaeR::new(((self.bits >> 28) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("INT_STATUS")
+            .field("cc", &self.cc())
+            .field("tc", &self.tc())
+            .field("bge", &self.bge())
+            .field("dint", &self.dint())
+            .field("bwr", &self.bwr())
+            .field("brr", &self.brr())
+            .field("cins", &self.cins())
+            .field("crm", &self.crm())
+            .field("cint", &self.cint())
+            .field("rte", &self.rte())
+            .field("tp", &self.tp())
+            .field("ctoe", &self.ctoe())
+            .field("cce", &self.cce())
+            .field("cebe", &self.cebe())
+            .field("cie", &self.cie())
+            .field("dtoe", &self.dtoe())
+            .field("dce", &self.dce())
+            .field("debe", &self.debe())
+            .field("ac12e", &self.ac12e())
+            .field("tne", &self.tne())
+            .field("dmae", &self.dmae())
+            .finish()
     }
 }
 impl W {

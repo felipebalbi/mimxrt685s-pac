@@ -3,6 +3,7 @@ pub type R = crate::R<ResfifoSpec>;
 #[doc = "Field `D` reader - Data result"]
 pub type DR = crate::FieldReader<u16>;
 #[doc = "Trigger Source\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Tsrc {
@@ -117,6 +118,7 @@ impl TsrcR {
     }
 }
 #[doc = "Loop count value\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Loopcnt {
@@ -231,6 +233,7 @@ impl LoopcntR {
     }
 }
 #[doc = "Command Buffer Source\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Cmdsrc {
@@ -345,6 +348,7 @@ impl CmdsrcR {
     }
 }
 #[doc = "FIFO entry is valid\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Valid {
     #[doc = "0: FIFO is empty. Discard any read from RESFIFO."]
@@ -405,6 +409,18 @@ impl R {
     #[inline(always)]
     pub fn valid(&self) -> ValidR {
         ValidR::new(((self.bits >> 31) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("RESFIFO")
+            .field("d", &self.d())
+            .field("tsrc", &self.tsrc())
+            .field("loopcnt", &self.loopcnt())
+            .field("cmdsrc", &self.cmdsrc())
+            .field("valid", &self.valid())
+            .finish()
     }
 }
 #[doc = "ADC Data Result FIFO Register\n\nYou can [`read`](crate::Reg::read) this register and get [`resfifo::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

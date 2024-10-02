@@ -13,6 +13,14 @@ impl R {
         DenomR::new(self.bits & 0x3fff_ffff)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SYSPLL0DENOM")
+            .field("denom", &self.denom())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:29 - This field contains the denominator of the SYSPLL0 fractional loop divider."]
     #[inline(always)]

@@ -16,6 +16,15 @@ impl R {
         MajorR::new(((self.bits >> 16) & 0x0f) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SILICONREV_ID")
+            .field("minor", &self.minor())
+            .field("major", &self.major())
+            .finish()
+    }
+}
 #[doc = "SILICONREV ID\n\nYou can [`read`](crate::Reg::read) this register and get [`siliconrev_id::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SiliconrevIdSpec;
 impl crate::RegisterSpec for SiliconrevIdSpec {

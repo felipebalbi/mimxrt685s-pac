@@ -3,6 +3,7 @@ pub type R = crate::R<Syspll0ctl0Spec>;
 #[doc = "Register `SYSPLL0CTL0` writer"]
 pub type W = crate::W<Syspll0ctl0Spec>;
 #[doc = "SYSPLL0 BYPASS Mode\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Bypass {
     #[doc = "0: PFD output is PFD programmed clock."]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "SYSPLL0 Reset:\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Reset {
     #[doc = "0: SYSPLL0 reset is removed."]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "Hold Ring Off Control: This bit is used to avoid multi wave within the VCO.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HoldringoffEna {
     #[doc = "0: disbale"]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "Multiplication Factor for FSYSPLL0_OUTPUT:\n\nValue on reset: 22"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Mult {
@@ -293,6 +297,17 @@ impl R {
     #[inline(always)]
     pub fn mult(&self) -> MultR {
         MultR::new(((self.bits >> 16) & 0xff) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SYSPLL0CTL0")
+            .field("bypass", &self.bypass())
+            .field("reset", &self.reset())
+            .field("holdringoff_ena", &self.holdringoff_ena())
+            .field("mult", &self.mult())
+            .finish()
     }
 }
 impl W {

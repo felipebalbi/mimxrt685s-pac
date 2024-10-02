@@ -13,6 +13,14 @@ impl R {
         OffsetR::new((self.bits >> 9) & 0x007f_ffff)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SRAMBASE")
+            .field("offset", &self.offset())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 9:31 - Address bits 31:9 of the beginning of the DMA descriptor table. For 18 channels, the table must begin on a 512 byte boundary."]
     #[inline(always)]

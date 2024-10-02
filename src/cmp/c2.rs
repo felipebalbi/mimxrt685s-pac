@@ -11,6 +11,7 @@ pub type InitmodR = crate::FieldReader;
 #[doc = "Field `INITMOD` writer - Comparator and DAC initialization delay modulus."]
 pub type InitmodW<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 #[doc = "Number of sample clocks\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Nsam {
@@ -121,6 +122,7 @@ pub type Ch5fR = crate::BitReader;
 #[doc = "Field `CH5F` writer - CH5F"]
 pub type Ch5fW<'a, REG> = crate::BitWriter1C<'a, REG>;
 #[doc = "Fixed channel selection\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Fxmxch {
@@ -246,6 +248,7 @@ where
     }
 }
 #[doc = "Fixed MUX Port\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Fxmp {
     #[doc = "0: The Plus port is fixed. Only the inputs to the Minus port are swept in each round."]
@@ -299,6 +302,7 @@ where
     }
 }
 #[doc = "Round-Robin interrupt enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rrie {
     #[doc = "0: The round-robin interrupt is disabled."]
@@ -411,6 +415,25 @@ impl R {
     #[inline(always)]
     pub fn rrie(&self) -> RrieR {
         RrieR::new(((self.bits >> 30) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("C2")
+            .field("acon", &self.acon())
+            .field("initmod", &self.initmod())
+            .field("nsam", &self.nsam())
+            .field("ch0f", &self.ch0f())
+            .field("ch1f", &self.ch1f())
+            .field("ch2f", &self.ch2f())
+            .field("ch3f", &self.ch3f())
+            .field("ch4f", &self.ch4f())
+            .field("ch5f", &self.ch5f())
+            .field("fxmxch", &self.fxmxch())
+            .field("fxmp", &self.fxmp())
+            .field("rrie", &self.rrie())
+            .finish()
     }
 }
 impl W {

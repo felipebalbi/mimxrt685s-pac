@@ -40,6 +40,17 @@ impl R {
         TransferDelayR::new(((self.bits >> 12) & 0x0f) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DLY")
+            .field("pre_delay", &self.pre_delay())
+            .field("post_delay", &self.post_delay())
+            .field("frame_delay", &self.frame_delay())
+            .field("transfer_delay", &self.transfer_delay())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:3 - Controls the amount of time between SSEL assertion and the beginning of a data transfer. There is always one SPI clock time between SSEL assertion and the first clock edge. This is not considered part of the pre-delay. 0x0 = No additional time is inserted. 0x1 = 1 SPI clock time is inserted. 0x2 = 2 SPI clock times are inserted. 0xF = 15 SPI clock times are inserted."]
     #[inline(always)]

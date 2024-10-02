@@ -30,6 +30,17 @@ impl R {
         RxnoiseR::new(((self.bits >> 15) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("FIFORD")
+            .field("rxdata", &self.rxdata())
+            .field("framerr", &self.framerr())
+            .field("parityerr", &self.parityerr())
+            .field("rxnoise", &self.rxnoise())
+            .finish()
+    }
+}
 #[doc = "FIFO read data.\n\nYou can [`read`](crate::Reg::read) this register and get [`fiford::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FifordSpec;
 impl crate::RegisterSpec for FifordSpec {

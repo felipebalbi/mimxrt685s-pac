@@ -1,6 +1,7 @@
 #[doc = "Register `INT_STATUS` reader"]
 pub type R = crate::R<IntStatusSpec>;
 #[doc = "Read: Error status\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HwErr {
     #[doc = "0: no error"]
@@ -37,6 +38,7 @@ impl HwErrR {
     }
 }
 #[doc = "Read only: Entropy Valid\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum EntVal {
     #[doc = "0: Busy generation entropy. Any value read is invalid."]
@@ -73,6 +75,7 @@ impl EntValR {
     }
 }
 #[doc = "Read only: Frequency Count Fail\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FrqCtFail {
     #[doc = "0: No hardware nor self test frequency errors."]
@@ -123,6 +126,16 @@ impl R {
     #[inline(always)]
     pub fn frq_ct_fail(&self) -> FrqCtFailR {
         FrqCtFailR::new(((self.bits >> 2) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("INT_STATUS")
+            .field("hw_err", &self.hw_err())
+            .field("ent_val", &self.ent_val())
+            .field("frq_ct_fail", &self.frq_ct_fail())
+            .finish()
     }
 }
 #[doc = "Interrupt Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`int_status::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

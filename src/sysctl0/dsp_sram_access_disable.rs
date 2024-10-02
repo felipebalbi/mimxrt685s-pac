@@ -3,6 +3,7 @@ pub type R = crate::R<DspSramAccessDisableSpec>;
 #[doc = "Register `DSP_SRAM_ACCESS_DISABLE` writer"]
 pub type W = crate::W<DspSramAccessDisableSpec>;
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sram00If {
     #[doc = "0: enable"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sram01If {
     #[doc = "0: enable"]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sram02If {
     #[doc = "0: enable"]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sram03If {
     #[doc = "0: enable"]
@@ -215,6 +219,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sram04If {
     #[doc = "0: enable"]
@@ -268,6 +273,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sram05If {
     #[doc = "0: enable"]
@@ -321,6 +327,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sram06If {
     #[doc = "0: enable"]
@@ -374,6 +381,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sram07If {
     #[doc = "0: enable"]
@@ -427,6 +435,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sram08If {
     #[doc = "0: enable"]
@@ -480,6 +489,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sram09If {
     #[doc = "0: enable"]
@@ -533,6 +543,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sram10If {
     #[doc = "0: enable"]
@@ -586,6 +597,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sram11If {
     #[doc = "0: enable"]
@@ -639,6 +651,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sram12If {
     #[doc = "0: enable"]
@@ -692,6 +705,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sram13If {
     #[doc = "0: enable"]
@@ -745,6 +759,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sram14If {
     #[doc = "0: enable"]
@@ -798,6 +813,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sram15If {
     #[doc = "0: enable"]
@@ -851,6 +867,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sram16If {
     #[doc = "0: enable"]
@@ -904,6 +921,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sram17If {
     #[doc = "0: enable"]
@@ -957,6 +975,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sram18If {
     #[doc = "0: enable"]
@@ -1010,6 +1029,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sram19If {
     #[doc = "0: enable"]
@@ -1063,6 +1083,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sram20If {
     #[doc = "0: enable"]
@@ -1116,6 +1137,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sram21If {
     #[doc = "0: enable"]
@@ -1169,6 +1191,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sram22If {
     #[doc = "0: enable"]
@@ -1222,6 +1245,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sram23If {
     #[doc = "0: enable"]
@@ -1275,6 +1299,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sram24If {
     #[doc = "0: enable"]
@@ -1328,6 +1353,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sram25If {
     #[doc = "0: enable"]
@@ -1381,6 +1407,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sram26If {
     #[doc = "0: enable"]
@@ -1434,6 +1461,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sram27If {
     #[doc = "0: enable"]
@@ -1487,6 +1515,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sram28If {
     #[doc = "0: enable"]
@@ -1540,6 +1569,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sram29If {
     #[doc = "0: enable"]
@@ -1742,6 +1772,43 @@ impl R {
     #[inline(always)]
     pub fn sram29_if(&self) -> Sram29IfR {
         Sram29IfR::new(((self.bits >> 29) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DSP_SRAM_ACCESS_DISABLE")
+            .field("sram00_if", &self.sram00_if())
+            .field("sram01_if", &self.sram01_if())
+            .field("sram02_if", &self.sram02_if())
+            .field("sram03_if", &self.sram03_if())
+            .field("sram04_if", &self.sram04_if())
+            .field("sram05_if", &self.sram05_if())
+            .field("sram06_if", &self.sram06_if())
+            .field("sram07_if", &self.sram07_if())
+            .field("sram08_if", &self.sram08_if())
+            .field("sram09_if", &self.sram09_if())
+            .field("sram10_if", &self.sram10_if())
+            .field("sram11_if", &self.sram11_if())
+            .field("sram12_if", &self.sram12_if())
+            .field("sram13_if", &self.sram13_if())
+            .field("sram14_if", &self.sram14_if())
+            .field("sram15_if", &self.sram15_if())
+            .field("sram16_if", &self.sram16_if())
+            .field("sram17_if", &self.sram17_if())
+            .field("sram18_if", &self.sram18_if())
+            .field("sram19_if", &self.sram19_if())
+            .field("sram20_if", &self.sram20_if())
+            .field("sram21_if", &self.sram21_if())
+            .field("sram22_if", &self.sram22_if())
+            .field("sram23_if", &self.sram23_if())
+            .field("sram24_if", &self.sram24_if())
+            .field("sram25_if", &self.sram25_if())
+            .field("sram26_if", &self.sram26_if())
+            .field("sram27_if", &self.sram27_if())
+            .field("sram28_if", &self.sram28_if())
+            .field("sram29_if", &self.sram29_if())
+            .finish()
     }
 }
 impl W {

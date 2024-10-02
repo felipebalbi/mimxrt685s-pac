@@ -23,6 +23,16 @@ impl R {
         DatlftR::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("AHBSPNDSTS")
+            .field("active", &self.active())
+            .field("bufid", &self.bufid())
+            .field("datlft", &self.datlft())
+            .finish()
+    }
+}
 #[doc = "AHB Suspend Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ahbspndsts::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct AhbspndstsSpec;
 impl crate::RegisterSpec for AhbspndstsSpec {

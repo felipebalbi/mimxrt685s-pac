@@ -58,6 +58,19 @@ impl R {
         GetkeyR::new(((self.bits >> 6) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CTRL")
+            .field("zeroize", &self.zeroize())
+            .field("enroll", &self.enroll())
+            .field("start", &self.start())
+            .field("generatekey", &self.generatekey())
+            .field("setkey", &self.setkey())
+            .field("getkey", &self.getkey())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Zeroize. Begin Zeroize operation for Quiddikey and go to Error state"]
     #[inline(always)]

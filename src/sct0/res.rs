@@ -3,6 +3,7 @@ pub type R = crate::R<ResSpec>;
 #[doc = "Register `RES` writer"]
 pub type W = crate::W<ResSpec>;
 #[doc = "Effect of simultaneous set and clear on output 0.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum O0res {
@@ -89,6 +90,7 @@ where
     }
 }
 #[doc = "Effect of simultaneous set and clear on output 1.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum O1res {
@@ -175,6 +177,7 @@ where
     }
 }
 #[doc = "Effect of simultaneous set and clear on output 2.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum O2res {
@@ -261,6 +264,7 @@ where
     }
 }
 #[doc = "Effect of simultaneous set and clear on output 3.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum O3res {
@@ -347,6 +351,7 @@ where
     }
 }
 #[doc = "Effect of simultaneous set and clear on output 4.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum O4res {
@@ -433,6 +438,7 @@ where
     }
 }
 #[doc = "Effect of simultaneous set and clear on output 5.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum O5res {
@@ -519,6 +525,7 @@ where
     }
 }
 #[doc = "Effect of simultaneous set and clear on output 6.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum O6res {
@@ -605,6 +612,7 @@ where
     }
 }
 #[doc = "Effect of simultaneous set and clear on output 7.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum O7res {
@@ -691,6 +699,7 @@ where
     }
 }
 #[doc = "Effect of simultaneous set and clear on output 8.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum O8res {
@@ -777,6 +786,7 @@ where
     }
 }
 #[doc = "Effect of simultaneous set and clear on output 9.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum O9res {
@@ -863,6 +873,7 @@ where
     }
 }
 #[doc = "Effect of simultaneous set and clear on output 10.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum O10res {
@@ -949,6 +960,7 @@ where
     }
 }
 #[doc = "Effect of simultaneous set and clear on output 11.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum O11res {
@@ -1035,6 +1047,7 @@ where
     }
 }
 #[doc = "Effect of simultaneous set and clear on output 12.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum O12res {
@@ -1121,6 +1134,7 @@ where
     }
 }
 #[doc = "Effect of simultaneous set and clear on output 13.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum O13res {
@@ -1207,6 +1221,7 @@ where
     }
 }
 #[doc = "Effect of simultaneous set and clear on output 14.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum O14res {
@@ -1293,6 +1308,7 @@ where
     }
 }
 #[doc = "Effect of simultaneous set and clear on output 15.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum O15res {
@@ -1458,6 +1474,29 @@ impl R {
     #[inline(always)]
     pub fn o15res(&self) -> O15resR {
         O15resR::new(((self.bits >> 30) & 3) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("RES")
+            .field("o0res", &self.o0res())
+            .field("o1res", &self.o1res())
+            .field("o2res", &self.o2res())
+            .field("o3res", &self.o3res())
+            .field("o4res", &self.o4res())
+            .field("o5res", &self.o5res())
+            .field("o6res", &self.o6res())
+            .field("o7res", &self.o7res())
+            .field("o8res", &self.o8res())
+            .field("o9res", &self.o9res())
+            .field("o10res", &self.o10res())
+            .field("o11res", &self.o11res())
+            .field("o12res", &self.o12res())
+            .field("o13res", &self.o13res())
+            .field("o14res", &self.o14res())
+            .field("o15res", &self.o15res())
+            .finish()
     }
 }
 impl W {

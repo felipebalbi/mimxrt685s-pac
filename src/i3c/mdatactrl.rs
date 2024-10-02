@@ -56,6 +56,19 @@ impl R {
         RxemptyR::new(((self.bits >> 31) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("MDATACTRL")
+            .field("txtrig", &self.txtrig())
+            .field("rxtrig", &self.rxtrig())
+            .field("txcount", &self.txcount())
+            .field("rxcount", &self.rxcount())
+            .field("txfull", &self.txfull())
+            .field("rxempty", &self.rxempty())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Flush to-bus buffer/FIFO"]
     #[inline(always)]

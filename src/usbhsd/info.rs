@@ -30,6 +30,17 @@ impl R {
         MajrevR::new(((self.bits >> 24) & 0xff) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("INFO")
+            .field("frame_nr", &self.frame_nr())
+            .field("err_code", &self.err_code())
+            .field("minrev", &self.minrev())
+            .field("majrev", &self.majrev())
+            .finish()
+    }
+}
 #[doc = "USB Info register\n\nYou can [`read`](crate::Reg::read) this register and get [`info::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct InfoSpec;
 impl crate::RegisterSpec for InfoSpec {

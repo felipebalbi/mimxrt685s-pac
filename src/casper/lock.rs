@@ -3,6 +3,7 @@ pub type R = crate::R<LockSpec>;
 #[doc = "Register `LOCK` writer"]
 pub type W = crate::W<LockSpec>;
 #[doc = "Reads back with security level locked to, or 0. Writes as 0 to unlock, 1 to lock.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Lock {
     #[doc = "0: unlock"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Must be written as 0x73D to change the register.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
 pub enum Key {
@@ -112,6 +114,15 @@ impl R {
     #[inline(always)]
     pub fn key(&self) -> KeyR {
         KeyR::new(((self.bits >> 4) & 0x1fff) as u16)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("LOCK")
+            .field("lock", &self.lock())
+            .field("key", &self.key())
+            .finish()
     }
 }
 impl W {

@@ -2,6 +2,12 @@
 pub type W = crate::W<FifowrSpec>;
 #[doc = "Field `TXDATA` writer - Transmit data to the FIFO."]
 pub type TxdataW<'a, REG> = crate::FieldWriter<'a, REG, 9, u16>;
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for crate::generic::Reg<FifowrSpec> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
+    }
+}
 impl W {
     #[doc = "Bits 0:8 - Transmit data to the FIFO."]
     #[inline(always)]

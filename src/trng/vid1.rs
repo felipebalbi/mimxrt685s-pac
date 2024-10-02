@@ -1,6 +1,7 @@
 #[doc = "Register `VID1` reader"]
 pub type R = crate::R<Vid1Spec>;
 #[doc = "Shows the IP's Minor revision of the TRNG.\n\nValue on reset: 4"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum MinRev {
@@ -35,6 +36,7 @@ impl MinRevR {
     }
 }
 #[doc = "Shows the IP's Major revision of the TRNG.\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum MajRev {
@@ -69,6 +71,7 @@ impl MajRevR {
     }
 }
 #[doc = "Shows the IP ID.\n\nValue on reset: 48"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
 pub enum IpId {
@@ -117,6 +120,16 @@ impl R {
     #[inline(always)]
     pub fn ip_id(&self) -> IpIdR {
         IpIdR::new(((self.bits >> 16) & 0xffff) as u16)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("VID1")
+            .field("min_rev", &self.min_rev())
+            .field("maj_rev", &self.maj_rev())
+            .field("ip_id", &self.ip_id())
+            .finish()
     }
 }
 #[doc = "Version ID Register (MS)\n\nYou can [`read`](crate::Reg::read) this register and get [`vid1::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

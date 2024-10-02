@@ -23,6 +23,16 @@ impl R {
         Maplastm2R::new(((self.bits >> 16) & 0x0f) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SMSGMAPADDR")
+            .field("maplast", &self.maplast())
+            .field("maplastm1", &self.maplastm1())
+            .field("maplastm2", &self.maplastm2())
+            .finish()
+    }
+}
 #[doc = "Slave Message-Mapped Address Register\n\nYou can [`read`](crate::Reg::read) this register and get [`smsgmapaddr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SmsgmapaddrSpec;
 impl crate::RegisterSpec for SmsgmapaddrSpec {

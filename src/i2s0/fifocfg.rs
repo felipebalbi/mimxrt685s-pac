@@ -3,6 +3,7 @@ pub type R = crate::R<FifocfgSpec>;
 #[doc = "Register `FIFOCFG` writer"]
 pub type W = crate::W<FifocfgSpec>;
 #[doc = "Enable the transmit FIFO.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Enabletx {
     #[doc = "0: The transmit FIFO is not enabled."]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Enable the receive FIFO.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Enablerx {
     #[doc = "0: The receive FIFO is not enabled."]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "Transmit I2S empty 0. Determines the value sent by the I2S in transmit mode if the TX FIFO becomes empty. This value is sent repeatedly until the I2S is paused, the error is cleared, new data is provided, and the I2S is un-paused.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Txi2se0 {
     #[doc = "0: If the TX FIFO becomes empty, the last value is sent. This setting may be used when the data length is 24 bits or less, or when MONO = 1 for this channel pair."]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "Packing format for 48-bit data. This relates to how data is entered into or taken from the FIFO by software or DMA.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Pack48 {
     #[doc = "0: 48-bit I2S FIFO entries are handled as all 24-bit values."]
@@ -217,6 +221,7 @@ where
 #[doc = "Field `SIZE` reader - FIFO size configuration. This is a read-only field. 0x0 = FIFO is configured as 16 entries of 8 bits. 0x1, 0x2, 0x3 = not applicable to USART."]
 pub type SizeR = crate::FieldReader;
 #[doc = "DMA configuration for transmit.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmatx {
     #[doc = "0: DMA is not used for the transmit function."]
@@ -270,6 +275,7 @@ where
     }
 }
 #[doc = "DMA configuration for receive.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmarx {
     #[doc = "0: DMA is not used for the receive function."]
@@ -323,6 +329,7 @@ where
     }
 }
 #[doc = "Wake-up for transmit FIFO level. This allows the device to be woken from reduced power modes (up to power-down, as long as the peripheral function works in that power mode) without enabling the TXLVL interrupt. Only DMA wakes up, processes data, and goes back to sleep. The CPU will remain stopped until woken by another cause, such as DMA completion. See Hardware Wake-up control register.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Waketx {
     #[doc = "0: Only enabled interrupts will wake up the device form reduced power modes."]
@@ -376,6 +383,7 @@ where
     }
 }
 #[doc = "Wake-up for receive FIFO level. This allows the device to be woken from reduced power modes (up to power-down, as long as the peripheral function works in that power mode) without enabling the TXLVL interrupt. Only DMA wakes up, processes data, and goes back to sleep. The CPU will remain stopped until woken by another cause, such as DMA completion. See Hardware Wake-up control register.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Wakerx {
     #[doc = "0: Only enabled interrupts will wake up the device form reduced power modes."]
@@ -491,6 +499,24 @@ impl R {
     #[inline(always)]
     pub fn emptyrx(&self) -> EmptyrxR {
         EmptyrxR::new(((self.bits >> 17) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("FIFOCFG")
+            .field("enabletx", &self.enabletx())
+            .field("enablerx", &self.enablerx())
+            .field("txi2se0", &self.txi2se0())
+            .field("pack48", &self.pack48())
+            .field("size", &self.size())
+            .field("dmatx", &self.dmatx())
+            .field("dmarx", &self.dmarx())
+            .field("waketx", &self.waketx())
+            .field("wakerx", &self.wakerx())
+            .field("emptytx", &self.emptytx())
+            .field("emptyrx", &self.emptyrx())
+            .finish()
     }
 }
 impl W {

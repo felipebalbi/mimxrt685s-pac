@@ -3,6 +3,7 @@ pub type W = crate::W<FifowrSpec>;
 #[doc = "Field `TXDATA` writer - Transmit data to the FIFO."]
 pub type TxdataW<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 #[doc = "Transmit slave select. This field asserts SSEL0 in master mode. The output on the pin is active LOW by default.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Txssel0N {
     #[doc = "0: SSEL0 asserted."]
@@ -34,6 +35,7 @@ where
     }
 }
 #[doc = "Transmit slave select. This field asserts SSEL1 in master mode. The output on the pin is active LOW by default.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Txssel1N {
     #[doc = "0: SSEL1 asserted."]
@@ -65,6 +67,7 @@ where
     }
 }
 #[doc = "Transmit slave select. This field asserts SSEL2 in master mode. The output on the pin is active LOW by default.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Txssel2N {
     #[doc = "0: SSEL2 asserted."]
@@ -96,6 +99,7 @@ where
     }
 }
 #[doc = "Transmit slave select. This field asserts SSEL3 in master mode. The output on the pin is active LOW by default.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Txssel3N {
     #[doc = "0: SSEL3 asserted."]
@@ -127,6 +131,7 @@ where
     }
 }
 #[doc = "End of transfer. The asserted SSEL will be deasserted at the end of a transfer and remain so far at least the time specified by the Transfer_delay value in the DLY register.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Eot {
     #[doc = "0: SSEL not deasserted. This piece of data is not treated as the end of a transfer. SSEL will not be deasserted at the end of this data."]
@@ -158,6 +163,7 @@ where
     }
 }
 #[doc = "End of frame. Between frames, a delay may be inserted, as defined by the Frame_delay value in the DLY register. The end of a frame may not be particularly meaningful if the Frame_delay value = 0. This control can be used as part of the support for frame lengths greater than 16 bits.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Eof {
     #[doc = "0: Data not EOF. This piece of data transmitted is not treated as the end of a frame."]
@@ -189,6 +195,7 @@ where
     }
 }
 #[doc = "Receive Ignore. This allows data to be transmitted using the SPI without the need to read unneeded data from the receiver. Setting this bit simplifies the transmit process and can be used with the DMA.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rxignore {
     #[doc = "0: Read received data. Received data must be read in order to allow transmission to progress. SPI transmit will halt when the receive data FIFO is full. In slave mode, an overrun error will occur if received data is not read before new data is received."]
@@ -220,6 +227,7 @@ where
     }
 }
 #[doc = "Transmit Ignore\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Txignore {
     #[doc = "0: Write transmit data. Transmit data must be written for each data exchange between master and slave. In slave mode, an underrun error occurs if transmit data is not provided before needed in a data frame."]
@@ -252,6 +260,12 @@ where
 }
 #[doc = "Field `LEN` writer - Data Length. Specifies the data length from 4 to 16 bits. Note that transfer lengths greater than 16 bits are supported by implementing multiple sequential transmits. 0x0-2 = Reserved. 0x3 = Data transfer is 4 bits in length. 0x4 = Data transfer is 5 bits in length. 0xF = Data transfer is 16 bits in length."]
 pub type LenW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for crate::generic::Reg<FifowrSpec> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
+    }
+}
 impl W {
     #[doc = "Bits 0:15 - Transmit data to the FIFO."]
     #[inline(always)]

@@ -3,6 +3,7 @@ pub type R = crate::R<C0Spec>;
 #[doc = "Register `C0` writer"]
 pub type W = crate::W<C0Spec>;
 #[doc = "Comparator hard block hysteresis control. See chip data sheet to get the actual hystersis value with each level\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Hystctr {
@@ -89,6 +90,7 @@ where
     }
 }
 #[doc = "Filter Sample Count\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum FilterCnt {
@@ -227,6 +229,7 @@ where
     }
 }
 #[doc = "Comparator Module Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum En {
     #[doc = "0: Analog Comparator is disabled."]
@@ -280,6 +283,7 @@ where
     }
 }
 #[doc = "Comparator Output Pin Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ope {
     #[doc = "0: When OPE is 0, the comparator output (after window/filter settings dependent on software configuration) is not available to a packaged pin."]
@@ -333,6 +337,7 @@ where
     }
 }
 #[doc = "Comparator Output Select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cos {
     #[doc = "0: Set CMPO to equal COUT (filtered comparator output)."]
@@ -386,6 +391,7 @@ where
     }
 }
 #[doc = "Comparator invert\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Invt {
     #[doc = "0: Does not invert the comparator output."]
@@ -439,6 +445,7 @@ where
     }
 }
 #[doc = "Power Mode Select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Pmode {
     #[doc = "0: Low Speed (LS) comparison mode is selected."]
@@ -492,6 +499,7 @@ where
     }
 }
 #[doc = "Windowing Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum We {
     #[doc = "0: Windowing mode is not selected."]
@@ -545,6 +553,7 @@ where
     }
 }
 #[doc = "Sample Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Se {
     #[doc = "0: Sampling mode is not selected."]
@@ -604,6 +613,7 @@ pub type FprW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `COUT` reader - Analog Comparator Output"]
 pub type CoutR = crate::BitReader;
 #[doc = "Analog Comparator Flag Falling\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cff {
     #[doc = "0: A falling edge has not been detected on COUT."]
@@ -657,6 +667,7 @@ where
     }
 }
 #[doc = "Analog Comparator Flag Rising\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cfr {
     #[doc = "0: A rising edge has not been detected on COUT."]
@@ -710,6 +721,7 @@ where
     }
 }
 #[doc = "Comparator Interrupt Enable Falling\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ief {
     #[doc = "0: Interrupt is disabled."]
@@ -763,6 +775,7 @@ where
     }
 }
 #[doc = "Comparator Interrupt Enable Rising\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ier {
     #[doc = "0: Interrupt is disabled."]
@@ -816,6 +829,7 @@ where
     }
 }
 #[doc = "DMA Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmaen {
     #[doc = "0: DMA is disabled."]
@@ -869,6 +883,7 @@ where
     }
 }
 #[doc = "CMP to DAC link enable.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Linken {
     #[doc = "0: CMP to DAC link is disabled"]
@@ -1006,6 +1021,30 @@ impl R {
     #[inline(always)]
     pub fn linken(&self) -> LinkenR {
         LinkenR::new(((self.bits >> 31) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("C0")
+            .field("hystctr", &self.hystctr())
+            .field("filter_cnt", &self.filter_cnt())
+            .field("en", &self.en())
+            .field("ope", &self.ope())
+            .field("cos", &self.cos())
+            .field("invt", &self.invt())
+            .field("pmode", &self.pmode())
+            .field("we", &self.we())
+            .field("se", &self.se())
+            .field("fpr", &self.fpr())
+            .field("cout", &self.cout())
+            .field("cff", &self.cff())
+            .field("cfr", &self.cfr())
+            .field("ief", &self.ief())
+            .field("ier", &self.ier())
+            .field("dmaen", &self.dmaen())
+            .field("linken", &self.linken())
+            .finish()
     }
 }
 impl W {

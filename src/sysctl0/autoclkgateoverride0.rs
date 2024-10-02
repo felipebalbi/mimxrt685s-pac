@@ -3,6 +3,7 @@ pub type R = crate::R<Autoclkgateoverride0Spec>;
 #[doc = "Register `AUTOCLKGATEOVERRIDE0` writer"]
 pub type W = crate::W<Autoclkgateoverride0Spec>;
 #[doc = "auto clock gating enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ahb2apb0 {
     #[doc = "0: Enable Auto-Clk"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "auto clock gating enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ahb2apb1 {
     #[doc = "0: Enable Auto-Clk"]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "auto clock gating enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CrcEngine {
     #[doc = "0: Enable Auto-Clk"]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "auto clock gating enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Casper {
     #[doc = "0: Enable Auto-Clk"]
@@ -215,6 +219,7 @@ where
     }
 }
 #[doc = "auto clock gating enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac0 {
     #[doc = "0: Enable Auto-Clk"]
@@ -268,6 +273,7 @@ where
     }
 }
 #[doc = "auto clock gating enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac1 {
     #[doc = "0: Enable Auto-Clk"]
@@ -350,6 +356,19 @@ impl R {
     #[inline(always)]
     pub fn dmac1(&self) -> Dmac1R {
         Dmac1R::new(((self.bits >> 5) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("AUTOCLKGATEOVERRIDE0")
+            .field("ahb2apb0", &self.ahb2apb0())
+            .field("ahb2apb1", &self.ahb2apb1())
+            .field("crc_engine", &self.crc_engine())
+            .field("casper", &self.casper())
+            .field("dmac0", &self.dmac0())
+            .field("dmac1", &self.dmac1())
+            .finish()
     }
 }
 impl W {

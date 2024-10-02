@@ -13,6 +13,12 @@ impl R {
         OsrR::new((self.bits & 0xff) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("OSR").field("osr", &self.osr()).finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:7 - Selects the oversample rate for the related input channel."]
     #[inline(always)]

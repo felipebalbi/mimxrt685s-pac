@@ -3,6 +3,7 @@ pub type R = crate::R<IrqFlagSpec>;
 #[doc = "Register `IRQ_FLAG` writer"]
 pub type W = crate::W<IrqFlagSpec>;
 #[doc = "Monitors the interrupt flag of TIMER0.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Gflag0 {
     #[doc = "0: No pending interrupt. Writing a zero is equivalent to no operation."]
@@ -87,6 +88,17 @@ impl R {
     #[inline(always)]
     pub fn gflag3(&self) -> Gflag3R {
         Gflag3R::new(((self.bits >> 3) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IRQ_FLAG")
+            .field("gflag0", &self.gflag0())
+            .field("gflag1", &self.gflag1())
+            .field("gflag2", &self.gflag2())
+            .field("gflag3", &self.gflag3())
+            .finish()
     }
 }
 impl W {

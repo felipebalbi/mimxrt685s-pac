@@ -3,6 +3,7 @@ pub type R = crate::R<PwmcSpec>;
 #[doc = "Register `PWMC` writer"]
 pub type W = crate::W<PwmcSpec>;
 #[doc = "PWM mode enable for channel0.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Pwmen0 {
     #[doc = "0: Match. CTIMERn_MAT0 is controlled by EM0."]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "PWM mode enable for channel1.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Pwmen1 {
     #[doc = "0: Match. CTIMERn_MAT01 is controlled by EM1."]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "PWM mode enable for channel2.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Pwmen2 {
     #[doc = "0: Match. CTIMERn_MAT2 is controlled by EM2."]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "PWM mode enable for channel3. Note: It is recommended to use match channel 3 to set the PWM cycle.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Pwmen3 {
     #[doc = "0: Match. CTIMERn_MAT3 is controlled by EM3."]
@@ -234,6 +238,17 @@ impl R {
     #[inline(always)]
     pub fn pwmen3(&self) -> Pwmen3R {
         Pwmen3R::new(((self.bits >> 3) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PWMC")
+            .field("pwmen0", &self.pwmen0())
+            .field("pwmen1", &self.pwmen1())
+            .field("pwmen2", &self.pwmen2())
+            .field("pwmen3", &self.pwmen3())
+            .finish()
     }
 }
 impl W {

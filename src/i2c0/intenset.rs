@@ -3,6 +3,7 @@ pub type R = crate::R<IntensetSpec>;
 #[doc = "Register `INTENSET` writer"]
 pub type W = crate::W<IntensetSpec>;
 #[doc = "Master Pending interrupt Enable.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Mstpendingen {
     #[doc = "0: Disabled. The MstPending interrupt is disabled."]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Master Arbitration Loss interrupt Enable.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Mstarblossen {
     #[doc = "0: Disabled. The MstArbLoss interrupt is disabled."]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "Master Start/Stop Error interrupt Enable.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Mstststperren {
     #[doc = "0: Disabled. The MstStStpErr interrupt is disabled."]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "Slave Pending interrupt Enable.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Slvpendingen {
     #[doc = "0: Disabled. The SlvPending interrupt is disabled."]
@@ -215,6 +219,7 @@ where
     }
 }
 #[doc = "Slave Not Stretching interrupt Enable.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Slvnotstren {
     #[doc = "0: Disabled. The SlvNotStr interrupt is disabled."]
@@ -268,6 +273,7 @@ where
     }
 }
 #[doc = "Slave Deselect interrupt Enable.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Slvdeselen {
     #[doc = "0: Disabled. The SlvDeSel interrupt is disabled."]
@@ -321,6 +327,7 @@ where
     }
 }
 #[doc = "Monitor data Ready interrupt Enable.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Monrdyen {
     #[doc = "0: Disabled. The MonRdy interrupt is disabled."]
@@ -374,6 +381,7 @@ where
     }
 }
 #[doc = "Monitor Overrun interrupt Enable.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Monoven {
     #[doc = "0: Disabled. The MonOv interrupt is disabled."]
@@ -427,6 +435,7 @@ where
     }
 }
 #[doc = "Monitor Idle interrupt Enable.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Monidleen {
     #[doc = "0: Disabled. The MonIdle interrupt is disabled."]
@@ -480,6 +489,7 @@ where
     }
 }
 #[doc = "Event time-out interrupt Enable.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Eventtimeouten {
     #[doc = "0: Disabled. The Event time-out interrupt is disabled."]
@@ -533,6 +543,7 @@ where
     }
 }
 #[doc = "SCL time-out interrupt Enable.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Scltimeouten {
     #[doc = "0: Disabled. The SCL time-out interrupt is disabled."]
@@ -640,6 +651,24 @@ impl R {
     #[inline(always)]
     pub fn scltimeouten(&self) -> ScltimeoutenR {
         ScltimeoutenR::new(((self.bits >> 25) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("INTENSET")
+            .field("mstpendingen", &self.mstpendingen())
+            .field("mstarblossen", &self.mstarblossen())
+            .field("mstststperren", &self.mstststperren())
+            .field("slvpendingen", &self.slvpendingen())
+            .field("slvnotstren", &self.slvnotstren())
+            .field("slvdeselen", &self.slvdeselen())
+            .field("monrdyen", &self.monrdyen())
+            .field("monoven", &self.monoven())
+            .field("monidleen", &self.monidleen())
+            .field("eventtimeouten", &self.eventtimeouten())
+            .field("scltimeouten", &self.scltimeouten())
+            .finish()
     }
 }
 impl W {

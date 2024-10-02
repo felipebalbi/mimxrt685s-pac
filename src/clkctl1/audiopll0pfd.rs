@@ -11,6 +11,7 @@ pub type Pfd0ClkrdyR = crate::BitReader;
 #[doc = "Field `PFD0_CLKRDY` writer - PFD0 Clock Ready Status Flag: Read as 1 clock ready. Cleared by writing a 1."]
 pub type Pfd0ClkrdyW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "PFD0 Clock Gate: 0: PFD0 clock is not gated. 1: PFD0 clock is gated\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Pfd0Clkgate {
     #[doc = "0: PFD0 clock is not gated."]
@@ -72,6 +73,7 @@ pub type Pfd1ClkrdyR = crate::BitReader;
 #[doc = "Field `PFD1_CLKRDY` writer - PFD1 Clock Ready Status Flag: Read as 1 clock ready. Cleared by writing a 1."]
 pub type Pfd1ClkrdyW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "PFD1 Clock Gate: 0: PFD1 clock is not gated. 1: PFD1 clock is gated.\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Pfd1Clkgate {
     #[doc = "0: PFD1 clock is not gated."]
@@ -133,6 +135,7 @@ pub type Pfd2ClkrdyR = crate::BitReader;
 #[doc = "Field `PFD2_CLKRDY` writer - PFD2 Clock Ready Status Flag: Read as 1 clock ready. Cleared by writing a 1."]
 pub type Pfd2ClkrdyW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "PFD2 Clock Gate: 0: PFD2 clock is not gated. 1: PFD2 clock is gated.\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Pfd2Clkgate {
     #[doc = "0: PFD2 clock is not gated."]
@@ -194,6 +197,7 @@ pub type Pfd3ClkrdyR = crate::BitReader;
 #[doc = "Field `PFD3_CLKRDY` writer - PFD3 Clock Ready Status Flag: Read as 1 clock ready. Cleared by writing a 1."]
 pub type Pfd3ClkrdyW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "PFD3 Clock Gate: 0: PFD3 clock is not gated. 1: PFD3 clock is gated.\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Pfd3Clkgate {
     #[doc = "0: PFD3 clock is not gated."]
@@ -306,6 +310,25 @@ impl R {
     #[inline(always)]
     pub fn pfd3_clkgate(&self) -> Pfd3ClkgateR {
         Pfd3ClkgateR::new(((self.bits >> 31) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("AUDIOPLL0PFD")
+            .field("pfd0", &self.pfd0())
+            .field("pfd0_clkrdy", &self.pfd0_clkrdy())
+            .field("pfd0_clkgate", &self.pfd0_clkgate())
+            .field("pfd1", &self.pfd1())
+            .field("pfd1_clkrdy", &self.pfd1_clkrdy())
+            .field("pfd1_clkgate", &self.pfd1_clkgate())
+            .field("pfd2", &self.pfd2())
+            .field("pfd2_clkrdy", &self.pfd2_clkrdy())
+            .field("pfd2_clkgate", &self.pfd2_clkgate())
+            .field("pfd3", &self.pfd3())
+            .field("pfd3_clkrdy", &self.pfd3_clkrdy())
+            .field("pfd3_clkgate", &self.pfd3_clkgate())
+            .finish()
     }
 }
 impl W {

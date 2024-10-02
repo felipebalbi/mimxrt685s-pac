@@ -3,6 +3,7 @@ pub type R = crate::R<PselidSpec>;
 #[doc = "Register `PSELID` writer"]
 pub type W = crate::W<PselidSpec>;
 #[doc = "Peripheral Select. This field is writable by software.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Persel {
@@ -115,6 +116,7 @@ where
     }
 }
 #[doc = "Lock the peripheral select. This field is writable by software.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Lock {
     #[doc = "0: Peripheral select can be changed by software."]
@@ -168,6 +170,7 @@ where
     }
 }
 #[doc = "USART present indicator. This field is Read-only.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Usartpresent {
     #[doc = "0: This Flexcomm does not include the USART function."]
@@ -204,6 +207,7 @@ impl UsartpresentR {
     }
 }
 #[doc = "SPI present indicator. This field is Read-only.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Spipresent {
     #[doc = "0: This Flexcomm does not include the SPI function."]
@@ -240,6 +244,7 @@ impl SpipresentR {
     }
 }
 #[doc = "I2C present indicator. This field is Read-only.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum I2cpresent {
     #[doc = "0: This Flexcomm does not include the I2C function."]
@@ -276,6 +281,7 @@ impl I2cpresentR {
     }
 }
 #[doc = "I 2S present indicator. This field is Read-only.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum I2spresent {
     #[doc = "0: This Flexcomm does not include the I2S function."]
@@ -348,6 +354,20 @@ impl R {
     #[inline(always)]
     pub fn id(&self) -> IdR {
         IdR::new((self.bits >> 12) & 0x000f_ffff)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PSELID")
+            .field("persel", &self.persel())
+            .field("lock", &self.lock())
+            .field("usartpresent", &self.usartpresent())
+            .field("spipresent", &self.spipresent())
+            .field("i2cpresent", &self.i2cpresent())
+            .field("i2spresent", &self.i2spresent())
+            .field("id", &self.id())
+            .finish()
     }
 }
 impl W {

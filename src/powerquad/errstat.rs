@@ -49,6 +49,18 @@ impl R {
         BuserrorR::new(((self.bits >> 4) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ERRSTAT")
+            .field("overflow", &self.overflow())
+            .field("nan", &self.nan())
+            .field("fixedoverflow", &self.fixedoverflow())
+            .field("underflow", &self.underflow())
+            .field("buserror", &self.buserror())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - overflow"]
     #[inline(always)]

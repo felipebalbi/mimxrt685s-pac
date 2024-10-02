@@ -3,6 +3,7 @@ pub type R = crate::R<RxevpulsegenSpec>;
 #[doc = "Register `RXEVPULSEGEN` writer"]
 pub type W = crate::W<RxevpulsegenSpec>;
 #[doc = "RX Event Pulse Generator. Writing a '1' to this register will create a one PSCLK pulse width of logic '1'. It is automatically cleared.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rxevpulsegen {
     #[doc = "0: No effect."]
@@ -60,6 +61,14 @@ impl R {
     #[inline(always)]
     pub fn rxevpulsegen(&self) -> RxevpulsegenR {
         RxevpulsegenR::new((self.bits & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("RXEVPULSEGEN")
+            .field("rxevpulsegen", &self.rxevpulsegen())
+            .finish()
     }
 }
 impl W {

@@ -3,6 +3,7 @@ pub type R = crate::R<UsbclkctrlSpec>;
 #[doc = "Register `USBCLKCTRL` writer"]
 pub type W = crate::W<UsbclkctrlSpec>;
 #[doc = "USB0 Device need clock signal control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ApDevClk {
     #[doc = "0: Under hardware control."]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "USB0 Device need clock polarity for triggering the USB1 wake-up interrupt\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PolDevClk {
     #[doc = "0: Falling edge of device need_clock triggers wake-up."]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "USB0 Host need clock signal control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ApHostClk {
     #[doc = "0: Under hardware control."]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "USB0 HOST need clock polarity for triggering the USB1 wake-up interrupt\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PolHostClk {
     #[doc = "0: Falling edge of host need_clock triggers wake-up."]
@@ -215,6 +219,7 @@ where
     }
 }
 #[doc = "External user wake-up signal for device mode; asserting this signal (active low) will result in exiting the low power mode; input to asynchronous control logic\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HsDevWakeupN {
     #[doc = "0: Forces USB0 PHY to wake-up."]
@@ -292,6 +297,18 @@ impl R {
     #[inline(always)]
     pub fn hs_dev_wakeup_n(&self) -> HsDevWakeupNR {
         HsDevWakeupNR::new(((self.bits >> 4) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("USBCLKCTRL")
+            .field("ap_dev_clk", &self.ap_dev_clk())
+            .field("pol_dev_clk", &self.pol_dev_clk())
+            .field("ap_host_clk", &self.ap_host_clk())
+            .field("pol_host_clk", &self.pol_host_clk())
+            .field("hs_dev_wakeup_n", &self.hs_dev_wakeup_n())
+            .finish()
     }
 }
 impl W {

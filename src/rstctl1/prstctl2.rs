@@ -3,6 +3,7 @@ pub type R = crate::R<Prstctl2Spec>;
 #[doc = "Register `PRSTCTL2` writer"]
 pub type W = crate::W<Prstctl2Spec>;
 #[doc = "CT32BIT0 reset control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ct32bit0Rst {
     #[doc = "0: clear reset"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "CT32BIT1 reset control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ct32bit1Rst {
     #[doc = "0: clear reset"]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "CT32BIT2 reset control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ct32bit2Rst {
     #[doc = "0: clear reset"]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "CT32BIT3 reset control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ct32bit3Rst {
     #[doc = "0: clear reset"]
@@ -215,6 +219,7 @@ where
     }
 }
 #[doc = "CT32BIT4 reset control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ct32bit4Rst {
     #[doc = "0: clear reset"]
@@ -268,6 +273,7 @@ where
     }
 }
 #[doc = "MRT0 reset control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Mrt0Rst {
     #[doc = "0: clear reset"]
@@ -321,6 +327,7 @@ where
     }
 }
 #[doc = "WWDT1 reset control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Wwdt1Rst {
     #[doc = "0: clear reset"]
@@ -374,6 +381,7 @@ where
     }
 }
 #[doc = "I3C0 reset control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum I3c0Rst {
     #[doc = "0: clear reset"]
@@ -427,6 +435,7 @@ where
     }
 }
 #[doc = "GPIOINTCTL reset control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum GpiointctlRst {
     #[doc = "0: clear reset"]
@@ -480,6 +489,7 @@ where
     }
 }
 #[doc = "PMC reset control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PimctlRst {
     #[doc = "0: clear reset"]
@@ -582,6 +592,23 @@ impl R {
     #[inline(always)]
     pub fn pimctl_rst(&self) -> PimctlRstR {
         PimctlRstR::new(((self.bits >> 31) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PRSTCTL2")
+            .field("ct32bit0_rst", &self.ct32bit0_rst())
+            .field("ct32bit1_rst", &self.ct32bit1_rst())
+            .field("ct32bit2_rst", &self.ct32bit2_rst())
+            .field("ct32bit3_rst", &self.ct32bit3_rst())
+            .field("ct32bit4_rst", &self.ct32bit4_rst())
+            .field("mrt0_rst", &self.mrt0_rst())
+            .field("wwdt1_rst", &self.wwdt1_rst())
+            .field("i3c0_rst", &self.i3c0_rst())
+            .field("gpiointctl_rst", &self.gpiointctl_rst())
+            .field("pimctl_rst", &self.pimctl_rst())
+            .finish()
     }
 }
 impl W {

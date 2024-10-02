@@ -13,6 +13,14 @@ impl R {
         AdsAddrR::new((self.bits >> 2) & 0x3fff_ffff)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ADMA_SYS_ADDR")
+            .field("ads_addr", &self.ads_addr())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 2:31 - ADMA System Address"]
     #[inline(always)]

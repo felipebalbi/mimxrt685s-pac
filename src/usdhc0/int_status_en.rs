@@ -3,6 +3,7 @@ pub type R = crate::R<IntStatusEnSpec>;
 #[doc = "Register `INT_STATUS_EN` writer"]
 pub type W = crate::W<IntStatusEnSpec>;
 #[doc = "Command Complete Status Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ccsen {
     #[doc = "0: Masked"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Transfer Complete Status Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Tcsen {
     #[doc = "0: Masked"]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "Block Gap Event Status Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Bgesen {
     #[doc = "0: Masked"]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "DMA Interrupt Status Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dintsen {
     #[doc = "0: Masked"]
@@ -215,6 +219,7 @@ where
     }
 }
 #[doc = "Buffer Write Ready Status Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Bwrsen {
     #[doc = "0: Masked"]
@@ -268,6 +273,7 @@ where
     }
 }
 #[doc = "Buffer Read Ready Status Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Brrsen {
     #[doc = "0: Masked"]
@@ -321,6 +327,7 @@ where
     }
 }
 #[doc = "Card Insertion Status Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cinssen {
     #[doc = "0: Masked"]
@@ -374,6 +381,7 @@ where
     }
 }
 #[doc = "Card Removal Status Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Crmsen {
     #[doc = "0: Masked"]
@@ -427,6 +435,7 @@ where
     }
 }
 #[doc = "Card Interrupt Status Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cintsen {
     #[doc = "0: Masked"]
@@ -480,6 +489,7 @@ where
     }
 }
 #[doc = "Re-Tuning Event Status Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rtesen {
     #[doc = "0: Masked"]
@@ -533,6 +543,7 @@ where
     }
 }
 #[doc = "Tuning Pass Status Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Tpsen {
     #[doc = "0: Masked"]
@@ -586,6 +597,7 @@ where
     }
 }
 #[doc = "Command Timeout Error Status Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ctoesen {
     #[doc = "0: Masked"]
@@ -639,6 +651,7 @@ where
     }
 }
 #[doc = "Command CRC Error Status Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ccesen {
     #[doc = "0: Masked"]
@@ -692,6 +705,7 @@ where
     }
 }
 #[doc = "Command End Bit Error Status Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cebesen {
     #[doc = "0: Masked"]
@@ -745,6 +759,7 @@ where
     }
 }
 #[doc = "Command Index Error Status Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ciesen {
     #[doc = "0: Masked"]
@@ -798,6 +813,7 @@ where
     }
 }
 #[doc = "Data Timeout Error Status Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dtoesen {
     #[doc = "0: Masked"]
@@ -851,6 +867,7 @@ where
     }
 }
 #[doc = "Data CRC Error Status Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dcesen {
     #[doc = "0: Masked"]
@@ -904,6 +921,7 @@ where
     }
 }
 #[doc = "Data End Bit Error Status Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Debesen {
     #[doc = "0: Masked"]
@@ -957,6 +975,7 @@ where
     }
 }
 #[doc = "Auto CMD12 Error Status Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ac12esen {
     #[doc = "0: Masked"]
@@ -1010,6 +1029,7 @@ where
     }
 }
 #[doc = "Tuning Error Status Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Tnesen {
     #[doc = "0: Masked"]
@@ -1063,6 +1083,7 @@ where
     }
 }
 #[doc = "DMA Error Status Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmaesen {
     #[doc = "0: Masked"]
@@ -1220,6 +1241,34 @@ impl R {
     #[inline(always)]
     pub fn dmaesen(&self) -> DmaesenR {
         DmaesenR::new(((self.bits >> 28) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("INT_STATUS_EN")
+            .field("ccsen", &self.ccsen())
+            .field("tcsen", &self.tcsen())
+            .field("bgesen", &self.bgesen())
+            .field("dintsen", &self.dintsen())
+            .field("bwrsen", &self.bwrsen())
+            .field("brrsen", &self.brrsen())
+            .field("cinssen", &self.cinssen())
+            .field("crmsen", &self.crmsen())
+            .field("cintsen", &self.cintsen())
+            .field("rtesen", &self.rtesen())
+            .field("tpsen", &self.tpsen())
+            .field("ctoesen", &self.ctoesen())
+            .field("ccesen", &self.ccesen())
+            .field("cebesen", &self.cebesen())
+            .field("ciesen", &self.ciesen())
+            .field("dtoesen", &self.dtoesen())
+            .field("dcesen", &self.dcesen())
+            .field("debesen", &self.debesen())
+            .field("ac12esen", &self.ac12esen())
+            .field("tnesen", &self.tnesen())
+            .field("dmaesen", &self.dmaesen())
+            .finish()
     }
 }
 impl W {

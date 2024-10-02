@@ -3,6 +3,7 @@ pub type R = crate::R<Starten1Spec>;
 #[doc = "Register `STARTEN1` writer"]
 pub type W = crate::W<Starten1Spec>;
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RtcLite0AlarmOrWakeup {
     #[doc = "0: disbale"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Mu {
     #[doc = "0: disbale"]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum GpioInt0Irq4 {
     #[doc = "0: disbale"]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum GpioInt0Irq5 {
     #[doc = "0: disbale"]
@@ -215,6 +219,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum GpioInt0Irq6 {
     #[doc = "0: disbale"]
@@ -268,6 +273,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum GpioInt0Irq7 {
     #[doc = "0: disbale"]
@@ -321,6 +327,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ct32bit2 {
     #[doc = "0: disbale"]
@@ -374,6 +381,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ct32bit4 {
     #[doc = "0: disbale"]
@@ -427,6 +435,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum OsEventTimerWu {
     #[doc = "0: disbale"]
@@ -480,6 +489,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Flexspi {
     #[doc = "0: disbale"]
@@ -533,6 +543,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Flexcomm6 {
     #[doc = "0: disbale"]
@@ -586,6 +597,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Flexcomm7 {
     #[doc = "0: disbale"]
@@ -639,6 +651,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sdio0 {
     #[doc = "0: disbale"]
@@ -692,6 +705,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sdio1 {
     #[doc = "0: disbale"]
@@ -745,6 +759,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ShsgpioInt0 {
     #[doc = "0: disbale"]
@@ -798,6 +813,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ShsgpioInt1 {
     #[doc = "0: disbale"]
@@ -851,6 +867,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum I3c0 {
     #[doc = "0: disbale"]
@@ -904,6 +921,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UsbIrq {
     #[doc = "0: disbale"]
@@ -957,6 +975,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UsbNeedclk {
     #[doc = "0: disbale"]
@@ -1010,6 +1029,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmac1 {
     #[doc = "0: disbale"]
@@ -1063,6 +1083,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Puf {
     #[doc = "0: disbale"]
@@ -1116,6 +1137,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Powerquad {
     #[doc = "0: disbale"]
@@ -1169,6 +1191,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Casper {
     #[doc = "0: disbale"]
@@ -1222,6 +1245,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Pmic {
     #[doc = "0: disbale"]
@@ -1275,6 +1299,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sha {
     #[doc = "0: disbale"]
@@ -1452,6 +1477,41 @@ impl R {
     #[inline(always)]
     pub fn sha(&self) -> ShaR {
         ShaR::new(((self.bits >> 27) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("STARTEN1")
+            .field(
+                "rtc_lite0_alarm_or_wakeup",
+                &self.rtc_lite0_alarm_or_wakeup(),
+            )
+            .field("mu", &self.mu())
+            .field("gpio_int0_irq4", &self.gpio_int0_irq4())
+            .field("gpio_int0_irq5", &self.gpio_int0_irq5())
+            .field("gpio_int0_irq6", &self.gpio_int0_irq6())
+            .field("gpio_int0_irq7", &self.gpio_int0_irq7())
+            .field("ct32bit2", &self.ct32bit2())
+            .field("ct32bit4", &self.ct32bit4())
+            .field("os_event_timer_wu", &self.os_event_timer_wu())
+            .field("flexspi", &self.flexspi())
+            .field("flexcomm6", &self.flexcomm6())
+            .field("flexcomm7", &self.flexcomm7())
+            .field("sdio0", &self.sdio0())
+            .field("sdio1", &self.sdio1())
+            .field("shsgpio_int0", &self.shsgpio_int0())
+            .field("shsgpio_int1", &self.shsgpio_int1())
+            .field("i3c0", &self.i3c0())
+            .field("usb_irq", &self.usb_irq())
+            .field("usb_needclk", &self.usb_needclk())
+            .field("dmac1", &self.dmac1())
+            .field("puf", &self.puf())
+            .field("powerquad", &self.powerquad())
+            .field("casper", &self.casper())
+            .field("pmic", &self.pmic())
+            .field("sha", &self.sha())
+            .finish()
     }
 }
 impl W {

@@ -49,6 +49,18 @@ impl R {
         OsEventTimerDspRuleR::new(((self.bits >> 16) & 3) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("AIPS_BRIDGE0_MEM_RULE0")
+            .field("mu0_m33_rule", &self.mu0_m33_rule())
+            .field("mu0_dsp_rule", &self.mu0_dsp_rule())
+            .field("semaphore_rule", &self.semaphore_rule())
+            .field("os_event_timer_m33_rule", &self.os_event_timer_m33_rule())
+            .field("os_event_timer_dsp_rule", &self.os_event_timer_dsp_rule())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:1 - 0x4011 0000--0x4011 0FFF"]
     #[inline(always)]

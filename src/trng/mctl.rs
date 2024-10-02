@@ -3,6 +3,7 @@ pub type R = crate::R<MctlSpec>;
 #[doc = "Register `MCTL` writer"]
 pub type W = crate::W<MctlSpec>;
 #[doc = "Sample Mode\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SampMode {
@@ -89,6 +90,7 @@ where
     }
 }
 #[doc = "Oscillator Divide\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum OscDiv {
@@ -257,6 +259,24 @@ impl R {
     #[inline(always)]
     pub fn prgm(&self) -> PrgmR {
         PrgmR::new(((self.bits >> 16) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("MCTL")
+            .field("samp_mode", &self.samp_mode())
+            .field("osc_div", &self.osc_div())
+            .field("trng_acc", &self.trng_acc())
+            .field("for_sclk", &self.for_sclk())
+            .field("fct_fail", &self.fct_fail())
+            .field("fct_val", &self.fct_val())
+            .field("ent_val", &self.ent_val())
+            .field("tst_out", &self.tst_out())
+            .field("err", &self.err())
+            .field("tstop_ok", &self.tstop_ok())
+            .field("prgm", &self.prgm())
+            .finish()
     }
 }
 impl W {

@@ -3,6 +3,7 @@ pub type R = crate::R<SecCfgSpec>;
 #[doc = "Register `SEC_CFG` writer"]
 pub type W = crate::W<SecCfgSpec>;
 #[doc = "If set, the TRNG registers cannot be programmed\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum NoPrgm {
     #[doc = "0: Programability of registers controlled only by the Miscellaneous Control Register's access mode bit."]
@@ -60,6 +61,14 @@ impl R {
     #[inline(always)]
     pub fn no_prgm(&self) -> NoPrgmR {
         NoPrgmR::new(((self.bits >> 1) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SEC_CFG")
+            .field("no_prgm", &self.no_prgm())
+            .finish()
     }
 }
 impl W {

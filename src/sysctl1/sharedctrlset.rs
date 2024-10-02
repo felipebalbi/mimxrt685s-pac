@@ -3,6 +3,7 @@ pub type R = crate::R<SharedctrlsetSpec>;
 #[doc = "Register `SHAREDCTRLSET%s` writer"]
 pub type W = crate::W<SharedctrlsetSpec>;
 #[doc = "Shared SCK Select. . .\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Sharedscksel {
@@ -141,6 +142,7 @@ where
     }
 }
 #[doc = "Shared WS Select. . .\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Sharedwssel {
@@ -279,6 +281,7 @@ where
     }
 }
 #[doc = "Shared DATA Select. . .\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Shareddatasel {
@@ -417,6 +420,7 @@ where
     }
 }
 #[doc = "FLEXCOMM0 DATAOUT OUTPUT ENABLE\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Fc0dataouten {
     #[doc = "0: Input"]
@@ -470,6 +474,7 @@ where
     }
 }
 #[doc = "FLEXCOMM1 DATAOUT OUTPUT ENABLE\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Fc1dataouten {
     #[doc = "0: Input"]
@@ -523,6 +528,7 @@ where
     }
 }
 #[doc = "FLEXCOMM2 DATAOUT OUTPUT ENABLE\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum F20dataouten {
     #[doc = "0: Input"]
@@ -576,6 +582,7 @@ where
     }
 }
 #[doc = "FLEXCOMM3 DATAOUT OUTPUT ENABLE\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Fc3dataouten {
     #[doc = "0: Input"]
@@ -629,6 +636,7 @@ where
     }
 }
 #[doc = "FLEXCOMM4 DATAOUT OUTPUT ENABLE\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Fc4dataouten {
     #[doc = "0: Input"]
@@ -682,6 +690,7 @@ where
     }
 }
 #[doc = "FLEXCOMM5 DATAOUT OUTPUT ENABLE\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Fc5dataouten {
     #[doc = "0: Input"]
@@ -735,6 +744,7 @@ where
     }
 }
 #[doc = "FLEXCOMM6 DATAOUT OUTPUT ENABLE\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Fc6dataouten {
     #[doc = "0: Input"]
@@ -788,6 +798,7 @@ where
     }
 }
 #[doc = "FLEXCOMM7 DATAOUT OUTPUT ENABLE\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Fc7dataouten {
     #[doc = "0: Input"]
@@ -895,6 +906,24 @@ impl R {
     #[inline(always)]
     pub fn fc7dataouten(&self) -> Fc7dataoutenR {
         Fc7dataoutenR::new(((self.bits >> 23) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SHAREDCTRLSET")
+            .field("sharedscksel", &self.sharedscksel())
+            .field("sharedwssel", &self.sharedwssel())
+            .field("shareddatasel", &self.shareddatasel())
+            .field("fc0dataouten", &self.fc0dataouten())
+            .field("fc1dataouten", &self.fc1dataouten())
+            .field("f20dataouten", &self.f20dataouten())
+            .field("fc3dataouten", &self.fc3dataouten())
+            .field("fc4dataouten", &self.fc4dataouten())
+            .field("fc5dataouten", &self.fc5dataouten())
+            .field("fc6dataouten", &self.fc6dataouten())
+            .field("fc7dataouten", &self.fc7dataouten())
+            .finish()
     }
 }
 impl W {

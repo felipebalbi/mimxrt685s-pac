@@ -3,6 +3,7 @@ pub type R = crate::R<UsbclkstatSpec>;
 #[doc = "Register `USBCLKSTAT` writer"]
 pub type W = crate::W<UsbclkstatSpec>;
 #[doc = "USB Device USB_NEEDCLK signal status:\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DevNeedClkst {
     #[doc = "0: low"]
@@ -39,6 +40,7 @@ impl DevNeedClkstR {
     }
 }
 #[doc = "USB Device Host USB_NEEDCLK signal status:\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HostNeedClkst {
     #[doc = "0: low"]
@@ -84,6 +86,15 @@ impl R {
     #[inline(always)]
     pub fn host_need_clkst(&self) -> HostNeedClkstR {
         HostNeedClkstR::new(((self.bits >> 1) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("USBCLKSTAT")
+            .field("dev_need_clkst", &self.dev_need_clkst())
+            .field("host_need_clkst", &self.host_need_clkst())
+            .finish()
     }
 }
 impl W {}

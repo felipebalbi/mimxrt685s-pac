@@ -3,6 +3,7 @@ pub type R = crate::R<DcCtrlSpec>;
 #[doc = "Register `DC_CTRL` writer"]
 pub type W = crate::W<DcCtrlSpec>;
 #[doc = "DC block filter\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Dcpole {
@@ -93,6 +94,7 @@ pub type DcgainR = crate::FieldReader;
 #[doc = "Field `DCGAIN` writer - Fine gain adjustment in the form of a number of bits to downshift."]
 pub type DcgainW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Selects 16-bit saturation.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Saturateat16bit {
     #[doc = "0: Results roll over if out range and do not saturate."]
@@ -146,6 +148,7 @@ where
     }
 }
 #[doc = "Sign extend.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Signextend {
     #[doc = "0: The top byte of the FIFODATA register is always 0."]
@@ -218,6 +221,17 @@ impl R {
     #[inline(always)]
     pub fn signextend(&self) -> SignextendR {
         SignextendR::new(((self.bits >> 9) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DC_CTRL")
+            .field("dcpole", &self.dcpole())
+            .field("dcgain", &self.dcgain())
+            .field("saturateat16bit", &self.saturateat16bit())
+            .field("signextend", &self.signextend())
+            .finish()
     }
 }
 impl W {

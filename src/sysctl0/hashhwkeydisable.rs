@@ -13,6 +13,14 @@ impl R {
         HashhwkeydisableR::new(self.bits)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("HASHHWKEYDISABLE")
+            .field("hashhwkeydisable", &self.hashhwkeydisable())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:31 - This register control the access to AES keys delivered through secret HW bus from PUF and OTP to AES engine"]
     #[inline(always)]

@@ -22,6 +22,15 @@ impl R {
         Run4RngR::new(((self.bits >> 16) & 0x0fff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SCR4L")
+            .field("run4_max", &self.run4_max())
+            .field("run4_rng", &self.run4_rng())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:11 - Run Length 4 Maximum Limit"]
     #[inline(always)]

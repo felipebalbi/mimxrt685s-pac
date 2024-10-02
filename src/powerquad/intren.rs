@@ -58,6 +58,19 @@ impl R {
         IntrCompR::new(((self.bits >> 7) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("INTREN")
+            .field("intr_oflow", &self.intr_oflow())
+            .field("intr_nan", &self.intr_nan())
+            .field("intr_fixed", &self.intr_fixed())
+            .field("intr_uflow", &self.intr_uflow())
+            .field("intr_berr", &self.intr_berr())
+            .field("intr_comp", &self.intr_comp())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - 1 : Enable interrupt on Floating point overflow"]
     #[inline(always)]

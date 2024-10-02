@@ -22,6 +22,15 @@ impl R {
         ClenR::new(((self.bits >> 16) & 0x03ff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("MRMSG_DDR")
+            .field("data", &self.data())
+            .field("clen", &self.clen())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:15 - Data"]
     #[inline(always)]

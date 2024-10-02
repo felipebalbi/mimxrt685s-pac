@@ -3,6 +3,7 @@ pub type R = crate::R<PmiccfgSpec>;
 #[doc = "Register `PMICCFG` writer"]
 pub type W = crate::W<PmiccfgSpec>;
 #[doc = "vddcore state in PMIC mode 0\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Vddcorem0 {
     #[doc = "0: off"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "vddcore state in PMIC mode 1\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Vddcorem1 {
     #[doc = "0: off"]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "vddcore state in PMIC mode 2\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Vddcorem2 {
     #[doc = "0: off"]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "vddcore state in PMIC mode 3\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Vddcorem3 {
     #[doc = "0: off"]
@@ -215,6 +219,7 @@ where
     }
 }
 #[doc = "vdd1v8 state in PMIC mode 0\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Vdd1v8m0 {
     #[doc = "0: off"]
@@ -268,6 +273,7 @@ where
     }
 }
 #[doc = "vdd1v8 state in PMIC mode 1\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Vdd1v8m1 {
     #[doc = "0: off"]
@@ -321,6 +327,7 @@ where
     }
 }
 #[doc = "vdd1v8 state in PMIC mode 2\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Vdd1v8m2 {
     #[doc = "0: off"]
@@ -374,6 +381,7 @@ where
     }
 }
 #[doc = "vdd1v8 state in PMIC mode 3\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Vdd1v8m3 {
     #[doc = "0: off"]
@@ -466,6 +474,21 @@ impl R {
     #[inline(always)]
     pub fn vdd1v8m3(&self) -> Vdd1v8m3R {
         Vdd1v8m3R::new(((self.bits >> 7) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PMICCFG")
+            .field("vddcorem0", &self.vddcorem0())
+            .field("vddcorem1", &self.vddcorem1())
+            .field("vddcorem2", &self.vddcorem2())
+            .field("vddcorem3", &self.vddcorem3())
+            .field("vdd1v8m0", &self.vdd1v8m0())
+            .field("vdd1v8m1", &self.vdd1v8m1())
+            .field("vdd1v8m2", &self.vdd1v8m2())
+            .field("vdd1v8m3", &self.vdd1v8m3())
+            .finish()
     }
 }
 impl W {

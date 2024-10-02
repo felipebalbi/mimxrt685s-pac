@@ -85,6 +85,22 @@ impl R {
         AberrenR::new(((self.bits >> 16) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("INTENSET")
+            .field("txidleen", &self.txidleen())
+            .field("deltactsen", &self.deltactsen())
+            .field("txdisen", &self.txdisen())
+            .field("deltarxbrken", &self.deltarxbrken())
+            .field("starten", &self.starten())
+            .field("framerren", &self.framerren())
+            .field("parityerren", &self.parityerren())
+            .field("rxnoiseen", &self.rxnoiseen())
+            .field("aberren", &self.aberren())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 3 - When 1, enables an interrupt when the transmitter becomes idle (TXIDLE = 1)."]
     #[inline(always)]

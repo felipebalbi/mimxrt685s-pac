@@ -3,6 +3,7 @@ pub type R = crate::R<Use2fsSpec>;
 #[doc = "Register `USE2FS` writer"]
 pub type W = crate::W<Use2fsSpec>;
 #[doc = "Use 2FS register\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Use2fs {
     #[doc = "0: Use 1FS output for PCM data."]
@@ -60,6 +61,14 @@ impl R {
     #[inline(always)]
     pub fn use2fs(&self) -> Use2fsR {
         Use2fsR::new((self.bits & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("USE2FS")
+            .field("use2fs", &self.use2fs())
+            .finish()
     }
 }
 impl W {

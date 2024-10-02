@@ -3,6 +3,7 @@ pub type R = crate::R<LockSpec>;
 #[doc = "Register `LOCK` writer"]
 pub type W = crate::W<LockSpec>;
 #[doc = "Write 1 to secure-lock this block (if running in a security state). Write 0 to unlock. If locked already, may only write if at same or higher security level as lock. Reads as: 0 if unlocked, else 1, 2, 3 to indicate security level it is locked at. NOTE: this and ID are the only readable registers if locked and current state is lower than lock level.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Seclock {
@@ -76,6 +77,15 @@ impl R {
     #[inline(always)]
     pub fn pattern(&self) -> PatternR {
         PatternR::new(((self.bits >> 4) & 0x0fff) as u16)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("LOCK")
+            .field("seclock", &self.seclock())
+            .field("pattern", &self.pattern())
+            .finish()
     }
 }
 impl W {

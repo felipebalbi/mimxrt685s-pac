@@ -3,6 +3,7 @@ pub type R = crate::R<Dmac1ReqEna0Spec>;
 #[doc = "Register `DMAC1_REQ_ENA0` writer"]
 pub type W = crate::W<Dmac1ReqEna0Spec>;
 #[doc = "FLEXCOMM0 RX enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Flexcomm0Rx {
     #[doc = "0: disable"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "FLEXCOMM0 TX enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Flexcomm0Tx {
     #[doc = "0: disable"]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "FLEXCOMM1 RX enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Flexcomm1Rx {
     #[doc = "0: disable"]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "FLEXCOMM1 TX enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Flexcomm1Tx {
     #[doc = "0: disable"]
@@ -215,6 +219,7 @@ where
     }
 }
 #[doc = "FLEXCOMM2 RX enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Flexcomm2Rx {
     #[doc = "0: disable"]
@@ -268,6 +273,7 @@ where
     }
 }
 #[doc = "FLEXCOMM2 TX enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Flexcomm2Tx {
     #[doc = "0: disable"]
@@ -321,6 +327,7 @@ where
     }
 }
 #[doc = "FLEXCOMM3 RX enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Flexcomm3Rx {
     #[doc = "0: disable"]
@@ -374,6 +381,7 @@ where
     }
 }
 #[doc = "FLEXCOMM3 TX enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Flexcomm3Tx {
     #[doc = "0: disable"]
@@ -427,6 +435,7 @@ where
     }
 }
 #[doc = "FLEXCOMM4 RX enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Flexcomm4Rx {
     #[doc = "0: disable"]
@@ -480,6 +489,7 @@ where
     }
 }
 #[doc = "FLEXCOMM4 TX enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Flexcomm4Tx {
     #[doc = "0: disable"]
@@ -533,6 +543,7 @@ where
     }
 }
 #[doc = "FLEXCOMM5 RX enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Flexcomm5Rx {
     #[doc = "0: disable"]
@@ -586,6 +597,7 @@ where
     }
 }
 #[doc = "FLEXCOMM5 TX enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Flexcomm5Tx {
     #[doc = "0: disable"]
@@ -639,6 +651,7 @@ where
     }
 }
 #[doc = "FLEXCOMM6 RX enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Flexcomm6Rx {
     #[doc = "0: disable"]
@@ -692,6 +705,7 @@ where
     }
 }
 #[doc = "FLEXCOMM6 TX enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Flexcomm6Tx {
     #[doc = "0: disable"]
@@ -745,6 +759,7 @@ where
     }
 }
 #[doc = "FLEXCOMM7 RX enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Flexcomm7Rx {
     #[doc = "0: disable"]
@@ -798,6 +813,7 @@ where
     }
 }
 #[doc = "FLEXCOMM7 TX enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Flexcomm7Tx {
     #[doc = "0: disable"]
@@ -851,6 +867,7 @@ where
     }
 }
 #[doc = "DMIC0 channel 0 enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmic0ch0 {
     #[doc = "0: disable"]
@@ -904,6 +921,7 @@ where
     }
 }
 #[doc = "DMIC0 channel 1 enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmic0ch1 {
     #[doc = "0: disable"]
@@ -957,6 +975,7 @@ where
     }
 }
 #[doc = "DMIC0 channel 2 enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmic0ch2 {
     #[doc = "0: disable"]
@@ -1010,6 +1029,7 @@ where
     }
 }
 #[doc = "DMIC0 channel 3 enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmic0ch3 {
     #[doc = "0: disable"]
@@ -1063,6 +1083,7 @@ where
     }
 }
 #[doc = "DMIC0 channel 4 enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmic0ch4 {
     #[doc = "0: disable"]
@@ -1116,6 +1137,7 @@ where
     }
 }
 #[doc = "DMIC0 channel 5 enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmic0ch5 {
     #[doc = "0: disable"]
@@ -1169,6 +1191,7 @@ where
     }
 }
 #[doc = "DMIC0 channel 6 enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmic0ch6 {
     #[doc = "0: disable"]
@@ -1222,6 +1245,7 @@ where
     }
 }
 #[doc = "DMIC0 channel 7 enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmic0ch7 {
     #[doc = "0: disable"]
@@ -1275,6 +1299,7 @@ where
     }
 }
 #[doc = "I3C RX enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum I3c0Rx {
     #[doc = "0: disable"]
@@ -1328,6 +1353,7 @@ where
     }
 }
 #[doc = "I3C TX enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum I3c0Tx {
     #[doc = "0: disable"]
@@ -1381,6 +1407,7 @@ where
     }
 }
 #[doc = "FLEXCOMM14 RX enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Flexcomm14Rx {
     #[doc = "0: disable"]
@@ -1434,6 +1461,7 @@ where
     }
 }
 #[doc = "FLEXCOMM14 TX enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Flexcomm14Tx {
     #[doc = "0: disable"]
@@ -1487,6 +1515,7 @@ where
     }
 }
 #[doc = "hash enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hashcrypt {
     #[doc = "0: disable"]
@@ -1684,6 +1713,42 @@ impl R {
     #[inline(always)]
     pub fn hashcrypt(&self) -> HashcryptR {
         HashcryptR::new(((self.bits >> 30) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DMAC1_REQ_ENA0")
+            .field("flexcomm0_rx", &self.flexcomm0_rx())
+            .field("flexcomm0_tx", &self.flexcomm0_tx())
+            .field("flexcomm1_rx", &self.flexcomm1_rx())
+            .field("flexcomm1_tx", &self.flexcomm1_tx())
+            .field("flexcomm2_rx", &self.flexcomm2_rx())
+            .field("flexcomm2_tx", &self.flexcomm2_tx())
+            .field("flexcomm3_rx", &self.flexcomm3_rx())
+            .field("flexcomm3_tx", &self.flexcomm3_tx())
+            .field("flexcomm4_rx", &self.flexcomm4_rx())
+            .field("flexcomm4_tx", &self.flexcomm4_tx())
+            .field("flexcomm5_rx", &self.flexcomm5_rx())
+            .field("flexcomm5_tx", &self.flexcomm5_tx())
+            .field("flexcomm6_rx", &self.flexcomm6_rx())
+            .field("flexcomm6_tx", &self.flexcomm6_tx())
+            .field("flexcomm7_rx", &self.flexcomm7_rx())
+            .field("flexcomm7_tx", &self.flexcomm7_tx())
+            .field("dmic0ch0", &self.dmic0ch0())
+            .field("dmic0ch1", &self.dmic0ch1())
+            .field("dmic0ch2", &self.dmic0ch2())
+            .field("dmic0ch3", &self.dmic0ch3())
+            .field("dmic0ch4", &self.dmic0ch4())
+            .field("dmic0ch5", &self.dmic0ch5())
+            .field("dmic0ch6", &self.dmic0ch6())
+            .field("dmic0ch7", &self.dmic0ch7())
+            .field("i3c0_rx", &self.i3c0_rx())
+            .field("i3c0_tx", &self.i3c0_tx())
+            .field("flexcomm14_rx", &self.flexcomm14_rx())
+            .field("flexcomm14_tx", &self.flexcomm14_tx())
+            .field("hashcrypt", &self.hashcrypt())
+            .finish()
     }
 }
 impl W {

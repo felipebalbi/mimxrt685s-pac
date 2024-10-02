@@ -3,6 +3,7 @@ pub type R = crate::R<MclkpindirSpec>;
 #[doc = "Register `MCLKPINDIR` writer"]
 pub type W = crate::W<MclkpindirSpec>;
 #[doc = "Selects one of the M33 interrupt sources\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Mclkpindir {
     #[doc = "0: MCLK is in input direction."]
@@ -60,6 +61,14 @@ impl R {
     #[inline(always)]
     pub fn mclkpindir(&self) -> MclkpindirR {
         MclkpindirR::new((self.bits & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("MCLKPINDIR")
+            .field("mclkpindir", &self.mclkpindir())
+            .finish()
     }
 }
 impl W {

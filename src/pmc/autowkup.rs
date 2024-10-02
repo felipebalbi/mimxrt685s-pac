@@ -13,6 +13,14 @@ impl R {
         AutowktimeR::new((self.bits & 0xffff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("AUTOWKUP")
+            .field("autowktime", &self.autowktime())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:15 - Auto wake up delay timer. Added delay after sequencer delay value: delay time = value/16MHz"]
     #[inline(always)]

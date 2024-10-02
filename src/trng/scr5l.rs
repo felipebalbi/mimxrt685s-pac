@@ -22,6 +22,15 @@ impl R {
         Run5RngR::new(((self.bits >> 16) & 0x07ff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SCR5L")
+            .field("run5_max", &self.run5_max())
+            .field("run5_rng", &self.run5_rng())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:10 - Run Length 5 Maximum Limit"]
     #[inline(always)]

@@ -1,6 +1,7 @@
 #[doc = "Register `USB1_VBUS_DET_STAT` reader"]
 pub type R = crate::R<Usb1VbusDetStatSpec>;
 #[doc = "Session End indicator Session End status, value inverted from Session Valid comparator\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sessend {
     #[doc = "0: The VBUS voltage is above the Session Valid threshold"]
@@ -37,6 +38,7 @@ impl SessendR {
     }
 }
 #[doc = "B-Device Session Valid status B-Device Session Valid status, determined by the Session Valid comparator\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Bvalid {
     #[doc = "0: The VBUS voltage is below the Session Valid threshold"]
@@ -73,6 +75,7 @@ impl BvalidR {
     }
 }
 #[doc = "A-Device Session Valid status A-Device Session Valid status, determined by the Session Valid comparator\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Avalid {
     #[doc = "0: The VBUS voltage is below the Session Valid threshold"]
@@ -109,6 +112,7 @@ impl AvalidR {
     }
 }
 #[doc = "VBUS voltage status This bit field shows the result of VBUS_VALID detection for the USB1_VBUS pin\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VbusValid {
     #[doc = "0: VBUS is below the comparator threshold"]
@@ -145,6 +149,7 @@ impl VbusValidR {
     }
 }
 #[doc = "VBUS_VALID_3V detector status The VBUS_VALID_3V detector has a lower threshold for the voltage on the USB1_VBUS pin than either the Session Valid or VBUS_VALID comparators\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VbusValid3v {
     #[doc = "0: VBUS voltage is below VBUS_VALID_3V threshold"]
@@ -205,6 +210,18 @@ impl R {
     #[inline(always)]
     pub fn vbus_valid_3v(&self) -> VbusValid3vR {
         VbusValid3vR::new(((self.bits >> 4) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("USB1_VBUS_DET_STAT")
+            .field("sessend", &self.sessend())
+            .field("bvalid", &self.bvalid())
+            .field("avalid", &self.avalid())
+            .field("vbus_valid", &self.vbus_valid())
+            .field("vbus_valid_3v", &self.vbus_valid_3v())
+            .finish()
     }
 }
 #[doc = "USB PHY VBUS Detector Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`usb1_vbus_det_stat::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

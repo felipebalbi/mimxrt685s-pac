@@ -166,6 +166,31 @@ impl R {
         VioInfoValid17R::new(((self.bits >> 17) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SEC_VIO_INFO_VALID")
+            .field("vio_info_valid0", &self.vio_info_valid0())
+            .field("vio_info_valid1", &self.vio_info_valid1())
+            .field("vio_info_valid2", &self.vio_info_valid2())
+            .field("vio_info_valid3", &self.vio_info_valid3())
+            .field("vio_info_valid4", &self.vio_info_valid4())
+            .field("vio_info_valid5", &self.vio_info_valid5())
+            .field("vio_info_valid6", &self.vio_info_valid6())
+            .field("vio_info_valid7", &self.vio_info_valid7())
+            .field("vio_info_valid8", &self.vio_info_valid8())
+            .field("vio_info_valid9", &self.vio_info_valid9())
+            .field("vio_info_valid10", &self.vio_info_valid10())
+            .field("vio_info_valid11", &self.vio_info_valid11())
+            .field("vio_info_valid12", &self.vio_info_valid12())
+            .field("vio_info_valid13", &self.vio_info_valid13())
+            .field("vio_info_valid14", &self.vio_info_valid14())
+            .field("vio_info_valid15", &self.vio_info_valid15())
+            .field("vio_info_valid16", &self.vio_info_valid16())
+            .field("vio_info_valid17", &self.vio_info_valid17())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - violation information valid flag for AHB layer 0. 0: not valid. 1: valid (violation occurred). Write 1 to clear."]
     #[inline(always)]

@@ -19,6 +19,14 @@ of the base address are defined as 0x00."]
         BaddrR::new((self.bits >> 5) & 0x07ff_ffff)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("RBAR")
+            .field("baddr", &self.baddr())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 5:31 - Base address. Holds bits\\[31:5\\]
 of the base address for the selected SAU region. Bits\\[4:0\\]

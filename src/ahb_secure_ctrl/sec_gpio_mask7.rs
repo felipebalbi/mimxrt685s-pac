@@ -292,6 +292,45 @@ impl R {
         Pio7Pin31SecMaskR::new(((self.bits >> 31) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SEC_GPIO_MASK7")
+            .field("pio7_pin0_sec_mask", &self.pio7_pin0_sec_mask())
+            .field("pio7_pin1_sec_mask", &self.pio7_pin1_sec_mask())
+            .field("pio7_pin2_sec_mask", &self.pio7_pin2_sec_mask())
+            .field("pio7_pin3_sec_mask", &self.pio7_pin3_sec_mask())
+            .field("pio7_pin4_sec_mask", &self.pio7_pin4_sec_mask())
+            .field("pio7_pin5_sec_mask", &self.pio7_pin5_sec_mask())
+            .field("pio7_pin6_sec_mask", &self.pio7_pin6_sec_mask())
+            .field("pio7_pin7_sec_mask", &self.pio7_pin7_sec_mask())
+            .field("pio7_pin8_sec_mask", &self.pio7_pin8_sec_mask())
+            .field("pio7_pin9_sec_mask", &self.pio7_pin9_sec_mask())
+            .field("pio7_pin10_sec_mask", &self.pio7_pin10_sec_mask())
+            .field("pio7_pin11_sec_mask", &self.pio7_pin11_sec_mask())
+            .field("pio7_pin12_sec_mask", &self.pio7_pin12_sec_mask())
+            .field("pio7_pin13_sec_mask", &self.pio7_pin13_sec_mask())
+            .field("pio7_pin14_sec_mask", &self.pio7_pin14_sec_mask())
+            .field("pio7_pin15_sec_mask", &self.pio7_pin15_sec_mask())
+            .field("pio7_pin16_sec_mask", &self.pio7_pin16_sec_mask())
+            .field("pio7_pin17_sec_mask", &self.pio7_pin17_sec_mask())
+            .field("pio7_pin18_sec_mask", &self.pio7_pin18_sec_mask())
+            .field("pio7_pin19_sec_mask", &self.pio7_pin19_sec_mask())
+            .field("pio7_pin20_sec_mask", &self.pio7_pin20_sec_mask())
+            .field("pio7_pin21_sec_mask", &self.pio7_pin21_sec_mask())
+            .field("pio7_pin22_sec_mask", &self.pio7_pin22_sec_mask())
+            .field("pio7_pin23_sec_mask", &self.pio7_pin23_sec_mask())
+            .field("pio7_pin24_sec_mask", &self.pio7_pin24_sec_mask())
+            .field("pio7_pin25_sec_mask", &self.pio7_pin25_sec_mask())
+            .field("pio7_pin26_sec_mask", &self.pio7_pin26_sec_mask())
+            .field("pio7_pin27_sec_mask", &self.pio7_pin27_sec_mask())
+            .field("pio7_pin28_sec_mask", &self.pio7_pin28_sec_mask())
+            .field("pio7_pin29_sec_mask", &self.pio7_pin29_sec_mask())
+            .field("pio7_pin30_sec_mask", &self.pio7_pin30_sec_mask())
+            .field("pio7_pin31_sec_mask", &self.pio7_pin31_sec_mask())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - 0 : Pin PIO7_0 state is readable by non-secure world through non-secure GPIO port control registers"]
     #[inline(always)]

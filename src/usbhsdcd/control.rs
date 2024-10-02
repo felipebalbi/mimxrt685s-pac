@@ -3,6 +3,7 @@ pub type R = crate::R<ControlSpec>;
 #[doc = "Register `CONTROL` writer"]
 pub type W = crate::W<ControlSpec>;
 #[doc = "Interrupt Acknowledge\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Iack {
     #[doc = "0: Do not clear the interrupt."]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Interrupt Flag\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum If {
     #[doc = "0: No interrupt is pending."]
@@ -92,6 +94,7 @@ impl IfR {
     }
 }
 #[doc = "Interrupt Enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ie {
     #[doc = "0: Disable interrupts to the system."]
@@ -145,6 +148,7 @@ where
     }
 }
 #[doc = "BC12\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Bc12 {
     #[doc = "0: Compatible with BC1.1 (default)"]
@@ -198,6 +202,7 @@ where
     }
 }
 #[doc = "Start Change Detection Sequence\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Start {
     #[doc = "0: Do not start the sequence. Writes of this value have no effect."]
@@ -251,6 +256,7 @@ where
     }
 }
 #[doc = "Software Reset\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sr {
     #[doc = "0: Do not perform a software reset."]
@@ -333,6 +339,19 @@ impl R {
     #[inline(always)]
     pub fn sr(&self) -> SrR {
         SrR::new(((self.bits >> 25) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CONTROL")
+            .field("iack", &self.iack())
+            .field("if_", &self.if_())
+            .field("ie", &self.ie())
+            .field("bc12", &self.bc12())
+            .field("start", &self.start())
+            .field("sr", &self.sr())
+            .finish()
     }
 }
 impl W {

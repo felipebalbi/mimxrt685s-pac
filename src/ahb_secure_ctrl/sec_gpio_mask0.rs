@@ -292,6 +292,45 @@ impl R {
         Pio0Pin31SecMaskR::new(((self.bits >> 31) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SEC_GPIO_MASK0")
+            .field("pio0_pin0_sec_mask", &self.pio0_pin0_sec_mask())
+            .field("pio0_pin1_sec_mask", &self.pio0_pin1_sec_mask())
+            .field("pio0_pin2_sec_mask", &self.pio0_pin2_sec_mask())
+            .field("pio0_pin3_sec_mask", &self.pio0_pin3_sec_mask())
+            .field("pio0_pin4_sec_mask", &self.pio0_pin4_sec_mask())
+            .field("pio0_pin5_sec_mask", &self.pio0_pin5_sec_mask())
+            .field("pio0_pin6_sec_mask", &self.pio0_pin6_sec_mask())
+            .field("pio0_pin7_sec_mask", &self.pio0_pin7_sec_mask())
+            .field("pio0_pin8_sec_mask", &self.pio0_pin8_sec_mask())
+            .field("pio0_pin9_sec_mask", &self.pio0_pin9_sec_mask())
+            .field("pio0_pin10_sec_mask", &self.pio0_pin10_sec_mask())
+            .field("pio0_pin11_sec_mask", &self.pio0_pin11_sec_mask())
+            .field("pio0_pin12_sec_mask", &self.pio0_pin12_sec_mask())
+            .field("pio0_pin13_sec_mask", &self.pio0_pin13_sec_mask())
+            .field("pio0_pin14_sec_mask", &self.pio0_pin14_sec_mask())
+            .field("pio0_pin15_sec_mask", &self.pio0_pin15_sec_mask())
+            .field("pio0_pin16_sec_mask", &self.pio0_pin16_sec_mask())
+            .field("pio0_pin17_sec_mask", &self.pio0_pin17_sec_mask())
+            .field("pio0_pin18_sec_mask", &self.pio0_pin18_sec_mask())
+            .field("pio0_pin19_sec_mask", &self.pio0_pin19_sec_mask())
+            .field("pio0_pin20_sec_mask", &self.pio0_pin20_sec_mask())
+            .field("pio0_pin21_sec_mask", &self.pio0_pin21_sec_mask())
+            .field("pio0_pin22_sec_mask", &self.pio0_pin22_sec_mask())
+            .field("pio0_pin23_sec_mask", &self.pio0_pin23_sec_mask())
+            .field("pio0_pin24_sec_mask", &self.pio0_pin24_sec_mask())
+            .field("pio0_pin25_sec_mask", &self.pio0_pin25_sec_mask())
+            .field("pio0_pin26_sec_mask", &self.pio0_pin26_sec_mask())
+            .field("pio0_pin27_sec_mask", &self.pio0_pin27_sec_mask())
+            .field("pio0_pin28_sec_mask", &self.pio0_pin28_sec_mask())
+            .field("pio0_pin29_sec_mask", &self.pio0_pin29_sec_mask())
+            .field("pio0_pin30_sec_mask", &self.pio0_pin30_sec_mask())
+            .field("pio0_pin31_sec_mask", &self.pio0_pin31_sec_mask())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - 0 : Pin PIO0_0 state is readable by non-secure world through non-secure GPIO port control registers"]
     #[inline(always)]

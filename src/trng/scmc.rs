@@ -9,6 +9,14 @@ impl R {
         MonoCtR::new((self.bits & 0xffff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SCMC")
+            .field("mono_ct", &self.mono_ct())
+            .finish()
+    }
+}
 #[doc = "Statistical Check Monobit Count Register\n\nYou can [`read`](crate::Reg::read) this register and get [`scmc::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct ScmcSpec;
 impl crate::RegisterSpec for ScmcSpec {

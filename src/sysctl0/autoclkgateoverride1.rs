@@ -3,6 +3,7 @@ pub type R = crate::R<Autoclkgateoverride1Spec>;
 #[doc = "Register `AUTOCLKGATEOVERRIDE1` writer"]
 pub type W = crate::W<Autoclkgateoverride1Spec>;
 #[doc = "auto clock gating enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf0 {
     #[doc = "0: Enable Auto-Clk"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "auto clock gating enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf1 {
     #[doc = "0: Enable Auto-Clk"]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "auto clock gating enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf2 {
     #[doc = "0: Enable Auto-Clk"]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "auto clock gating enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf3 {
     #[doc = "0: Enable Auto-Clk"]
@@ -215,6 +219,7 @@ where
     }
 }
 #[doc = "auto clock gating enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf4 {
     #[doc = "0: Enable Auto-Clk"]
@@ -268,6 +273,7 @@ where
     }
 }
 #[doc = "auto clock gating enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf5 {
     #[doc = "0: Enable Auto-Clk"]
@@ -321,6 +327,7 @@ where
     }
 }
 #[doc = "auto clock gating enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf6 {
     #[doc = "0: Enable Auto-Clk"]
@@ -374,6 +381,7 @@ where
     }
 }
 #[doc = "auto clock gating enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf7 {
     #[doc = "0: Enable Auto-Clk"]
@@ -427,6 +435,7 @@ where
     }
 }
 #[doc = "auto clock gating enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf8 {
     #[doc = "0: Enable Auto-Clk"]
@@ -480,6 +489,7 @@ where
     }
 }
 #[doc = "auto clock gating enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf9 {
     #[doc = "0: Enable Auto-Clk"]
@@ -533,6 +543,7 @@ where
     }
 }
 #[doc = "auto clock gating enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf10 {
     #[doc = "0: Enable Auto-Clk"]
@@ -586,6 +597,7 @@ where
     }
 }
 #[doc = "auto clock gating enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf11 {
     #[doc = "0: Enable Auto-Clk"]
@@ -639,6 +651,7 @@ where
     }
 }
 #[doc = "auto clock gating enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf12 {
     #[doc = "0: Enable Auto-Clk"]
@@ -692,6 +705,7 @@ where
     }
 }
 #[doc = "auto clock gating enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf13 {
     #[doc = "0: Enable Auto-Clk"]
@@ -745,6 +759,7 @@ where
     }
 }
 #[doc = "auto clock gating enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf14 {
     #[doc = "0: Enable Auto-Clk"]
@@ -798,6 +813,7 @@ where
     }
 }
 #[doc = "auto clock gating enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf15 {
     #[doc = "0: Enable Auto-Clk"]
@@ -851,6 +867,7 @@ where
     }
 }
 #[doc = "auto clock gating enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf16 {
     #[doc = "0: Enable Auto-Clk"]
@@ -904,6 +921,7 @@ where
     }
 }
 #[doc = "auto clock gating enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf17 {
     #[doc = "0: Enable Auto-Clk"]
@@ -961,6 +979,7 @@ pub type SramIf18R = crate::BitReader;
 #[doc = "Field `SRAM_IF18` writer - auto clock gating enable"]
 pub type SramIf18W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "auto clock gating enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf19 {
     #[doc = "0: Enable Auto-Clk"]
@@ -1014,6 +1033,7 @@ where
     }
 }
 #[doc = "auto clock gating enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf20 {
     #[doc = "0: Enable Auto-Clk"]
@@ -1067,6 +1087,7 @@ where
     }
 }
 #[doc = "auto clock gating enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf21 {
     #[doc = "0: Enable Auto-Clk"]
@@ -1120,6 +1141,7 @@ where
     }
 }
 #[doc = "auto clock gating enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf22 {
     #[doc = "0: Enable Auto-Clk"]
@@ -1173,6 +1195,7 @@ where
     }
 }
 #[doc = "auto clock gating enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf23 {
     #[doc = "0: Enable Auto-Clk"]
@@ -1226,6 +1249,7 @@ where
     }
 }
 #[doc = "auto clock gating enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf24 {
     #[doc = "0: Enable Auto-Clk"]
@@ -1279,6 +1303,7 @@ where
     }
 }
 #[doc = "auto clock gating enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf25 {
     #[doc = "0: Enable Auto-Clk"]
@@ -1332,6 +1357,7 @@ where
     }
 }
 #[doc = "auto clock gating enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf26 {
     #[doc = "0: Enable Auto-Clk"]
@@ -1385,6 +1411,7 @@ where
     }
 }
 #[doc = "auto clock gating enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf27 {
     #[doc = "0: Enable Auto-Clk"]
@@ -1438,6 +1465,7 @@ where
     }
 }
 #[doc = "auto clock gating enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf28 {
     #[doc = "0: Enable Auto-Clk"]
@@ -1491,6 +1519,7 @@ where
     }
 }
 #[doc = "auto clock gating enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramIf29 {
     #[doc = "0: Enable Auto-Clk"]
@@ -1693,6 +1722,43 @@ impl R {
     #[inline(always)]
     pub fn sram_if29(&self) -> SramIf29R {
         SramIf29R::new(((self.bits >> 29) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("AUTOCLKGATEOVERRIDE1")
+            .field("sram_if0", &self.sram_if0())
+            .field("sram_if1", &self.sram_if1())
+            .field("sram_if2", &self.sram_if2())
+            .field("sram_if3", &self.sram_if3())
+            .field("sram_if4", &self.sram_if4())
+            .field("sram_if5", &self.sram_if5())
+            .field("sram_if6", &self.sram_if6())
+            .field("sram_if7", &self.sram_if7())
+            .field("sram_if8", &self.sram_if8())
+            .field("sram_if9", &self.sram_if9())
+            .field("sram_if10", &self.sram_if10())
+            .field("sram_if11", &self.sram_if11())
+            .field("sram_if12", &self.sram_if12())
+            .field("sram_if13", &self.sram_if13())
+            .field("sram_if14", &self.sram_if14())
+            .field("sram_if15", &self.sram_if15())
+            .field("sram_if16", &self.sram_if16())
+            .field("sram_if17", &self.sram_if17())
+            .field("sram_if18", &self.sram_if18())
+            .field("sram_if19", &self.sram_if19())
+            .field("sram_if20", &self.sram_if20())
+            .field("sram_if21", &self.sram_if21())
+            .field("sram_if22", &self.sram_if22())
+            .field("sram_if23", &self.sram_if23())
+            .field("sram_if24", &self.sram_if24())
+            .field("sram_if25", &self.sram_if25())
+            .field("sram_if26", &self.sram_if26())
+            .field("sram_if27", &self.sram_if27())
+            .field("sram_if28", &self.sram_if28())
+            .field("sram_if29", &self.sram_if29())
+            .finish()
     }
 }
 impl W {

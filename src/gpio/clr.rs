@@ -2,6 +2,12 @@
 pub type W = crate::W<ClrSpec>;
 #[doc = "Field `CLRP` writer - Clear output bits (bit 0 = PIOn_0, bit 1 = PIOn_1, etc.). Supported pins depends on the specific device and package. 0 = No operation. 1 = Clear output bit."]
 pub type ClrpW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for crate::generic::Reg<ClrSpec> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
+    }
+}
 impl W {
     #[doc = "Bits 0:31 - Clear output bits (bit 0 = PIOn_0, bit 1 = PIOn_1, etc.). Supported pins depends on the specific device and package. 0 = No operation. 1 = Clear output bit."]
     #[inline(always)]

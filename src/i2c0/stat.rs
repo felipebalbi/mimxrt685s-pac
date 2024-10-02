@@ -3,6 +3,7 @@ pub type R = crate::R<StatSpec>;
 #[doc = "Register `STAT` writer"]
 pub type W = crate::W<StatSpec>;
 #[doc = "Master Pending. Indicates that the Master is waiting to continue communication on the I2C-bus (pending) or is idle. When the master is pending, the MSTSTATE bits indicate what type of software service if any the master expects. This flag will cause an interrupt when set if, enabled via the INTENSET register. The MSTPENDING flag is not set when the DMA is handling an event (if the MSTDMA bit in the MSTCTL register is set). If the master is in the idle state, and no communication is needed, mask this interrupt.\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Mstpending {
     #[doc = "0: In progress. Communication is in progress and the Master function is busy and cannot currently accept a command."]
@@ -39,6 +40,7 @@ impl MstpendingR {
     }
 }
 #[doc = "Master State code. The master state code reflects the master state when the MSTPENDING bit is set, that is the master is pending or in the idle state. Each value of this field indicates a specific required service for the Master function. All other values are reserved. See Table 400 for details of state values and appropriate responses.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Mststate {
@@ -105,6 +107,7 @@ impl MststateR {
     }
 }
 #[doc = "Master Arbitration Loss flag. This flag can be cleared by software writing a 1 to this bit. It is also cleared automatically a 1 is written to MSTCONTINUE.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Mstarbloss {
     #[doc = "0: No Arbitration Loss has occurred."]
@@ -158,6 +161,7 @@ where
     }
 }
 #[doc = "Master Start/Stop Error flag. This flag can be cleared by software writing a 1 to this bit. It is also cleared automatically a 1 is written to MSTCONTINUE.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Mstststperr {
     #[doc = "0: No Start/Stop Error has occurred."]
@@ -211,6 +215,7 @@ where
     }
 }
 #[doc = "Slave Pending. Indicates that the Slave function is waiting to continue communication on the I2C-bus and needs software service. This flag will cause an interrupt when set if enabled via INTENSET. The SLVPENDING flag is not set when the DMA is handling an event (if the SLVDMA bit in the SLVCTL register is set). The SLVPENDING flag is read-only and is automatically cleared when a 1 is written to the SLVCONTINUE bit in the SLVCTL register. The point in time when SlvPending is set depends on whether the I2C interface is in HSCAPABLE mode. See Section 25.7.2.2.2. When the I2C interface is configured to be HSCAPABLE, HS master codes are detected automatically. Due to the requirements of the HS I2C specification, slave addresses must also be detected automatically, since the address must be acknowledged before the clock can be stretched.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Slvpending {
     #[doc = "0: In progress. The Slave function does not currently need service."]
@@ -247,6 +252,7 @@ impl SlvpendingR {
     }
 }
 #[doc = "Slave State code. Each value of this field indicates a specific required service for the Slave function. All other values are reserved. See Table 401 for state values and actions. note that the occurrence of some states and how they are handled are affected by DMA mode and Automatic Operation modes.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Slvstate {
@@ -297,6 +303,7 @@ impl SlvstateR {
     }
 }
 #[doc = "Slave Not Stretching. Indicates when the slave function is stretching the I2C clock. This is needed in order to gracefully invoke Deep Sleep or Power-down modes during slave operation. This read-only flag reflects the slave function status in real time.\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Slvnotstr {
     #[doc = "0: Stretching. The slave function is currently stretching the I2C bus clock. Deep-Sleep or Power-down mode cannot be entered at this time."]
@@ -333,6 +340,7 @@ impl SlvnotstrR {
     }
 }
 #[doc = "Slave address match Index. This field is valid when the I2C slave function has been selected by receiving an address that matches one of the slave addresses defined by any enabled slave address registers, and provides an identification of the address that was matched. It is possible that more than one address could be matched, but only one match can be reported here.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Slvidx {
@@ -391,6 +399,7 @@ impl SlvidxR {
     }
 }
 #[doc = "Slave selected flag. SLVSEL is set after an address match when software tells the Slave function to acknowledge the address, or when the address has been automatically acknowledged. It is cleared when another address cycle presents an address that does not match an enabled address on the Slave function, when slave software decides to NACK a matched address, when there is a Stop detected on the bus, when the master NACKs slave data, and in some combinations of Automatic Operation. SLVSEL is not cleared if software NACKs data.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Slvsel {
     #[doc = "0: Not selected. The Slave function is not currently selected."]
@@ -427,6 +436,7 @@ impl SlvselR {
     }
 }
 #[doc = "Slave Deselected flag. This flag will cause an interrupt when set if enabled via INTENSET. This flag can be cleared by writing a 1 to this bit.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Slvdesel {
     #[doc = "0: Not deselected. The Slave function has not become deselected. This does not mean that it is currently selected. That information can be found in the SLVSEL flag."]
@@ -480,6 +490,7 @@ where
     }
 }
 #[doc = "Monitor Ready. This flag is cleared when the MONRXDAT register is read.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Monrdy {
     #[doc = "0: No data. The Monitor function does not currently have data available."]
@@ -516,6 +527,7 @@ impl MonrdyR {
     }
 }
 #[doc = "Monitor Overflow flag.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Monov {
     #[doc = "0: No overrun. Monitor data has not overrun."]
@@ -569,6 +581,7 @@ where
     }
 }
 #[doc = "Monitor Active flag. Indicates when the Monitor function considers the I 2C bus to be active. Active is defined here as when some Master is on the bus: a bus Start has occurred more recently than a bus Stop.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Monactive {
     #[doc = "0: Inactive. The Monitor function considers the I2C bus to be inactive."]
@@ -605,6 +618,7 @@ impl MonactiveR {
     }
 }
 #[doc = "Monitor Idle flag. This flag is set when the Monitor function sees the I2C bus change from active to inactive. This can be used by software to decide when to process data accumulated by the Monitor function. This flag will cause an interrupt when set if enabled via the INTENSET register. The flag can be cleared by writing a 1 to this bit.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Monidle {
     #[doc = "0: Not idle. The I2C bus is not idle, or this flag has been cleared by software."]
@@ -658,6 +672,7 @@ where
     }
 }
 #[doc = "Event Time-out Interrupt flag. Indicates when the time between events has been longer than the time specified by the TIMEOUT register. Events include Start, Stop, and clock edges. The flag is cleared by writing a 1 to this bit. No time-out is created when the I2C-bus is idle.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Eventtimeout {
     #[doc = "0: No time-out. I2C bus events have not caused a time-out."]
@@ -711,6 +726,7 @@ where
     }
 }
 #[doc = "SCL Time-out Interrupt flag. Indicates when SCL has remained low longer than the time specific by the TIMEOUT register. The flag is cleared by writing a 1 to this bit.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Scltimeout {
     #[doc = "0: No time-out. SCL low time has not caused a time-out."]
@@ -843,6 +859,29 @@ impl R {
     #[inline(always)]
     pub fn scltimeout(&self) -> ScltimeoutR {
         ScltimeoutR::new(((self.bits >> 25) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("STAT")
+            .field("mstpending", &self.mstpending())
+            .field("mststate", &self.mststate())
+            .field("mstarbloss", &self.mstarbloss())
+            .field("mstststperr", &self.mstststperr())
+            .field("slvpending", &self.slvpending())
+            .field("slvstate", &self.slvstate())
+            .field("slvnotstr", &self.slvnotstr())
+            .field("slvidx", &self.slvidx())
+            .field("slvsel", &self.slvsel())
+            .field("slvdesel", &self.slvdesel())
+            .field("monrdy", &self.monrdy())
+            .field("monov", &self.monov())
+            .field("monactive", &self.monactive())
+            .field("monidle", &self.monidle())
+            .field("eventtimeout", &self.eventtimeout())
+            .field("scltimeout", &self.scltimeout())
+            .finish()
     }
 }
 impl W {

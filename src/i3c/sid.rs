@@ -9,6 +9,12 @@ impl R {
         IdR::new(self.bits)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SID").field("id", &self.id()).finish()
+    }
+}
 #[doc = "Slave Module ID Register\n\nYou can [`read`](crate::Reg::read) this register and get [`sid::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SidSpec;
 impl crate::RegisterSpec for SidSpec {

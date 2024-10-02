@@ -31,6 +31,16 @@ impl R {
         InbScalerR::new(((self.bits >> 8) & 0xff) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("INBFORMAT")
+            .field("inb_formatint", &self.inb_formatint())
+            .field("inb_formatext", &self.inb_formatext())
+            .field("inb_scaler", &self.inb_scaler())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:1 - Input B Internal format (00: q15; 01:q31; 10:float)"]
     #[inline(always)]

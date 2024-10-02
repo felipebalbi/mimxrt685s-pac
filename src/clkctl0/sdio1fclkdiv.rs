@@ -40,6 +40,17 @@ impl R {
         ReqflagR::new(((self.bits >> 31) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SDIO1FCLKDIV")
+            .field("div", &self.div())
+            .field("reset", &self.reset())
+            .field("halt", &self.halt())
+            .field("reqflag", &self.reqflag())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:7 - Clock Divider Value Selection. . . 0: Divide by 1. ... 255: Divide by 256."]
     #[inline(always)]

@@ -13,6 +13,14 @@ impl R {
         HaltR::new(((self.bits >> 30) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("WAKECLK32KHZDIV")
+            .field("halt", &self.halt())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 30 - Halts the divider counter. The intent is to allow the divider's clock source to be changed without the risk of a glitch at the output."]
     #[inline(always)]

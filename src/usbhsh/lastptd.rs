@@ -31,6 +31,16 @@ impl R {
         IntLastR::new(((self.bits >> 16) & 0x1f) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("LASTPTD")
+            .field("atl_last", &self.atl_last())
+            .field("iso_last", &self.iso_last())
+            .field("int_last", &self.int_last())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:4 - If hardware has reached this PTD and the J bit is not set, it will go to PTD0 as the next PTD to be processed."]
     #[inline(always)]

@@ -226,6 +226,45 @@ impl R {
         Sin15R::new(((self.bits >> 31) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("INPUT")
+            .field("ain0", &self.ain0())
+            .field("ain1", &self.ain1())
+            .field("ain2", &self.ain2())
+            .field("ain3", &self.ain3())
+            .field("ain4", &self.ain4())
+            .field("ain5", &self.ain5())
+            .field("ain6", &self.ain6())
+            .field("ain7", &self.ain7())
+            .field("ain8", &self.ain8())
+            .field("ain9", &self.ain9())
+            .field("ain10", &self.ain10())
+            .field("ain11", &self.ain11())
+            .field("ain12", &self.ain12())
+            .field("ain13", &self.ain13())
+            .field("ain14", &self.ain14())
+            .field("ain15", &self.ain15())
+            .field("sin0", &self.sin0())
+            .field("sin1", &self.sin1())
+            .field("sin2", &self.sin2())
+            .field("sin3", &self.sin3())
+            .field("sin4", &self.sin4())
+            .field("sin5", &self.sin5())
+            .field("sin6", &self.sin6())
+            .field("sin7", &self.sin7())
+            .field("sin8", &self.sin8())
+            .field("sin9", &self.sin9())
+            .field("sin10", &self.sin10())
+            .field("sin11", &self.sin11())
+            .field("sin12", &self.sin12())
+            .field("sin13", &self.sin13())
+            .field("sin14", &self.sin14())
+            .field("sin15", &self.sin15())
+            .finish()
+    }
+}
 #[doc = "SCT input register\n\nYou can [`read`](crate::Reg::read) this register and get [`input::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct InputSpec;
 impl crate::RegisterSpec for InputSpec {

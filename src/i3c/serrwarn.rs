@@ -103,6 +103,24 @@ impl R {
         OwriteR::new(((self.bits >> 17) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SERRWARN")
+            .field("orun", &self.orun())
+            .field("urun", &self.urun())
+            .field("urunnack", &self.urunnack())
+            .field("term", &self.term())
+            .field("invstart", &self.invstart())
+            .field("spar", &self.spar())
+            .field("hpar", &self.hpar())
+            .field("hcrc", &self.hcrc())
+            .field("s0s1", &self.s0s1())
+            .field("oread", &self.oread())
+            .field("owrite", &self.owrite())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Overrun error"]
     #[inline(always)]

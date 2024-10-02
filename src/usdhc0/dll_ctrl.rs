@@ -94,6 +94,26 @@ impl R {
         DllCtrlRefUpdateIntR::new(((self.bits >> 28) & 0x0f) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DLL_CTRL")
+            .field("dll_ctrl_enable", &self.dll_ctrl_enable())
+            .field("dll_ctrl_reset", &self.dll_ctrl_reset())
+            .field("dll_ctrl_slv_force_upd", &self.dll_ctrl_slv_force_upd())
+            .field("dll_ctrl_slv_dly_target0", &self.dll_ctrl_slv_dly_target0())
+            .field("dll_ctrl_gate_update", &self.dll_ctrl_gate_update())
+            .field("dll_ctrl_slv_override", &self.dll_ctrl_slv_override())
+            .field(
+                "dll_ctrl_slv_override_val",
+                &self.dll_ctrl_slv_override_val(),
+            )
+            .field("dll_ctrl_slv_dly_target1", &self.dll_ctrl_slv_dly_target1())
+            .field("dll_ctrl_slv_update_int", &self.dll_ctrl_slv_update_int())
+            .field("dll_ctrl_ref_update_int", &self.dll_ctrl_ref_update_int())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - DLL_CTRL_ENABLE"]
     #[inline(always)]

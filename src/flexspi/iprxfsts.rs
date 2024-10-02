@@ -16,6 +16,15 @@ impl R {
         RdcntrR::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IPRXFSTS")
+            .field("fill", &self.fill())
+            .field("rdcntr", &self.rdcntr())
+            .finish()
+    }
+}
 #[doc = "IP RX FIFO Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`iprxfsts::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IprxfstsSpec;
 impl crate::RegisterSpec for IprxfstsSpec {

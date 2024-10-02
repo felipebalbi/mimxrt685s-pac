@@ -3,6 +3,7 @@ pub type R = crate::R<VendSpec2Spec>;
 #[doc = "Register `VEND_SPEC2` writer"]
 pub type W = crate::W<VendSpec2Spec>;
 #[doc = "Card Interrupt Detection Test\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CardIntD3Test {
     #[doc = "0: Check the card interrupt only when DATA3 is high."]
@@ -64,6 +65,7 @@ pub type Tuning1bitEnR = crate::BitReader;
 #[doc = "Field `TUNING_1bit_EN` writer - TUNING_1bit_EN"]
 pub type Tuning1bitEnW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "TUNING_CMD_EN\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TuningCmdEn {
     #[doc = "0: Auto tuning circuit does not check the CMD line."]
@@ -125,6 +127,7 @@ pub type Hs400RdClkStopEnR = crate::BitReader;
 #[doc = "Field `HS400_RD_CLK_STOP_EN` writer - HS400 Read Clock Stop Enable"]
 pub type Hs400RdClkStopEnW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Argument2 register enable for ACMD23\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Acmd23Argu2En {
     #[doc = "0: Disable"]
@@ -221,6 +224,21 @@ impl R {
     #[inline(always)]
     pub fn ahb_rst(&self) -> AhbRstR {
         AhbRstR::new(((self.bits >> 14) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("VEND_SPEC2")
+            .field("card_int_d3_test", &self.card_int_d3_test())
+            .field("tuning_8bit_en", &self.tuning_8bit_en())
+            .field("tuning_1bit_en", &self.tuning_1bit_en())
+            .field("tuning_cmd_en", &self.tuning_cmd_en())
+            .field("hs400_wr_clk_stop_en", &self.hs400_wr_clk_stop_en())
+            .field("hs400_rd_clk_stop_en", &self.hs400_rd_clk_stop_en())
+            .field("acmd23_argu2_en", &self.acmd23_argu2_en())
+            .field("ahb_rst", &self.ahb_rst())
+            .finish()
     }
 }
 impl W {

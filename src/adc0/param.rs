@@ -3,6 +3,7 @@ pub type R = crate::R<ParamSpec>;
 #[doc = "Field `TRIG_NUM` reader - Trigger Number"]
 pub type TrigNumR = crate::FieldReader;
 #[doc = "Result FIFO Depth\n\nValue on reset: 16"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Fifosize {
@@ -100,6 +101,17 @@ impl R {
     #[inline(always)]
     pub fn cmd_num(&self) -> CmdNumR {
         CmdNumR::new(((self.bits >> 24) & 0xff) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PARAM")
+            .field("trig_num", &self.trig_num())
+            .field("fifosize", &self.fifosize())
+            .field("cv_num", &self.cv_num())
+            .field("cmd_num", &self.cmd_num())
+            .finish()
     }
 }
 #[doc = "Parameter Register\n\nYou can [`read`](crate::Reg::read) this register and get [`param::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

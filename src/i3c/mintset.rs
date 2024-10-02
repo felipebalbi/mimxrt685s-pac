@@ -76,6 +76,21 @@ impl R {
         NowmasterR::new(((self.bits >> 19) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("MINTSET")
+            .field("slvstart", &self.slvstart())
+            .field("mctrldone", &self.mctrldone())
+            .field("complete", &self.complete())
+            .field("rxpend", &self.rxpend())
+            .field("txnotfull", &self.txnotfull())
+            .field("ibiwon", &self.ibiwon())
+            .field("errwarn", &self.errwarn())
+            .field("nowmaster", &self.nowmaster())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 8 - Slave start interrupt enable"]
     #[inline(always)]

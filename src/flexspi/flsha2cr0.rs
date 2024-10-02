@@ -13,6 +13,14 @@ impl R {
         FlshszR::new(self.bits & 0x007f_ffff)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("FLSHA2CR0")
+            .field("flshsz", &self.flshsz())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:22 - Flash Size in KByte."]
     #[inline(always)]

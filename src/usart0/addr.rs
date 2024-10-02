@@ -13,6 +13,14 @@ impl R {
         AddressR::new((self.bits & 0xff) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ADDR")
+            .field("address", &self.address())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:7 - 8-bit address used with automatic address matching. Used when address detection is enabled (ADDRDET in CTL = 1) and automatic address matching is enabled (AUTOADDR in CFG = 1)."]
     #[inline(always)]

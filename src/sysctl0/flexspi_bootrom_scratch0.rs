@@ -13,6 +13,14 @@ impl R {
         ScratchR::new(self.bits)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("FLEXSPI_BOOTROM_SCRATCH0")
+            .field("scratch", &self.scratch())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:31 - no description available"]
     #[inline(always)]

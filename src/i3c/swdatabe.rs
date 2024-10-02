@@ -2,6 +2,12 @@
 pub type W = crate::W<SwdatabeSpec>;
 #[doc = "Field `DATA` writer - The data byte to send to the master"]
 pub type DataW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for crate::generic::Reg<SwdatabeSpec> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
+    }
+}
 impl W {
     #[doc = "Bits 0:7 - The data byte to send to the master"]
     #[inline(always)]

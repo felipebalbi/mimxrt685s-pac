@@ -13,6 +13,14 @@ impl R {
         PdmdivR::new((self.bits & 0x0f) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DIVHFCLK")
+            .field("pdmdiv", &self.pdmdiv())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:3 - Divide by factor to create PDM Clock (enumerated type)"]
     #[inline(always)]

@@ -13,6 +13,12 @@ impl R {
         BufR::new(((self.bits >> 2) & 0x03ff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("EPINUSE").field("buf", &self.buf()).finish()
+    }
+}
 impl W {
     #[doc = "Bits 2:11 - Buffer in use: This register has one bit per physical endpoint."]
     #[inline(always)]

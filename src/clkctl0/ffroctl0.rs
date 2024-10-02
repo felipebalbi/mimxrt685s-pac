@@ -15,6 +15,7 @@ pub type TrimFineR = crate::FieldReader;
 #[doc = "Field `TRIM_FINE` writer - Trims fine frequency of FFRO."]
 pub type TrimFineW<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "Trims frequency range of FFRO.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TrimRange {
@@ -94,6 +95,17 @@ impl R {
     #[inline(always)]
     pub fn trim_range(&self) -> TrimRangeR {
         TrimRangeR::new(((self.bits >> 18) & 3) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("FFROCTL0")
+            .field("trim_tempco", &self.trim_tempco())
+            .field("trim_coarse", &self.trim_coarse())
+            .field("trim_fine", &self.trim_fine())
+            .field("trim_range", &self.trim_range())
+            .finish()
     }
 }
 impl W {

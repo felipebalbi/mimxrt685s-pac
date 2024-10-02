@@ -3,6 +3,7 @@ pub type R = crate::R<MconfigSpec>;
 #[doc = "Register `MCONFIG` writer"]
 pub type W = crate::W<MconfigSpec>;
 #[doc = "Master enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Mstena {
@@ -80,6 +81,7 @@ pub type DistoR = crate::BitReader;
 #[doc = "Field `DISTO` writer - Disable Timeout"]
 pub type DistoW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "High-Keeper\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Hkeep {
@@ -243,6 +245,23 @@ impl R {
     #[inline(always)]
     pub fn i2cbaud(&self) -> I2cbaudR {
         I2cbaudR::new(((self.bits >> 28) & 0x0f) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("MCONFIG")
+            .field("mstena", &self.mstena())
+            .field("disto", &self.disto())
+            .field("hkeep", &self.hkeep())
+            .field("odstop", &self.odstop())
+            .field("ppbaud", &self.ppbaud())
+            .field("pplow", &self.pplow())
+            .field("odbaud", &self.odbaud())
+            .field("odhpp", &self.odhpp())
+            .field("skew", &self.skew())
+            .field("i2cbaud", &self.i2cbaud())
+            .finish()
     }
 }
 impl W {

@@ -40,6 +40,17 @@ impl R {
         UsbHsPhyRuleR::new(((self.bits >> 12) & 3) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("AIPS_BRIDGE1_MEM_RULE1")
+            .field("rng_rule", &self.rng_rule())
+            .field("acmp0_rule", &self.acmp0_rule())
+            .field("adc0_rule", &self.adc0_rule())
+            .field("usb_hs_phy_rule", &self.usb_hs_phy_rule())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:1 - 0x4013 8000--0x4013 8FFF"]
     #[inline(always)]

@@ -23,6 +23,16 @@ impl R {
         MajorR::new(((self.bits >> 24) & 0xff) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("VERSION")
+            .field("step", &self.step())
+            .field("minor", &self.minor())
+            .field("major", &self.major())
+            .finish()
+    }
+}
 #[doc = "UTMI RTL Version\n\nYou can [`read`](crate::Reg::read) this register and get [`version::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct VersionSpec;
 impl crate::RegisterSpec for VersionSpec {

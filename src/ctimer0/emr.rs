@@ -19,6 +19,7 @@ pub type Em3R = crate::BitReader;
 #[doc = "Field `EM3` writer - External Match 3. This bit reflects the state of output MAT3, whether or not this output is connected to a pin. When a match occurs between the TC and MR3, this bit can either toggle, go LOW, go HIGH, or do nothing, as selected by MR\\[11:10\\]. This bit is driven to the MAT pins if the match function is selected via IOCON. 0 = LOW. 1 = HIGH."]
 pub type Em3W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "External Match Control 0. Determines the functionality of External Match 0.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Emc0 {
@@ -105,6 +106,7 @@ where
     }
 }
 #[doc = "External Match Control 1. Determines the functionality of External Match 1.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Emc1 {
@@ -191,6 +193,7 @@ where
     }
 }
 #[doc = "External Match Control 2. Determines the functionality of External Match 2.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Emc2 {
@@ -277,6 +280,7 @@ where
     }
 }
 #[doc = "External Match Control 3. Determines the functionality of External Match 3.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Emc3 {
@@ -402,6 +406,21 @@ impl R {
     #[inline(always)]
     pub fn emc3(&self) -> Emc3R {
         Emc3R::new(((self.bits >> 10) & 3) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("EMR")
+            .field("em0", &self.em0())
+            .field("em1", &self.em1())
+            .field("em2", &self.em2())
+            .field("em3", &self.em3())
+            .field("emc0", &self.emc0())
+            .field("emc1", &self.emc1())
+            .field("emc2", &self.emc2())
+            .field("emc3", &self.emc3())
+            .finish()
     }
 }
 impl W {

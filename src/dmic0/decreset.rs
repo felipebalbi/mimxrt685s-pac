@@ -3,6 +3,7 @@ pub type R = crate::R<DecresetSpec>;
 #[doc = "Register `DECRESET` writer"]
 pub type W = crate::W<DecresetSpec>;
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Decreset {
@@ -67,6 +68,14 @@ impl R {
     #[inline(always)]
     pub fn decreset(&self) -> DecresetR {
         DecresetR::new((self.bits & 0xff) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DECRESET")
+            .field("decreset", &self.decreset())
+            .finish()
     }
 }
 impl W {

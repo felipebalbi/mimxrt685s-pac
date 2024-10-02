@@ -3,6 +3,7 @@ pub type R = crate::R<PmsrcSpec>;
 #[doc = "Register `PMSRC` writer"]
 pub type W = crate::W<PmsrcSpec>;
 #[doc = "Selects the input source for bit slice 0\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Src0 {
@@ -141,6 +142,7 @@ where
     }
 }
 #[doc = "Selects the input source for bit slice 1\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Src1 {
@@ -279,6 +281,7 @@ where
     }
 }
 #[doc = "Selects the input source for bit slice 2\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Src2 {
@@ -417,6 +420,7 @@ where
     }
 }
 #[doc = "Selects the input source for bit slice 3\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Src3 {
@@ -555,6 +559,7 @@ where
     }
 }
 #[doc = "Selects the input source for bit slice 4\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Src4 {
@@ -693,6 +698,7 @@ where
     }
 }
 #[doc = "Selects the input source for bit slice 5\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Src5 {
@@ -831,6 +837,7 @@ where
     }
 }
 #[doc = "Selects the input source for bit slice 6\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Src6 {
@@ -969,6 +976,7 @@ where
     }
 }
 #[doc = "Selects the input source for bit slice 7\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Src7 {
@@ -1146,6 +1154,21 @@ impl R {
     #[inline(always)]
     pub fn src7(&self) -> Src7R {
         Src7R::new(((self.bits >> 29) & 7) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PMSRC")
+            .field("src0", &self.src0())
+            .field("src1", &self.src1())
+            .field("src2", &self.src2())
+            .field("src3", &self.src3())
+            .field("src4", &self.src4())
+            .field("src5", &self.src5())
+            .field("src6", &self.src6())
+            .field("src7", &self.src7())
+            .finish()
     }
 }
 impl W {

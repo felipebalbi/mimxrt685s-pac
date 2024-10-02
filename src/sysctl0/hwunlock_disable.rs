@@ -13,6 +13,14 @@ impl R {
         HwunlockDisableR::new((self.bits & 0x0f) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("HWUNLOCK_DISABLE")
+            .field("hwunlock_disable", &self.hwunlock_disable())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:3 - HW Unlock / Disable: Disable the OTP unlock for test, Teal and DSP debug Write any value to disable the allow testmode signal/allow CPU0 debug signal/allow CPU1 debug signal"]
     #[inline(always)]

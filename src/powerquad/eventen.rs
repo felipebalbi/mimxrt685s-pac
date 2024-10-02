@@ -58,6 +58,19 @@ impl R {
         EventCompR::new(((self.bits >> 7) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("EVENTEN")
+            .field("event_oflow", &self.event_oflow())
+            .field("event_nan", &self.event_nan())
+            .field("event_fixed", &self.event_fixed())
+            .field("event_uflow", &self.event_uflow())
+            .field("event_berr", &self.event_berr())
+            .field("event_comp", &self.event_comp())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - 1 : Enable event trigger on Floating point overflow"]
     #[inline(always)]

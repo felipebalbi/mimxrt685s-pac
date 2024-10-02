@@ -3,6 +3,7 @@ pub type R = crate::R<StatusSpec>;
 #[doc = "Register `STATUS` writer"]
 pub type W = crate::W<StatusSpec>;
 #[doc = "If 1, the block is waiting for more data to process.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Waiting {
     #[doc = "0: Not waiting for data - may be disabled or may be busy. Note that for cryptographic uses, this is not set if IsLast is set nor will it set until at least 1 word is read of the output."]
@@ -39,6 +40,7 @@ impl WaitingR {
     }
 }
 #[doc = "For Hash, if 1 then a DIGEST is ready and waiting and there is no active next block already started. For Cryptographic uses, this will be set for each block processed, indicating OUTDATA (and OUTDATA2 if larger output) contains the next value to read out. This is cleared when any data is written, when New is written, for Cryptographic uses when the last word is read out, or when the block is disabled.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Digest {
     #[doc = "0: No Digest is ready"]
@@ -75,6 +77,7 @@ impl DigestR {
     }
 }
 #[doc = "If 1, an error occurred. For normal uses, this is due to an attempted overrun: INDATA was written when it was not appropriate. For Master cases, this is an AHB bus error; the COUNT field will indicate which block it was on.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Error {
     #[doc = "0: No error."]
@@ -128,6 +131,7 @@ where
     }
 }
 #[doc = "Indicates the block wants the key to be written in (set along with WAITING)\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Needkey {
     #[doc = "0: No Key is needed and writes will not be treated as Key"]
@@ -164,6 +168,7 @@ impl NeedkeyR {
     }
 }
 #[doc = "Indicates the block wants an IV/NONE to be written in (set along with WAITING)\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Neediv {
     #[doc = "0: No IV/Nonce is needed, either because written already or because not needed."]
@@ -231,6 +236,19 @@ impl R {
     #[inline(always)]
     pub fn icbidx(&self) -> IcbidxR {
         IcbidxR::new(((self.bits >> 16) & 0x3f) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("STATUS")
+            .field("waiting", &self.waiting())
+            .field("digest", &self.digest())
+            .field("error", &self.error())
+            .field("needkey", &self.needkey())
+            .field("neediv", &self.neediv())
+            .field("icbidx", &self.icbidx())
+            .finish()
     }
 }
 impl W {

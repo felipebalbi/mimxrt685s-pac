@@ -16,6 +16,15 @@ impl R {
         R6p1CtR::new(((self.bits >> 16) & 0x07ff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SCR6PC")
+            .field("r6p_0_ct", &self.r6p_0_ct())
+            .field("r6p_1_ct", &self.r6p_1_ct())
+            .finish()
+    }
+}
 #[doc = "Statistical Check Run Length 6+ Count Register\n\nYou can [`read`](crate::Reg::read) this register and get [`scr6pc::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Scr6pcSpec;
 impl crate::RegisterSpec for Scr6pcSpec {

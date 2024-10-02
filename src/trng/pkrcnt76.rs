@@ -16,6 +16,15 @@ impl R {
         Pkr7CtR::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PKRCNT76")
+            .field("pkr_6_ct", &self.pkr_6_ct())
+            .field("pkr_7_ct", &self.pkr_7_ct())
+            .finish()
+    }
+}
 #[doc = "Statistical Check Poker Count 7 and 6 Register\n\nYou can [`read`](crate::Reg::read) this register and get [`pkrcnt76::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Pkrcnt76Spec;
 impl crate::RegisterSpec for Pkrcnt76Spec {

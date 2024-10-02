@@ -3,6 +3,7 @@ pub type R = crate::R<Pscctl2Spec>;
 #[doc = "Register `PSCCTL2` writer"]
 pub type W = crate::W<Pscctl2Spec>;
 #[doc = "ct32bit timer 0 clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ct32bit0Clk {
     #[doc = "0: Disable Clock"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "ct32bit timer 1 clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ct32bit1Clk {
     #[doc = "0: Disable Clock"]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "ct32bit timer 2 clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ct32bit2Clk {
     #[doc = "0: Disable Clock"]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "ct32bit timer 3 clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ct32bit3Clk {
     #[doc = "0: Disable Clock"]
@@ -215,6 +219,7 @@ where
     }
 }
 #[doc = "ct32bit timer 4 clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ct32bit4Clk {
     #[doc = "0: Disable Clock"]
@@ -268,6 +273,7 @@ where
     }
 }
 #[doc = "rtc lite clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RtcLiteClk {
     #[doc = "0: Disable Clock"]
@@ -321,6 +327,7 @@ where
     }
 }
 #[doc = "mrt0 clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Mrt0Clk {
     #[doc = "0: Disable Clock"]
@@ -374,6 +381,7 @@ where
     }
 }
 #[doc = "wdt1 clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Wwdt1Clk {
     #[doc = "0: Disable Clock"]
@@ -427,6 +435,7 @@ where
     }
 }
 #[doc = "i3c0 clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum I3c0Clk {
     #[doc = "0: Disable Clock"]
@@ -480,6 +489,7 @@ where
     }
 }
 #[doc = "GPIOINTCTL clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum GpiointctlClk {
     #[doc = "0: Disable Clock"]
@@ -533,6 +543,7 @@ where
     }
 }
 #[doc = "PIMCTL clock control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PimctlClk {
     #[doc = "0: Disable Clock"]
@@ -640,6 +651,24 @@ impl R {
     #[inline(always)]
     pub fn pimctl_clk(&self) -> PimctlClkR {
         PimctlClkR::new(((self.bits >> 31) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PSCCTL2")
+            .field("ct32bit0_clk", &self.ct32bit0_clk())
+            .field("ct32bit1_clk", &self.ct32bit1_clk())
+            .field("ct32bit2_clk", &self.ct32bit2_clk())
+            .field("ct32bit3_clk", &self.ct32bit3_clk())
+            .field("ct32bit4_clk", &self.ct32bit4_clk())
+            .field("rtc_lite_clk", &self.rtc_lite_clk())
+            .field("mrt0_clk", &self.mrt0_clk())
+            .field("wwdt1_clk", &self.wwdt1_clk())
+            .field("i3c0_clk", &self.i3c0_clk())
+            .field("gpiointctl_clk", &self.gpiointctl_clk())
+            .field("pimctl_clk", &self.pimctl_clk())
+            .finish()
     }
 }
 impl W {

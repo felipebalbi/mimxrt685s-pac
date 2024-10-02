@@ -22,6 +22,15 @@ impl R {
         SeqwaitR::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("MCR1")
+            .field("ahbbuswait", &self.ahbbuswait())
+            .field("seqwait", &self.seqwait())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:15 - AHB Read/Write access to Serial Flash Memory space will timeout if not data received from Flash or data not transmitted after AHBBUSWAIT * 1024 ahb clock cycles, AHB Bus will get an error response"]
     #[inline(always)]

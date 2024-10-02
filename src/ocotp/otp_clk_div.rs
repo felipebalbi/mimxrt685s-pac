@@ -3,6 +3,7 @@ pub type R = crate::R<OtpClkDivSpec>;
 #[doc = "Register `OTP_CLK_DIV` writer"]
 pub type W = crate::W<OtpClkDivSpec>;
 #[doc = "Clock divider value by -1 encoding. It's used to generate the clock to OTP memory (otp_clk) with apb_clk. The maximum otp_clk frequency is 120Mhz. 0: Divide by 1\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Div {
@@ -274,6 +275,17 @@ impl R {
     #[inline(always)]
     pub fn reqflag(&self) -> ReqflagR {
         ReqflagR::new(((self.bits >> 31) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("OTP_CLK_DIV")
+            .field("div", &self.div())
+            .field("reset", &self.reset())
+            .field("halt", &self.halt())
+            .field("reqflag", &self.reqflag())
+            .finish()
     }
 }
 impl W {

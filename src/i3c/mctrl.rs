@@ -3,6 +3,7 @@ pub type R = crate::R<MctrlSpec>;
 #[doc = "Register `MCTRL` writer"]
 pub type W = crate::W<MctrlSpec>;
 #[doc = "Request\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Request {
@@ -128,6 +129,7 @@ where
     }
 }
 #[doc = "Bus type with START\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Type {
@@ -214,6 +216,7 @@ where
     }
 }
 #[doc = "In-Band Interrupt (IBI) response\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Ibiresp {
@@ -300,6 +303,7 @@ where
     }
 }
 #[doc = "DIR\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dir {
     #[doc = "0: DIRWRITE: Write"]
@@ -390,6 +394,19 @@ impl R {
     #[inline(always)]
     pub fn rdterm(&self) -> RdtermR {
         RdtermR::new(((self.bits >> 16) & 0xff) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("MCTRL")
+            .field("request", &self.request())
+            .field("type_", &self.type_())
+            .field("ibiresp", &self.ibiresp())
+            .field("dir", &self.dir())
+            .field("addr", &self.addr())
+            .field("rdterm", &self.rdterm())
+            .finish()
     }
 }
 impl W {

@@ -11,6 +11,7 @@ pub type MdisR = crate::BitReader;
 #[doc = "Field `MDIS` writer - Module Disable"]
 pub type MdisW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Sample Clock source selection for Flash Reading\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Rxclksrc {
@@ -84,6 +85,7 @@ where
     }
 }
 #[doc = "The serial root clock could be divided inside FlexSPI wrapper. Refer Clocks chapter for more details on clocking.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Serclkdiv {
@@ -222,6 +224,7 @@ where
     }
 }
 #[doc = "Half Speed Serial Flash access Enable.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hsen {
     #[doc = "0: Disable divide by 2 of serial flash clock for half speed commands."]
@@ -275,6 +278,7 @@ where
     }
 }
 #[doc = "Doze mode enable bit\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dozeen {
     #[doc = "0: Doze mode support disabled. AHB clock and serial clock will not be gated off when there is doze mode request from system."]
@@ -328,6 +332,7 @@ where
     }
 }
 #[doc = "This bit is used to force SCLK output free-running. For FPGA applications, external device may use SCLK as reference clock to its internal PLL. If SCLK free-running is enabled, data sampling with loopback clock from SCLK pad is not supported (MCR0\\[RXCLKSRC\\]=2).\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sckfreerunen {
     #[doc = "0: Disable."]
@@ -381,6 +386,7 @@ where
     }
 }
 #[doc = "This bit is used to enable/disable data learning feature. When data learning is disabled, the sampling clock phase 0 is always used for RX data sampling even if LEARN instruction is correctly executed.\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Learnen {
     #[doc = "0: Disable."]
@@ -491,6 +497,23 @@ impl R {
     #[inline(always)]
     pub fn ahbgrantwait(&self) -> AhbgrantwaitR {
         AhbgrantwaitR::new(((self.bits >> 24) & 0xff) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("MCR0")
+            .field("swreset", &self.swreset())
+            .field("mdis", &self.mdis())
+            .field("rxclksrc", &self.rxclksrc())
+            .field("serclkdiv", &self.serclkdiv())
+            .field("hsen", &self.hsen())
+            .field("dozeen", &self.dozeen())
+            .field("sckfreerunen", &self.sckfreerunen())
+            .field("learnen", &self.learnen())
+            .field("ipgrantwait", &self.ipgrantwait())
+            .field("ahbgrantwait", &self.ahbgrantwait())
+            .finish()
     }
 }
 impl W {

@@ -22,6 +22,15 @@ impl R {
         IntBaseR::new((self.bits >> 10) & 0x003f_ffff)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("INTPTD")
+            .field("int_first", &self.int_first())
+            .field("int_base", &self.int_base())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 5:9 - This indicates the first PTD that is used by the hardware when it is processing the INT list."]
     #[inline(always)]

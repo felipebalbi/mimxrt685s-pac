@@ -13,6 +13,14 @@ impl R {
         ThgnR::new((self.bits & 0x0f) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("HWVADTHGN")
+            .field("thgn", &self.thgn())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:3 - Gain Factor for Noise-floor - use a positive number to make average less sensitive to sudden changes"]
     #[inline(always)]

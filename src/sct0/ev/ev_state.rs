@@ -13,6 +13,14 @@ impl R {
         StatemsknR::new((self.bits & 0xffff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("EV_STATE")
+            .field("statemskn", &self.statemskn())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:15 - If bit m is one, event n happens in state m of the counter selected by the HEVENT bit (n = event number, m = state number; state 0 = bit 0, state 1= bit 1, etc.). The number of bits = number of states in this SCT."]
     #[inline(always)]

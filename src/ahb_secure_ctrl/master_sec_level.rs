@@ -3,6 +3,7 @@ pub type R = crate::R<MasterSecLevelSpec>;
 #[doc = "Register `MASTER_SEC_LEVEL` writer"]
 pub type W = crate::W<MasterSecLevelSpec>;
 #[doc = "POWERQUAD master secure level control.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PowerquadSec {
@@ -89,6 +90,7 @@ where
     }
 }
 #[doc = "DSP master secure level control.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DspSec {
@@ -175,6 +177,7 @@ where
     }
 }
 #[doc = "DMA0 master secure level control.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Dma0Sec {
@@ -261,6 +264,7 @@ where
     }
 }
 #[doc = "DMA1 master secure level control.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Dma1Sec {
@@ -347,6 +351,7 @@ where
     }
 }
 #[doc = "SDIO0 master secure level control.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Sdio0Sec {
@@ -433,6 +438,7 @@ where
     }
 }
 #[doc = "SDIO1 master secure level control.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Sdio1Sec {
@@ -519,6 +525,7 @@ where
     }
 }
 #[doc = "MASTER_SEC_LEVEL register write-lock.\n\nValue on reset: 2"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum MasterSecLevelLock {
@@ -613,6 +620,20 @@ impl R {
     #[inline(always)]
     pub fn master_sec_level_lock(&self) -> MasterSecLevelLockR {
         MasterSecLevelLockR::new(((self.bits >> 30) & 3) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("MASTER_SEC_LEVEL")
+            .field("powerquad_sec", &self.powerquad_sec())
+            .field("dsp_sec", &self.dsp_sec())
+            .field("dma0_sec", &self.dma0_sec())
+            .field("dma1_sec", &self.dma1_sec())
+            .field("sdio0_sec", &self.sdio0_sec())
+            .field("sdio1_sec", &self.sdio1_sec())
+            .field("master_sec_level_lock", &self.master_sec_level_lock())
+            .finish()
     }
 }
 impl W {

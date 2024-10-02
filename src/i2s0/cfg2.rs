@@ -22,6 +22,15 @@ impl R {
         PositionR::new(((self.bits >> 16) & 0x07ff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CFG2")
+            .field("framelen", &self.framelen())
+            .field("position", &self.position())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:10 - Frame Length, minus 1 encoded, defines the number of clocks and data bits in the frames that this channel pair participates in."]
     #[inline(always)]

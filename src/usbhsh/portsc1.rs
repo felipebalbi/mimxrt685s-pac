@@ -164,6 +164,31 @@ impl R {
         DevAddR::new(((self.bits >> 25) & 0x7f) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PORTSC1")
+            .field("ccs", &self.ccs())
+            .field("csc", &self.csc())
+            .field("ped", &self.ped())
+            .field("pedc", &self.pedc())
+            .field("oca", &self.oca())
+            .field("occ", &self.occ())
+            .field("fpr", &self.fpr())
+            .field("susp", &self.susp())
+            .field("pr", &self.pr())
+            .field("sus_l1", &self.sus_l1())
+            .field("ls", &self.ls())
+            .field("pp", &self.pp())
+            .field("pic", &self.pic())
+            .field("ptc", &self.ptc())
+            .field("pspd", &self.pspd())
+            .field("woo", &self.woo())
+            .field("sus_stat", &self.sus_stat())
+            .field("dev_add", &self.dev_add())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Current Connect Status: Logic 1 indicates a device is present on the port."]
     #[inline(always)]

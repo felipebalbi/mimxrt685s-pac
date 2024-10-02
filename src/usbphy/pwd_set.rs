@@ -3,6 +3,7 @@ pub type R = crate::R<PwdSetSpec>;
 #[doc = "Register `PWD_SET` writer"]
 pub type W = crate::W<PwdSetSpec>;
 #[doc = "Note that this bit will be auto cleared if there is USB wakeup event while ENAUTOCLR_PHY_PWD bit of CTRL is enabled\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Txpwdfs {
     #[doc = "0: Normal operation."]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Note that this bit will be auto cleared if there is USB wakeup event while ENAUTOCLR_PHY_PWD bit of CTRL is enabled\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Txpwdibias {
     #[doc = "0: Normal operation."]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "Note that this bit will be auto cleared if there is USB wakeup event while ENAUTOCLR_PHY_PWD bit of CTRL is enabled\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Txpwdv2i {
     #[doc = "0: Normal operation."]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "Note that this bit will be auto cleared if there is USB wakeup event while ENAUTOCLR_PHY_PWD bit of CTRL is enabled\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rxpwdenv {
     #[doc = "0: Normal operation."]
@@ -215,6 +219,7 @@ where
     }
 }
 #[doc = "Note that this bit will be auto cleared if there is USB wakeup event while ENAUTOCLR_PHY_PWD bit of CTRL is enabled\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rxpwd1pt1 {
     #[doc = "0: Normal operation."]
@@ -268,6 +273,7 @@ where
     }
 }
 #[doc = "Note that this bit will be auto cleared if there is USB wakeup event while ENAUTOCLR_PHY_PWD bit of CTRL is enabled\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rxpwddiff {
     #[doc = "0: Normal operation."]
@@ -321,6 +327,7 @@ where
     }
 }
 #[doc = "This bit will be auto cleared if there is USB wakeup event while ENAUTOCLR_PHY_PWD bit of CTRL is enabled\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rxpwdrx {
     #[doc = "0: Normal operation."]
@@ -408,6 +415,20 @@ impl R {
     #[inline(always)]
     pub fn rxpwdrx(&self) -> RxpwdrxR {
         RxpwdrxR::new(((self.bits >> 20) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PWD_SET")
+            .field("txpwdfs", &self.txpwdfs())
+            .field("txpwdibias", &self.txpwdibias())
+            .field("txpwdv2i", &self.txpwdv2i())
+            .field("rxpwdenv", &self.rxpwdenv())
+            .field("rxpwd1pt1", &self.rxpwd1pt1())
+            .field("rxpwddiff", &self.rxpwddiff())
+            .field("rxpwdrx", &self.rxpwdrx())
+            .finish()
     }
 }
 impl W {

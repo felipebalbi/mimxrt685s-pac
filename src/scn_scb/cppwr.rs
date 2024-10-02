@@ -3,6 +3,7 @@ pub type R = crate::R<CppwrSpec>;
 #[doc = "Register `CPPWR` writer"]
 pub type W = crate::W<CppwrSpec>;
 #[doc = "State UNKNOWN 0.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Su0 {
     #[doc = "0: The coprocessor state is not permitted to become UNKNOWN."]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "State UNKNOWN Secure only 0.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sus0 {
     #[doc = "0: The SU0 field is accessible from both Security states."]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "State UNKNOWN 1.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Su1 {
     #[doc = "0: The coprocessor state is not permitted to become UNKNOWN."]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "State UNKNOWN Secure only 1.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sus1 {
     #[doc = "0: The SU7 field is accessible from both Security states."]
@@ -215,6 +219,7 @@ where
     }
 }
 #[doc = "State UNKNOWN 2.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Su2 {
     #[doc = "0: The coprocessor state is not permitted to become UNKNOWN."]
@@ -268,6 +273,7 @@ where
     }
 }
 #[doc = "State UNKNOWN Secure only 2.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sus2 {
     #[doc = "0: The SU2 field is accessible from both Security states."]
@@ -321,6 +327,7 @@ where
     }
 }
 #[doc = "State UNKNOWN 3.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Su3 {
     #[doc = "0: The coprocessor state is not permitted to become UNKNOWN."]
@@ -374,6 +381,7 @@ where
     }
 }
 #[doc = "State UNKNOWN Secure only 3.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sus3 {
     #[doc = "0: The SU3 field is accessible from both Security states."]
@@ -427,6 +435,7 @@ where
     }
 }
 #[doc = "State UNKNOWN 4.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Su4 {
     #[doc = "0: The coprocessor state is not permitted to become UNKNOWN."]
@@ -480,6 +489,7 @@ where
     }
 }
 #[doc = "State UNKNOWN Secure only 4.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sus4 {
     #[doc = "0: The SU4 field is accessible from both Security states."]
@@ -533,6 +543,7 @@ where
     }
 }
 #[doc = "State UNKNOWN 5.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Su5 {
     #[doc = "0: The coprocessor state is not permitted to become UNKNOWN."]
@@ -586,6 +597,7 @@ where
     }
 }
 #[doc = "State UNKNOWN Secure only 5.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sus5 {
     #[doc = "0: The SU5 field is accessible from both Security states."]
@@ -639,6 +651,7 @@ where
     }
 }
 #[doc = "State UNKNOWN 6.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Su6 {
     #[doc = "0: The coprocessor state is not permitted to become UNKNOWN."]
@@ -692,6 +705,7 @@ where
     }
 }
 #[doc = "State UNKNOWN Secure only 6.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sus6 {
     #[doc = "0: The SU6 field is accessible from both Security states."]
@@ -745,6 +759,7 @@ where
     }
 }
 #[doc = "State UNKNOWN 7.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Su7 {
     #[doc = "0: The coprocessor state is not permitted to become UNKNOWN."]
@@ -798,6 +813,7 @@ where
     }
 }
 #[doc = "State UNKNOWN Secure only 7.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sus7 {
     #[doc = "0: The SU7 field is accessible from both Security states."]
@@ -851,6 +867,7 @@ where
     }
 }
 #[doc = "State UNKNOWN 10.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Su10 {
     #[doc = "0: The floating-point state is not permitted to become UNKNOWN."]
@@ -904,6 +921,7 @@ where
     }
 }
 #[doc = "State UNKNOWN Secure only 10.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sus10 {
     #[doc = "0: The SU10 field is accessible from both Security states."]
@@ -1064,6 +1082,33 @@ impl R {
     #[inline(always)]
     pub fn sus11(&self) -> Sus11R {
         Sus11R::new(((self.bits >> 23) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CPPWR")
+            .field("su0", &self.su0())
+            .field("sus0", &self.sus0())
+            .field("su1", &self.su1())
+            .field("sus1", &self.sus1())
+            .field("su2", &self.su2())
+            .field("sus2", &self.sus2())
+            .field("su3", &self.su3())
+            .field("sus3", &self.sus3())
+            .field("su4", &self.su4())
+            .field("sus4", &self.sus4())
+            .field("su5", &self.su5())
+            .field("sus5", &self.sus5())
+            .field("su6", &self.su6())
+            .field("sus6", &self.sus6())
+            .field("su7", &self.su7())
+            .field("sus7", &self.sus7())
+            .field("su10", &self.su10())
+            .field("sus10", &self.sus10())
+            .field("su11", &self.su11())
+            .field("sus11", &self.sus11())
+            .finish()
     }
 }
 impl W {

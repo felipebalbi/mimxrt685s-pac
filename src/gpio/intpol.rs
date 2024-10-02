@@ -3,6 +3,7 @@ pub type R = crate::R<IntpolSpec>;
 #[doc = "Register `INTPOL[%s]` writer"]
 pub type W = crate::W<IntpolSpec>;
 #[doc = "polarity control for each pin(bit 0 for pion_0, bit 1 for pion_1, etc.)\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u32)]
 pub enum PolCtl {
@@ -67,6 +68,14 @@ impl R {
     #[inline(always)]
     pub fn pol_ctl(&self) -> PolCtlR {
         PolCtlR::new(self.bits)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("INTPOL")
+            .field("pol_ctl", &self.pol_ctl())
+            .finish()
     }
 }
 impl W {

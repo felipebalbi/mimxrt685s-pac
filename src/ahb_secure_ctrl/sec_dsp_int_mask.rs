@@ -247,6 +247,40 @@ impl R {
         DspIntr31SecMaskR::new(((self.bits >> 31) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SEC_DSP_INT_MASK")
+            .field("dsp_intr5_sec_mask", &self.dsp_intr5_sec_mask())
+            .field("dsp_intr6_sec_mask", &self.dsp_intr6_sec_mask())
+            .field("dsp_intr7_sec_mask", &self.dsp_intr7_sec_mask())
+            .field("dsp_intr8_sec_mask", &self.dsp_intr8_sec_mask())
+            .field("dsp_intr9_sec_mask", &self.dsp_intr9_sec_mask())
+            .field("dsp_intr10_sec_mask", &self.dsp_intr10_sec_mask())
+            .field("dsp_intr11_sec_mask", &self.dsp_intr11_sec_mask())
+            .field("dsp_intr12_sec_mask", &self.dsp_intr12_sec_mask())
+            .field("dsp_intr13_sec_mask", &self.dsp_intr13_sec_mask())
+            .field("dsp_intr14_sec_mask", &self.dsp_intr14_sec_mask())
+            .field("dsp_intr15_sec_mask", &self.dsp_intr15_sec_mask())
+            .field("dsp_intr16_sec_mask", &self.dsp_intr16_sec_mask())
+            .field("dsp_intr17_sec_mask", &self.dsp_intr17_sec_mask())
+            .field("dsp_intr18_sec_mask", &self.dsp_intr18_sec_mask())
+            .field("dsp_intr19_sec_mask", &self.dsp_intr19_sec_mask())
+            .field("dsp_intr20_sec_mask", &self.dsp_intr20_sec_mask())
+            .field("dsp_intr21_sec_mask", &self.dsp_intr21_sec_mask())
+            .field("dsp_intr22_sec_mask", &self.dsp_intr22_sec_mask())
+            .field("dsp_intr23_sec_mask", &self.dsp_intr23_sec_mask())
+            .field("dsp_intr24_sec_mask", &self.dsp_intr24_sec_mask())
+            .field("dsp_intr25_sec_mask", &self.dsp_intr25_sec_mask())
+            .field("dsp_intr26_sec_mask", &self.dsp_intr26_sec_mask())
+            .field("dsp_intr27_sec_mask", &self.dsp_intr27_sec_mask())
+            .field("dsp_intr28_sec_mask", &self.dsp_intr28_sec_mask())
+            .field("dsp_intr29_sec_mask", &self.dsp_intr29_sec_mask())
+            .field("dsp_intr30_sec_mask", &self.dsp_intr30_sec_mask())
+            .field("dsp_intr31_sec_mask", &self.dsp_intr31_sec_mask())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 5 - 0: INTR5 is invisible to DSP, 1: INTR5 is visible to DSP"]
     #[inline(always)]

@@ -22,6 +22,15 @@ impl R {
         CapconnHR::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CAPCTRL2")
+            .field("capconn_l", &self.capconn_l())
+            .field("capconn_h", &self.capconn_h())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:15 - If bit m is one, event m causes the CAPn_L (UNIFY = 0) or the CAPn (UNIFY = 1) register to be loaded (event 0 = bit 0, event 1 = bit 1, etc.). The number of bits = number of match/captures in this SCT."]
     #[inline(always)]

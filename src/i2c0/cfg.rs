@@ -3,6 +3,7 @@ pub type R = crate::R<CfgSpec>;
 #[doc = "Register `CFG` writer"]
 pub type W = crate::W<CfgSpec>;
 #[doc = "Master Enable. When disabled, configurations settings for the Master function are not changed, but the Master function is internally reset.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Msten {
     #[doc = "0: Disabled. The I2C Master function is disabled."]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Slave Enable. When disabled, configurations settings for the Slave function are not changed, but the Slave function is internally reset.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Slven {
     #[doc = "0: Disabled. The I2C slave function is disabled."]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "Monitor Enable. When disabled, configurations settings for the Monitor function are not changed, but the Monitor function is internally reset.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Monen {
     #[doc = "0: Disabled. The I2C Monitor function is disabled."]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "I2C bus Time-out Enable. When disabled, the time-out function is internally reset.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Timeouten {
     #[doc = "0: Disabled. Time-out function is disabled."]
@@ -215,6 +219,7 @@ where
     }
 }
 #[doc = "Monitor function Clock Stretching.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Monclkstr {
     #[doc = "0: Disabled. The Monitor function will not perform clock stretching. Software or DMA may not always be able to read data provided by the Monitor function before it is overwritten. This mode may be used when non-invasive monitoring is critical."]
@@ -268,6 +273,7 @@ where
     }
 }
 #[doc = "High-speed mode Capable enable. Since High Speed mode alters the way I2C pins drive and filter, as well as the timing for certain I2C signalling, enabling High-speed mode applies to all functions: Master, Slave, and Monitor.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hscapable {
     #[doc = "0: Fast-mode plus. The I 2C interface will support Standard-mode, Fast-mode, and Fast-mode Plus, to the extent that the pin electronics support these modes. Any changes that need to be made to the pin controls, such as changing the drive strength or filtering, must be made by software via the IOCON register associated with each I2C pin,"]
@@ -350,6 +356,19 @@ impl R {
     #[inline(always)]
     pub fn hscapable(&self) -> HscapableR {
         HscapableR::new(((self.bits >> 5) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CFG")
+            .field("msten", &self.msten())
+            .field("slven", &self.slven())
+            .field("monen", &self.monen())
+            .field("timeouten", &self.timeouten())
+            .field("monclkstr", &self.monclkstr())
+            .field("hscapable", &self.hscapable())
+            .finish()
     }
 }
 impl W {

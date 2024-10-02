@@ -3,6 +3,7 @@ pub type R = crate::R<Sysoscctl0Spec>;
 #[doc = "Register `SYSOSCCTL0` writer"]
 pub type W = crate::W<Sysoscctl0Spec>;
 #[doc = "Enable signal for low power mode. . .\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LpEnable {
     #[doc = "0: High Gain Mode(HP)."]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Enable signal for external bypass clock. . .\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BypassEnable {
     #[doc = "0: Normal Mode."]
@@ -118,6 +120,15 @@ impl R {
     #[inline(always)]
     pub fn bypass_enable(&self) -> BypassEnableR {
         BypassEnableR::new(((self.bits >> 1) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SYSOSCCTL0")
+            .field("lp_enable", &self.lp_enable())
+            .field("bypass_enable", &self.bypass_enable())
+            .finish()
     }
 }
 impl W {

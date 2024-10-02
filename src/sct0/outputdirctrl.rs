@@ -3,6 +3,7 @@ pub type R = crate::R<OutputdirctrlSpec>;
 #[doc = "Register `OUTPUTDIRCTRL` writer"]
 pub type W = crate::W<OutputdirctrlSpec>;
 #[doc = "Set/clear operation on output 0. Value 0x3 is reserved. Do not program this value.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Setclr0 {
@@ -76,6 +77,7 @@ where
     }
 }
 #[doc = "Set/clear operation on output 1. Value 0x3 is reserved. Do not program this value.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Setclr1 {
@@ -149,6 +151,7 @@ where
     }
 }
 #[doc = "Set/clear operation on output 2. Value 0x3 is reserved. Do not program this value.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Setclr2 {
@@ -222,6 +225,7 @@ where
     }
 }
 #[doc = "Set/clear operation on output 3. Value 0x3 is reserved. Do not program this value.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Setclr3 {
@@ -295,6 +299,7 @@ where
     }
 }
 #[doc = "Set/clear operation on output 4. Value 0x3 is reserved. Do not program this value.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Setclr4 {
@@ -368,6 +373,7 @@ where
     }
 }
 #[doc = "Set/clear operation on output 5. Value 0x3 is reserved. Do not program this value.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Setclr5 {
@@ -441,6 +447,7 @@ where
     }
 }
 #[doc = "Set/clear operation on output 6. Value 0x3 is reserved. Do not program this value.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Setclr6 {
@@ -514,6 +521,7 @@ where
     }
 }
 #[doc = "Set/clear operation on output 7. Value 0x3 is reserved. Do not program this value.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Setclr7 {
@@ -587,6 +595,7 @@ where
     }
 }
 #[doc = "Set/clear operation on output 8. Value 0x3 is reserved. Do not program this value.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Setclr8 {
@@ -660,6 +669,7 @@ where
     }
 }
 #[doc = "Set/clear operation on output 9. Value 0x3 is reserved. Do not program this value.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Setclr9 {
@@ -733,6 +743,7 @@ where
     }
 }
 #[doc = "Set/clear operation on output 10. Value 0x3 is reserved. Do not program this value.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Setclr10 {
@@ -806,6 +817,7 @@ where
     }
 }
 #[doc = "Set/clear operation on output 11. Value 0x3 is reserved. Do not program this value.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Setclr11 {
@@ -879,6 +891,7 @@ where
     }
 }
 #[doc = "Set/clear operation on output 12. Value 0x3 is reserved. Do not program this value.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Setclr12 {
@@ -952,6 +965,7 @@ where
     }
 }
 #[doc = "Set/clear operation on output 13. Value 0x3 is reserved. Do not program this value.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Setclr13 {
@@ -1025,6 +1039,7 @@ where
     }
 }
 #[doc = "Set/clear operation on output 14. Value 0x3 is reserved. Do not program this value.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Setclr14 {
@@ -1098,6 +1113,7 @@ where
     }
 }
 #[doc = "Set/clear operation on output 15. Value 0x3 is reserved. Do not program this value.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Setclr15 {
@@ -1250,6 +1266,29 @@ impl R {
     #[inline(always)]
     pub fn setclr15(&self) -> Setclr15R {
         Setclr15R::new(((self.bits >> 30) & 3) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("OUTPUTDIRCTRL")
+            .field("setclr0", &self.setclr0())
+            .field("setclr1", &self.setclr1())
+            .field("setclr2", &self.setclr2())
+            .field("setclr3", &self.setclr3())
+            .field("setclr4", &self.setclr4())
+            .field("setclr5", &self.setclr5())
+            .field("setclr6", &self.setclr6())
+            .field("setclr7", &self.setclr7())
+            .field("setclr8", &self.setclr8())
+            .field("setclr9", &self.setclr9())
+            .field("setclr10", &self.setclr10())
+            .field("setclr11", &self.setclr11())
+            .field("setclr12", &self.setclr12())
+            .field("setclr13", &self.setclr13())
+            .field("setclr14", &self.setclr14())
+            .field("setclr15", &self.setclr15())
+            .finish()
     }
 }
 impl W {

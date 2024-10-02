@@ -3,6 +3,7 @@ pub type R = crate::R<Clkgateoverride0Spec>;
 #[doc = "Register `CLKGATEOVERRIDE0` writer"]
 pub type W = crate::W<Clkgateoverride0Spec>;
 #[doc = "sdio 0 clock override\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sdio0 {
     #[doc = "0: no effect"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "sdio 1 clock override\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sdio1 {
     #[doc = "0: no effect"]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "usbhsphy clock override\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Usbhsphy {
     #[doc = "0: no effect"]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "adc clock override\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Adc {
     #[doc = "0: no effect"]
@@ -215,6 +219,7 @@ where
     }
 }
 #[doc = "mu clock override\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Mu {
     #[doc = "0: no effect"]
@@ -268,6 +273,7 @@ where
     }
 }
 #[doc = "acomparator clock override\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Acmp {
     #[doc = "0: no effect"]
@@ -321,6 +327,7 @@ where
     }
 }
 #[doc = "pmc clock override\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Pmc {
     #[doc = "0: no effect"]
@@ -408,6 +415,20 @@ impl R {
     #[inline(always)]
     pub fn pmc(&self) -> PmcR {
         PmcR::new(((self.bits >> 6) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CLKGATEOVERRIDE0")
+            .field("sdio_0", &self.sdio_0())
+            .field("sdio_1", &self.sdio_1())
+            .field("usbhsphy", &self.usbhsphy())
+            .field("adc", &self.adc())
+            .field("mu", &self.mu())
+            .field("acmp", &self.acmp())
+            .field("pmc", &self.pmc())
+            .finish()
     }
 }
 impl W {

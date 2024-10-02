@@ -3,6 +3,7 @@ pub type R = crate::R<MstctlSpec>;
 #[doc = "Register `MSTCTL` writer"]
 pub type W = crate::W<MstctlSpec>;
 #[doc = "Master Continue. This bit is write-only.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Mstcontinue {
     #[doc = "0: No effect."]
@@ -34,6 +35,7 @@ where
     }
 }
 #[doc = "Master Start control. This bit is write-only.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Mststart {
     #[doc = "0: No effect."]
@@ -87,6 +89,7 @@ where
     }
 }
 #[doc = "Master Stop control. This bit is write-only.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Mststop {
     #[doc = "0: No effect."]
@@ -140,6 +143,7 @@ where
     }
 }
 #[doc = "Master DMA enable. Data operations of the I2C can be performed with DMA. Protocol type operations such as Start, address, Stop, and address match must always be done with software, typically via an interrupt. Address acknowledgement must also be done by software except when the I2C is configured to be HSCAPABLE (and address acknowledgement is handled entirely by hardware) or when Automatic Operation is enabled. When a DMA data transfer is complete, MSTDMA must be cleared prior to beginning the next operation, typically a Start or Stop.This bit is read/write.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Mstdma {
     #[doc = "0: Disable. No DMA requests are generated for master operation."]
@@ -207,6 +211,16 @@ impl R {
     #[inline(always)]
     pub fn mstdma(&self) -> MstdmaR {
         MstdmaR::new(((self.bits >> 3) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("MSTCTL")
+            .field("mststart", &self.mststart())
+            .field("mststop", &self.mststop())
+            .field("mstdma", &self.mstdma())
+            .finish()
     }
 }
 impl W {

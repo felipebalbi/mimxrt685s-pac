@@ -3,6 +3,7 @@ pub type R = crate::R<Intb0Spec>;
 #[doc = "Register `INTB0` writer"]
 pub type W = crate::W<Intb0Spec>;
 #[doc = "Interrupt B status for DMA channel 0.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u32)]
 pub enum Ib {
@@ -67,6 +68,12 @@ impl R {
     #[inline(always)]
     pub fn ib(&self) -> IbR {
         IbR::new(self.bits)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("INTB0").field("ib", &self.ib()).finish()
     }
 }
 impl W {

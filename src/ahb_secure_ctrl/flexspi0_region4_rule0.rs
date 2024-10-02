@@ -3,6 +3,7 @@ pub type R = crate::R<Flexspi0Region4Rule0Spec>;
 #[doc = "Register `FLEXSPI0_REGION4_RULE0` writer"]
 pub type W = crate::W<Flexspi0Region4Rule0Spec>;
 #[doc = "Rule 0\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Rule0 {
@@ -89,6 +90,7 @@ where
     }
 }
 #[doc = "Rule 1\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Rule1 {
@@ -175,6 +177,7 @@ where
     }
 }
 #[doc = "Rule 2\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Rule2 {
@@ -261,6 +264,7 @@ where
     }
 }
 #[doc = "Rule 3\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Rule3 {
@@ -366,6 +370,17 @@ impl R {
     #[inline(always)]
     pub fn rule3(&self) -> Rule3R {
         Rule3R::new(((self.bits >> 12) & 3) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("FLEXSPI0_REGION4_RULE0")
+            .field("rule0", &self.rule0())
+            .field("rule1", &self.rule1())
+            .field("rule2", &self.rule2())
+            .field("rule3", &self.rule3())
+            .finish()
     }
 }
 impl W {

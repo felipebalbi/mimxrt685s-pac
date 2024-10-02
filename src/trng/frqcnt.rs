@@ -9,6 +9,14 @@ impl R {
         FrqCtR::new(self.bits & 0x003f_ffff)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("FRQCNT")
+            .field("frq_ct", &self.frq_ct())
+            .finish()
+    }
+}
 #[doc = "Frequency Count Register\n\nYou can [`read`](crate::Reg::read) this register and get [`frqcnt::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FrqcntSpec;
 impl crate::RegisterSpec for FrqcntSpec {

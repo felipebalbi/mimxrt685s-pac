@@ -22,6 +22,15 @@ impl R {
         RegmodHR::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("REGMODE")
+            .field("regmod_l", &self.regmod_l())
+            .field("regmod_h", &self.regmod_h())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:15 - Each bit controls one match/capture register (register 0 = bit 0, register 1 = bit 1, etc.). The number of bits = number of match/captures in this SCT. 0 = register operates as match register. 1 = register operates as capture register."]
     #[inline(always)]

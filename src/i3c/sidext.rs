@@ -22,6 +22,15 @@ impl R {
         BcrR::new(((self.bits >> 16) & 0xff) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SIDEXT")
+            .field("dcr", &self.dcr())
+            .field("bcr", &self.bcr())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 8:15 - Device Characteristic Register"]
     #[inline(always)]

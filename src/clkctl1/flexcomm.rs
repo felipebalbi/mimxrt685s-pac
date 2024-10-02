@@ -1,4 +1,5 @@
 #[repr(C)]
+#[cfg_attr(feature = "debug", derive(Debug))]
 #[doc = "flexcomm clock controller"]
 #[doc(alias = "FLEXCOMM")]
 pub struct Flexcomm {

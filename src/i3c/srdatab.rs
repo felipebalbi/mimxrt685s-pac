@@ -9,6 +9,14 @@ impl R {
         Data0R::new((self.bits & 0xff) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SRDATAB")
+            .field("data0", &self.data0())
+            .finish()
+    }
+}
 #[doc = "Slave Read Data Byte Register\n\nYou can [`read`](crate::Reg::read) this register and get [`srdatab::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SrdatabSpec;
 impl crate::RegisterSpec for SrdatabSpec {

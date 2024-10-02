@@ -29,6 +29,16 @@ impl R {
         DataPendingR::new(((self.bits >> 8) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("LPM")
+            .field("hird_hw", &self.hird_hw())
+            .field("hird_sw", &self.hird_sw())
+            .field("data_pending", &self.data_pending())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 4:7 - Host Initiated Resume Duration - SW."]
     #[inline(always)]

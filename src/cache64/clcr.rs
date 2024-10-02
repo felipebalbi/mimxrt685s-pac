@@ -3,6 +3,7 @@ pub type R = crate::R<ClcrSpec>;
 #[doc = "Register `CLCR` writer"]
 pub type W = crate::W<ClcrSpec>;
 #[doc = "Initiate Cache Line Command\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Lgo {
     #[doc = "0: Write: no effect. Read: no line command active."]
@@ -60,6 +61,7 @@ pub type CacheaddrR = crate::FieldReader<u16>;
 #[doc = "Field `CACHEADDR` writer - Cache address"]
 pub type CacheaddrW<'a, REG> = crate::FieldWriter<'a, REG, 12, u16>;
 #[doc = "Way select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Wsel {
     #[doc = "0: Way 0"]
@@ -113,6 +115,7 @@ where
     }
 }
 #[doc = "Tag/Data Select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Tdsel {
     #[doc = "0: Data"]
@@ -178,6 +181,7 @@ pub type LcwayR = crate::BitReader;
 #[doc = "Field `LCWAY` writer - Line Command Way"]
 pub type LcwayW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Line Command\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Lcmd {
@@ -264,6 +268,7 @@ where
     }
 }
 #[doc = "Line Address Select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ladsel {
     #[doc = "0: Cache address"]
@@ -317,6 +322,7 @@ where
     }
 }
 #[doc = "Line access type\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Lacc {
     #[doc = "0: Read"]
@@ -419,6 +425,23 @@ impl R {
     #[inline(always)]
     pub fn lacc(&self) -> LaccR {
         LaccR::new(((self.bits >> 27) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CLCR")
+            .field("lgo", &self.lgo())
+            .field("cacheaddr", &self.cacheaddr())
+            .field("wsel", &self.wsel())
+            .field("tdsel", &self.tdsel())
+            .field("lcivb", &self.lcivb())
+            .field("lcimb", &self.lcimb())
+            .field("lcway", &self.lcway())
+            .field("lcmd", &self.lcmd())
+            .field("ladsel", &self.ladsel())
+            .field("lacc", &self.lacc())
+            .finish()
     }
 }
 impl W {

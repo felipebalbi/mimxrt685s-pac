@@ -40,6 +40,17 @@ impl R {
         CppreSat8R::new(((self.bits >> 17) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CPPRE")
+            .field("cppre_in", &self.cppre_in())
+            .field("cppre_out", &self.cppre_out())
+            .field("cppre_sat", &self.cppre_sat())
+            .field("cppre_sat8", &self.cppre_sat8())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:7 - co-processor scaling of input"]
     #[inline(always)]

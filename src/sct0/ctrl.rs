@@ -19,6 +19,7 @@ pub type ClrctrLR = crate::BitReader;
 #[doc = "Field `CLRCTR_L` writer - Writing a 1 to this bit clears the L or unified counter. This bit always reads as 0."]
 pub type ClrctrLW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "L or unified counter direction select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BidirL {
     #[doc = "0: Up. The counter counts up to a limit condition, then is cleared to zero."]
@@ -92,6 +93,7 @@ pub type ClrctrHR = crate::BitReader;
 #[doc = "Field `CLRCTR_H` writer - Writing a 1 to this bit clears the H counter. This bit always reads as 0."]
 pub type ClrctrHW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Direction select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BidirH {
     #[doc = "0: The H counter counts up to its limit condition, then is cleared to zero."]
@@ -208,6 +210,25 @@ impl R {
     #[inline(always)]
     pub fn pre_h(&self) -> PreHR {
         PreHR::new(((self.bits >> 21) & 0xff) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CTRL")
+            .field("down_l", &self.down_l())
+            .field("stop_l", &self.stop_l())
+            .field("halt_l", &self.halt_l())
+            .field("clrctr_l", &self.clrctr_l())
+            .field("bidir_l", &self.bidir_l())
+            .field("pre_l", &self.pre_l())
+            .field("down_h", &self.down_h())
+            .field("stop_h", &self.stop_h())
+            .field("halt_h", &self.halt_h())
+            .field("clrctr_h", &self.clrctr_h())
+            .field("bidir_h", &self.bidir_h())
+            .field("pre_h", &self.pre_h())
+            .finish()
     }
 }
 impl W {

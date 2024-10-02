@@ -157,6 +157,30 @@ impl R {
         FevtcintR::new(((self.bits >> 31) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("FORCE_EVENT")
+            .field("fevtac12ne", &self.fevtac12ne())
+            .field("fevtac12toe", &self.fevtac12toe())
+            .field("fevtac12ce", &self.fevtac12ce())
+            .field("fevtac12ebe", &self.fevtac12ebe())
+            .field("fevtac12ie", &self.fevtac12ie())
+            .field("fevtcnibac12e", &self.fevtcnibac12e())
+            .field("fevtctoe", &self.fevtctoe())
+            .field("fevtcce", &self.fevtcce())
+            .field("fevtcebe", &self.fevtcebe())
+            .field("fevtcie", &self.fevtcie())
+            .field("fevtdtoe", &self.fevtdtoe())
+            .field("fevtdce", &self.fevtdce())
+            .field("fevtdebe", &self.fevtdebe())
+            .field("fevtac12e", &self.fevtac12e())
+            .field("fevttne", &self.fevttne())
+            .field("fevtdmae", &self.fevtdmae())
+            .field("fevtcint", &self.fevtcint())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Force Event Auto Command 12 Not Executed"]
     #[inline(always)]

@@ -1,6 +1,7 @@
 #[doc = "Register `SETVALID1` writer"]
 pub type W = crate::W<Setvalid1Spec>;
 #[doc = "SetValid control for DMA channel 32.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Setvalid32 {
     #[doc = "0: No effect."]
@@ -32,6 +33,7 @@ where
     }
 }
 #[doc = "Additional SetValid controls for remaining DMA channels in the range 63 to 33. Any bits above the actually implemented channels are reserved.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u32)]
 pub enum Setvalid63_33 {
@@ -66,6 +68,12 @@ where
     #[inline(always)]
     pub fn effect(self) -> &'a mut crate::W<REG> {
         self.variant(Setvalid63_33::Effect)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for crate::generic::Reg<Setvalid1Spec> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
     }
 }
 impl W {

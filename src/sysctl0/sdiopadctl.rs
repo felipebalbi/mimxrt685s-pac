@@ -79,6 +79,22 @@ impl R {
         CompokR::new(((self.bits >> 24) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SDIOPADCTL")
+            .field("rasrcn", &self.rasrcn())
+            .field("rasrcp", &self.rasrcp())
+            .field("fastfrz", &self.fastfrz())
+            .field("freeze", &self.freeze())
+            .field("comptq", &self.comptq())
+            .field("compen", &self.compen())
+            .field("nasrcn", &self.nasrcn())
+            .field("nasrcp", &self.nasrcp())
+            .field("compok", &self.compok())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:3 - Drives SDIO Pad Compensation Circuit"]
     #[inline(always)]

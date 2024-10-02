@@ -22,6 +22,15 @@ impl R {
         Run1RngR::new(((self.bits >> 16) & 0x7fff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SCR1L")
+            .field("run1_max", &self.run1_max())
+            .field("run1_rng", &self.run1_rng())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:14 - Run Length 1 Maximum Limit"]
     #[inline(always)]

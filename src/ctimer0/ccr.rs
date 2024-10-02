@@ -112,6 +112,25 @@ impl R {
         Cap3iR::new(((self.bits >> 11) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CCR")
+            .field("cap0re", &self.cap0re())
+            .field("cap0fe", &self.cap0fe())
+            .field("cap0i", &self.cap0i())
+            .field("cap1re", &self.cap1re())
+            .field("cap1fe", &self.cap1fe())
+            .field("cap1i", &self.cap1i())
+            .field("cap2re", &self.cap2re())
+            .field("cap2fe", &self.cap2fe())
+            .field("cap2i", &self.cap2i())
+            .field("cap3re", &self.cap3re())
+            .field("cap3fe", &self.cap3fe())
+            .field("cap3i", &self.cap3i())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Rising edge of capture channel 0: a sequence of 0 then 1 causes CR0 to be loaded with the contents of TC. 0 = disabled. 1 = enabled."]
     #[inline(always)]

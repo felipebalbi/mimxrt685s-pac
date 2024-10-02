@@ -23,6 +23,7 @@ pub type AwrwaitR = crate::FieldReader<u16>;
 #[doc = "Field `AWRWAIT` writer - For certain devices (such as FPGA), it need some time to write data into internal memory after the command sequences finished on FlexSPI interface"]
 pub type AwrwaitW<'a, REG> = crate::FieldWriter<'a, REG, 12, u16>;
 #[doc = "AWRWAIT unit\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Awrwaitunit {
@@ -199,6 +200,20 @@ impl R {
     #[inline(always)]
     pub fn clrinstrptr(&self) -> ClrinstrptrR {
         ClrinstrptrR::new(((self.bits >> 31) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("FLSHCR2")
+            .field("ardseqid", &self.ardseqid())
+            .field("ardseqnum", &self.ardseqnum())
+            .field("awrseqid", &self.awrseqid())
+            .field("awrseqnum", &self.awrseqnum())
+            .field("awrwait", &self.awrwait())
+            .field("awrwaitunit", &self.awrwaitunit())
+            .field("clrinstrptr", &self.clrinstrptr())
+            .finish()
     }
 }
 impl W {

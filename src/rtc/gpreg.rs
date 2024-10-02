@@ -13,6 +13,14 @@ impl R {
         GpdataR::new(self.bits)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("GPREG")
+            .field("gpdata", &self.gpdata())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:31 - Data retained during Deep power-down mode or loss of main power as long as VBAT is supplied."]
     #[inline(always)]

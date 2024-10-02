@@ -3,6 +3,7 @@ pub type R = crate::R<SrSpec>;
 #[doc = "Register `SR` writer"]
 pub type W = crate::W<SrSpec>;
 #[doc = "Fn\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Fn {
@@ -45,6 +46,7 @@ impl FnR {
     }
 }
 #[doc = "EP\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ep {
     #[doc = "0: The MUA side event is not pending (default)."]
@@ -81,6 +83,7 @@ impl EpR {
     }
 }
 #[doc = "PM\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Pm {
@@ -123,6 +126,7 @@ impl PmR {
     }
 }
 #[doc = "RS\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rs {
     #[doc = "0: The MUB side of the MU is not in reset."]
@@ -159,6 +163,7 @@ impl RsR {
     }
 }
 #[doc = "FUP\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Fup {
     #[doc = "0: No flags updated, initiated by the MUA, in progress (default)"]
@@ -195,6 +200,7 @@ impl FupR {
     }
 }
 #[doc = "BRDIP\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rdip {
     #[doc = "0: Processor B-side did not exit reset"]
@@ -248,6 +254,7 @@ where
     }
 }
 #[doc = "RAIP\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Raip {
     #[doc = "0: Processor B-side did not enter reset"]
@@ -301,6 +308,7 @@ where
     }
 }
 #[doc = "TEn\n\nValue on reset: 15"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Ten {
@@ -343,6 +351,7 @@ impl TenR {
     }
 }
 #[doc = "RFn\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Rfn {
@@ -385,6 +394,7 @@ impl RfnR {
     }
 }
 #[doc = "GIPn\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Gipn {
@@ -494,6 +504,23 @@ impl R {
     #[inline(always)]
     pub fn gipn(&self) -> GipnR {
         GipnR::new(((self.bits >> 28) & 0x0f) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SR")
+            .field("fn_", &self.fn_())
+            .field("ep", &self.ep())
+            .field("pm", &self.pm())
+            .field("rs", &self.rs())
+            .field("fup", &self.fup())
+            .field("rdip", &self.rdip())
+            .field("raip", &self.raip())
+            .field("ten", &self.ten())
+            .field("rfn", &self.rfn())
+            .field("gipn", &self.gipn())
+            .finish()
     }
 }
 impl W {

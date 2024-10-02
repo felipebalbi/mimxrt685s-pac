@@ -13,6 +13,14 @@ impl R {
         VidR::new((self.bits & 0x7fff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SVENDORID")
+            .field("vid", &self.vid())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:14 - Vendor ID"]
     #[inline(always)]

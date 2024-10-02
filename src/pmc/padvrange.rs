@@ -3,6 +3,7 @@ pub type R = crate::R<PadvrangeSpec>;
 #[doc = "Register `PADVRANGE` writer"]
 pub type W = crate::W<PadvrangeSpec>;
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Vddio0range {
@@ -89,6 +90,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Vddio1range {
@@ -175,6 +177,7 @@ where
     }
 }
 #[doc = "no description available\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Vddio2range {
@@ -275,6 +278,16 @@ impl R {
     #[inline(always)]
     pub fn vddio_2range(&self) -> Vddio2rangeR {
         Vddio2rangeR::new(((self.bits >> 4) & 3) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PADVRANGE")
+            .field("vddio_0range", &self.vddio_0range())
+            .field("vddio_1range", &self.vddio_1range())
+            .field("vddio_2range", &self.vddio_2range())
+            .finish()
     }
 }
 impl W {

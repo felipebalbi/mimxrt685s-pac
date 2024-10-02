@@ -3,6 +3,7 @@ pub type R = crate::R<TctrlSpec>;
 #[doc = "Register `TCTRL[%s]` writer"]
 pub type W = crate::W<TctrlSpec>;
 #[doc = "Trigger enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hten {
     #[doc = "0: Hardware trigger source disabled"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Trigger priority setting\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Tpri {
@@ -237,6 +239,7 @@ pub type TdlyR = crate::FieldReader;
 #[doc = "Field `TDLY` writer - Trigger delay select"]
 pub type TdlyW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Trigger command select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Tcmd {
@@ -433,6 +436,17 @@ impl R {
     #[inline(always)]
     pub fn tcmd(&self) -> TcmdR {
         TcmdR::new(((self.bits >> 24) & 0x0f) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("TCTRL")
+            .field("hten", &self.hten())
+            .field("tpri", &self.tpri())
+            .field("tdly", &self.tdly())
+            .field("tcmd", &self.tcmd())
+            .finish()
     }
 }
 impl W {

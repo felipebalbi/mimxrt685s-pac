@@ -13,6 +13,14 @@ impl R {
         DbgLockenR::new((self.bits & 0x0f) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DBG_LOCKEN")
+            .field("dbg_locken", &self.dbg_locken())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:3 - Debug Write Lock the following registers: DBG_FEATURES DBG_FEATURES_DP CS_PROTTEST CS_PROTCPU0 CS_PROTCPU1 DBG_AUTH_SCRATCH 1010: Write Enabled (Unlocked) Any other value other than 1010, Write Disabled (Locked)"]
     #[inline(always)]

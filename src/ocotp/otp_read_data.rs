@@ -9,6 +9,14 @@ impl R {
         ReadDataR::new(self.bits)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("OTP_READ_DATA")
+            .field("read_data", &self.read_data())
+            .finish()
+    }
+}
 #[doc = "OTP read data register\n\nYou can [`read`](crate::Reg::read) this register and get [`otp_read_data::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct OtpReadDataSpec;
 impl crate::RegisterSpec for OtpReadDataSpec {

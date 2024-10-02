@@ -13,6 +13,14 @@ impl R {
         SystemStickCalibR::new(self.bits & 0x03ff_ffff)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SYSTEM_STICK_CALIB")
+            .field("system_stick_calib", &self.system_stick_calib())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:25 - Selects the system secure tick calibration value of the M33."]
     #[inline(always)]

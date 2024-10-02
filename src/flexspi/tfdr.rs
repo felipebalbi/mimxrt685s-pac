@@ -2,6 +2,12 @@
 pub type W = crate::W<TfdrSpec>;
 #[doc = "Field `TXDATA` writer - TX Data"]
 pub type TxdataW<'a, REG> = crate::FieldWriter<'a, REG, 32, u32>;
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for crate::generic::Reg<TfdrSpec> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
+    }
+}
 impl W {
     #[doc = "Bits 0:31 - TX Data"]
     #[inline(always)]

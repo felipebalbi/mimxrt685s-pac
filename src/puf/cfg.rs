@@ -3,6 +3,7 @@ pub type R = crate::R<CfgSpec>;
 #[doc = "Register `CFG` writer"]
 pub type W = crate::W<CfgSpec>;
 #[doc = "Block Enroll and Set Key Operation\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BlockenrollSetkey {
     #[doc = "0: Disabled"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Block Key Output Data\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Blockkeyoutput {
     #[doc = "0: Disabled. BLOCKKEYOUTPUT is cleared on reset."]
@@ -118,6 +120,15 @@ impl R {
     #[inline(always)]
     pub fn blockkeyoutput(&self) -> BlockkeyoutputR {
         BlockkeyoutputR::new(((self.bits >> 1) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CFG")
+            .field("blockenroll_setkey", &self.blockenroll_setkey())
+            .field("blockkeyoutput", &self.blockkeyoutput())
+            .finish()
     }
 }
 impl W {

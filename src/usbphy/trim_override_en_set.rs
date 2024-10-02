@@ -148,6 +148,39 @@ will be used"]
         TrimUsbphyTxCal45dmR::new(((self.bits >> 28) & 0x0f) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("TRIM_OVERRIDE_EN_SET")
+            .field("trim_div_sel_override", &self.trim_div_sel_override())
+            .field(
+                "trim_env_tail_adj_vd_override",
+                &self.trim_env_tail_adj_vd_override(),
+            )
+            .field("trim_tx_d_cal_override", &self.trim_tx_d_cal_override())
+            .field("trim_tx_cal45dp_override", &self.trim_tx_cal45dp_override())
+            .field("trim_tx_cal45dm_override", &self.trim_tx_cal45dm_override())
+            .field(
+                "trim_refbias_vbgadj_override",
+                &self.trim_refbias_vbgadj_override(),
+            )
+            .field(
+                "trim_refbias_tst_override",
+                &self.trim_refbias_tst_override(),
+            )
+            .field("trim_usb2_refbias_vbgadj", &self.trim_usb2_refbias_vbgadj())
+            .field("trim_usb2_refbias_tst", &self.trim_usb2_refbias_tst())
+            .field("trim_pll_ctrl0_div_sel", &self.trim_pll_ctrl0_div_sel())
+            .field(
+                "trim_usb_reg_env_tail_adj_vd",
+                &self.trim_usb_reg_env_tail_adj_vd(),
+            )
+            .field("trim_usbphy_tx_d_cal", &self.trim_usbphy_tx_d_cal())
+            .field("trim_usbphy_tx_cal45dp", &self.trim_usbphy_tx_cal45dp())
+            .field("trim_usbphy_tx_cal45dm", &self.trim_usbphy_tx_cal45dm())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Override enable for PLL_DIV_SEL, when set, the register value in PLL_SIC\\[1:0\\]
 will be used."]

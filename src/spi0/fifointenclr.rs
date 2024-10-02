@@ -40,6 +40,17 @@ impl R {
         RxlvlR::new(((self.bits >> 3) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("FIFOINTENCLR")
+            .field("txerr", &self.txerr())
+            .field("rxerr", &self.rxerr())
+            .field("txlvl", &self.txlvl())
+            .field("rxlvl", &self.rxlvl())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Writing one clears the corresponding bits in the FIFOINTENSET register."]
     #[inline(always)]

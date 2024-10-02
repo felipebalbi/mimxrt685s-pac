@@ -37,6 +37,18 @@ impl R {
         PerintR::new(((self.bits >> 4) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("FIFOINTSTAT")
+            .field("txerr", &self.txerr())
+            .field("rxerr", &self.rxerr())
+            .field("txlvl", &self.txlvl())
+            .field("rxlvl", &self.rxlvl())
+            .field("perint", &self.perint())
+            .finish()
+    }
+}
 #[doc = "FIFO interrupt status register.\n\nYou can [`read`](crate::Reg::read) this register and get [`fifointstat::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FifointstatSpec;
 impl crate::RegisterSpec for FifointstatSpec {

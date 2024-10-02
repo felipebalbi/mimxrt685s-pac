@@ -13,6 +13,14 @@ impl R {
         MatchR::new(self.bits)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("MR")
+            .field("match_", &self.match_())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:31 - Timer counter match value."]
     #[inline(always)]

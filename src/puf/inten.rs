@@ -67,6 +67,20 @@ impl R {
         CodeoutavailenR::new(((self.bits >> 7) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("INTEN")
+            .field("readyen", &self.readyen())
+            .field("succesen", &self.succesen())
+            .field("erroren", &self.erroren())
+            .field("keyinreqen", &self.keyinreqen())
+            .field("keyoutavailen", &self.keyoutavailen())
+            .field("codeinreqen", &self.codeinreqen())
+            .field("codeoutavailen", &self.codeoutavailen())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Enable corresponding interrupt in STAT, which indicates that the initialization or a operation is completed."]
     #[inline(always)]

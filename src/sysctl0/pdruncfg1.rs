@@ -3,6 +3,7 @@ pub type R = crate::R<Pdruncfg1Spec>;
 #[doc = "Register `PDRUNCFG1` writer"]
 pub type W = crate::W<Pdruncfg1Spec>;
 #[doc = "Array power\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PqSramApd {
     #[doc = "0: enable"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Peiph power\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PqSramPpd {
     #[doc = "0: enable"]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "Array power\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FlexspiSramApd {
     #[doc = "0: enable"]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "Peiph power\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FlexspiSramPpd {
     #[doc = "0: enable"]
@@ -215,6 +219,7 @@ where
     }
 }
 #[doc = "Array power\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UsbhsSramApd {
     #[doc = "0: enable"]
@@ -268,6 +273,7 @@ where
     }
 }
 #[doc = "Peiph power\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UsbhsSramPpd {
     #[doc = "0: enable"]
@@ -321,6 +327,7 @@ where
     }
 }
 #[doc = "Array power\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Usdhc0SramApd {
     #[doc = "0: enable"]
@@ -374,6 +381,7 @@ where
     }
 }
 #[doc = "Peiph power\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Usdhc0SramPpd {
     #[doc = "0: enable"]
@@ -427,6 +435,7 @@ where
     }
 }
 #[doc = "Array power\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Usdhc1SramApd {
     #[doc = "0: enable"]
@@ -480,6 +489,7 @@ where
     }
 }
 #[doc = "Peiph power\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Usdhc1SramPpd {
     #[doc = "0: enable"]
@@ -533,6 +543,7 @@ where
     }
 }
 #[doc = "Array power\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CasperSramApd {
     #[doc = "0: enable"]
@@ -586,6 +597,7 @@ where
     }
 }
 #[doc = "Peiph power\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CasperSramPpd {
     #[doc = "0: enable"]
@@ -639,6 +651,7 @@ where
     }
 }
 #[doc = "Array power\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DspcacheRegfApd {
     #[doc = "0: enable"]
@@ -692,6 +705,7 @@ where
     }
 }
 #[doc = "Peiph power\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DspcacheRegfPpd {
     #[doc = "0: enable"]
@@ -745,6 +759,7 @@ where
     }
 }
 #[doc = "Array power\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DsptcmRegfApd {
     #[doc = "0: enable"]
@@ -798,6 +813,7 @@ where
     }
 }
 #[doc = "Peiph power\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DsptcmRegfPpd {
     #[doc = "0: enable"]
@@ -851,6 +867,7 @@ where
     }
 }
 #[doc = "array power and periph power\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RomPd {
     #[doc = "0: enable"]
@@ -904,6 +921,7 @@ where
     }
 }
 #[doc = "Needed when vddcore can be smaller than 0\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SramSleep {
     #[doc = "0: RAM Normal Mode"]
@@ -1046,6 +1064,31 @@ impl R {
     #[inline(always)]
     pub fn sram_sleep(&self) -> SramSleepR {
         SramSleepR::new(((self.bits >> 31) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PDRUNCFG1")
+            .field("pq_sram_apd", &self.pq_sram_apd())
+            .field("pq_sram_ppd", &self.pq_sram_ppd())
+            .field("flexspi_sram_apd", &self.flexspi_sram_apd())
+            .field("flexspi_sram_ppd", &self.flexspi_sram_ppd())
+            .field("usbhs_sram_apd", &self.usbhs_sram_apd())
+            .field("usbhs_sram_ppd", &self.usbhs_sram_ppd())
+            .field("usdhc0_sram_apd", &self.usdhc0_sram_apd())
+            .field("usdhc0_sram_ppd", &self.usdhc0_sram_ppd())
+            .field("usdhc1_sram_apd", &self.usdhc1_sram_apd())
+            .field("usdhc1_sram_ppd", &self.usdhc1_sram_ppd())
+            .field("casper_sram_apd", &self.casper_sram_apd())
+            .field("casper_sram_ppd", &self.casper_sram_ppd())
+            .field("dspcache_regf_apd", &self.dspcache_regf_apd())
+            .field("dspcache_regf_ppd", &self.dspcache_regf_ppd())
+            .field("dsptcm_regf_apd", &self.dsptcm_regf_apd())
+            .field("dsptcm_regf_ppd", &self.dsptcm_regf_ppd())
+            .field("rom_pd", &self.rom_pd())
+            .field("sram_sleep", &self.sram_sleep())
+            .finish()
     }
 }
 impl W {

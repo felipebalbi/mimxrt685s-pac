@@ -22,6 +22,15 @@ impl R {
         Run6pRngR::new(((self.bits >> 16) & 0x07ff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SCR6PL")
+            .field("run6p_max", &self.run6p_max())
+            .field("run6p_rng", &self.run6p_rng())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:10 - Run Length 6+ Maximum Limit"]
     #[inline(always)]

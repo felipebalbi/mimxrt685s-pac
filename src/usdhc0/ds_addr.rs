@@ -13,6 +13,14 @@ impl R {
         DsAddrR::new(self.bits)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DS_ADDR")
+            .field("ds_addr", &self.ds_addr())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:31 - DS_ADDR"]
     #[inline(always)]

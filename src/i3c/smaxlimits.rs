@@ -22,6 +22,15 @@ impl R {
         MaxwrR::new(((self.bits >> 16) & 0x0fff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SMAXLIMITS")
+            .field("maxrd", &self.maxrd())
+            .field("maxwr", &self.maxwr())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:11 - Maximum read length"]
     #[inline(always)]

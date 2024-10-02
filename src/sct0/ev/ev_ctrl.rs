@@ -7,6 +7,7 @@ pub type MatchselR = crate::FieldReader;
 #[doc = "Field `MATCHSEL` writer - Selects the Match register associated with this event (if any). A match can occur only when the counter selected by the HEVENT bit is running."]
 pub type MatchselW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Select L/H counter. Do not set this bit if UNIFY = 1.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hevent {
     #[doc = "0: Selects the L state and the L match register selected by MATCHSEL."]
@@ -60,6 +61,7 @@ where
     }
 }
 #[doc = "Input/output select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Outsel {
     #[doc = "0: Selects the inputs selected by IOSEL."]
@@ -117,6 +119,7 @@ pub type IoselR = crate::FieldReader;
 #[doc = "Field `IOSEL` writer - Selects the input or output signal number associated with this event (if any). Do not select an input in this register if CKMODE is 1x. In this case the clock input is an implicit ingredient of every event."]
 pub type IoselW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Selects the I/O condition for event n. (The detection of edges on outputs lag the conditions that switch the outputs by one SCT clock). In order to guarantee proper edge/state detection, an input must have a minimum pulse width of at least one SCT clock period .\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Iocond {
@@ -203,6 +206,7 @@ where
     }
 }
 #[doc = "Selects how the specified match and I/O condition are used and combined.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Combmode {
@@ -289,6 +293,7 @@ where
     }
 }
 #[doc = "This bit controls how the STATEV value modifies the state selected by HEVENT when this event is the highest-numbered event occurring for that state.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Stateld {
     #[doc = "0: STATEV value is added into STATE (the carry-out is ignored)."]
@@ -350,6 +355,7 @@ pub type MatchmemR = crate::BitReader;
 #[doc = "Field `MATCHMEM` writer - If this bit is one and the COMBMODE field specifies a match component to the triggering of this event, then a match is considered to be active whenever the counter value is GREATER THAN OR EQUAL TO the value specified in the match register when counting up, LESS THEN OR EQUAL TO the match value when counting down. If this bit is zero, a match is only be active during the cycle when the counter is equal to the match value."]
 pub type MatchmemW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Direction qualifier for event generation. This field only applies when the counters are operating in BIDIR mode. If BIDIR = 0, the SCT ignores this field. Value 0x3 is reserved.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Direction {
@@ -472,6 +478,23 @@ impl R {
     #[inline(always)]
     pub fn direction(&self) -> DirectionR {
         DirectionR::new(((self.bits >> 21) & 3) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("EV_CTRL")
+            .field("matchsel", &self.matchsel())
+            .field("hevent", &self.hevent())
+            .field("outsel", &self.outsel())
+            .field("iosel", &self.iosel())
+            .field("iocond", &self.iocond())
+            .field("combmode", &self.combmode())
+            .field("stateld", &self.stateld())
+            .field("statev", &self.statev())
+            .field("matchmem", &self.matchmem())
+            .field("direction", &self.direction())
+            .finish()
     }
 }
 impl W {

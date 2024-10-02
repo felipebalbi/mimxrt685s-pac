@@ -13,6 +13,14 @@ impl R {
         WindowR::new(self.bits & 0x00ff_ffff)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("WINDOW")
+            .field("window", &self.window())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:23 - Watchdog window value."]
     #[inline(always)]

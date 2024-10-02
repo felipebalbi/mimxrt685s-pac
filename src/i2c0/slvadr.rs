@@ -3,6 +3,7 @@ pub type R = crate::R<SlvadrSpec>;
 #[doc = "Register `SLVADR[%s]` writer"]
 pub type W = crate::W<SlvadrSpec>;
 #[doc = "Slave Address n Disable.\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sadisable {
     #[doc = "0: Enabled. Slave Address n is enabled."]
@@ -60,6 +61,7 @@ pub type SlvadrR = crate::FieldReader;
 #[doc = "Field `SLVADR` writer - Slave Address. Seven bit slave address that is compared to received addresses if enabled."]
 pub type SlvadrW<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "Automatic NACK operation. Used in conjunction with AUTOACK and AUTOMATCHREAD, allows software to ignore I2C traffic while handling previous I2C data or other operations.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Autonack {
     #[doc = "0: Normal operation, matching I2C addresses are not ignored."]
@@ -127,6 +129,16 @@ impl R {
     #[inline(always)]
     pub fn autonack(&self) -> AutonackR {
         AutonackR::new(((self.bits >> 15) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SLVADR")
+            .field("sadisable", &self.sadisable())
+            .field("slvadr", &self.slvadr())
+            .field("autonack", &self.autonack())
+            .finish()
     }
 }
 impl W {

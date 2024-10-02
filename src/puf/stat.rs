@@ -51,6 +51,20 @@ impl R {
         CodeoutavailR::new(((self.bits >> 7) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("STAT")
+            .field("busy", &self.busy())
+            .field("success", &self.success())
+            .field("error", &self.error())
+            .field("keyinreq", &self.keyinreq())
+            .field("keyoutavail", &self.keyoutavail())
+            .field("codeinreq", &self.codeinreq())
+            .field("codeoutavail", &self.codeoutavail())
+            .finish()
+    }
+}
 #[doc = "PUF Status\n\nYou can [`read`](crate::Reg::read) this register and get [`stat::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct StatSpec;
 impl crate::RegisterSpec for StatSpec {

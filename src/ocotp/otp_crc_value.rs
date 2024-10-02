@@ -13,6 +13,14 @@ impl R {
         CrcValueR::new(self.bits)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("OTP_CRC_VALUE")
+            .field("crc_value", &self.crc_value())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:31 - The CRC result value. When it is locked, reading from it returns value 32hBADA_BADA"]
     #[inline(always)]

@@ -3,6 +3,7 @@ pub type R = crate::R<HwvadhpfsSpec>;
 #[doc = "Register `HWVADHPFS` writer"]
 pub type W = crate::W<HwvadhpfsSpec>;
 #[doc = "This field chooses the High Pass filter in first part of HWVAD\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Hpfs {
@@ -80,6 +81,14 @@ impl R {
     #[inline(always)]
     pub fn hpfs(&self) -> HpfsR {
         HpfsR::new((self.bits & 3) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("HWVADHPFS")
+            .field("hpfs", &self.hpfs())
+            .finish()
     }
 }
 impl W {

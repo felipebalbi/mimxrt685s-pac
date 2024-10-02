@@ -3,6 +3,7 @@ pub type R = crate::R<MmcBootSpec>;
 #[doc = "Register `MMC_BOOT` writer"]
 pub type W = crate::W<MmcBootSpec>;
 #[doc = "DTOCV_ACK\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DtocvAck {
@@ -167,6 +168,7 @@ where
     }
 }
 #[doc = "BOOT_ACK\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BootAck {
     #[doc = "0: No ack"]
@@ -220,6 +222,7 @@ where
     }
 }
 #[doc = "BOOT_MODE\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BootMode {
     #[doc = "0: Normal boot"]
@@ -273,6 +276,7 @@ where
     }
 }
 #[doc = "BOOT_EN\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BootEn {
     #[doc = "0: Fast boot disable"]
@@ -330,6 +334,7 @@ pub type AutoSabgEnR = crate::BitReader;
 #[doc = "Field `AUTO_SABG_EN` writer - AUTO_SABG_EN"]
 pub type AutoSabgEnW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Disable Time Out\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DisableTimeOut {
     #[doc = "0: Enable time out"]
@@ -421,6 +426,20 @@ impl R {
     #[inline(always)]
     pub fn boot_blk_cnt(&self) -> BootBlkCntR {
         BootBlkCntR::new(((self.bits >> 16) & 0xffff) as u16)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("MMC_BOOT")
+            .field("dtocv_ack", &self.dtocv_ack())
+            .field("boot_ack", &self.boot_ack())
+            .field("boot_mode", &self.boot_mode())
+            .field("boot_en", &self.boot_en())
+            .field("auto_sabg_en", &self.auto_sabg_en())
+            .field("disable_time_out", &self.disable_time_out())
+            .field("boot_blk_cnt", &self.boot_blk_cnt())
+            .finish()
     }
 }
 impl W {

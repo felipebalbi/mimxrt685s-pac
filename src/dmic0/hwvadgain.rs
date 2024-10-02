@@ -13,6 +13,14 @@ impl R {
         InputgainR::new((self.bits & 0x0f) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("HWVADGAIN")
+            .field("inputgain", &self.inputgain())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:3 - Gain factor for input signal into HWVAD"]
     #[inline(always)]

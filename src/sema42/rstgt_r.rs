@@ -5,6 +5,7 @@ pub type RstgtnR = crate::FieldReader;
 #[doc = "Field `RSTGMS` reader - RSTGMS"]
 pub type RstgmsR = crate::FieldReader;
 #[doc = "RSTGSM\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Rstgsm {
@@ -84,6 +85,17 @@ impl R {
     #[inline(always)]
     pub fn roz(&self) -> RozR {
         RozR::new(((self.bits >> 14) & 3) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("RSTGT_R")
+            .field("rstgtn", &self.rstgtn())
+            .field("rstgms", &self.rstgms())
+            .field("rstgsm", &self.rstgsm())
+            .field("roz", &self.roz())
+            .finish()
     }
 }
 #[doc = "Reset Gate Read\n\nYou can [`read`](crate::Reg::read) this register and get [`rstgt_r::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

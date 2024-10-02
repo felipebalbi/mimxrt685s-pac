@@ -30,6 +30,20 @@ impl R {
         SecVioInfoMasterR::new(((self.bits >> 8) & 0x0f) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SEC_VIO_MISC_INFO")
+            .field("sec_vio_info_write", &self.sec_vio_info_write())
+            .field("sec_vio_info_data_access", &self.sec_vio_info_data_access())
+            .field(
+                "sec_vio_info_master_sec_level",
+                &self.sec_vio_info_master_sec_level(),
+            )
+            .field("sec_vio_info_master", &self.sec_vio_info_master())
+            .finish()
+    }
+}
 #[doc = "most recent security violation miscellaneous information for AHB layer n\n\nYou can [`read`](crate::Reg::read) this register and get [`sec_vio_misc_info::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SecVioMiscInfoSpec;
 impl crate::RegisterSpec for SecVioMiscInfoSpec {

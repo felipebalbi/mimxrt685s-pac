@@ -13,6 +13,14 @@ impl R {
         IntSkipR::new(self.bits)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("INTPTDS")
+            .field("int_skip", &self.int_skip())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:31 - When a bit in the PTD Skip Map is set to logic 1, the corresponding PTD will be skipped, independent of the V bit setting."]
     #[inline(always)]

@@ -112,6 +112,25 @@ impl R {
         SeqtimeoutenR::new(((self.bits >> 11) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("INTEN")
+            .field("ipcmddoneen", &self.ipcmddoneen())
+            .field("ipcmdgeen", &self.ipcmdgeen())
+            .field("ahbcmdgeen", &self.ahbcmdgeen())
+            .field("ipcmderren", &self.ipcmderren())
+            .field("ahbcmderren", &self.ahbcmderren())
+            .field("iprxwaen", &self.iprxwaen())
+            .field("iptxween", &self.iptxween())
+            .field("datalearnfailen", &self.datalearnfailen())
+            .field("sckstopbyrden", &self.sckstopbyrden())
+            .field("sckstopbywren", &self.sckstopbywren())
+            .field("ahbbustimeouten", &self.ahbbustimeouten())
+            .field("seqtimeouten", &self.seqtimeouten())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - IP triggered Command Sequences Execution finished interrupt enable."]
     #[inline(always)]

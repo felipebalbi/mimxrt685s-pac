@@ -3,6 +3,7 @@ pub type R = crate::R<FcctrlselSpec>;
 #[doc = "Register `FCCTRLSEL%s` writer"]
 pub type W = crate::W<FcctrlselSpec>;
 #[doc = "SCK IN Select. . .\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Sckinsel {
@@ -76,6 +77,7 @@ where
     }
 }
 #[doc = "WS IN Select. . .\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Wsinsel {
@@ -149,6 +151,7 @@ where
     }
 }
 #[doc = "DATA IN Select. . .\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Datainsel {
@@ -222,6 +225,7 @@ where
     }
 }
 #[doc = "DATA OUT Select. . .\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Dataoutsel {
@@ -314,6 +318,17 @@ impl R {
     #[inline(always)]
     pub fn dataoutsel(&self) -> DataoutselR {
         DataoutselR::new(((self.bits >> 24) & 3) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("FCCTRLSEL")
+            .field("sckinsel", &self.sckinsel())
+            .field("wsinsel", &self.wsinsel())
+            .field("datainsel", &self.datainsel())
+            .field("dataoutsel", &self.dataoutsel())
+            .finish()
     }
 }
 impl W {

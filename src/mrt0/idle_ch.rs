@@ -9,6 +9,14 @@ impl R {
         ChanR::new(((self.bits >> 4) & 0x0f) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IDLE_CH")
+            .field("chan", &self.chan())
+            .finish()
+    }
+}
 #[doc = "Idle channel register. This register returns the number of the first idle channel.\n\nYou can [`read`](crate::Reg::read) this register and get [`idle_ch::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IdleChSpec;
 impl crate::RegisterSpec for IdleChSpec {

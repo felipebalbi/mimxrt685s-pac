@@ -40,6 +40,17 @@ impl R {
         Rule3R::new(((self.bits >> 12) & 3) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SECURITY_CTRL_MEM_RULE0")
+            .field("rule0", &self.rule0())
+            .field("rule1", &self.rule1())
+            .field("rule2", &self.rule2())
+            .field("rule3", &self.rule3())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:1 - secure control rule0. it can be set when check_reg's write_lock is '0'"]
     #[inline(always)]

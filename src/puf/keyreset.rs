@@ -1,6 +1,7 @@
 #[doc = "Register `KEYRESET` writer"]
 pub type W = crate::W<KeyresetSpec>;
 #[doc = "Key 0\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Key0 {
@@ -31,6 +32,7 @@ where
     }
 }
 #[doc = "Key 1\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Key1 {
@@ -61,6 +63,7 @@ where
     }
 }
 #[doc = "Key 2\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Key2 {
@@ -91,6 +94,7 @@ where
     }
 }
 #[doc = "Key 3\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Key3 {
@@ -118,6 +122,12 @@ where
     #[inline(always)]
     pub fn reset(self) -> &'a mut crate::W<REG> {
         self.variant(Key3::Reset)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for crate::generic::Reg<KeyresetSpec> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
     }
 }
 impl W {

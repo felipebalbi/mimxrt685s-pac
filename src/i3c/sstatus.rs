@@ -55,6 +55,7 @@ pub type EventR = crate::BitReader;
 #[doc = "Field `EVENT` writer - Event"]
 pub type EventW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Event details\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Evdet {
@@ -119,6 +120,7 @@ pub type MrdisR = crate::BitReader;
 #[doc = "Field `HJDIS` reader - Hot-Join is disabled"]
 pub type HjdisR = crate::BitReader;
 #[doc = "Activity state from Common Command Codes (CCC)\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Actstate {
@@ -177,6 +179,7 @@ impl ActstateR {
     }
 }
 #[doc = "Time control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Timectrl {
@@ -338,6 +341,37 @@ impl R {
     #[inline(always)]
     pub fn timectrl(&self) -> TimectrlR {
         TimectrlR::new(((self.bits >> 30) & 3) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SSTATUS")
+            .field("stnotstop", &self.stnotstop())
+            .field("stmsg", &self.stmsg())
+            .field("stccch", &self.stccch())
+            .field("streqrd", &self.streqrd())
+            .field("streqwr", &self.streqwr())
+            .field("stdaa", &self.stdaa())
+            .field("sthdr", &self.sthdr())
+            .field("start", &self.start())
+            .field("matched", &self.matched())
+            .field("stop", &self.stop())
+            .field("rx_pend", &self.rx_pend())
+            .field("txnotfull", &self.txnotfull())
+            .field("dachg", &self.dachg())
+            .field("ccc", &self.ccc())
+            .field("errwarn", &self.errwarn())
+            .field("hdrmatch", &self.hdrmatch())
+            .field("chandled", &self.chandled())
+            .field("event", &self.event())
+            .field("evdet", &self.evdet())
+            .field("ibidis", &self.ibidis())
+            .field("mrdis", &self.mrdis())
+            .field("hjdis", &self.hjdis())
+            .field("actstate", &self.actstate())
+            .field("timectrl", &self.timectrl())
+            .finish()
     }
 }
 impl W {

@@ -3,6 +3,7 @@ pub type R = crate::R<BlkAttSpec>;
 #[doc = "Register `BLK_ATT` writer"]
 pub type W = crate::W<BlkAttSpec>;
 #[doc = "Block Size\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
 pub enum Blksize {
@@ -154,6 +155,7 @@ where
     }
 }
 #[doc = "Block Count\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
 pub enum Blkcnt {
@@ -249,6 +251,15 @@ impl R {
     #[inline(always)]
     pub fn blkcnt(&self) -> BlkcntR {
         BlkcntR::new(((self.bits >> 16) & 0xffff) as u16)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("BLK_ATT")
+            .field("blksize", &self.blksize())
+            .field("blkcnt", &self.blkcnt())
+            .finish()
     }
 }
 impl W {

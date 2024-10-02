@@ -15,6 +15,7 @@ pub type IseqnumR = crate::FieldReader;
 #[doc = "Field `ISEQNUM` writer - Sequence Number for IP command: ISEQNUM+1."]
 pub type IseqnumW<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Parallel mode Enabled for IP command.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Iparen {
     #[doc = "0: Flash will be accessed in Individual mode."]
@@ -87,6 +88,17 @@ impl R {
     #[inline(always)]
     pub fn iparen(&self) -> IparenR {
         IparenR::new(((self.bits >> 31) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IPCR1")
+            .field("idatsz", &self.idatsz())
+            .field("iseqid", &self.iseqid())
+            .field("iseqnum", &self.iseqnum())
+            .field("iparen", &self.iparen())
+            .finish()
     }
 }
 impl W {

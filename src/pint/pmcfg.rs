@@ -3,6 +3,7 @@ pub type R = crate::R<PmcfgSpec>;
 #[doc = "Register `PMCFG` writer"]
 pub type W = crate::W<PmcfgSpec>;
 #[doc = "Determines whether slice 0 is an endpoint.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ProdEndpts0 {
     #[doc = "0: No effect. Slice 0 is not an endpoint."]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Determines whether slice 1 is an endpoint.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ProdEndpts1 {
     #[doc = "0: No effect. Slice 1 is not an endpoint."]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "Determines whether slice 2 is an endpoint.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ProdEndpts2 {
     #[doc = "0: No effect. Slice 2 is not an endpoint."]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "Determines whether slice 3 is an endpoint.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ProdEndpts3 {
     #[doc = "0: No effect. Slice 3 is not an endpoint."]
@@ -215,6 +219,7 @@ where
     }
 }
 #[doc = "Determines whether slice 4 is an endpoint.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ProdEndpts4 {
     #[doc = "0: No effect. Slice 4 is not an endpoint."]
@@ -268,6 +273,7 @@ where
     }
 }
 #[doc = "Determines whether slice 5 is an endpoint.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ProdEndpts5 {
     #[doc = "0: No effect. Slice 5 is not an endpoint."]
@@ -321,6 +327,7 @@ where
     }
 }
 #[doc = "Determines whether slice 6 is an endpoint.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ProdEndpts6 {
     #[doc = "0: No effect. Slice 6 is not an endpoint."]
@@ -374,6 +381,7 @@ where
     }
 }
 #[doc = "Specifies the match contribution condition for bit slice 0.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Cfg0 {
@@ -512,6 +520,7 @@ where
     }
 }
 #[doc = "Specifies the match contribution condition for bit slice 1.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Cfg1 {
@@ -650,6 +659,7 @@ where
     }
 }
 #[doc = "Specifies the match contribution condition for bit slice 2.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Cfg2 {
@@ -788,6 +798,7 @@ where
     }
 }
 #[doc = "Specifies the match contribution condition for bit slice 3.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Cfg3 {
@@ -926,6 +937,7 @@ where
     }
 }
 #[doc = "Specifies the match contribution condition for bit slice 4.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Cfg4 {
@@ -1064,6 +1076,7 @@ where
     }
 }
 #[doc = "Specifies the match contribution condition for bit slice 5.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Cfg5 {
@@ -1202,6 +1215,7 @@ where
     }
 }
 #[doc = "Specifies the match contribution condition for bit slice 6.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Cfg6 {
@@ -1340,6 +1354,7 @@ where
     }
 }
 #[doc = "Specifies the match contribution condition for bit slice 7.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Cfg7 {
@@ -1552,6 +1567,28 @@ impl R {
     #[inline(always)]
     pub fn cfg7(&self) -> Cfg7R {
         Cfg7R::new(((self.bits >> 29) & 7) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PMCFG")
+            .field("prod_endpts0", &self.prod_endpts0())
+            .field("prod_endpts1", &self.prod_endpts1())
+            .field("prod_endpts2", &self.prod_endpts2())
+            .field("prod_endpts3", &self.prod_endpts3())
+            .field("prod_endpts4", &self.prod_endpts4())
+            .field("prod_endpts5", &self.prod_endpts5())
+            .field("prod_endpts6", &self.prod_endpts6())
+            .field("cfg0", &self.cfg0())
+            .field("cfg1", &self.cfg1())
+            .field("cfg2", &self.cfg2())
+            .field("cfg3", &self.cfg3())
+            .field("cfg4", &self.cfg4())
+            .field("cfg5", &self.cfg5())
+            .field("cfg6", &self.cfg6())
+            .field("cfg7", &self.cfg7())
+            .finish()
     }
 }
 impl W {

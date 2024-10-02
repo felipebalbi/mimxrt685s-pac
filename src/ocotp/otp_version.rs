@@ -23,6 +23,16 @@ impl R {
         MajorVerR::new(((self.bits >> 24) & 0xff) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("OTP_VERSION")
+            .field("step_ver", &self.step_ver())
+            .field("minor_ver", &self.minor_ver())
+            .field("major_ver", &self.major_ver())
+            .finish()
+    }
+}
 #[doc = "VERSION ID register\n\nYou can [`read`](crate::Reg::read) this register and get [`otp_version::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct OtpVersionSpec;
 impl crate::RegisterSpec for OtpVersionSpec {

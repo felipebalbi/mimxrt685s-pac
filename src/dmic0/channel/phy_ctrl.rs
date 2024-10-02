@@ -3,6 +3,7 @@ pub type R = crate::R<PhyCtrlSpec>;
 #[doc = "Register `PHY_CTRL` writer"]
 pub type W = crate::W<PhyCtrlSpec>;
 #[doc = "Capture DMIC on Falling edge (0 means on rising)\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PhyFall {
     #[doc = "0: Capture PDM_DATA on the rising edge of PDM_CLK."]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Use Half rate sampling (ie Clock to dmic is sent at half the speed than the decimator is providing)\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PhyHalf {
     #[doc = "0: Standard half rate sampling. The clock to the DMIC is sent at the same rate as the decimator is providing."]
@@ -118,6 +120,15 @@ impl R {
     #[inline(always)]
     pub fn phy_half(&self) -> PhyHalfR {
         PhyHalfR::new(((self.bits >> 1) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PHY_CTRL")
+            .field("phy_fall", &self.phy_fall())
+            .field("phy_half", &self.phy_half())
+            .finish()
     }
 }
 impl W {

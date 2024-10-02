@@ -49,6 +49,18 @@ impl R {
         Dmac1wakeR::new(((self.bits >> 4) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("HWWAKE")
+            .field("forcewake", &self.forcewake())
+            .field("fcwake", &self.fcwake())
+            .field("dmicwake", &self.dmicwake())
+            .field("dmac0wake", &self.dmac0wake())
+            .field("dmac1wake", &self.dmac1wake())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Force peripheral clocking to stay on during deep-sleep mode. When 1, clocking to peripherals is prevented from being shut down when the CPU enters deep-sleep mode. This is intended to allow a coprocessor to continue operating while the main CPU(s) are shut down."]
     #[inline(always)]

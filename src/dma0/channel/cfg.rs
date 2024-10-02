@@ -3,6 +3,7 @@ pub type R = crate::R<CfgSpec>;
 #[doc = "Register `CFG` writer"]
 pub type W = crate::W<CfgSpec>;
 #[doc = "Peripheral request Enable. If a DMA channel is used to perform a memory-to-memory move, any peripheral DMA request associated with that channel can be disabled to prevent any interaction between the peripheral and the DMA controller.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Periphreqen {
     #[doc = "0: Disabled. Peripheral DMA requests are disabled."]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Hardware Triggering Enable for this channel.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hwtrigen {
     #[doc = "0: Disabled. Hardware triggering is not used."]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "Trigger Polarity. Selects the polarity of a hardware trigger for this channel.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Trigpol {
     #[doc = "0: Active low - falling edge. Hardware trigger is active low or falling edge triggered, based on TRIGTYPE."]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "Trigger Type. Selects hardware trigger as edge triggered or level triggered.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Trigtype {
     #[doc = "0: Edge. Hardware trigger is edge triggered. Transfers will be initiated and completed, as specified for a single trigger."]
@@ -215,6 +219,7 @@ where
     }
 }
 #[doc = "Trigger Burst. Selects whether hardware triggers cause a single or burst transfer.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Trigburst {
     #[doc = "0: Single transfer. Hardware trigger causes a single transfer."]
@@ -272,6 +277,7 @@ pub type BurstpowerR = crate::FieldReader;
 #[doc = "Field `BURSTPOWER` writer - Burst Power is used in two ways. It always selects the address wrap size when SRCBURSTWRAP and/or DSTBURSTWRAP modes are selected (see descriptions elsewhere in this register). When the TRIGBURST field elsewhere in this register = 1, Burst Power selects how many transfers are performed for each DMA trigger. This can be used, for example, with peripherals that contain a FIFO that can initiate a DMA operation when the FIFO reaches a certain level. 0000: Burst size = 1 (20). 0001: Burst size = 2 (21). 0010: Burst size = 4 (22). 1010: Burst size = 1024 (210). This corresponds to the maximum supported transfer count. others: not supported. The total transfer length as defined in the XFERCOUNT bits in the XFERCFG register must be an even multiple of the burst size."]
 pub type BurstpowerW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Source Burst Wrap. When enabled, the source data address for the DMA is 'wrapped', meaning that the source address range for each burst will be the same. As an example, this could be used to read several sequential registers from a peripheral for each DMA burst, reading the same registers again for each burst.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Srcburstwrap {
     #[doc = "0: Disabled. Source burst wrapping is not enabled for this DMA channel."]
@@ -325,6 +331,7 @@ where
     }
 }
 #[doc = "Destination Burst Wrap. When enabled, the destination data address for the DMA is 'wrapped', meaning that the destination address range for each burst will be the same. As an example, this could be used to write several sequential registers to a peripheral for each DMA burst, writing the same registers again for each burst.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dstburstwrap {
     #[doc = "0: Disabled. Destination burst wrapping is not enabled for this DMA channel."]
@@ -426,6 +433,22 @@ impl R {
     #[inline(always)]
     pub fn chpriority(&self) -> ChpriorityR {
         ChpriorityR::new(((self.bits >> 16) & 7) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CFG")
+            .field("periphreqen", &self.periphreqen())
+            .field("hwtrigen", &self.hwtrigen())
+            .field("trigpol", &self.trigpol())
+            .field("trigtype", &self.trigtype())
+            .field("trigburst", &self.trigburst())
+            .field("burstpower", &self.burstpower())
+            .field("srcburstwrap", &self.srcburstwrap())
+            .field("dstburstwrap", &self.dstburstwrap())
+            .field("chpriority", &self.chpriority())
+            .finish()
     }
 }
 impl W {

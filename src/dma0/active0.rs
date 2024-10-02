@@ -1,6 +1,7 @@
 #[doc = "Register `ACTIVE0` reader"]
 pub type R = crate::R<Active0Spec>;
 #[doc = "Active flag for DMA channel 0.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u32)]
 pub enum Act {
@@ -47,6 +48,12 @@ impl R {
     #[inline(always)]
     pub fn act(&self) -> ActR {
         ActR::new(self.bits)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ACTIVE0").field("act", &self.act()).finish()
     }
 }
 #[doc = "Channel Active status for all DMA channels.\n\nYou can [`read`](crate::Reg::read) this register and get [`active0::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

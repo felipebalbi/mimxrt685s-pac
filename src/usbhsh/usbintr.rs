@@ -58,6 +58,19 @@ impl R {
         SofER::new(((self.bits >> 19) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("USBINTR")
+            .field("pcde", &self.pcde())
+            .field("flre", &self.flre())
+            .field("atl_irq_e", &self.atl_irq_e())
+            .field("iso_irq_e", &self.iso_irq_e())
+            .field("int_irq_e", &self.int_irq_e())
+            .field("sof_e", &self.sof_e())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 2 - Port Change Detect Interrupt Enable: 1: enable 0: disable."]
     #[inline(always)]

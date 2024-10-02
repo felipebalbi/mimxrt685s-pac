@@ -22,6 +22,15 @@ impl R {
         StartmskHR::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("START")
+            .field("startmsk_l", &self.startmsk_l())
+            .field("startmsk_h", &self.startmsk_h())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:15 - If bit n is one, event n clears the STOP_L bit in the CTRL register (event 0 = bit 0, event 1 = bit 1, etc.). The number of bits = number of events in this SCT."]
     #[inline(always)]

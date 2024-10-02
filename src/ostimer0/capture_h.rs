@@ -9,6 +9,14 @@ impl R {
         CaptureValueR::new(self.bits)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CAPTURE_H")
+            .field("capture_value", &self.capture_value())
+            .finish()
+    }
+}
 #[doc = "Local Capture High Register\n\nYou can [`read`](crate::Reg::read) this register and get [`capture_h::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CaptureHSpec;
 impl crate::RegisterSpec for CaptureHSpec {

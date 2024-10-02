@@ -3,6 +3,7 @@ pub type R = crate::R<CtrlSpec>;
 #[doc = "Register `CTRL` writer"]
 pub type W = crate::W<CtrlSpec>;
 #[doc = "Apply updated PMC PDRUNCFG bits (SRAM power gates, RBB, FBB, LVD, and HVD control bits) and/or RUNCTRL setting\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Applycfg {
     #[doc = "0: Always reads 0. Write 0 has no effect"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Enable analog buffer for references or ATX2\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Bufen {
     #[doc = "0: disabled"]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "vddcore Low-Voltage Detector Interrupt Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Lvdcoreie {
     #[doc = "0: vddcore LVD interrupt disabled"]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "vddcore Low-Voltage Detector Reset Enable\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Lvdcorere {
     #[doc = "0: vddcore LVD reset disabled"]
@@ -215,6 +219,7 @@ where
     }
 }
 #[doc = "vddcore High-Voltage Detector Interrupt Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hvdcoreie {
     #[doc = "0: vddcore HVD interrupt disabled"]
@@ -268,6 +273,7 @@ where
     }
 }
 #[doc = "vddcore High-Voltage Detector Reset Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hvdcorere {
     #[doc = "0: vddcore HVD reset disabled"]
@@ -321,6 +327,7 @@ where
     }
 }
 #[doc = "vdd1v8 High-Voltage Detector Interrupt Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hvd1v8ie {
     #[doc = "0: vdd1v8 HVD interrupt disabled"]
@@ -374,6 +381,7 @@ where
     }
 }
 #[doc = "vdd1v8 High-Voltage Detector Reset Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hvd1v8re {
     #[doc = "0: vdd1v8 HVD reset disabled"]
@@ -427,6 +435,7 @@ where
     }
 }
 #[doc = "PMC automatic wakeup enable and interrupt enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Autowken {
     #[doc = "0: Auto wakeup interrupt and counter disabled"]
@@ -480,6 +489,7 @@ where
     }
 }
 #[doc = "PMIC interrupt pin enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Intrpaden {
     #[doc = "0: Interrupt pad low has no effect"]
@@ -582,6 +592,23 @@ impl R {
     #[inline(always)]
     pub fn intrpaden(&self) -> IntrpadenR {
         IntrpadenR::new(((self.bits >> 29) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CTRL")
+            .field("applycfg", &self.applycfg())
+            .field("bufen", &self.bufen())
+            .field("lvdcoreie", &self.lvdcoreie())
+            .field("lvdcorere", &self.lvdcorere())
+            .field("hvdcoreie", &self.hvdcoreie())
+            .field("hvdcorere", &self.hvdcorere())
+            .field("hvd1v8ie", &self.hvd1v8ie())
+            .field("hvd1v8re", &self.hvd1v8re())
+            .field("autowken", &self.autowken())
+            .field("intrpaden", &self.intrpaden())
+            .finish()
     }
 }
 impl W {

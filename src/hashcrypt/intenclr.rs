@@ -31,6 +31,16 @@ impl R {
         ErrorR::new(((self.bits >> 2) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("INTENCLR")
+            .field("waiting", &self.waiting())
+            .field("digest", &self.digest())
+            .field("error", &self.error())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Write 1 to clear mask."]
     #[inline(always)]

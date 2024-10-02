@@ -13,6 +13,14 @@ impl R {
         SkipR::new((self.bits & 0x0fff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("EPSKIP")
+            .field("skip", &self.skip())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:11 - Endpoint skip: Writing 1 to one of these bits, will indicate to HW that it must deactivate the buffer assigned to this endpoint and return control back to software."]
     #[inline(always)]

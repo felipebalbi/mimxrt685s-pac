@@ -3,6 +3,7 @@ pub type R = crate::R<Ram25RuleSpec>;
 #[doc = "Register `RAM25_RULE[%s]` writer"]
 pub type W = crate::W<Ram25RuleSpec>;
 #[doc = "Rule 0\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Rule0 {
@@ -89,6 +90,7 @@ where
     }
 }
 #[doc = "Rule 1\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Rule1 {
@@ -175,6 +177,7 @@ where
     }
 }
 #[doc = "Rule 2\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Rule2 {
@@ -261,6 +264,7 @@ where
     }
 }
 #[doc = "Rule 3\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Rule3 {
@@ -347,6 +351,7 @@ where
     }
 }
 #[doc = "Rule 4\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Rule4 {
@@ -433,6 +438,7 @@ where
     }
 }
 #[doc = "Rule 5\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Rule5 {
@@ -519,6 +525,7 @@ where
     }
 }
 #[doc = "Rule 6\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Rule6 {
@@ -605,6 +612,7 @@ where
     }
 }
 #[doc = "Rule 7\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Rule7 {
@@ -730,6 +738,21 @@ impl R {
     #[inline(always)]
     pub fn rule7(&self) -> Rule7R {
         Rule7R::new(((self.bits >> 28) & 3) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("RAM25_RULE")
+            .field("rule0", &self.rule0())
+            .field("rule1", &self.rule1())
+            .field("rule2", &self.rule2())
+            .field("rule3", &self.rule3())
+            .field("rule4", &self.rule4())
+            .field("rule5", &self.rule5())
+            .field("rule6", &self.rule6())
+            .field("rule7", &self.rule7())
+            .finish()
     }
 }
 impl W {

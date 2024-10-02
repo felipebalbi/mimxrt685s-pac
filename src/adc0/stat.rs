@@ -3,6 +3,7 @@ pub type R = crate::R<StatSpec>;
 #[doc = "Register `STAT` writer"]
 pub type W = crate::W<StatSpec>;
 #[doc = "Result FIFO Ready Flag\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rdy {
     #[doc = "0: Result FIFO data level not above watermark level."]
@@ -39,6 +40,7 @@ impl RdyR {
     }
 }
 #[doc = "Result FIFO Overflow Flag\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Fof {
     #[doc = "0: No result FIFO overflow has occurred since the last time the flag was cleared."]
@@ -92,6 +94,7 @@ where
     }
 }
 #[doc = "Trigger Active\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Trgact {
@@ -142,6 +145,7 @@ impl TrgactR {
     }
 }
 #[doc = "Command Active\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Cmdact {
@@ -219,6 +223,17 @@ impl R {
     #[inline(always)]
     pub fn cmdact(&self) -> CmdactR {
         CmdactR::new(((self.bits >> 24) & 0x0f) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("STAT")
+            .field("rdy", &self.rdy())
+            .field("fof", &self.fof())
+            .field("trgact", &self.trgact())
+            .field("cmdact", &self.cmdact())
+            .finish()
     }
 }
 impl W {

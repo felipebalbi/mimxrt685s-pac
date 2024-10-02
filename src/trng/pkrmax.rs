@@ -13,6 +13,14 @@ impl R {
         PkrMaxR::new(self.bits & 0x00ff_ffff)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PKRMAX")
+            .field("pkr_max", &self.pkr_max())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:23 - Poker Maximum Limit."]
     #[inline(always)]

@@ -31,6 +31,16 @@ impl R {
         CrcRefAddrR::new(((self.bits >> 24) & 7) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("OTP_CRC_ADDR")
+            .field("crc_start_addr", &self.crc_start_addr())
+            .field("crc_end_addr", &self.crc_end_addr())
+            .field("crc_ref_addr", &self.crc_ref_addr())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:8 - CRC starting fuse word address"]
     #[inline(always)]

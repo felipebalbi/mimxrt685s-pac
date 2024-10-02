@@ -5,6 +5,7 @@ pub type SeqidleR = crate::BitReader;
 #[doc = "Field `ARBIDLE` reader - This status bit indicates the state machine in ARB_CTL is busy and there is command sequence granted by arbitrator and not finished yet on FlexSPI interface. When ARB_CTL state (ARBIDLE=0x1) is idle, there will be no transaction on FlexSPI interface also (SEQIDLE=0x1). So this bit should be polled to wait for FlexSPI controller become idle instead of SEQIDLE."]
 pub type ArbidleR = crate::BitReader;
 #[doc = "This status field indicates the trigger source of current command sequence granted by arbitrator. This field value is meaningless when ARB_CTL is not busy (STS0\\[ARBIDLE\\]=0x1).\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Arbcmdsrc {
@@ -91,6 +92,18 @@ impl R {
     #[inline(always)]
     pub fn datalearnphaseb(&self) -> DatalearnphasebR {
         DatalearnphasebR::new(((self.bits >> 8) & 0x0f) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("STS0")
+            .field("seqidle", &self.seqidle())
+            .field("arbidle", &self.arbidle())
+            .field("arbcmdsrc", &self.arbcmdsrc())
+            .field("datalearnphasea", &self.datalearnphasea())
+            .field("datalearnphaseb", &self.datalearnphaseb())
+            .finish()
     }
 }
 #[doc = "Status Register 0\n\nYou can [`read`](crate::Reg::read) this register and get [`sts0::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

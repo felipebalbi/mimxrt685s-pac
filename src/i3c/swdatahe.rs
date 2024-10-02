@@ -4,6 +4,12 @@ pub type W = crate::W<SwdataheSpec>;
 pub type Data0W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `DATA1` writer - The 2nd byte to send to the master"]
 pub type Data1W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for crate::generic::Reg<SwdataheSpec> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
+    }
+}
 impl W {
     #[doc = "Bits 0:7 - The 1st byte to send to the master"]
     #[inline(always)]

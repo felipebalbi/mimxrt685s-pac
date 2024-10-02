@@ -3,6 +3,7 @@ pub type R = crate::R<Usb1VbusDetectSpec>;
 #[doc = "Register `USB1_VBUS_DETECT` writer"]
 pub type W = crate::W<Usb1VbusDetectSpec>;
 #[doc = "Sets the threshold for the VBUSVALID comparator\n\nValue on reset: 4"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum VbusvalidThresh {
@@ -141,6 +142,7 @@ where
     }
 }
 #[doc = "VBUS detect signal override enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VbusOverrideEn {
     #[doc = "0: Use the results of the internal VBUS_VALID and Session Valid comparators for VBUS_VALID, AVALID, BVALID, and SESSEND (Default)"]
@@ -224,6 +226,7 @@ pub type VbusvalidOverrideR = crate::BitReader;
 is set to 1'b1"]
 pub type VbusvalidOverrideW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Selects the source of the VBUS_VALID signal reported to the USB controller This is one of the bit fields that selects the source of the VBUS_VALID signal reported to the USB controller\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VbusvalidSel {
     #[doc = "0: Use the VBUS_VALID comparator results for signal reported to the USB controller (Default)"]
@@ -277,6 +280,7 @@ where
     }
 }
 #[doc = "Selects the source of the VBUS_VALID signal reported to the USB controller This is one of the bit fields that selects the source of the VBUS_VALID signal reported to the USB controller\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum VbusSourceSel {
@@ -351,6 +355,7 @@ where
 }
 #[doc = "Selects the comparator used for VBUS_VALID This bit field controls the comparator used to report the VBUS_VALID results in USB1_VBUS_DETECT\\[3\\]
 between the VBUS_VALID comparator and the Session Valid comparator\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VbusvalidToSessvalid {
     #[doc = "0: Use the VBUS_VALID comparator for VBUS_VALID results"]
@@ -406,6 +411,7 @@ where
     }
 }
 #[doc = "Enables the VBUS_VALID comparator Powers up the comparator used for the VBUS_VALID detector\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PwrupCmps {
     #[doc = "0: Powers down the VBUS_VALID comparator"]
@@ -459,6 +465,7 @@ where
     }
 }
 #[doc = "Controls VBUS discharge resistor This bit field controls a nominal 22kohm resistor between the USB1_VBUS pin and ground\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DischargeVbus {
     #[doc = "0: VBUS discharge resistor is disabled (Default)"]
@@ -512,6 +519,7 @@ where
     }
 }
 #[doc = "Enables resistors used for an older method of resistive battery charger detection\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum EnChargerResistor {
     #[doc = "0: Disable resistive charger detection resistors on USB_DP and USB_DP"]
@@ -632,6 +640,25 @@ between the VBUS_VALID comparator and the Session Valid comparator"]
     #[inline(always)]
     pub fn en_charger_resistor(&self) -> EnChargerResistorR {
         EnChargerResistorR::new(((self.bits >> 31) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("USB1_VBUS_DETECT")
+            .field("vbusvalid_thresh", &self.vbusvalid_thresh())
+            .field("vbus_override_en", &self.vbus_override_en())
+            .field("sessend_override", &self.sessend_override())
+            .field("bvalid_override", &self.bvalid_override())
+            .field("avalid_override", &self.avalid_override())
+            .field("vbusvalid_override", &self.vbusvalid_override())
+            .field("vbusvalid_sel", &self.vbusvalid_sel())
+            .field("vbus_source_sel", &self.vbus_source_sel())
+            .field("vbusvalid_to_sessvalid", &self.vbusvalid_to_sessvalid())
+            .field("pwrup_cmps", &self.pwrup_cmps())
+            .field("discharge_vbus", &self.discharge_vbus())
+            .field("en_charger_resistor", &self.en_charger_resistor())
+            .finish()
     }
 }
 impl W {

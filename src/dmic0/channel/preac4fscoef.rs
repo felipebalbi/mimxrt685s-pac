@@ -13,6 +13,14 @@ impl R {
         CompR::new((self.bits & 3) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PREAC4FSCOEF")
+            .field("comp", &self.comp())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:1 - Co-efficient choice for CIC droop compensation droop filter"]
     #[inline(always)]

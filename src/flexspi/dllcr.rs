@@ -49,6 +49,18 @@ impl R {
         OvrdvalR::new(((self.bits >> 9) & 0x3f) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DLLCR")
+            .field("dllen", &self.dllen())
+            .field("dllreset", &self.dllreset())
+            .field("slvdlytarget", &self.slvdlytarget())
+            .field("ovrden", &self.ovrden())
+            .field("ovrdval", &self.ovrdval())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - DLL calibration enable."]
     #[inline(always)]

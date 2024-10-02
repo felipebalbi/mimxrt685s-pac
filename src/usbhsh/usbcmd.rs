@@ -76,6 +76,21 @@ impl R {
         HirdR::new(((self.bits >> 24) & 0x0f) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("USBCMD")
+            .field("rs", &self.rs())
+            .field("hcreset", &self.hcreset())
+            .field("fls", &self.fls())
+            .field("lhcr", &self.lhcr())
+            .field("atl_en", &self.atl_en())
+            .field("iso_en", &self.iso_en())
+            .field("int_en", &self.int_en())
+            .field("hird", &self.hird())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Run/Stop: 1b = Run."]
     #[inline(always)]

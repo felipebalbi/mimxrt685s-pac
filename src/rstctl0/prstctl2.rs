@@ -3,6 +3,7 @@ pub type R = crate::R<Prstctl2Spec>;
 #[doc = "Register `PRSTCTL2` writer"]
 pub type W = crate::W<Prstctl2Spec>;
 #[doc = "utick reset control\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Utick0 {
     #[doc = "0: clear reset"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "wdt reset control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Wwdt0 {
     #[doc = "0: clear reset"]
@@ -118,6 +120,15 @@ impl R {
     #[inline(always)]
     pub fn wwdt0(&self) -> Wwdt0R {
         Wwdt0R::new(((self.bits >> 1) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PRSTCTL2")
+            .field("utick0", &self.utick0())
+            .field("wwdt0", &self.wwdt0())
+            .finish()
     }
 }
 impl W {

@@ -3,6 +3,7 @@ pub type R = crate::R<GateSpec>;
 #[doc = "Register `GATE%s` writer"]
 pub type W = crate::W<GateSpec>;
 #[doc = "ate Finite State Machine. The hardware gate is maintained in a 16-state implementation\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Gtfsm {
@@ -80,6 +81,14 @@ impl R {
     #[inline(always)]
     pub fn gtfsm(&self) -> GtfsmR {
         GtfsmR::new(self.bits & 0x0f)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("GATE")
+            .field("gtfsm", &self.gtfsm())
+            .finish()
     }
 }
 impl W {

@@ -13,6 +13,14 @@ impl R {
         InstMiscR::new(self.bits)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("MISC")
+            .field("inst_misc", &self.inst_misc())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:31 - Misc register. For Matrix : Used for scale factor"]
     #[inline(always)]

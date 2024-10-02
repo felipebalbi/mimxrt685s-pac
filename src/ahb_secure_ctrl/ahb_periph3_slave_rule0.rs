@@ -49,6 +49,18 @@ impl R {
         HashRuleR::new(((self.bits >> 16) & 3) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("AHB_PERIPH3_SLAVE_RULE0")
+            .field("pq_copro_rule", &self.pq_copro_rule())
+            .field("casper_copro_rule", &self.casper_copro_rule())
+            .field("casper_ram_rule", &self.casper_ram_rule())
+            .field("secure_gpio_rule", &self.secure_gpio_rule())
+            .field("hash_rule", &self.hash_rule())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:1 - 0x40150000--0x40150FFF"]
     #[inline(always)]

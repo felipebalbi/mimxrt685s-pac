@@ -3,6 +3,7 @@ pub type R = crate::R<CfgSpec>;
 #[doc = "Register `CFG` writer"]
 pub type W = crate::W<CfgSpec>;
 #[doc = "ADC trigger priority control\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Tprictrl {
     #[doc = "0: If a higher priority trigger is detected during command processing, the current conversion is aborted and the new command specified by the trigger is started."]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Power Configuration Select\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Pwrsel {
@@ -142,6 +144,7 @@ where
     }
 }
 #[doc = "Voltage Reference Selection\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Refsel {
@@ -219,6 +222,7 @@ pub type PudlyR = crate::FieldReader;
 #[doc = "Field `PUDLY` writer - Power Up Delay"]
 pub type PudlyW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "ADC Analog Pre-Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Pwren {
     #[doc = "0: ADC analog circuits are only enabled while conversions are active. Performance is affected due to analog startup delays."]
@@ -296,6 +300,18 @@ impl R {
     #[inline(always)]
     pub fn pwren(&self) -> PwrenR {
         PwrenR::new(((self.bits >> 28) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CFG")
+            .field("tprictrl", &self.tprictrl())
+            .field("pwrsel", &self.pwrsel())
+            .field("refsel", &self.refsel())
+            .field("pudly", &self.pudly())
+            .field("pwren", &self.pwren())
+            .finish()
     }
 }
 impl W {

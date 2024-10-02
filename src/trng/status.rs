@@ -121,6 +121,30 @@ impl R {
         RetryCtR::new(((self.bits >> 16) & 0x0f) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("STATUS")
+            .field("tf1br0", &self.tf1br0())
+            .field("tf1br1", &self.tf1br1())
+            .field("tf2br0", &self.tf2br0())
+            .field("tf2br1", &self.tf2br1())
+            .field("tf3br0", &self.tf3br0())
+            .field("tf3br1", &self.tf3br1())
+            .field("tf4br0", &self.tf4br0())
+            .field("tf4br1", &self.tf4br1())
+            .field("tf5br0", &self.tf5br0())
+            .field("tf5br1", &self.tf5br1())
+            .field("tf6pbr0", &self.tf6pbr0())
+            .field("tf6pbr1", &self.tf6pbr1())
+            .field("tfsb", &self.tfsb())
+            .field("tflr", &self.tflr())
+            .field("tfp", &self.tfp())
+            .field("tfmb", &self.tfmb())
+            .field("retry_ct", &self.retry_ct())
+            .finish()
+    }
+}
 #[doc = "Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`status::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct StatusSpec;
 impl crate::RegisterSpec for StatusSpec {

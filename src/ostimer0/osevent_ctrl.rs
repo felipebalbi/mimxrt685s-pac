@@ -31,6 +31,16 @@ impl R {
         MatchWrRdyR::new(((self.bits >> 2) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("OSEVENT_CTRL")
+            .field("ostimer_intrflag", &self.ostimer_intrflag())
+            .field("ostimer_intena", &self.ostimer_intena())
+            .field("match_wr_rdy", &self.match_wr_rdy())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - This bit is set when a match occurs between the central 64-bit EVTIMER and the value programmed in the Match-register pair for the associated CPU This bit is cleared by writing a '1'. Writes to clear this bit are asynchronous. This should be done before a new match value is written into the MATCH_L/H registers"]
     #[inline(always)]

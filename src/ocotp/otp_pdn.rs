@@ -13,6 +13,12 @@ impl R {
         PdnR::new((self.bits & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("OTP_PDN").field("pdn", &self.pdn()).finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - This bit indicates the PDN value of OTP memory. Writing 1 to the bit to clear PDN. Writing 0 has no effect. Note: Software need to write 1 to this bit to shut off power of OTP memory after system power up. At the beginning of every fuse operation, the controller will automatically turn-on power to the OPT memory. After every fuse operation, software also need to write 1 to this bit to shut off power to the OTP memory to reduce power consumption."]
     #[inline(always)]

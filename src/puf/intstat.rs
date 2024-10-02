@@ -67,6 +67,20 @@ impl R {
         CodeoutavailR::new(((self.bits >> 7) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("INTSTAT")
+            .field("ready", &self.ready())
+            .field("success", &self.success())
+            .field("error", &self.error())
+            .field("keyinreq", &self.keyinreq())
+            .field("keyoutavail", &self.keyoutavail())
+            .field("codeinreq", &self.codeinreq())
+            .field("codeoutavail", &self.codeoutavail())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Ready"]
     #[inline(always)]

@@ -3,6 +3,7 @@ pub type R = crate::R<IntSignalEnSpec>;
 #[doc = "Register `INT_SIGNAL_EN` writer"]
 pub type W = crate::W<IntSignalEnSpec>;
 #[doc = "Command Complete Interrupt Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ccien {
     #[doc = "0: Masked"]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Transfer Complete Interrupt Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Tcien {
     #[doc = "0: Masked"]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "Block Gap Event Interrupt Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Bgeien {
     #[doc = "0: Masked"]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "DMA Interrupt Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dintien {
     #[doc = "0: Masked"]
@@ -215,6 +219,7 @@ where
     }
 }
 #[doc = "Buffer Write Ready Interrupt Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Bwrien {
     #[doc = "0: Masked"]
@@ -268,6 +273,7 @@ where
     }
 }
 #[doc = "Buffer Read Ready Interrupt Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Brrien {
     #[doc = "0: Masked"]
@@ -321,6 +327,7 @@ where
     }
 }
 #[doc = "Card Insertion Interrupt Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cinsien {
     #[doc = "0: Masked"]
@@ -374,6 +381,7 @@ where
     }
 }
 #[doc = "Card Removal Interrupt Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Crmien {
     #[doc = "0: Masked"]
@@ -427,6 +435,7 @@ where
     }
 }
 #[doc = "Card Interrupt Interrupt Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cintien {
     #[doc = "0: Masked"]
@@ -480,6 +489,7 @@ where
     }
 }
 #[doc = "Re-Tuning Event Interrupt Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rteien {
     #[doc = "0: Masked"]
@@ -533,6 +543,7 @@ where
     }
 }
 #[doc = "Tuning Pass Interrupt Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Tpien {
     #[doc = "0: Masked"]
@@ -586,6 +597,7 @@ where
     }
 }
 #[doc = "Command Timeout Error Interrupt Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ctoeien {
     #[doc = "0: Masked"]
@@ -639,6 +651,7 @@ where
     }
 }
 #[doc = "Command CRC Error Interrupt Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cceien {
     #[doc = "0: Masked"]
@@ -692,6 +705,7 @@ where
     }
 }
 #[doc = "Command End Bit Error Interrupt Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cebeien {
     #[doc = "0: Masked"]
@@ -745,6 +759,7 @@ where
     }
 }
 #[doc = "Command Index Error Interrupt Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cieien {
     #[doc = "0: Masked"]
@@ -798,6 +813,7 @@ where
     }
 }
 #[doc = "Data Timeout Error Interrupt Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dtoeien {
     #[doc = "0: Masked"]
@@ -851,6 +867,7 @@ where
     }
 }
 #[doc = "Data CRC Error Interrupt Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dceien {
     #[doc = "0: Masked"]
@@ -904,6 +921,7 @@ where
     }
 }
 #[doc = "Data End Bit Error Interrupt Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Debeien {
     #[doc = "0: Masked"]
@@ -957,6 +975,7 @@ where
     }
 }
 #[doc = "Auto CMD12 Error Interrupt Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ac12eien {
     #[doc = "0: Masked"]
@@ -1010,6 +1029,7 @@ where
     }
 }
 #[doc = "Tuning Error Interrupt Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Tneien {
     #[doc = "0: Masked"]
@@ -1063,6 +1083,7 @@ where
     }
 }
 #[doc = "DMA Error Interrupt Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dmaeien {
     #[doc = "0: Masked"]
@@ -1220,6 +1241,34 @@ impl R {
     #[inline(always)]
     pub fn dmaeien(&self) -> DmaeienR {
         DmaeienR::new(((self.bits >> 28) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("INT_SIGNAL_EN")
+            .field("ccien", &self.ccien())
+            .field("tcien", &self.tcien())
+            .field("bgeien", &self.bgeien())
+            .field("dintien", &self.dintien())
+            .field("bwrien", &self.bwrien())
+            .field("brrien", &self.brrien())
+            .field("cinsien", &self.cinsien())
+            .field("crmien", &self.crmien())
+            .field("cintien", &self.cintien())
+            .field("rteien", &self.rteien())
+            .field("tpien", &self.tpien())
+            .field("ctoeien", &self.ctoeien())
+            .field("cceien", &self.cceien())
+            .field("cebeien", &self.cebeien())
+            .field("cieien", &self.cieien())
+            .field("dtoeien", &self.dtoeien())
+            .field("dceien", &self.dceien())
+            .field("debeien", &self.debeien())
+            .field("ac12eien", &self.ac12eien())
+            .field("tneien", &self.tneien())
+            .field("dmaeien", &self.dmaeien())
+            .finish()
     }
 }
 impl W {

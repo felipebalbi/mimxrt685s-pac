@@ -3,6 +3,7 @@ pub type R = crate::R<SfsrSpec>;
 #[doc = "Register `SFSR` writer"]
 pub type W = crate::W<SfsrSpec>;
 #[doc = "Invalid entry point.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Invep {
     #[doc = "0: Error has not occurred."]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Invalid integrity signature flag.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Invis {
     #[doc = "0: Error has not occurred."]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "Invalid exception return flag.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Inver {
     #[doc = "0: Error has not occurred."]
@@ -162,6 +165,7 @@ where
     }
 }
 #[doc = "Attribution unit violation flag.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Auviol {
     #[doc = "0: Error has not occurred."]
@@ -215,6 +219,7 @@ where
     }
 }
 #[doc = "Invalid transition flag.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Invtran {
     #[doc = "0: Error has not occurred."]
@@ -268,6 +273,7 @@ where
     }
 }
 #[doc = "Lazy state preservation error flag.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Lsperr {
     #[doc = "0: Error has not occurred."]
@@ -321,6 +327,7 @@ where
     }
 }
 #[doc = "Secure fault address valid.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sfarvalid {
     #[doc = "0: SFAR content not valid."]
@@ -374,6 +381,7 @@ where
     }
 }
 #[doc = "Lazy state error flag.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Lserr {
     #[doc = "0: Error has not occurred"]
@@ -466,6 +474,21 @@ impl R {
     #[inline(always)]
     pub fn lserr(&self) -> LserrR {
         LserrR::new(((self.bits >> 7) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SFSR")
+            .field("invep", &self.invep())
+            .field("invis", &self.invis())
+            .field("inver", &self.inver())
+            .field("auviol", &self.auviol())
+            .field("invtran", &self.invtran())
+            .field("lsperr", &self.lsperr())
+            .field("sfarvalid", &self.sfarvalid())
+            .field("lserr", &self.lserr())
+            .finish()
     }
 }
 impl W {

@@ -2,6 +2,12 @@
 pub type W = crate::W<FeedSpec>;
 #[doc = "Field `FEED` writer - Feed value should be 0xAA followed by 0x55."]
 pub type FeedW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for crate::generic::Reg<FeedSpec> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
+    }
+}
 impl W {
     #[doc = "Bits 0:7 - Feed value should be 0xAA followed by 0x55."]
     #[inline(always)]

@@ -3,6 +3,7 @@ pub type R = crate::R<TxSpec>;
 #[doc = "Register `TX` writer"]
 pub type W = crate::W<TxSpec>;
 #[doc = "Decode to trim the nominal 17\n\nValue on reset: 2"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DCal {
@@ -116,6 +117,18 @@ impl R {
     #[inline(always)]
     pub fn txencal45dp(&self) -> Txencal45dpR {
         Txencal45dpR::new(((self.bits >> 21) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("TX")
+            .field("d_cal", &self.d_cal())
+            .field("txcal45dm", &self.txcal45dm())
+            .field("txencal45dn", &self.txencal45dn())
+            .field("txcal45dp", &self.txcal45dp())
+            .field("txencal45dp", &self.txencal45dp())
+            .finish()
     }
 }
 impl W {

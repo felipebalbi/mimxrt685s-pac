@@ -5,6 +5,7 @@ is write-1-clear(w1c)."]
 pub type AhbcmderridR = crate::FieldReader;
 #[doc = "Indicates the Error Code when AHB command Error detected. This field will be cleared when INTR\\[AHBCMDERR\\]
 is write-1-clear(w1c).\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Ahbcmderrcode {
@@ -84,6 +85,7 @@ is write-1-clear(w1c)."]
 pub type IpcmderridR = crate::FieldReader;
 #[doc = "Indicates the Error Code when IP command Error detected. This field will be cleared when INTR\\[IPCMDERR\\]
 is write-1-clear(w1c).\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Ipcmderrcode {
@@ -198,6 +200,17 @@ is write-1-clear(w1c)."]
     #[inline(always)]
     pub fn ipcmderrcode(&self) -> IpcmderrcodeR {
         IpcmderrcodeR::new(((self.bits >> 24) & 0x0f) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("STS1")
+            .field("ahbcmderrid", &self.ahbcmderrid())
+            .field("ahbcmderrcode", &self.ahbcmderrcode())
+            .field("ipcmderrid", &self.ipcmderrid())
+            .field("ipcmderrcode", &self.ipcmderrcode())
+            .finish()
     }
 }
 #[doc = "Status Register 1\n\nYou can [`read`](crate::Reg::read) this register and get [`sts1::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

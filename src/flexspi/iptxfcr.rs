@@ -7,6 +7,7 @@ pub type ClriptxfR = crate::BitReader;
 #[doc = "Field `CLRIPTXF` writer - Clear all valid data entries in IP TX FIFO."]
 pub type ClriptxfW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "IP TX FIFO filling by DMA enabled.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Txdmaen {
     #[doc = "0: IP TX FIFO would be filled by processor."]
@@ -78,6 +79,16 @@ impl R {
     #[inline(always)]
     pub fn txwmrk(&self) -> TxwmrkR {
         TxwmrkR::new(((self.bits >> 2) & 0x7f) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IPTXFCR")
+            .field("clriptxf", &self.clriptxf())
+            .field("txdmaen", &self.txdmaen())
+            .field("txwmrk", &self.txwmrk())
+            .finish()
     }
 }
 impl W {

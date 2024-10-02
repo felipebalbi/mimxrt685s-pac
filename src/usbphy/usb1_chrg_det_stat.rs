@@ -1,6 +1,7 @@
 #[doc = "Register `USB1_CHRG_DET_STAT` reader"]
 pub type R = crate::R<Usb1ChrgDetStatSpec>;
 #[doc = "Battery Charging Data Contact Detection phase output During the Data Contact Detection phase per the USB Battery Charging Specification Revision 1\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PlugContact {
     #[doc = "0: No USB cable attachment has been detected"]
@@ -37,6 +38,7 @@ impl PlugContactR {
     }
 }
 #[doc = "Battery Charging Primary Detection phase output During the USB Battery Charging Primary Detection phase using the USBHSDCD module, this bit field indicates whether a Standard Downstream Port or Charging Port was detected\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ChrgDetected {
     #[doc = "0: Standard Downstream Port (SDP) has been detected"]
@@ -73,6 +75,7 @@ impl ChrgDetectedR {
     }
 }
 #[doc = "Single ended receiver output for the USB_DM pin, from charger detection circuits.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DmState {
     #[doc = "0: USB_DM pin voltage is &lt; 0.8V"]
@@ -109,6 +112,7 @@ impl DmStateR {
     }
 }
 #[doc = "Single ended receiver output for the USB_DP pin, from charger detection circuits.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DpState {
     #[doc = "0: USB_DP pin voltage is &lt; 0.8V"]
@@ -145,6 +149,7 @@ impl DpStateR {
     }
 }
 #[doc = "Battery Charging Secondary Detection phase output During the USB Battery Charging Secondary Detection phase using the USBHSDCD module, this bit field indicates which kind of Charging Port was detected\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SecdetDcp {
     #[doc = "0: Charging Downstream Port (CDP) has been detected"]
@@ -205,6 +210,18 @@ impl R {
     #[inline(always)]
     pub fn secdet_dcp(&self) -> SecdetDcpR {
         SecdetDcpR::new(((self.bits >> 4) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("USB1_CHRG_DET_STAT")
+            .field("plug_contact", &self.plug_contact())
+            .field("chrg_detected", &self.chrg_detected())
+            .field("dm_state", &self.dm_state())
+            .field("dp_state", &self.dp_state())
+            .field("secdet_dcp", &self.secdet_dcp())
+            .finish()
     }
 }
 #[doc = "USB PHY Charger Detect Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`usb1_chrg_det_stat::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

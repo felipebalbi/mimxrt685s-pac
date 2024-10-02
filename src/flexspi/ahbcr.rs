@@ -3,6 +3,7 @@ pub type R = crate::R<AhbcrSpec>;
 #[doc = "Register `AHBCR` writer"]
 pub type W = crate::W<AhbcrSpec>;
 #[doc = "Parallel mode enabled for AHB triggered Command (both read and write) .\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Aparen {
     #[doc = "0: Flash will be accessed in Individual mode."]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Enable AHB bus cachable read access support.\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cachableen {
     #[doc = "0: Disabled. When there is AHB bus cachable read access, FlexSPI will not check whether it hit AHB TX Buffer."]
@@ -109,6 +111,7 @@ where
     }
 }
 #[doc = "Enable AHB bus bufferable write access support. This field affects the last beat of AHB write access, refer for more details about AHB bufferable write.\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Bufferableen {
     #[doc = "0: Disabled. For all AHB write access (no matter bufferable or non-bufferable ), FlexSPI will return AHB Bus ready after all data is transmitted to External device and AHB command finished."]
@@ -166,6 +169,7 @@ pub type PrefetchenR = crate::BitReader;
 #[doc = "Field `PREFETCHEN` writer - AHB Read Prefetch Enable."]
 pub type PrefetchenW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "AHB Read Address option bit. This option bit is intend to remove AHB burst start address alignment limitation.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Readaddropt {
     #[doc = "0: There is AHB read burst start address alignment limitation when flash is accessed in parallel mode or flash is wordaddressable."]
@@ -243,6 +247,18 @@ impl R {
     #[inline(always)]
     pub fn readaddropt(&self) -> ReadaddroptR {
         ReadaddroptR::new(((self.bits >> 6) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("AHBCR")
+            .field("aparen", &self.aparen())
+            .field("cachableen", &self.cachableen())
+            .field("bufferableen", &self.bufferableen())
+            .field("prefetchen", &self.prefetchen())
+            .field("readaddropt", &self.readaddropt())
+            .finish()
     }
 }
 impl W {

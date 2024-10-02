@@ -1,6 +1,7 @@
 #[doc = "Register `SETTRIG0` writer"]
 pub type W = crate::W<Settrig0Spec>;
 #[doc = "Set Trigger control bit for DMA channel 0.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u32)]
 pub enum Trig {
@@ -35,6 +36,12 @@ where
     #[inline(always)]
     pub fn effect(self) -> &'a mut crate::W<REG> {
         self.variant(Trig::Effect)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for crate::generic::Reg<Settrig0Spec> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
     }
 }
 impl W {

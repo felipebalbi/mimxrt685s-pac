@@ -19,6 +19,7 @@ pub type Msw1stR = crate::BitReader;
 #[doc = "Field `MSW1ST` writer - If 1, load of key, IV, and data is MSW 1st for AES. Else, the words are little endian. Note: only if allowed by configuration."]
 pub type Msw1stW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "AES Cipher mode to use if plain AES\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Aesmode {
@@ -92,6 +93,7 @@ where
     }
 }
 #[doc = "AES ECB direction. Only encryption used if CTR mode or manual modes such as CFB\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Aesdecrypt {
     #[doc = "0: Encrypt"]
@@ -145,6 +147,7 @@ where
     }
 }
 #[doc = "Selects the Hidden Secret key vs. User key, if provided. If security levels are used, only the highest level is permitted to select this.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Aessecret {
     #[doc = "0: User key provided in normal way"]
@@ -198,6 +201,7 @@ where
     }
 }
 #[doc = "Sets the AES key size\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Aeskeysz {
@@ -279,6 +283,7 @@ pub type StreamlastR = crate::BitReader;
 #[doc = "Field `STREAMLAST` writer - Is 1 if last stream block. If not 1, then the engine will compute the next \"hash\"."]
 pub type StreamlastW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "This sets the ICB size between 32 and 128 bits, using the following rules. Note that the counter is assumed to occupy the low order bits of the IV.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Icbsz {
@@ -365,6 +370,7 @@ where
     }
 }
 #[doc = "The size of the ICB-AES stream that can be pushed before needing to compute a new IV/ctr (counter start). This optimizes the performance of the stream of blocks after the 1st.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Icbstrm {
@@ -510,6 +516,25 @@ impl R {
     #[inline(always)]
     pub fn icbstrm(&self) -> IcbstrmR {
         IcbstrmR::new(((self.bits >> 22) & 3) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CRYPTCFG")
+            .field("msw1st_out", &self.msw1st_out())
+            .field("swapkey", &self.swapkey())
+            .field("swapdat", &self.swapdat())
+            .field("msw1st", &self.msw1st())
+            .field("aesmode", &self.aesmode())
+            .field("aesdecrypt", &self.aesdecrypt())
+            .field("aessecret", &self.aessecret())
+            .field("aeskeysz", &self.aeskeysz())
+            .field("aesctrpos", &self.aesctrpos())
+            .field("streamlast", &self.streamlast())
+            .field("icbsz", &self.icbsz())
+            .field("icbstrm", &self.icbstrm())
+            .finish()
     }
 }
 impl W {

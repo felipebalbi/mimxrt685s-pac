@@ -58,6 +58,21 @@ impl R {
         BrefselR::new(((self.bits >> 24) & 0x3f) as u8)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("STS2")
+            .field("aslvlock", &self.aslvlock())
+            .field("areflock", &self.areflock())
+            .field("aslvsel", &self.aslvsel())
+            .field("arefsel", &self.arefsel())
+            .field("bslvlock", &self.bslvlock())
+            .field("breflock", &self.breflock())
+            .field("bslvsel", &self.bslvsel())
+            .field("brefsel", &self.brefsel())
+            .finish()
+    }
+}
 #[doc = "Status Register 2\n\nYou can [`read`](crate::Reg::read) this register and get [`sts2::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Sts2Spec;
 impl crate::RegisterSpec for Sts2Spec {

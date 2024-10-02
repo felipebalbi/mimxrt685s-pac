@@ -13,6 +13,14 @@ impl R {
         MatvalR::new(self.bits)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("MATCH")
+            .field("matval", &self.matval())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:31 - Contains the match value against which the 1 Hz RTC timer will be compared to set the alarm flag RTC_ALARM and generate an alarm interrupt/wake-up if enabled."]
     #[inline(always)]

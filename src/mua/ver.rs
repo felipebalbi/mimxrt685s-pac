@@ -1,6 +1,7 @@
 #[doc = "Register `VER` reader"]
 pub type R = crate::R<VerSpec>;
 #[doc = "Feature Specification Number\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
 pub enum Feature {
@@ -77,6 +78,16 @@ impl R {
     #[inline(always)]
     pub fn major(&self) -> MajorR {
         MajorR::new(((self.bits >> 24) & 0xff) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("VER")
+            .field("feature", &self.feature())
+            .field("minor", &self.minor())
+            .field("major", &self.major())
+            .finish()
     }
 }
 #[doc = "Version ID Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ver::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

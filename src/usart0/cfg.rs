@@ -3,6 +3,7 @@ pub type R = crate::R<CfgSpec>;
 #[doc = "Register `CFG` writer"]
 pub type W = crate::W<CfgSpec>;
 #[doc = "USART Enable.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Enable {
     #[doc = "0: Disabled. The USART is disabled and the internal state machine and counters are reset. While Enable = 0, all USART interrupts and DMA transfers are disabled. When Enable is set again, CFG and most other control bits remain unchanged. When re-enabled, the USART will immediately be ready to transmit because the transmitter has been reset and is therefore available."]
@@ -56,6 +57,7 @@ where
     }
 }
 #[doc = "Selects the data size for the USART.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Datalen {
@@ -129,6 +131,7 @@ where
     }
 }
 #[doc = "Selects what type of parity is used by the USART.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Paritysel {
@@ -202,6 +205,7 @@ where
     }
 }
 #[doc = "Number of stop bits appended to transmitted data. Only a single stop bit is required for received data.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Stoplen {
     #[doc = "0: 1 stop bit."]
@@ -255,6 +259,7 @@ where
     }
 }
 #[doc = "Selects standard or 32 kHz clocking mode.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Mode32k {
     #[doc = "0: Disabled. USART uses standard clocking."]
@@ -308,6 +313,7 @@ where
     }
 }
 #[doc = "LIN break mode enable.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Linmode {
     #[doc = "0: Disabled. Break detect and generate is configured for normal operation."]
@@ -361,6 +367,7 @@ where
     }
 }
 #[doc = "CTS Enable. Determines whether CTS is used for flow control. CTS can be from the input pin, or from the USART's own RTS if loopback mode is enabled.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ctsen {
     #[doc = "0: No flow control. The transmitter does not receive any automatic flow control signal."]
@@ -414,6 +421,7 @@ where
     }
 }
 #[doc = "Selects synchronous or asynchronous operation.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Syncen {
     #[doc = "0: Asynchronous mode."]
@@ -467,6 +475,7 @@ where
     }
 }
 #[doc = "Selects the clock polarity and sampling edge of received data in synchronous mode.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Clkpol {
     #[doc = "0: Falling edge. Un_RXD is sampled on the falling edge of SCLK."]
@@ -520,6 +529,7 @@ where
     }
 }
 #[doc = "Synchronous mode Master select.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Syncmst {
     #[doc = "0: Slave. When synchronous mode is enabled, the USART is a slave."]
@@ -573,6 +583,7 @@ where
     }
 }
 #[doc = "Selects data loopback mode.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Loop {
     #[doc = "0: Normal operation."]
@@ -626,6 +637,7 @@ where
     }
 }
 #[doc = "Output Enable Turnaround time enable for RS-485 operation.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Oeta {
     #[doc = "0: Disabled. If selected by OESEL, the Output Enable signal deasserted at the end of the last stop bit of a transmission."]
@@ -679,6 +691,7 @@ where
     }
 }
 #[doc = "Automatic Address matching enable.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Autoaddr {
     #[doc = "0: Disabled. When addressing is enabled by ADDRDET, address matching is done by software. This provides the possibility of versatile addressing (e.g. respond to more than one address)."]
@@ -732,6 +745,7 @@ where
     }
 }
 #[doc = "Output Enable Select.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Oesel {
     #[doc = "0: Standard. The RTS signal is used as the standard flow control function."]
@@ -785,6 +799,7 @@ where
     }
 }
 #[doc = "Output Enable Polarity.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Oepol {
     #[doc = "0: Low. If selected by OESEL, the output enable is active low."]
@@ -838,6 +853,7 @@ where
     }
 }
 #[doc = "Receive data polarity.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rxpol {
     #[doc = "0: Standard. The RX signal is used as it arrives from the pin. This means that the RX rest value is 1, start bit is 0, data is not inverted, and the stop bit is 1."]
@@ -891,6 +907,7 @@ where
     }
 }
 #[doc = "Transmit data polarity.\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Txpol {
     #[doc = "0: Standard. The TX signal is sent out without change. This means that the TX rest value is 1, start bit is 0, data is not inverted, and the stop bit is 1."]
@@ -1028,6 +1045,30 @@ impl R {
     #[inline(always)]
     pub fn txpol(&self) -> TxpolR {
         TxpolR::new(((self.bits >> 23) & 1) != 0)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CFG")
+            .field("enable", &self.enable())
+            .field("datalen", &self.datalen())
+            .field("paritysel", &self.paritysel())
+            .field("stoplen", &self.stoplen())
+            .field("mode32k", &self.mode32k())
+            .field("linmode", &self.linmode())
+            .field("ctsen", &self.ctsen())
+            .field("syncen", &self.syncen())
+            .field("clkpol", &self.clkpol())
+            .field("syncmst", &self.syncmst())
+            .field("loop_", &self.loop_())
+            .field("oeta", &self.oeta())
+            .field("autoaddr", &self.autoaddr())
+            .field("oesel", &self.oesel())
+            .field("oepol", &self.oepol())
+            .field("rxpol", &self.rxpol())
+            .field("txpol", &self.txpol())
+            .finish()
     }
 }
 impl W {

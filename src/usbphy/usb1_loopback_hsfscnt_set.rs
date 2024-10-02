@@ -28,6 +28,15 @@ is set to value 1'b1."]
         TstiFsNumberR::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("USB1_LOOPBACK_HSFSCNT_SET")
+            .field("tsti_hs_number", &self.tsti_hs_number())
+            .field("tsti_fs_number", &self.tsti_fs_number())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:15 - High speed packet number, used when USB1_LOOPBACK\\[TSTI_HSFS_MODE_EN\\]
 is set to value 1'b1."]

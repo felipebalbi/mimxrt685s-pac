@@ -9,6 +9,14 @@ impl R {
         PrngOutR::new(self.bits)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PRNG_OUT")
+            .field("prng_out", &self.prng_out())
+            .finish()
+    }
+}
 #[doc = "PRNG software-accessable random output value\n\nYou can [`read`](crate::Reg::read) this register and get [`prng_out::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PrngOutSpec;
 impl crate::RegisterSpec for PrngOutSpec {

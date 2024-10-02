@@ -23,6 +23,16 @@ impl R {
         MstidleR::new(((self.bits >> 8) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("INTSTAT")
+            .field("ssa", &self.ssa())
+            .field("ssd", &self.ssd())
+            .field("mstidle", &self.mstidle())
+            .finish()
+    }
+}
 #[doc = "SPI Interrupt Status\n\nYou can [`read`](crate::Reg::read) this register and get [`intstat::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IntstatSpec;
 impl crate::RegisterSpec for IntstatSpec {

@@ -3,6 +3,7 @@ pub type R = crate::R<SecMaskLockSpec>;
 #[doc = "Register `SEC_MASK_LOCK` writer"]
 pub type W = crate::W<SecMaskLockSpec>;
 #[doc = "SEC_GPIO_MASK0 register write-lock.\n\nValue on reset: 2"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SecGpioMask0Lock {
@@ -63,6 +64,7 @@ where
     }
 }
 #[doc = "SEC_GPIO_MASK1 register write-lock.\n\nValue on reset: 2"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SecGpioMask1Lock {
@@ -123,6 +125,7 @@ where
     }
 }
 #[doc = "SEC_GPIO_MASK2 register write-lock.\n\nValue on reset: 2"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SecGpioMask2Lock {
@@ -183,6 +186,7 @@ where
     }
 }
 #[doc = "SEC_GPIO_MASK3 register write-lock.\n\nValue on reset: 2"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SecGpioMask3Lock {
@@ -243,6 +247,7 @@ where
     }
 }
 #[doc = "SEC_GPIO_MASK4 register write-lock.\n\nValue on reset: 2"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SecGpioMask4Lock {
@@ -303,6 +308,7 @@ where
     }
 }
 #[doc = "SEC_GPIO_MASK5 register write-lock.\n\nValue on reset: 2"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SecGpioMask5Lock {
@@ -363,6 +369,7 @@ where
     }
 }
 #[doc = "SEC_GPIO_MASK6 register write-lock.\n\nValue on reset: 2"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SecGpioMask6Lock {
@@ -423,6 +430,7 @@ where
     }
 }
 #[doc = "SEC_GPIO_MASK7 register write-lock.\n\nValue on reset: 2"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SecGpioMask7Lock {
@@ -483,6 +491,7 @@ where
     }
 }
 #[doc = "SEC_DSP_INT_MASK register write-lock.\n\nValue on reset: 2"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SecDspIntLock {
@@ -587,6 +596,22 @@ impl R {
     #[inline(always)]
     pub fn sec_dsp_int_lock(&self) -> SecDspIntLockR {
         SecDspIntLockR::new(((self.bits >> 16) & 3) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SEC_MASK_LOCK")
+            .field("sec_gpio_mask0_lock", &self.sec_gpio_mask0_lock())
+            .field("sec_gpio_mask1_lock", &self.sec_gpio_mask1_lock())
+            .field("sec_gpio_mask2_lock", &self.sec_gpio_mask2_lock())
+            .field("sec_gpio_mask3_lock", &self.sec_gpio_mask3_lock())
+            .field("sec_gpio_mask4_lock", &self.sec_gpio_mask4_lock())
+            .field("sec_gpio_mask5_lock", &self.sec_gpio_mask5_lock())
+            .field("sec_gpio_mask6_lock", &self.sec_gpio_mask6_lock())
+            .field("sec_gpio_mask7_lock", &self.sec_gpio_mask7_lock())
+            .field("sec_dsp_int_lock", &self.sec_dsp_int_lock())
+            .finish()
     }
 }
 impl W {

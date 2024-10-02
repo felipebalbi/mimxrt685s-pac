@@ -1,6 +1,7 @@
 #[doc = "Register `PRES_STATE` reader"]
 pub type R = crate::R<PresStateSpec>;
 #[doc = "Command Inhibit (CMD)\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cihb {
     #[doc = "0: Can issue command using only CMD line"]
@@ -37,6 +38,7 @@ impl CihbR {
     }
 }
 #[doc = "Command Inhibit (DATA)\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cdihb {
     #[doc = "0: Can issue command which uses the DATA line"]
@@ -73,6 +75,7 @@ impl CdihbR {
     }
 }
 #[doc = "Data Line Active\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Dla {
     #[doc = "0: DATA Line Inactive"]
@@ -109,6 +112,7 @@ impl DlaR {
     }
 }
 #[doc = "SD Clock Stable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sdstb {
     #[doc = "0: Clock is changing frequency and not stable."]
@@ -145,6 +149,7 @@ impl SdstbR {
     }
 }
 #[doc = "IPG_CLK Gated Off Internally\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Ipgoff {
     #[doc = "0: IPG_CLK is active."]
@@ -181,6 +186,7 @@ impl IpgoffR {
     }
 }
 #[doc = "HCLK Gated Off Internally\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Hckoff {
     #[doc = "0: HCLK is active."]
@@ -217,6 +223,7 @@ impl HckoffR {
     }
 }
 #[doc = "IPG_PERCLK Gated Off Internally\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Peroff {
     #[doc = "0: IPG_PERCLK is active."]
@@ -253,6 +260,7 @@ impl PeroffR {
     }
 }
 #[doc = "SD Clock Gated Off Internally\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Sdoff {
     #[doc = "0: SD Clock is active."]
@@ -289,6 +297,7 @@ impl SdoffR {
     }
 }
 #[doc = "Write Transfer Active\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Wta {
     #[doc = "0: No valid data"]
@@ -325,6 +334,7 @@ impl WtaR {
     }
 }
 #[doc = "Read Transfer Active\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rta {
     #[doc = "0: No valid data"]
@@ -361,6 +371,7 @@ impl RtaR {
     }
 }
 #[doc = "Buffer Write Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Bwen {
     #[doc = "0: Write disable"]
@@ -397,6 +408,7 @@ impl BwenR {
     }
 }
 #[doc = "Buffer Read Enable\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Bren {
     #[doc = "0: Read disable"]
@@ -433,6 +445,7 @@ impl BrenR {
     }
 }
 #[doc = "Re-Tuning Request (only for SD3.0 SDR104 mode and EMMC HS200 mode)\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Rtr {
     #[doc = "0: Fixed or well tuned sampling clock"]
@@ -469,6 +482,7 @@ impl RtrR {
     }
 }
 #[doc = "Tape Select Change Done\n\nValue on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Tscd {
     #[doc = "0: Delay cell select change is not finished."]
@@ -505,6 +519,7 @@ impl TscdR {
     }
 }
 #[doc = "Card Inserted\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cinst {
     #[doc = "0: Power on Reset or No Card"]
@@ -541,6 +556,7 @@ impl CinstR {
     }
 }
 #[doc = "Card Detect Pin Level\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Cdpl {
     #[doc = "0: No card present (CD_B = 1)"]
@@ -577,6 +593,7 @@ impl CdplR {
     }
 }
 #[doc = "Write Protect Switch Pin Level\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Wpspl {
     #[doc = "0: Write protected (WP = 1)"]
@@ -616,6 +633,7 @@ impl WpsplR {
 pub type ClslR = crate::BitReader;
 #[doc = "DATA\\[7:0\\]
 Line Signal Level\n\nValue on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum Dlsl {
@@ -802,6 +820,32 @@ Line Signal Level"]
     #[inline(always)]
     pub fn dlsl(&self) -> DlslR {
         DlslR::new(((self.bits >> 24) & 0xff) as u8)
+    }
+}
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PRES_STATE")
+            .field("cihb", &self.cihb())
+            .field("cdihb", &self.cdihb())
+            .field("dla", &self.dla())
+            .field("sdstb", &self.sdstb())
+            .field("ipgoff", &self.ipgoff())
+            .field("hckoff", &self.hckoff())
+            .field("peroff", &self.peroff())
+            .field("sdoff", &self.sdoff())
+            .field("wta", &self.wta())
+            .field("rta", &self.rta())
+            .field("bwen", &self.bwen())
+            .field("bren", &self.bren())
+            .field("rtr", &self.rtr())
+            .field("tscd", &self.tscd())
+            .field("cinst", &self.cinst())
+            .field("cdpl", &self.cdpl())
+            .field("wpspl", &self.wpspl())
+            .field("clsl", &self.clsl())
+            .field("dlsl", &self.dlsl())
+            .finish()
     }
 }
 #[doc = "Present State\n\nYou can [`read`](crate::Reg::read) this register and get [`pres_state::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

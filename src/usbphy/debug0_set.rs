@@ -94,6 +94,23 @@ impl R {
         ClkgateR::new(((self.bits >> 30) & 1) != 0)
     }
 }
+#[cfg(feature = "debug")]
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DEBUG0_SET")
+            .field("debug_interface_hold", &self.debug_interface_hold())
+            .field("hstpulldown", &self.hstpulldown())
+            .field("enhstpulldown", &self.enhstpulldown())
+            .field("tx2rxcount", &self.tx2rxcount())
+            .field("entx2rxcount", &self.entx2rxcount())
+            .field("squelchresetcount", &self.squelchresetcount())
+            .field("ensquelchreset", &self.ensquelchreset())
+            .field("squelchresetlength", &self.squelchresetlength())
+            .field("host_resume_debug", &self.host_resume_debug())
+            .field("clkgate", &self.clkgate())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 1 - Use holding registers to assist in timing for external UTMI interface."]
     #[inline(always)]
