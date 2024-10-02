@@ -14,18 +14,30 @@ pub type DeltactsW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type TxdisstatR = crate::BitReader;
 #[doc = "Field `RXBRK` reader - Received Break. This bit reflects the current state of the receiver break detection logic. It is set when the Un_RXD pin remains low for 16 bit times. Note that FRAMERRINT will also be set when this condition occurs because the stop bit(s) for the character would be missing. RXBRK is cleared when the Un_RXD pin goes high."]
 pub type RxbrkR = crate::BitReader;
+#[doc = "Field `DELTARXBRK` reader - This bit is set when a change in the state of receiver break detection occurs. Cleared by software."]
+pub type DeltarxbrkR = crate::BitReader;
 #[doc = "Field `DELTARXBRK` writer - This bit is set when a change in the state of receiver break detection occurs. Cleared by software."]
-pub type DeltarxbrkW<'a, REG> = crate::BitWriter<'a, REG>;
+pub type DeltarxbrkW<'a, REG> = crate::BitWriter1C<'a, REG>;
+#[doc = "Field `START` reader - This bit is set when a start is detected on the receiver input. Its purpose is primarily to allow wake-up from Deep-sleep or Power-down mode immediately when a start is detected. Cleared by software."]
+pub type StartR = crate::BitReader;
 #[doc = "Field `START` writer - This bit is set when a start is detected on the receiver input. Its purpose is primarily to allow wake-up from Deep-sleep or Power-down mode immediately when a start is detected. Cleared by software."]
-pub type StartW<'a, REG> = crate::BitWriter<'a, REG>;
+pub type StartW<'a, REG> = crate::BitWriter1C<'a, REG>;
+#[doc = "Field `FRAMERRINT` reader - Framing Error interrupt flag. This flag is set when a character is received with a missing stop bit at the expected location. This could be an indication of a baud rate or configuration mismatch with the transmitting source."]
+pub type FramerrintR = crate::BitReader;
 #[doc = "Field `FRAMERRINT` writer - Framing Error interrupt flag. This flag is set when a character is received with a missing stop bit at the expected location. This could be an indication of a baud rate or configuration mismatch with the transmitting source."]
-pub type FramerrintW<'a, REG> = crate::BitWriter<'a, REG>;
+pub type FramerrintW<'a, REG> = crate::BitWriter1C<'a, REG>;
+#[doc = "Field `PARITYERRINT` reader - Parity Error interrupt flag. This flag is set when a parity error is detected in a received character."]
+pub type ParityerrintR = crate::BitReader;
 #[doc = "Field `PARITYERRINT` writer - Parity Error interrupt flag. This flag is set when a parity error is detected in a received character."]
-pub type ParityerrintW<'a, REG> = crate::BitWriter<'a, REG>;
+pub type ParityerrintW<'a, REG> = crate::BitWriter1C<'a, REG>;
+#[doc = "Field `RXNOISEINT` reader - Received Noise interrupt flag. Three samples of received data are taken in order to determine the value of each received data bit, except in synchronous mode. This acts as a noise filter if one sample disagrees. This flag is set when a received data bit contains one disagreeing sample. This could indicate line noise, a baud rate or character format mismatch, or loss of synchronization during data reception."]
+pub type RxnoiseintR = crate::BitReader;
 #[doc = "Field `RXNOISEINT` writer - Received Noise interrupt flag. Three samples of received data are taken in order to determine the value of each received data bit, except in synchronous mode. This acts as a noise filter if one sample disagrees. This flag is set when a received data bit contains one disagreeing sample. This could indicate line noise, a baud rate or character format mismatch, or loss of synchronization during data reception."]
-pub type RxnoiseintW<'a, REG> = crate::BitWriter<'a, REG>;
+pub type RxnoiseintW<'a, REG> = crate::BitWriter1C<'a, REG>;
+#[doc = "Field `ABERR` reader - Auto baud Error. An auto baud error can occur if the BRG counts to its limit before the end of the start bit that is being measured, essentially an auto baud time-out."]
+pub type AberrR = crate::BitReader;
 #[doc = "Field `ABERR` writer - Auto baud Error. An auto baud error can occur if the BRG counts to its limit before the end of the start bit that is being measured, essentially an auto baud time-out."]
-pub type AberrW<'a, REG> = crate::BitWriter<'a, REG>;
+pub type AberrW<'a, REG> = crate::BitWriter1C<'a, REG>;
 impl R {
     #[doc = "Bit 1 - Receiver Idle. When 0, indicates that the receiver is currently in the process of receiving data. When 1, indicates that the receiver is not currently in the process of receiving data."]
     #[inline(always)]
@@ -51,6 +63,36 @@ impl R {
     #[inline(always)]
     pub fn rxbrk(&self) -> RxbrkR {
         RxbrkR::new(((self.bits >> 10) & 1) != 0)
+    }
+    #[doc = "Bit 11 - This bit is set when a change in the state of receiver break detection occurs. Cleared by software."]
+    #[inline(always)]
+    pub fn deltarxbrk(&self) -> DeltarxbrkR {
+        DeltarxbrkR::new(((self.bits >> 11) & 1) != 0)
+    }
+    #[doc = "Bit 12 - This bit is set when a start is detected on the receiver input. Its purpose is primarily to allow wake-up from Deep-sleep or Power-down mode immediately when a start is detected. Cleared by software."]
+    #[inline(always)]
+    pub fn start(&self) -> StartR {
+        StartR::new(((self.bits >> 12) & 1) != 0)
+    }
+    #[doc = "Bit 13 - Framing Error interrupt flag. This flag is set when a character is received with a missing stop bit at the expected location. This could be an indication of a baud rate or configuration mismatch with the transmitting source."]
+    #[inline(always)]
+    pub fn framerrint(&self) -> FramerrintR {
+        FramerrintR::new(((self.bits >> 13) & 1) != 0)
+    }
+    #[doc = "Bit 14 - Parity Error interrupt flag. This flag is set when a parity error is detected in a received character."]
+    #[inline(always)]
+    pub fn parityerrint(&self) -> ParityerrintR {
+        ParityerrintR::new(((self.bits >> 14) & 1) != 0)
+    }
+    #[doc = "Bit 15 - Received Noise interrupt flag. Three samples of received data are taken in order to determine the value of each received data bit, except in synchronous mode. This acts as a noise filter if one sample disagrees. This flag is set when a received data bit contains one disagreeing sample. This could indicate line noise, a baud rate or character format mismatch, or loss of synchronization during data reception."]
+    #[inline(always)]
+    pub fn rxnoiseint(&self) -> RxnoiseintR {
+        RxnoiseintR::new(((self.bits >> 15) & 1) != 0)
+    }
+    #[doc = "Bit 16 - Auto baud Error. An auto baud error can occur if the BRG counts to its limit before the end of the start bit that is being measured, essentially an auto baud time-out."]
+    #[inline(always)]
+    pub fn aberr(&self) -> AberrR {
+        AberrR::new(((self.bits >> 16) & 1) != 0)
     }
 }
 impl W {
@@ -108,7 +150,7 @@ impl crate::Readable for StatSpec {}
 impl crate::Writable for StatSpec {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0x0001_f800;
 }
 #[doc = "`reset()` method sets STAT to value 0x0a"]
 impl crate::Resettable for StatSpec {
