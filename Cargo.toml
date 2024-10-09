@@ -9,7 +9,7 @@ repository = "https://github.com/felipebalbi/mimxrt685s-pac"
 readme = "README.md"
 keywords = [ "rt6", "mimxrt", "mimxrt6", "no_std", "embedded" ]
 categories = [ "embedded", "no-std" ]
-rust-version = "1.71.1"
+rust-version = "1.71"
 exclude = [ "svd/*", ]
 
 [dependencies]
