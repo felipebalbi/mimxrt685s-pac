@@ -9,12 +9,11 @@ peripherals. The API is generated using
 On a unix-style OS, all you need are these commands:
 
 ```console
-$ svd2rust.exe -i svd/MIMXRT685S_cm33.svd --reexport-interrupt --ignore-groups --impl-defmt defmt --impl-debug --impl-debug-feature debug
+$ svd2rust -i svd/MIMXRT685S_cm33.svd --reexport-interrupt --ignore-groups --impl-defmt defmt --impl-debug --impl-debug-feature debug
 $ rm -r src/*
 $ form -i lib.rs -o src
 $ rm lib.rs
 $ cargo fmt
-$ cd src
 ```
 
 On windows you need to replace the `/` with `\` and additionally run
