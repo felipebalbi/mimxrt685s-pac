@@ -47,7 +47,6 @@ impl core::fmt::Debug for crate::generic::Reg<Abort0Spec> {
 impl W {
     #[doc = "Bits 0:31 - Abort control for DMA channel 0."]
     #[inline(always)]
-    #[must_use]
     pub fn abortctrl(&mut self) -> AbortctrlW<Abort0Spec> {
         AbortctrlW::new(self, 0)
     }

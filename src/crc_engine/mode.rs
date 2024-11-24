@@ -64,31 +64,26 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:1 - CRC polynomial: 1X = CRC-32 polynomial 01 = CRC-16 polynomial 00 = CRC-CCITT polynomial"]
     #[inline(always)]
-    #[must_use]
     pub fn crc_poly(&mut self) -> CrcPolyW<ModeSpec> {
         CrcPolyW::new(self, 0)
     }
     #[doc = "Bit 2 - Data bit order: 1 = Bit order reverse for CRC_WR_DATA (per byte) 0 = No bit order reverse for CRC_WR_DATA (per byte)"]
     #[inline(always)]
-    #[must_use]
     pub fn bit_rvs_wr(&mut self) -> BitRvsWrW<ModeSpec> {
         BitRvsWrW::new(self, 2)
     }
     #[doc = "Bit 3 - Data complement: 1 = 1's complement for CRC_WR_DATA 0 = No 1's complement for CRC_WR_DATA"]
     #[inline(always)]
-    #[must_use]
     pub fn cmpl_wr(&mut self) -> CmplWrW<ModeSpec> {
         CmplWrW::new(self, 3)
     }
     #[doc = "Bit 4 - CRC sum bit order: 1 = Bit order reverse for CRC_SUM 0 = No bit order reverse for CRC_SUM"]
     #[inline(always)]
-    #[must_use]
     pub fn bit_rvs_sum(&mut self) -> BitRvsSumW<ModeSpec> {
         BitRvsSumW::new(self, 4)
     }
     #[doc = "Bit 5 - CRC sum complement: 1 = 1's complement for CRC_SUM 0 = No 1's complement for CRC_SUM"]
     #[inline(always)]
-    #[must_use]
     pub fn cmpl_sum(&mut self) -> CmplSumW<ModeSpec> {
         CmplSumW::new(self, 5)
     }
