@@ -25,25 +25,13 @@ impl RegisterBlock {
     pub const fn channel(&self, n: usize) -> &Channel {
         #[allow(clippy::no_effect)]
         [(); 8][n];
-        unsafe {
-            &*(self as *const Self)
-                .cast::<u8>()
-                .add(0)
-                .add(256 * n)
-                .cast()
-        }
+        unsafe { &*core::ptr::from_ref(self).cast::<u8>().add(256 * n).cast() }
     }
     #[doc = "Iterator for array of:"]
     #[doc = "0x00..0x4a0 - no description available"]
     #[inline(always)]
     pub fn channel_iter(&self) -> impl Iterator<Item = &Channel> {
-        (0..8).map(move |n| unsafe {
-            &*(self as *const Self)
-                .cast::<u8>()
-                .add(0)
-                .add(256 * n)
-                .cast()
-        })
+        (0..8).map(move |n| unsafe { &*core::ptr::from_ref(self).cast::<u8>().add(256 * n).cast() })
     }
     #[doc = "0xf00 - Channel Enable register"]
     #[inline(always)]

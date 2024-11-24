@@ -302,7 +302,6 @@ impl core::fmt::Debug for R {
 impl W {
     #[doc = "Bits 0:4 - Counter Timer m, Capture Port Input n 19:1 Mux Select. . ."]
     #[inline(always)]
-    #[must_use]
     pub fn capn_sel(&mut self) -> CapnSelW<Ct32bitCapSelSpec> {
         CapnSelW::new(self, 0)
     }

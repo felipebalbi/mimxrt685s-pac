@@ -79,13 +79,11 @@ impl core::fmt::Debug for crate::generic::Reg<Abort1Spec> {
 impl W {
     #[doc = "Bit 0 - Abort control for DMA channel 32."]
     #[inline(always)]
-    #[must_use]
     pub fn abort32(&mut self) -> Abort32W<Abort1Spec> {
         Abort32W::new(self, 0)
     }
     #[doc = "Bits 1:31 - Additional Abort controls for remaining DMA channels in the range 63 to 33. Any bits above the actually implemented channels are reserved."]
     #[inline(always)]
-    #[must_use]
     pub fn abort63_33(&mut self) -> Abort63_33W<Abort1Spec> {
         Abort63_33W::new(self, 1)
     }
