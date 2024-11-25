@@ -2,57 +2,10 @@
 # This must be included only in the device YAML file.
 _svd: "../svd/MIMXRT685S_cm33.svd"
 
-ADC*:
-  CMDH[5-9],CMDH1[0-5]:
-    _add:
-      CMPEN:
-        description: Compare Function Enable
-        bitOffset: 0
-        bitWidth: 2
-        access: read-write
-        CMPEN_0: [0, Compare disabled]
-        CMPEN_2: [2, Compare enabled. Store on true]
-        CMPEN_3: [3, Compare enabled. Repeat channel acquisition (sample/convert/compare) until true]
-  _array:
-    CMDL*: {}
-    CMDH*: {}
+_include:
+  - "adc.yaml"
+  - "i2s.yaml"
+  - "inputmux.yaml"
+  - "usart.yaml"
 
-I2S0:
-  SECCHANNEL*:
-    _modify:
-      PCFG1:
-        addressOffset: 0x00
-      PCFG2:
-        addressOffset: 0x04
-      PSTAT:
-        addressOffset: 0x08
-  _modify:
-    SECCHANNEL*:
-      addressOffset: 0xc20
 
-INPUTMUX:
-  _modify:
-    CT32BIT_CAP_SEL*:
-      name: CT32BIT_CAP[%s]
-
-USART*:
-  STAT:
-    _modify:
-      DELTARXBRK:
-        access: read-write
-        modifiedWriteValues: oneToClear
-      START:
-        access: read-write
-        modifiedWriteValues: oneToClear
-      FRAMERRINT:
-        access: read-write
-        modifiedWriteValues: oneToClear
-      PARITYERRINT:
-        access: read-write
-        modifiedWriteValues: oneToClear
-      RXNOISEINT:
-        access: read-write
-        modifiedWriteValues: oneToClear
-      ABERR:
-        access: read-write
-        modifiedWriteValues: oneToClear
