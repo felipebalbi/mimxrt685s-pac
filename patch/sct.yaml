@@ -1,0 +1,183 @@
+SCT0:
+  OUT\[%s\]:
+    OUT_SET:
+      # Delete existing OUT field.
+      _delete:
+        - "OUT"
+
+      # Add new OUT field
+      _add:
+        OUT0:
+          bitOffset: 0
+          bitWidth: 1
+          access: read-write
+
+        OUT1:
+          bitOffset: 1
+          bitWidth: 1
+          access: read-write
+
+        OUT2:
+          bitOffset: 2
+          bitWidth: 1
+          access: read-write
+
+        OUT3:
+          bitOffset: 3
+          bitWidth: 1
+          access: read-write
+
+        OUT4:
+          bitOffset: 4
+          bitWidth: 1
+          access: read-write
+
+        OUT5:
+          bitOffset: 5
+          bitWidth: 1
+          access: read-write
+
+        OUT6:
+          bitOffset: 6
+          bitWidth: 1
+          access: read-write
+
+        OUT7:
+          bitOffset: 7
+          bitWidth: 1
+          access: read-write
+
+        OUT8:
+          bitOffset: 8
+          bitWidth: 1
+          access: read-write
+
+        OUT9:
+          bitOffset: 9
+          bitWidth: 1
+          access: read-write
+
+        OUT10:
+          bitOffset: 10
+          bitWidth: 1
+          access: read-write
+
+        OUT11:
+          bitOffset: 11
+          bitWidth: 1
+          access: read-write
+
+        OUT12:
+          bitOffset: 12
+          bitWidth: 1
+          access: read-write
+
+        OUT13:
+          bitOffset: 13
+          bitWidth: 1
+          access: read-write
+
+        OUT14:
+          bitOffset: 14
+          bitWidth: 1
+          access: read-write
+
+        OUT15:
+          bitOffset: 15
+          bitWidth: 1
+          access: read-write
+
+      # Collect themn into an array to create a <dim>
+      _array:
+        OUT*: {}
+
+    OUT_CLR:
+      # Delete existing OUT field.
+      _delete:
+        - "CLR"
+
+      # Add new CLR field
+      _add:
+        CLR0:
+          bitOffset: 0
+          bitWidth: 1
+          access: read-write
+
+        CLR1:
+          bitOffset: 1
+          bitWidth: 1
+          access: read-write
+
+        CLR2:
+          bitOffset: 2
+          bitWidth: 1
+          access: read-write
+
+        CLR3:
+          bitOffset: 3
+          bitWidth: 1
+          access: read-write
+
+        CLR4:
+          bitOffset: 4
+          bitWidth: 1
+          access: read-write
+
+        CLR5:
+          bitOffset: 5
+          bitWidth: 1
+          access: read-write
+
+        CLR6:
+          bitOffset: 6
+          bitWidth: 1
+          access: read-write
+
+        CLR7:
+          bitOffset: 7
+          bitWidth: 1
+          access: read-write
+
+        CLR8:
+          bitOffset: 8
+          bitWidth: 1
+          access: read-write
+
+        CLR9:
+          bitOffset: 9
+          bitWidth: 1
+          access: read-write
+
+        CLR10:
+          bitOffset: 10
+          bitWidth: 1
+          access: read-write
+
+        CLR11:
+          bitOffset: 11
+          bitWidth: 1
+          access: read-write
+
+        CLR12:
+          bitOffset: 12
+          bitWidth: 1
+          access: read-write
+
+        CLR13:
+          bitOffset: 13
+          bitWidth: 1
+          access: read-write
+
+        CLR14:
+          bitOffset: 14
+          bitWidth: 1
+          access: read-write
+
+        CLR15:
+          bitOffset: 15
+          bitWidth: 1
+          access: read-write
+
+      # Collect themn into an array to create a <dim>
+      _array:
+        CLR*: {}

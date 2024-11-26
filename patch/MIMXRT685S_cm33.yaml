@@ -4,9 +4,11 @@ _svd: "../svd/MIMXRT685S_cm33.svd"
 
 _include:
   - "adc.yaml"
+  - "crc.yaml"
   - "dma.yaml"
   - "i2s.yaml"
   - "inputmux.yaml"
   - "usart.yaml"
+  - "sct.yaml"
 
 
