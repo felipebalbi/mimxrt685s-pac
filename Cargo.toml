@@ -1,6 +1,6 @@
 [package]
 name = "mimxrt685s-pac"
-version = "0.2.2"
+version = "0.3.0"
 authors = [ "Felipe Balbi <felipe@balbi.sh>" ]
 edition = "2021"
 license = "MIT"
