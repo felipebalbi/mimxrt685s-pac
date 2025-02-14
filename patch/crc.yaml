@@ -1,0 +1,24 @@
+CRC_ENGINE:
+  _modify:
+    WR_DATA:
+      name: WR_DATA32
+      description: CRC data register, 32-bit access
+
+  _add:
+    WR_DATA16:
+      description: CRC data register, 16-bit access
+      addressOffset: 8
+      size: 16
+      resetValue: 0
+      resetMask: 0
+      access: write-only
+      alternateGroup: SUM_WR_DATA
+
+    WR_DATA8:
+      description: CRC data register, 8-bit access
+      addressOffset: 8
+      size: 8
+      resetValue: 0
+      resetMask: 0
+      access: write-only
+      alternateGroup: SUM_WR_DATA
