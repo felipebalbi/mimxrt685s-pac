@@ -1,3 +1,8 @@
+> **Note:** This file is a subset of [`AGENTS.md`](../AGENTS.md) at the
+> repository root. `AGENTS.md` is the authoritative source for repository
+> conventions and agent behavior; consult it first. If anything here appears
+> to contradict `AGENTS.md`, `AGENTS.md` wins.
+
 # Copilot Instructions
 
 ## Commit Messages
